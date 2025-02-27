@@ -1,0 +1,54 @@
+.main_layout{
+    font-size :15px;
+    color:#000;
+    width: 100%;
+height: 85;
+display: flex;
+justify-content: space-between;
+border-radius: 24px;
+padding: 24px 16px 16px 16px;
+
+}
+.main_logo{
+    background: rgba(0, 0, 0, 0) url(../../public/assets/images/main_logo.png) no-repeat center;
+    background-size: contain; /* Ensures the entire image fits within the div */
+    width: 150px;
+    height: 40.255592346191406px;
+}
+
+.right_div_layout{
+    display: flex;
+    gap: 24px;
+    width: auto;
+    height: auto;
+    align-items: center;
+}
+.home_text_div{
+    color: #FBA819;
+}
+
+.text_div{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28.9px;
+}
+
+.events_div{
+    display: flex;
+    width: 82px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact_div{
+    width: fit-content;
+    padding: 8px 16px;
+    background: #FBA819;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+}
+.contact_div_text{
+    color: #fff;
+    
+}
