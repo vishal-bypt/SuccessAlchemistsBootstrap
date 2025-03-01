@@ -54,47 +54,45 @@ const NavbarMenu = () => {
     // <div className="main_layout">
     // <div className="main_logo" />
     <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="#home">
-          <div className="main_logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link href="#home">
-              <div className="home_text_div text_div">Home</div>
-            </Nav.Link>
-            <Nav.Link href="#home">
-              <div className="text_div">About us</div>
-            </Nav.Link>
-            <Nav.Link href="#home">
-              <div className=" text_div">Who we are</div>
-            </Nav.Link>
-            <Nav.Link href="#home">
-              <div className=" text_div">Our success</div>
-            </Nav.Link>
-            <Nav.Link href="#home">
-              <div className=" text_div">Quick assessment</div>
-            </Nav.Link>
-            <Nav.Link href="#home">
-              <div className=" text_div">Our success</div>
-            </Nav.Link>
+      <Navbar.Brand href="#home">
+        <div className="main_logo" />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ms-auto">
+          <Nav.Link href="#home">
+            <div className="home_text_div text_div">Home</div>
+          </Nav.Link>
+          <Nav.Link href="#home">
+            <div className="text_div">About us</div>
+          </Nav.Link>
+          <Nav.Link href="#home">
+            <div className=" text_div">Who we are</div>
+          </Nav.Link>
+          <Nav.Link href="#home">
+            <div className=" text_div">Our success</div>
+          </Nav.Link>
+          <Nav.Link href="#home">
+            <div className=" text_div">Quick assessment</div>
+          </Nav.Link>
+          <Nav.Link href="#home">
+            <div className=" text_div">Our success</div>
+          </Nav.Link>
 
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
+          <Nav.Link href="#link">Link</Nav.Link>
+          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">
+              Another action
+            </NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">
+              Separated link
+            </NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
     // {/* <div className="main_logo" />
     // <div className="right_div_layout">
