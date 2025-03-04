@@ -1,0 +1,41 @@
+
+.main_logo {
+    width: 150px;
+    height: auto;
+}
+.icon-img {
+    width: 24px;
+    height: 24px;
+}
+
+.fot{
+    background-color: #ededed;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+}
+.footer-div{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background-color: white;
+    border-radius: 24px;
+}
+@media (max-width: 768px) {
+    .bd-footer {
+        text-align: center; 
+    }
+
+    .icon-img,
+    .social-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .d-flex {
+        justify-content: center; 
+    }
+}

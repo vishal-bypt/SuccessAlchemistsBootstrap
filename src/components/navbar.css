@@ -23,9 +23,9 @@ padding: 24px 16px 16px 16px;
     height: auto;
     align-items: center;
 }
-.home_text_div{
+/* .home_text_div{
     color: #FBA819;
-}
+} */
 
 .text_div{
     font-size: 20px;
@@ -45,10 +45,16 @@ padding: 24px 16px 16px 16px;
     padding: 8px 16px;
     background: #FBA819;
     display: flex;
-    align-items: center;
     border-radius: 12px;
+    align-items: center;
 }
 .contact_div_text{
     color: #fff;
-    
 }
+.active-link {
+    color: #0D9A73;
+  }
+  
+  .inactive-link {
+    color: black;
+  }
