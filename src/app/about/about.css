@@ -1,7 +1,7 @@
-.main_body_div{
-display: flex;
-   gap: 16px;
-   flex-direction: column; 
+.main_body_div {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
 }
 
 .first_div_layout {
@@ -11,9 +11,9 @@ display: flex;
     height: 558px;
     background: url(./images/main_layout_image.jpeg) no-repeat center;
     background-size: cover;
-  }
-  
-  .main_first_div_body {
+}
+
+.main_first_div_body {
     background: linear-gradient(90deg, #e99300, #ffffff00);
     width: 100%;
     height: 100%;
@@ -22,96 +22,102 @@ display: flex;
     display: flex;
     align-items: center;
     text-align: center;
-  }
-  
-  .innerContainer {
+}
+
+.innerContainer {
     width: 90%;
     max-width: 600px;
     padding: 40px;
-  }
-  
-  .heading {
+}
+
+.heading {
     font-size: 3rem;
     font-weight: 500;
     line-height: 1.2;
-  }
-  
-  /* Responsive Heading */
-  @media (max-width: 768px) {
+}
+
+
+/* Responsive Heading */
+
+@media (max-width: 768px) {
     .heading {
-      font-size: 2rem;
+        font-size: 2rem;
     }
-  }
-  
-  .subText {
+}
+
+.subText {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.5;
-  }
-  
-  @media (max-width: 768px) {
-    .subText {
-      font-size: 1.2rem;
-    }
-  }
-  
+}
 
-  .second_div_layout {
+@media (max-width: 768px) {
+    .subText {
+        font-size: 1.2rem;
+    }
+}
+
+.second_div_layout {
     position: relative;
     width: 100%;
     border-radius: 24px;
     background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
     padding: 64px;
     margin: 0;
-  }
-  
-  .main_second_div_body {
+}
+
+.main_second_div_body {
     display: flex;
     flex-direction: row;
-  }
-  
-  .innerContainer1 {
+}
+
+.innerContainer1 {
     display: flex;
     flex-direction: column;
     gap: 32px;
-  }
-  
-  .heading1 {
+}
+
+.heading1 {
     font-size: 3rem;
     font-weight: 600;
     color: rgba(34, 32, 32, 1);
-  }
-  
-  /* Responsive heading */
-  @media (max-width: 768px) {
+}
+
+
+/* Responsive heading */
+
+@media (max-width: 768px) {
     .heading1 {
-      font-size: 2rem;
+        font-size: 2rem;
     }
-  }
-  
-  .subText1 {
+}
+
+.subText1 {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.5;
     color: rgba(97, 97, 97, 1);
-  }
-  
-  /* Responsive text */
-  @media (max-width: 768px) {
+}
+
+
+/* Responsive text */
+
+@media (max-width: 768px) {
     .subText1 {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  }
-  
-  .image {
+}
+
+.image {
     max-height: 485px;
     width: 100%;
-  }
-  
-  /* Button Styling */
-  .btn {
+}
+
+
+/* Button Styling */
+
+.btn {
     padding: 16px 32px;
     background-color: rgba(251, 168, 25, 1);
     color: #fff;
@@ -120,23 +126,25 @@ display: flex;
     border-radius: 12px;
     width: 100%;
     max-width: 508px;
-  }
-  
-  /* Center button on small screens */
-  @media (max-width: 768px) {
+}
+
+
+/* Center button on small screens */
+
+@media (max-width: 768px) {
     .btn {
-      font-size: 1.2rem;
-      padding: 12px 24px;
+        font-size: 1.2rem;
+        padding: 12px 24px;
     }
-  }
-  
-  .third_div_layout {
+}
+
+.third_div_layout {
     position: relative;
     width: 100%;
     border-radius: 24px;
-    height: auto; /* Make height flexible */
+    height: auto;
+    /* Make height flexible */
     background: linear-gradient(to right, rgba(65, 142, 248, 1), rgba(1, 139, 211, 1), rgba(65, 142, 248, 1));
-    border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
     padding: 32px 16px;
     display: flex;
@@ -144,12 +152,16 @@ display: flex;
     align-items: center;
     justify-content: center;
 }
-.main{
+
+.main {
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
+
+
 /* Adjust image sizes */
+
 .image1 {
     position: absolute;
     max-width: 180px;
@@ -158,6 +170,7 @@ display: flex;
     top: 0;
     border-radius: 24px;
 }
+
 .image2 {
     max-width: 100%;
     height: auto;
@@ -169,12 +182,14 @@ display: flex;
     line-height: 42px;
     color: white;
 }
+
 .subText2 {
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
     color: white;
 }
+
 .subContainer2 {
     display: flex;
     flex-direction: column;
@@ -182,6 +197,7 @@ display: flex;
     gap: 16px;
     text-align: center;
 }
+
 .btn1 {
     padding: 12px 24px;
     background-color: rgba(251, 168, 25, 1);
@@ -193,7 +209,8 @@ display: flex;
     display: inline-block;
     width: fit-content;
 }
-.forth_div_layout{
+
+.forth_div_layout {
     position: relative;
     width: 100%;
     border-radius: 24px;
@@ -205,24 +222,27 @@ display: flex;
     display: flex;
     flex-direction: row;
 }
-.heading5{
+
+.heading5 {
     font-size: 3rem;
     font-weight: 500;
     line-height: 1.2;
     color: rgba(34, 32, 32, 1);
 }
-.font{
+
+.font {
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 46px;
 }
+
 .fifth_div_layout {
     position: relative;
     width: 100%;
     border-radius: 24px;
     height: auto;
     background: linear-gradient(to right, rgba(65, 142, 248, 1), rgba(1, 139, 211, 1), rgba(65, 142, 248, 1));
-    border: 1px solid rgba(0, 0, 0, 0.1); 
+    border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
     padding: 64px;
     display: flex;
@@ -230,10 +250,13 @@ display: flex;
     align-items: center;
 }
 
+
 /* Responsive Image */
+
 .image3 {
     position: absolute;
-    width: 180px; /* Adjusted for smaller screens */
+    width: 180px;
+    /* Adjusted for smaller screens */
     height: 180px;
     right: 0;
     top: 0;
@@ -242,6 +265,7 @@ display: flex;
 
 
 /* Responsive Content */
+
 .main_fifth_div_body {
     display: flex;
     flex-direction: column;
@@ -249,29 +273,39 @@ display: flex;
     text-align: center;
 }
 
+
 /* Circles Layout */
+
 .subContainer3 {
     display: flex;
-    flex-wrap: wrap; /* Wrap for small screens */
+    flex-wrap: wrap;
+    /* Wrap for small screens */
     justify-content: space-between;
     gap: 20px;
 }
 
+
 /* Individual Circle */
+
 .circle {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    width: 22%; /* Adjust for desktop */
-    min-width: 150px; /* Ensures proper wrapping */
+    width: 22%;
+    /* Adjust for desktop */
+    min-width: 150px;
+    /* Ensures proper wrapping */
 }
 
+
 /* Down Arrow */
+
 .down {
     width: 25px;
     height: 18px;
 }
+
 .subText4 {
     font-size: 18px;
     font-weight: 400;
@@ -285,21 +319,17 @@ display: flex;
         padding: 32px;
         flex-direction: column;
     }
-
     .subContainer3 {
         flex-direction: column;
         align-items: center;
     }
-
     .circle {
         width: 100%;
     }
-
     .image3 {
         width: 120px;
         height: 120px;
     }
-
     .subText4 {
         font-size: 16px;
         line-height: 24px;

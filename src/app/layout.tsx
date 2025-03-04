@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono ,Jost } from "next/font/google";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarMenu from "@/components/Navbar";
@@ -28,6 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      
       <body
         style={{ background: "#F5F5F5" }}
         className={`${geistSans.variable} ${geistMono.variable} p-3`}

@@ -70,7 +70,7 @@ const NavbarMenu = () => {
                   : "inactive-link font-normal"
               } text-sm xl:text-xl font-barlow`}
             >
-              <div className="home_text_div text_div">Home</div>
+              <div className="home_text_div nav_text_div">Home</div>
             </Nav.Link>
             <Nav.Link
               href="/about"
@@ -80,7 +80,7 @@ const NavbarMenu = () => {
                   : "inactive-link font-normal"
               } text-sm xl:text-xl font-barlow`}
             >
-              <div className="text_div">About us</div>
+              <div className="nav_text_div">About us</div>
             </Nav.Link>
             <Nav.Link
               href="/who"
@@ -90,7 +90,7 @@ const NavbarMenu = () => {
                   : "inactive-link font-normal"
               } text-sm xl:text-xl font-barlow`}
             >
-              <div className="text_div">Who we are</div>
+              <div className="nav_text_div">Who we are</div>
             </Nav.Link>
             <Nav.Link
               href="/success"
@@ -100,7 +100,7 @@ const NavbarMenu = () => {
                   : "inactive-link font-normal"
               } text-sm xl:text-xl font-barlow`}
             >
-              <div className="text_div">Our success</div>
+              <div className="nav_text_div">Our success</div>
             </Nav.Link>
             <Nav.Link
               href="/assessment"
@@ -110,7 +110,7 @@ const NavbarMenu = () => {
                   : "inactive-link font-normal"
               } text-sm xl:text-xl font-barlow`}
             >
-              <div className="text_div">Quick assessment</div>
+              <div className="nav_text_div">Quick assessment</div>
             </Nav.Link>
             <Nav.Link
               href="/resources"
@@ -120,11 +120,11 @@ const NavbarMenu = () => {
                   : "inactive-link font-normal"
               } text-sm xl:text-xl font-barlow`}
             >
-              <div className=" text_div">Resources</div>
+              <div className="nav_text_div">Resources</div>
             </Nav.Link>
             {/* <Nav.Link href="#link">Link</Nav.Link> */}
             <NavDropdown
-              className="text_div text-black"
+              className="nav_text_div text-black"
               title="Events"
               id="basic-nav-dropdown"
             >
