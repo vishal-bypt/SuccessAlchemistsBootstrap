@@ -1,0 +1,205 @@
+.main_body_div {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.first_div_layout {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    height: 558px;
+    background: url(./images/main_layout_image.jpeg) no-repeat center;
+    background-size: cover;
+}
+
+.main_first_div_body {
+    background: linear-gradient(90deg, #e99300, #ffffff00);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.innerContainer {
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+}
+
+.heading {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+
+/* Responsive Heading */
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2rem;
+    }
+}
+
+.subText {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .subText {
+        font-size: 1.2rem;
+    }
+}
+
+.second_div_layout {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    background-color: #fff;
+    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
+    padding: 64px;
+    margin: 0;
+}
+
+.main_second_div_body {
+    display: flex;
+    flex-direction: row;
+}
+
+.innerContainer1 {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.heading1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: rgba(34, 32, 32, 1);
+}
+
+
+/* Responsive heading */
+
+@media (max-width: 768px) {
+    .heading1 {
+        font-size: 2rem;
+    }
+}
+
+.subText1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(97, 97, 97, 1);
+}
+
+
+/* Responsive text */
+
+@media (max-width: 768px) {
+    .subText1 {
+        font-size: 1.2rem;
+    }
+}
+
+.image {
+    max-height: 485px;
+    width: 100%;
+}
+
+
+/* Button Styling */
+
+.btn {
+    padding: 16px 32px;
+    background-color: rgba(251, 168, 25, 1);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+
+/* Center button on small screens */
+
+@media (max-width: 768px) {
+    .btn {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+    }
+}
+
+.third_div_layout {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    height: auto;
+    /* Make height flexible */
+    background: linear-gradient(to right, rgba(65, 142, 248, 1), rgba(1, 139, 211, 1), rgba(65, 142, 248, 1));
+    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.row-gap {
+    row-gap: 24px;
+}
+
+.form-floating>label {
+    color: #616161;
+    padding: 13px 16px;
+}
+
+.contact-input {
+    height: 56px;
+    border-radius: 12px;
+    font-size: 18px;
+    color: #222020;
+}
+
+.contact-input::placeholder {
+    color: #616161;
+}
+
+.form-control.contact-textrea {
+    height: 130px;
+    border-radius: 12px;
+    font-size: 18px;
+    color: #222020;
+}
+
+.submit-btn-div {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 32px;
+}
+
+.contact-div {
+    position: relative;
+    z-index: 99;
+}
+
+.curve-contact {
+    top: 40px;
+    left: 40px;
+    position: absolute;
+    color: transparent;
+    transform: rotateY(180deg);
+}

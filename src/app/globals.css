@@ -21,6 +21,8 @@ body {
     font-family: "Jost", sans-serif !important;
     max-width: 100vw;
     overflow-x: hidden;
+    /* cursor: url('about/images/Circle1.png'), auto !important; */
+    /* cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="%23FFF" stroke="%23000" stroke-width="2"></circle></svg>') 12 12, auto; */
 }
 
 body {

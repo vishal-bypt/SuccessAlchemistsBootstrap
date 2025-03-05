@@ -1,10 +1,15 @@
+
 import React from "react";
 import "./basecamp.css";
 import Image from "next/image";
 import blogimg1 from "../../../../public/assets/images/Blog-img.png";
 import curve1 from "../../../../src/app/about/images/curve1.png";
-import idea_icon from "../../../app/about/images/idea_icon.png"
+
+
 const page = () => {
+
+   
+
     return (
         <div className="main_body_div">
             <div className="first_div_layout">
@@ -175,15 +180,104 @@ const page = () => {
 
                     </div>
                     <div className="offset-md-1 col-md-5">
-                        <p className="subText webinar-sub-text mt-0" style={{ color: "white" ,width:"100%"}}>
-                        Learn from India's first certified Scaling Up coach Ajay Hiraskar who has led the implementation of the Scaling Up performance platform across many industry verticals. This platform has already guided more than 80,000 companies world wide to succeed and grow.
+                        <p className="subText webinar-sub-text mt-0" style={{ color: "white", width: "100%" }}>
+                            Learn from India's first certified Scaling Up coach Ajay Hiraskar who has led the implementation of the Scaling Up performance platform across many industry verticals. This platform has already guided more than 80,000 companies world wide to succeed and grow.
                         </p>
                     </div>
-                </div>          
+                </div>
 
 
             </div>
-          
+
+            <div className="second_div_layout">
+                <div className="webinar-header">
+                    <h1 className="webinar_heading">Who are the speakers at the workshop?</h1>
+                </div>
+
+                <div className="webinar-main-box">
+                    <div className="row">
+                        <div className="col-md-3">
+                            <Image
+                                className="img-fluid rounded image w-100"
+                                src={blogimg1}
+                                alt="img2"
+                            />
+
+                        </div>
+                        <div className="col-md-9">
+                            <div className="second-box-content">
+                                <h3>Ajay Hiraskar</h3>
+                                <p className="mt-2">Join our exclusive one-day workshop with Ajay Hiraskar, India’s first certified Scaling Up coach, and unlock the keys to accelerating your business growth. Learn proven strategies to double your cash flow, triple your profitability, and increase your company’s valuation tenfold. This workshop provides rapid growth strategies, actionable tools, expert mentorship, and access to a network of industry champions. Tailored for founders, CEOs, and top leadership, it empowers you to scale your vision, drive innovation, and achieve extraordinary success. Explore essential growth tools across the four pillars of scaling up: People, Strategy, Execution, and Cash. Transform your organization with our Scaling Up workshop!</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div className="seventh_components">
+                <div className="row">
+                    <div className="col-md-4">
+                        <div className="seventh_components_card_box">
+                            <div className="card video-card">
+                                <div className="video-thumbnail">
+                                    <iframe
+                                        width="100%"
+                                        height="200px"
+                                        src="https://www.youtube.com/embed/PGgIAnehjR8"
+                                        allow="autoplay; encrypted-media"
+                                    ></iframe>
+                                </div>
+                                <div className="card-body">
+                                    <h5 className="card-title">
+                                        Challenges of Scaling Up a Business
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-4">
+                        <div className="seventh_components_card_box">
+                            <div className="card video-card">
+                                <div className="video-thumbnail">
+                                    <iframe
+                                        width="100%"
+                                        height="200px"
+                                        src="https://www.youtube.com/embed/pDNju3Ookq4"
+                                        allow="autoplay; encrypted-media"
+                                    ></iframe>
+                                </div>
+                                <div className="card-body">
+                                    <h5 className="card-title">
+                                        The 10 Rockefeller Habits To Success
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-4">
+                        <div className="seventh_components_card_box">
+                            <div className="card video-card">
+                                <div className="video-thumbnail">
+                                    <iframe
+                                        width="100%"
+                                        height="200px"
+                                        src="https://www.youtube.com/embed/048UdKxDsA8"
+                                        allow="autoplay; encrypted-media"
+                                    ></iframe>
+                                </div>
+                                <div className="card-body">
+                                    <h5 className="card-title">ScaleUp - Anaheim Highlights</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+
         </div>
     );
 };

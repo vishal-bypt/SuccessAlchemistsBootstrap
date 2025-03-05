@@ -307,3 +307,27 @@
 .attend-time-div {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.seventh_components {
+    /* display: flex; */
+    border-radius: 24px;
+    padding: 62px;
+    /* gap: 16px; 
+    justify-content: center; */
+    background: #ffffff;
+}
+
+.seventh_components_card_box {
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0px 1px 50px 0px #0000001f;
+    height: 100%;
+}
+
+.card.video-card {
+    border: none;
+}
+
+.card.video-card .video-thumbnail iframe {
+    border-radius: 16px;
+}

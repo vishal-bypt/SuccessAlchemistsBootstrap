@@ -1,0 +1,115 @@
+.main_body_div {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.first_div_layout {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    height: 558px;
+    background: url(../../../app/about/images/main_layout_image.jpeg) no-repeat center;
+    background-size: cover;
+}
+
+.main_first_div_body {
+    background: linear-gradient(90deg, #e99300, #ffffff00);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.innerContainer {
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+}
+
+.heading {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2rem;
+    }
+}
+
+.subText {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.curve {
+    position: absolute;
+    top: 20
+}
+
+@media (max-width: 768px) {
+    .subText {
+        font-size: 1.2rem;
+    }
+}
+
+.second_div_layout {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    background-color: #fff;
+    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
+    padding: 64px;
+    margin: 0;
+}
+
+.seventh_components {
+    /* display: flex; */
+    border-radius: 24px;
+    padding: 62px;
+    /* gap: 16px; 
+    justify-content: center; */
+    background: #ffffff;
+}
+
+.seventh_components_card_box {
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0px 1px 50px 0px #0000001f;
+    height: 100%;
+}
+
+.card.video-card {
+    border: none;
+}
+
+.card.video-card .video-thumbnail iframe {
+    border-radius: 16px;
+}
+
+.third_div_layout {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    height: auto;
+    background: linear-gradient(to right, rgba(65, 142, 248, 1), rgba(1, 139, 211, 1), rgba(65, 142, 248, 1));
+    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image3 {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: 10px;
+    top: 0;
+    right: 0;
+    border-radius: 24px;
+}
