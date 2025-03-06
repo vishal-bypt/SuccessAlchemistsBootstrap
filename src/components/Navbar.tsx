@@ -54,8 +54,8 @@ const NavbarMenu = () => {
   return (
     // <div className="main_layout">
     // <div className="main_logo" />
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
+    <Navbar expand="lg" className="">
+   
         <Navbar.Brand href="/home">
           <div className="main_logo" />
         </Navbar.Brand>
@@ -150,7 +150,7 @@ const NavbarMenu = () => {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-      </Container>
+    
     </Navbar>
   );
 };

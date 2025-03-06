@@ -1,0 +1,84 @@
+.main_body_div {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.heading {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.second_div_layout {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    background-color: #fff;
+    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
+    padding: 64px;
+    margin: 0;
+}
+
+.subText {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+/*card css start here*/
+
+.card {
+    border: none !important;
+    padding: 16px;
+    gap: 16px;
+}
+
+.badge-pill {
+    color: #FBA819;
+    font-size: 16px;
+    background: #FEEED1;
+    font-weight: 500;
+    padding: 6px 20px;
+}
+
+.card-title {
+    font-size: 22px;
+    color: #222020;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.card-body {
+    padding: 0px;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #616161 !important;
+    margin-top: 4px;
+}
+
+.profile-subText {
+    font-size: 18px;
+    color: #222020;
+    font-weight: 500;
+}
+
+.dateText {
+    font-size: 16px;
+}
+
+.profile-date-div {
+    padding-top: 16px;
+}
+
+
+/* Responsive Heading */
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2rem;
+    }
+}

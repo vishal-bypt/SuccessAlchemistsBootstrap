@@ -33,7 +33,11 @@
 .nav_text_div {
     font-size: 20px;
     font-weight: 500;
-    line-height: 28.9px;
+    color: #222020;
+}
+
+.nav-link {
+    color: #222020;
 }
 
 .events_div {
@@ -56,8 +60,21 @@
     color: #fff;
 }
 
+.navbar {
+    padding: 0px 0px 16px 0px;
+}
+
+.navbar-expand-lg .navbar-nav .contact_div.nav-link {
+    padding-left: 32px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 0px;
+    padding-right: 32px;
+}
+
 .active-link {
-    color: #0D9A73;
+    color: #418EF8;
 }
 
 .inactive-link {

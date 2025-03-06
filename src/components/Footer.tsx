@@ -11,18 +11,18 @@ import Youtube from "../../public/assets/images/Youtube.png";
 const Footer = () => {
   return (
     <div className="d-flex flex-column gap-1">
-      <footer className=" p-5 mt-5 border-0 fot">
+      <footer className=" p-5 border-0 fot">
         <div className="row gx-4">
           <div className="col-12 col-md-6 col-lg-3 d-flex flex-column">
-            <Image src={logo} alt="logo" className="main_logo mb-3 img-fluid" />
-            <p className="text-muted">
+            <Image src={logo} alt="logo" className="main_logo img-fluid" />
+            <p className="footer-logo-text mt-3">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
             </p>
           </div>
           <div className="col-12 col-md-6 col-lg-3 d-flex flex-column">
             <h5>Explore</h5>
-            <ul className="list-unstyled">
+            <ul className="list-unstyled mt-3">
               {[
                 "Home",
                 "About us",
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
           <div className="col-12 col-md-6 col-lg-3 d-flex flex-column ">
             <h5>Contact Info</h5>
-            <ul className="list-unstyled">
+            <ul className="list-unstyled mt-3">
               <li className="mb-2 d-flex align-items-center gap-2">
                 <Image src={Email} alt="email" className="icon-img" />
                 <p className="mb-0">ajay@hiraskar.com</p>
@@ -59,7 +59,7 @@ const Footer = () => {
           </div>
           <div className="col-12 col-md-6 col-lg-3 d-flex flex-column  ">
             <h5>Social Networks</h5>
-            <div className="d-flex gap-3">
+            <div className="d-flex gap-3 mt-3">
               {[Facebook, Instagram, Youtube, Linkedin, Twitter].map(
                 (icon, index) => (
                   <Image

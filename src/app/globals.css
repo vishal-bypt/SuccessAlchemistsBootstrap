@@ -64,6 +64,12 @@ p {
     margin-bottom: 0px !important;
 }
 
+.innerContainer {
+    width: 90%;
+    max-width: 600px;
+    padding: 0px 0px 0px 64px;
+}
+
 @media (prefers-color-scheme: dark) {
     html {
         color-scheme: dark;

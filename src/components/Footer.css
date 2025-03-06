@@ -1,14 +1,14 @@
-
 .main_logo {
     width: 150px;
     height: auto;
 }
+
 .icon-img {
     width: 24px;
     height: 24px;
 }
 
-.fot{
+.fot {
     background-color: #ededed;
 }
 
@@ -16,7 +16,8 @@
     width: 32px;
     height: 32px;
 }
-.footer-div{
+
+.footer-div {
     padding-top: 2rem;
     padding-bottom: 2rem;
     padding-left: 0.5rem;
@@ -24,18 +25,22 @@
     background-color: white;
     border-radius: 24px;
 }
+
+.footer-logo-text {
+    color: #222020;
+    font-size: 16px;
+}
+
 @media (max-width: 768px) {
     .bd-footer {
-        text-align: center; 
+        text-align: center;
     }
-
     .icon-img,
     .social-icon {
         width: 28px;
         height: 28px;
     }
-
     .d-flex {
-        justify-content: center; 
+        justify-content: center;
     }
 }

@@ -45,7 +45,7 @@ const Home = () => {
 
   return (
     <div
-      className="hero-section p-1 box-shadow mt-3"
+      className="hero-section box-shadow"
       style={{ display: "flex", gap: "16px", flexDirection: "column" }}
     >
       {/* <div className="bg-warning radios"> */}
@@ -275,19 +275,19 @@ const Home = () => {
         </div>
         <div>
           <div className="row">
-            <div className="col-md-6 fourth_component_bottom_component_gray_light right_border_div ">
+            <div className="col-md-6 fourth_component_bottom_component_gray_light right_border_div border-bottom">
               <div className="number_div">1</div>
               <div className="text_div">
                 Developing a core customer-centric strategy
               </div>
             </div>
-            <div className="col-md-6 fourth_component_bottom_component_brack_div">
+            <div className="col-md-6 fourth_component_bottom_component_brack_div border-bottom">
               <div className="number_div">2</div>
               <div className="text_div">Execution planning</div>
             </div>
           </div>
           <div className="row">
-            <div className="col-md-6 fourth_component_bottom_component_brack_div right_border_div">
+            <div className="col-md-6 fourth_component_bottom_component_brack_div right_border_div ">
               <div className="number_div">3</div>
               <div className="text_div">
                 Finding and retaining the right talent, and
@@ -387,7 +387,7 @@ const Home = () => {
             </div>
           </div>
           <div className="col-md-3">
-            <div className="selected_box">
+            <div className="unselected_box">
               <div
                 style={{
                   display: "flex",
@@ -395,14 +395,14 @@ const Home = () => {
                   alignItems: "center",
                 }}
               >
-                <div className="selected_box_card_title">Execution</div>
+                <div className="unselected_box_card_title">Execution</div>
                 <Image
                   src={execution_icon}
                   className="img-fluid"
                   alt="right side image"
                 />
               </div>
-              <div className="selected_box_text">
+              <div className="unselected_box_text">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry.
               </div>
@@ -505,7 +505,8 @@ const Home = () => {
       </div>
       <div className="seventh_components">
         <div className="row">
-          <div className="col-md-4 seventh_components_card_box ">
+          <div className="col-md-4">
+            <div className="seventh_components_card_box">
             <div className="card video-card">
               <div className="video-thumbnail">
                 <iframe
@@ -521,11 +522,14 @@ const Home = () => {
                 </h5>
               </div>
             </div>
+            </div>
           </div>
-          <div className="col-md-4 seventh_components_card_box">
+          <div className="col-md-4">
+          <div className="seventh_components_card_box">
             <div className="card video-card">
               <div className="video-thumbnail">
                 <iframe
+                className="video-border"
                   width="100%"
                   height="200px"
                   src="https://www.youtube.com/embed/pDNju3Ookq4"
@@ -539,7 +543,9 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-4 seventh_components_card_box">
+          </div>
+          <div className="col-md-4">
+            <div className="seventh_components_card_box">
             <div className="card video-card">
               <div className="video-thumbnail">
                 <iframe
@@ -552,6 +558,7 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title">ScaleUp - Anaheim Highlights</h5>
               </div>
+            </div>
             </div>
           </div>
         </div>

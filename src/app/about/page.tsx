@@ -1,6 +1,6 @@
 "use client";
 import "./about.css";
-import image2 from "../../../src/app/about/images/Image2.png";
+import image2 from "../../../src/app/about/images/Image2.svg";
 import Image from "next/image";
 import curve from "../../../src/app/about/images/curve.png";
 import graph from "../../../src/app/about/images/Graph.png";
@@ -19,12 +19,12 @@ const About = () => {
         <div className="main_first_div_body">
           <div
             className="innerContainer"
-            style={{ justifyContent: "center", alignItems: "center" }}
+            style={{ alignItems: "center" }}
           >
-            <p className="heading" style={{ color: "white" }}>
+            <p className="heading" style={{ color: "white",textAlign:'left' }}>
               About us
             </p>
-            <p className="subText" style={{ color: "white" }}>
+            <p className="subText" style={{ color: "white",textAlign:'left'  }}>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the

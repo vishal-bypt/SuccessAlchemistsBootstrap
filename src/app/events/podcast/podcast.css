@@ -23,12 +23,6 @@
     align-items: center;
 }
 
-.innerContainer {
-    width: 90%;
-    max-width: 600px;
-    padding: 40px;
-}
-
 .heading {
     font-size: 3rem;
     font-weight: 500;
@@ -112,4 +106,8 @@
     top: 0;
     right: 0;
     border-radius: 24px;
+}
+
+.row-gap {
+    row-gap: 24px;
 }

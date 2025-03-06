@@ -8,8 +8,6 @@ import curve1 from "../../../../src/app/about/images/curve1.png";
 
 const page = () => {
 
-   
-
     return (
         <div className="main_body_div">
             <div className="first_div_layout">

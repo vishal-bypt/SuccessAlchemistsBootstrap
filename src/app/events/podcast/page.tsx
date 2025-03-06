@@ -7,9 +7,25 @@ import idea_icon from "../../../app/about/images/idea_icon.png"
 const page = () => {
     return (
         <div className="main_body_div">
-
+            <div className="first_div_layout">
+                <div className="main_first_div_body">
+                    <div
+                        className="innerContainer"
+                        style={{ justifyContent: "center", alignItems: "center" }}
+                    >
+                        <p className="heading" style={{ color: "white" }}>
+                          Pathfinder podcast
+                        </p>
+                        <p className="subText" style={{ color: "white" }}>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry. Lorem Ipsum has been the industry's standard dummy text
+                            ever since the
+                        </p>
+                    </div>
+                </div>
+            </div>
             <div className="seventh_components shadow-lg">
-                <div className="row">
+                <div className="row row-gap">
                     <div className="col-md-4">
                         <div className="seventh_components_card_box">
                             <div className="card video-card">

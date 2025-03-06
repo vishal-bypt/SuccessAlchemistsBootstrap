@@ -23,12 +23,6 @@
     align-items: center;
 }
 
-.innerContainer {
-    width: 90%;
-    max-width: 600px;
-    padding: 40px;
-}
-
 .heading {
     font-size: 3rem;
     font-weight: 500;
