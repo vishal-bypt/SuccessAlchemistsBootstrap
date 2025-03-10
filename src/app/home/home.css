@@ -444,7 +444,7 @@
 .seventh_components {
     /* display: flex; */
     border-radius: 24px;
-    padding: 62px;
+    padding: 64px;
     /* gap: 16px; 
   justify-content: center; */
     background: #ffffff;
@@ -519,8 +519,8 @@
     .client-review-section {
         width: 100%;
         border-radius: 24px;
-        padding: 32px;
-        gap: 32px;
+        padding: 24px;
+        gap: 24px;
         display: flex;
         position: relative;
         flex-direction: column;
@@ -537,6 +537,15 @@
         font-weight: 600;
         font-size: 25px;
         line-height: 30.6px;
+    }
+    .video_detail_div {
+        gap: 16px;
+    }
+    .swiper-pagination-fraction,
+    .swiper-pagination-custom,
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+        left: 0px !important;
     }
     .video_detail_div_title_text {
         color: #fff;
@@ -559,7 +568,7 @@
         border-radius: 24px;
         display: flex;
         flex-direction: column;
-        padding: 50px;
+        padding: 24px;
         gap: 24px;
         background: #fff;
     }
@@ -570,20 +579,70 @@
     }
     .fourth_component_p_tag {
         font-weight: 400;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 20.68px;
     }
     .fifth_component {
         background: #fff;
         border-radius: 24px;
-        padding: 40px;
+        padding: 24px;
         gap: 24px;
+    }
+    .fifth_component_sub_title_div {
+        font-size: 16px;
+    }
+    .unselected_box_text {
+        font-size: 16px;
+        line-height: 20px;
+        min-height: 80px;
     }
     .sixth_component {
         width: 100%;
         border-radius: 24px;
-        padding: 40px;
+        padding: 24px;
         background: linear-gradient(45deg, #418ef8, #018bd3, #418ef8);
+    }
+    .fourth_component_bottom_component_gray_light {
+        padding: 24px 24px;
+    }
+    .fourth_component_bottom_component_brack_div {
+        padding: 24px 24px;
+    }
+    .number_div {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    .sixth_component_header_div {
+        font-size: 32px;
+        line-height: calc(32px * 1.2);
+    }
+    .sixth_component_title_div {
+        font-size: 18px;
+        line-height: calc(18px * 1.2);
+        margin-bottom: 8px;
+    }
+    .sixth_component_sub_header_div {
+        font-size: 20px;
+        line-height: calc(20px * 1.5);
+    }
+    .right_div_sixth_component {
+        gap: 16px;
+        padding: 16px 16px 0px;
+    }
+    .sixth_component_btn_div {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+    .sixth_component_btn_div img {
+        width: 32px;
+        height: 32px;
+    }
+    .seventh_components {
+        padding: 16px;
+    }
+    .seventh_components div.row {
+        row-gap: 16px;
     }
 }
 
@@ -738,7 +797,7 @@
     .client-review-section {
         width: 100%;
         border-radius: 24px;
-        padding: 48px;
+        padding: 64px;
         gap: 32px;
         display: flex;
         position: relative;
@@ -800,7 +859,7 @@
     .fifth_component {
         background: #fff;
         border-radius: 24px;
-        padding: 58px;
+        padding: 64px;
         gap: 24px;
     }
     .sixth_component {

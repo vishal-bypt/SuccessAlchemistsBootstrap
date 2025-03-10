@@ -11,7 +11,7 @@ import Youtube from "../../public/assets/images/Youtube.png";
 const Footer = () => {
   return (
     <div className="d-flex flex-column gap-1">
-      <footer className=" p-5 border-0 fot">
+      <footer className="p-3 p-md-5 border-0 fot">
         <div className="row gx-4">
           <div className="col-12 col-md-6 col-lg-3 d-flex flex-column">
             <Image src={logo} alt="logo" className="main_logo img-fluid" />

@@ -51,7 +51,7 @@ const About = () => {
           {/* Right Image Section */}
           <div className="col-md-6 text-center">
             <Image
-              className="img-fluid rounded image"
+              className="img-fluid rounded journey-image"
               src={image2}
               alt="img2"
             />
@@ -79,12 +79,12 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="forth_div_layout row align-items-center bg-white shadow-sm rounded-4 p-4">
+      <div className="forth_div_layout row align-items-center bg-white shadow-sm">
         <div className="col-lg-6 col-md-12">
           <div>
-            <p className="fs-2 fw-semibold text-dark">Key Factors for Success:</p>
-            <p className="fs-2 fw-semibold text-dark">Accelerated Growth, Greater</p>
-            <p className="fs-2 fw-semibold text-dark">Value, and Simplicity</p>
+            <p className="key-text">Key Factors for Success:</p>
+            <p className="key-text">Accelerated Growth, Greater</p>
+            <p className="key-text">Value, and Simplicity</p>
           </div>
           <div className="mt-4">
             {[
@@ -94,7 +94,7 @@ const About = () => {
             ].map((text, index) => (
               <div key={index} className="d-flex align-items-center gap-3 mb-3">
                 <Image src={forward} alt="forward" width={24} height={24} />
-                <p className="fs-4 fw-medium">{text}</p>
+                <p className="forward-text">{text}</p>
               </div>
             ))}
           </div>
