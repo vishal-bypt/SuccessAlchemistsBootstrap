@@ -65,7 +65,7 @@ const page = () => {
                         <span className="badge rounded-pill badge-pill">Live webinar</span>
                         <div className="pt-2">
                           <p>
-                            <svg className="me-2" width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ verticleAlign: 'sub' }}>
+                            <svg className="me-2" width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ verticalAlign: 'sub' }}>
                               <path d="M4 2.5V4.9M12 2.5V4.9" stroke="#FBA819" stroke-width="2" stroke-linecap="round" />
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.10002C0 6.59122 0 5.83762 0.4688 5.36882C0.9376 4.90002 1.6912 4.90002 3.2 4.90002H12.8C14.3088 4.90002 15.0624 4.90002 15.5312 5.36882C16 5.83762 16 6.59122 16 8.10002C16 8.47682 16 8.66562 15.8832 8.78322C15.7656 8.90002 15.576 8.90002 15.2 8.90002H0.8C0.4232 8.90002 0.2344 8.90002 0.1168 8.78322C0 8.66562 0 8.47602 0 8.10002ZM0 15.3C0 16.8088 0 17.5624 0.4688 18.0312C0.9376 18.5 1.6912 18.5 3.2 18.5H12.8C14.3088 18.5 15.0624 18.5 15.5312 18.0312C16 17.5624 16 16.8088 16 15.3V11.3C16 10.9232 16 10.7344 15.8832 10.6168C15.7656 10.5 15.576 10.5 15.2 10.5H0.8C0.4232 10.5 0.2344 10.5 0.1168 10.6168C0 10.7344 0 10.924 0 11.3V15.3ZM4 12.1H5.6V13.7H4V12.1ZM5.6 15.3H4V16.9H5.6V15.3ZM7.19995 12.1H8.79995V13.7H7.19995V12.1ZM8.79995 15.3H7.19995V16.9H8.79995V15.3ZM10.3999 12.1H11.9999V13.7H10.3999V12.1ZM11.9999 15.3H10.3999V16.9H11.9999V15.3Z" fill="#FBA819" />
                             </svg>Sat 15 Feb 2025  8:30 PM</p>
@@ -113,7 +113,7 @@ const page = () => {
                         <span className="badge rounded-pill badge-pill">Live webinar</span>
                         <div className="pt-2">
                           <p>
-                            <svg className="me-2" width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ verticleAlign: 'sub' }}>
+                            <svg className="me-2" width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ verticalAlign: 'sub' }}>
                               <path d="M4 2.5V4.9M12 2.5V4.9" stroke="#FBA819" stroke-width="2" stroke-linecap="round" />
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.10002C0 6.59122 0 5.83762 0.4688 5.36882C0.9376 4.90002 1.6912 4.90002 3.2 4.90002H12.8C14.3088 4.90002 15.0624 4.90002 15.5312 5.36882C16 5.83762 16 6.59122 16 8.10002C16 8.47682 16 8.66562 15.8832 8.78322C15.7656 8.90002 15.576 8.90002 15.2 8.90002H0.8C0.4232 8.90002 0.2344 8.90002 0.1168 8.78322C0 8.66562 0 8.47602 0 8.10002ZM0 15.3C0 16.8088 0 17.5624 0.4688 18.0312C0.9376 18.5 1.6912 18.5 3.2 18.5H12.8C14.3088 18.5 15.0624 18.5 15.5312 18.0312C16 17.5624 16 16.8088 16 15.3V11.3C16 10.9232 16 10.7344 15.8832 10.6168C15.7656 10.5 15.576 10.5 15.2 10.5H0.8C0.4232 10.5 0.2344 10.5 0.1168 10.6168C0 10.7344 0 10.924 0 11.3V15.3ZM4 12.1H5.6V13.7H4V12.1ZM5.6 15.3H4V16.9H5.6V15.3ZM7.19995 12.1H8.79995V13.7H7.19995V12.1ZM8.79995 15.3H7.19995V16.9H8.79995V15.3ZM10.3999 12.1H11.9999V13.7H10.3999V12.1ZM11.9999 15.3H10.3999V16.9H11.9999V15.3Z" fill="#FBA819" />
                             </svg>Sat 15 Feb 2025  8:30 PM</p>
@@ -160,7 +160,7 @@ const page = () => {
                         <span className="badge rounded-pill badge-pill">Live webinar</span>
                         <div className="pt-2">
                           <p>
-                            <svg className="me-2" width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ verticleAlign: 'sub' }}>
+                            <svg className="me-2" width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ verticalAlign: 'sub' }}>
                               <path d="M4 2.5V4.9M12 2.5V4.9" stroke="#FBA819" stroke-width="2" stroke-linecap="round" />
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.10002C0 6.59122 0 5.83762 0.4688 5.36882C0.9376 4.90002 1.6912 4.90002 3.2 4.90002H12.8C14.3088 4.90002 15.0624 4.90002 15.5312 5.36882C16 5.83762 16 6.59122 16 8.10002C16 8.47682 16 8.66562 15.8832 8.78322C15.7656 8.90002 15.576 8.90002 15.2 8.90002H0.8C0.4232 8.90002 0.2344 8.90002 0.1168 8.78322C0 8.66562 0 8.47602 0 8.10002ZM0 15.3C0 16.8088 0 17.5624 0.4688 18.0312C0.9376 18.5 1.6912 18.5 3.2 18.5H12.8C14.3088 18.5 15.0624 18.5 15.5312 18.0312C16 17.5624 16 16.8088 16 15.3V11.3C16 10.9232 16 10.7344 15.8832 10.6168C15.7656 10.5 15.576 10.5 15.2 10.5H0.8C0.4232 10.5 0.2344 10.5 0.1168 10.6168C0 10.7344 0 10.924 0 11.3V15.3ZM4 12.1H5.6V13.7H4V12.1ZM5.6 15.3H4V16.9H5.6V15.3ZM7.19995 12.1H8.79995V13.7H7.19995V12.1ZM8.79995 15.3H7.19995V16.9H8.79995V15.3ZM10.3999 12.1H11.9999V13.7H10.3999V12.1ZM11.9999 15.3H10.3999V16.9H11.9999V15.3Z" fill="#FBA819" />
                             </svg>Sat 15 Feb 2025  8:30 PM</p>
@@ -259,23 +259,23 @@ const page = () => {
          
             <div className="form-floating mb-3">       
               <input type="text" className="form-control contact-input" id="floatingInput" placeholder="E.g. Aman Rai" />
-                <label for="floatingInput">Your Name <span>*</span></label>
+                <label htmlFor="floatingInput">Your Name <span>*</span></label>
             </div>
             <div className="form-floating mb-3">       
               <input type="text" className="form-control contact-input" id="floatingInput" placeholder="E.g. Aman Rai" />
-                <label for="floatingInput">Designation <span>*</span></label>
+                <label htmlFor="floatingInput">Designation <span>*</span></label>
             </div>
             <div className="form-floating mb-3">       
               <input type="text" className="form-control contact-input" id="floatingInput" placeholder="E.g. Aman Rai" />
-                <label for="floatingInput">Company Name <span>*</span></label>
+                <label htmlFor="floatingInput">Company Name <span>*</span></label>
             </div>
             <div className="form-floating mb-3">       
               <input type="text" className="form-control contact-input" id="floatingInput" placeholder="E.g. Aman Rai" />
-                <label for="floatingInput">Business Email Address <span>*</span></label>
+                <label htmlFor="floatingInput">Business Email Address <span>*</span></label>
             </div>
             <div className="form-floating mb-3">       
               <input type="text" className="form-control contact-input" id="floatingInput" placeholder="E.g. Aman Rai" />
-                <label for="floatingInput">Mobile number <span>*</span></label>
+                <label htmlFor="floatingInput">Mobile number <span>*</span></label>
             </div>
           
           </form>

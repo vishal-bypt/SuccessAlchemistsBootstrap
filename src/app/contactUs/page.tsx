@@ -37,25 +37,25 @@ const ContactUs = () => {
                             <div className="col-md-4">
                                 <div className="form-floating">
                                     <input type="text" className="form-control" id="floatingInput" placeholder="name@example.com" />
-                                    <label for="floatingInput">Name</label>
+                                    <label htmlFor="floatingInput">Name</label>
                                 </div>
                             </div>
                             <div className="col-md-4">
                                 <div className="form-floating">
                                     <input type="text" className="form-control" id="floatingInput" placeholder="name@example.com" />
-                                    <label for="floatingInput">Email</label>
+                                    <label htmlFor="floatingInput">Email</label>
                                 </div>
                             </div>
                             <div className="col-md-4">
                                 <div className="form-floating">
                                     <input type="text" className="form-control" id="floatingInput" placeholder="name@example.com" />
-                                    <label for="floatingInput">Phone number</label>
+                                    <label htmlFor="floatingInput">Phone number</label>
                                 </div>
                             </div>
                             <div className="col-md-12">
                                 <div className="form-floating">
                                     <textarea className="form-control contact-textrea" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                                    <label for="floatingTextarea">Message</label>
+                                    <label htmlFor="floatingTextarea">Message</label>
                                 </div>
                             </div>
                         </div>
