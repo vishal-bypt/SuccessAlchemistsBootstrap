@@ -12,7 +12,7 @@ import people_icon from "./images/people_icon.png";
 import idea_icon from "./images/idea_icon.png";
 import Vector from "./images/Vector.png";
 import market_analysis from "./images/market_analysis.png";
-import execution_icon from "./images/execution_icon.png";
+import execution_icon from "./images/execution_icon.svg";
 import money_icon from "./images/money_icon.png";
 import peoples_meeting_image from "./images/peoples_meeting_image.jpeg";
 import Double_arrow from "./images/Double_arrow.png";
@@ -52,18 +52,12 @@ const Home = () => {
       <div className="first_div_layout">
         <div className="main_first_div_body" />
         <div
-          className="container"
+          className="container main_first_div_content"
           style={{ zIndex: 1, padding: "72px 64px", position: "absolute" }}
         >
           <div className="row align-items-center no-gutters">
-            <div className=" col-lg-7 col-md-12 col-xs-12">
-              <div
-                style={{
-                  display: "flex",
-                  gap: "32px",
-                  flexDirection: "column",
-                }}
-              >
+            <div className="col-lg-8 col-md-12 col-xs-12">
+              <div className="hero-container">
                 <div className="inner_first_div">
                   Are you ready to
                   <br /> have more{" "}
@@ -72,8 +66,8 @@ const Home = () => {
                 </div>
                 <div className="inner_second_div">
                   Learn from India’s first certified Scaling Up coach{" "}
-                  <span className="inner_second_div_span">Ajay Hiraskar </span>
-                  who has led the implementation of the Scaling Up performance
+                  <span className="inner_second_div_span">Ajay Hiraskar </span> 
+                   who has led the implementation of the Scaling Up performance
                   platform across many industry verticals. This platform has
                   already guided more than 80,000 companies world wide to
                   succeed and grow.
@@ -87,7 +81,7 @@ const Home = () => {
         </div>
       </div>
       <div className="second_div_layout">
-        <div className="row" style={{ width: "auto", overflow: "auto" }}>
+        <div className="row" style={{ width: "auto", overflowX: "auto",overflowY:'hidden' }}>
           <div className="second_div_first_text col-md-4">
             Trusted by Thousand top brands
           </div>
@@ -190,7 +184,7 @@ const Home = () => {
           >
             {[...Array(10)]?.map((d: any, i: any) => (
               <SwiperSlide key={i}>
-                <div className="row" style={{ display: "flex", gap: "24px" }}>
+                <div className="row slider-row">
                   <div className="video col-md-4">
                     <div className="ratio ratio-16x9">
                       <iframe
@@ -308,15 +302,10 @@ const Home = () => {
             Guaranteed growth solutions
           </div>
           <div className="col-md-12 fifth_component_sub_title_div">
-            <div>
-              {" "}
-              We help ambitious entrepreneurs build successful & sustainable
-            </div>
-            <div>
-              {" "}
-              businesses resulting in unlocking of large scale potential
+            
+              We help ambitious entrepreneurs build successful & sustainable businesses resulting in unlocking of large scale potential
               business value
-            </div>
+           
           </div>
         </div>
         <div
@@ -328,7 +317,7 @@ const Home = () => {
             height: "max-content",
           }}
         >
-          <div className="col-md-3">
+          <div className="col-md-6 col-lg-3">
             <div className="unselected_box">
               <div
                 style={{
@@ -340,7 +329,7 @@ const Home = () => {
                 <div className="unselected_box_card_title">People</div>
                 <Image
                   src={people_icon}
-                  className="img-fluid"
+                  className="img-fluid growth-icon"
                   alt="right side image"
                 />
               </div>
@@ -357,7 +346,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-6 col-lg-3">
             <div className="unselected_box">
               <div
                 style={{
@@ -369,7 +358,7 @@ const Home = () => {
                 <div className="unselected_box_card_title">Strategy</div>
                 <Image
                   src={market_analysis}
-                  className="img-fluid"
+                  className="img-fluid growth-icon"
                   alt="right side image"
                 />
               </div>
@@ -386,7 +375,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-6 col-lg-3">
             <div className="unselected_box">
               <div
                 style={{
@@ -398,7 +387,7 @@ const Home = () => {
                 <div className="unselected_box_card_title">Execution</div>
                 <Image
                   src={execution_icon}
-                  className="img-fluid"
+                  className="img-fluid growth-icon"
                   alt="right side image"
                 />
               </div>
@@ -415,7 +404,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-6 col-lg-3">
             <div className="unselected_box">
               <div
                 style={{
@@ -427,7 +416,7 @@ const Home = () => {
                 <div className="unselected_box_card_title">Cash</div>
                 <Image
                   src={money_icon}
-                  className="img-fluid"
+                  className="img-fluid growth-icon"
                   alt="right side image"
                 />
               </div>

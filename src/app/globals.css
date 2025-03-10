@@ -75,3 +75,9 @@ p {
         color-scheme: dark;
     }
 }
+
+@media only screen and (min-width: 601px) and (max-width: 1180px) {
+    .second_div_layout {
+        padding: 16px 40px;
+    }
+}

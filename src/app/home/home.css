@@ -216,9 +216,10 @@
 }
 
 .fourth_component_p_tag {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 24px;
     line-height: 34.68px;
+    color: #616161;
 }
 
 .fourth_component_bottom_component_gray_light {
@@ -252,7 +253,7 @@
     background: #018bd3;
     color: #fff;
     font-size: 23px;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .right_border_div {
@@ -264,7 +265,7 @@
 }
 
 .text_div {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 32px;
     line-height: 46.24px;
     color: #222020;
@@ -294,14 +295,15 @@
 
 .fifth_component_sub_title_div {
     font-weight: 400;
-    font-size: 20px;
-    line-height: 28.9px;
+    font-size: 24px;
     color: #616161;
+    margin-top: 8px;
 }
 
 .unselected_box {
     position: relative;
-    height: 153px;
+    min-height: 180px;
+    /* height: 153px; */
     border-top-right-radius: 16px;
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
@@ -311,6 +313,9 @@
     border: 0.5px solid #dedede;
     transition: 0.5s;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .unselected_box:hover {
@@ -428,13 +433,12 @@
     display: flex;
     width: fit-content;
     border-radius: 12px;
-    gap: 8px;
-    padding: 16px 32px;
+    padding: 12px 32px;
     background: #fba819;
     color: #fff;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 34.68px;
+    font-size: 20px;
+    align-items: center;
 }
 
 .seventh_components {
@@ -456,6 +460,27 @@
 .card.video-card .video-thumbnail iframe {
     border-radius: 16px;
     height: 260px;
+}
+
+.unselected_box:hover .growth-icon {
+    filter: invert(1);
+}
+
+.slider-row {
+    display: flex;
+    gap: 24px;
+}
+
+.main_first_div_content {
+    position: absolute;
+    z-index: 1;
+    padding: 72px 64px;
+}
+
+.hero-container {
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
 }
 
 @media only screen and (max-width: 767px) {
@@ -521,7 +546,7 @@
     }
     .text_div {
         color: #222020;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 24px;
         line-height: 32.24px;
     }
@@ -563,6 +588,9 @@
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1180px) {
+    .hero-container {
+        gap: 24px;
+    }
     .inner_first_div {
         font-size: 32px;
         font-weight: 500;
@@ -570,10 +598,11 @@
         line-height: 43.4px;
     }
     .inner_second_div {
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 500;
         color: #fff;
-        line-height: 24.68px;
+        line-height: calc(20px * 1.4);
+        width: 80%;
     }
     .second_div_first_text {
         color: #000;
@@ -587,17 +616,20 @@
         border-radius: 24px;
         background: #fff;
         /* justify-content:space-between ; */
-        padding: 16px 60px;
+        padding: 16px 40px;
     }
     .client-review-section {
         width: 100%;
         border-radius: 24px;
-        padding: 32px;
+        padding: 40px;
         gap: 32px;
         display: flex;
         position: relative;
         flex-direction: column;
         background: linear-gradient(45deg, #418ef8, #018bd3, #418ef8);
+    }
+    .slider-row {
+        gap: 0px;
     }
     .client_review_text {
         color: #fff;
@@ -619,7 +651,7 @@
     }
     .text_div {
         color: #222020;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 24px;
         line-height: 32.24px;
     }
@@ -635,7 +667,7 @@
         width: 100%;
         height: fit-content;
         border-radius: 24px;
-        padding: 60px;
+        padding: 40px;
         display: flex;
         flex-direction: column;
         gap: 28px;
@@ -654,14 +686,25 @@
     .fifth_component {
         background: #fff;
         border-radius: 24px;
-        padding: 48px;
+        padding: 40px;
         gap: 24px;
     }
     .sixth_component {
         width: 100%;
         border-radius: 24px;
-        padding: 48px;
+        padding: 40px;
         background: linear-gradient(45deg, #418ef8, #018bd3, #418ef8);
+    }
+    .fourth_component_bottom_component_gray_light {
+        padding: 24px 24px;
+    }
+    .fourth_component_bottom_component_brack_div {
+        padding: 24px 24px;
+    }
+    .number_div {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
     }
 }
 
@@ -722,7 +765,7 @@
     }
     .text_div {
         color: #222020;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 28px;
         line-height: 39.24px;
     }
