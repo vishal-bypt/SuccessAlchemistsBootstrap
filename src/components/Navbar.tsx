@@ -50,107 +50,189 @@ const NavbarMenu = () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
-  // /Users/byptmacbookpro704/Desktop/topicsService/success-alchemists/success-alchemists/public/assets/images/main_logo.png
   return (
     // <div className="main_layout">
     // <div className="main_logo" />
     <Navbar expand="lg" className="">
-   
-        <Navbar.Brand href="/home">
-          <div className="main_logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link
-              href="/home"
+      <Navbar.Brand href="/home">
+        <div className="main_logo" />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ms-auto">
+          <Nav.Link
+            href="/home"
+            className={`${
+              pathname === "/home"
+                ? "active-link font-semibold"
+                : "inactive-link font-normal"
+            } text-sm xl:text-xl font-barlow`}
+          >
+            <div
               className={`${
                 pathname === "/home"
                   ? "active-link font-semibold"
                   : "inactive-link font-normal"
-              } text-sm xl:text-xl font-barlow`}
+              } home_text_div nav_text_div`}
             >
-              <div className="home_text_div nav_text_div">Home</div>
-            </Nav.Link>
-            <Nav.Link
-              href="/about"
+              Home
+            </div>
+          </Nav.Link>
+          <Nav.Link
+            href="/about"
+            className={`${
+              pathname === "/about"
+                ? "active-link font-semibold"
+                : "inactive-link font-normal"
+            } text-sm xl:text-xl font-barlow`}
+          >
+            <div
               className={`${
                 pathname === "/about"
                   ? "active-link font-semibold"
                   : "inactive-link font-normal"
-              } text-sm xl:text-xl font-barlow`}
+              }  nav_text_div`}
             >
-              <div className="nav_text_div">About us</div>
-            </Nav.Link>
-            <Nav.Link
-              href="/who"
+              About us
+            </div>
+          </Nav.Link>
+          <Nav.Link
+            href="/who"
+            className={`${
+              pathname === "/who"
+                ? "active-link font-semibold"
+                : "inactive-link font-normal"
+            } text-sm xl:text-xl font-barlow`}
+          >
+            <div
               className={`${
                 pathname === "/who"
                   ? "active-link font-semibold"
                   : "inactive-link font-normal"
-              } text-sm xl:text-xl font-barlow`}
+              }  nav_text_div`}
             >
-              <div className="nav_text_div">Who we are</div>
-            </Nav.Link>
-            <Nav.Link
-              href="/success"
+              Who we are
+            </div>
+          </Nav.Link>
+          <Nav.Link
+            href="/success"
+            className={`${
+              pathname === "/success"
+                ? "active-link font-semibold"
+                : "inactive-link font-normal"
+            } text-sm xl:text-xl font-barlow`}
+          >
+            <div
               className={`${
                 pathname === "/success"
                   ? "active-link font-semibold"
                   : "inactive-link font-normal"
-              } text-sm xl:text-xl font-barlow`}
+              } nav_text_div`}
             >
-              <div className="nav_text_div">Our success</div>
-            </Nav.Link>
-            <Nav.Link
-              href="/assessment"
+              Our success
+            </div>
+          </Nav.Link>
+          <Nav.Link
+            href="/assessment"
+            className={`${
+              pathname === "/assessment"
+                ? "active-link font-semibold"
+                : "inactive-link font-normal"
+            } text-sm xl:text-xl font-barlow`}
+          >
+            <div
               className={`${
                 pathname === "/assessment"
                   ? "active-link font-semibold"
                   : "inactive-link font-normal"
-              } text-sm xl:text-xl font-barlow`}
+              } nav_text_div`}
             >
-              <div className="nav_text_div">Quick assessment</div>
-            </Nav.Link>
-            <Nav.Link
-              href="/resources"
+              Quick assessment
+            </div>
+          </Nav.Link>
+          <Nav.Link
+            href="/resources"
+            className={`${
+              pathname === "/resources"
+                ? "active-link font-semibold"
+                : "inactive-link font-normal"
+            } text-sm xl:text-xl font-barlow`}
+          >
+            <div
               className={`${
                 pathname === "/resources"
                   ? "active-link font-semibold"
                   : "inactive-link font-normal"
-              } text-sm xl:text-xl font-barlow`}
+              }  nav_text_div`}
             >
-              <div className="nav_text_div">Resources</div>
-            </Nav.Link>
-            {/* <Nav.Link href="#link">Link</Nav.Link> */}
-            <NavDropdown
-              className="nav_text_div text-black"
-              title="Events"
-              id="basic-nav-dropdown"
+              Resources
+            </div>
+          </Nav.Link>
+          <NavDropdown
+            title={<span className={`${
+              [
+                "/events/podcast",
+                "/events/webinar",
+                "/events/basecamp",
+                "/events/webinarDetail"
+              ].includes(pathname)
+                ? "active-link font-semibold"
+                : "inactive-link font-normal"
+            } nav_text_div`}>Events</span>}
+            id="basic-nav-dropdown"
+          >
+            <NavDropdown.Item
+              href="/events/webinarDetail"
+              className={`${
+                pathname === "/events/webinarDetail"
+                  ? "active-link font-semibold"
+                  : "inactive-link font-normal"
+              }  nav_text_div`}
             >
-              <NavDropdown.Item href="#action/3.1">
-                Event Calendar
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/events/webinar">
-                Masterminds Webinar
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                Basecamp Workshop
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">
-                Pathfinders Podcast
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link
-              href="/home"
-              className="contact_div contact_div_text"
-              style={{ color: "white" }}
+              Event Calendar
+            </NavDropdown.Item>
+            <NavDropdown.Item
+              href="/events/webinar"
+              className={`${
+                pathname === "/events/webinar"
+                  ? "active-link font-semibold"
+                  : "inactive-link font-normal"
+              }  nav_text_div`}
             >
-              Contact us
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-    
+              Masterminds Webinar
+            </NavDropdown.Item>
+            <NavDropdown.Item
+              href="/events/basecamp"
+              className={`${
+                pathname === "/events/basecamp"
+                  ? "active-link font-semibold"
+                  : "inactive-link font-normal"
+              }  nav_text_div`}
+            >
+              Basecamp Workshop
+            </NavDropdown.Item>
+            <NavDropdown.Item href="/events/podcast"
+            className={`${
+              pathname === "/events/podcast"
+                ? "active-link font-semibold"
+                : "inactive-link font-normal"
+            }  nav_text_div`}>
+              Pathfinders Podcast
+            </NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Link
+            href="/contactUs"
+            style={{ color: "white" }}
+            className={`${
+              pathname === "/events/basecamp"
+                ? "active-link font-semibold"
+                : "inactive-link font-normal"
+            } contact_div contact_div_text`}
+          >
+            Contact us
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
   );
 };

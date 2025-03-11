@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarMenu from "@/components/Navbar";
 import Footer from "@/components/Footer";
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import TawkChat from '../components/TawkChat';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
       >
         <NavbarMenu />
         {children}
+        <TawkChat />
         <Footer />
       </body>
     </html>
