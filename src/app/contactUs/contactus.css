@@ -30,25 +30,10 @@
     line-height: 1.2;
 }
 
-
-/* Responsive Heading */
-
-@media (max-width: 768px) {
-    .heading {
-        font-size: 2rem;
-    }
-}
-
 .subText {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.5;
-}
-
-@media (max-width: 768px) {
-    .subText {
-        font-size: 1.2rem;
-    }
 }
 
 .second_div_layout {
@@ -78,29 +63,11 @@
     color: rgba(34, 32, 32, 1);
 }
 
-
-/* Responsive heading */
-
-@media (max-width: 768px) {
-    .heading1 {
-        font-size: 2rem;
-    }
-}
-
 .subText1 {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.5;
     color: rgba(97, 97, 97, 1);
-}
-
-
-/* Responsive text */
-
-@media (max-width: 768px) {
-    .subText1 {
-        font-size: 1.2rem;
-    }
 }
 
 .image {
@@ -121,15 +88,13 @@
     width: fit-content;
 }
 
+.btn:hover {
+    background-color: rgba(251, 168, 25, 1);
+    color: #fff;
+}
+
 
 /* Center button on small screens */
-
-@media (max-width: 768px) {
-    .btn {
-        font-size: 1.2rem;
-        padding: 12px 24px;
-    }
-}
 
 .third_div_layout {
     position: relative;
@@ -196,4 +161,26 @@
     position: absolute;
     color: transparent;
     transform: rotateY(180deg);
+}
+
+
+/*Responsive css start here*/
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2rem;
+    }
+    .heading1 {
+        font-size: 2rem;
+    }
+    .subText {
+        font-size: 1.2rem;
+    }
+    .subText1 {
+        font-size: 1.2rem;
+    }
+    .btn {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+    }
 }
