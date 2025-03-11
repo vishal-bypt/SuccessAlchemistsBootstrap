@@ -23,33 +23,9 @@
     align-items: center;
 }
 
-.heading {
-    font-size: 3rem;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-@media (max-width: 768px) {
-    .heading {
-        font-size: 2rem;
-    }
-}
-
-.subText {
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
 .curve {
     position: absolute;
     top: 20
-}
-
-@media (max-width: 768px) {
-    .subText {
-        font-size: 1.2rem;
-    }
 }
 
 .second_div_layout {
@@ -66,7 +42,6 @@
     font-size: 1rem;
     color: rgba(251, 168, 25, 1);
     background-color: rgba(255, 241, 216, 1);
-    border-radius: 4en;
     border-radius: 4rem;
 }
 
@@ -102,28 +77,4 @@
 .input::placeholder {
     color: rgba(97, 97, 97, 1);
     font-size: 1.5rem;
-}
-
-.btn {
-    padding-left: 34px;
-    border-radius: 1rem;
-    background-color: rgba(251, 168, 25, 1);
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-@media(max-width:768) {
-    .btn {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .btn {
-        position: relative !important;
-        font-size: 1.2rem;
-        width: 100%;
-        margin-top: 5px;
-        padding: 0.5rem;
-    }
 }

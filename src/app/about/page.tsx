@@ -35,7 +35,7 @@ const About = () => {
       <div className="second_div_layout">
         <div className="main_second_div_body row align-items-center">
           <div className="innerContainer1 col-md-6 text-center text-md-start">
-            <p className="heading1">We’re all about helping you</p>
+            <p className="section-header">We’re all about helping you</p>
             <p className="subText1">
               At Success Alchemists, we are dedicated to transforming businesses
               through the proven Scaling Up framework developed by Verne
@@ -45,7 +45,7 @@ const About = () => {
               Our approach combines tailored implementation of the Scaling Up
               principles with executive coaching and execution support.
             </p>
-            <button className="btn">Join us on the journey to success</button>
+            <button className="section-btn">Join us on the journey to success</button>
           </div>
 
           {/* Right Image Section */}
@@ -68,13 +68,13 @@ const About = () => {
               <Image className="image2 img-fluid" src={graph} alt="graph" />
             </div>
             <div className="col-12 col-md-6 subContainer2 text-center text-md-start">
-              <p className="heading2">MISSION , VISION , VALUES</p>
+              <p className="section-header" style={{color:'#fff'}}>Mission , Vision , Values</p>
               <p className="subText2">
                 We help ambitious entrepreneurs build successful, profitable &
                 sustainable businesses resulting in unlocking of large-scale
                 potential business value.
               </p>
-              <button className="btn1 mx-auto mx-md-0">REQUEST A QUOTE</button>
+              <button className="section-btn">REQUEST A QUOTE</button>
             </div>
           </div>
         </div>

@@ -30,16 +30,16 @@ const page = () => {
       </div>
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between">
-          <p className="heading">Our latest case studies</p>
-          <button
+          <p className="section-header">Our latest case studies</p>
+          {/* <button
             className="border-0 bg-transparent text-decoration-underline"
             style={{ color: "rgba(251, 168, 25, 1)" }}
           >
             VIEW MORE
-          </button>
+          </button> */}
         </div>
-        <div className="container mt-4">
-          <div className="row g-4">
+        <div className="casestudy-container">
+          <div className="row">
             <div className="col-lg-4 col-md-6 col-sm-12">
               <Image src={Case1} alt="case1" className="img-fluid w-100" />
             </div>
@@ -54,7 +54,7 @@ const page = () => {
       </div>
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between">
-          <p className="heading">Latest blog posts</p>
+          <p className="section-header">Latest blog posts</p>
           <button
             className="border-0 bg-transparent text-decoration-underline"
             style={{ color: "rgba(251, 168, 25, 1)" }}
@@ -62,26 +62,26 @@ const page = () => {
             VIEW MORE
           </button>
         </div>
-        <div className="container mt-4">
-          <div className="row g-4">
+        <div className="casestudy-container">
+          <div className="row">
             <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="card h-100 shadow-lg p-2">
+              <div className="casestudy-card h-100 shadow-lg">
                 <Image
                   src={Case4}
                   className="card-img-top img-fluid"
                   alt="case4"
                 />
                 <div className="card-body">
-                  <div className="gap-2">
-                    <p>
-                      <span className="subText1 px-2 py-1">LoremIpsum</span>
-                    </p>
-                    <h5 className="card-title">Lorem Ipsum</h5>
-                  </div>
-                  <p className="card-text">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum
+                  <p>
+                    <span className="subText1 px-3 py-1">LoremIpsum</span>
                   </p>
+                  <div>
+                    <h5 className="card-title">Lorem Ipsum</h5>
+                    <p className="card-text">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum
+                    </p>
+                  </div>
                   <div className="d-flex flex-row justify-content-between">
                     <div className="d-flex flex-row gap-2 align-items-center">
                       <Image

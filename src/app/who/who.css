@@ -4,6 +4,12 @@
     flex-direction: column;
 }
 
+.team-head {
+    font-size: 40px;
+    font-weight: 500;
+    color: #222020;
+}
+
 .first_div_layout {
     position: relative;
     width: 100%;
@@ -23,33 +29,9 @@
     align-items: center;
 }
 
-.heading {
-    font-size: 3rem;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-@media (max-width: 768px) {
-    .heading {
-        font-size: 2rem;
-    }
-}
-
-.subText {
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
 .curve {
     position: absolute;
     top: 20
-}
-
-@media (max-width: 768px) {
-    .subText {
-        font-size: 1.2rem;
-    }
 }
 
 .second_div_layout {
@@ -96,18 +78,33 @@
 }
 
 .sub_forth_div_layout {
+    margin-top: 24px;
     position: relative;
     width: 100%;
     border-radius: 24px;
-    background-color: rgba(249, 249, 249, 1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    margin: 0;
+    background-color: #F9F9F9;
+    padding: 32px;
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-sub-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .card {
-    padding: 1.5rem;
+    padding: 24px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card-body {
+    padding: 0px;
 }
 
 .btnContainer {
@@ -119,10 +116,19 @@
     gap: 1px
 }
 
-.btn {
-    border: none;
-    width: 2rem;
-    height: 2rem;
+.member-name {
+    font-size: 24px;
+    color: #222020;
+    font-weight: 500;
+}
+
+.member-role {
+    font-size: 20px;
+}
+
+.card-text {
+    color: #616161;
+    margin-top: 8px;
 }
 
 @media (max-width: 1024px) {
