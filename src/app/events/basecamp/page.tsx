@@ -17,7 +17,7 @@ const page = () => {
                         style={{ justifyContent: "center", alignItems: "center" }}
                     >
                         <p className="heading" style={{ color: "white" }}>
-                            Mastermind Webinar
+                          Basecamp
                         </p>
                         <p className="subText" style={{ color: "white" }}>
                             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -30,13 +30,13 @@ const page = () => {
 
             <div className="second_div_layout">
                 <div className="webinar-header">
-                    <h1 className="webinar_heading">Webinar <span className="badge blue-badge">Paid</span></h1>
-                    <button
+                    <h1 className="webinar_heading">Basecamp <span className="badge blue-badge">Paid</span></h1>
+                    {/* <button
                         className="border-0 bg-transparent text-decoration-underline"
                         style={{ color: "rgba(251, 168, 25, 1)" }}
                     >
                         VIEW MORE
-                    </button>
+                    </button> */}
                 </div>
                 <div className="webinar-content">
                     <p className="mb-2">At Success Alchemists, we are dedicated to transforming businesses through the proven Scaling Up framework developed by Verne Harnish. With a diverse client base spanning various industries, we empower organizations to achieve sustainable growth and operational excellence.</p>

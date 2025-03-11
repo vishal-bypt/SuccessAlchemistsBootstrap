@@ -35,12 +35,12 @@ const page = () => {
       <div className="second_div_layout">
         <div className="webinar-header">
           <h1 className="webinar_heading">Webinar <span className="badge green-badge">Free</span></h1>
-          <button
+          {/* <button
             className="border-0 bg-transparent text-decoration-underline"
             style={{ color: "rgba(251, 168, 25, 1)" }}
           >
             VIEW MORE
-          </button>
+          </button> */}
         </div>
         <div className="webinar-content">
           <p className="mb-2">At Success Alchemists, we are dedicated to transforming businesses through the proven Scaling Up framework developed by Verne Harnish. With a diverse client base spanning various industries, we empower organizations to achieve sustainable growth and operational excellence.</p>
