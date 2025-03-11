@@ -128,21 +128,21 @@ const NavbarMenu = () => {
               title="Events"
               id="basic-nav-dropdown"
             >
-              <NavDropdown.Item href="#action/3.1">
+              <NavDropdown.Item href="#">
                 Event Calendar
               </NavDropdown.Item>
               <NavDropdown.Item href="/events/webinar">
                 Masterminds Webinar
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
+              <NavDropdown.Item href="/events/basecamp">
                 Basecamp Workshop
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item href="/events/podcast">
                 Pathfinders Podcast
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link
-              href="/home"
+              href="/contactUs"
               className="contact_div contact_div_text"
               style={{ color: "white" }}
             >
