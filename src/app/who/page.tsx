@@ -244,19 +244,18 @@ const page = () => {
                 Who we are
               </p>
               <p className="subText" style={{ color: "white" }}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the
+              Success Alchemists is a growth acceleration firm dedicated to transforming businesses through strategic insights, structured execution, and leadership development. We partner with entrepreneurs and organizations to drive scalable, sustainable success using the proven Scaling Up Framework.
               </p>
             </div>
           </div>
         </div>
         <div className="second_div_layout">
-          <p className="heading">Our leadership</p>
-          <div className="container my-5">
+          <p className="section-header">Our leadership</p>
+          <div className="leadership-section">
+
             <div className="row align-items-center profile-section">
-              <div className="col-lg-6">
-                <p className="subText">
+              <div className="col-lg-7">
+                <p className="section-subText">
                   Ajay Hiraskar - As the first certified Scaling Up Coach in
                   India, he brings 37 years of experience in starting, building,
                   and growing businesses both locally and globally. His career
@@ -271,7 +270,7 @@ const page = () => {
                   largest start-up conference, TiECon.
                 </p>
               </div>
-              <div className="col-lg-6 d-flex justify-content-center">
+              <div className="col-lg-5 d-flex justify-content-center">
                 <Image
                   src={man}
                   alt="Ajay Hiraskar"
@@ -279,11 +278,10 @@ const page = () => {
                 />
                 {/* <Image src={curve2} alt="curve" className="curve" /> */}
               </div>
-            </div>
-          </div>
-          <div className="container my-5">
+            </div>       
+        
             <div className="row align-items-center profile-section">
-              <div className="col-lg-6 d-flex justify-content-center">
+              <div className="col-lg-5 d-flex justify-content-center">
                 <Image
                   src={man}
                   alt="Ajay Hiraskar"
@@ -291,31 +289,21 @@ const page = () => {
                 />
                 {/* <Image src={curve2} alt="curve" className="curve" /> */}
               </div>
-              <div className="col-lg-6">
-                <p className="subText">
-                  Ajay Hiraskar - As the first certified Scaling Up Coach in
-                  India, he brings 37 years of experience in starting, building,
-                  and growing businesses both locally and globally. His career
-                  spans telecom, IT services, publishing, and industrial
-                  products, where he has led complex projects and large teams
-                  under challenging conditions. As a Scaling Up Coach, he has
-                  helped companies in technology, recruitment, manufacturing,
-                  B2C, and industrial services implement key growth strategies.
-                  For the past decade, he has been an active member of TiE Pune,
-                  serving as a Charter and Governing Council Member. He has also
-                  played a key role in mentoring start-ups and organizing Pune’s
-                  largest start-up conference, TiECon.
+              <div className="col-lg-7">
+                <p className="section-subText">
+                Vikram Panjwani - As the first certified Scaling Up Coach in India, he brings 37 years of experience in starting, building, and growing businesses both locally and globally. His career spans telecom, IT services, publishing, and industrial products, where he has led complex projects and large teams under challenging conditions. As a Scaling Up Coach, he has helped companies in technology, recruitment, manufacturing, B2C, and industrial services implement key growth strategies. For the past decade, he has been an active member of TiE Pune, serving as a Charter and Governing Council Member. He has also played a key role in mentoring start-ups and organizing Pune’s largest start-up conference, TiECon.
                 </p>
               </div>
             </div>
-          </div>
+        
+        </div>
         </div>
         <div className="third_div_layout shadow-lg">
           <Image src={curve1} alt="curve1" className="image3" />
-          <p className="heading" style={{ color: "white" }}>
+          <p className="section-header" style={{ color: "white" }}>
             About Success Alchemists and the Team
           </p>
-          <p className="subText" style={{ color: "white" }}>
+          <p className="team-content" style={{ color: "white" }}>
             At Success Alchemists, we harness the transformative power of the
             Scaling Up framework, with strategic focus on the four pillars of
             PEOPLE, STRATEGY, EXECUTION, and CASH. Since our inception in 2015,
@@ -332,8 +320,8 @@ const page = () => {
           </p>
         </div>
         <div className="forth_div_layout">
-          <p className="heading">Team</p>
-          <p className="subText">
+          <p className="section-header">Team</p>
+          <p className="section-subText">
             We are a dedicated team of high performers, committed to our
             clients’ success. Ajay Hiraskar, our founder and Chief Alchemist, is
             the first certified Scaling Up Coach in India and the sole certified
@@ -345,10 +333,10 @@ const page = () => {
             for clients across industries, enabling us to tailor our approach to
             meet the unique needs of each business we serve.
           </p>
-          <div className="sub_forth_div_layout my-5">
-            <div>
+          <div className="sub_forth_div_layout">
+            <div className="team-sub-container">
               <div className="d-flex flex-row justify-content-between">
-                <p className="heading" style={{ fontSize: 40 }}>
+                <p className="team-head">
                   Scaling Up certified coaches
                 </p>
                 <div className="btnContainer">
@@ -368,8 +356,8 @@ const page = () => {
                   </button>
                 </div>
               </div>
-              <div className="container mt-4">
-                <div className="row g-4">
+             
+                <div className="row">
                   {coaches
                     .slice(currentIndex, currentIndex + itemsPerPage)
                     .map((coach, index) => (
@@ -382,9 +370,9 @@ const page = () => {
                           />
                           <div className="card-body">
                             <div className="gap-2">
-                              <p className="subText">{coach.name}</p>
+                              <p className="member-name">{coach.name}</p>
                               <p
-                                className="subText"
+                                className="member-role"
                                 style={{ color: "rgba(251, 168, 25, 1)" }}
                               >
                                 {coach.role}
@@ -396,14 +384,13 @@ const page = () => {
                       </div>
                     ))}
                 </div>
-              </div>
+             
             </div>
-          </div>
-          <div className="sub_forth_div_layout">
-            <div>
+            <div className="team-sub-container">
               <div className="d-flex flex-row justify-content-between">
-                <p className="heading" style={{ fontSize: 40 }}>
-                  ACCOUNTABILITY TEAM
+                <p className="team-head" >
+                
+                Accountability team
                 </p>
                 <div className="btnContainer">
                   <button
@@ -422,8 +409,8 @@ const page = () => {
                   </button>
                 </div>
               </div>
-              <div className="container mt-4">
-                <div className="row g-4">
+              
+                <div className="row">
                   {coaches1
                     .slice(currentIndex1, currentIndex1+ itemsPerPage)
                     .map((coach, index) => (
@@ -435,10 +422,10 @@ const page = () => {
                             alt={coach.name}
                           />
                           <div className="card-body">
-                            <div className="gap-2">
-                              <p className="subText">{coach.name}</p>
+                            <div>
+                              <p className="member-name">{coach.name}</p>
                               <p
-                                className="subText"
+                                className="member-role"
                                 style={{ color: "rgba(251, 168, 25, 1)" }}
                               >
                                 {coach.role}
@@ -450,9 +437,10 @@ const page = () => {
                       </div>
                     ))}
                 </div>
-              </div>
+             
             </div>
           </div>
+         
         </div>
       </div>
     </div>

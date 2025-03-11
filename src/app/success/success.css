@@ -23,33 +23,9 @@
     align-items: center;
 }
 
-.heading {
-    font-size: 3rem;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-@media (max-width: 768px) {
-    .heading {
-        font-size: 2rem;
-    }
-}
-
-.subText {
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
 .curve {
     position: absolute;
     top: 20
-}
-
-@media (max-width: 768px) {
-    .subText {
-        font-size: 1.2rem;
-    }
 }
 
 .second_div_layout {
@@ -72,4 +48,15 @@
 .image {
     width: 52px;
     height: 52px;
+}
+
+.casestudy-container {
+    margin-top: 16px;
+}
+
+.casestudy-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
