@@ -59,4 +59,30 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    border-radius: 16px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-title {
+    font-size: 24px;
+    color: #222020 !important;
+}
+
+.card-text {
+    margin-top: 4px;
+}
+
+.profile-name {
+    font-size: 20px;
+    color: #222020 !important;
+    font-weight: 500;
+}
+
+.date-text {
+    font-size: 18px;
 }

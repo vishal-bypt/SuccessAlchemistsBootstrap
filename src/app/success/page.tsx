@@ -64,7 +64,7 @@ const page = () => {
         </div>
         <div className="casestudy-container">
           <div className="row">
-            <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="col-lg-4  col-xl-4 col-xxl-3 col-md-6 col-sm-12">
               <div className="casestudy-card h-100 shadow-lg">
                 <Image
                   src={Case4}
@@ -82,7 +82,7 @@ const page = () => {
                       typesetting industry. Lorem Ipsum
                     </p>
                   </div>
-                  <div className="d-flex flex-row justify-content-between">
+                  <div className="d-flex flex-row justify-content-between align-items-center">
                     <div className="d-flex flex-row gap-2 align-items-center">
                       <Image
                         src={User}
@@ -94,10 +94,10 @@ const page = () => {
                           objectFit: "cover",
                         }}
                       />
-                      <p className="subText m-0">Lorem Ipsum</p>
+                      <p className="profile-name m-0">Lorem Ipsum</p>
                     </div>
                     <p
-                      className="subText m-0"
+                      className="date-text m-0"
                       style={{ color: "rgba(97, 97, 97, 1)" }}
                     >
                       Jan 1,2022
@@ -106,25 +106,25 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="card h-100 shadow-lg px-2 py-1">
+            <div className="col-lg-4  col-xl-4 col-xxl-3 col-md-6 col-sm-12">
+              <div className="casestudy-card h-100 shadow-lg">
                 <Image
                   src={Case5}
                   className="card-img-top img-fluid"
                   alt="case5"
                 />
                 <div className="card-body">
-                  <div className="gap-2">
-                    <p>
-                      <span className="subText1 px-2 py-1">LoremIpsum</span>
-                    </p>
-                    <h5 className="card-title">Lorem Ipsum</h5>
-                  </div>
-                  <p className="card-text">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum
+                  <p>
+                    <span className="subText1 px-3 py-1">LoremIpsum</span>
                   </p>
-                  <div className="d-flex flex-row justify-content-between">
+                  <div className="gap-2">
+                    <h5 className="card-title">Lorem Ipsum</h5>
+                    <p className="card-text">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum
+                    </p>
+                  </div>
+                  <div className="d-flex flex-row justify-content-between align-items-center">
                     <div className="d-flex flex-row gap-2 align-items-center">
                       <Image
                         src={User}
@@ -136,10 +136,10 @@ const page = () => {
                           objectFit: "cover",
                         }}
                       />
-                      <p className="subText m-0">Lorem Ipsum</p>
+                      <p className="profile-name m-0">Lorem Ipsum</p>
                     </div>
                     <p
-                      className="subText m-0"
+                      className="date-text m-0"
                       style={{ color: "rgba(97, 97, 97, 1)" }}
                     >
                       Jan 1,2022
@@ -148,25 +148,25 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="card h-100 shadow-lg p-2">
+            <div className="col-lg-4  col-xl-4 col-xxl-3 col-md-6 col-sm-12">
+              <div className="casestudy-card h-100 shadow-lg">
                 <Image
                   src={Case6}
                   className="card-img-top img-fluid"
                   alt="case4"
                 />
                 <div className="card-body">
-                  <div className="gap-2">
-                    <p>
-                      <span className="subText1 p-2">LoremIpsum</span>
-                    </p>
-                    <h5 className="card-title">Lorem Ipsum</h5>
-                  </div>
-                  <p className="card-text">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum
+                  <p>
+                    <span className="subText1 px-3 py-1">LoremIpsum</span>
                   </p>
-                  <div className="d-flex flex-row justify-content-between">
+                  <div className="gap-2">
+                    <h5 className="card-title">Lorem Ipsum</h5>
+                    <p className="card-text">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum
+                    </p>
+                  </div>
+                  <div className="d-flex flex-row justify-content-between align-items-center">
                     <div className="d-flex flex-row gap-2 align-items-center">
                       <Image
                         src={User}
@@ -178,10 +178,53 @@ const page = () => {
                           objectFit: "cover",
                         }}
                       />
-                      <p className="subText m-0">Lorem Ipsum</p>
+                      <p className="profile-name m-0">Lorem Ipsum</p>
                     </div>
                     <p
-                      className="subText m-0"
+                      className="date-text m-0"
+                      style={{ color: "rgba(97, 97, 97, 1)" }}
+                    >
+                      Jan 1,2022
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4  col-xl-4 col-xxl-3 col-md-6 col-sm-12">
+              <div className="casestudy-card h-100 shadow-lg">
+                <Image
+                  src={Case6}
+                  className="card-img-top img-fluid"
+                  alt="case4"
+                />
+                <div className="card-body">
+                  <p>
+                    <span className="subText1 px-3 py-1">LoremIpsum</span>
+                  </p>
+
+                  <div className="gap-2">
+                    <h5 className="card-title">Lorem Ipsum</h5>
+                    <p className="card-text">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum
+                    </p>
+                  </div>
+                  <div className="d-flex flex-row justify-content-between align-items-center">
+                    <div className="d-flex flex-row gap-2 align-items-center">
+                      <Image
+                        src={User}
+                        alt="user"
+                        className="img-fluid"
+                        style={{
+                          width: "40px",
+                          height: "40px",
+                          objectFit: "cover",
+                        }}
+                      />
+                      <p className="profile-name m-0">Lorem Ipsum</p>
+                    </div>
+                    <p
+                      className="date-text m-0"
                       style={{ color: "rgba(97, 97, 97, 1)" }}
                     >
                       Jan 1,2022
