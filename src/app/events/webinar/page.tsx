@@ -187,7 +187,7 @@ const page = () => {
                 </div>
               </div>
             </div>
-          </div>ß
+          </div>
         </div>
       </div>
 
