@@ -31,13 +31,8 @@ const page = () => {
       </div>
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between">
-<<<<<<< Updated upstream
-          <p className="heading">Our latest tool kit</p>
-          <button
-=======
           <p className="section-header">Our latest tool kit</p>
          <button
->>>>>>> Stashed changes
             className="border-0 bg-transparent text-decoration-underline"
             style={{ color: "rgba(251, 168, 25, 1)" }}
           >
@@ -46,16 +41,6 @@ const page = () => {
         </div>
         <div className="container mt-4">
           <div className="row g-4">
-<<<<<<< Updated upstream
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <Image src={Case1} alt="case1" className="img-fluid w-100" />
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <Image src={Case2} alt="case2" className="img-fluid w-100" />
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <Image src={Case3} alt="case3" className="img-fluid w-100" />
-=======
             <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12 image-div">
               <a target="_blank" href="../../../assets/images/PDF/Cash - CASh - Cash Acceleration Strategies.pdf">
               <Image src={Case1} alt="case1" className="toolkit-img img-fluid w-100" />
@@ -92,7 +77,6 @@ const page = () => {
                 <p>Function Accountability Chart</p>
               </div>
               </a>
->>>>>>> Stashed changes
             </div>
          
           </div>
