@@ -5,33 +5,7 @@
 }
 
 .first_div_layout {
-    position: relative;
-    width: 100%;
-    border-radius: 24px;
-    height: 558px;
     background: url(./images/main_layout_image.jpeg) no-repeat center;
-    background-size: cover;
-}
-
-.main_first_div_body {
-    background: linear-gradient(90deg, #e99300, #ffffff00);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    border-radius: 24px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-.second_div_layout {
-    position: relative;
-    width: 100%;
-    border-radius: 24px;
-    background-color: #fff;
-    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
-    padding: 64px;
-    margin: 0;
 }
 
 .main_second_div_body {
@@ -66,21 +40,6 @@
     width: 100%;
 }
 
-.third_div_layout {
-    position: relative;
-    width: 100%;
-    border-radius: 24px;
-    height: auto;
-    /* Make height flexible */
-    background: linear-gradient(to right, rgba(65, 142, 248, 1), rgba(1, 139, 211, 1), rgba(65, 142, 248, 1));
-    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
-    padding: 64px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .main {
     width: 100%;
     display: flex;
@@ -90,7 +49,7 @@
 
 /* Adjust image sizes */
 
-.image1 {
+.mission-curve-img {
     position: absolute;
     max-width: 180px;
     max-height: 180px;
@@ -138,19 +97,6 @@
     display: inline-block;
     width: fit-content;
     border: none;
-}
-
-.forth_div_layout {
-    position: relative;
-    width: 100%;
-    border-radius: 24px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
-    padding: 64px;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
 }
 
 .heading5 {
@@ -245,10 +191,6 @@
     width: auto;
 }
 
-.forth_div_layout {
-    padding: 64px;
-}
-
 .key-text {
     font-size: 48px;
     color: #222020;
@@ -266,8 +208,11 @@
 
 @media (max-width: 768px) {
     .fifth_div_layout {
-        padding: 32px;
+        padding: 16px;
         flex-direction: column;
+    }
+    .main_fifth_div_body {
+        gap: 16px;
     }
     .subContainer3 {
         flex-direction: column;
@@ -281,7 +226,52 @@
         height: 120px;
     }
     .subText4 {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 24px;
+    }
+    .key-text {
+        font-size: 24px;
+    }
+    .forward-text {
+        font-size: 18px;
+    }
+    .mission-curve-img {
+        max-width: 100px;
+        max-height: 100px;
+        border-radius: 0px;
+    }
+    .subText2 {
+        font-size: 20px;
+        text-align: left;
+        line-height: 28px;
+    }
+    .subContainer2 {
+        gap: 8px;
+        margin-top: 16px;
+    }
+    .subText1 {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+    .innerContainer1 {
+        gap: 8px;
+        padding-bottom: 16px;
+    }
+    .heading2 {
+        font-size: 28px;
+    }
+    .circle {
+        gap: 12px;
+    }
+    .circle img {
+        height: 100px;
+        width: 100px;
+    }
+    .circle img.down {
+        width: 18px;
+        height: 10px;
+    }
+    .subContainer3 {
+        gap: 24px;
     }
 }

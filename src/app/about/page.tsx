@@ -58,10 +58,10 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid third_div_layout">
+      <div className="third_div_layout">
         <div className="row align-items-center">
           <div className="col-12 col-md-3 position-absolute text-md-start text-center top-0 start-0">
-            <Image className="image1" src={curve} alt="curve" />
+            <Image className="mission-curve-img" src={curve} alt="curve" />
           </div>
           <div className="col-12 col-md-9 d-flex flex-column flex-md-row justify-content-evenly main">
             <div className="col-12 col-md-6">
@@ -79,7 +79,8 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="forth_div_layout row align-items-center bg-white shadow-sm">
+      <div className="forth_div_layout align-items-center bg-white">
+        <div className="row align-items-center">
         <div className="col-lg-6 col-md-12">
           <div>
             <p className="key-text">Key Factors for Success:</p>
@@ -103,6 +104,7 @@ const About = () => {
         {/* Right Side Image */}
         <div className="col-lg-6 col-md-12 text-center">
           <Image src={img} alt="Key Factors" className="img-fluid rounded" />
+        </div>
         </div>
       </div>
       <div className="fifth_div_layout">

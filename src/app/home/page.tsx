@@ -334,8 +334,7 @@ const Home = () => {
                 />
               </div>
               <div className="unselected_box_text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+              Get the right people in the right seats, aligned with culture and strategy.
               </div>
               <div className="bottom_arrow_div">
                 <Image
@@ -363,8 +362,7 @@ const Home = () => {
                 />
               </div>
               <div className="unselected_box_text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+              Develop a clear, differentiated, and scalable plan for sustainable growth.
               </div>
               <div className="bottom_arrow_div">
                 <Image
@@ -392,8 +390,7 @@ const Home = () => {
                 />
               </div>
               <div className="unselected_box_text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+              Drive disciplined processes to ensure flawless implementation and accountability.
               </div>
               <div className="bottom_arrow_div">
                 <Image
@@ -421,8 +418,7 @@ const Home = () => {
                 />
               </div>
               <div className="unselected_box_text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+              Maintain strong cash flow to fuel growth and avoid financial constraints.
               </div>
               <div className="bottom_arrow_div">
                 <Image
@@ -442,14 +438,9 @@ const Home = () => {
         >
           <div className="col-md-4" style={{ position: "relative" }}>
             <div
-              className="img-fluid"
+              className="img-fluid curve-image"
               style={{
-                position: "absolute",
-                rotate: "-90deg",
-                top: "0px",
-                left: "0px",
-                zIndex: "1",
-                overflow: "hidden",
+               
               }}
             >
               <Image

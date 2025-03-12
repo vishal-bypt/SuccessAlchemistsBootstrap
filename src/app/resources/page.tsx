@@ -1,8 +1,8 @@
 import React from "react";
 import "./resources.css";
-import Case1 from "../../app/resources/images/Case-study1.png";
-import Case2 from "../../app/resources/images/Case-study2.png";
-import Case3 from "../../app/resources/images/Case-study3.png";
+import Case1 from "../../../public/assets/images/scalingUp.png"
+import Case2 from "../../../public/assets/images/FAC.png";
+import Case3 from "../../app/resources/images/ref-book1.webp";
 import Case4 from "../../app/resources/images/Case4.png";
 import Case5 from "../../app/resources/images/Case5.png";
 import Case6 from "../../app/resources/images/Case6.png";
@@ -31,16 +31,22 @@ const page = () => {
       </div>
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between">
+<<<<<<< Updated upstream
           <p className="heading">Our latest tool kit</p>
           <button
+=======
+          <p className="section-header">Our latest tool kit</p>
+         <button
+>>>>>>> Stashed changes
             className="border-0 bg-transparent text-decoration-underline"
             style={{ color: "rgba(251, 168, 25, 1)" }}
           >
             VIEW MORE
-          </button>
+          </button> 
         </div>
         <div className="container mt-4">
           <div className="row g-4">
+<<<<<<< Updated upstream
             <div className="col-lg-4 col-md-6 col-sm-12">
               <Image src={Case1} alt="case1" className="img-fluid w-100" />
             </div>
@@ -49,7 +55,46 @@ const page = () => {
             </div>
             <div className="col-lg-4 col-md-6 col-sm-12">
               <Image src={Case3} alt="case3" className="img-fluid w-100" />
+=======
+            <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12 image-div">
+              <a target="_blank" href="../../../assets/images/PDF/Cash - CASh - Cash Acceleration Strategies.pdf">
+              <Image src={Case1} alt="case1" className="toolkit-img img-fluid w-100" />
+              
+              <div className="overlay">
+                <h2>CASh</h2>
+                <p>Cash Acceleration Strategies</p>
+              </div>
+              </a>
             </div>
+            <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12 image-div">
+              <a target="_blank" href="../../../assets/images/PDF/Cash - POO -  The Power of One.pdf">
+              <Image src={Case1} alt="case2" className="img-fluid w-100" />
+              <div className="overlay">
+                <h2>CASh</h2>
+                <p>The Power of One</p>
+              </div>
+              </a>
+            </div>
+            <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12 image-div">
+            <a target="_blank" href="../../../assets/images/PDF/People - FACe - Function Accountability Chart.pdf">
+              <Image src={Case2} alt="case3" className="img-fluid w-100" />
+              <div className="overlay">
+                <h2>FACe</h2>
+                <p>Function Accountability Chart</p>
+              </div>
+              </a>
+            </div>
+            <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12 image-div">
+            <a target="_blank" href="../../../assets/images/PDF/People - FACe - Function Accountability Chart.pdf">
+              <Image src={Case2} alt="case3" className="img-fluid w-100" />
+              <div className="overlay">
+                <h2>FACe</h2>
+                <p>Function Accountability Chart</p>
+              </div>
+              </a>
+>>>>>>> Stashed changes
+            </div>
+         
           </div>
         </div>
       </div>
@@ -68,7 +113,7 @@ const page = () => {
             <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="card h-100 shadow-lg p-2">
                 <Image
-                  src={Case4}
+                  src={Case3}
                   className="card-img-top img-fluid"
                   alt="case4"
                 />

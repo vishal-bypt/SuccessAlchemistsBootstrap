@@ -108,6 +108,25 @@ p {
     width: fit-content;
 }
 
+.main_first_div_body {
+    background: linear-gradient(90deg, #e99300, #ffffff00);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.first_div_layout {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    height: 558px;
+    background-size: cover;
+}
+
 .section-subText {
     font-size: 24px;
     color: #616161;
@@ -124,6 +143,46 @@ p {
     font-size: 22px;
     margin-top: 16px;
 }
+
+.second_div_layout {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    background-color: #fff;
+    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
+    padding: 64px;
+    margin: 0;
+}
+
+.third_div_layout {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    height: auto;
+    /* Make height flexible */
+    background: linear-gradient(to right, rgba(65, 142, 248, 1), rgba(1, 139, 211, 1), rgba(65, 142, 248, 1));
+    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.forth_div_layout {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.1);
+    padding: 64px;
+    margin: 0;
+}
+
+
+/*media query start here*/
 
 @media (prefers-color-scheme: dark) {
     html {
@@ -146,6 +205,29 @@ p {
     }
     .btn {
         font-size: 1.2rem;
+    }
+    .main_first_div_body {
+        background: linear-gradient(180deg, #e99300, #fff0);
+        border-radius: 16px;
+    }
+    .second_div_layout {
+        padding: 16px;
+        border-radius: 16px;
+    }
+    .section-header {
+        font-size: 28px;
+        text-align: left;
+        line-height: calc(28px * 1.2);
+    }
+    .section-btn {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+    .third_div_layout {
+        padding: 16px;
+    }
+    .forth_div_layout {
+        padding: 16px;
     }
 }
 

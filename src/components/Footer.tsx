@@ -14,7 +14,7 @@ const Footer = () => {
       <footer className="p-3 p-md-5 border-0 fot">
         <div className="row gx-4">
           <div className="col-12 col-md-6 col-lg-3 d-flex flex-column">
-            <Image src={logo} alt="logo" className="main_logo img-fluid" />
+            <Image src={logo} alt="logo" className="Footer_main_logo" style={{width:'150px',height:'auto'}}/>
             <p className="footer-logo-text mt-3">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
@@ -52,7 +52,7 @@ const Footer = () => {
                     D-702, Kumar Presidency Phase 1, Lane no.7, Koregaon Park,
                     Pune 411001
                   </p>
-                  <p className="text-primary">Get direction</p>
+                  <p className="get-direction-text">Get direction</p>
                 </div>
               </li>
             </ul>
