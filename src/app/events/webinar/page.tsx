@@ -184,13 +184,10 @@ const page = () => {
                   <div className="register-btn-div">
                     <button onClick={handleShow}>Register Now</button>
                   </div>
-
                 </div>
-
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
