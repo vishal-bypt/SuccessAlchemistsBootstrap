@@ -17,9 +17,8 @@ const page = () => {
                             Pathfinder podcast
                         </p>
                         <p className="subText" style={{ color: "white" }}>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard dummy text
-                            ever since the
+                        A podcast series where we delve into the inspiring journeys of successful business leaders, founders, and CEOs of Small and Medium-sized enterprises. 
+
                         </p>
                     </div>
                 </div>

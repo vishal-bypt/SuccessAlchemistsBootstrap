@@ -24,9 +24,7 @@ const page = () => {
               Mastermind Webinar
             </p>
             <p className="subText" style={{ color: "white" }}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the
+            An interactive knowledge-sharing session with industry experts who have implemented strategies, insights, and best practices for business growth and transformation.
             </p>
           </div>
         </div>

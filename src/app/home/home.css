@@ -100,7 +100,7 @@
 
 .slider-track img {
     background: #fff;
-    max-height: 50px;
+    height: 50px;
     width: auto;
 }
 
@@ -111,26 +111,6 @@
     to {
         transform: translateX(-50%);
     }
-}
-
-.image_layout_your_logo {
-    min-width: 145.87px;
-    min-height: 48.13px;
-}
-
-.image_layout_lorem_ipsum {
-    min-width: 59.18px;
-    min-height: 65.93px;
-}
-
-.image_layout_o_logo {
-    min-width: 116.8px;
-    min-height: 51.39px;
-}
-
-.image_layout_lorem_ipsum2 {
-    min-width: 68.52px;
-    min-height: 71.64px;
 }
 
 

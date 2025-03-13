@@ -2,7 +2,10 @@ import React from "react";
 import "./resources.css";
 import Case1 from "../../../public/assets/images/scalingUp.png"
 import Case2 from "../../../public/assets/images/FAC.png";
-import Case3 from "../../app/resources/images/ref-book1.webp";
+import Book1 from "../../app/resources/images/ref-book1.webp";
+import Book2 from "../../app/resources/images/ref-book2.png";
+import Book3 from "../../app/resources/images/ref-book3.png";
+import Book4 from "../../app/resources/images/ref-book4.png";
 import Case4 from "../../app/resources/images/Case4.png";
 import Case5 from "../../app/resources/images/Case5.png";
 import Case6 from "../../app/resources/images/Case6.png";
@@ -37,54 +40,54 @@ const page = () => {
             style={{ color: "rgba(251, 168, 25, 1)" }}
           >
             VIEW MORE
-          </button> 
+          </button>
         </div>
         <div className="mt-4">
           <div className="row g-4">
-            <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12 image-div">
+            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
               <a target="_blank" href="../../../assets/images/PDF/Cash - CASh - Cash Acceleration Strategies.pdf">
-              <Image src={Case1} alt="case1" className="toolkit-img img-fluid w-100" />
-              
-              <div className="overlay">
-                <h2>CASh</h2>
-                <p>Cash Acceleration Strategies</p>
-              </div>
+                <Image src={Case1} alt="case1" className="toolkit-img img-fluid w-100" />
+
+                <div className="overlay">
+                  <h2>CASh</h2>
+                  <p>Cash Acceleration Strategies</p>
+                </div>
               </a>
             </div>
-            <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12 image-div">
+            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
               <a target="_blank" href="../../../assets/images/PDF/Cash - POO -  The Power of One.pdf">
-              <Image src={Case1} alt="case2" className="img-fluid w-100" />
-              <div className="overlay">
-                <h2>CASh</h2>
-                <p>The Power of One</p>
-              </div>
+                <Image src={Case1} alt="case2" className="img-fluid w-100" />
+                <div className="overlay">
+                  <h2>CASh</h2>
+                  <p>The Power of One</p>
+                </div>
               </a>
             </div>
-            <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12 image-div">
-            <a target="_blank" href="../../../assets/images/PDF/People - FACe - Function Accountability Chart.pdf">
-              <Image src={Case2} alt="case3" className="img-fluid w-100" />
-              <div className="overlay">
-                <h2>FACe</h2>
-                <p>Function Accountability Chart</p>
-              </div>
+            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
+              <a target="_blank" href="../../../assets/images/PDF/People - FACe - Function Accountability Chart.pdf">
+                <Image src={Case2} alt="case3" className="img-fluid w-100" />
+                <div className="overlay">
+                  <h2>FACe</h2>
+                  <p>Function Accountability Chart</p>
+                </div>
               </a>
             </div>
-            <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12 image-div">
-            <a target="_blank" href="../../../assets/images/PDF/People - FACe - Function Accountability Chart.pdf">
-              <Image src={Case2} alt="case3" className="img-fluid w-100" />
-              <div className="overlay">
-                <h2>FACe</h2>
-                <p>Function Accountability Chart</p>
-              </div>
+            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
+              <a target="_blank" href="../../../assets/images/PDF/People - FACe - Function Accountability Chart.pdf">
+                <Image src={Case2} alt="case3" className="img-fluid w-100" />
+                <div className="overlay">
+                  <h2>FACe</h2>
+                  <p>Function Accountability Chart</p>
+                </div>
               </a>
             </div>
-         
+
           </div>
         </div>
       </div>
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between">
-          <p className="section-header">Reference book</p>
+          <p className="section-header">Reference books</p>
           {/* <button
             className="border-0 bg-transparent text-decoration-underline"
             style={{ color: "rgba(251, 168, 25, 1)" }}
@@ -92,173 +95,77 @@ const page = () => {
             VIEW MORE
           </button> */}
         </div>
-        <div className="mt-4">
+        <div className="mt-2">
           <div className="row g-4">
-            <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
+            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
               <div className="card h-100 shadow-lg p-2">
-                <Image
-                  src={Case3}
-                  className="card-img-top img-fluid"
-                  alt="case4"
-                />
+                <div className="card-image">
+                  <Image
+                    src={Book1}
+                    className="card-img-top img-fluid"
+                    alt="case4"
+                  />
+                </div>
                 <div className="card-body">
                   <div className="gap-2">
-                    <p>
-                      <span className="subText1 px-2 py-1">LoremIpsum</span>
-                    </p>
-                    <h5 className="card-title">Lorem Ipsum</h5>
+
+                    <h5 className="card-title">Mastering the rockefeller habits</h5>
                   </div>
-                  <p className="card-text">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum
-                  </p>
-                  <div className="d-flex flex-row justify-content-between">
-                    <div className="d-flex flex-row gap-2 align-items-center">
-                      <Image
-                        src={User}
-                        alt="user"
-                        className="img-fluid"
-                        style={{
-                          width: "40px",
-                          height: "40px",
-                          objectFit: "cover",
-                        }}
-                      />
-                      <p className="subText m-0">Lorem Ipsum</p>
-                    </div>
-                    <p
-                      className="subText m-0"
-                      style={{ color: "rgba(97, 97, 97, 1)" }}
-                    >
-                      Jan 1,2022
-                    </p>
-                  </div>
+
                 </div>
               </div>
             </div>
-            <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
+            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
               <div className="card h-100 shadow-lg p-2">
-                <Image
-                  src={Case5}
-                  className="card-img-top img-fluid"
-                  alt="case5"
-                />
+                <div className="card-image">
+                  <Image
+                    src={Book2}
+                    className="card-img-top img-fluid"
+                    alt="case5"
+                  />
+                </div>
                 <div className="card-body">
                   <div className="gap-2">
-                    <p>
-                      <span className="subText1 px-2 py-1">LoremIpsum</span>
-                    </p>
-                    <h5 className="card-title">Lorem Ipsum</h5>
+                   
+                    <h5 className="card-title">The Greatest business decisions of all time</h5>
                   </div>
-                  <p className="card-text">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum
-                  </p>
-                  <div className="d-flex flex-row justify-content-between">
-                    <div className="d-flex flex-row gap-2 align-items-center">
-                      <Image
-                        src={User}
-                        alt="user"
-                        className="img-fluid"
-                        style={{
-                          width: "40px",
-                          height: "40px",
-                          objectFit: "cover",
-                        }}
-                      />
-                      <p className="subText m-0">Lorem Ipsum</p>
-                    </div>
-                    <p
-                      className="subText m-0"
-                      style={{ color: "rgba(97, 97, 97, 1)" }}
-                    >
-                      Jan 1,2022
-                    </p>
-                  </div>
+                 
                 </div>
               </div>
             </div>
-            <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
+            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
               <div className="card h-100 shadow-lg p-2">
+                <div className="card-image">
                 <Image
-                  src={Case6}
+                  src={Book3}
                   className="card-img-top img-fluid"
                   alt="case4"
                 />
+                </div>
                 <div className="card-body">
-                  <div className="gap-2">
-                    <p>
-                      <span className="subText1 px-2 py-1">LoremIpsum</span>
-                    </p>
-                    <h5 className="card-title">Lorem Ipsum</h5>
+                  <div className="gap-2">                   
+                    <h5 className="card-title">12 Habits of valuable employees</h5>
                   </div>
-                  <p className="card-text">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum
-                  </p>
-                  <div className="d-flex flex-row justify-content-between">
-                    <div className="d-flex flex-row gap-2 align-items-center">
-                      <Image
-                        src={User}
-                        alt="user"
-                        className="img-fluid"
-                        style={{
-                          width: "40px",
-                          height: "40px",
-                          objectFit: "cover",
-                        }}
-                      />
-                      <p className="subText m-0">Lorem Ipsum</p>
-                    </div>
-                    <p
-                      className="subText m-0"
-                      style={{ color: "rgba(97, 97, 97, 1)" }}
-                    >
-                      Jan 1,2022
-                    </p>
-                  </div>
+                
                 </div>
               </div>
             </div>
-            <div className="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
+            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
               <div className="card h-100 shadow-lg p-2">
+                <div className="card-image">
                 <Image
-                  src={Case6}
+                  src={Book4}
                   className="card-img-top img-fluid"
                   alt="case4"
                 />
+                </div>
                 <div className="card-body">
                   <div className="gap-2">
-                    <p>
-                      <span className="subText1 px-2 py-1">LoremIpsum</span>
-                    </p>
-                    <h5 className="card-title">Lorem Ipsum</h5>
+                   
+                    <h5 className="card-title">Scaling up compensation</h5>
                   </div>
-                  <p className="card-text">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum
-                  </p>
-                  <div className="d-flex flex-row justify-content-between">
-                    <div className="d-flex flex-row gap-2 align-items-center">
-                      <Image
-                        src={User}
-                        alt="user"
-                        className="img-fluid"
-                        style={{
-                          width: "40px",
-                          height: "40px",
-                          objectFit: "cover",
-                        }}
-                      />
-                      <p className="subText m-0">Lorem Ipsum</p>
-                    </div>
-                    <p
-                      className="subText m-0"
-                      style={{ color: "rgba(97, 97, 97, 1)" }}
-                    >
-                      Jan 1,2022
-                    </p>
-                  </div>
+                
+                  
                 </div>
               </div>
             </div>
@@ -273,13 +180,13 @@ const page = () => {
         <p className="section-subText" style={{ color: "white" }}>
           You will never miss our latest news or blogs.
         </p>
-        <div className="col-12 col-md-8 col-lg-8 position-relative">
+        <div className="col-12 col-md-8 col-lg-8 position-relative mt-3">
           <input
             type="text"
             className="form-control input"
             placeholder="Email"
           />
-          <button className="col-6 col-md-6 col-lg-5 position-absolute text-white top-0 end-0 h-100 btn">Subscribe Now</button>
+          <button className="col-6 col-md-6 col-lg-4 col-xxl-4 position-absolute text-white top-0 end-0 h-100 subscribe-btn">Subscribe Now</button>
         </div>
       </div>
     </div>

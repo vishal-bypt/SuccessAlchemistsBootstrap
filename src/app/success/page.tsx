@@ -21,9 +21,7 @@ const page = () => {
               Our Success
             </p>
             <p className="subText" style={{ color: "white" }}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the
+            We deliver Accelerated growth, Augmented value and Simplified business across geographies, sectors and domains to our clients.
             </p>
           </div>
         </div>
@@ -52,7 +50,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="second_div_layout">
+     {/*<div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between">
           <p className="section-header">Latest blog posts</p>
           <button
@@ -235,7 +233,7 @@ const page = () => {
             </div>
           </div>
         </div>
-      </div>
+                      </div> */}
     </div>
   );
 };

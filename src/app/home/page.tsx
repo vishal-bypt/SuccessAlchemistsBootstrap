@@ -1,9 +1,14 @@
 "use client";
 import Image from "next/image";
-import your_logo from "./images/your_logo_image.png";
-import lorem_ipsum from "./images/lorem_ipsum_image.png";
-import o_logo from "./images/o_logo.png";
-import lorem_ipsum2 from "./images/lorem_ipsum.png";
+import your_logo from "./images/Logos/image 2.png";
+import lorem_ipsum from "./images/Logos/image 3.png";
+import o_logo from "./images/Logos/image 4.png";
+import logo6 from "./images/Logos/image 6.png";
+import logo7 from "./images/Logos/image 7.png";
+import logo8 from "./images/Logos/image 8.png";
+import logo9 from "./images/Logos/image 9.png";
+import logo10 from "./images/Logos/image 10.png";
+import logo11 from "./images/Logos/image 11.png";
 import Curve_shape from "./images/Curve-shape.png";
 import main_image from "./images/main_layout_image.jpeg";
 import right_arrow_btn from "./images/right-arrow-btn.png";
@@ -66,8 +71,8 @@ const Home = () => {
                 </div>
                 <div className="inner_second_div">
                   Learn from India’s first certified Scaling Up coach{" "}
-                  <span className="inner_second_div_span">Ajay Hiraskar </span> 
-                   who has led the implementation of the Scaling Up performance
+                  <span className="inner_second_div_span">Ajay Hiraskar </span>
+                  who has led the implementation of the Scaling Up performance
                   platform across many industry verticals. This platform has
                   already guided more than 80,000 companies world wide to
                   succeed and grow.
@@ -81,9 +86,9 @@ const Home = () => {
         </div>
       </div>
       <div className="second_div_layout">
-        <div className="row" style={{ width: "auto", overflowX: "auto",overflowY:'hidden' }}>
+        <div className="row" style={{ width: "auto", overflowX: "auto", overflowY: 'hidden' }}>
           <div className="second_div_first_text col-md-4">
-            Trusted by Thousand top brands
+            Trusted by top brands
           </div>
           <div className="second_div_right_div col-md-8">
             <div className="slider-container">
@@ -118,7 +123,7 @@ const Home = () => {
                 <div className="image_layout_lorem_ipsum2">
                   <Image
                     className="image_layout_lorem_ipsum2"
-                    src={lorem_ipsum2}
+                    src={logo6}
                     width={200}
                     height={200}
                     alt="lorem ipsum"
@@ -126,7 +131,7 @@ const Home = () => {
                 </div>
                 <div className="image_layout_your_logo">
                   <Image
-                    src={your_logo}
+                    src={logo7}
                     width={200}
                     height={200}
                     className="image_layout_your_logo"
@@ -136,7 +141,34 @@ const Home = () => {
                 <div className="image_layout_lorem_ipsum2">
                   <Image
                     className="image_layout_lorem_ipsum2"
-                    src={lorem_ipsum2}
+                    src={logo8}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo9}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo10}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo11}
                     width={200}
                     height={200}
                     alt="lorem ipsum"
@@ -187,25 +219,16 @@ const Home = () => {
                 <div className="row slider-row">
                   <div className="video col-md-4">
                     <div className="ratio ratio-16x9">
-                      <iframe
-                        src="https://www.youtube.com/embed/DU--G_EWgmI?si=osIU3OiFrP7NxbFg"
-                        style={{ borderRadius: "24px" }}
-                        title="YouTube video player"
-                        allowFullScreen={true}
-                      ></iframe>
+
+                      <iframe style={{ borderRadius: "16px" }} width="560" height="315" src="https://www.youtube.com/embed/mN0qCIfEr-8?si=P1FOnrgXO-dPl6pF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                   </div>
                   <div className="video col-md-7 video_detail_div">
                     <div className="video_detail_div_title_text">
-                      Success story of #1 - Ador powerton
+                      Success Story #1 - Ador Powertron
                     </div>
                     <div className="video_detail_p_tag">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum is simply dummy text of
-                      the printing and typesetting industry. Lorem Ipsum is
-                      simply dummy text of the printing and typesetting
-                      industry. Lorem Ipsum is simply dummy text of the printing
-                      and typesetting industry. 
+                      Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.
                     </div>
                     <div></div>
                   </div>
@@ -302,10 +325,10 @@ const Home = () => {
             Guaranteed growth solutions
           </div>
           <div className="col-md-12 fifth_component_sub_title_div">
-            
-              We help ambitious entrepreneurs build successful & sustainable businesses resulting in unlocking of large scale potential
-              business value
-           
+
+            We help ambitious entrepreneurs build successful & sustainable businesses resulting in unlocking of large scale potential
+            business value
+
           </div>
         </div>
         <div
@@ -334,7 +357,7 @@ const Home = () => {
                 />
               </div>
               <div className="unselected_box_text">
-              Get the right people in the right seats, aligned with culture and strategy.
+                Get the right people in the right seats, aligned with culture and strategy.
               </div>
               <div className="bottom_arrow_div">
                 <Image
@@ -362,7 +385,7 @@ const Home = () => {
                 />
               </div>
               <div className="unselected_box_text">
-              Develop a clear, differentiated, and scalable plan for sustainable growth.
+                Develop a clear, differentiated, and scalable plan for sustainable growth.
               </div>
               <div className="bottom_arrow_div">
                 <Image
@@ -390,7 +413,7 @@ const Home = () => {
                 />
               </div>
               <div className="unselected_box_text">
-              Drive disciplined processes to ensure flawless implementation and accountability.
+                Drive disciplined processes to ensure flawless implementation and accountability.
               </div>
               <div className="bottom_arrow_div">
                 <Image
@@ -418,7 +441,7 @@ const Home = () => {
                 />
               </div>
               <div className="unselected_box_text">
-              Maintain strong cash flow to fuel growth and avoid financial constraints.
+                Maintain strong cash flow to fuel growth and avoid financial constraints.
               </div>
               <div className="bottom_arrow_div">
                 <Image
@@ -440,7 +463,7 @@ const Home = () => {
             <div
               className="img-fluid curve-image"
               style={{
-               
+
               }}
             >
               <Image
@@ -487,58 +510,58 @@ const Home = () => {
         <div className="row">
           <div className="col-md-4">
             <div className="seventh_components_card_box">
-            <div className="card video-card">
-              <div className="video-thumbnail">
-                <iframe
-                  width="100%"
-                  height="200px"
-                  src="https://www.youtube.com/embed/PGgIAnehjR8"
-                  allow="autoplay; encrypted-media"
-                ></iframe>
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">
-                  Challenges of Scaling Up a Business
-                </h5>
-              </div>
-            </div>
-            </div>
-          </div>
-          <div className="col-md-4">
-          <div className="seventh_components_card_box">
-            <div className="card video-card">
-              <div className="video-thumbnail">
-                <iframe
-                className="video-border"
-                  width="100%"
-                  height="200px"
-                  src="https://www.youtube.com/embed/pDNju3Ookq4"
-                  allow="autoplay; encrypted-media"
-                ></iframe>
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">
-                  The 10 Rockefeller Habits To Success
-                </h5>
+              <div className="card video-card">
+                <div className="video-thumbnail">
+                  <iframe
+                    width="100%"
+                    height="200px"
+                    src="https://www.youtube.com/embed/PGgIAnehjR8"
+                    allow="autoplay; encrypted-media"
+                  ></iframe>
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">
+                    Challenges of Scaling Up a Business
+                  </h5>
+                </div>
               </div>
             </div>
-          </div>
           </div>
           <div className="col-md-4">
             <div className="seventh_components_card_box">
-            <div className="card video-card">
-              <div className="video-thumbnail">
-                <iframe
-                  width="100%"
-                  height="200px"
-                  src="https://www.youtube.com/embed/048UdKxDsA8"
-                  allow="autoplay; encrypted-media"
-                ></iframe>
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">ScaleUp - Anaheim Highlights</h5>
+              <div className="card video-card">
+                <div className="video-thumbnail">
+                  <iframe
+                    className="video-border"
+                    width="100%"
+                    height="200px"
+                    src="https://www.youtube.com/embed/pDNju3Ookq4"
+                    allow="autoplay; encrypted-media"
+                  ></iframe>
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">
+                    The 10 Rockefeller Habits To Success
+                  </h5>
+                </div>
               </div>
             </div>
+          </div>
+          <div className="col-md-4">
+            <div className="seventh_components_card_box">
+              <div className="card video-card">
+                <div className="video-thumbnail">
+                  <iframe
+                    width="100%"
+                    height="200px"
+                    src="https://www.youtube.com/embed/048UdKxDsA8"
+                    allow="autoplay; encrypted-media"
+                  ></iframe>
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">ScaleUp - Anaheim Highlights</h5>
+                </div>
+              </div>
             </div>
           </div>
         </div>

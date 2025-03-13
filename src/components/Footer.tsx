@@ -15,10 +15,7 @@ const Footer = () => {
         <div className="row gx-4">
           <div className="col-12 col-md-6 col-lg-3 d-flex flex-column">
             <Image src={logo} alt="logo" className="Footer_main_logo" style={{width:'150px',height:'auto'}}/>
-            <p className="footer-logo-text mt-3">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </p>
+            
           </div>
           <div className="col-12 col-md-6 col-lg-3 d-flex flex-column">
             <h5>Explore</h5>

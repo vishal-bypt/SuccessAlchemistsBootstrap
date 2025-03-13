@@ -21,13 +21,12 @@ const About = () => {
             className="innerContainer"
             style={{ alignItems: "center" }}
           >
-            <p className="heading" style={{ color: "white",textAlign:'left' }}>
+            <p className="heading" style={{ color: "white", textAlign: 'left' }}>
               About us
             </p>
-            <p className="subText" style={{ color: "white",textAlign:'left'  }}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the
+            <p className="subText" style={{ color: "white", textAlign: 'left' }}>
+              We become successful
+              when we help you become successful
             </p>
           </div>
         </div>
@@ -64,47 +63,47 @@ const About = () => {
             <Image className="mission-curve-img" src={curve} alt="curve" />
           </div>
           <div className="col-12 col-md-9 d-flex flex-column flex-md-row justify-content-evenly main">
-            <div className="col-12 col-md-6">
+            {/*<div className="col-12 col-md-6">
               <Image className="image2 img-fluid" src={graph} alt="graph" />
-            </div>
-            <div className="col-12 col-md-6 subContainer2 text-center text-md-start">
-              <p className="section-header" style={{color:'#fff'}}>Mission , Vision , Values</p>
+  </div>*/}
+            <div className="col-12 col-md-12 subContainer2 text-center text-md-start">
+              <p className="section-header" style={{ color: '#fff' }}>Core values , Purpose , Brand promise</p>
               <p className="subText2">
                 We help ambitious entrepreneurs build successful, profitable &
                 sustainable businesses resulting in unlocking of large-scale
                 potential business value.
               </p>
-              <button className="section-btn">REQUEST A QUOTE</button>
+               {/*<button className="section-btn">REQUEST A QUOTE</button>*/}
             </div>
           </div>
         </div>
       </div>
       <div className="forth_div_layout align-items-center bg-white">
         <div className="row align-items-center">
-        <div className="col-lg-6 col-md-12">
-          <div>
-            <p className="key-text">Key Factors for Success:</p>
-            <p className="key-text">Accelerated Growth, Greater</p>
-            <p className="key-text">Value, and Simplicity</p>
+          <div className="col-lg-6 col-md-12">
+            <div>
+              <p className="key-text">Key Factors for Success:</p>
+              <p className="key-text">Accelerated Growth, Greater</p>
+              <p className="key-text">Value, and Simplicity</p>
+            </div>
+            <div className="mt-4">
+              {[
+                "Accelerated growth",
+                "Greater value",
+                "Simplified business",
+              ].map((text, index) => (
+                <div key={index} className="d-flex align-items-center gap-3 mb-3">
+                  <Image src={forward} alt="forward" width={24} height={24} />
+                  <p className="forward-text">{text}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="mt-4">
-            {[
-              "Accelerated growth",
-              "Greater value",
-              "Simplified business",
-            ].map((text, index) => (
-              <div key={index} className="d-flex align-items-center gap-3 mb-3">
-                <Image src={forward} alt="forward" width={24} height={24} />
-                <p className="forward-text">{text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
 
-        {/* Right Side Image */}
-        <div className="col-lg-6 col-md-12 text-center">
-          <Image src={img} alt="Key Factors" className="img-fluid rounded" />
-        </div>
+          {/* Right Side Image */}
+          <div className="col-lg-6 col-md-12 text-center">
+            <Image src={img} alt="Key Factors" className="img-fluid rounded" />
+          </div>
         </div>
       </div>
       <div className="fifth_div_layout">

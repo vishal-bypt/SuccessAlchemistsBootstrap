@@ -65,8 +65,7 @@ p {
 }
 
 .innerContainer {
-    width: 90%;
-    max-width: 600px;
+    max-width: 60%;
     padding: 0px 0px 0px 64px;
 }
 
@@ -200,11 +199,19 @@ p {
 }
 
 @media (max-width: 768px) {
+    .first_div_layout {
+        height: 400px;
+    }
+    .innerContainer {
+        max-width: 100%;
+        padding: 0px 32px 0px 32px;
+    }
     .heading {
         font-size: 2rem;
     }
     .subText {
-        font-size: 1.2rem;
+        font-size: 20px;
+        line-height: calc(20px * 1.2);
     }
     .btn {
         font-size: 1.2rem;
