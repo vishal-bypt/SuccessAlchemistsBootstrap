@@ -32,13 +32,36 @@ import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
 import "./home.css";
 import { useRef, useState } from "react";
 
+const items = [
+  {
+    id: 1,
+    title: "Success story of #1 - Ador powerton",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    src: "https://www.youtube.com/embed/DU--G_EWgmI?si=osIU3OiFrP7NxbFg",
+  },
+  {
+    id: 2,
+    title: "Success story of #1 - Ador powerton",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    src: "https://www.youtube.com/embed/DU--G_EWgmI?si=osIU3OiFrP7NxbFg",
+  },
+  {
+    id: 3,
+    title: "Success story of #1 - Ador powerton",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    src: "https://www.youtube.com/embed/DU--G_EWgmI?si=osIU3OiFrP7NxbFg",
+  },
+];
 const Home = () => {
   // @ts-ignore
   const swiperRef = useRef<Swiper | null>(null);
   const [currentIndex, setCurrentIndex] = useState(1);
 
   const forward = () => {
-    if (currentIndex === 10) return;
+    if (currentIndex === items.length) return;
     swiperRef.current.swiper.slideTo(currentIndex + 1);
     setCurrentIndex(currentIndex + 1);
   };
@@ -86,7 +109,10 @@ const Home = () => {
         </div>
       </div>
       <div className="second_div_layout">
-        <div className="row" style={{ width: "auto", overflowX: "auto", overflowY: 'hidden' }}>
+        <div
+          className="row"
+          style={{ width: "auto", overflowX: "auto", overflowY: "hidden" }}
+        >
           <div className="second_div_first_text col-md-4">
             Trusted by top brands
           </div>
@@ -214,22 +240,22 @@ const Home = () => {
             modules={[Pagination, Navigation]}
             className="mySwiper"
           >
-            {[...Array(10)]?.map((d: any, i: any) => (
+            {items?.map((d: any, i: any) => (
               <SwiperSlide key={i}>
                 <div className="row slider-row">
                   <div className="video col-md-4">
                     <div className="ratio ratio-16x9">
-
-                      <iframe style={{ borderRadius: "16px" }} width="560" height="315" src="https://www.youtube.com/embed/mN0qCIfEr-8?si=P1FOnrgXO-dPl6pF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      <iframe
+                        src={d.src}
+                        style={{ borderRadius: "24px" }}
+                        title="YouTube video player"
+                        allowFullScreen={true}
+                      ></iframe>
                     </div>
                   </div>
                   <div className="video col-md-7 video_detail_div">
-                    <div className="video_detail_div_title_text">
-                      Success Story #1 - Ador Powertron
-                    </div>
-                    <div className="video_detail_p_tag">
-                      Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.
-                    </div>
+                    <div className="video_detail_div_title_text">{d.title}</div>
+                    <div className="video_detail_p_tag">{d.description}</div>
                     <div></div>
                   </div>
                 </div>
@@ -325,10 +351,9 @@ const Home = () => {
             Guaranteed growth solutions
           </div>
           <div className="col-md-12 fifth_component_sub_title_div">
-
-            We help ambitious entrepreneurs build successful & sustainable businesses resulting in unlocking of large scale potential
-            business value
-
+            We help ambitious entrepreneurs build successful & sustainable
+            businesses resulting in unlocking of large scale potential business
+            value
           </div>
         </div>
         <div
@@ -357,7 +382,8 @@ const Home = () => {
                 />
               </div>
               <div className="unselected_box_text">
-                Get the right people in the right seats, aligned with culture and strategy.
+                Get the right people in the right seats, aligned with culture
+                and strategy.
               </div>
               <div className="bottom_arrow_div">
                 <Image
@@ -385,7 +411,8 @@ const Home = () => {
                 />
               </div>
               <div className="unselected_box_text">
-                Develop a clear, differentiated, and scalable plan for sustainable growth.
+                Develop a clear, differentiated, and scalable plan for
+                sustainable growth.
               </div>
               <div className="bottom_arrow_div">
                 <Image
@@ -413,7 +440,8 @@ const Home = () => {
                 />
               </div>
               <div className="unselected_box_text">
-                Drive disciplined processes to ensure flawless implementation and accountability.
+                Drive disciplined processes to ensure flawless implementation
+                and accountability.
               </div>
               <div className="bottom_arrow_div">
                 <Image
@@ -441,7 +469,8 @@ const Home = () => {
                 />
               </div>
               <div className="unselected_box_text">
-                Maintain strong cash flow to fuel growth and avoid financial constraints.
+                Maintain strong cash flow to fuel growth and avoid financial
+                constraints.
               </div>
               <div className="bottom_arrow_div">
                 <Image
@@ -460,12 +489,7 @@ const Home = () => {
           style={{ display: "flex", justifyContent: "space-between" }}
         >
           <div className="col-md-4" style={{ position: "relative" }}>
-            <div
-              className="img-fluid curve-image"
-              style={{
-
-              }}
-            >
+            <div className="img-fluid curve-image" style={{}}>
               <Image
                 src={Curve_shape}
                 className="img-fluid"
