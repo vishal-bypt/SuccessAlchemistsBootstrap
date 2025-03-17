@@ -25,9 +25,7 @@ const page = () => {
               Resources
             </p>
             <p className="subText" style={{ color: "white" }}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the
+            Links to articles, books, and tools that support the effective implementation of the Scaling Up framework
             </p>
           </div>
         </div>
@@ -35,12 +33,12 @@ const page = () => {
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between">
           <p className="section-header">Our latest tool kit</p>
-          <button
+         { /*<button
             className="border-0 bg-transparent text-decoration-underline"
             style={{ color: "rgba(251, 168, 25, 1)" }}
           >
             VIEW MORE
-          </button>
+  </button>*/}
         </div>
         <div className="mt-4">
           <div className="row g-4">

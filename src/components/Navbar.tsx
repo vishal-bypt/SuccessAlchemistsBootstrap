@@ -182,7 +182,7 @@ const NavbarMenu = () => {
             id="basic-nav-dropdown"
           >
             <NavDropdown.Item
-              href="/events/webinarDetail"
+              href="#"
               className={`${
                 pathname === "/events/webinarDetail"
                   ? "active-link font-semibold"
