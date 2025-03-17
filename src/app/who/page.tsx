@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "./who.css";
+import man2 from "../../app/who/images/Vikram.jpg";
 import man from "../../app/who/images/man.png";
 import Image from "next/image";
 import curve1 from "../../../src/app/about/images/curve1.png";
@@ -283,7 +284,7 @@ const page = () => {
             <div className="row align-items-center profile-section">
               <div className="col-lg-5 d-flex justify-content-center">
                 <Image
-                  src={man}
+                  src={man2}
                   alt="Ajay Hiraskar"
                   className="img-fluid rounded-3"
                 />

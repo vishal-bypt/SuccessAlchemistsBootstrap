@@ -36,13 +36,10 @@ const About = () => {
           <div className="innerContainer1 col-md-6 text-center text-md-start">
             <p className="section-header">We’re all about helping you</p>
             <p className="subText1">
-              At Success Alchemists, we are dedicated to transforming businesses
-              through the proven Scaling Up framework developed by Verne
-              Harnish.
+            At Success Alchemists, we are dedicated to transforming businesses through the proven Scaling Up framework developed by Verne Harnish. With a diverse client base spanning various industries, we empower organizations to achieve sustainable growth and operational excellence.
             </p>
             <p className="subText1">
-              Our approach combines tailored implementation of the Scaling Up
-              principles with executive coaching and execution support.
+            Our approach combines tailored implementation of the Scaling Up principles with executive coaching and execution support, ensuring that our clients not only set ambitious goals but also have the strategies and resources to achieve them. We believe that with the right guidance and support, every organization can unlock its full potential and thrive in today's competitive landscape.
             </p>
             <button className="section-btn">Join us on the journey to success</button>
           </div>
