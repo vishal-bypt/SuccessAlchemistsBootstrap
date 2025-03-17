@@ -35,8 +35,8 @@
     width: 100%;
     border-radius: 24px;
     background-color: #F9F9F9;
-    padding: 32px;
-    gap: 32px;
+    padding: 24px;
+    gap: 24px;
     display: flex;
     flex-direction: column;
 }
@@ -48,11 +48,11 @@
 }
 
 .card {
-    padding: 24px;
+    padding: 16px;
     border: none;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
 }
 
 .card-body {
@@ -68,14 +68,24 @@
     gap: 1px
 }
 
+.card-img-top {
+    width: 180px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
 .member-name {
-    font-size: 24px;
+    font-size: 20px;
     color: #222020;
     font-weight: 500;
 }
 
 .member-role {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .card-text {

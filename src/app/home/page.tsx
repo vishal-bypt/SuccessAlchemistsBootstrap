@@ -37,22 +37,44 @@ const items = [
     id: 1,
     title: "Success story of #1 - Ador powerton",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    src: "https://www.youtube.com/embed/DU--G_EWgmI?si=osIU3OiFrP7NxbFg",
+      "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
+    src: " https://www.youtube.com/embed/mN0qCIfEr-8?si=cQHPlh9-GkF85pIe",
+   
   },
   {
     id: 2,
-    title: "Success story of #1 - Ador powerton",
+    title: "Success Story #2 - Aliens Tattoo",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    src: "https://www.youtube.com/embed/DU--G_EWgmI?si=osIU3OiFrP7NxbFg",
+      "In this video, Sunny Bhanushali the Founder & CEO of Aliens Tattoo talks about experiencing challenges of rapid growth, the biggest benefit of implementing a structured framework & the value added by their coach.",
+    src: "https://www.youtube.com/embed/K1-7-5N2lzY?si=UFol7OgXkzBg_ImI",
   },
   {
     id: 3,
-    title: "Success story of #1 - Ador powerton",
+    title: "Success Story #3 - Grauer & Weil (Engineering Division)",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    src: "https://www.youtube.com/embed/DU--G_EWgmI?si=osIU3OiFrP7NxbFg",
+      "In this video, Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years. At the end, there is a reference to the Coach and the support provided in this growth journey.",
+    src: "https://www.youtube.com/embed/UrIxZUvzovo?si=nrjwyoMuQsnzgUsz",
+  },
+  {
+    id: 4,
+    title: "Success Story #4 - Clarion Technologies",
+    description:
+      "In this video, their CEO, Siddharth Motiwale talks about the 'secret sauce' which has helped Clarion grow systematically over the past few years. He also talks about the value added by Ajay as their coach.",
+    src: "https://www.youtube.com/embed/jokpun-w7v8?si=8jz8BsXy1Ig62ULG",
+  },
+  {
+    id: 5,
+    title: "Success Story #5 - InfraCloud Technologies",
+    description:
+      "In this video, their CEO, Siddharth Motiwale talks about the 'secret sauce' which has helped Clarion grow systematically over the past few years. He also talks about the value added by Ajay as their coach.",
+    src: "https://www.youtube.com/embed/N4PUd0g_vDs?si=gP3asGFHOusha3bX",
+  },
+  {
+    id: 6,
+    title: "Success Story #6 - Uplers & Mavlers",
+    description:
+      "In this video, Jaymin (CEO) & Nital (COO) talk about the benefits of implementing the Scaling Up framework. They ensured alignment at all levels within their business & experienced the resultant growth.",
+    src: "https://www.youtube.com/embed/8_HT9N82rh4?si=49oIAZ5JZzhLG0B5",
   },
 ];
 const Home = () => {

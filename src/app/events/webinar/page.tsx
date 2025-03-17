@@ -49,7 +49,7 @@ const page = () => {
           <div className="webinar-box">
             <div className="row">
               <div className="col-md-4">
-                <iframe width="100%" height="280" src="https://www.youtube.com/embed/FohUsWevkGo?si=KSu8b_mJcAl1Qh96" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <iframe className="video-iframe" width="100%" height="280" src="https://www.youtube.com/embed/FohUsWevkGo?si=KSu8b_mJcAl1Qh96" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 
               </div>
               <div className="col-md-8">
@@ -95,7 +95,7 @@ const page = () => {
           <div className="webinar-box">
             <div className="row">
               <div className="col-md-4">
-                <iframe width="100%" height="280" src="https://www.youtube.com/embed/r3deFcELIck?si=NwgPoo_asrnOXEFI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <iframe className="video-iframe" width="100%" height="280" src="https://www.youtube.com/embed/r3deFcELIck?si=NwgPoo_asrnOXEFI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
               </div>
               <div className="col-md-8">
                 <div className="webinar-box-content">
@@ -111,7 +111,7 @@ const page = () => {
           <div className="webinar-box">
             <div className="row">
               <div className="col-md-4">
-              <iframe width="100%" height="280" src="https://www.youtube.com/embed/afWQ9njK28A?si=r9dqBtC4Z7q3byNv" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+              <iframe className="video-iframe" width="100%" height="280" src="https://www.youtube.com/embed/afWQ9njK28A?si=r9dqBtC4Z7q3byNv" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 
               </div>
               <div className="col-md-8">
@@ -132,7 +132,7 @@ const page = () => {
           <div className="webinar-box">
             <div className="row">
               <div className="col-md-4">
-              <iframe width="100%" height="280" src="https://www.youtube.com/embed/RYgZpZUIN5k?si=4oej4FOs_CjGUPwl" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+              <iframe className="video-iframe" width="100%" height="280" src="https://www.youtube.com/embed/RYgZpZUIN5k?si=4oej4FOs_CjGUPwl" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
               </div>
               <div className="col-md-8">
                 <div className="webinar-box-content">

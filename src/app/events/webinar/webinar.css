@@ -80,6 +80,10 @@
     margin-top: 24px;
 }
 
+.video-iframe {
+    border-radius: 16px;
+}
+
 .webinar-content p {
     font-size: 24px;
     color: #616161;
