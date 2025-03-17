@@ -6,6 +6,7 @@
 
 .first_div_layout {
     background: url(../../../../public/assets/images/Hero-section.svg) no-repeat center;
+    background-size: cover;
 }
 
 .heading {

@@ -6,6 +6,7 @@
 
 .first_div_layout {
     background: url(./images/main_layout_image.jpeg) no-repeat center;
+    background-size: cover;
 }
 
 .main_second_div_body {

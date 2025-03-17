@@ -6,6 +6,7 @@
 
 .first_div_layout {
     background: url(../../../app/about/images/main_layout_image.jpeg) no-repeat center;
+    background-size: cover;
 }
 
 .heading {
