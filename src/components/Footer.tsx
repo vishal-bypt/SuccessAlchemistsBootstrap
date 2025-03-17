@@ -8,6 +8,8 @@ import Instagram from "../../public/assets/images/Instagram.png";
 import Linkedin from "../../public/assets/images/Linkedin.png";
 import Twitter from "../../public/assets/images/Twitter.png";
 import Youtube from "../../public/assets/images/Youtube.png";
+import Link from "next/link";
+const arr = ["/home","/about","/who","/success","/assessment","/resources"]
 const Footer = () => {
   return (
     <div className="d-flex flex-column gap-1">
@@ -20,6 +22,15 @@ const Footer = () => {
           <div className="col-12 col-md-6 col-lg-3 d-flex flex-column">
             <h5>Explore</h5>
             <ul className="list-unstyled mt-3">
+              <li><Link  href={"/home"}>Home</Link></li>
+              <li><Link href={"/about"}>About us</Link></li>
+              <li><Link href={"/who"}>Who we are</Link></li>
+              <li><Link href={"/success"}>Our success</Link></li>
+              <li><Link href={"/assessment"}>Quick assessment</Link></li>
+              <li><Link href={"/events/webinar"}>Events</Link></li>
+              <li><Link href={"/contactUs"}>Contact us</Link></li>
+            </ul>
+            {/* <ul className="list-unstyled mt-3">
               {[
                 "Home",
                 "About us",
@@ -30,10 +41,10 @@ const Footer = () => {
                 "Contact us",
               ].map((item, index) => (
                 <li key={index} className="mb-2">
-                  {item}
+                  <Link href={arr[index].toString()}>{item}</Link>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
           <div className="col-12 col-md-6 col-lg-3 d-flex flex-column ">
             <h5>Contact Info</h5>
