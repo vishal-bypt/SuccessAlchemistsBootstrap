@@ -106,7 +106,7 @@ const Home = () => {
           style={{ zIndex: 1, padding: "72px 64px", position: "absolute" }}
         >
           <div className="row align-items-center no-gutters">
-            <div className="col-lg-8 col-md-12 col-xs-12">
+            <div className="col-xxl-7 col-lg-8 col-md-12 col-xs-12">
               <div className="hero-container">
                 <div className="inner_first_div">
                   Are you ready to
@@ -269,7 +269,7 @@ const Home = () => {
                     <div className="ratio ratio-16x9">
                       <iframe
                         src={d.src}
-                        style={{ borderRadius: "24px" }}
+                        className="home-video"
                         title="YouTube video player"
                         allowFullScreen={true}
                       ></iframe>
@@ -297,14 +297,14 @@ const Home = () => {
             <div onClick={backward}>
               <Image
                 src={left_arrow_btn}
-                className="img-fluid"
+                className="img-fluid nav-left-btn"
                 alt="right side image"
               />
             </div>
             <div onClick={forward}>
               <Image
                 src={right_arrow_btn}
-                className="img-fluid"
+                className="img-fluid nav-left-btn" 
                 alt="right side image"
               />
             </div>
@@ -312,6 +312,13 @@ const Home = () => {
         </div>
       </div>
       <div className="fourth_component">
+    
+            <Image
+              src={idea_icon}
+              className="img-fluid bulb-image"
+              alt="right side "
+            />
+          
         <div className="fourth_component_first_div">
           <div className="fourth_component_title_div">
             We become successful, when we help you become successful
@@ -330,13 +337,7 @@ const Home = () => {
             organizational change strategies to propel your business onto an
             unparalleled growth trajectory.
           </div>
-          <div style={{ position: "absolute", top: "-23px", right: "-28px" }}>
-            <Image
-              src={idea_icon}
-              className="img-fluid"
-              alt="right side image"
-            />
-          </div>
+     
         </div>
         <div>
           <div className="row">
@@ -541,14 +542,14 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="sixth_component_btn_div">
+            {/* <div className="sixth_component_btn_div">
               REQUEST A QUOTE
               <Image
                 className="img-fluid"
                 src={Double_arrow}
                 alt="right side image"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

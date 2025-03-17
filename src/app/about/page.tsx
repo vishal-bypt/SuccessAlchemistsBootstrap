@@ -112,14 +112,14 @@ const About = () => {
           <p className="heading2">Core Values</p>
           <div className="subContainer3">
             <div className="circle">
-              <Image src={Circle1} alt="Circle1" />
+              <Image src={Circle4} alt="Circle1" />
               <Image src={downArrow} alt="downArrow" className="down" />
               <p className="subText4">
                 Deliver more than what the customer pays for
               </p>
             </div>
             <div className="circle">
-              <Image src={Circle2} alt="Circle2" />
+              <Image src={Circle1} alt="Circle2" />
               <Image src={downArrow} alt="downArrow" className="down" />
               <p className="subText4">
                 No matter what, do the right thing for our customers, out team,
@@ -127,7 +127,7 @@ const About = () => {
               </p>
             </div>
             <div className="circle">
-              <Image src={Circle3} alt="Circle3" />
+              <Image src={Circle2} alt="Circle3" />
               <Image src={downArrow} alt="downArrow" className="down" />
               <p className="subText4">
                 Always be in process of developing ourselves, our processes and
@@ -135,7 +135,7 @@ const About = () => {
               </p>
             </div>
             <div className="circle">
-              <Image src={Circle4} alt="Circle4" />
+              <Image src={Circle3} alt="Circle4" />
               <Image src={downArrow} alt="downArrow" className="down" />
               <p className="subText4">
                 Ensure an impact on the larger entrepreneur & business community

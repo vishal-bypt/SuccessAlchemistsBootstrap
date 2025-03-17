@@ -76,7 +76,7 @@ const Footer = () => {
         style={{ borderRadius: 15 }}
       >
         <p className="mb-0">
-          © Copyright 2023 Success Alchemists All rights reserved.
+          © Copyright 2025 Success Alchemists All rights reserved.
         </p>
       </div>
     </div>

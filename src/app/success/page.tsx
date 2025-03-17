@@ -1,14 +1,84 @@
-import React from "react";
+"use client";
+import { useRef, useState } from "react";
 import "./success.css";
 import Case1 from "../../app/success/images/Case-study1.png";
 import Case2 from "../../app/success/images/Case-study2.png";
 import Case3 from "../../app/success/images/Case-study3.png";
-import Case4 from "../../app/success/images/Case4.png";
-import Case5 from "../../app/success/images/Case5.png";
-import Case6 from "../../app/success/images/Case6.png";
-import User from "../../app/success/images/User.png";
+
+import Curve_shape from "../home/images/Curve-shape.png";
+import right_arrow_btn from "../home/images/right-arrow-btn.png";
+import left_arrow_btn from "../home/images/left-arrow-btn.png";
 import Image from "next/image";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
+
+const items = [
+  {
+    id: 1,
+    title: "Success story of #1 - Ador powerton",
+    description:
+      "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
+    src: " https://www.youtube.com/embed/mN0qCIfEr-8?si=cQHPlh9-GkF85pIe",
+   
+  },
+  {
+    id: 2,
+    title: "Success Story #2 - Aliens Tattoo",
+    description:
+      "In this video, Sunny Bhanushali the Founder & CEO of Aliens Tattoo talks about experiencing challenges of rapid growth, the biggest benefit of implementing a structured framework & the value added by their coach.",
+    src: "https://www.youtube.com/embed/K1-7-5N2lzY?si=UFol7OgXkzBg_ImI",
+  },
+  {
+    id: 3,
+    title: "Success Story #3 - Grauer & Weil (Engineering Division)",
+    description:
+      "In this video, Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years. At the end, there is a reference to the Coach and the support provided in this growth journey.",
+    src: "https://www.youtube.com/embed/UrIxZUvzovo?si=nrjwyoMuQsnzgUsz",
+  },
+  {
+    id: 4,
+    title: "Success Story #4 - Clarion Technologies",
+    description:
+      "In this video, their CEO, Siddharth Motiwale talks about the 'secret sauce' which has helped Clarion grow systematically over the past few years. He also talks about the value added by Ajay as their coach.",
+    src: "https://www.youtube.com/embed/jokpun-w7v8?si=8jz8BsXy1Ig62ULG",
+  },
+  {
+    id: 5,
+    title: "Success Story #5 - InfraCloud Technologies",
+    description:
+      "In this video, their CEO, Siddharth Motiwale talks about the 'secret sauce' which has helped Clarion grow systematically over the past few years. He also talks about the value added by Ajay as their coach.",
+    src: "https://www.youtube.com/embed/N4PUd0g_vDs?si=gP3asGFHOusha3bX",
+  },
+  {
+    id: 6,
+    title: "Success Story #6 - Uplers & Mavlers",
+    description:
+      "In this video, Jaymin (CEO) & Nital (COO) talk about the benefits of implementing the Scaling Up framework. They ensured alignment at all levels within their business & experienced the resultant growth.",
+    src: "https://www.youtube.com/embed/8_HT9N82rh4?si=49oIAZ5JZzhLG0B5",
+  },
+];
 const page = () => {
+  const swiperRef = useRef<Swiper | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(1);
+
+  const forward = () => {
+    if (currentIndex === items.length) return;
+    swiperRef.current.swiper.slideTo(currentIndex + 1);
+    setCurrentIndex(currentIndex + 1);
+  };
+  const backward = () => {
+    if (currentIndex === 0) return;
+    swiperRef.current.swiper.slideTo(currentIndex - 1);
+    setCurrentIndex(currentIndex - 1);
+  };
+
   return (
     <div className="main_body_div">
       <div className="first_div_layout">
@@ -46,6 +116,91 @@ const page = () => {
             </div>
             <div className="col-lg-4 col-md-6 col-sm-12">
               <Image src={Case3} alt="case3" className="img-fluid w-100" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="client-review-section box-shadow ">
+        <div
+          className="img-fluid"
+          style={{
+            position: "absolute",
+            top: "0px",
+            right: "0px",
+            zIndex: "1",
+            overflow: "hidden",
+          }}
+        >
+          <Image
+            src={Curve_shape}
+            className="img-fluid"
+            style={{ borderRadius: "24px" }}
+            alt="right side image"
+          />
+        </div>
+        <div className="client_review_text">
+          Client Reviews
+          {/* <button onClick={forward}>forward</button>
+          <button onClick={backward}>backward</button> */}
+        </div>
+        <div style={{ position: "relative" }}>
+          <Swiper
+            ref={swiperRef}
+            slidesPerView={"auto"}
+            centeredSlides={true}
+            navigation={false}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+          >
+            {items?.map((d: any, i: any) => (
+              <SwiperSlide key={i}>
+                <div className="row slider-row">
+                  <div className="video col-md-4">
+                    <div className="ratio ratio-16x9">
+                      <iframe
+                        src={d.src}
+                        className="home-video"
+                        title="YouTube video player"
+                        allowFullScreen={true}
+                      ></iframe>
+                    </div>
+                  </div>
+                  <div className="video col-md-7 video_detail_div">
+                    <div className="video_detail_div_title_text">{d.title}</div>
+                    <div className="video_detail_p_tag">{d.description}</div>
+                    <div></div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div
+            className="img-fluid navigation-buttons"
+            style={{
+              position: "absolute",
+              top: "0px",
+              right: "0px",
+              zIndex: "1",
+              display: "flex",
+            }}
+          >
+            <div onClick={backward}>
+              <Image
+                src={left_arrow_btn}
+                className="img-fluid nav-left-btn"
+                alt="right side image"
+              />
+            </div>
+            <div onClick={forward}>
+              <Image
+                src={right_arrow_btn}
+                className="img-fluid nav-left-btn" 
+                alt="right side image"
+              />
             </div>
           </div>
         </div>
