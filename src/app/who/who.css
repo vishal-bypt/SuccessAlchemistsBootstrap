@@ -10,7 +10,7 @@
     color: #222020;
 }
 
-.first_div_layout {
+.first_div_layout.who {
     background: url(./images/main_layout_image.jpeg) no-repeat center;
     background-size: cover;
 }

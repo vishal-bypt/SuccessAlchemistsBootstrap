@@ -15,7 +15,7 @@ import img from "../../../src/app/about/images/imageB.png";
 const About = () => {
   return (
     <div className="main_body_div">
-      <div className="first_div_layout">
+      <div className="first_div_layout aboutUs">
         <div className="main_first_div_body">
           <div
             className="innerContainer"

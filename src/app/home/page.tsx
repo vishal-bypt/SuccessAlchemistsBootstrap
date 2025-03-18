@@ -99,12 +99,9 @@ const Home = () => {
       style={{ display: "flex", gap: "16px", flexDirection: "column" }}
     >
       {/* <div className="bg-warning radios"> */}
-      <div className="first_div_layout">
+      <div className="first_div_layout home">
         <div className="main_first_div_body" />
-        <div
-          className="container main_first_div_content"
-          style={{ zIndex: 1, padding: "72px 64px", position: "absolute" }}
-        >
+        <div className="main_first_div_content">
           <div className="row align-items-center no-gutters">
             <div className="col-xxl-7 col-lg-8 col-md-12 col-xs-12">
               <div className="hero-container">
@@ -228,16 +225,7 @@ const Home = () => {
         </div>
       </div>
       <div className="container-fluid client-review-section box-shadow ">
-        <div
-          className="img-fluid"
-          style={{
-            position: "absolute",
-            top: "0px",
-            right: "0px",
-            zIndex: "1",
-            overflow: "hidden",
-          }}
-        >
+        <div className="img-fluid client-review-curve">
           <Image
             src={Curve_shape}
             className="img-fluid"
@@ -285,15 +273,7 @@ const Home = () => {
             ))}
           </Swiper>
           <div
-            className="img-fluid navigation-buttons"
-            style={{
-              position: "absolute",
-              top: "0px",
-              right: "0px",
-              zIndex: "1",
-              display: "flex",
-            }}
-          >
+            className="img-fluid navigation-buttons">
             <div onClick={backward}>
               <Image
                 src={left_arrow_btn}
@@ -554,7 +534,7 @@ const Home = () => {
         </div>
       </div>
       <div className="seventh_components">
-        <div className="row">
+        <div className="row res-row">
           <div className="col-md-4">
             <div className="seventh_components_card_box">
               <div className="card video-card">

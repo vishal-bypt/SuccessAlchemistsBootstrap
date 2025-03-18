@@ -14,7 +14,7 @@ const page = () => {
   const handleShow = () => setShow(true);
   return (
     <div className="main_body_div">
-      <div className="first_div_layout">
+      <div className="first_div_layout webinar">
         <div className="main_first_div_body">
           <div
             className="innerContainer"

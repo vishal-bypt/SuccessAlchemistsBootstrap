@@ -23,8 +23,8 @@ const Footer = () => {
   return (
     <div className="d-flex flex-column gap-1">
       <footer className="p-3 p-md-5 border-0 fot">
-        <div className="row gx-4">
-          <div className="col-12 col-md-6 col-lg-3 d-flex flex-column">
+        <div className="row gx-4 res-row">
+          <div className="col-12 col-md-3 col-lg-3 d-flex flex-column">
             <Image
               src={logo}
               alt="logo"
@@ -32,7 +32,7 @@ const Footer = () => {
               style={{ width: "150px", height: "auto" }}
             />
           </div>
-          <div className="col-12 col-md-6 col-lg-3 d-flex flex-column">
+          <div className="col-12 col-md-3 col-lg-3 d-flex flex-column">
             <h5>Explore</h5>
             <ul className="list-unstyled mt-3">
               <li>
@@ -153,7 +153,7 @@ const Footer = () => {
               ))}
             </ul> */}
           </div>
-          <div className="col-12 col-md-6 col-lg-3 d-flex flex-column ">
+          <div className="col-12 col-md-3 col-lg-3 d-flex flex-column ">
             <h5>Contact Info</h5>
             <ul className="list-unstyled mt-3">
               <li className="mb-2 d-flex align-items-center gap-2">
@@ -172,7 +172,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-12 col-md-6 col-lg-3 d-flex flex-column  ">
+          <div className="col-12 col-md-3 col-lg-3 d-flex flex-column  ">
             <h5>Social Networks</h5>
             <div className="d-flex gap-3 mt-3">
               {[Facebook, Instagram, Youtube, Linkedin, Twitter].map(

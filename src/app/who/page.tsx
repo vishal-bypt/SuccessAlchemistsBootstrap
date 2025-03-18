@@ -235,7 +235,7 @@ const page = () => {
   return (
     <div>
       <div className="main_body_div">
-        <div className="first_div_layout">
+        <div className="first_div_layout who">
           <div className="main_first_div_body">
             <div
               className="innerContainer"

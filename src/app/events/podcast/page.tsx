@@ -7,7 +7,7 @@ import idea_icon from "../../../app/about/images/idea_icon.png"
 const page = () => {
     return (
         <div className="main_body_div">
-            <div className="first_div_layout">
+            <div className="first_div_layout podcast">
                 <div className="main_first_div_body">
                     <div
                         className="innerContainer"

@@ -192,6 +192,12 @@ p {
     }
 }
 
+@media only screen and (max-width:1400px) {
+    .second_div_layout {
+        padding: 16px 48px;
+    }
+}
+
 @media only screen and (min-width: 601px) and (max-width: 1180px) {
     .second_div_layout {
         padding: 16px 40px;
@@ -238,6 +244,9 @@ p {
     }
     .forth_div_layout {
         padding: 16px;
+    }
+    .res-row {
+        row-gap: 16px;
     }
 }
 

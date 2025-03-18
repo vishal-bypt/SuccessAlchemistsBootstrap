@@ -15,7 +15,7 @@ import curve1 from "../../app/resources/images/curve1.png";
 const page = () => {
   return (
     <div className="main_body_div">
-      <div className="first_div_layout">
+      <div className="first_div_layout resource">
         <div className="main_first_div_body">
           <div
             className="innerContainer"

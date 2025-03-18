@@ -82,6 +82,14 @@
     color: #222020;
 }
 
+.nav-link {
+    padding: 0px;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
 
 /*media query start here*/
 

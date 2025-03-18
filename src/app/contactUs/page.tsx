@@ -8,7 +8,7 @@ import curveShape2 from "../../../public/assets/images/Curve-shape2.svg"
 const ContactUs = () => {
     return (
         <div className="main_body_div">
-            <div className="first_div_layout">
+            <div className="first_div_layout contactUs">
                 <div className="main_first_div_body">
                     <div className="innerContainer">
                         <p className="heading" style={{ color: "white", textAlign: 'left' }}>
