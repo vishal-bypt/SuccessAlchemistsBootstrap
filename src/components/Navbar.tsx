@@ -142,7 +142,7 @@ const NavbarMenu = () => {
           </Nav.Link>
           <Nav.Link>
             <Link
-              href="/assessment"
+              href="https://q.esperto.one/q/sR4RRluSEazkK5XHPlVZ/6hDOhyCnHHDQf1Uzk3eg"
               className={`${
                 pathname === "/assessment"
                   ? "active-link font-semibold"

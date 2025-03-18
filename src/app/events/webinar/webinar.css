@@ -15,6 +15,10 @@
     line-height: 1.2;
 }
 
+.second_div_layout {
+    display: block;
+}
+
 @media (max-width: 768px) {
     .heading {
         font-size: 2rem;
