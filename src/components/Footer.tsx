@@ -9,26 +9,128 @@ import Linkedin from "../../public/assets/images/Linkedin.png";
 import Twitter from "../../public/assets/images/Twitter.png";
 import Youtube from "../../public/assets/images/Youtube.png";
 import Link from "next/link";
-const arr = ["/home","/about","/who","/success","/assessment","/resources"]
+import { usePathname } from "next/navigation";
+const arr = [
+  "/home",
+  "/about",
+  "/who",
+  "/success",
+  "/assessment",
+  "/resources",
+];
 const Footer = () => {
+  const pathName = usePathname();
   return (
     <div className="d-flex flex-column gap-1">
       <footer className="p-3 p-md-5 border-0 fot">
         <div className="row gx-4">
           <div className="col-12 col-md-6 col-lg-3 d-flex flex-column">
-            <Image src={logo} alt="logo" className="Footer_main_logo" style={{width:'150px',height:'auto'}}/>
-            
+            <Image
+              src={logo}
+              alt="logo"
+              className="Footer_main_logo"
+              style={{ width: "150px", height: "auto" }}
+            />
           </div>
           <div className="col-12 col-md-6 col-lg-3 d-flex flex-column">
             <h5>Explore</h5>
             <ul className="list-unstyled mt-3">
-              <li><Link  href={"/home"}>Home</Link></li>
-              <li><Link href={"/about"}>About us</Link></li>
-              <li><Link href={"/who"}>Who we are</Link></li>
-              <li><Link href={"/success"}>Our success</Link></li>
-              <li><Link href={"/assessment"}>Quick assessment</Link></li>
-              <li><Link href={"/events/webinar"}>Events</Link></li>
-              <li><Link href={"/contactUs"}>Contact us</Link></li>
+              <li>
+                <Link
+                  className={`${
+                    pathName === "/home"
+                      ? "active-link font-semibold"
+                      : "inactive-link font-normal"
+                  } link-underline link-underline-opacity-0`}
+                  href={"/home"}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`${
+                    pathName === "/about"
+                      ? "active-link font-semibold"
+                      : "inactive-link font-normal"
+                  } link-underline link-underline-opacity-0`}
+                  href={"/about"}
+                >
+                  About us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`${
+                    pathName === "/who"
+                      ? "active-link font-semibold"
+                      : "inactive-link font-normal"
+                  } link-underline link-underline-opacity-0`}
+                  href={"/who"}
+                >
+                  Who we are
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`${
+                    pathName === "/success"
+                      ? "active-link font-semibold"
+                      : "inactive-link font-normal"
+                  } link-underline link-underline-opacity-0`}
+                  href={"/success"}
+                >
+                  Our success
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`${
+                    pathName === "/assessment"
+                      ? "active-link font-semibold"
+                      : "inactive-link font-normal"
+                  } link-underline link-underline-opacity-0`}
+                  href={"/assessment"}
+                >
+                  Quick assessment
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`${
+                    pathName === "/resources"
+                      ? "active-link font-semibold"
+                      : "inactive-link font-normal"
+                  } link-underline link-underline-opacity-0`}
+                  href={"/resources"}
+                >
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`${
+                    pathName === "/events/webinar"
+                      ? "active-link font-semibold"
+                      : "inactive-link font-normal"
+                  } link-underline link-underline-opacity-0`}
+                  href={"/events/webinar"}
+                >
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`${
+                    pathName === "/contactUs"
+                      ? "active-link font-semibold"
+                      : "inactive-link font-normal"
+                  } link-underline link-underline-opacity-0`}
+                  href={"/contactUs"}
+                >
+                  Contact us
+                </Link>
+              </li>
             </ul>
             {/* <ul className="list-unstyled mt-3">
               {[
