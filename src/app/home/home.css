@@ -22,9 +22,10 @@
 }
 
 .inner_first_div_span {
-    font-style: italic;
+    text-transform: uppercase;
+    /* font-style: italic;
     color: #018bd3;
-    text-decoration: underline wavy #fff;
+    text-decoration: underline wavy #fff; */
 }
 
 .inner_second_div_span {
