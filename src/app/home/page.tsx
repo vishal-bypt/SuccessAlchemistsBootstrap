@@ -132,10 +132,10 @@ const Home = () => {
           className="row"
           style={{ width: "auto", overflowX: "auto", overflowY: "hidden" }}
         >
-          <div className="second_div_first_text col-md-4">
+          <div className="second_div_first_text col-md-3">
             Trusted by top brands
           </div>
-          <div className="second_div_right_div col-md-8">
+          <div className="second_div_right_div col-md-9">
             <div className="slider-container">
               <div className="slider-track">
                 <div className="image_layout_your_logo col-1">
@@ -317,6 +317,9 @@ const Home = () => {
             organizational change strategies to propel your business onto an
             unparalleled growth trajectory.
           </div>
+          <div className="fourth_component_p_tag col-md-12">
+          For the business owner developing strategy, fixing cultural issues and differentiating in complex markets, business coaching can deliver agility, clarity and commitment in four main areas:
+          </div>
      
         </div>
         <div>
@@ -354,9 +357,7 @@ const Home = () => {
             Guaranteed growth solutions
           </div>
           <div className="col-md-12 fifth_component_sub_title_div">
-            We help ambitious entrepreneurs build successful & sustainable
-            businesses resulting in unlocking of large scale potential business
-            value
+          We help ambitious entrepreneurs build successful & sustainable businesses resulting in unlocking of large scale potential business value by identifying the right.
           </div>
         </div>
         <div
@@ -389,11 +390,11 @@ const Home = () => {
                 and strategy.
               </div>
               <div className="bottom_arrow_div">
-                <Image
+                {/* <Image
                   src={Vector}
                   className="img-fluid"
                   alt="right side image"
-                />
+                /> */}
               </div>
             </div>
           </div>
@@ -418,11 +419,11 @@ const Home = () => {
                 sustainable growth.
               </div>
               <div className="bottom_arrow_div">
-                <Image
+                {/* <Image
                   src={Vector}
                   className="img-fluid"
                   alt="right side image"
-                />
+                /> */}
               </div>
             </div>
           </div>
@@ -447,11 +448,11 @@ const Home = () => {
                 and accountability.
               </div>
               <div className="bottom_arrow_div">
-                <Image
+                {/* <Image
                   src={Vector}
                   className="img-fluid"
                   alt="right side image"
-                />
+                /> */}
               </div>
             </div>
           </div>
@@ -475,13 +476,13 @@ const Home = () => {
                 Maintain strong cash flow to fuel growth and avoid financial
                 constraints.
               </div>
-              <div className="bottom_arrow_div">
-                <Image
-                  src={Vector}
-                  className="img-fluid"
-                  alt="right side image"
-                />
-              </div>
+                <div className="bottom_arrow_div">
+                  {/* <Image
+                    src={Vector}
+                    className="img-fluid"
+                    alt="right side image"
+                  /> */}
+                </div> 
             </div>
           </div>
         </div>
@@ -518,8 +519,11 @@ const Home = () => {
               <div className="sixth_component_title_div">SCALING UP</div>
               <div className="sixth_component_header_div">Team assessment</div>
               <div className="sixth_component_sub_header_div">
-                GET OUR FREE GROWTH POTENTIAL ASSESSMENT HERE
+              Welcome to the Scaling Up 4 Decisions Assessment!
               </div>
+              <p className="sixth_component_content">
+              This tool will help you evaluate and strengthen your business across the critical areas of People, Strategy, Execution, and Cash.
+              </p>
             </div>
 
             {/* <div className="sixth_component_btn_div">
@@ -586,7 +590,7 @@ const Home = () => {
                   ></iframe>
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title">ScaleUp - Anaheim Highlights</h5>
+                  <h5 className="card-title">Scaling up - Anaheim Highlights</h5>
                 </div>
               </div>
             </div>
