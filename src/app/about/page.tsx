@@ -41,7 +41,7 @@ const About = () => {
             <p className="subText1">
             Our approach combines tailored implementation of the Scaling Up principles with executive coaching and execution support, ensuring that our clients not only set ambitious goals but also have the strategies and resources to achieve them. We believe that with the right guidance and support, every organization can unlock its full potential and thrive in today's competitive landscape.
             </p>
-            <button className="section-btn">Join us on the journey to success</button>
+            <a className="section-btn" href="/contactUs" target="_blank" style={{textDecoration:'none'}}>Join us on the journey to success</a>
           </div>
 
           {/* Right Image Section */}
@@ -75,7 +75,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="forth_div_layout align-items-center bg-white">
+      {/* <div className="forth_div_layout align-items-center bg-white">
         <div className="row align-items-center">
           <div className="col-lg-6 col-md-12">
             <div>
@@ -97,12 +97,12 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right Side Image */}
+          {/* Right Side Image 
           <div className="col-lg-6 col-md-12 text-center">
             <Image src={img} alt="Key Factors" className="img-fluid rounded" />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="fifth_div_layout">
         <Image src={curve1} alt="curve1" className="image3" />
         <div className="main_fifth_div_body">
@@ -112,30 +112,28 @@ const About = () => {
               <Image src={Circle4} alt="Circle1" />
               <Image src={downArrow} alt="downArrow" className="down" />
               <p className="subText4">
-                Deliver more than what the customer pays for
+                Deliver superlative value.
               </p>
             </div>
             <div className="circle">
               <Image src={Circle1} alt="Circle2" />
               <Image src={downArrow} alt="downArrow" className="down" />
               <p className="subText4">
-                No matter what, do the right thing for our customers, out team,
-                our partners and our community
+               Do the right thing.
               </p>
             </div>
             <div className="circle">
               <Image src={Circle2} alt="Circle3" />
               <Image src={downArrow} alt="downArrow" className="down" />
               <p className="subText4">
-                Always be in process of developing ourselves, our processes and
-                our solutions
+                Sharpen the saw.
               </p>
             </div>
             <div className="circle">
               <Image src={Circle3} alt="Circle4" />
               <Image src={downArrow} alt="downArrow" className="down" />
               <p className="subText4">
-                Ensure an impact on the larger entrepreneur & business community
+               Give back to the community.
               </p>
             </div>
           </div>

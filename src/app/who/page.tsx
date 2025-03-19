@@ -7,12 +7,16 @@ import man2 from "../../app/who/images/vikram.png";
 import man from "../../app/who/images/man.png";
 import Image from "next/image";
 import curve1 from "../../../src/app/about/images/curve1.png";
-import Blog1 from "../../app/who/images/Blog1.png";
-import Blog2 from "../../app/who/images/Blog2.png";
-import Blog3 from "../../app/who/images/Blog3.png";
-import Blog4 from "../../app/who/images/Blog4.png";
-import Blog5 from "../../app/who/images/Blog5.png";
-import Blog6 from "../../app/who/images/Blog6.png";
+import coach1 from "../../app/who/images/coach1.png";
+import coach2 from "../../app/who/images/coach2.png";
+import coach3 from "../../app/who/images/coach3.png";
+import coach4 from "../../app/who/images/coach4.png";
+import coach5 from "../../app/who/images/coach5.png";
+import coach6 from "../../app/who/images/coach6.png";
+import coach7 from "../../app/who/images/coach7.png";
+import blog4 from "../../app/who/images/Blog4.png";
+import blog5 from "../../app/who/images/Blog5.png";
+import blog6 from "../../app/who/images/Blog6.png";
 import Forward from "../../app/who/images/Forward1.png";
 import Backward from "../../app/who/images/Backward.png";
 const page = () => {
@@ -51,186 +55,68 @@ const page = () => {
     {
       name: "Ashima Gupta",
       role: "Associate Coach",
-      description:"Ashima Gupta is a seasoned IT leader with over 20 years of experience developing products and leading high-performing teams across various industries. With a deep expertise in Agilbreathworks, team building, and scaling complex systems, she has consistently driven growth and operational excellence. Ashima is also a certified yoga instructor and Art of Living teacher, passionate about integrating mindfulness and well-being into professional environments through meditation and breathwork.",
-      image: Blog1,
+      description:"Ashima Gupta is a seasoned IT leader with over 20 years of experience developing products and leading high-performing teams across various industries. With a deep expertise in Agilbreathworks, team building, and scaling complex systems, she has consistently driven growth and operational excellence. Ashima is also a certified yoga instructor and Art of Living teacher, passionate about integrating mindfulness and well-being into professional environments through meditation and breathwork.",
+      image: coach1,
     },
     {
       name: "Lakshmy S Nair",
       role: "Associate Coach",
       description:"With a rich background spanning 15 years across various industries, Lakshmy brings a wealth of knowledge and experience to the table. Her career journey encompasses roles in business analysis, banking and credit analysis, education, and life and wellness coaching. She holds a postgraduate degree in Business Economics and is CAIIB certified, alongside being a Certified Credit Analyst. She is also a certified professional life and wellness coach. Currently, she is enhancing her qualifications by pursuing a second postgraduate degree in Counselling Psychology. She is also a passionate Bharatnatyam dancer and a dedicated writer. She also holds a Level 3 Yoga Teacher certification from the Ministry of AYUSH, Government of India.",
-      image: Blog2,
+      image: coach2,
     },
     {
       name: "N Dharmadhikari",
       role: "Associate Coach",
       description:"Enriched with vast and extensive experience in varied commercial faculties within telecommunication industry in India and the UAE, N Dharmadhikari has successfully led teams to surpass yearly product revenue budgets of ~ $1 bn USD. A management graduate majoring in Marketing, he has been able to play multiple roles and drive business growth successfully in Marketing, Strategy and P&L.",
-      image: Blog3,
+      image: coach3,
     },
     {
-      name: "Jyoti Hiraskar",
-      role: "Accountability Partner",
-      description: "Jyoti Hiraskar joins Success Alchemists after her successful stint as a Teacher, having worked in various schools in Mumbai and Pune. Besides being an accountability partner at Success Alchemists, she is also an IT professional and an inner transformation teacher with “Art of living”, helping people understand the purpose of their life through yoga & pranayam.",
-      image: Blog4,
+      name: "Rajesh Daga",
+      role: "Associate Coach",
+      description: "With 40 years of business and corporate experience across India, Oman, and Dubai, Rajesh Daga dedicated the last 30 years to the automobile sector in the Gulf. His expertise includes managing inventory, logistics, dealer development, and price negotiations with principles. He had successfully expanded dealer networks to over 45 countries, specializing in both genuine and aftermarket spare parts. Additionally, he is a passionate Toastmaster and an avid reader.",
+      image: coach4,
     },
     {
-      name: "Kavita Lakshman",
-      role: "Accountability Partner",
-      description: "Kavita holds a Bachelor of Arts degree from Mumbai University and has completed a Postgraduate Diploma in Travel and Tourism from the esteemed Garware Institute at Mumbai University. Her career began at WNS, where she joined as a trainee agent through the British Airways GFA process. Within three years, she was promoted to team leader, a testament to her training capabilities, eloquence, and resourcefulness. With over 16 years of experience in multinational companies, Kavita brings a wealth of expertise and a proven track record of success in the industry.",
-      image: Blog5,
+      name: "Richie Agarwal",
+      role: "Associate Coach",
+      description: "Having 2 decades of experience with the FMCG and IT industry, an Alumna of IRMA, Anand, Richie is a marketing wizard and an expert in the implementation of Scaling Up framework, TQM and Hoshin Kanri methodologies. A passionate yoga practitioner, Richie employs New Age marketing techniques and engaging storytelling to make complex concepts accessible and actionable. Her commitment to empowering businesses drives sustainable success and impactful results.",
+      image: coach5,
     },
     {
-      name: "Puja S Barori",
-      role: "Accountability Partner",
-      description: "Puja S Barori is a multifaceted individual with 10 years of experience in the BPO-ITO industry, offering outstanding team leadership training and developing efficient teams. She is a creative artist, a voyager and a passionate fitness and nutrition coach with an urge to promote a safe, enjoyable and sustainable platform for people aiming to achieve health and fitness goals.",
-      image: Blog6,
+      name: "Sandesh Banger",
+      role: "Associate Coach",
+      description: "An MBA graduate from IIM Kozhikode with 15 years of extensive experience in Banking, Finance Consulting, and Training. Throughout his career, Sandesh has exposure working with businesses across multiple industries. As our go-to expert on cash management tools, with his profound financial domain knowledge and expertise, Sandesh’s insights are invaluable. He is also USA CFA Level 2 qualified. Sandesh has a passion for content creation and a keen interest in public speaking.",
+      image: coach6,
+    },
+    {
+      name: "Sangeeta Acharya",
+      role: "Associate Coach & Head Accountability",
+      description: "Sangeeta holds an MBA from Pune University and brings 14 years of extensive experience in the telecom industry. She has demonstrated expertise in Customer Experience, Credit Risk Management, Collections, and Business Analysis. Sangeeta excels at driving operational excellence and leading strategic initiatives. She is also passionate about continuous learning and is an avid reader.",
+      image: coach7,
     },
 
-    {
-      name: "Ashima Gupta",
-      role: "Associate Coach",
-      description:"Ashima Gupta is a seasoned IT leader with over 20 years of experience developing products and leading high-performing teams across various industries. With a deep expertise in Agilbreathworks, team building, and scaling complex systems, she has consistently driven growth and operational excellence. Ashima is also a certified yoga instructor and Art of Living teacher, passionate about integrating mindfulness and well-being into professional environments through meditation and breathwork.",
-      image: Blog1,
-    },
-    {
-      name: "Lakshmy S Nair",
-      role: "Associate Coach",
-      description:"With a rich background spanning 15 years across various industries, Lakshmy brings a wealth of knowledge and experience to the table. Her career journey encompasses roles in business analysis, banking and credit analysis, education, and life and wellness coaching. She holds a postgraduate degree in Business Economics and is CAIIB certified, alongside being a Certified Credit Analyst. She is also a certified professional life and wellness coach. Currently, she is enhancing her qualifications by pursuing a second postgraduate degree in Counselling Psychology. She is also a passionate Bharatnatyam dancer and a dedicated writer. She also holds a Level 3 Yoga Teacher certification from the Ministry of AYUSH, Government of India.",
-      image: Blog2,
-    },
-    {
-      name: "N Dharmadhikari",
-      role: "Associate Coach",
-      description:"Enriched with vast and extensive experience in varied commercial faculties within telecommunication industry in India and the UAE, N Dharmadhikari has successfully led teams to surpass yearly product revenue budgets of ~ $1 bn USD. A management graduate majoring in Marketing, he has been able to play multiple roles and drive business growth successfully in Marketing, Strategy and P&L.",
-      image: Blog3,
-    },
-    {
-      name: "Jyoti Hiraskar",
-      role: "Accountability Partner",
-      description: "Jyoti Hiraskar joins Success Alchemists after her successful stint as a Teacher, having worked in various schools in Mumbai and Pune. Besides being an accountability partner at Success Alchemists, she is also an IT professional and an inner transformation teacher with “Art of living”, helping people understand the purpose of their life through yoga & pranayam.",
-      image: Blog4,
-    },
-    {
-      name: "Kavita Lakshman",
-      role: "Accountability Partner",
-      description: "Kavita holds a Bachelor of Arts degree from Mumbai University and has completed a Postgraduate Diploma in Travel and Tourism from the esteemed Garware Institute at Mumbai University. Her career began at WNS, where she joined as a trainee agent through the British Airways GFA process. Within three years, she was promoted to team leader, a testament to her training capabilities, eloquence, and resourcefulness. With over 16 years of experience in multinational companies, Kavita brings a wealth of expertise and a proven track record of success in the industry.",
-      image: Blog5,
-    },
-    {
-      name: "Puja S Barori",
-      role: "Accountability Partner",
-      description: "Puja S Barori is a multifaceted individual with 10 years of experience in the BPO-ITO industry, offering outstanding team leadership training and developing efficient teams. She is a creative artist, a voyager and a passionate fitness and nutrition coach with an urge to promote a safe, enjoyable and sustainable platform for people aiming to achieve health and fitness goals.",
-      image: Blog6,
-    },
+ 
   ];
   const coaches1 = [
     {
       name: "Jyoti Hiraskar",
       role: "Accountability Partner",
       description: "Jyoti Hiraskar joins Success Alchemists after her successful stint as a Teacher, having worked in various schools in Mumbai and Pune. Besides being an accountability partner at Success Alchemists, she is also an IT professional and an inner transformation teacher with “Art of living”, helping people understand the purpose of their life through yoga & pranayam.",
-      image: Blog4,
+      image: blog4,
     },
     {
       name: "Kavita Lakshman",
       role: "Accountability Partner",
       description: "Kavita holds a Bachelor of Arts degree from Mumbai University and has completed a Postgraduate Diploma in Travel and Tourism from the esteemed Garware Institute at Mumbai University. Her career began at WNS, where she joined as a trainee agent through the British Airways GFA process. Within three years, she was promoted to team leader, a testament to her training capabilities, eloquence, and resourcefulness. With over 16 years of experience in multinational companies, Kavita brings a wealth of expertise and a proven track record of success in the industry.",
-      image: Blog5,
+      image: blog5,
     },
     {
       name: "Puja S Barori",
       role: "Accountability Partner",
       description: "Puja S Barori is a multifaceted individual with 10 years of experience in the BPO-ITO industry, offering outstanding team leadership training and developing efficient teams. She is a creative artist, a voyager and a passionate fitness and nutrition coach with an urge to promote a safe, enjoyable and sustainable platform for people aiming to achieve health and fitness goals.",
-      image: Blog6,
+      image: blog6,
     },
-    {
-      name: "Ashima Gupta",
-      role: "Associate Coach",
-      description:"Ashima Gupta is a seasoned IT leader with over 20 years of experience developing products and leading high-performing teams across various industries. With a deep expertise in Agilbreathworks, team building, and scaling complex systems, she has consistently driven growth and operational excellence. Ashima is also a certified yoga instructor and Art of Living teacher, passionate about integrating mindfulness and well-being into professional environments through meditation and breathwork.",
-      image: Blog1,
-    },
-    {
-      name: "Lakshmy S Nair",
-      role: "Associate Coach",
-      description:"With a rich background spanning 15 years across various industries, Lakshmy brings a wealth of knowledge and experience to the table. Her career journey encompasses roles in business analysis, banking and credit analysis, education, and life and wellness coaching. She holds a postgraduate degree in Business Economics and is CAIIB certified, alongside being a Certified Credit Analyst. She is also a certified professional life and wellness coach. Currently, she is enhancing her qualifications by pursuing a second postgraduate degree in Counselling Psychology. She is also a passionate Bharatnatyam dancer and a dedicated writer. She also holds a Level 3 Yoga Teacher certification from the Ministry of AYUSH, Government of India.",
-      image: Blog2,
-    },
-    {
-      name: "N Dharmadhikari",
-      role: "Associate Coach",
-      description:"Enriched with vast and extensive experience in varied commercial faculties within telecommunication industry in India and the UAE, N Dharmadhikari has successfully led teams to surpass yearly product revenue budgets of ~ $1 bn USD. A management graduate majoring in Marketing, he has been able to play multiple roles and drive business growth successfully in Marketing, Strategy and P&L.",
-      image: Blog3,
-    },
-    {
-      name: "Jyoti Hiraskar",
-      role: "Accountability Partner",
-      description: "Jyoti Hiraskar joins Success Alchemists after her successful stint as a Teacher, having worked in various schools in Mumbai and Pune. Besides being an accountability partner at Success Alchemists, she is also an IT professional and an inner transformation teacher with “Art of living”, helping people understand the purpose of their life through yoga & pranayam.",
-      image: Blog4,
-    },
-    {
-      name: "Kavita Lakshman",
-      role: "Accountability Partner",
-      description: "Kavita holds a Bachelor of Arts degree from Mumbai University and has completed a Postgraduate Diploma in Travel and Tourism from the esteemed Garware Institute at Mumbai University. Her career began at WNS, where she joined as a trainee agent through the British Airways GFA process. Within three years, she was promoted to team leader, a testament to her training capabilities, eloquence, and resourcefulness. With over 16 years of experience in multinational companies, Kavita brings a wealth of expertise and a proven track record of success in the industry.",
-      image: Blog5,
-    },
-    {
-      name: "Puja S Barori",
-      role: "Accountability Partner",
-      description: "Puja S Barori is a multifaceted individual with 10 years of experience in the BPO-ITO industry, offering outstanding team leadership training and developing efficient teams. She is a creative artist, a voyager and a passionate fitness and nutrition coach with an urge to promote a safe, enjoyable and sustainable platform for people aiming to achieve health and fitness goals.",
-      image: Blog6,
-    },
-    {
-      name: "Ashima Gupta",
-      role: "Associate Coach",
-      description:"Ashima Gupta is a seasoned IT leader with over 20 years of experience developing products and leading high-performing teams across various industries. With a deep expertise in Agilbreathworks, team building, and scaling complex systems, she has consistently driven growth and operational excellence. Ashima is also a certified yoga instructor and Art of Living teacher, passionate about integrating mindfulness and well-being into professional environments through meditation and breathwork.",
-      image: Blog1,
-    },
-    {
-      name: "Lakshmy S Nair",
-      role: "Associate Coach",
-      description:"With a rich background spanning 15 years across various industries, Lakshmy brings a wealth of knowledge and experience to the table. Her career journey encompasses roles in business analysis, banking and credit analysis, education, and life and wellness coaching. She holds a postgraduate degree in Business Economics and is CAIIB certified, alongside being a Certified Credit Analyst. She is also a certified professional life and wellness coach. Currently, she is enhancing her qualifications by pursuing a second postgraduate degree in Counselling Psychology. She is also a passionate Bharatnatyam dancer and a dedicated writer. She also holds a Level 3 Yoga Teacher certification from the Ministry of AYUSH, Government of India.",
-      image: Blog2,
-    },
-    {
-      name: "N Dharmadhikari",
-      role: "Associate Coach",
-      description:"Enriched with vast and extensive experience in varied commercial faculties within telecommunication industry in India and the UAE, N Dharmadhikari has successfully led teams to surpass yearly product revenue budgets of ~ $1 bn USD. A management graduate majoring in Marketing, he has been able to play multiple roles and drive business growth successfully in Marketing, Strategy and P&L.",
-      image: Blog3,
-    },
-    {
-      name: "Jyoti Hiraskar",
-      role: "Accountability Partner",
-      description: "Jyoti Hiraskar joins Success Alchemists after her successful stint as a Teacher, having worked in various schools in Mumbai and Pune. Besides being an accountability partner at Success Alchemists, she is also an IT professional and an inner transformation teacher with “Art of living”, helping people understand the purpose of their life through yoga & pranayam.",
-      image: Blog4,
-    },
-    {
-      name: "Kavita Lakshman",
-      role: "Accountability Partner",
-      description: "Kavita holds a Bachelor of Arts degree from Mumbai University and has completed a Postgraduate Diploma in Travel and Tourism from the esteemed Garware Institute at Mumbai University. Her career began at WNS, where she joined as a trainee agent through the British Airways GFA process. Within three years, she was promoted to team leader, a testament to her training capabilities, eloquence, and resourcefulness. With over 16 years of experience in multinational companies, Kavita brings a wealth of expertise and a proven track record of success in the industry.",
-      image: Blog5,
-    },
-    {
-      name: "Puja S Barori",
-      role: "Accountability Partner",
-      description: "Puja S Barori is a multifaceted individual with 10 years of experience in the BPO-ITO industry, offering outstanding team leadership training and developing efficient teams. She is a creative artist, a voyager and a passionate fitness and nutrition coach with an urge to promote a safe, enjoyable and sustainable platform for people aiming to achieve health and fitness goals.",
-      image: Blog6,
-    },
-    {
-      name: "Ashima Gupta",
-      role: "Associate Coach",
-      description:"Ashima Gupta is a seasoned IT leader with over 20 years of experience developing products and leading high-performing teams across various industries. With a deep expertise in Agilbreathworks, team building, and scaling complex systems, she has consistently driven growth and operational excellence. Ashima is also a certified yoga instructor and Art of Living teacher, passionate about integrating mindfulness and well-being into professional environments through meditation and breathwork.",
-      image: Blog1,
-    },
-    {
-      name: "Lakshmy S Nair",
-      role: "Associate Coach",
-      description:"With a rich background spanning 15 years across various industries, Lakshmy brings a wealth of knowledge and experience to the table. Her career journey encompasses roles in business analysis, banking and credit analysis, education, and life and wellness coaching. She holds a postgraduate degree in Business Economics and is CAIIB certified, alongside being a Certified Credit Analyst. She is also a certified professional life and wellness coach. Currently, she is enhancing her qualifications by pursuing a second postgraduate degree in Counselling Psychology. She is also a passionate Bharatnatyam dancer and a dedicated writer. She also holds a Level 3 Yoga Teacher certification from the Ministry of AYUSH, Government of India.",
-      image: Blog2,
-    },
-    {
-      name: "N Dharmadhikari",
-      role: "Associate Coach",
-      description:"Enriched with vast and extensive experience in varied commercial faculties within telecommunication industry in India and the UAE, N Dharmadhikari has successfully led teams to surpass yearly product revenue budgets of ~ $1 bn USD. A management graduate majoring in Marketing, he has been able to play multiple roles and drive business growth successfully in Marketing, Strategy and P&L.",
-      image: Blog3,
-    },
+  
   ];
   return (
     <div>
@@ -292,7 +178,7 @@ const page = () => {
               </div>
               <div className="col-lg-7">
                 <p className="section-subText">
-                Vikram Panjwani - As the first certified Scaling Up Coach in India, he brings 37 years of experience in starting, building, and growing businesses both locally and globally. His career spans telecom, IT services, publishing, and industrial products, where he has led complex projects and large teams under challenging conditions. As a Scaling Up Coach, he has helped companies in technology, recruitment, manufacturing, B2C, and industrial services implement key growth strategies. For the past decade, he has been an active member of TiE Pune, serving as a Charter and Governing Council Member. He has also played a key role in mentoring start-ups and organizing Pune’s largest start-up conference, TiECon.
+                Vikram Panjwani - With 28 years of experience in building and scaling consumer businesses, Vikram is now dedicated to helping entrepreneurs achieve their growth potential. His expertise, combined with the invaluable insights gained from implementing the Scaling Up Performance Platform at Denkali, positions him to guide ambitious entrepreneurs in utilizing these proven tools for success.
                 </p>
               </div>
             </div>
@@ -394,20 +280,7 @@ const page = () => {
                 Accountability team
                 </p>
                 <div className="btnContainer">
-                  <button
-                    className="btn"
-                    onClick={handlePrev1}
-                    disabled={currentIndex1 === 0}
-                  >
-                    <Image src={Backward} alt="backward" />
-                  </button>
-                  <button
-                    className="btn"
-                    onClick={handleNext1}
-                    disabled={currentIndex1 + itemsPerPage >= coaches1.length}
-                  >
-                    <Image src={Forward} alt="forward" />
-                  </button>
+                
                 </div>
               </div>
               
