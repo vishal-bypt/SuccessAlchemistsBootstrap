@@ -15,9 +15,7 @@ const ContactUs = () => {
                             Contact us
                         </p>
                         <p className="subText" style={{ color: "white", textAlign: 'left' }}>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard dummy text
-                            ever since the
+                        Contact Us to learn more or to schedule a discovery call on how Scaling Up can transform your business.
                         </p>
                     </div>
                 </div>

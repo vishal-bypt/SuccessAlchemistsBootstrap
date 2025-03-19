@@ -41,7 +41,7 @@ const About = () => {
             <p className="subText1">
             Our approach combines tailored implementation of the Scaling Up principles with executive coaching and execution support, ensuring that our clients not only set ambitious goals but also have the strategies and resources to achieve them. We believe that with the right guidance and support, every organization can unlock its full potential and thrive in today's competitive landscape.
             </p>
-            <a className="section-btn" href="/contactUs" target="_blank" style={{textDecoration:'none'}}>Join us on the journey to success</a>
+            <a className="section-btn" href="/contactUs" style={{textDecoration:'none'}}>Join us on the journey to success</a>
           </div>
 
           {/* Right Image Section */}

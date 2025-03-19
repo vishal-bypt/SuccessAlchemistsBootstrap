@@ -224,7 +224,7 @@ const page = () => {
             <div className="team-sub-container">
               <div className="d-flex flex-row justify-content-between">
                 <p className="team-head">
-                  Scaling Up certified coaches
+                  Scaling Up coaches
                 </p>
                 <div className="btnContainer">
                   <button
