@@ -90,7 +90,9 @@ const Footer = () => {
                       ? "active-link font-semibold"
                       : "inactive-link font-normal"
                   } link-underline link-underline-opacity-0`}
-                  href={"https://q.esperto.one/q/sR4RRluSEazkK5XHPlVZ/6hDOhyCnHHDQf1Uzk3eg"}
+                  href={
+                    "https://q.esperto.one/q/sR4RRluSEazkK5XHPlVZ/6hDOhyCnHHDQf1Uzk3eg"
+                  }
                 >
                   Quick assessment
                 </Link>
@@ -114,7 +116,7 @@ const Footer = () => {
                       "/events/podcast",
                       "/events/webinar",
                       "/events/basecamp",
-                      "/events/webinarDetail"
+                      "/events/webinarDetail",
                     ].includes(pathName)
                       ? "active-link font-semibold"
                       : "inactive-link font-normal"
@@ -175,16 +177,43 @@ const Footer = () => {
           <div className="col-12 col-md-3 col-lg-3 d-flex flex-column  ">
             <h5>Social Networks</h5>
             <div className="d-flex gap-3 mt-3">
-              {[Facebook, Instagram, Youtube, Linkedin, Twitter].map(
-                (icon, index) => (
+              {[
+                {
+                  link: "https://www.facebook.com/success.alchemists",
+                  imageSrc: Facebook,
+                },
+                {
+                  link: "https://www.instagram.com/alchemistsuccess",
+                  imageSrc: Instagram,
+                },
+                {
+                  link: "https://youtube.com/@success_alchemists",
+                  imageSrc: Youtube,
+                },
+                {
+                  link: "https://www.linkedin.com/company/success-alchemists/",
+                  imageSrc: Linkedin,
+                },
+                {
+                  link: "https://x.com/SuccessAlc82336",
+                  imageSrc: Twitter,
+                },
+              ].map((icon, index) => (
+                <Link
+                  href={icon.link}
+                  key={index}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Image
-                    key={index}
-                    src={icon}
-                    alt="social"
+                    src={icon.imageSrc}
+                    alt={""}
+                    width={30}
+                    height={30}
                     className="social-icon"
                   />
-                )
-              )}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
