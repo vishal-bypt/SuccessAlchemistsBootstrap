@@ -90,7 +90,7 @@ const Footer = () => {
                       ? "active-link font-semibold"
                       : "inactive-link font-normal"
                   } link-underline link-underline-opacity-0`}
-                  href={"/assessment"}
+                  href={"https://q.esperto.one/q/sR4RRluSEazkK5XHPlVZ/6hDOhyCnHHDQf1Uzk3eg"}
                 >
                   Quick assessment
                 </Link>
