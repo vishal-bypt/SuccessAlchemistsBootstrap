@@ -19,6 +19,10 @@
     display: block;
 }
 
+.webinar-image {
+    height: auto;
+}
+
 @media (max-width: 768px) {
     .heading {
         font-size: 2rem;
@@ -82,7 +86,7 @@
 }
 
 .webinar-content {
-    margin-top: 32px;
+    margin-top: 24px;
 }
 
 .webinar-content p {
@@ -120,7 +124,7 @@
 }
 
 .webinar-box {
-    padding: 8px;
+    padding: 16px;
     border-radius: 16px;
     box-shadow: 0px 1px 50px rgba(0, 0, 0, 0.1);
 }
@@ -257,17 +261,14 @@
 .attend-time-div {
     padding: 16px 32px;
     background: #FBA819;
-    border-radius: 24px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .attend-time-div p {
     font-size: 24px;
     color: #fff;
     text-align: center;
-}
-
-.attend-time-div {
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .seventh_components {
@@ -292,4 +293,8 @@
 
 .card.video-card .video-thumbnail iframe {
     border-radius: 16px;
+}
+
+.speaker-image {
+    width: 100%;
 }

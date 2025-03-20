@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import "./success.css";
-import Case1 from "../../app/success/images/Case-study1.png";
+import Case1 from "../../app/success/images/case-study.svg";
 import Case2 from "../../app/success/images/Case-study2.png";
 import Case3 from "../../app/success/images/Case-study3.png";
 
@@ -108,15 +108,10 @@ const page = () => {
         </div>
         <div className="casestudy-container">
           <div className="row">
-            <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="col-md-12">
               <Image src={Case1} alt="case1" className="img-fluid w-100" />
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <Image src={Case2} alt="case2" className="img-fluid w-100" />
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <Image src={Case3} alt="case3" className="img-fluid w-100" />
-            </div>
+         
           </div>
         </div>
       </div>

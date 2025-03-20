@@ -54,7 +54,7 @@ const page = () => {
                             <div className="webinar-box">
                                 <div className="col-md-12">
                                     <Image
-                                        className="img-fluid rounded image w-100"
+                                        className="img-fluid rounded webinar-image w-100"
                                         src={basecamp1}
                                         alt="img2"
                                     />
@@ -93,7 +93,7 @@ const page = () => {
                             <div className="webinar-box">
                                 <div className="col-md-12">
                                     <Image
-                                        className="img-fluid rounded image w-100"
+                                        className="img-fluid rounded webinar-image w-100"
                                         src={basecamp2}
                                         alt="img2"
                                     />
@@ -132,7 +132,7 @@ const page = () => {
                             <div className="webinar-box">
                                 <div className="col-md-12">
                                     <Image
-                                        className="img-fluid rounded image w-100"
+                                        className="img-fluid rounded webinar-image w-100"
                                         src={basecamp3}
                                         alt="img2"
                                     />
@@ -171,7 +171,7 @@ const page = () => {
                             <div className="webinar-box">
                                 <div className="col-md-12">
                                     <Image
-                                        className="img-fluid rounded image w-100"
+                                        className="img-fluid rounded webinar-image w-100"
                                         src={basecamp4}
                                         alt="img2"
                                     />
@@ -237,15 +237,15 @@ const page = () => {
 
                 <div className="webinar-main-box">
                     <div className="row">
-                        <div className="col-md-3">
+                        <div className="col-md-4">
                             <Image
-                                className="img-fluid rounded image w-100"
+                                className="img-fluid rounded speaker-image w-100"
                                 src={blogimg1}
                                 alt="img2"
                             />
 
                         </div>
-                        <div className="col-md-9">
+                        <div className="col-md-8">
                             <div className="second-box-content">
                                 <h3>Ajay Hiraskar</h3>
                                 <p className="mt-2">Join our exclusive one-day workshop with Ajay Hiraskar, India’s first certified Scaling Up coach, and unlock the keys to accelerating your business growth. Learn proven strategies to double your cash flow, triple your profitability, and increase your company’s valuation tenfold. This workshop provides rapid growth strategies, actionable tools, expert mentorship, and access to a network of industry champions. Tailored for founders, CEOs, and top leadership, it empowers you to scale your vision, drive innovation, and achieve extraordinary success. Explore essential growth tools across the four pillars of scaling up: People, Strategy, Execution, and Cash. Transform your organization with our Scaling Up workshop!</p>
@@ -257,65 +257,6 @@ const page = () => {
                 </div>
             </div>
 
-            <div className="seventh_components">
-                <div className="row">
-                    <div className="col-md-4">
-                        <div className="seventh_components_card_box">
-                            <div className="card video-card">
-                                <div className="video-thumbnail">
-                                    <iframe
-                                        width="100%"
-                                        height="200px"
-                                        src="https://www.youtube.com/embed/PGgIAnehjR8"
-                                        allow="autoplay; encrypted-media"
-                                    ></iframe>
-                                </div>
-                                <div className="card-body">
-                                    <h5 className="card-title">
-                                        Challenges of Scaling Up a Business
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div className="seventh_components_card_box">
-                            <div className="card video-card">
-                                <div className="video-thumbnail">
-                                    <iframe
-                                        width="100%"
-                                        height="200px"
-                                        src="https://www.youtube.com/embed/pDNju3Ookq4"
-                                        allow="autoplay; encrypted-media"
-                                    ></iframe>
-                                </div>
-                                <div className="card-body">
-                                    <h5 className="card-title">
-                                        The 10 Rockefeller Habits To Success
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-md-4">
-                        <div className="seventh_components_card_box">
-                            <div className="card video-card">
-                                <div className="video-thumbnail">
-                                    <iframe
-                                        width="100%"
-                                        height="200px"
-                                        src="https://www.youtube.com/embed/048UdKxDsA8"
-                                        allow="autoplay; encrypted-media"
-                                    ></iframe>
-                                </div>
-                                <div className="card-body">
-                                    <h5 className="card-title">ScaleUp - Anaheim Highlights</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
 

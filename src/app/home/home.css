@@ -131,7 +131,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 12px;
 }
 
 .video_detail_div_title_text {
@@ -459,7 +459,7 @@
 }
 
 .home-video {
-    border-radius: 24px;
+    border-radius: 16px;
 }
 
 .bulb-image {
