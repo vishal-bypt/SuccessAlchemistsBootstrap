@@ -43,8 +43,8 @@ const page = () => {
         <div className="mt-4">
           <div className="row g-4">
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a target="_blank" href="../../../assets/images/PDF/Cash - CASh - Cash Acceleration Strategies.pdf">
-                <Image src={Case1} alt="case1" className="toolkit-img img-fluid w-100" />
+              <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Cash - CASh - Cash Acceleration Strategies.pdf">
+                <Image src={Case1} alt="case1" className="toolkit-img img-fluid" />
 
                 <div className="overlay">
                   <h2>CASh</h2>
@@ -53,8 +53,8 @@ const page = () => {
               </a>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a target="_blank" href="../../../assets/images/PDF/Cash - POO -  The Power of One.pdf">
-                <Image src={Case1} alt="case2" className="img-fluid w-100" />
+              <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Cash - POO -  The Power of One.pdf">
+                <Image src={Case1} alt="case2" className="toolkit-img img-fluid" />
                 <div className="overlay">
                   <h2>CASh</h2>
                   <p>The Power of One</p>
@@ -62,8 +62,8 @@ const page = () => {
               </a>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a target="_blank" href="../../../assets/images/PDF/People - FACe - Function Accountability Chart.pdf">
-                <Image src={Case2} alt="case3" className="img-fluid w-100" />
+              <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/People - FACe - Function Accountability Chart.pdf">
+                <Image src={Case2} alt="case3" className="toolkit-img img-fluid" />
                 <div className="overlay">
                   <h2>FACe</h2>
                   <p>Function Accountability Chart</p>
@@ -71,8 +71,8 @@ const page = () => {
               </a>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a target="_blank" href="../../../assets/images/PDF/People - FACe - Function Accountability Chart.pdf">
-                <Image src={Case2} alt="case3" className="img-fluid w-100" />
+              <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/People - FACe - Function Accountability Chart.pdf">
+                <Image src={Case2} alt="case3" className="toolkit-img img-fluid" />
                 <div className="overlay">
                   <h2>FACe</h2>
                   <p>Function Accountability Chart</p>

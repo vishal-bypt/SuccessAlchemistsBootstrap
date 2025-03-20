@@ -4,10 +4,6 @@
     flex-direction: column;
 }
 
-.second_div_layout {
-    display: block;
-}
-
 .first_div_layout.resource {
     background: url(./images/main_layout_image.jpeg) no-repeat center;
     background-size: cover;
@@ -16,13 +12,6 @@
 .curve {
     position: absolute;
     top: 20
-}
-
-.subText1 {
-    font-size: 1rem;
-    color: rgba(251, 168, 25, 1);
-    background-color: rgba(255, 241, 216, 1);
-    border-radius: 4rem;
 }
 
 .image3 {
@@ -56,23 +45,38 @@
 
 .image-div {
     position: relative;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .toolkit-img {
     object-fit: cover;
-    height: 300px;
-    border-radius: 24px;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    border-radius: 16px;
     cursor: pointer;
     position: relative;
+    margin: 0 auto;
+}
+
+.tool-img-link {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 .overlay {
     position: absolute;
     top: 0px;
-    left: 10px;
-    right: 10px;
+    left: 0px;
+    right: 0px;
     bottom: 0px;
-    border-radius: 24px;
+    border-radius: 16px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.86) 0%, rgba(255, 255, 255, 0.59) 100%);
     /* Semi-transparent black */
     color: white;
@@ -84,6 +88,7 @@
     padding: 20px;
     cursor: pointer;
     transition: 0.5s;
+    width: 100%;
 }
 
 .toolkit-img:before {

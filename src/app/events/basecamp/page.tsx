@@ -50,7 +50,7 @@ const page = () => {
                 <div className="webinar-main-box">
 
                     <div className="row">
-                        <div className="col-md-3">
+                        <div className="col-md-4">
                             <div className="webinar-box">
                                 <div className="col-md-12">
                                     <Image
@@ -89,7 +89,7 @@ const page = () => {
 
                             </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-md-4">
                             <div className="webinar-box">
                                 <div className="col-md-12">
                                     <Image
@@ -128,7 +128,7 @@ const page = () => {
 
                             </div>
                         </div>
-                        <div className="col-md-3">
+                          {/*<div className="col-md-3">
                             <div className="webinar-box">
                                 <div className="col-md-12">
                                     <Image
@@ -136,7 +136,7 @@ const page = () => {
                                         src={basecamp3}
                                         alt="img2"
                                     />
-                                   {/* <div className="webinar-box-content">
+                                  <div className="webinar-box-content">
                                         <div className="first-box-outer">
                                             <div className="second-box-content">
                                                 <h3>Social Media Marketing</h3>
@@ -161,13 +161,13 @@ const page = () => {
                                             </div>
                                         </div>
 
-        </div>*/}
+        </div>
 
                                 </div>
 
                             </div>
-                        </div>
-                        <div className="col-md-3">
+                        </div>*/}
+                        <div className="col-md-4">
                             <div className="webinar-box">
                                 <div className="col-md-12">
                                     <Image
@@ -239,7 +239,7 @@ const page = () => {
                     <div className="row">
                         <div className="col-md-4">
                             <Image
-                                className="img-fluid rounded speaker-image w-100"
+                                className="img-fluid speaker-image"
                                 src={blogimg1}
                                 alt="img2"
                             />

@@ -15,10 +15,6 @@
     line-height: 1.2;
 }
 
-.second_div_layout {
-    display: block;
-}
-
 .webinar-image {
     height: auto;
 }
@@ -297,4 +293,5 @@
 
 .speaker-image {
     width: 100%;
+    border-radius: 16px;
 }

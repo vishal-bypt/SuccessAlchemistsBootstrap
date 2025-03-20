@@ -48,14 +48,6 @@
     gap: 16px;
 }
 
-.card {
-    padding: 16px;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
 .card-body {
     padding: 0px;
 }
@@ -69,14 +61,19 @@
     gap: 1px
 }
 
+.card-coach {
+    padding: 16px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 16px;
+}
+
 .card-img-top {
     width: 180px;
     height: auto;
     margin: 0 auto;
-}
-
-.card-text {
-    font-size: 14px;
 }
 
 .member-name {
@@ -92,6 +89,7 @@
 .card-text {
     color: #616161;
     margin-top: 8px;
+    font-size: 16px;
 }
 
 @media (max-width: 1024px) {
@@ -99,7 +97,7 @@
         padding: 1.5rem;
         box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.08);
     }
-    .card {
+    .card-coach {
         padding: 1.25rem;
     }
 }
@@ -109,7 +107,7 @@
         padding: 1rem;
         box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.06);
     }
-    .card {
+    .card-coach {
         padding: 1rem;
     }
 }
@@ -120,7 +118,7 @@
         border-radius: 16px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
     }
-    .card {
+    .card-coach {
         padding: 0.75rem;
     }
 }

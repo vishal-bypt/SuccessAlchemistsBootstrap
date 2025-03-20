@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "./who.css";
-import man2 from "../../app/who/images/vikram.png";
-import man from "../../app/who/images/man.png";
+import man2 from "../../app/who/images/vikram.svg";
+import man from "../../app/who/images/man.svg";
 import Image from "next/image";
 import curve1 from "../../../src/app/about/images/curve1.png";
 import coach1 from "../../app/who/images/coach1.png";
@@ -249,7 +249,7 @@ const page = () => {
                     .slice(currentIndex, currentIndex + itemsPerPage)
                     .map((coach, index) => (
                       <div key={index} className="col-lg-4 col-md-6 col-sm-12">
-                        <div className="card h-100 shadow-lg">
+                        <div className="card-coach h-100 shadow-lg">
                           <Image
                             src={coach.image}
                             className="card-img-top img-fluid"
@@ -279,9 +279,7 @@ const page = () => {
                 
                 Accountability team
                 </p>
-                <div className="btnContainer">
                 
-                </div>
               </div>
               
                 <div className="row">
@@ -289,7 +287,7 @@ const page = () => {
                     .slice(currentIndex1, currentIndex1+ itemsPerPage)
                     .map((coach, index) => (
                       <div key={index} className="col-lg-4 col-md-6 col-sm-12">
-                        <div className="card h-100 shadow-lg">
+                        <div className="card-coach  h-100 shadow-lg">
                           <Image
                             src={coach.image}
                             className="card-img-top img-fluid"

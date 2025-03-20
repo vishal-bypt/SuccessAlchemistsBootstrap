@@ -15,10 +15,6 @@
     line-height: 1.2;
 }
 
-.second_div_layout {
-    display: block;
-}
-
 @media (max-width: 768px) {
     .heading {
         font-size: 2rem;
@@ -86,7 +82,7 @@
 }
 
 .video-iframe {
-    border-radius: 16px;
+    border-radius: 12px;
 }
 
 .webinar-content p {
@@ -248,7 +244,7 @@
 }
 
 .text_div {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 32px;
     line-height: 46.24px;
     color: #222020;

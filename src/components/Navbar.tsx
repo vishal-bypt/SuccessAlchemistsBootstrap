@@ -199,18 +199,7 @@ const NavbarMenu = () => {
             }
             id="basic-nav-dropdown"
           >
-            <NavDropdown.Item>
-              <Link
-                href="#"
-                className={`${
-                  pathname === "/events/webinarDetail"
-                    ? "active-link font-semibold"
-                    : "inactive-link font-normal"
-                }  nav_text_div link-underline link-underline-opacity-0`}
-              >
-                Event Calendar
-              </Link>
-            </NavDropdown.Item>
+          
             <NavDropdown.Item>
               <Link
                 href="/events/webinar"

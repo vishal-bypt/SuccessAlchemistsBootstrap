@@ -127,7 +127,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="second_div_layout">
+      <div className="company-logo second_div_layout">
         <div
           className="row"
           style={{ width: "auto", overflowX: "auto", overflowY: "hidden" }}
@@ -541,9 +541,10 @@ const Home = () => {
         <div className="row res-row">
           <div className="col-md-4">
             <div className="seventh_components_card_box">
-              <div className="card video-card">
+              <div className="video-card">
                 <div className="video-thumbnail">
                   <iframe
+                  className="video-iframe"
                     width="100%"
                     height="200px"
                     src="https://www.youtube.com/embed/PGgIAnehjR8"
@@ -560,10 +561,10 @@ const Home = () => {
           </div>
           <div className="col-md-4">
             <div className="seventh_components_card_box">
-              <div className="card video-card">
+              <div className="video-card">
                 <div className="video-thumbnail">
                   <iframe
-                    className="video-border"
+                    className="video-iframe"
                     width="100%"
                     height="200px"
                     src="https://www.youtube.com/embed/pDNju3Ookq4"
@@ -580,9 +581,10 @@ const Home = () => {
           </div>
           <div className="col-md-4">
             <div className="seventh_components_card_box">
-              <div className="card video-card">
+              <div className="video-card">
                 <div className="video-thumbnail">
                   <iframe
+                  className="video-iframe"
                     width="100%"
                     height="200px"
                     src="https://www.youtube.com/embed/048UdKxDsA8"
