@@ -157,7 +157,7 @@ const page = () => {
                   largest start-up conference, TiECon.
                 </p>
               </div>
-              <div className="col-lg-5 d-flex justify-content-center">
+              <div className="col-lg-5 d-flex justify-content-end">
                 <Image
                   src={man}
                   alt="Ajay Hiraskar"
@@ -168,7 +168,7 @@ const page = () => {
             </div>       
         
             <div className="row align-items-center profile-section">
-              <div className="col-lg-5 d-flex justify-content-center">
+              <div className="col-lg-5 d-flex justify-content-start">
                 <Image
                   src={man2}
                   alt="Ajay Hiraskar"
