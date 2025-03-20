@@ -8,13 +8,15 @@ import basecamp3 from "../../../../public/assets/images/basecamp3.jpeg";
 import basecamp4 from "../../../../public/assets/images/basecamp4.jpeg";
 import blogimg1 from "../../../../public/assets/images/ajay-sir-photo.svg"
 import curve1 from "../../../../src/app/about/images/curve1.png";
+import bluecurve from "../basecamp/Images/blue-curve.svg";
+import basecamplogo2 from "../basecamp/Images/Basecamp_White.png";
 
 
 const page = () => {
 
     return (
         <div className="main_body_div">
-            <div className="first_div_layout basecamp">
+            {/* <div className="first_div_layout basecamp">
                 <div className="main_first_div_body">
                     <div
                         className="innerContainer"
@@ -28,6 +30,33 @@ const page = () => {
                             Accelerated growth and Augmented
                             value ?
                         </p>
+                    </div>
+                </div>
+            </div> */}
+
+            <div className="basecamp-hero-section">
+                <Image
+                    className="blue-curve"
+                    src={bluecurve}
+                    alt="img2"
+                />
+                <div className="hero-content">
+                    <p className="heading" style={{ color: "white" }}>
+                        Basecamp workshop
+                    </p>
+                    <p className="subText" style={{ color: "white" }}>
+                        Are you looking for
+                        Accelerated growth and Augmented
+                        value ?
+                    </p>
+
+                    <div className="hero-icon-img">
+
+                        <Image
+                            className="logo-image"
+                            src={basecamplogo2}
+                            alt="img2"
+                        />
                     </div>
                 </div>
             </div>
@@ -128,7 +157,7 @@ const page = () => {
 
                             </div>
                         </div>
-                          {/*<div className="col-md-3">
+                        {/*<div className="col-md-3">
                             <div className="webinar-box">
                                 <div className="col-md-12">
                                     <Image
@@ -175,7 +204,7 @@ const page = () => {
                                         src={basecamp4}
                                         alt="img2"
                                     />
-                                   {/* <div className="webinar-box-content">
+                                    {/* <div className="webinar-box-content">
                                         <div className="first-box-outer">
                                             <div className="second-box-content">
                                                 <h3>Social Media Marketing</h3>
