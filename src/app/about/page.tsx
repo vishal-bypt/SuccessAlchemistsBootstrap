@@ -1,17 +1,14 @@
 "use client";
-import "./about.css";
-import image2 from "../../../src/app/about/images/Image2.svg";
 import Image from "next/image";
-import curve from "../../../src/app/about/images/curve.png";
-import graph from "../../../src/app/about/images/Graph.png";
-import curve1 from "../../../src/app/about/images/curve1.png";
 import Circle1 from "../../../src/app/about/images/Circle1.png";
 import Circle2 from "../../../src/app/about/images/Circle2.png";
 import Circle3 from "../../../src/app/about/images/Circle3.png";
 import Circle4 from "../../../src/app/about/images/Circle4.png";
-import forward from "../../../src/app/about/images/forward.png";
+import curve from "../../../src/app/about/images/curve.png";
+import curve1 from "../../../src/app/about/images/curve1.png";
 import downArrow from "../../../src/app/about/images/Downarrow.png";
-import img from "../../../src/app/about/images/imageB.png";
+import image2 from "../../../src/app/about/images/Image2.svg";
+import "./about.css";
 const About = () => {
   return (
     <div className="main_body_div">

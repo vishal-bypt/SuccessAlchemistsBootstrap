@@ -228,14 +228,14 @@ const page = () => {
                 </p>
                 <div className="btnContainer">
                   <button
-                    className="btn"
+                    className="slider-btn prev-btn"
                     onClick={handlePrev}
                     disabled={currentIndex === 0}
                   >
                     <Image src={Backward} alt="backward" />
                   </button>
                   <button
-                    className="btn"
+                    className="slider-btn next-btn"
                     onClick={handleNext}
                     disabled={currentIndex + itemsPerPage >= coaches.length}
                   >

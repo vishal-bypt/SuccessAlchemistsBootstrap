@@ -58,7 +58,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1px
+    gap: 0px
 }
 
 .card-coach {
@@ -91,6 +91,29 @@
     margin-top: 8px;
     font-size: 16px;
 }
+.slider-btn{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border:none;
+    background: none;
+}
+.prev-btn{
+    border: 1px solid #FBA819;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.next-btn{
+    border-top:1px solid #FBA819; 
+    border-right:1px solid #FBA819; 
+    border-bottom:1px solid #FBA819; 
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+
 
 @media (max-width: 1024px) {
     .sub_forth_div_layout {
