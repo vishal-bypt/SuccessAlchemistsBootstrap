@@ -1,12 +1,12 @@
-'use client'
-import React, { useState } from "react";
-import "./webinar.css";
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+"use client";
 import Image from "next/image";
-import blogimg1 from "../../../../public/assets/images/Blog-img.png";
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import curve1 from "../../../../src/app/about/images/curve1.png";
-import idea_icon from "../../../app/about/images/idea_icon.png"
+import bluecurve from "../basecamp/Images/blue-curve.svg";
+import basecamplogo2 from "../webinar/images/Masterminds_White.png";
+import "./webinar.css";
 const page = () => {
   const [show, setShow] = useState(false);
 
@@ -14,7 +14,7 @@ const page = () => {
   const handleShow = () => setShow(true);
   return (
     <div className="main_body_div">
-      <div className="first_div_layout webinar">
+      {/* <div className="first_div_layout webinar">
         <div className="main_first_div_body">
           <div
             className="innerContainer"
@@ -28,11 +28,31 @@ const page = () => {
             </p>
           </div>
         </div>
+      </div> */}
+
+      <div className="basecamp-hero-section">
+        <Image className="blue-curve" src={bluecurve} alt="img2" />
+        <div className="hero-content">
+          <p className="heading" style={{ color: "white" }}>
+            Mastermind Webinar
+          </p>
+          <p className="subText" style={{ color: "white" }}>
+            An interactive knowledge-sharing session with industry experts who
+            have implemented strategies, insights, and best practices for
+            business growth and transformation.
+          </p>
+
+          <div className="hero-icon-img">
+            <Image className="logo-image" src={basecamplogo2} alt="img2" />
+          </div>
+        </div>
       </div>
 
       <div className="second_div_layout">
         <div className="webinar-header">
-          <h1 className="webinar_heading">Webinar <span className="badge green-badge">Free</span></h1>
+          <h1 className="webinar_heading">
+            Webinar <span className="badge green-badge">Free</span>
+          </h1>
           {/* <button
             className="border-0 bg-transparent text-decoration-underline"
             style={{ color: "rgba(251, 168, 25, 1)" }}
@@ -41,24 +61,50 @@ const page = () => {
           </button> */}
         </div>
         <div className="webinar-content">
-          <p className="mb-2">At Success Alchemists, we are dedicated to transforming businesses through the proven Scaling Up framework developed by Verne Harnish. With a diverse client base spanning various industries, we empower organizations to achieve sustainable growth and operational excellence.</p>
-          <p>This webinar is an excellent platform to acquire actionable knowledge, enhance your growth strategies, and connect with like-minded individuals dedicated to success. Don’t miss this enriching experience to propel your business forward!</p>
+          <p className="mb-2">
+            At Success Alchemists, we are dedicated to transforming businesses
+            through the proven Scaling Up framework developed by Verne Harnish.
+            With a diverse client base spanning various industries, we empower
+            organizations to achieve sustainable growth and operational
+            excellence.
+          </p>
+          <p>
+            This webinar is an excellent platform to acquire actionable
+            knowledge, enhance your growth strategies, and connect with
+            like-minded individuals dedicated to success. Don’t miss this
+            enriching experience to propel your business forward!
+          </p>
         </div>
 
         <div className="webinar-main-box">
           <div className="webinar-box">
             <div className="row">
               <div className="col-md-4">
-                <iframe className="video-iframe" width="100%" height="280" src="https://www.youtube.com/embed/FohUsWevkGo?si=KSu8b_mJcAl1Qh96" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-
+                <iframe
+                  className="video-iframe"
+                  width="100%"
+                  height="280"
+                  src="https://www.youtube.com/embed/FohUsWevkGo?si=KSu8b_mJcAl1Qh96"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
               </div>
               <div className="col-md-8">
                 <div className="webinar-box-content">
                   <div className="second-box-content">
                     <h3>Scaling Up- Pathway to Progress With Ajay Hiraskar</h3>
-                    <p>In this webinar, Ajay dives into the transformative power of the Scaling Up Framework, sharing the critical strategies and tools that have propelled his clients to new heights. Learn the benefits of implementing this powerful framework.</p>
+                    <p>
+                      In this webinar, Ajay dives into the transformative power
+                      of the Scaling Up Framework, sharing the critical
+                      strategies and tools that have propelled his clients to
+                      new heights. Learn the benefits of implementing this
+                      powerful framework.
+                    </p>
                   </div>
-                  { /*  <div className="first-box-outer">
+                  {/*  <div className="first-box-outer">
                     <div className="first-box-content">
                       <div>
                         {/*<span className="badge rounded-pill badge-pill">Live webinar</span>*/}
@@ -82,66 +128,107 @@ const page = () => {
                     </div>
                   
                   </div>*/}
-                  { /*<div className="register-btn-div">
+                  {/*<div className="register-btn-div">
                     <button onClick={handleShow}>Register Now</button>
                 </div>*/}
-
-
                 </div>
-
               </div>
             </div>
           </div>
           <div className="webinar-box">
             <div className="row">
               <div className="col-md-4">
-                <iframe className="video-iframe" width="100%" height="280" src="https://www.youtube.com/embed/r3deFcELIck?si=NwgPoo_asrnOXEFI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <iframe
+                  className="video-iframe"
+                  width="100%"
+                  height="280"
+                  src="https://www.youtube.com/embed/r3deFcELIck?si=NwgPoo_asrnOXEFI"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
               </div>
               <div className="col-md-8">
                 <div className="webinar-box-content">
                   <div className="second-box-content">
                     <h3>July2024 - Rajeev Malik of Only Ladders</h3>
-                    <p>A seasoned Brand Strategist and Marketing Advisor with over 35 years of experience. Rajeev has successfully nurtured brands like Toyota, Daihatsu, Blue Star, and Mahindra Commercial Vehicles. He's an award-winning expert, recognized as one of the 50 Most Talented CMOs and among the Top 100 Digital Marketers.</p>
+                    <p>
+                      A seasoned Brand Strategist and Marketing Advisor with
+                      over 35 years of experience. Rajeev has successfully
+                      nurtured brands like Toyota, Daihatsu, Blue Star, and
+                      Mahindra Commercial Vehicles. He's an award-winning
+                      expert, recognized as one of the 50 Most Talented CMOs and
+                      among the Top 100 Digital Marketers.
+                    </p>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
           <div className="webinar-box">
             <div className="row">
               <div className="col-md-4">
-              <iframe className="video-iframe" width="100%" height="280" src="https://www.youtube.com/embed/afWQ9njK28A?si=r9dqBtC4Z7q3byNv" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                
+                <iframe
+                  className="video-iframe"
+                  width="100%"
+                  height="280"
+                  src="https://www.youtube.com/embed/afWQ9njK28A?si=r9dqBtC4Z7q3byNv"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
               </div>
               <div className="col-md-8">
                 <div className="webinar-box-content">
                   <div className="second-box-content">
-                    <h3>March2024 - Siddharth Motiwale of Clarion Technologies</h3>
-                    <p>Strategic thinking and execution planning go hand in hand to create a successful organization. The challenge is HOW? </p>
+                    <h3>
+                      March2024 - Siddharth Motiwale of Clarion Technologies
+                    </h3>
+                    <p>
+                      Strategic thinking and execution planning go hand in hand
+                      to create a successful organization. The challenge is HOW?{" "}
+                    </p>
 
-                    <p>The problem statement: Most senior management professionals are so tied up in transactional roles that we often miss the big picture of Strategic thinking.</p>
-
-
+                    <p>
+                      The problem statement: Most senior management
+                      professionals are so tied up in transactional roles that
+                      we often miss the big picture of Strategic thinking.
+                    </p>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
           <div className="webinar-box">
             <div className="row">
               <div className="col-md-4">
-              <iframe className="video-iframe" width="100%" height="280" src="https://www.youtube.com/embed/RYgZpZUIN5k?si=4oej4FOs_CjGUPwl" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <iframe
+                  className="video-iframe"
+                  width="100%"
+                  height="280"
+                  src="https://www.youtube.com/embed/RYgZpZUIN5k?si=4oej4FOs_CjGUPwl"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
               </div>
               <div className="col-md-8">
                 <div className="webinar-box-content">
                   <div className="second-box-content">
                     <h3>May2024 - Sunny Bhanushali of Aliens Tattoo</h3>
-                    <p>Our Guest Speaker Sunny Bhanushali, one of the most famous names in the artistic world of Tattoo,  is the man behind them and many other famous people around the world!</p>
+                    <p>
+                      Our Guest Speaker Sunny Bhanushali, one of the most famous
+                      names in the artistic world of Tattoo, is the man behind
+                      them and many other famous people around the world!
+                    </p>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -154,44 +241,53 @@ const page = () => {
           What will you learn?
         </p>
         <p className="subText webinar-sub-text" style={{ color: "white" }}>
-          The Scaling Up methodology has helped thousands of business leaders break through their plateaus so they can grow and scale effectively. In this webinar, we’ll focus on how to harness the power of your business to achieve extraordinary results.
+          The Scaling Up methodology has helped thousands of business leaders
+          break through their plateaus so they can grow and scale effectively.
+          In this webinar, we’ll focus on how to harness the power of your
+          business to achieve extraordinary results.
         </p>
-
       </div>
       <div className="fourth_component">
         <div className="fourth_component_first_div">
           <div className="fourth_component_title_div">
             For Whom Is This Webinar?
           </div>
-
-
         </div>
         <div>
           <div className="row">
             <div className="col-md-6 fourth_component_bottom_component_gray_light right_border_div ">
-
-              <h1 className="text_div">
-                Entrepreneurs and Business Owners
-              </h1>
-              <p className="fourth-webinar-content">This group includes small business owners and entrepreneurs seeking to scale their businesses for increased revenue and growth.</p>
-
+              <h1 className="text_div">Entrepreneurs and Business Owners</h1>
+              <p className="fourth-webinar-content">
+                This group includes small business owners and entrepreneurs
+                seeking to scale their businesses for increased revenue and
+                growth.
+              </p>
             </div>
             <div className="col-md-6 fourth_component_bottom_component_brack_div">
-
               <h1 className="text_div">Decision-Makers</h1>
-              <p className="fourth-webinar-content">Managers, executives, and leaders within larger organizations responsible for strategic decisions and business expansion.</p>
+              <p className="fourth-webinar-content">
+                Managers, executives, and leaders within larger organizations
+                responsible for strategic decisions and business expansion.
+              </p>
             </div>
           </div>
           <div className="row">
             <div className="col-md-6 fourth_component_bottom_component_brack_div right_border_div top_border_div">
-
               <h1 className="text_div">Professionals and Financial Experts</h1>
-              <p className="fourth-webinar-content">Individuals from diverse industries and financial backgrounds looking to enhance their skills and strategies for business growth and financial optimization.</p>
+              <p className="fourth-webinar-content">
+                Individuals from diverse industries and financial backgrounds
+                looking to enhance their skills and strategies for business
+                growth and financial optimization.
+              </p>
             </div>
             <div className="col-md-6 fourth_component_bottom_component_gray_light top_border_div">
-
               <h1 className="text_div">Entrepreneurs</h1>
-              <p className="fourth-webinar-content">Entrepreneurs will discover invaluable open-book management strategies, providing the foundation for building a transparent, engaging, and scalable business model that empowers teams and drives growth.</p>
+              <p className="fourth-webinar-content">
+                Entrepreneurs will discover invaluable open-book management
+                strategies, providing the foundation for building a transparent,
+                engaging, and scalable business model that empowers teams and
+                drives growth.
+              </p>
             </div>
           </div>
         </div>
@@ -205,37 +301,72 @@ const page = () => {
       >
         <Modal.Header closeButton>
           <Modal.Title>Workshop Registration - Individual</Modal.Title>
-
         </Modal.Header>
         <Modal.Body>
-          <p className="mb-4 mt-2">Please provide us with your contact details below, and we’ll get back to you with the payment details within 24 hours of receiving your registration</p>
+          <p className="mb-4 mt-2">
+            Please provide us with your contact details below, and we’ll get
+            back to you with the payment details within 24 hours of receiving
+            your registration
+          </p>
           <form>
-
             <div className="form-floating mb-3">
-              <input type="text" className="form-control contact-input" id="floatingInput" placeholder="E.g. Aman Rai" />
-              <label htmlFor="floatingInput">Your Name <span>*</span></label>
+              <input
+                type="text"
+                className="form-control contact-input"
+                id="floatingInput"
+                placeholder="E.g. Aman Rai"
+              />
+              <label htmlFor="floatingInput">
+                Your Name <span>*</span>
+              </label>
             </div>
             <div className="form-floating mb-3">
-              <input type="text" className="form-control contact-input" id="floatingInput" placeholder="E.g. Aman Rai" />
-              <label htmlFor="floatingInput">Designation <span>*</span></label>
+              <input
+                type="text"
+                className="form-control contact-input"
+                id="floatingInput"
+                placeholder="E.g. Aman Rai"
+              />
+              <label htmlFor="floatingInput">
+                Designation <span>*</span>
+              </label>
             </div>
             <div className="form-floating mb-3">
-              <input type="text" className="form-control contact-input" id="floatingInput" placeholder="E.g. Aman Rai" />
-              <label htmlFor="floatingInput">Company Name <span>*</span></label>
+              <input
+                type="text"
+                className="form-control contact-input"
+                id="floatingInput"
+                placeholder="E.g. Aman Rai"
+              />
+              <label htmlFor="floatingInput">
+                Company Name <span>*</span>
+              </label>
             </div>
             <div className="form-floating mb-3">
-              <input type="text" className="form-control contact-input" id="floatingInput" placeholder="E.g. Aman Rai" />
-              <label htmlFor="floatingInput">Business Email Address <span>*</span></label>
+              <input
+                type="text"
+                className="form-control contact-input"
+                id="floatingInput"
+                placeholder="E.g. Aman Rai"
+              />
+              <label htmlFor="floatingInput">
+                Business Email Address <span>*</span>
+              </label>
             </div>
             <div className="form-floating mb-3">
-              <input type="text" className="form-control contact-input" id="floatingInput" placeholder="E.g. Aman Rai" />
-              <label htmlFor="floatingInput">Mobile number <span>*</span></label>
+              <input
+                type="text"
+                className="form-control contact-input"
+                id="floatingInput"
+                placeholder="E.g. Aman Rai"
+              />
+              <label htmlFor="floatingInput">
+                Mobile number <span>*</span>
+              </label>
             </div>
-
           </form>
         </Modal.Body>
         <Modal.Footer>
-
           <Button className="btn submit-btn">Submit</Button>
         </Modal.Footer>
       </Modal>

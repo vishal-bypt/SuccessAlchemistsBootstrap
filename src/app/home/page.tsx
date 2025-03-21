@@ -1,36 +1,53 @@
 "use client";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Curve_shape from "./images/Curve-shape.png";
+import Double_arrow from "./images/Double_arrow.png";
+import execution_icon from "./images/execution_icon.svg";
+import idea_icon from "./images/idea_icon.png";
+import left_arrow_btn from "./images/left-arrow-btn.png";
+import logo10 from "./images/Logos/image 10.png";
+import logo11 from "./images/Logos/image 11.png";
+import logo15 from "./images/Logos/image 15.png";
+import logo16 from "./images/Logos/image 16.png";
+import logo17 from "./images/Logos/image 17.png";
+import logo18 from "./images/Logos/image 18.png";
+import logo19 from "./images/Logos/image 19.png";
 import your_logo from "./images/Logos/image 2.png";
+import logo20 from "./images/Logos/image 20.png";
+import logo21 from "./images/Logos/image 21.png";
+import logo22 from "./images/Logos/image 22.png";
+import logo23 from "./images/Logos/image 23.png";
+import logo25 from "./images/Logos/image 25.png";
+import logo26 from "./images/Logos/image 26.png";
+import logo27 from "./images/Logos/image 27.png";
+import logo28 from "./images/Logos/image 28.png";
+import logo29 from "./images/Logos/image 29.png";
 import lorem_ipsum from "./images/Logos/image 3.png";
+import logo30 from "./images/Logos/image 30.png";
+import logo31 from "./images/Logos/image 31.png";
+import logo32 from "./images/Logos/image 32.png";
+import logo33 from "./images/Logos/image 33.png";
+import logo34 from "./images/Logos/image 34.png";
 import o_logo from "./images/Logos/image 4.png";
 import logo6 from "./images/Logos/image 6.png";
 import logo7 from "./images/Logos/image 7.png";
 import logo8 from "./images/Logos/image 8.png";
 import logo9 from "./images/Logos/image 9.png";
-import logo10 from "./images/Logos/image 10.png";
-import logo11 from "./images/Logos/image 11.png";
-import Curve_shape from "./images/Curve-shape.png";
-import main_image from "./images/main_layout_image.jpeg";
-import right_arrow_btn from "./images/right-arrow-btn.png";
-import left_arrow_btn from "./images/left-arrow-btn.png";
-import people_icon from "./images/people_icon.png";
-import idea_icon from "./images/idea_icon.png";
-import Vector from "./images/Vector.png";
 import market_analysis from "./images/market_analysis.png";
-import execution_icon from "./images/execution_icon.svg";
 import money_icon from "./images/money_icon.png";
+import people_icon from "./images/people_icon.png";
 import peoples_meeting_image from "./images/peoples_meeting_image.jpeg";
-import Double_arrow from "./images/Double_arrow.png";
-import { Swiper, SwiperSlide } from "swiper/react";
+import right_arrow_btn from "./images/right-arrow-btn.png";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
-import "./home.css";
 import { useRef, useState } from "react";
+import { Navigation, Pagination } from "swiper/modules";
+import "./home.css";
 
 const items = [
   {
@@ -39,7 +56,6 @@ const items = [
     description:
       "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
     src: " https://www.youtube.com/embed/mN0qCIfEr-8?si=cQHPlh9-GkF85pIe",
-   
   },
   {
     id: 2,
@@ -127,15 +143,20 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* <video className="w-100" autoPlay loop muted>
+        <source
+          src="src\app\home\images\Home-page-video.mp4"
+          type="video/mp4"
+        />
+      </video> */}
       <div className="company-logo second_div_layout">
         <div
-          className="row"
+          className="second_div_layout_row"
           style={{ width: "auto", overflowX: "auto", overflowY: "hidden" }}
         >
-          <div className="second_div_first_text col-md-3">
-            Trusted by top brands
-          </div>
-          <div className="second_div_right_div col-md-9">
+          <div className="second_div_first_text">Trusted by top brands</div>
+          <div className="second_div_right_div">
             <div className="slider-container">
               <div className="slider-track">
                 <div className="image_layout_your_logo col-1">
@@ -219,6 +240,187 @@ const Home = () => {
                     alt="lorem ipsum"
                   />
                 </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo15}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo16}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo17}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo18}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo19}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo20}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                {/* <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo21}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div> */}
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo21}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo22}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo23}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo25}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo26}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo27}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo28}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo29}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo30}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo31}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo32}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo33}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo34}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -272,8 +474,7 @@ const Home = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div
-            className="img-fluid navigation-buttons">
+          <div className="img-fluid navigation-buttons">
             <div onClick={backward}>
               <Image
                 src={left_arrow_btn}
@@ -284,7 +485,7 @@ const Home = () => {
             <div onClick={forward}>
               <Image
                 src={right_arrow_btn}
-                className="img-fluid nav-left-btn" 
+                className="img-fluid nav-left-btn"
                 alt="right side image"
               />
             </div>
@@ -292,13 +493,12 @@ const Home = () => {
         </div>
       </div>
       <div className="fourth_component">
-    
-            <Image
-              src={idea_icon}
-              className="img-fluid bulb-image"
-              alt="right side "
-            />
-          
+        <Image
+          src={idea_icon}
+          className="img-fluid bulb-image"
+          alt="right side "
+        />
+
         <div className="fourth_component_first_div">
           <div className="fourth_component_title_div">
             We become successful, when we help you become successful
@@ -318,35 +518,30 @@ const Home = () => {
             unparalleled growth trajectory.
           </div>
           <div className="fourth_component_p_tag col-md-12">
-          For the business owner developing strategy, fixing cultural issues and differentiating in complex markets, business coaching can deliver agility, clarity and commitment in four main areas:
+            For the business owner developing strategy, fixing cultural issues
+            and differentiating in complex markets, business coaching can
+            deliver agility, clarity and commitment in four main areas:
           </div>
-     
         </div>
         <div>
           <div className="row">
             <div className="col-md-6 fourth_component_bottom_component_gray_light right_border_div border-bottom">
               <div className="number_div">1</div>
-              <div className="text_div">
-                Developing a core customer-centric strategy
-              </div>
+              <div className="text_div">Core Customer-Centric Strategy</div>
             </div>
             <div className="col-md-6 fourth_component_bottom_component_brack_div border-bottom">
               <div className="number_div">2</div>
-              <div className="text_div">Execution planning</div>
+              <div className="text_div">Execution Planning</div>
             </div>
           </div>
           <div className="row">
             <div className="col-md-6 fourth_component_bottom_component_brack_div right_border_div ">
               <div className="number_div">3</div>
-              <div className="text_div">
-                Finding and retaining the right talent, and
-              </div>
+              <div className="text_div">Find and Retain the right talent</div>
             </div>
             <div className="col-md-6 fourth_component_bottom_component_gray_light">
               <div className="number_div">4</div>
-              <div className="text_div">
-                Establishing effective communication rhythms
-              </div>
+              <div className="text_div">Establish Communication Rhythms</div>
             </div>
           </div>
         </div>
@@ -357,7 +552,9 @@ const Home = () => {
             Guaranteed growth solutions
           </div>
           <div className="col-md-12 fifth_component_sub_title_div">
-          We help ambitious entrepreneurs build successful & sustainable businesses resulting in unlocking of large scale potential business value by identifying the right.
+            We help ambitious entrepreneurs build successful & sustainable
+            businesses resulting in unlocking of large scale potential business
+            value by identifying the right:
           </div>
         </div>
         <div
@@ -476,13 +673,13 @@ const Home = () => {
                 Maintain strong cash flow to fuel growth and avoid financial
                 constraints.
               </div>
-                <div className="bottom_arrow_div">
-                  {/* <Image
+              <div className="bottom_arrow_div">
+                {/* <Image
                     src={Vector}
                     className="img-fluid"
                     alt="right side image"
                   /> */}
-                </div> 
+              </div>
             </div>
           </div>
         </div>
@@ -519,21 +716,21 @@ const Home = () => {
               <div className="sixth_component_title_div">SCALING UP</div>
               <div className="sixth_component_header_div">Team assessment</div>
               <div className="sixth_component_sub_header_div">
-              Welcome to the Scaling Up 4 Decisions Assessment!
+                Welcome to the Scaling Up 4 Decisions Assessment!
               </div>
               <p className="sixth_component_content">
-              This tool will help you evaluate and strengthen your business across the critical areas of People, Strategy, Execution, and Cash.
+                This tool will help you evaluate and strengthen your business
+                across the critical areas of People, Strategy, Execution, and
+                Cash.
               </p>
             </div>
 
-            {/* <div className="sixth_component_btn_div">
-              REQUEST A QUOTE
-              <Image
-                className="img-fluid"
-                src={Double_arrow}
-                alt="right side image"
-              />
-            </div> */}
+            <div className="sixth_component_btn_div">
+              <a href="https://q.esperto.one/q/sR4RRluSEazkK5XHPlVZ/6hDOhyCnHHDQf1Uzk3eg">
+                TAKE THE ASSESSMENT
+                <Image className="img-fluid" src={Double_arrow} alt="right" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -544,7 +741,7 @@ const Home = () => {
               <div className="video-card">
                 <div className="video-thumbnail">
                   <iframe
-                  className="video-iframe"
+                    className="video-iframe"
                     width="100%"
                     height="200px"
                     src="https://www.youtube.com/embed/PGgIAnehjR8"
@@ -584,7 +781,7 @@ const Home = () => {
               <div className="video-card">
                 <div className="video-thumbnail">
                   <iframe
-                  className="video-iframe"
+                    className="video-iframe"
                     width="100%"
                     height="200px"
                     src="https://www.youtube.com/embed/048UdKxDsA8"
@@ -592,7 +789,9 @@ const Home = () => {
                   ></iframe>
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title">Scaling up - Anaheim Highlights</h5>
+                  <h5 className="card-title">
+                    Scaling up - Anaheim Highlights
+                  </h5>
                 </div>
               </div>
             </div>

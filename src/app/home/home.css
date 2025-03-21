@@ -57,7 +57,7 @@
 /* second component */
 
 .company-logo.second_div_layout {
-    padding: 16px 64px;
+    padding: 16px 0px 16px 64px;
 }
 
 .second_div_first_text {
@@ -71,6 +71,7 @@
     display: flex;
     align-items: center;
     gap: 58px;
+    width: calc(100% - 310px);
 }
 
 .slider-container {
@@ -94,6 +95,10 @@
     background: #fff;
     height: 50px;
     width: auto;
+}
+.second_div_layout_row{
+    display: flex;
+    align-items: center;
 }
 
 @keyframes slide {
@@ -456,6 +461,7 @@
 
 .video-iframe {
     border-radius: 12px;
+    min-height: 250px;
 }
 
 .home-video {
@@ -520,6 +526,10 @@
     z-index: 1;
     padding: 72px 64px;
     position: absolute;
+}
+.sixth_component_btn_div a{
+    color: #fff;
+    text-decoration: none;
 }
 
 
