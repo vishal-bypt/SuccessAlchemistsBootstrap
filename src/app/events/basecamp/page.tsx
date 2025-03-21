@@ -37,7 +37,7 @@ const page = () => {
             <Image className="logo-image" src={basecamplogo2} alt="img2" />
           </div>
           <p className="heading" style={{ color: "white" }}>
-            Basecamp workshop
+            Basecamp Workshop
           </p>
           <p className="subText" style={{ color: "white" }}>
             Are you looking for Accelerated growth and Augmented value ?
@@ -75,7 +75,7 @@ const page = () => {
         <div className="third_div_layout shadow-lg mt-3">
           <Image src={curve1} alt="curve1" className="image3 img-fluid" />
           <div className="row align-items-center">
-            <div className="col-md-4">
+            <div className="col-md-5 col-lg-5 col-xxl-4">
                 <a href="https://www.success-alchemists.com/attend-the-workshop/" style={{textDecoration:'none' }}>
               <div className="attend-time-div">
                 <div>
@@ -86,7 +86,7 @@ const page = () => {
               </div>
               </a>
             </div>
-            <div className="offset-md-1 col-md-6">
+            <div className="offset-md-1 col-md-6 col-lg-6 col-xxl-6">
               <p
                 className="subText webinar-sub-text mt-0"
                 style={{ color: "white", width: "100%" }}

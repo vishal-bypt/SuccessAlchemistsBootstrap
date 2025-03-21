@@ -29,13 +29,11 @@ const page = () => {
             <Image className="logo-image" src={basecamplogo2} alt="img2" />
           </div>
           <p className="heading" style={{ color: "white" }}>
-          Pathfinder podcast
+          Pathfinder Podcast
           </p>
           <p className="subText" style={{ color: "white" }}>
           A podcast series where we delve into the inspiring journeys of successful business leaders, founders, and CEOs of Small and Medium-sized enterprises. 
           </p>
-
-         
         </div>
       </div>
       <div className="seventh_components shadow-lg">
@@ -58,7 +56,7 @@ const page = () => {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">
-                    Nikhil Karkare Co-Founder Walnut Schools Pune
+                  Success Alchemists Pathfinders
                   </h5>
                 </div>
               </div>
@@ -82,7 +80,7 @@ const page = () => {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">
-                    Mentoring startups towards success
+                   Mentoring Startups towards success
                   </h5>
                 </div>
               </div>
@@ -106,7 +104,7 @@ const page = () => {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">
-                    Beyond the algorithm : A DEEP DIVE
+                  Entrepreneurial insights from fintech leader
                   </h5>
                 </div>
               </div>
@@ -154,7 +152,7 @@ const page = () => {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">
-                    Industry pioneer : continued learning and consultancy
+                    Industry Pioneer : Continued Learning and consistency
                   </h5>
                 </div>
               </div>
@@ -178,7 +176,7 @@ const page = () => {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">
-                    Every successful enterpreneur is a marathoner
+                    Every successful entrepreneur is a marathoner
                   </h5>
                 </div>
               </div>
@@ -274,7 +272,7 @@ const page = () => {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">
-                    Serial enterpreneur , BNI , Clicktrails and so much more
+                    Serial entrepreneur, BNI, Clicktrails and so much more
                   </h5>
                 </div>
               </div>
@@ -310,6 +308,28 @@ const page = () => {
                     className="podcast-iframe"
                     width="100%"
                     height="200px"
+                    src="https://www.youtube.com/embed/PEiRKO31E3Y?si=0cMuHj9UvHCeEFMt"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">When innovation meets authenticity !</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="seventh_components_card_box">
+              <div className="video-card">
+                <div className="video-thumbnail">
+                  <iframe
+                    className="podcast-iframe"
+                    width="100%"
+                    height="200px"
                     src="https://www.youtube.com/embed/17LdpOzH5wc?si=wMFZBy35UkFoWvvA"
                     title="YouTube video player"
                     frameBorder="0"
@@ -320,7 +340,7 @@ const page = () => {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title">
-                    Biotechlifesciences - India Manage Ahead
+                    Biotech lifesciences india marching ahead
                   </h5>
                 </div>
               </div>
@@ -343,7 +363,7 @@ const page = () => {
                   ></iframe>
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title">The on way to success</h5>
+                  <h5 className="card-title">The 3th on way to success</h5>
                 </div>
               </div>
             </div>

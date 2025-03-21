@@ -282,7 +282,7 @@
 }
 
 .attend-time-div {
-    padding: 16px 32px;
+    padding: 16px 24px;
     background: #FBA819;
     border-radius: 16px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -292,13 +292,13 @@
 }
 
 .attend-time-div p.attend-text {
-    font-size: 38px;
+    font-size: 30px;
     color: #fff;
     
 }
 
 .attend-time-div p.location-text{
-    font-size: 20px;
+    font-size: 16px;
     color: #fff;
 }
 
@@ -329,4 +329,10 @@
 .speaker-image {
     width: 100%;
     border-radius: 16px;
+}
+
+@media only screen and (max-width:1366px) {
+    .attend-time-div {
+        padding: 16px 24px;
+    }
 }
