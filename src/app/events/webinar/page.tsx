@@ -33,6 +33,9 @@ const page = () => {
       <div className="basecamp-hero-section">
         <Image className="blue-curve" src={bluecurve} alt="img2" />
         <div className="hero-content">
+        <div className="hero-icon-img">
+            <Image className="logo-image" src={basecamplogo2} alt="img2" />
+          </div>
           <p className="heading" style={{ color: "white" }}>
             Mastermind Webinar
           </p>
@@ -42,9 +45,7 @@ const page = () => {
             business growth and transformation.
           </p>
 
-          <div className="hero-icon-img">
-            <Image className="logo-image" src={basecamplogo2} alt="img2" />
-          </div>
+          
         </div>
       </div>
 

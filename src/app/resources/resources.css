@@ -13,7 +13,9 @@
     position: absolute;
     top: 20
 }
-
+.card-body{
+    margin-top: 8px;
+}
 .image3 {
     position: absolute;
     width: 180px;

@@ -28,7 +28,7 @@
 }
 
 .logo-image {
-    width: 200px;
+    width: 380px;
     height: auto;
 }
 
@@ -286,12 +286,20 @@
     background: #FBA819;
     border-radius: 16px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.attend-time-div p {
-    font-size: 24px;
+.attend-time-div p.attend-text {
+    font-size: 38px;
     color: #fff;
-    text-align: center;
+    
+}
+
+.attend-time-div p.location-text{
+    font-size: 20px;
+    color: #fff;
 }
 
 .seventh_components {

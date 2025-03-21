@@ -115,7 +115,7 @@ const Home = () => {
       style={{ display: "flex", gap: "16px", flexDirection: "column" }}
     >
       {/* <div className="bg-warning radios"> */}
-      <div className="first_div_layout home">
+      {/* <div className="first_div_layout home">
         <div className="main_first_div_body" />
         <div className="main_first_div_content">
           <div className="row align-items-center no-gutters">
@@ -139,17 +139,33 @@ const Home = () => {
             </div>
             {/* <div className=" col-xl-7 col-lg-6 col-md-12 text-lg-right text-center">
               <Image src={main_image} alt="" className="img-fluid" />
-            </div> */}
+            </div> 
           </div>
         </div>
+      </div> */}
+      <div className="video-wrapper">
+        <video className="w-100 video-home" autoPlay loop muted>
+          <source src="/Home-page-video.mp4" type="video/mp4" />
+        </video>
+        <div className="gradient-overlay">
+        <div className="hero-container">
+                <div className="inner_first_div">
+                  Are you ready to
+                  <br /> have more{" "}
+                  <span className="inner_first_div_span">freedom</span>
+                  <br /> from your bussinss?
+                </div>
+                <div className="inner_second_div">
+                  Learn from India’s first certified Scaling Up coach{" "}
+                  <span className="inner_second_div_span">Ajay Hiraskar </span>
+                  who has led the implementation of the Scaling Up performance
+                  platform across many industry verticals. This platform has
+                  already guided more than 80,000 companies world wide to
+                  succeed and grow.
+                </div>
+              </div>
+        </div>
       </div>
-
-      {/* <video className="w-100" autoPlay loop muted>
-        <source
-          src="src\app\home\images\Home-page-video.mp4"
-          type="video/mp4"
-        />
-      </video> */}
       <div className="company-logo second_div_layout">
         <div
           className="second_div_layout_row"

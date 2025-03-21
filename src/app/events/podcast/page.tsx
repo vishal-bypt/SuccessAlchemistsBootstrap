@@ -25,6 +25,9 @@ const page = () => {
       <div className="basecamp-hero-section">
         <Image className="blue-curve" src={bluecurve} alt="img2" />
         <div className="hero-content">
+        <div className="hero-icon-img">
+            <Image className="logo-image" src={basecamplogo2} alt="img2" />
+          </div>
           <p className="heading" style={{ color: "white" }}>
           Pathfinder podcast
           </p>
@@ -32,9 +35,7 @@ const page = () => {
           A podcast series where we delve into the inspiring journeys of successful business leaders, founders, and CEOs of Small and Medium-sized enterprises. 
           </p>
 
-          <div className="hero-icon-img">
-            <Image className="logo-image" src={basecamplogo2} alt="img2" />
-          </div>
+         
         </div>
       </div>
       <div className="seventh_components shadow-lg">

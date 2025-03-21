@@ -1,9 +1,9 @@
 "use client";
-import "./contactus.css";
 import Image from "next/image";
+import "./contactus.css";
 
 
-import curveShape2 from "../../../public/assets/images/Curve-shape2.svg"
+import curveShape2 from "../../../public/assets/images/Curve-shape2.svg";
 
 const ContactUs = () => {
     return (
@@ -15,7 +15,7 @@ const ContactUs = () => {
                             Contact us
                         </p>
                         <p className="subText" style={{ color: "white", textAlign: 'left' }}>
-                        Contact Us to learn more or to schedule a discovery call on how Scaling Up can transform your business.
+                        Contact us to learn more or to schedule a discovery call on how Scaling Up can transform your business.
                         </p>
                     </div>
                 </div>
