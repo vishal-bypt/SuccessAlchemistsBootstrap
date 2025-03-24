@@ -37,7 +37,7 @@ const page = () => {
             <Image className="logo-image" src={basecamplogo2} alt="img2" />
           </div>
           <p className="heading" style={{ color: "white" }}>
-            Mastermind Webinar
+            Masterminds Webinar
           </p>
           <p className="subText" style={{ color: "white" }}>
             An interactive knowledge-sharing session with industry experts who

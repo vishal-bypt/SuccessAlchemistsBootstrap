@@ -29,7 +29,7 @@ const page = () => {
             <Image className="logo-image" src={basecamplogo2} alt="img2" />
           </div>
           <p className="heading" style={{ color: "white" }}>
-          Pathfinder Podcast
+          Pathfinders Podcast
           </p>
           <p className="subText" style={{ color: "white" }}>
           A podcast series where we delve into the inspiring journeys of successful business leaders, founders, and CEOs of Small and Medium-sized enterprises. 
