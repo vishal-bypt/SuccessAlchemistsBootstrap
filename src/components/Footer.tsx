@@ -160,7 +160,7 @@ const Footer = () => {
             <ul className="list-unstyled mt-3">
               <li className="mb-2 d-flex align-items-center gap-2">
                 <Image src={Email} alt="email" className="icon-img" />
-                <p className="mb-0">ajay@hiraskar.com</p>
+                <p className="mb-0">ajay@success-alchemists.com</p>
               </li>
               <li className="mb-2 d-flex align-items-start gap-2">
                 <Image src={Location} alt="location" className="icon-img" />

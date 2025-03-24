@@ -61,7 +61,7 @@ const page = () => {
     {
       name: "Lakshmy S Nair",
       role: "Associate Coach",
-      description:"With a rich background spanning 15 years across various industries, Lakshmy brings a wealth of knowledge and experience to the table. Her career journey encompasses roles in business analysis, banking and credit analysis, education, and life and wellness coaching. She holds a postgraduate degree in Business Economics and is CAIIB certified, alongside being a Certified Credit Analyst. She is also a certified professional life and wellness coach. Currently, she is enhancing her qualifications by pursuing a second postgraduate degree in Counselling Psychology. She is also a passionate Bharatnatyam dancer and a dedicated writer. She also holds a Level 3 Yoga Teacher certification from the Ministry of AYUSH, Government of India.",
+      description:"With a rich background spanning 15 years across various industries, Lakshmy brings a wealth of knowledge and experience to the table. Her career journey encompasses roles in business analysis, banking and credit analysis, education, and life and wellness coaching. She holds a postgraduate degree in Business Economics and is CAIIB certified, alongside being a Certified Credit Analyst.",
       image: coach2,
     },
     {
@@ -70,19 +70,7 @@ const page = () => {
       description:"Enriched with vast and extensive experience in varied commercial faculties within telecommunication industry in India and the UAE, N Dharmadhikari has successfully led teams to surpass yearly product revenue budgets of ~ $1 bn USD. A management graduate majoring in Marketing, he has been able to play multiple roles and drive business growth successfully in Marketing, Strategy and P&L.",
       image: coach3,
     },
-    {
-      name: "Rajesh Daga",
-      role: "Associate Coach",
-      description: "With 40 years of business and corporate experience across India, Oman, and Dubai, Rajesh Daga dedicated the last 30 years to the automobile sector in the Gulf. His expertise includes managing inventory, logistics, dealer development, and price negotiations with principles. He had successfully expanded dealer networks to over 45 countries, specializing in both genuine and aftermarket spare parts. Additionally, he is a passionate Toastmaster and an avid reader.",
-      image: coach4,
-    },
-    {
-      name: "Richie Agarwal",
-      role: "Associate Coach",
-      description: "Having 2 decades of experience with the FMCG and IT industry, an Alumna of IRMA, Anand, Richie is a marketing wizard and an expert in the implementation of Scaling Up framework, TQM and Hoshin Kanri methodologies. A passionate yoga practitioner, Richie employs New Age marketing techniques and engaging storytelling to make complex concepts accessible and actionable. Her commitment to empowering businesses drives sustainable success and impactful results.",
-      image: coach5,
-    },
-    {
+     {
       name: "Sandesh Banger",
       role: "Associate Coach",
       description: "An MBA graduate from IIM Kozhikode with 15 years of extensive experience in Banking, Finance Consulting, and Training. Throughout his career, Sandesh has exposure working with businesses across multiple industries. As our go-to expert on cash management tools, with his profound financial domain knowledge and expertise, Sandesh’s insights are invaluable. He is also USA CFA Level 2 qualified. Sandesh has a passion for content creation and a keen interest in public speaking.",
@@ -100,14 +88,14 @@ const page = () => {
   const coaches1 = [
     {
       name: "Jyoti Hiraskar",
-      role: "Accountability Partner",
+      role: "Happiness Champion",
       description: "Jyoti Hiraskar joins Success Alchemists after her successful stint as a Teacher, having worked in various schools in Mumbai and Pune. Besides being an accountability partner at Success Alchemists, she is also an IT professional and an inner transformation teacher with “Art of living”, helping people understand the purpose of their life through yoga & pranayam.",
       image: blog4,
     },
     {
       name: "Kavita Lakshman",
       role: "Accountability Partner",
-      description: "Kavita holds a Bachelor of Arts degree from Mumbai University and has completed a Postgraduate Diploma in Travel and Tourism from the esteemed Garware Institute at Mumbai University. Her career began at WNS, where she joined as a trainee agent through the British Airways GFA process. Within three years, she was promoted to team leader, a testament to her training capabilities, eloquence, and resourcefulness. With over 16 years of experience in multinational companies, Kavita brings a wealth of expertise and a proven track record of success in the industry.",
+      description: "Kavita holds a Bachelor of Arts degree from Mumbai University and has completed a Postgraduate Diploma in Travel and Tourism from the esteemed Garware Institute at Mumbai University. With over 16 years of experience in multinational companies, Kavita brings a wealth of expertise and a proven track record of success in the industry.",
       image: blog5,
     },
     {

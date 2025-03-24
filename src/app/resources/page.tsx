@@ -1,15 +1,14 @@
 import React from "react";
 import "./resources.css";
-import Case1 from "../../../public/assets/images/scalingUp.png"
-import Case2 from "../../../public/assets/images/FAC.png";
+import Case1 from "./images/tools-final-08.png"
+import Case2 from "./images/tools-final-09.png";
+import Case3 from "./images/tools-final-10.png";
+import Case4 from "./images/tools-final-11.png";
 import Book1 from "../../app/resources/images/ref-book1.webp";
 import Book2 from "../../app/resources/images/ref-book2.png";
 import Book3 from "../../app/resources/images/ref-book3.png";
 import Book4 from "../../app/resources/images/ref-book4.png";
-import Case4 from "../../app/resources/images/Case4.png";
-import Case5 from "../../app/resources/images/Case5.png";
-import Case6 from "../../app/resources/images/Case6.png";
-import User from "../../app/resources/images/User.png";
+
 import Image from "next/image";
 import curve1 from "../../app/resources/images/curve1.png";
 const page = () => {
@@ -43,39 +42,39 @@ const page = () => {
         <div className="mt-4">
           <div className="row g-4">
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Cash - CASh - Cash Acceleration Strategies.pdf">
-                <Image src={Case1} alt="case1" className="toolkit-img img-fluid" />
+              <a className="tool-img-link"  href="/toolDetail">
+                <Image src={Case2} alt="case1" className="toolkit-img img-fluid" />
 
                 <div className="overlay">
-                  <h2>CASh</h2>
-                  <p>Cash Acceleration Strategies</p>
+                  <h2>People</h2>
+                  {/* <p>Cash Acceleration Strategies</p> */}
                 </div>
               </a>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Cash - POO -  The Power of One.pdf">
+              <a className="tool-img-link"  href="/toolDetail">
                 <Image src={Case1} alt="case2" className="toolkit-img img-fluid" />
                 <div className="overlay">
-                  <h2>CASh</h2>
-                  <p>The Power of One</p>
+                  <h2>Strategy</h2>
+                  {/* <p>The Power of One</p> */}
                 </div>
               </a>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/People - FACe - Function Accountability Chart.pdf">
-                <Image src={Case2} alt="case3" className="toolkit-img img-fluid" />
+              <a className="tool-img-link"  href="/toolDetail">
+                <Image src={Case3} alt="case3" className="toolkit-img img-fluid" />
                 <div className="overlay">
-                  <h2>FACe</h2>
-                  <p>Function Accountability Chart</p>
+                  <h2>Execution</h2>
+                  {/* <p>Function Accountability Chart</p> */}
                 </div>
               </a>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/People - FACe - Function Accountability Chart.pdf">
-                <Image src={Case2} alt="case3" className="toolkit-img img-fluid" />
+              <a className="tool-img-link" href="/toolDetail">
+                <Image src={Case4} alt="case3" className="toolkit-img img-fluid" />
                 <div className="overlay">
-                  <h2>FACe</h2>
-                  <p>Function Accountability Chart</p>
+                  <h2>Cash</h2>
+                  {/* <p>Function Accountability Chart</p> */}
                 </div>
               </a>
             </div>

@@ -153,7 +153,7 @@ const Home = () => {
                   Are you ready to
                   <br /> have more{" "}
                   <span className="inner_first_div_span">freedom</span>
-                  <br /> from your bussinss?
+                  <br /> from your bussiness?
                 </div>
                 <div className="inner_second_div">
                   Learn from India’s first certified Scaling Up coach{" "}
