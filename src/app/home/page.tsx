@@ -45,7 +45,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import "./home.css";
 
@@ -93,10 +93,52 @@ const items = [
     src: "https://www.youtube.com/embed/8_HT9N82rh4?si=49oIAZ5JZzhLG0B5",
   },
 ];
+
+const words = ["freedom", "enjoyment", "growth"];
+
 const Home = () => {
   // @ts-ignore
   const swiperRef = useRef<Swiper | null>(null);
   const [currentIndex, setCurrentIndex] = useState(1);
+  const [text, setText] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+    const typingSpeed = 200; 
+    const deletingSpeed = 100; 
+    const pauseTime = 1000;
+
+    let timer:any;
+
+    if (!isDeleting) {
+      // Typing logic
+      if (charIndex < currentWord.length) {
+        timer = setTimeout(() => {
+          setText(currentWord.slice(0, charIndex + 1));
+          setCharIndex((prev) => prev + 1);
+        }, typingSpeed);
+      } else {
+        setTimeout(() => setIsDeleting(true), pauseTime); // Pause before deleting
+      }
+    } else {
+      // Deleting logic
+      if (charIndex > 0) {
+        timer = setTimeout(() => {
+          setText(currentWord.slice(0, charIndex - 1));
+          setCharIndex((prev) => prev - 1);
+        }, deletingSpeed);
+      } else {
+        setTimeout(() => {
+          setIsDeleting(false);
+          setWordIndex((prev) => (prev + 1) % words.length);
+        }, pauseTime); 
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [charIndex, isDeleting, wordIndex, words]);
 
   const forward = () => {
     if (currentIndex === items.length) return;
@@ -148,22 +190,26 @@ const Home = () => {
           <source src="/Home-page-video.mp4" type="video/mp4" />
         </video>
         <div className="gradient-overlay">
-        <div className="hero-container">
-                <div className="inner_first_div">
-                  Are you ready to
-                  <br /> have more{" "}
-                  <span className="inner_first_div_span">freedom</span>
-                  <br /> from your bussiness?
-                </div>
-                <div className="inner_second_div">
-                  Learn from India’s first certified Scaling Up coach{" "}
-                  <span className="inner_second_div_span">Ajay Hiraskar </span>
-                  who has led the implementation of the Scaling Up performance
-                  platform across many industry verticals. This platform has
-                  already guided more than 80,000 companies world wide to
-                  succeed and grow.
-                </div>
-              </div>
+          <div className="hero-container">
+            <div className="inner_first_div">
+              Are you ready to
+              <br />have more
+              <br/>
+                <span className="inner_first_div_span">
+                  {text}
+                </span>
+                <span className="inner_first_div_span cursor">|</span>
+             
+              <br /> from your bussiness?
+            </div>
+            <div className="inner_second_div">
+              Learn from India’s first certified Scaling Up coach{" "}
+              <span className="inner_second_div_span">Ajay Hiraskar </span>
+              who has led the implementation of the Scaling Up performance
+              platform across many industry verticals. This platform has already
+              guided more than 80,000 companies world wide to succeed and grow.
+            </div>
+          </div>
         </div>
       </div>
       <div className="company-logo second_div_layout">

@@ -277,22 +277,20 @@ const page = () => {
                 <div className="btnContainer">
                   <button
                     className="slider-btn prev-btn"
-                    onClick={handlePrev}
-                    disabled={currentIndex === 0}
+                    onClick={handlePrev1}
+                    disabled={currentIndex1 === 0}
                   >
                     <Image src={Backward} alt="backward" />
                   </button>
                   <button
                     className="slider-btn next-btn"
-                    onClick={handleNext}
-                    disabled={currentIndex + itemsPerPage >= coaches.length}
+                    onClick={handleNext1}
+                    disabled={currentIndex1 + itemsPerPage >= coaches1.length}
                   >
                     <Image src={Forward} alt="forward" />
                   </button>
                 </div>
-
               </div>
-
               <div className="row">
                 {coaches1
                   .slice(currentIndex1, currentIndex1 + itemsPerPage)
