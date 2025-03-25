@@ -8,6 +8,7 @@ import curve from "../../../src/app/about/images/curve.png";
 import curve1 from "../../../src/app/about/images/curve1.png";
 import downArrow from "../../../src/app/about/images/Downarrow.png";
 import image2 from "../../../src/app/about/images/Image2.svg";
+import corevalue from "../about/images/corevalue-infographic.svg"
 import "./about.css";
 const About = () => {
   return (
@@ -51,24 +52,15 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="third_div_layout">
+      <div className="third_div_layout" style={{background:'#fff'}}>
         <div className="row align-items-center">
           <div className="col-12 col-md-3 position-absolute text-md-start text-center top-0 start-0">
             <Image className="mission-curve-img" src={curve} alt="curve" />
           </div>
-          <div className="col-12 col-md-9 d-flex flex-column flex-md-row justify-content-evenly main">
-            {/*<div className="col-12 col-md-6">
-              <Image className="image2 img-fluid" src={graph} alt="graph" />
-  </div>*/}
-            <div className="col-12 col-md-12 subContainer2 text-center text-md-start">
-              <p className="section-header" style={{ color: '#fff' }}>Core values , Purpose , Brand promise</p>
-              <p className="subText2">
-                We help ambitious entrepreneurs build successful, profitable &
-                sustainable businesses resulting in unlocking of large-scale
-                potential business value.
-              </p>
-               {/*<button className="section-btn">REQUEST A QUOTE</button>*/}
-            </div>
+          <div className="col-12 col-md-12 d-flex flex-column flex-md-row justify-content-evenly main">
+          <Image className="corevalue-img img-fluid" src={corevalue} alt="graph" />
+           
+     
           </div>
         </div>
       </div>

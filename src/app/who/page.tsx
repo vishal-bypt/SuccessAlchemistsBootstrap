@@ -10,8 +10,8 @@ import curve1 from "../../../src/app/about/images/curve1.png";
 import coach1 from "../../app/who/images/coach1.png";
 import coach2 from "../../app/who/images/coach2.png";
 import coach3 from "../../app/who/images/coach3.png";
-import coach4 from "../../app/who/images/coach4.png";
-import coach5 from "../../app/who/images/coach5.png";
+// import coach4 from "../../app/who/images/coach4.png";
+// import coach5 from "../../app/who/images/coach5.png";
 import coach6 from "../../app/who/images/coach6.png";
 import coach7 from "../../app/who/images/coach7.png";
 import blog4 from "../../app/who/images/Blog4.png";
@@ -19,6 +19,7 @@ import blog5 from "../../app/who/images/Blog5.png";
 import blog6 from "../../app/who/images/Blog6.png";
 import Forward from "../../app/who/images/Forward1.png";
 import Backward from "../../app/who/images/Backward.png";
+import blog7 from "../../app/who/images/Blog7.png"
 const page = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndex1, setCurrentIndex1] = useState(0);
@@ -55,22 +56,22 @@ const page = () => {
     {
       name: "Ashima Gupta",
       role: "Associate Coach",
-      description:"Ashima Gupta is a seasoned IT leader with over 20 years of experience developing products and leading high-performing teams across various industries. With a deep expertise in Agilbreathworks, team building, and scaling complex systems, she has consistently driven growth and operational excellence. Ashima is also a certified yoga instructor and Art of Living teacher, passionate about integrating mindfulness and well-being into professional environments through meditation and breathwork.",
+      description: "Ashima Gupta is a seasoned IT leader with over 20 years of experience developing products and leading high-performing teams across various industries. With a deep expertise in Agilbreathworks, team building, and scaling complex systems, she has consistently driven growth and operational excellence. Ashima is also a certified yoga instructor and Art of Living teacher, passionate about integrating mindfulness and well-being into professional environments through meditation and breathwork.",
       image: coach1,
     },
     {
       name: "Lakshmy S Nair",
       role: "Associate Coach",
-      description:"With a rich background spanning 15 years across various industries, Lakshmy brings a wealth of knowledge and experience to the table. Her career journey encompasses roles in business analysis, banking and credit analysis, education, and life and wellness coaching. She holds a postgraduate degree in Business Economics and is CAIIB certified, alongside being a Certified Credit Analyst.",
+      description: "With a rich background spanning 15 years across various industries, Lakshmy brings a wealth of knowledge and experience to the table. Her career journey encompasses roles in business analysis, banking and credit analysis, education, and life and wellness coaching. She holds a postgraduate degree in Business Economics and is CAIIB certified, alongside being a Certified Credit Analyst.",
       image: coach2,
     },
     {
       name: "N Dharmadhikari",
       role: "Associate Coach",
-      description:"Enriched with vast and extensive experience in varied commercial faculties within telecommunication industry in India and the UAE, N Dharmadhikari has successfully led teams to surpass yearly product revenue budgets of ~ $1 bn USD. A management graduate majoring in Marketing, he has been able to play multiple roles and drive business growth successfully in Marketing, Strategy and P&L.",
+      description: "Enriched with vast and extensive experience in varied commercial faculties within telecommunication industry in India and the UAE, N Dharmadhikari has successfully led teams to surpass yearly product revenue budgets of ~ $1 bn USD. A management graduate majoring in Marketing, he has been able to play multiple roles and drive business growth successfully in Marketing, Strategy and P&L.",
       image: coach3,
     },
-     {
+    {
       name: "Sandesh Banger",
       role: "Associate Coach",
       description: "An MBA graduate from IIM Kozhikode with 15 years of extensive experience in Banking, Finance Consulting, and Training. Throughout his career, Sandesh has exposure working with businesses across multiple industries. As our go-to expert on cash management tools, with his profound financial domain knowledge and expertise, Sandesh’s insights are invaluable. He is also USA CFA Level 2 qualified. Sandesh has a passion for content creation and a keen interest in public speaking.",
@@ -83,7 +84,7 @@ const page = () => {
       image: coach7,
     },
 
- 
+
   ];
   const coaches1 = [
     {
@@ -104,7 +105,13 @@ const page = () => {
       description: "Puja S Barori is a multifaceted individual with 10 years of experience in the BPO-ITO industry, offering outstanding team leadership training and developing efficient teams. She is a creative artist, a voyager and a passionate fitness and nutrition coach with an urge to promote a safe, enjoyable and sustainable platform for people aiming to achieve health and fitness goals.",
       image: blog6,
     },
-  
+    {
+      name: "Dashrath",
+      role: "Accountability Partner",
+      description: "Dashrath comes from a startup background and believes in the power of accountability to drive growth.He helps individuals stay focused, take consistent action, and achieve their goals. With the right support and guidance, he ensures progress feels both motivating and achievable.",
+      image: blog7,
+    },
+
   ];
   return (
     <div>
@@ -119,7 +126,7 @@ const page = () => {
                 Who we are
               </p>
               <p className="subText" style={{ color: "white" }}>
-              Success Alchemists is a growth acceleration firm dedicated to transforming businesses through strategic insights, structured execution, and leadership development. We partner with entrepreneurs and organizations to drive scalable, sustainable success using the proven Scaling Up Framework.
+                Success Alchemists is a growth acceleration firm dedicated to transforming businesses through strategic insights, structured execution, and leadership development. We partner with entrepreneurs and organizations to drive scalable, sustainable success using the proven Scaling Up Framework.
               </p>
             </div>
           </div>
@@ -153,8 +160,8 @@ const page = () => {
                 />
                 {/* <Image src={curve2} alt="curve" className="curve" /> */}
               </div>
-            </div>       
-        
+            </div>
+
             <div className="row align-items-center profile-section">
               <div className="col-lg-5 d-flex justify-content-start">
                 <Image
@@ -166,12 +173,12 @@ const page = () => {
               </div>
               <div className="col-lg-7">
                 <p className="section-subText">
-                Vikram Panjwani - With 28 years of experience in building and scaling consumer businesses, Vikram is now dedicated to helping entrepreneurs achieve their growth potential. His expertise, combined with the invaluable insights gained from implementing the Scaling Up Performance Platform at Denkali, positions him to guide ambitious entrepreneurs in utilizing these proven tools for success.
+                  Vikram Panjwani - With 28 years of experience in building and scaling consumer businesses, Vikram is now dedicated to helping entrepreneurs achieve their growth potential. His expertise, combined with the invaluable insights gained from implementing the Scaling Up Performance Platform at Denkali, positions him to guide ambitious entrepreneurs in utilizing these proven tools for success.
                 </p>
               </div>
             </div>
-        
-        </div>
+
+          </div>
         </div>
         <div className="third_div_layout shadow-lg">
           <Image src={curve1} alt="curve1" className="image3" />
@@ -231,76 +238,92 @@ const page = () => {
                   </button>
                 </div>
               </div>
-             
-                <div className="row">
-                  {coaches
-                    .slice(currentIndex, currentIndex + itemsPerPage)
-                    .map((coach, index) => (
-                      <div key={index} className="col-lg-4 col-md-6 col-sm-12">
-                        <div className="card-coach h-100 shadow-lg">
-                          <Image
-                            src={coach.image}
-                            className="card-img-top img-fluid"
-                            alt={coach.name}
-                          />
-                          <div className="card-body">
-                            <div className="gap-2">
-                              <p className="member-name">{coach.name}</p>
-                              <p
-                                className="member-role"
-                                style={{ color: "rgba(251, 168, 25, 1)" }}
-                              >
-                                {coach.role}
-                              </p>
-                            </div>
-                            <p className="card-text">{coach.description}</p>
+
+              <div className="row">
+                {coaches
+                  .slice(currentIndex, currentIndex + itemsPerPage)
+                  .map((coach, index) => (
+                    <div key={index} className="col-lg-4 col-md-6 col-sm-12">
+                      <div className="card-coach h-100 shadow-lg">
+                        <Image
+                          src={coach.image}
+                          className="card-img-top img-fluid"
+                          alt={coach.name}
+                        />
+                        <div className="card-body">
+                          <div className="gap-2">
+                            <p className="member-name">{coach.name}</p>
+                            <p
+                              className="member-role"
+                              style={{ color: "rgba(251, 168, 25, 1)" }}
+                            >
+                              {coach.role}
+                            </p>
                           </div>
+                          <p className="card-text">{coach.description}</p>
                         </div>
                       </div>
-                    ))}
-                </div>
-             
+                    </div>
+                  ))}
+              </div>
+
             </div>
             <div className="team-sub-container">
               <div className="d-flex flex-row justify-content-between">
                 <p className="team-head" >
-                
-                Accountability team
+
+                  Accountability team
                 </p>
-                
+                <div className="btnContainer">
+                  <button
+                    className="slider-btn prev-btn"
+                    onClick={handlePrev}
+                    disabled={currentIndex === 0}
+                  >
+                    <Image src={Backward} alt="backward" />
+                  </button>
+                  <button
+                    className="slider-btn next-btn"
+                    onClick={handleNext}
+                    disabled={currentIndex + itemsPerPage >= coaches.length}
+                  >
+                    <Image src={Forward} alt="forward" />
+                  </button>
+                </div>
+
               </div>
-              
-                <div className="row">
-                  {coaches1
-                    .slice(currentIndex1, currentIndex1+ itemsPerPage)
-                    .map((coach, index) => (
-                      <div key={index} className="col-lg-4 col-md-6 col-sm-12">
-                        <div className="card-coach  h-100 shadow-lg">
-                          <Image
-                            src={coach.image}
-                            className="card-img-top img-fluid"
-                            alt={coach.name}
-                          />
-                          <div className="card-body">
-                            <div>
-                              <p className="member-name">{coach.name}</p>
-                              <p
-                                className="member-role"
-                                style={{ color: "rgba(251, 168, 25, 1)" }}
-                              >
-                                {coach.role}
-                              </p>
-                            </div>
-                            <p className="card-text">{coach.description}</p>
+
+              <div className="row">
+                {coaches1
+                  .slice(currentIndex1, currentIndex1 + itemsPerPage)
+                  .map((coach, index) => (
+                    <div key={index} className="col-lg-4 col-md-6 col-sm-12">
+                      <div className="card-coach  h-100 shadow-lg">
+                        <Image
+                          src={coach.image}
+                          className="card-img-top img-fluid"
+                          alt={coach.name}
+                        />
+                        <div className="card-body">
+                          <div>
+                            <p className="member-name">{coach.name}</p>
+                            <p
+                              className="member-role"
+                              style={{ color: "rgba(251, 168, 25, 1)" }}
+                            >
+                              {coach.role}
+                            </p>
                           </div>
+                          <p className="card-text">{coach.description}</p>
                         </div>
                       </div>
-                    ))}
-                </div>
-             
+                    </div>
+                  ))}
+              </div>
+
             </div>
           </div>
-         
+
         </div>
       </div>
     </div>

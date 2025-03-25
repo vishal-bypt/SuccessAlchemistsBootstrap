@@ -1,8 +1,8 @@
 "use client";
 import logo from "../../public/assets/images/main_logo.png";
 import Image from "next/image";
-import Email from "../../public/assets/images/Email.png";
-import Location from "../../public/assets/images/Location.png";
+import Email from "../../public/assets/images/Email.svg";
+import Location from "../../public/assets/images/Location (2).svg";
 import Facebook from "../../public/assets/images/Facebook.png";
 import Instagram from "../../public/assets/images/Instagram.png";
 import Linkedin from "../../public/assets/images/Linkedin.png";
