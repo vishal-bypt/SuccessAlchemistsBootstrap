@@ -12,6 +12,11 @@ const ContactUs = () => {
     formState: { errors },
   } = useForm();
 
+  const noOnlySpaces = {
+    value: /^(?!\s*$).+/,
+    message: 'Invalid input: Cannot be empty or contain only spaces',
+  };
+
   const onSubmit = (data: any) => {
     console.log(data);
   };
@@ -60,7 +65,7 @@ const ContactUs = () => {
                     }`}
                     id="name"
                     placeholder="Name"
-                    {...register("name", { required: "Name is required" })}
+                    {...register("name", { required: "Name is required",pattern: noOnlySpaces })}
                   />
                   <label htmlFor="name">Name</label>
                   {errors.name && (
@@ -112,6 +117,7 @@ const ContactUs = () => {
                         value: /^[0-9]{10}$/,
                         message: "Invalid phone number",
                       },
+                      validate: (value) => noOnlySpaces.value.test(value) || noOnlySpaces.message,
                     })}
                   />
                   <label htmlFor="phone">Phone number</label>
@@ -133,6 +139,7 @@ const ContactUs = () => {
                     placeholder="Leave a comment here"
                     {...register("message", {
                       required: "Message is required",
+                      pattern: noOnlySpaces,
                     })}
                   ></textarea>
                   <label htmlFor="message">Message</label>
