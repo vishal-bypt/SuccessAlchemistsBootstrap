@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 import "./resources.css";
-import Case1 from "./images/tools-final-08.png"
+import Case1 from "./images/tools-final-08.png";
 import Case2 from "./images/tools-final-09.png";
 import Case3 from "./images/tools-final-10.png";
 import Case4 from "./images/tools-final-11.png";
@@ -8,10 +9,19 @@ import Book1 from "../../app/resources/images/ref-book1.webp";
 import Book2 from "../../app/resources/images/ref-book2.png";
 import Book3 from "../../app/resources/images/ref-book3.png";
 import Book4 from "../../app/resources/images/ref-book4.png";
-
 import Image from "next/image";
 import curve1 from "../../app/resources/images/curve1.png";
+import { useForm } from "react-hook-form";
 const page = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data: any) => {
+    console.log("Submitted Data:", data.email);
+  };
   return (
     <div className="main_body_div">
       <div className="first_div_layout resource">
@@ -24,7 +34,8 @@ const page = () => {
               Resources
             </p>
             <p className="subText" style={{ color: "white" }}>
-            Links to articles, books, and tools that support the effective implementation of the Scaling Up framework
+              Links to articles, books, and tools that support the effective
+              implementation of the Scaling Up framework
             </p>
           </div>
         </div>
@@ -32,7 +43,7 @@ const page = () => {
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between">
           <p className="section-header">Our latest tool kit</p>
-         { /*<button
+          {/*<button
             className="border-0 bg-transparent text-decoration-underline"
             style={{ color: "rgba(251, 168, 25, 1)" }}
           >
@@ -42,8 +53,12 @@ const page = () => {
         <div className="mt-4">
           <div className="row g-4">
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a className="tool-img-link"  href="/toolDetail">
-                <Image src={Case2} alt="case1" className="toolkit-img img-fluid" />
+              <a className="tool-img-link" href="/toolDetail">
+                <Image
+                  src={Case2}
+                  alt="case1"
+                  className="toolkit-img img-fluid"
+                />
 
                 <div className="overlay">
                   <h2>People</h2>
@@ -52,8 +67,12 @@ const page = () => {
               </a>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a className="tool-img-link"  href="/toolDetail">
-                <Image src={Case1} alt="case2" className="toolkit-img img-fluid" />
+              <a className="tool-img-link" href="/toolDetail">
+                <Image
+                  src={Case1}
+                  alt="case2"
+                  className="toolkit-img img-fluid"
+                />
                 <div className="overlay">
                   <h2>Strategy</h2>
                   {/* <p>The Power of One</p> */}
@@ -61,8 +80,12 @@ const page = () => {
               </a>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a className="tool-img-link"  href="/toolDetail">
-                <Image src={Case3} alt="case3" className="toolkit-img img-fluid" />
+              <a className="tool-img-link" href="/toolDetail">
+                <Image
+                  src={Case3}
+                  alt="case3"
+                  className="toolkit-img img-fluid"
+                />
                 <div className="overlay">
                   <h2>Execution</h2>
                   {/* <p>Function Accountability Chart</p> */}
@@ -71,14 +94,17 @@ const page = () => {
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
               <a className="tool-img-link" href="/toolDetail">
-                <Image src={Case4} alt="case3" className="toolkit-img img-fluid" />
+                <Image
+                  src={Case4}
+                  alt="case3"
+                  className="toolkit-img img-fluid"
+                />
                 <div className="overlay">
                   <h2>Cash</h2>
                   {/* <p>Function Accountability Chart</p> */}
                 </div>
               </a>
             </div>
-
           </div>
         </div>
       </div>
@@ -105,10 +131,10 @@ const page = () => {
                 </div>
                 <div className="card-body">
                   <div className="gap-2">
-
-                    <h5 className="card-title">Mastering the rockefeller habits</h5>
+                    <h5 className="card-title">
+                      Mastering the rockefeller habits
+                    </h5>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -123,46 +149,44 @@ const page = () => {
                 </div>
                 <div className="card-body">
                   <div className="gap-2">
-                   
-                    <h5 className="card-title">The Greatest business decisions of all time</h5>
+                    <h5 className="card-title">
+                      The Greatest business decisions of all time
+                    </h5>
                   </div>
-                 
                 </div>
               </div>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
               <div className="card h-100 shadow-lg p-2">
                 <div className="card-image">
-                <Image
-                  src={Book3}
-                  className="card-img-top img-fluid"
-                  alt="case4"
-                />
-                </div>
-                <div className="card-body">
-                  <div className="gap-2">                   
-                    <h5 className="card-title">12 Habits of valuable employees</h5>
-                  </div>
-                
-                </div>
-              </div>
-            </div>
-            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
-              <div className="card h-100 shadow-lg p-2">
-                <div className="card-image">
-                <Image
-                  src={Book4}
-                  className="card-img-top img-fluid"
-                  alt="case4"
-                />
+                  <Image
+                    src={Book3}
+                    className="card-img-top img-fluid"
+                    alt="case4"
+                  />
                 </div>
                 <div className="card-body">
                   <div className="gap-2">
-                   
+                    <h5 className="card-title">
+                      12 Habits of valuable employees
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
+              <div className="card h-100 shadow-lg p-2">
+                <div className="card-image">
+                  <Image
+                    src={Book4}
+                    className="card-img-top img-fluid"
+                    alt="case4"
+                  />
+                </div>
+                <div className="card-body">
+                  <div className="gap-2">
                     <h5 className="card-title">Scaling up compensation</h5>
                   </div>
-                
-                  
                 </div>
               </div>
             </div>
@@ -177,14 +201,38 @@ const page = () => {
         <p className="section-subText" style={{ color: "white" }}>
           You will never miss our latest news or blogs.
         </p>
-        <div className="col-12 col-md-8 col-lg-8 position-relative mt-3">
-          <input
-            type="text"
-            className="form-control input"
-            placeholder="Email"
-          />
-          <button className="col-6 col-md-6 col-lg-4 col-xxl-4 position-absolute text-white top-0 end-0 h-100 subscribe-btn">Subscribe Now</button>
-        </div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="col-12 col-md-8 col-lg-8 position-relative mt-3">
+            <input
+              type="text"
+              className={`form-control input ${
+                errors.email ? "is-invalid" : ""
+              }`}
+              placeholder="Email"
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Invalid email address",
+                },
+              })}
+            />
+            {errors.email && (
+              <div
+                className="invalid-feedback position-absolute"
+                style={{ top: "100%", left: 0 }}
+              >
+                {String(errors.email.message)}
+              </div>
+            )}
+            <button
+              type="submit"
+              className="col-6 col-md-6 col-lg-4 col-xxl-4 position-absolute text-white h-100 top-0 end-0 subscribe-btn"
+            >
+              Subscribe Now
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
