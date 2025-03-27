@@ -48,6 +48,7 @@ import "swiper/css/pagination";
 import { useEffect, useRef, useState } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import "./home.css";
+import Typed from "typed.js";
 
 const items = [
   {
@@ -100,45 +101,57 @@ const Home = () => {
   // @ts-ignore
   const swiperRef = useRef<Swiper | null>(null);
   const [currentIndex, setCurrentIndex] = useState(1);
-  const [text, setText] = useState("");
-  const [wordIndex, setWordIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  // const [text, setText] = useState("");
+  // const [wordIndex, setWordIndex] = useState(0);
+  // const [charIndex, setCharIndex] = useState(0);
+  // const [isDeleting, setIsDeleting] = useState(false);
+  const typedRef = useRef(null);
   useEffect(() => {
-    const currentWord = words[wordIndex];
-    const typingSpeed = 200; 
-    const deletingSpeed = 100; 
-    const pauseTime = 1000;
+    const typed = new Typed(typedRef.current, {
+      strings: ["freedom", "enjoyment", "growth"],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 1000,
+      loop: true,
+    });
 
-    let timer:any;
+    return () => typed.destroy(); // Clean up on unmount
+  }, []);
+  // useEffect(() => {
+  //   const currentWord = words[wordIndex];
+  //   const typingSpeed = 200;
+  //   const deletingSpeed = 100;
+  //   const pauseTime = 1000;
 
-    if (!isDeleting) {
-      // Typing logic
-      if (charIndex < currentWord.length) {
-        timer = setTimeout(() => {
-          setText(currentWord.slice(0, charIndex + 1));
-          setCharIndex((prev) => prev + 1);
-        }, typingSpeed);
-      } else {
-        setTimeout(() => setIsDeleting(true), pauseTime); // Pause before deleting
-      }
-    } else {
-      // Deleting logic
-      if (charIndex > 0) {
-        timer = setTimeout(() => {
-          setText(currentWord.slice(0, charIndex - 1));
-          setCharIndex((prev) => prev - 1);
-        }, deletingSpeed);
-      } else {
-        setTimeout(() => {
-          setIsDeleting(false);
-          setWordIndex((prev) => (prev + 1) % words.length);
-        }, pauseTime); 
-      }
-    }
+  //   let timer: any;
 
-    return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, wordIndex, words]);
+  //   if (!isDeleting) {
+  //     // Typing logic
+  //     if (charIndex < currentWord.length) {
+  //       timer = setTimeout(() => {
+  //         setText(currentWord.slice(0, charIndex + 1));
+  //         setCharIndex((prev) => prev + 1);
+  //       }, typingSpeed);
+  //     } else {
+  //       setTimeout(() => setIsDeleting(true), pauseTime); // Pause before deleting
+  //     }
+  //   } else {
+  //     // Deleting logic
+  //     if (charIndex > 0) {
+  //       timer = setTimeout(() => {
+  //         setText(currentWord.slice(0, charIndex - 1));
+  //         setCharIndex((prev) => prev - 1);
+  //       }, deletingSpeed);
+  //     } else {
+  //       setTimeout(() => {
+  //         setIsDeleting(false);
+  //         setWordIndex((prev) => (prev + 1) % words.length);
+  //       }, pauseTime);
+  //     }
+  //   }
+
+  //   return () => clearTimeout(timer);
+  // }, [charIndex, isDeleting, wordIndex, words]);
 
   const forward = () => {
     if (currentIndex === items.length) return;
@@ -193,13 +206,11 @@ const Home = () => {
           <div className="hero-container">
             <div className="inner_first_div">
               Are you ready to
-              <br />have more
-              <br/>
-                <span className="inner_first_div_span">
-                  {text}
-                </span>
-                <span className="inner_first_div_span cursor">|</span>
-             
+              <br />
+              have more
+              <br />
+              <span className="inner_first_div_span" ref={typedRef}></span>
+              {/* <span className="inner_first_div_span cursor" >|</span> */}
               <br /> from your bussiness?
             </div>
             <div className="inner_second_div">

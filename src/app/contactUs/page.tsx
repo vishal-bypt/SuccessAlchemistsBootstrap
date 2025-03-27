@@ -14,7 +14,7 @@ const ContactUs = () => {
 
   const noOnlySpaces = {
     value: /^(?!\s*$).+/,
-    message: 'Invalid input: Cannot be empty or contain only spaces',
+    message: "Invalid input: Cannot be empty or contain only spaces",
   };
 
   const onSubmit = (data: any) => {
@@ -65,7 +65,10 @@ const ContactUs = () => {
                     }`}
                     id="name"
                     placeholder="Name"
-                    {...register("name", { required: "Name is required",pattern: noOnlySpaces })}
+                    {...register("name", {
+                      required: "Name is required",
+                      pattern: noOnlySpaces,
+                    })}
                   />
                   <label htmlFor="name">Name</label>
                   {errors.name && (
@@ -117,7 +120,8 @@ const ContactUs = () => {
                         value: /^[0-9]{10}$/,
                         message: "Invalid phone number",
                       },
-                      validate: (value) => noOnlySpaces.value.test(value) || noOnlySpaces.message,
+                      validate: (value) =>
+                        noOnlySpaces.value.test(value) || noOnlySpaces.message,
                     })}
                   />
                   <label htmlFor="phone">Phone number</label>
@@ -132,7 +136,7 @@ const ContactUs = () => {
               <div className="col-md-12">
                 <div className="form-floating">
                   <textarea
-                    className={`form-control contact-textrea ${
+                    className={`form-control contact-textarea ${
                       errors.message ? "is-invalid" : ""
                     }`}
                     id="message"
@@ -153,7 +157,11 @@ const ContactUs = () => {
             </div>
 
             <div className="submit-btn-div">
-              <button onClick={onSubmit} type="submit" className="btn btn-submit">
+              <button
+                onClick={onSubmit}
+                type="submit"
+                className="btn btn-submit"
+              >
                 SEND NOW
               </button>
             </div>
