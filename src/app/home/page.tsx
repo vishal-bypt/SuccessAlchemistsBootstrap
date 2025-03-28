@@ -211,7 +211,7 @@ const Home = () => {
               <br />
               <span className="inner_first_div_span" ref={typedRef}></span>
               {/* <span className="inner_first_div_span cursor" >|</span> */}
-              <br /> from your bussiness?
+              <br /> from your business?
             </div>
             <div className="inner_second_div">
               Learn from India’s first certified Scaling Up coach{" "}

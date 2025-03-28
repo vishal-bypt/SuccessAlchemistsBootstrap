@@ -92,42 +92,7 @@ const About = () => {
           </div>
         </div>
       </div> */}
-      <div className="fifth_div_layout">
-        <Image src={curve1} alt="curve1" className="image3" />
-        <div className="main_fifth_div_body">
-          <p className="heading2">Core Values</p>
-          <div className="subContainer3">
-            <div className="circle">
-              <Image src={Circle4} alt="Circle1" />
-              <Image src={downArrow} alt="downArrow" className="down" />
-              <p className="subText4">
-                Deliver superlative value.
-              </p>
-            </div>
-            <div className="circle">
-              <Image src={Circle1} alt="Circle2" />
-              <Image src={downArrow} alt="downArrow" className="down" />
-              <p className="subText4">
-               Do the right thing.
-              </p>
-            </div>
-            <div className="circle">
-              <Image src={Circle2} alt="Circle3" />
-              <Image src={downArrow} alt="downArrow" className="down" />
-              <p className="subText4">
-                Sharpen the saw.
-              </p>
-            </div>
-            <div className="circle">
-              <Image src={Circle3} alt="Circle4" />
-              <Image src={downArrow} alt="downArrow" className="down" />
-              <p className="subText4">
-               Give back to the community.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+    
     </div>
   );
 };
