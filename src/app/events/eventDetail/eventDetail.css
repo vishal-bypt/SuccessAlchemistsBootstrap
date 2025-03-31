@@ -1,0 +1,340 @@
+        .basecamp-hero-section {
+            background: linear-gradient(90deg, #FBA819, #ce8200, #FBA819);
+            border-radius: 24px;
+            padding: 64px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main_body_div {
+            display: flex;
+            gap: 16px;
+            flex-direction: column;
+        }
+        
+        .logo-image {
+            width: 380px;
+            height: auto;
+        }
+        
+        .hero-icon-img {
+            display: flex;
+            gap: 24px;
+            padding-top: 16px;
+        }
+        
+        .blue-curve {
+            position: absolute;
+            color: transparent;
+            right: 0;
+            top: -2px;
+            transform: rotate(270deg);
+        }
+        
+        .webinar_heading {
+            font-size: #222020;
+            font-size: 42px;
+            font-weight: 700;
+        }
+        
+        .blue-badge {
+            color: #fff;
+            font-size: 20px;
+            background: #2880FC;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: 500;
+            vertical-align: middle;
+        }
+        
+        .webinar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .webinar-content {
+            margin-top: 24px;
+        }
+        
+        .webinar-content p {
+            font-size: 24px;
+            color: #616161;
+            font-weight: 400;
+        }
+        
+        .badge-pill {
+            color: #FBA819;
+            font-size: 16px;
+            background: #FEEED1;
+            font-weight: 500;
+            padding: 6px 20px;
+        }
+        
+        .first-box-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .webinar-main-box {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding-top: 32px;
+        }
+        
+        .webinar-box-content {
+            padding-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .webinar-box {
+            padding: 16px;
+            border-radius: 16px;
+            box-shadow: 0px 1px 50px rgba(0, 0, 0, 0.1);
+        }
+        
+        .date-div span {
+            color: #2880FC;
+            font-size: 16px;
+        }
+        
+        .date-div h5 {
+            font-size: 32px;
+            color: #616161;
+            font-weight: 500;
+        }
+        
+        .second-box-content h3 {
+            color: #222020;
+            font-size: 26px;
+            font-weight: 500;
+        }
+        
+        .second-box-content p {
+            color: #616161;
+            font-size: 18px;
+            margin-top: 4px;
+        }
+        
+        .attend-time-div {
+            padding: 16px 24px;
+            background: #FBA819;
+            border-radius: 16px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .attend-time-div p.attend-text {
+            font-size: 30px;
+            color: #fff;
+        }
+        
+        .attend-time-div p.location-text {
+            font-size: 16px;
+            color: #fff;
+        }
+        
+        .image3 {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            right: 10px;
+            top: 0;
+            right: 0;
+            border-radius: 24px;
+        }
+        
+        .fifth_component {
+            background: #fff;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            padding: 62px;
+            gap: 48px;
+            box-shadow: 0 16px 16px #0000001a;
+        }
+        
+        .fifth_component_div {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .fifth_component_title_div {
+            color: #222020;
+            font-weight: 600;
+            font-size: 48px;
+            line-height: 57.6px;
+        }
+        
+        .fifth_component_sub_title_div {
+            font-weight: 400;
+            font-size: 24px;
+            color: #616161;
+            margin-top: 8px;
+        }
+        
+        .unselected_box {
+            position: relative;
+            min-height: 180px;
+            /* height: 153px; */
+            border-top-right-radius: 16px;
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+            /* border-radius: 16px; */
+            padding: 16px;
+            border-width: 0.5px;
+            background: #f3f3f3;
+            border: 0.5px solid #dedede;
+            transition: 0.5s;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            height: 100%;
+        }
+        
+        .unselected_box_card_title {
+            color: #222020;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: calc(24px * 1.2);
+        }
+        
+        .list-image-name {
+            display: flex;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 8px !important;
+        }
+        
+        .checkImage {
+            width: 20px;
+        }
+        
+        .unselected_box_text {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: calc(16px * 1.3);
+            height: 73%;
+            overflow: hidden;
+            color: #616161;
+        }
+        
+        .selected_box_text {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 28.9px;
+            height: 73%;
+            overflow: hidden;
+            color: #ffffff;
+        }
+        
+        .bottom_arrow_div {
+            display: flex;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            justify-content: center;
+            align-items: center;
+            width: 21.48%;
+            height: 42px;
+            background: #fba819;
+            border-top-left-radius: 99px;
+        }
+        /*New section css start here*/
+        
+        .unselected_box.blue-box {
+            background-color: #2880FC;
+            border-radius: 16px;
+            height: 100%;
+            border: 1px solid #FBA819;
+            gap: 8px;
+            min-height: unset;
+        }
+        
+        .blue-box-title {
+            color: #fff;
+        }
+        
+        .blue-box-content {
+            color: #fff;
+        }
+        
+        .fifth_gap {
+            gap: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .fourth_component {
+            gap: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .fourth_component_bottom_component_gray_light {
+            padding: 24px 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: #f9f9f9;
+        }
+        
+        .list-image-name .border-bottom {
+            border-bottom: 1px solid #c1c1c1;
+        }
+        
+        .fourth_component_bottom_component_brack_div {
+            padding: 24px 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: #fff;
+        }
+        
+        .right_border_div {
+            border-right: 1px solid #c1c1c1;
+        }
+        
+        .text_div {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: calc(24px * 1.2);
+            color: #222020;
+        }
+        
+        .attend-text {
+            font-size: 16px;
+            color: #616161;
+        }
+        
+        .sixth_component_btn_div {
+            display: flex;
+            width: fit-content;
+            border-radius: 12px;
+            padding: 12px 32px;
+            background: #fba819;
+            color: #fff;
+            font-weight: 500;
+            font-size: 20px;
+            align-items: center;
+        }
+        
+        .sixth_component_btn_div a {
+            color: #fff !important;
+            text-decoration: none;
+        }
+        
+        .ajay-card-Image {
+            border-radius: 16px;
+        }
+        
+        .blue_bg {
+            background: linear-gradient(45deg, #418ef8, #018bd3, #418ef8);
+        }
