@@ -21,8 +21,8 @@ const ContactUs = () => {
   };
 
   const onSubmit = async(data: any) => {
-    
-    const apiUrl = "http://localhost:3000/contact"; // Replace with your API URL
+    //console.log("BASE URL", process.env.NEXT_PUBLIC_API_URL);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL+"/contact"; // Replace with your API URL
     const postData:any = data;
 
     try {

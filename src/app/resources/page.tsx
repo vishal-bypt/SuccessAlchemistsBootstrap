@@ -25,7 +25,8 @@ const page = () => {
   const router = useRouter();
   const onSubmit = async(data: any) => {
     //console.log("Submitted Data:", data.email);
-    const apiUrl = "http://localhost:3000/newsletter"; // Replace with your API URL
+    //console.log("APP", process.env.NEXT_PUBLIC_API_URL);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL+"/newsletter"; // Replace with your API URL
         const postData:any = data;
     
         try {
