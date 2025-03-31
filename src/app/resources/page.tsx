@@ -12,15 +12,47 @@ import Book4 from "../../app/resources/images/ref-book4.png";
 import Image from "next/image";
 import curve1 from "../../app/resources/images/curve1.png";
 import { useForm } from "react-hook-form";
+import Toast from "../../components/Toast";
+import { useRouter } from 'next/navigation';
+
 const page = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
-
-  const onSubmit = (data: any) => {
-    console.log("Submitted Data:", data.email);
+  const router = useRouter();
+  const onSubmit = async(data: any) => {
+    //console.log("Submitted Data:", data.email);
+    const apiUrl = "http://localhost:3000/newsletter"; // Replace with your API URL
+        const postData:any = data;
+    
+        try {
+          const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postData),
+          });
+          //console.log("response", response);
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+    
+          const data = await response.json();
+          reset();
+          Toast.success("Your request for newseletter has been submitted!");
+          setTimeout(() => {
+            router.push("/"); // Redirect to the home page after 2 seconds  
+          }, 2000);
+          
+          //setResponseData(data);
+        } catch (error) {
+          console.error("Error:", error);
+          Toast.error("An error occurred while submitting the form.");
+        }
   };
   return (
     <div className="main_body_div">
