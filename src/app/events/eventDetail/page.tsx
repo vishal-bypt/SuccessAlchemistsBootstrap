@@ -450,7 +450,7 @@ const page = () => {
 
       <div className="scalingup-all-div">
         <div>
-          <h1 className="fifth_component_title_div">What is Scaling Up all about?</h1>
+          <h1 className="fifth_component_title_div">What is Scaling Up all about?</h1>
           <p className="fifth_component_sub_title_div">Scaling Up is a proven methodology that has transformed countless organizations and helped them achieve remarkable success. Join us on this transformative journey and discover how Scaling Up can take your business to new heights.</p>
         </div>
         <div className="row">
