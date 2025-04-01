@@ -6,7 +6,7 @@ import Image from "next/image";
 import aboutcurve1 from "../../../../public/assets/images/about-Curve-shape1.svg";
 import bluecurve from "../basecamp/Images/blue-curve.svg";
 import curve1 from "../../../../src/app/about/images/curve1.png";
-import Double_arrow from "../../home/Images/Double_arrow.png";
+import Double_arrow from "../../home/images/Double_arrow.png";
 import check_icon from "../eventDetail/Images/checked-icon.svg"
 import card_ajay from "../eventDetail/Images/card-ajay.png"
 import market_analysis from "./Images/market_analysis.png";
