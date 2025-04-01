@@ -2,23 +2,54 @@
 import Image from "next/image";
 import "./contactus.css";
 import { useForm } from "react-hook-form";
+import Toast from "../../components/Toast";
+import { useRouter } from 'next/navigation';
 
 import curveShape2 from "../../../public/assets/images/Curve-shape2.svg";
 
 const ContactUs = () => {
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  const router = useRouter();
   const noOnlySpaces = {
     value: /^(?!\s*$).+/,
     message: "Invalid input: Cannot be empty or contain only spaces",
   };
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = async(data: any) => {
+    //console.log("BASE URL", process.env.NEXT_PUBLIC_API_URL);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL+"/contact"; // Replace with your API URL
+    const postData:any = data;
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData),
+      });
+      //console.log("response", response);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      reset();
+      Toast.success("Your enquiry has been submitted successfully!");
+      setTimeout(() => {
+        router.push("/"); // Redirect to the home page after 2 seconds  
+      }, 2000);
+      
+      //setResponseData(data);
+    } catch (error) {
+      console.error("Error:", error);
+      Toast.error("An error occurred while submitting the form.");
+    }
   };
   return (
     <div className="main_body_div">
@@ -158,7 +189,6 @@ const ContactUs = () => {
 
             <div className="submit-btn-div">
               <button
-                onClick={onSubmit}
                 type="submit"
                 className="btn btn-submit"
               >
