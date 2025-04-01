@@ -76,7 +76,7 @@ const page = () => {
           <Image src={curve1} alt="curve1" className="image3 img-fluid" />
           <div className="row align-items-center">
             <div className="col-md-5 col-lg-5 col-xxl-4">
-                <a href="https://www.success-alchemists.com/attend-the-workshop/" style={{textDecoration:'none' }}>
+                <a href="./eventDetail" style={{textDecoration:'none' }}>
               <div className="attend-time-div">
                 <div>
                 <p className="attend-text">Attend the workshop</p>

@@ -37,7 +37,7 @@ const page = () => {
             wide to succeed and grow.
           </p>
           <div className="col-md-5 col-lg-5 col-xxl-4 mt-5">
-            <a href="#" style={{ textDecoration: 'none' }}>
+            <a href="#bookID" style={{ textDecoration: 'none' }}>
               <div className="attend-time-div" style={{ background: '#fff' }}>
                 <div>
                   <p className="attend-text" style={{ color: '#fba819' }}>Attend the workshop</p>
@@ -244,9 +244,8 @@ const page = () => {
                 </div>
               </div>
               <div className="sixth_component_btn_div">
-                <a href="#">
+                <a href="#bookID">
                   ATTEND THE BASECAMP
-
                 </a>
               </div>
             </div>
@@ -432,22 +431,131 @@ const page = () => {
         <div className="who-basecamp">
           <h1 className="fifth_component_title_div">Who is the basecamp for?</h1>
           <div className="row mt-4">
-            <div className="col-md-5 col-lg-5">
+            <div className="col-md-3 col-lg-3">
               <Image
                 src={speaker_photo}
                 className="img-fluid ajay-card-Image"
                 alt="ajay-img"
               />
             </div>
-            <div className="col-md-7 col-lg-7 fifth_gap" style={{ background: '#f9f9f9', padding: '32px', borderRadius: '16px' }}>
+            <div className="col-md-9 col-lg-9 fifth_gap" style={{ background: '#f9f9f9', padding: '32px', borderRadius: '16px' }}>
               <h1>Ajay Hiraskar</h1>
-              <p className="list-image-name">
+              <p className="list-image-name-ajay">
                 Join our exclusive one-day workshop with Ajay Hiraskar, India’s first certified Scaling Up coach, and unlock the keys to accelerating your business growth. Learn proven strategies to double your cash flow, triple your profitability, and increase your company’s valuation tenfold. This workshop provides rapid growth strategies, actionable tools, expert mentorship, and access to a network of industry champions. Tailored for founders, CEOs, and top leadership, it empowers you to scale your vision, drive innovation, and achieve extraordinary success. Explore essential growth tools across the four pillars of scaling up: People, Strategy, Execution, and Cash. Transform your organization with our Scaling Up workshop!
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div className="scalingup-all-div">
+        <div>
+          <h1 className="fifth_component_title_div">What is Scaling Up all about?</h1>
+          <p className="fifth_component_sub_title_div">Scaling Up is a proven methodology that has transformed countless organizations and helped them achieve remarkable success. Join us on this transformative journey and discover how Scaling Up can take your business to new heights.</p>
+        </div>
+        <div className="row">
+          <div className="col-md-3">
+            <div className="scale-box">
+              <h3>01.People</h3>
+              <p>Harness the power of your biggest asset – your people.</p>
+              <p>Scaling Up offers simple tools to align your team with your strategy and optimize their performance.</p>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="scale-box">
+              <h3>02.Strategy</h3>
+              <p>Craft a clear and differentiated strategy that sets you apart from your competitors.</p>
+              <p>Scaling Up helps you develop a revenue-oriented plan that covers short-term and long-term goals.</p>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="scale-box">
+              <h3>03.Execution</h3>
+              <p>Streamline your processes and eliminate unnecessary drama.</p>
+              <p>Scaling Up provides the Rockefeller Habits ChecklistTM to ensure smooth execution and focused teamwork.</p>
+            </div>
+          </div>
+          <div className="col-md-3">
+            <div className="scale-box">
+              <h3>04.Cash</h3>
+              <p>Keep a close eye on your cash flow for sustained growth. Scaling Up unlocks tools to better plan and manage your finances.</p>
+            </div>
+          </div>
+        </div>
+        <div className="sixth_component_btn_div" style={{ margin: "0 auto" }}>
+          <a href="#bookID">
+            ATTEND THE BASECAMP
+          </a>
+        </div>
+        <div className="col-md-12 event-video">
+          <div className="seventh_components_card_box">
+            <div className="video-card">
+              <div className="video-thumbnail">
+                <iframe
+                  className="video-iframe"
+                  width="100%"
+
+                  src="https://www.youtube.com/embed/PGgIAnehjR8"
+                  allow="autoplay; encrypted-media"
+                ></iframe>
+              </div>
 
             </div>
           </div>
+
+
+        </div>
+
+      </div>
+
+
+
+      <div className="book-seat-div">
+        <h2>2024 Success Alchemists Workshop</h2>
+        <p>15th June 2024 .	10:00 AM  . 	JW MARRIOTT, Senapati Bapat Road | Pune, 411053</p>
+      </div>
+      <div className="col-md-11 book-seat-inner-div" id="bookID">
+        <h3 className="book-header">Book Your Seat</h3>
+        <div className="row">
+          <div className="col-md-6">
+            <div className="left-div">
+              <label className="till-date-label">
+                Early bird Till 5th June
+              </label>
+              <div className="content-label-div">
+                <div className="left-content-label">
+                  <h3>For Individuals</h3>
+                  <h5>₹8,999 <span>+ GST</span></h5>
+                </div>
+                <div className="left-content-label right-content-label">
+                  <h3>For Teams</h3>
+                  <h5>₹20,999 <span>+ GST</span></h5>
+                  <p>for a group of 3 participants from the same company</p>
+                </div>
+              </div>
+              <button className="register-btn-book">Register Now</button>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="left-div left-div-border">
+              <label className="till-date-label till-date-grey" >
+                Regular 6th to 14th June
+              </label>
+              <div className="content-label-div">
+                <div className="left-content-label">
+                  <h3 style={{color:"#fff"}}>For Individuals</h3>
+                  <h5 style={{color:"#fff"}}>₹10,999 <span>+ GST</span></h5>
+                </div>
+                <div className="left-content-label right-content-label">
+                  <h3 style={{color:"#fff"}}>For Teams</h3>
+                  <h5 style={{color:"#fff"}}>₹23,999 <span>+ GST</span></h5>
+                  <p style={{color:"#fff"}}>for a group of 3 participants from the same company</p>
+                </div>
+              </div>
+              <button className="register-btn-book">Register Now</button>
+            </div>
+          </div>
+
         </div>
 
 
