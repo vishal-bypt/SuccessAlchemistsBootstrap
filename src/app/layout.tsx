@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono ,Jost } from "next/font/google";
+import { Geist, Geist_Mono, Jost } from "next/font/google";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarMenu from "@/components/Navbar";
@@ -23,7 +23,6 @@ export const metadata: Metadata = {
   title: "Success Alchemists",
   description:
     "At Success Alchemists, we believe that our success is tied to yours. If you're a CEO seeking to deliver accelerated growth, augmented value, and a simplified business model, our experienced Scaling Up Coaches are here to help. Scaling up requires a significant shift in management thinking, and while the path may seem simple, it often involves a steep learning curve.",
-  
   // Open Graph Metadata (for social media previews)
   openGraph: {
     title: "Success Alchemists",
@@ -72,7 +71,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
+
       <body
         style={{ background: "#F5F5F5" }}
         className={`${geistSans.variable} ${geistMono.variable} p-3`}

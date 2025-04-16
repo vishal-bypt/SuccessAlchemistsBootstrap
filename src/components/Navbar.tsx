@@ -1,43 +1,16 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Link from "next/link";
-
-// import authApi from "../api/auth";
 import { usePathname } from "next/navigation";
-// import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
-// import { toast } from 'react-toastify';
-// import { useDispatch } from "react-redux";
-// import { startLoading, stopLoading } from "@/store/LoaderSlice";
-// import { setUser } from "@/store/UserSlice";
-// import { useSelector } from "react-redux";
-// import { setToken } from "@/store/TokenSlice";
 import "../components/navbar.css";
-import logo from "../../public/assets/images/main_logo.png";
-
-// import {
-//   Navbar,
-//   Collapse,
-//   Typography,
-//   IconButton,
-// } from "@material-tailwind/react";
-import { DropDownIcon } from "@/app/svg";
 
 const NavbarMenu = () => {
-  // const dispatch = useDispatch();
   const pathname = usePathname();
-  // const user: any = useSelector((state: any) => state.user.user);
   const router = useRouter();
-
-  function NavList() {
-    return <div></div>;
-  }
-
   const [openNav, setOpenNav] = React.useState(false);
 
   const handleWindowResize = () =>
@@ -50,9 +23,8 @@ const NavbarMenu = () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
+  console.log(pathname, "pathname");
   return (
-    // <div className="main_layout">
-    // <div className="main_logo" />
     <Navbar expand="lg" className="">
       <Navbar.Brand href="/home">
         <div className="main_logo" />
@@ -60,28 +32,28 @@ const NavbarMenu = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
-          <Nav.Link>
-            <Link
-              href="/home"
-              className={`${
-                pathname === "/home"
-                  ? "active-link font-semibold"
-                  : "inactive-link font-normal"
-              } text-sm xl:text-xl font-barlow link-underline link-underline-opacity-0`}
-            >
-              <div
+        <Nav.Link
+        as={Link}
+        href="/home"
+        className={`${
+          pathname === "/home"
+            ? "active-link font-semibold"
+            : "inactive-link font-normal"
+        } text-sm xl:text-xl font-barlow link-underline link-underline-opacity-0`}
+        
+      >
+        <div
                 className={`${
                   pathname === "/home"
                     ? "active-link font-semibold"
                     : "inactive-link font-normal"
-                } home_text_div nav_text_div `}
-              >
+                }  nav_text_div`}>
                 Home
               </div>
-            </Link>
-          </Nav.Link>
-          <Nav.Link>
-            <Link
+      </Nav.Link>
+         
+          <Nav.Link
+              as={Link}
               href="/about"
               className={`${
                 pathname === "/about"
@@ -94,14 +66,13 @@ const NavbarMenu = () => {
                   pathname === "/about"
                     ? "active-link font-semibold"
                     : "inactive-link font-normal"
-                }  nav_text_div`}
-              >
+                }  nav_text_div`}>
                 About us
               </div>
-            </Link>
+            
           </Nav.Link>
-          <Nav.Link>
-            <Link
+          <Nav.Link
+            as={Link}
               href="/who"
               className={`${
                 pathname === "/who"
@@ -118,10 +89,9 @@ const NavbarMenu = () => {
               >
                 Who we are
               </div>
-            </Link>
           </Nav.Link>
-          <Nav.Link>
-            <Link
+          <Nav.Link
+            as={Link}
               href="/success"
               className={`${
                 pathname === "/success"
@@ -138,11 +108,11 @@ const NavbarMenu = () => {
               >
                 Our success
               </div>
-            </Link>
           </Nav.Link>
-          <Nav.Link>
-            <Link
+          <Nav.Link
+            as={Link}
               href="https://q.esperto.one/q/sR4RRluSEazkK5XHPlVZ/6hDOhyCnHHDQf1Uzk3eg"
+              target="_blank"
               className={`${
                 pathname === "/assessment"
                   ? "active-link font-semibold"
@@ -158,27 +128,28 @@ const NavbarMenu = () => {
               >
                 Quick assessment
               </div>
-            </Link>
           </Nav.Link>
-          <Nav.Link>
-            <Link
+          <Nav.Link
+              as={Link}
               href="/resources"
               className={`${
-                pathname === "/resources"
+                pathname === "/resources" || "/toolDetail"
                   ? "active-link font-semibold"
                   : "inactive-link font-normal"
               } text-sm xl:text-xl font-barlow link-underline link-underline-opacity-0`}
             >
               <div
-                className={`${
-                  pathname === "/resources"
-                    ? "active-link font-semibold"
-                    : "inactive-link font-normal"
-                }  nav_text_div`}
+               className={`${
+                [
+                  "/resources",
+                  "/toolDetail",
+                ].includes(pathname)
+                  ? "active-link font-semibold"
+                  : "inactive-link font-normal"
+              } nav_text_div`}
               >
                 Resources
               </div>
-            </Link>
           </Nav.Link>
           <NavDropdown
             title={
@@ -189,6 +160,7 @@ const NavbarMenu = () => {
                     "/events/webinar",
                     "/events/basecamp",
                     "/events/webinarDetail",
+                    "/events/eventDetail"
                   ].includes(pathname)
                     ? "active-link font-semibold"
                     : "inactive-link font-normal"
@@ -238,8 +210,8 @@ const NavbarMenu = () => {
               </Link>
             </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link>
-            <Link
+          <Nav.Link
+            as={Link}
               href="/contactUs"
               style={{ color: "white" }}
               className={`${
@@ -249,7 +221,6 @@ const NavbarMenu = () => {
               } contact_div contact_div_text link-underline link-underline-opacity-0`}
             >
               Contact us
-            </Link>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

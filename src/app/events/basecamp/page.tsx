@@ -8,6 +8,7 @@ import Double_arrow from "../../home/images/Double_arrow.png";
 import basecamplogo2 from "../basecamp/Images/Basecamp_White.png";
 import bluecurve from "../basecamp/Images/blue-curve.svg";
 import "./basecamp.css";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -76,15 +77,15 @@ const page = () => {
           <Image src={curve1} alt="curve1" className="image3 img-fluid" />
           <div className="row align-items-center">
             <div className="col-md-5 col-lg-5 col-xxl-4">
-                <a href="./eventDetail" style={{textDecoration:'none' }}>
+                <Link href="./eventDetail" style={{textDecoration:'none' }}>
               <div className="attend-time-div">
                 <div>
                 <p className="attend-text">Attend the workshop</p>
-                <p className="location-text">On 20th February 2025 at J W mariott, Pune</p>
+                <p className="location-text">On 18th June 2025 at J W mariott, Pune</p>
                 </div>
                 <Image className="img-fluid" src={Double_arrow} alt="right" />
               </div>
-              </a>
+              </Link>
             </div>
             <div className="offset-md-1 col-md-6 col-lg-6 col-xxl-6">
               <p

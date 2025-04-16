@@ -24,15 +24,19 @@ const Footer = () => {
     <div className="d-flex flex-column gap-1">
       <footer className="p-3 p-md-5 border-0 fot">
         <div className="row gx-4 res-row">
-          <div className="col-12 col-md-3 col-lg-3 d-flex flex-column">
+          <div className="col-12 col-md-4 col-lg-4 d-flex flex-column">
             <Image
               src={logo}
               alt="logo"
               className="Footer_main_logo"
               style={{ width: "150px", height: "auto" }}
             />
+            <div className="col-12 col-md-10 mt-3 col-lg-10 d-flex flex-column text-justify-content-center align-items-start gap-2">
+            At Success Alchemists, we believe that our success is tied to yours. If you're a CEO seeking to deliver accelerated growth, augmented value, and a simplified business model, our experienced Scaling Up Coaches are here to help
+            </div>
+           
           </div>
-          <div className="col-12 col-md-3 col-lg-3 d-flex flex-column">
+          <div className="col-12 col-md-2 col-lg-2 d-flex flex-column">
             <h5>Explore</h5>
             <ul className="list-unstyled mt-3">
               <li>
@@ -139,21 +143,6 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-            {/* <ul className="list-unstyled mt-3">
-              {[
-                "Home",
-                "About us",
-                "Who we are",
-                "Our success",
-                "Quick assessment",
-                "Events",
-                "Contact us",
-              ].map((item, index) => (
-                <li key={index} className="mb-2">
-                  <Link href={arr[index].toString()}>{item}</Link>
-                </li>
-              ))}
-            </ul> */}
           </div>
           <div className="col-12 col-md-3 col-lg-3 d-flex flex-column ">
             <h5>Contact Info</h5>

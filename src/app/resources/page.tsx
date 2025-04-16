@@ -14,6 +14,7 @@ import curve1 from "../../app/resources/images/curve1.png";
 import { useForm } from "react-hook-form";
 import Toast from "../../components/Toast";
 import { useRouter } from 'next/navigation';
+import Link from "next/link";
 
 const page = () => {
   const {
@@ -86,7 +87,7 @@ const page = () => {
         <div className="mt-4">
           <div className="row g-4">
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a className="tool-img-link" href="/toolDetail">
+              <Link className="tool-img-link" href="/toolDetail">
                 <Image
                   src={Case2}
                   alt="case1"
@@ -97,10 +98,10 @@ const page = () => {
                   <h2>People</h2>
                   {/* <p>Cash Acceleration Strategies</p> */}
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a className="tool-img-link" href="/toolDetail">
+              <Link className="tool-img-link" href="/toolDetail">
                 <Image
                   src={Case1}
                   alt="case2"
@@ -110,10 +111,10 @@ const page = () => {
                   <h2>Strategy</h2>
                   {/* <p>The Power of One</p> */}
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a className="tool-img-link" href="/toolDetail">
+              <Link className="tool-img-link" href="/toolDetail">
                 <Image
                   src={Case3}
                   alt="case3"
@@ -123,10 +124,10 @@ const page = () => {
                   <h2>Execution</h2>
                   {/* <p>Function Accountability Chart</p> */}
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <a className="tool-img-link" href="/toolDetail">
+              <Link className="tool-img-link" href="/toolDetail">
                 <Image
                   src={Case4}
                   alt="case3"
@@ -136,7 +137,7 @@ const page = () => {
                   <h2>Cash</h2>
                   {/* <p>Function Accountability Chart</p> */}
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -226,7 +227,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="third_div_layout shadow-lg">
+      {/* <div className="third_div_layout shadow-lg">
         <Image src={curve1} alt="curve1" className="image3 img-fluid" />
         <p className="section-header" style={{ color: "white" }}>
           Subscribe to our Monthly Newsletter
@@ -266,7 +267,7 @@ const page = () => {
             </button>
           </div>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 };

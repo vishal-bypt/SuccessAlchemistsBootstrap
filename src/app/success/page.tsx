@@ -66,7 +66,7 @@ const items = [
 ];
 const page = () => {
   const swiperRef = useRef<any>(null);
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const forward = () => {
     if (currentIndex === items.length) return;

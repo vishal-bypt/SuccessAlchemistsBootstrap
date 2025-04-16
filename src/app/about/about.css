@@ -5,7 +5,7 @@
 }
 
 .first_div_layout.aboutUs {
-    background: url(./images/about_us_page.jpg) no-repeat center;
+    background: url(./images/about_us_page.jpg) no-repeat center top;
     background-size: cover;
 }
 
@@ -31,6 +31,31 @@
     height: 480px;
 }
 
+
+.card-coach {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .card-coach:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  .card-coach:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    border: 2px solid #fba819; /* Same as role color */
+  }
+
+  .card-coach .card-img-top {
+    transition: transform 0.3s ease;
+  }
+  
+  .card-coach:hover .card-img-top {
+    transform: scale(1.05);
+  }
 
 /* Responsive text */
 

@@ -41,9 +41,9 @@ const ContactUs = () => {
       const data = await response.json();
       reset();
       Toast.success("Your enquiry has been submitted successfully!");
-      setTimeout(() => {
-        router.push("/"); // Redirect to the home page after 2 seconds  
-      }, 2000);
+      // setTimeout(() => {
+      //   router.push("/"); // Redirect to the home page after 2 seconds  
+      // }, 2000);
       
       //setResponseData(data);
     } catch (error) {

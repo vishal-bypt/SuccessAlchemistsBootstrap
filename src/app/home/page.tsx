@@ -69,7 +69,7 @@ const items = [
     id: 3,
     title: "Success Story #3 - Grauer & Weil (Engineering Division)",
     description:
-      "In this video, Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years. At the end, there is a reference to the Coach and the support provided in this growth journey.",
+      "Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years. At the end, there is a reference to the Coach and the support provided in this growth journey.",
     src: "https://www.youtube.com/embed/UrIxZUvzovo?si=nrjwyoMuQsnzgUsz",
   },
   {
@@ -100,11 +100,9 @@ const words = ["freedom", "enjoyment", "growth"];
 const Home = () => {
   // @ts-ignore
   const swiperRef = useRef<Swiper | null>(null);
-  const [currentIndex, setCurrentIndex] = useState(1);
-  // const [text, setText] = useState("");
-  // const [wordIndex, setWordIndex] = useState(0);
-  // const [charIndex, setCharIndex] = useState(0);
-  // const [isDeleting, setIsDeleting] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const iframeRefs = useRef<(HTMLIFrameElement | null)[]>([]);
+  const [activeIndex, setActiveIndex] = useState(null);
   const typedRef = useRef(null);
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
@@ -117,42 +115,7 @@ const Home = () => {
 
     return () => typed.destroy(); // Clean up on unmount
   }, []);
-  // useEffect(() => {
-  //   const currentWord = words[wordIndex];
-  //   const typingSpeed = 200;
-  //   const deletingSpeed = 100;
-  //   const pauseTime = 1000;
-
-  //   let timer: any;
-
-  //   if (!isDeleting) {
-  //     // Typing logic
-  //     if (charIndex < currentWord.length) {
-  //       timer = setTimeout(() => {
-  //         setText(currentWord.slice(0, charIndex + 1));
-  //         setCharIndex((prev) => prev + 1);
-  //       }, typingSpeed);
-  //     } else {
-  //       setTimeout(() => setIsDeleting(true), pauseTime); // Pause before deleting
-  //     }
-  //   } else {
-  //     // Deleting logic
-  //     if (charIndex > 0) {
-  //       timer = setTimeout(() => {
-  //         setText(currentWord.slice(0, charIndex - 1));
-  //         setCharIndex((prev) => prev - 1);
-  //       }, deletingSpeed);
-  //     } else {
-  //       setTimeout(() => {
-  //         setIsDeleting(false);
-  //         setWordIndex((prev) => (prev + 1) % words.length);
-  //       }, pauseTime);
-  //     }
-  //   }
-
-  //   return () => clearTimeout(timer);
-  // }, [charIndex, isDeleting, wordIndex, words]);
-
+  
   const forward = () => {
     if (currentIndex === items.length) return;
     swiperRef.current.swiper.slideTo(currentIndex + 1);
@@ -164,40 +127,22 @@ const Home = () => {
     setCurrentIndex(currentIndex - 1);
   };
 
+  const handleClick = (index:any) => {
+    if (activeIndex !== null && activeIndex !== index) {
+      const prevIframe = iframeRefs.current[activeIndex];
+      if (prevIframe) {
+        const src = prevIframe.src;
+        prevIframe.src = src; // stop previous video
+      }
+    }
+    setActiveIndex(index);
+  };
+
   return (
     <div
       className="hero-section box-shadow"
       style={{ display: "flex", gap: "16px", flexDirection: "column" }}
     >
-      {/* <div className="bg-warning radios"> */}
-      {/* <div className="first_div_layout home">
-        <div className="main_first_div_body" />
-        <div className="main_first_div_content">
-          <div className="row align-items-center no-gutters">
-            <div className="col-xxl-7 col-lg-8 col-md-12 col-xs-12">
-              <div className="hero-container">
-                <div className="inner_first_div">
-                  Are you ready to
-                  <br /> have more{" "}
-                  <span className="inner_first_div_span">freedom</span>
-                  <br /> from your bussinss?
-                </div>
-                <div className="inner_second_div">
-                  Learn from India’s first certified Scaling Up coach{" "}
-                  <span className="inner_second_div_span">Ajay Hiraskar </span>
-                  who has led the implementation of the Scaling Up performance
-                  platform across many industry verticals. This platform has
-                  already guided more than 80,000 companies world wide to
-                  succeed and grow.
-                </div>
-              </div>
-            </div>
-            {/* <div className=" col-xl-7 col-lg-6 col-md-12 text-lg-right text-center">
-              <Image src={main_image} alt="" className="img-fluid" />
-            </div> 
-          </div>
-        </div>
-      </div> */}
       <div className="video-wrapper">
         <video className="w-100 video-home" autoPlay loop muted>
           <source src="/Home-page-video.mp4" type="video/mp4" />
@@ -211,7 +156,7 @@ const Home = () => {
               <br />
               <span className="inner_first_div_span" ref={typedRef}></span>
               {/* <span className="inner_first_div_span cursor" >|</span> */}
-              <br /> from your business?
+              <br /> while doing business.
             </div>
             <div className="inner_second_div">
               Learn from India’s first certified Scaling Up coach{" "}
@@ -499,7 +444,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid client-review-section box-shadow ">
+      <div className="container-fluid client-review-section box-shadow">
         <div className="img-fluid client-review-curve">
           <Image
             src={Curve_shape}
@@ -531,10 +476,13 @@ const Home = () => {
                   <div className="video col-md-4">
                     <div className="ratio ratio-16x9">
                       <iframe
+                        key={i}
+                        
                         src={d.src}
                         className="home-video"
                         title="YouTube video player"
                         allowFullScreen={true}
+                        onClick={() => handleClick(i)}
                       ></iframe>
                     </div>
                   </div>

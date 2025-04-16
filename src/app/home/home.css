@@ -98,7 +98,7 @@
 /* second component */
 
 .company-logo.second_div_layout {
-    padding: 16px 0px 16px 64px;
+    padding: 41px 0px 41px 64px;
 }
 
 .second_div_first_text {
@@ -129,12 +129,12 @@
     background: #fff;
     gap: 30px;
     width: calc(150px 10 + 30px 9);
-    animation: slide 10s linear infinite;
+    animation: slide 40s linear infinite;
 }
 
 .slider-track img {
     background: #fff;
-    height: 50px;
+    height: 70px;
     width: auto;
 }
 
@@ -537,6 +537,7 @@
 }
 
 
+
 /*slider bullet point css start here*/
 
 .swiper-pagination-fraction,
@@ -546,6 +547,7 @@
     width: fit-content;
     left: 35%;
     text-align: left;
+    position: relative !important;
 }
 
 .swiper-pagination-bullet {
@@ -797,6 +799,7 @@
     .swiper-horizontal>.swiper-pagination-bullets,
     .swiper-pagination-bullets.swiper-pagination-horizontal {
         left: 0px;
+        position: relative !important;
     }
     .card.video-card .video-thumbnail iframe {
         height: 250px;
@@ -870,11 +873,15 @@
     .video_detail_div {
         gap: 16px;
     }
+
+
     .swiper-pagination-fraction,
     .swiper-pagination-custom,
     .swiper-horizontal>.swiper-pagination-bullets,
     .swiper-pagination-bullets.swiper-pagination-horizontal {
         left: 0px !important;
+        position: relative !important;
+        
     }
     .video_detail_div_title_text {
         color: #fff;
