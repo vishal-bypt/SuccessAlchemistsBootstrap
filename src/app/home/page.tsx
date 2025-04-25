@@ -49,6 +49,7 @@ import { useEffect, useRef, useState } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import "./home.css";
 import Typed from "typed.js";
+import { text } from "stream/consumers";
 
 const items = [
   {
@@ -169,11 +170,13 @@ const Home = () => {
         </div>
       </div>
       <div className="company-logo second_div_layout">
+      <div className="text-center"><h3>Trusted by top brands</h3></div>
         <div
           className="second_div_layout_row"
-          style={{ width: "auto", overflowX: "auto", overflowY: "hidden" }}
+          style={{ width: "auto", overflowX: "auto", overflowY: "hidden", marginTop : "16px"  }}
         >
-          <div className="second_div_first_text">Trusted by top brands</div>
+         
+          {/* <div className="second_div_first_text">Trusted by top brands</div> */}
           <div className="second_div_right_div">
             <div className="slider-container">
               <div className="slider-track">

@@ -6,12 +6,59 @@ import Modal from "react-bootstrap/Modal";
 import curve1 from "../../../../src/app/about/images/curve1.png";
 import bluecurve from "../basecamp/Images/blue-curve.svg";
 import basecamplogo2 from "../webinar/images/Masterminds_White.png";
+import Toast from "../../../components/Toast";
+import Spinner from 'react-bootstrap/Spinner';
+import { useForm } from "react-hook-form";
+import { useRouter } from 'next/navigation';
 import "./webinar.css";
 const page = () => {
   const [show, setShow] = useState(false);
-
+  const [selectedValue, setSelectedValue] = useState("Pathfinders");
+  const [selectedValue2, setSelectedValue2] = useState("Masterminds");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors },
+      } = useForm();
+      const router = useRouter();
+      const [showSpinner, setShowSpinner] = useState(false);
+      const [show2, setShow2] = useState(false);
+      const handleClose2 = () => setShow2(false);
+      const handleShow2 = () => setShow2(true);
+      const onSubmit = async (data: any) => {
+        setShowSpinner(true);
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/path-finder"; // Replace with your API URL
+        const postData: any = data;
+    
+        try {
+          const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(postData),
+          });
+          //console.log("response", response);
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+    
+          const data = await response.json();
+          reset();
+          handleClose();
+          Toast.success("Your request for pathfinders or masterminds speaker has been submitted!");
+          setShowSpinner(false);
+        
+          //setResponseData(data);
+        } catch (error) {
+          console.error("Error:", error);
+          Toast.error("An error occurred while submitting the form.");
+        }
+      };
   return (
     <div className="main_body_div">
       {/* <div className="first_div_layout webinar">
@@ -44,7 +91,9 @@ const page = () => {
             have implemented strategies, insights, and best practices for
             business growth and transformation.
           </p>
-
+          <p><Button variant="primary" onClick={handleShow2}>
+        To become masterminds
+      </Button></p>
           
         </div>
       </div>
@@ -62,14 +111,14 @@ const page = () => {
           </button> */}
         </div>
         <div className="webinar-content">
-          <p className="mb-2">
+          <p className="mb-2" style={{textAlign: "justify"}}>
             At Success Alchemists, we are dedicated to transforming businesses
             through the proven Scaling Up framework developed by Verne Harnish.
             With a diverse client base spanning various industries, we empower
             organizations to achieve sustainable growth and operational
             excellence.
           </p>
-          <p>
+          <p style={{textAlign: "justify"}}>
             This webinar is an excellent platform to acquire actionable
             knowledge, enhance your growth strategies, and connect with
             like-minded individuals dedicated to success. Don’t miss this
@@ -97,7 +146,7 @@ const page = () => {
                 <div className="webinar-box-content">
                   <div className="second-box-content">
                     <h3>Scaling Up- Pathway to Progress With Ajay Hiraskar</h3>
-                    <p>
+                    <p style={{textAlign: "justify"}}>
                       In this webinar, Ajay dives into the transformative power
                       of the Scaling Up Framework, sharing the critical
                       strategies and tools that have propelled his clients to
@@ -155,7 +204,7 @@ const page = () => {
                 <div className="webinar-box-content">
                   <div className="second-box-content">
                     <h3>July2024 - Rajeev Malik of Only Ladders</h3>
-                    <p>
+                    <p style={{textAlign: "justify"}}>
                       A seasoned Brand Strategist and Marketing Advisor with
                       over 35 years of experience. Rajeev has successfully
                       nurtured brands like Toyota, Daihatsu, Blue Star, and
@@ -189,12 +238,12 @@ const page = () => {
                     <h3>
                       March2024 - Siddharth Motiwale of Clarion Technologies
                     </h3>
-                    <p>
+                    <p style={{textAlign: "justify"}}>
                       Strategic thinking and execution planning go hand in hand
                       to create a successful organization. The challenge is HOW?{" "}
                     </p>
 
-                    <p>
+                    <p style={{textAlign: "justify"}}>
                       The problem statement: Most senior management
                       professionals are so tied up in transactional roles that
                       we often miss the big picture of Strategic thinking.
@@ -223,7 +272,7 @@ const page = () => {
                 <div className="webinar-box-content">
                   <div className="second-box-content">
                     <h3>May2024 - Sunny Bhanushali of Aliens Tattoo</h3>
-                    <p>
+                    <p style={{textAlign: "justify"}}>
                       Our Guest Speaker Sunny Bhanushali, one of the most famous
                       names in the artistic world of Tattoo, is the man behind
                       them and many other famous people around the world!
@@ -241,7 +290,7 @@ const page = () => {
         <p className="heading" style={{ color: "white" }}>
           What will you learn?
         </p>
-        <p className="subText webinar-sub-text" style={{ color: "white" }}>
+        <p className="subText webinar-sub-text" style={{ color: "white", textAlign: "justify"}}>
           The Scaling Up methodology has helped thousands of business leaders
           break through their plateaus so they can grow and scale effectively.
           In this webinar, we’ll focus on how to harness the power of your
@@ -258,7 +307,7 @@ const page = () => {
           <div className="row">
             <div className="col-md-6 fourth_component_bottom_component_gray_light right_border_div ">
               <h1 className="text_div">Entrepreneurs and Business Owners</h1>
-              <p className="fourth-webinar-content">
+              <p className="fourth-webinar-content" style={{textAlign: "justify"}}>
                 This group includes small business owners and entrepreneurs
                 seeking to scale their businesses for increased revenue and
                 growth.
@@ -266,7 +315,7 @@ const page = () => {
             </div>
             <div className="col-md-6 fourth_component_bottom_component_brack_div">
               <h1 className="text_div">Decision-Makers</h1>
-              <p className="fourth-webinar-content">
+              <p className="fourth-webinar-content" style={{textAlign: "justify"}}>
                 Managers, executives, and leaders within larger organizations
                 responsible for strategic decisions and business expansion.
               </p>
@@ -275,7 +324,7 @@ const page = () => {
           <div className="row">
             <div className="col-md-6 fourth_component_bottom_component_brack_div right_border_div top_border_div">
               <h1 className="text_div">Professionals and Financial Experts</h1>
-              <p className="fourth-webinar-content">
+              <p className="fourth-webinar-content" style={{textAlign: "justify"}}>
                 Individuals from diverse industries and financial backgrounds
                 looking to enhance their skills and strategies for business
                 growth and financial optimization.
@@ -283,7 +332,7 @@ const page = () => {
             </div>
             <div className="col-md-6 fourth_component_bottom_component_gray_light top_border_div">
               <h1 className="text_div">Entrepreneurs</h1>
-              <p className="fourth-webinar-content">
+              <p className="fourth-webinar-content" style={{textAlign: "justify"}}>
                 Entrepreneurs will discover invaluable open-book management
                 strategies, providing the foundation for building a transparent,
                 engaging, and scalable business model that empowers teams and
@@ -372,7 +421,189 @@ const page = () => {
         </Modal.Footer>
       </Modal>
       {/* modal html start here */}
+
+      <Modal show={show2} onHide={handleClose2}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Become Pathfinders or masterminds speaker</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.name ? "is-invalid" : ""
+                  }`}
+                id="name"
+                placeholder="Name"
+                {...register("name", {
+                  required: "Name is required",
+
+                })}
+              />
+              <label htmlFor="name">Name</label>
+              {errors.name && (
+                <div className="invalid-feedback">
+                  {String(errors.name.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.email ? "is-invalid" : ""
+                  }`}
+                id="email"
+                placeholder="Email"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Invalid email address",
+                  },
+
+                })}
+              />
+              <label htmlFor="email">Email</label>
+              {errors.email && (
+                <div className="invalid-feedback">
+                  {String(errors.email.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.phone ? "is-invalid" : ""
+                  }`}
+                id="phone"
+                placeholder="Phone"
+                {...register("phone", {
+                  required: "Phone is required",
+                })}
+              />
+              <label htmlFor="phone">Phone</label>
+              {errors.phone && (
+                <div className="invalid-feedback">
+                  {String(errors.phone.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.company ? "is-invalid" : ""
+                  }`}
+                id="company"
+                placeholder="Company Name"
+                {...register("company", {
+                  required: "Company Name is required",
+                })}
+              />
+              <label htmlFor="company">Company Name</label>
+              {errors.company && (
+                <div className="invalid-feedback">
+                  {String(errors.company.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.jobTitle ? "is-invalid" : ""
+                  }`}
+                id="jobTitle"
+                placeholder="Job Title"
+                {...register("jobTitle", {
+                  required: "Job Title is required",
+                })}
+              />
+              <label htmlFor="jobTitle">Job Title</label>
+              {errors.jobTitle && (
+                <div className="invalid-feedback">
+                  {String(errors.jobTitle.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.linkedinProfile ? "is-invalid" : ""
+                  }`}
+                id="linkedinProfile"
+                placeholder="LinkedIn Profile"
+                {...register("linkedinProfile", {
+                  required: "LinkedIn Profile is required",
+                })}
+              />
+              <label htmlFor="linkedinProfile">LinkedIn Profile</label>
+              {errors.linkedinProfile && (
+                <div className="invalid-feedback">
+                  {String(errors.linkedinProfile.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <select value={selectedValue}  {...register("interested")} className={`form-select ${errors.interested ? "is-invalid" : ""}`} id="interested" aria-label="Default select example">
+                <option value="Pathfinders">Pathfinders</option>
+                <option value="Masterminds">Masterminds</option>  
+                <option value="Any">Any</option>  
+              </select>
+              <label htmlFor="interested">Are you interested in speaking on ?</label>
+              {errors.interested && (
+                <div className="invalid-feedback">
+                  {String(errors.interested.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <select value={selectedValue2} {...register("expertise")} className={`form-select ${errors.expertise ? "is-invalid" : ""}`} id="interested" aria-label="Default select example">
+                <option selected value="Scaling Business">Scaling Business</option>
+                <option value="Leadership">Leadership</option>  
+                <option value="Startup Growth">Startup Growth</option>  
+                <option value="Operations">Operations</option> 
+                <option value="Fundraising">Fundraising</option>  
+              </select>
+              <label htmlFor="expertise">Preferred topics or Area of expertise</label>
+              {errors.expertise && (
+                <div className="invalid-feedback">
+                  {String(errors.expertise.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.reason ? "is-invalid" : ""
+                  }`}
+                id="reason"
+                placeholder="Why do you want to be a speaker on our platform?"
+                {...register("reason", {
+                  required: "Reason is required",
+                })}
+              />
+              <label htmlFor="reason">Why do you want to be a speaker on our platform?</label>
+              {errors.reason && (
+                <div className="invalid-feedback">
+                  {String(errors.reason.message)}
+                </div>
+              )}
+            </div>
+            
+            
+
+
+          </Modal.Body>
+          <Modal.Footer>
+            {showSpinner && <Spinner animation="border" variant="warning" />}
+            <Button variant="secondary" onClick={handleClose2}>
+              Close
+            </Button>
+            <button type="submit" className="btn btn-primary">Submit</button>
+          </Modal.Footer>
+        </form>
+      </Modal>
     </div>
+
   );
 };
 

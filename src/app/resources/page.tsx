@@ -83,7 +83,7 @@ const page = () => {
             <p className="heading" style={{ color: "white" }}>
               Resources
             </p>
-            <p className="subText" style={{ color: "white" }}>
+            <p className="subText" style={{ color: "white"}}>
               Links to articles, books, and tools that support the effective
               implementation of the Scaling Up framework
             </p>

@@ -71,7 +71,7 @@ const NavbarMenu = () => {
               </div>
             
           </Nav.Link>
-          <Nav.Link
+          {/* <Nav.Link
             as={Link}
               href="/who"
               className={`${
@@ -89,7 +89,7 @@ const NavbarMenu = () => {
               >
                 Who we are
               </div>
-          </Nav.Link>
+          </Nav.Link> */}
           <Nav.Link
             as={Link}
               href="/success"
@@ -111,7 +111,7 @@ const NavbarMenu = () => {
           </Nav.Link>
           <Nav.Link
             as={Link}
-              href="https://q.esperto.one/q/sR4RRluSEazkK5XHPlVZ/6hDOhyCnHHDQf1Uzk3eg"
+              href="https://scalinguptoolkit.com/s/ScaleUpQA_AH"
               target="_blank"
               className={`${
                 pathname === "/assessment"

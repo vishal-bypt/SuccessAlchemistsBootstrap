@@ -429,7 +429,7 @@ const page = () => {
           <div className="col-md-12">
             <p
               className="subText webinar-sub-text mt-0"
-              style={{ color: "white", width: "100%" }}
+              style={{ color: "white", width: "100%", textAlign: "justify" }}
             >
               Success Alchemists' Pathfinder is a captivating podcast series
               that delves into the journeys of successful business owners,

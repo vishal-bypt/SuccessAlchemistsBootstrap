@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import blogimg1 from "../../../../public/assets/images/ajay-sir-photo.svg";
 import basecamp1 from "../../../../public/assets/images/basecamp1.jpeg";
@@ -7,10 +8,58 @@ import curve1 from "../../../../src/app/about/images/curve1.png";
 import Double_arrow from "../../home/images/Double_arrow.png";
 import basecamplogo2 from "../basecamp/Images/Basecamp_White.png";
 import bluecurve from "../basecamp/Images/blue-curve.svg";
+import Toast from "../../../components/Toast";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Spinner from 'react-bootstrap/Spinner';
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { useRouter } from 'next/navigation';
 import "./basecamp.css";
 import Link from "next/link";
 
 const page = () => {
+  const {
+      register,
+      handleSubmit,
+      reset,
+      formState: { errors },
+    } = useForm();
+    const router = useRouter();
+    const [showSpinner, setShowSpinner] = useState(false);
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const onSubmit = async (data: any) => {
+      setShowSpinner(true);
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/path-finder"; // Replace with your API URL
+      const postData: any = data;
+  
+      try {
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(postData),
+        });
+        //console.log("response", response);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+  
+        const data = await response.json();
+        reset();
+        handleClose();
+        Toast.success("Your request for pathfinders or masterminds speaker has been submitted!");
+        setShowSpinner(false);
+      
+        //setResponseData(data);
+      } catch (error) {
+        console.error("Error:", error);
+        Toast.error("An error occurred while submitting the form.");
+      }
+    };
   return (
     <div className="main_body_div">
       {/* <div className="first_div_layout basecamp">
@@ -43,6 +92,9 @@ const page = () => {
           <p className="subText" style={{ color: "white" }}>
             Are you looking for Accelerated growth and Augmented value ?
           </p>
+          <p><Button variant="primary" onClick={handleShow}>
+        To become masterminds
+      </Button></p>
         </div>
       </div>
 
@@ -59,14 +111,14 @@ const page = () => {
                     </button> */}
         </div>
         <div className="webinar-content">
-          <p className="mb-2">
+          <p className="mb-2" style={{textAlign: "justify"}}>
             At Success Alchemists, we are dedicated to transforming businesses
             through the proven Scaling Up framework developed by Verne Harnish.
             With a diverse client base spanning various industries, we empower
             organizations to achieve sustainable growth and operational
             excellence.
           </p>
-          <p>
+          <p style={{textAlign: "justify"}}>
             This webinar is an excellent platform to acquire actionable
             knowledge, enhance your growth strategies, and connect with
             like-minded individuals dedicated to success. Don’t miss this
@@ -251,7 +303,7 @@ const page = () => {
             <div className="col-md-8">
               <div className="second-box-content">
                 <h3>Ajay Hiraskar</h3>
-                <p className="mt-2">
+                <p className="mt-2" style={{textAlign: "justify"}}>
                   Join our exclusive one-day workshop with Ajay Hiraskar,
                   India’s first certified Scaling Up coach, and unlock the keys
                   to accelerating your business growth. Learn proven strategies
@@ -271,6 +323,186 @@ const page = () => {
           </div>
         </div>
       </div>
+      <Modal show={show} onHide={handleClose}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Become Pathfinders or masterminds speaker</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.name ? "is-invalid" : ""
+                  }`}
+                id="name"
+                placeholder="Name"
+                {...register("name", {
+                  required: "Name is required",
+
+                })}
+              />
+              <label htmlFor="name">Name</label>
+              {errors.name && (
+                <div className="invalid-feedback">
+                  {String(errors.name.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.email ? "is-invalid" : ""
+                  }`}
+                id="email"
+                placeholder="Email"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Invalid email address",
+                  },
+
+                })}
+              />
+              <label htmlFor="email">Email</label>
+              {errors.email && (
+                <div className="invalid-feedback">
+                  {String(errors.email.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.phone ? "is-invalid" : ""
+                  }`}
+                id="phone"
+                placeholder="Phone"
+                {...register("phone", {
+                  required: "Phone is required",
+                })}
+              />
+              <label htmlFor="phone">Phone</label>
+              {errors.phone && (
+                <div className="invalid-feedback">
+                  {String(errors.phone.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.company ? "is-invalid" : ""
+                  }`}
+                id="company"
+                placeholder="Company Name"
+                {...register("company", {
+                  required: "Company Name is required",
+                })}
+              />
+              <label htmlFor="company">Company Name</label>
+              {errors.company && (
+                <div className="invalid-feedback">
+                  {String(errors.company.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.jobTitle ? "is-invalid" : ""
+                  }`}
+                id="jobTitle"
+                placeholder="Job Title"
+                {...register("jobTitle", {
+                  required: "Job Title is required",
+                })}
+              />
+              <label htmlFor="jobTitle">Job Title</label>
+              {errors.jobTitle && (
+                <div className="invalid-feedback">
+                  {String(errors.jobTitle.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.linkedinProfile ? "is-invalid" : ""
+                  }`}
+                id="linkedinProfile"
+                placeholder="LinkedIn Profile"
+                {...register("linkedinProfile", {
+                  required: "LinkedIn Profile is required",
+                })}
+              />
+              <label htmlFor="linkedinProfile">LinkedIn Profile</label>
+              {errors.linkedinProfile && (
+                <div className="invalid-feedback">
+                  {String(errors.linkedinProfile.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <select {...register("interested")} className={`form-select ${errors.interested ? "is-invalid" : ""}`} id="interested" aria-label="Default select example">
+                <option selected value="Pathfinders">Pathfinders</option>
+                <option value="Masterminds">Masterminds</option>  
+                <option value="Any">Any</option>  
+              </select>
+              <label htmlFor="interested">Are you interested in speaking on ?</label>
+              {errors.interested && (
+                <div className="invalid-feedback">
+                  {String(errors.interested.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <select {...register("expertise")} className={`form-select ${errors.expertise ? "is-invalid" : ""}`} id="interested" aria-label="Default select example">
+                <option selected value="Scaling Business">Scaling Business</option>
+                <option value="Leadership">Leadership</option>  
+                <option value="Startup Growth">Startup Growth</option>  
+                <option value="Operations">Operations</option> 
+                <option value="Fundraising">Fundraising</option>  
+              </select>
+              <label htmlFor="expertise">Preferred topics or Area of expertise</label>
+              {errors.expertise && (
+                <div className="invalid-feedback">
+                  {String(errors.expertise.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.reason ? "is-invalid" : ""
+                  }`}
+                id="reason"
+                placeholder="Why do you want to be a speaker on our platform?"
+                {...register("reason", {
+                  required: "Reason is required",
+                })}
+              />
+              <label htmlFor="reason">Why do you want to be a speaker on our platform?</label>
+              {errors.reason && (
+                <div className="invalid-feedback">
+                  {String(errors.reason.message)}
+                </div>
+              )}
+            </div>
+            
+            
+
+
+          </Modal.Body>
+          <Modal.Footer>
+            {showSpinner && <Spinner animation="border" variant="warning" />}
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <button type="submit" className="btn btn-primary">Submit</button>
+          </Modal.Footer>
+        </form>
+      </Modal>
     </div>
   );
 };
