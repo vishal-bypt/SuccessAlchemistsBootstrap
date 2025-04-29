@@ -127,9 +127,9 @@
     float: right;
     display: flex;
     align-items: center;
-    background: #fff;
+    background: #FFF;
     gap: 30px;
-    width: calc(150px 10 + 30px 9);
+    width: fit-content;
     animation: slide 40s linear infinite;
 }
 

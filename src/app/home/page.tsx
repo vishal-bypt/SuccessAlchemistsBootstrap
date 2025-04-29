@@ -116,7 +116,7 @@ const Home = () => {
 
     return () => typed.destroy(); // Clean up on unmount
   }, []);
-  
+
   const forward = () => {
     if (currentIndex === items.length) return;
     swiperRef.current.swiper.slideTo(currentIndex + 1);
@@ -128,7 +128,7 @@ const Home = () => {
     setCurrentIndex(currentIndex - 1);
   };
 
-  const handleClick = (index:any) => {
+  const handleClick = (index: any) => {
     if (activeIndex !== null && activeIndex !== index) {
       const prevIframe = iframeRefs.current[activeIndex];
       if (prevIframe) {
@@ -170,17 +170,287 @@ const Home = () => {
         </div>
       </div>
       <div className="company-logo second_div_layout">
-      <div className="text-center"><h3>Trusted by top brands</h3></div>
+        <div className="text-center">
+          <h3>Trusted by top brands</h3>
+        </div>
         <div
           className="second_div_layout_row"
-          style={{ width: "auto", overflowX: "auto", overflowY: "hidden", marginTop : "16px"  }}
+          style={{
+            width: "auto",
+            overflowX: "auto",
+            overflowY: "hidden",
+            marginTop: "16px",
+          }}
         >
-         
           {/* <div className="second_div_first_text">Trusted by top brands</div> */}
           <div className="second_div_right_div">
             <div className="slider-container">
               <div className="slider-track">
-                <div className="image_layout_your_logo col-1">
+                <div className="image_layout_your_logo">
+                  <Image
+                    src={your_logo}
+                    width={200}
+                    height={200}
+                    className="image_layout_your_logo"
+                    alt="your logo"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum">
+                  <Image
+                    className="image_layout_lorem_ipsum"
+                    src={lorem_ipsum}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_o_logo">
+                  <Image
+                    className="image_layout_o_logo"
+                    src={o_logo}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo6}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_your_logo">
+                  <Image
+                    src={logo7}
+                    width={200}
+                    height={200}
+                    className="image_layout_your_logo"
+                    alt="your logo"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo8}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo9}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo10}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo11}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo15}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo16}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo17}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo18}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo19}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo20}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                {/* <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo21}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div> */}
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo21}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo22}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo23}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo25}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo26}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo27}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo28}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo29}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo30}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo31}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo32}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo33}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+                <div className="image_layout_lorem_ipsum2">
+                  <Image
+                    className="image_layout_lorem_ipsum2"
+                    src={logo34}
+                    width={200}
+                    height={200}
+                    alt="lorem ipsum"
+                  />
+                </div>
+
+                {/* DUPLICATED IMAGES FOR INFINITE LOOP ANIMATION */}
+                <div className="image_layout_your_logo">
                   <Image
                     src={your_logo}
                     width={200}
@@ -480,7 +750,6 @@ const Home = () => {
                     <div className="ratio ratio-16x9">
                       <iframe
                         key={i}
-                        
                         src={d.src}
                         className="home-video"
                         title="YouTube video player"
