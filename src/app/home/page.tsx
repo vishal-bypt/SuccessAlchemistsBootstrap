@@ -406,24 +406,6 @@ const Home = () => {
                 <div className="image_layout_lorem_ipsum2">
                   <Image
                     className="image_layout_lorem_ipsum2"
-                    src={logo30}
-                    width={200}
-                    height={200}
-                    alt="lorem ipsum"
-                  />
-                </div>
-                <div className="image_layout_lorem_ipsum2">
-                  <Image
-                    className="image_layout_lorem_ipsum2"
-                    src={logo31}
-                    width={200}
-                    height={200}
-                    alt="lorem ipsum"
-                  />
-                </div>
-                <div className="image_layout_lorem_ipsum2">
-                  <Image
-                    className="image_layout_lorem_ipsum2"
                     src={logo32}
                     width={200}
                     height={200}
@@ -662,24 +644,6 @@ const Home = () => {
                   <Image
                     className="image_layout_lorem_ipsum2"
                     src={logo29}
-                    width={200}
-                    height={200}
-                    alt="lorem ipsum"
-                  />
-                </div>
-                <div className="image_layout_lorem_ipsum2">
-                  <Image
-                    className="image_layout_lorem_ipsum2"
-                    src={logo30}
-                    width={200}
-                    height={200}
-                    alt="lorem ipsum"
-                  />
-                </div>
-                <div className="image_layout_lorem_ipsum2">
-                  <Image
-                    className="image_layout_lorem_ipsum2"
-                    src={logo31}
                     width={200}
                     height={200}
                     alt="lorem ipsum"
