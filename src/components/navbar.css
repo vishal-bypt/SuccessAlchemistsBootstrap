@@ -10,11 +10,12 @@
 }
 
 .main_logo {
-    background: rgba(0, 0, 0, 0) url(../../public/assets/images/main_logo.png) no-repeat center;
+    background:  url(../../public/assets/images/Succes3.png) no-repeat center;
     background-size: contain;
     /* Ensures the entire image fits within the div */
     width: 150px;
-    height: 40.255592346191406px;
+    height: 45px;
+    background-color: #F5F5F5;
 }
 
 .right_div_layout {

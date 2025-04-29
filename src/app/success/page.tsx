@@ -9,6 +9,7 @@ import Curve_shape from "../home/images/Curve-shape.png";
 import right_arrow_btn from "../home/images/right-arrow-btn.png";
 import left_arrow_btn from "../home/images/left-arrow-btn.png";
 import Image from "next/image";
+import success from "../../app/success/images/Artboard 2.1@4x.png"
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -109,7 +110,7 @@ const page = () => {
         <div className="casestudy-container">
           <div className="row">
             <div className="col-md-12">
-              <Image src={Case1} alt="case1" className="img-fluid w-100" />
+              <Image src={success} alt="case1" className="img-fluid w-100" />
             </div>
          
           </div>

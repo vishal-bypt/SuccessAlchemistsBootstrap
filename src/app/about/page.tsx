@@ -26,7 +26,8 @@ import blog5 from "../../app/who/images/Blog5.png";
 import blog6 from "../../app/who/images/Blog6.png";
 import Forward from "../../app/who/images/Forward1.png";
 import Backward from "../../app/who/images/Backward.png";
-import blog7 from "../../app/who/images/Blog7.png"
+import blog7 from "../../app/who/images/Blog7.png";
+import about from "../../app/about/images/Succes7.png"
 import "./about.css";
 
 
@@ -176,7 +177,7 @@ const About = () => {
             <Image className="mission-curve-img" src={curve} alt="curve" />
           </div>
           <div className="col-12 col-md-12 d-flex flex-column flex-md-row justify-content-evenly main">
-          <Image className="corevalue-img img-fluid" src={corevalue} alt="graph" />
+          <Image className="corevalue-img img-fluid" src={about} alt="graph" />
            
      
           </div>

@@ -6,6 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
+import LogoSuccess from "../../public/assets/images/LogoSuccess.png"
 import "../components/navbar.css";
 
 const NavbarMenu = () => {

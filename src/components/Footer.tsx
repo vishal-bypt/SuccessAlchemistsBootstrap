@@ -1,5 +1,6 @@
 "use client";
 import logo from "../../public/assets/images/main_logo.png";
+import logo1 from "../../public/assets/images/Success5.png"
 import Image from "next/image";
 import Email from "../../public/assets/images/Email.svg";
 import Location from "../../public/assets/images/Location (2).svg";
@@ -26,7 +27,7 @@ const Footer = () => {
         <div className="row gx-4 res-row">
           <div className="col-12 col-md-4 col-lg-4 d-flex flex-column">
             <Image
-              src={logo}
+              src={logo1}
               alt="logo"
               className="Footer_main_logo"
               style={{ width: "150px", height: "auto" }}
