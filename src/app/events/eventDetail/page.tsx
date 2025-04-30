@@ -539,7 +539,7 @@ const page = () => {
           <div className="col-md-6">
             <div className="left-div left-div-border">
               <label className="till-date-label till-date-grey" >
-                Regular 6th to 14th June
+                Regular 6th to 17th June
               </label>
               <div className="content-label-div">
                 <div className="left-content-label">
