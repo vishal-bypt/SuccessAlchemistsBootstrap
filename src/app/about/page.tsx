@@ -27,7 +27,7 @@ import blog6 from "../../app/who/images/Blog6.png";
 import Forward from "../../app/who/images/Forward1.png";
 import Backward from "../../app/who/images/Backward.png";
 import blog7 from "../../app/who/images/Blog7.png";
-import about from "../../app/about/images/Succes7.png"
+import about from "../../app/about/images/Success7.png"
 import "./about.css";
 
 
