@@ -257,7 +257,7 @@ const Footer = () => {
             <div className="flex gap-3 mt-5">
               <h5>Newsletter</h5>
               </div>
-              <div className="d-flex mt-1">
+              <div className="flex mt-1">
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div className="col-12 col-md-12 col-lg-12 position-relative mt-3">
                     <input
