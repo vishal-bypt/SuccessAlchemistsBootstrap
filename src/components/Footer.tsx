@@ -1,4 +1,5 @@
 "use client";
+import React, { useState } from "react";
 import logo from "../../public/assets/images/main_logo.png";
 import logo1 from "../../public/assets/images/Success5.png"
 import Image from "next/image";
@@ -9,6 +10,10 @@ import Instagram from "../../public/assets/images/Instagram.png";
 import Linkedin from "../../public/assets/images/Linkedin.png";
 import Twitter from "../../public/assets/images/Twitter.png";
 import Youtube from "../../public/assets/images/Youtube.png";
+import curve1 from "../../src/app/about/images/curve1.png";
+import { useForm } from "react-hook-form";
+import Toast from "../../src/components/Toast";
+import { useRouter } from 'next/navigation';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 const arr = [
@@ -20,6 +25,61 @@ const arr = [
   "/resources",
 ];
 const Footer = () => {
+
+
+  const {
+      register,
+      handleSubmit,
+      reset,
+      formState: { errors },
+    } = useForm();
+    const router = useRouter();
+    const [showSpinner, setShowSpinner] = useState(false);
+    const [show, setShow] = useState(false);
+  
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
+    const handleFormSubmit = (event: React.MouseEvent<HTMLAnchorElement>) => {
+      event.preventDefault(); // Prevent the default anchor click behavior
+      //handleShow(); // Show the modal when the link is clicked
+      localStorage.getItem('hasSubmittedInquiry') === 'true' ? router.push("/toolDetail") : handleShow();
+    };
+  
+    const onSubmit = async (data: any) => {
+      setShowSpinner(true);
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/newsletter"; // Replace with your API URL
+      const postData: any = data;
+  
+      try {
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(postData),
+        });
+        //console.log("response", response);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+  
+        const data = await response.json();
+        reset();
+        handleClose();
+        localStorage.setItem('hasSubmittedInquiry', 'true');
+        Toast.success("Your request for newsletter has been submitted.");
+        setShowSpinner(false);
+        // setTimeout(() => {
+        //   router.push("/"); // Redirect to the home page after 2 seconds  
+        // }, 2000);
+  
+        //setResponseData(data);
+      } catch (error) {
+        console.error("Error:", error);
+        Toast.error("An error occurred while submitting the form.");
+      }
+    };
   const pathName = usePathname();
   return (
     <div className="d-flex flex-column gap-1">
@@ -32,7 +92,7 @@ const Footer = () => {
               className="Footer_main_logo"
               style={{ width: "150px", height: "auto" }}
             />
-            <div className="col-12 col-md-10 mt-3 col-lg-10 d-flex flex-column text-justify-content-center align-items-start gap-2">
+            <div className="col-12 col-md-10 mt-3 col-lg-10 d-flex flex-column text-justify-content-center align-items-start gap-2" style={{textAlign: "justify"}}>
             At Success Alchemists, we believe that our success is tied to yours. If you're a CEO seeking to deliver accelerated growth, augmented value, and a simplified business model, our experienced Scaling Up Coaches are here to help
             </div>
            
@@ -62,18 +122,6 @@ const Footer = () => {
                   href={"/about"}
                 >
                   About us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`${
-                    pathName === "/who"
-                      ? "active-link font-semibold"
-                      : "inactive-link font-normal"
-                  } link-underline link-underline-opacity-0`}
-                  href={"/who"}
-                >
-                  Who we are
                 </Link>
               </li>
               <li>
@@ -205,6 +253,46 @@ const Footer = () => {
                 </Link>
               ))}
             </div>
+
+            <div className="flex gap-3 mt-5">
+              <h5>Newsletter</h5>
+              </div>
+              <div className="d-flex mt-1">
+                <form onSubmit={handleSubmit(onSubmit)}>
+                  <div className="col-12 col-md-12 col-lg-12 position-relative mt-3">
+                    <input
+                      type="text"
+                      className={`form-control input ${
+                        errors.email ? "is-invalid" : ""
+                      }`}
+                      placeholder="Email"
+                      {...register("email", {
+                        required: "Email is required",
+                        pattern: {
+                          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                          message: "Invalid email address",
+                        },
+                      })}
+                    />
+                    {errors.email && (
+                      <div
+                        className="invalid-feedback position-absolute"
+                        style={{ top: "100%", left: 0 }}
+                      >
+                        {String(errors.email.message)}
+                      </div>
+                    )}
+                 </div><br/>
+                 <div className="col-12 col-md-12 col-lg-12 position-relative">   
+                    <button
+                      type="submit"
+                      className="col-md-12 btn btn-primary w-50"
+                    >
+                      Subscribe Now
+                    </button>
+                  </div>
+                </form>
+              </div>
           </div>
         </div>
       </footer>
