@@ -190,7 +190,7 @@ const ContactUs = () => {
             <div className="submit-btn-div">
               <button
                 type="submit"
-                className="btn btn-submit"
+                className="btnstyle btn-submit"
               >
                 SEND NOW
               </button>

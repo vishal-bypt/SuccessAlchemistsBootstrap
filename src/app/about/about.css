@@ -391,7 +391,7 @@
 .card-text {
     color: #616161;
     margin-top: 8px;
-    font-size: 18px;
+    font-size: 20px;
 }
 .slider-btn{
     height: 100%;
@@ -413,6 +413,12 @@
     border-bottom:1px solid #FBA819; 
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+}
+
+.team-head {
+    font-size: 40px;
+    font-weight: 500;
+    color: #222020;
 }
 
 

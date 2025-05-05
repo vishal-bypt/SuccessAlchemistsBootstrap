@@ -262,11 +262,7 @@ const About = () => {
                   the first certified Scaling Up Coach in India and the sole certified
                   coach in West and South India. With extensive knowledge and
                   experience, Ajay leads our team in delivering outstanding results.
-                  The core Success Alchemists team consists of twelve members, each
-                  bringing a diverse mix of expertise and experience from various
-                  domains. This collective knowledge positions us as an ideal partner
-                  for clients across industries, enabling us to tailor our approach to
-                  meet the unique needs of each business we serve.
+                  The core Success Alchemists team is made up of experienced professionals, each bringing a diverse mix of expertise and experience from various domains. This collective knowledge positions us as an ideal partner for clients across industries, enabling us to tailor our approach to meet the unique needs of each business we serve.
                 </p>
                 <div className="sub_forth_div_layout">
                   <div className="team-sub-container">

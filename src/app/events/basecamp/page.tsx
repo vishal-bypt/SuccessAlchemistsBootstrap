@@ -92,9 +92,7 @@ const page = () => {
           <p className="subText" style={{ color: "white" }}>
             Are you looking for Accelerated growth and Augmented value ?
           </p>
-          <p><Button variant="primary" onClick={handleShow}>
-        To become masterminds
-      </Button></p>
+          
         </div>
       </div>
 
@@ -303,7 +301,7 @@ const page = () => {
             <div className="col-md-8">
               <div className="second-box-content">
                 <h3>Ajay Hiraskar</h3>
-                <p className="mt-2" style={{textAlign: "justify"}}>
+                <p className="mt-2" style={{textAlign: "justify", fontSize: "24px"}}>
                   Join our exclusive one-day workshop with Ajay Hiraskar,
                   India’s first certified Scaling Up coach, and unlock the keys
                   to accelerating your business growth. Learn proven strategies

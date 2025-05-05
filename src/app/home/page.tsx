@@ -780,7 +780,7 @@ const Home = () => {
             deliver agility, clarity and commitment in four main areas:
           </div>
         </div>
-        <div>
+        {/* <div>
           <div className="row">
             <div className="col-md-6 fourth_component_bottom_component_gray_light right_border_div border-bottom">
               <div className="number_div">1</div>
@@ -801,7 +801,7 @@ const Home = () => {
               <div className="text_div">Establish Communication Rhythms</div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="fifth_component">
         <div className="fifth_component_div">

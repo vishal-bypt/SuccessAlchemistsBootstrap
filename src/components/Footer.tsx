@@ -255,9 +255,9 @@ const Footer = () => {
             </div>
 
             <div className="flex gap-3 mt-5">
-              <h5>Newsletter</h5>
+              <h5>What’s New</h5>
               </div>
-              <div className="flex mt-1">
+              <div className="flex">
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div className="col-12 col-md-12 col-lg-12 position-relative mt-3">
                     <input
@@ -282,13 +282,13 @@ const Footer = () => {
                         {String(errors.email.message)}
                       </div>
                     )}
-                 </div><br/>
-                 <div className="col-12 col-md-12 col-lg-12 position-relative">   
+                 </div>
+                 <div className="col-12 col-md-12 col-lg-12 position-relative mt-2">   
                     <button
                       type="submit"
-                      className="col-md-12 btn btn-primary w-50"
+                      className="col-md-4 btn btn-primary btn-sm w-30"
                     >
-                      Subscribe Now
+                      Subscribe
                     </button>
                   </div>
                 </form>
