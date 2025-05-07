@@ -8,7 +8,7 @@ import Circle3 from "../../../src/app/about/images/Circle3.png";
 import Circle4 from "../../../src/app/about/images/Circle4.png";
 import curve from "../../../src/app/about/images/curve.png";
 import downArrow from "../../../src/app/about/images/Downarrow.png";
-import image2 from "../../../src/app/about/images/Image2.svg";
+import image2 from "../../../src/app/about/images/Image2.png";
 import corevalue from "../about/images/corevalue-infographic.svg"
 import curve1 from "../../../src/app/about/images/curve1.png";
 import coach1 from "../../app/who/images/coach1.png";
@@ -166,6 +166,7 @@ const About = () => {
             <Image
               className="img-fluid rounded journey-image"
               src={image2}
+              style={{ width: "100%", height: "auto" }}
               alt="img2"
             />
           </div>
