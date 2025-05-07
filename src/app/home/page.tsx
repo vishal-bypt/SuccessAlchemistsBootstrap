@@ -824,7 +824,7 @@ const Home = () => {
           }}
         >
           <div className="col-md-6 col-lg-3">
-            <div className="unselected_box">
+            <div className="unselected_box unselected_box1">
               <div
                 style={{
                   display: "flex",
@@ -853,7 +853,7 @@ const Home = () => {
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
-            <div className="unselected_box">
+            <div className="unselected_box unselected_box2">
               <div
                 style={{
                   display: "flex",
@@ -882,7 +882,7 @@ const Home = () => {
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
-            <div className="unselected_box">
+            <div className="unselected_box unselected_box3">
               <div
                 style={{
                   display: "flex",
@@ -911,7 +911,7 @@ const Home = () => {
             </div>
           </div>
           <div className="col-md-6 col-lg-3">
-            <div className="unselected_box">
+            <div className="unselected_box unselected_box4">
               <div
                 style={{
                   display: "flex",

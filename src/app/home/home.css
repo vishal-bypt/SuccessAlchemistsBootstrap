@@ -324,7 +324,7 @@
     gap: 12px;
 }
 
-.unselected_box:hover {
+.unselected_box1:hover {
     position: relative;
     height: 177px;
     border-top-right-radius: 16px;
@@ -333,7 +333,46 @@
     /* border-radius: 16px; */
     padding: 16px;
     border-width: 2.5px;
-    background: #018bd3;
+    background: #ED9E3F;
+    border: 2.5px solid #fba819;
+}
+
+.unselected_box2:hover {
+    position: relative;
+    height: 177px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    /* border-radius: 16px; */
+    padding: 16px;
+    border-width: 2.5px;
+    background: #0184D4;
+    border: 2.5px solid #fba819;
+}
+
+.unselected_box3:hover {
+    position: relative;
+    height: 177px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    /* border-radius: 16px; */
+    padding: 16px;
+    border-width: 2.5px;
+    background: #7D5C39;
+    border: 2.5px solid #fba819;
+}
+
+.unselected_box4:hover {
+    position: relative;
+    height: 177px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    /* border-radius: 16px; */
+    padding: 16px;
+    border-width: 2.5px;
+    background: #86BE41;
     border: 2.5px solid #fba819;
 }
 
