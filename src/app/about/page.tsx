@@ -178,7 +178,7 @@ const About = () => {
             <Image className="mission-curve-img" src={curve} alt="curve" />
           </div>
           <div className="col-12 col-md-12 d-flex flex-column flex-md-row justify-content-evenly main">
-          <Image className="corevalue-img img-fluid" src={about} alt="graph" />
+          <Image className="corevalue-img img-fluid" src={about} style={{width: "95%", height: "auto"}} alt="graph" />
            
      
           </div>
