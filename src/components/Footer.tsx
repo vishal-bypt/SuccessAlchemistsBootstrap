@@ -28,58 +28,58 @@ const Footer = () => {
 
 
   const {
-      register,
-      handleSubmit,
-      reset,
-      formState: { errors },
-    } = useForm();
-    const router = useRouter();
-    const [showSpinner, setShowSpinner] = useState(false);
-    const [show, setShow] = useState(false);
-  
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-  
-    const handleFormSubmit = (event: React.MouseEvent<HTMLAnchorElement>) => {
-      event.preventDefault(); // Prevent the default anchor click behavior
-      //handleShow(); // Show the modal when the link is clicked
-      localStorage.getItem('hasSubmittedInquiry') === 'true' ? router.push("/toolDetail") : handleShow();
-    };
-  
-    const onSubmit = async (data: any) => {
-      setShowSpinner(true);
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/newsletter"; // Replace with your API URL
-      const postData: any = data;
-  
-      try {
-        const response = await fetch(apiUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(postData),
-        });
-        //console.log("response", response);
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-  
-        const data = await response.json();
-        reset();
-        handleClose();
-        localStorage.setItem('hasSubmittedInquiry', 'true');
-        Toast.success("Your request for newsletter has been submitted.");
-        setShowSpinner(false);
-        // setTimeout(() => {
-        //   router.push("/"); // Redirect to the home page after 2 seconds  
-        // }, 2000);
-  
-        //setResponseData(data);
-      } catch (error) {
-        console.error("Error:", error);
-        Toast.error("An error occurred while submitting the form.");
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const router = useRouter();
+  const [showSpinner, setShowSpinner] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleFormSubmit = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault(); // Prevent the default anchor click behavior
+    //handleShow(); // Show the modal when the link is clicked
+    localStorage.getItem('hasSubmittedInquiry') === 'true' ? router.push("/toolDetail") : handleShow();
+  };
+
+  const onSubmit = async (data: any) => {
+    setShowSpinner(true);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/newsletter"; // Replace with your API URL
+    const postData: any = data;
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData),
+      });
+      //console.log("response", response);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
-    };
+
+      const data = await response.json();
+      reset();
+      handleClose();
+      localStorage.setItem('hasSubmittedInquiry', 'true');
+      Toast.success("Your request for newsletter has been submitted.");
+      setShowSpinner(false);
+      // setTimeout(() => {
+      //   router.push("/"); // Redirect to the home page after 2 seconds  
+      // }, 2000);
+
+      //setResponseData(data);
+    } catch (error) {
+      console.error("Error:", error);
+      Toast.error("An error occurred while submitting the form.");
+    }
+  };
   const pathName = usePathname();
   return (
     <div className="d-flex flex-column gap-1">
@@ -92,21 +92,20 @@ const Footer = () => {
               className="Footer_main_logo"
               style={{ width: "150px", height: "auto" }}
             />
-            <div className="col-12 col-md-10 mt-3 col-lg-10 d-flex flex-column text-justify-content-center align-items-start gap-2" style={{textAlign: "justify"}}>
-            At Success Alchemists, we believe that our success is tied to yours. If you're a CEO seeking to deliver accelerated growth, augmented value, and a simplified business model, our experienced Scaling Up Coaches are here to help
+            <div className="col-12 col-md-10 mt-3 col-lg-10 d-flex flex-column text-justify-content-center align-items-start gap-2" style={{ textAlign: "justify" }}>
+              At Success Alchemists, we believe that our success is tied to yours. If you're a CEO seeking to deliver accelerated growth, augmented value, and a simplified business model, our experienced Scaling Up Coaches are here to help
             </div>
-           
+
           </div>
           <div className="col-12 col-md-2 col-lg-2 d-flex flex-column">
             <h5>Explore</h5>
             <ul className="list-unstyled mt-3">
               <li>
                 <Link
-                  className={`${
-                    pathName === "/home"
+                  className={`${pathName === "/home"
                       ? "active-link font-semibold"
                       : "inactive-link font-normal"
-                  } link-underline link-underline-opacity-0`}
+                    } link-underline link-underline-opacity-0`}
                   href={"/home"}
                 >
                   Home
@@ -114,11 +113,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className={`${
-                    pathName === "/about"
+                  className={`${pathName === "/about"
                       ? "active-link font-semibold"
                       : "inactive-link font-normal"
-                  } link-underline link-underline-opacity-0`}
+                    } link-underline link-underline-opacity-0`}
                   href={"/about"}
                 >
                   About us
@@ -126,11 +124,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className={`${
-                    pathName === "/success"
+                  className={`${pathName === "/success"
                       ? "active-link font-semibold"
                       : "inactive-link font-normal"
-                  } link-underline link-underline-opacity-0`}
+                    } link-underline link-underline-opacity-0`}
                   href={"/success"}
                 >
                   Our success
@@ -138,11 +135,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className={`${
-                    pathName === "/assessment"
+                  className={`${pathName === "/assessment"
                       ? "active-link font-semibold"
                       : "inactive-link font-normal"
-                  } link-underline link-underline-opacity-0`}
+                    } link-underline link-underline-opacity-0`}
                   href={
                     "https://q.esperto.one/q/sR4RRluSEazkK5XHPlVZ/6hDOhyCnHHDQf1Uzk3eg"
                   }
@@ -152,11 +148,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className={`${
-                    pathName === "/resources"
+                  className={`${pathName === "/resources"
                       ? "active-link font-semibold"
                       : "inactive-link font-normal"
-                  } link-underline link-underline-opacity-0`}
+                    } link-underline link-underline-opacity-0`}
                   href={"/resources"}
                 >
                   Resources
@@ -164,8 +159,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className={`${
-                    [
+                  className={`${[
                       "/events/podcast",
                       "/events/webinar",
                       "/events/basecamp",
@@ -173,7 +167,7 @@ const Footer = () => {
                     ].includes(pathName)
                       ? "active-link font-semibold"
                       : "inactive-link font-normal"
-                  } link-underline link-underline-opacity-0`}
+                    } link-underline link-underline-opacity-0`}
                   href={"/events/webinar"}
                 >
                   Events
@@ -181,11 +175,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className={`${
-                    pathName === "/contactUs"
+                  className={`${pathName === "/contactUs"
                       ? "active-link font-semibold"
                       : "inactive-link font-normal"
-                  } link-underline link-underline-opacity-0`}
+                    } link-underline link-underline-opacity-0`}
                   href={"/contactUs"}
                 >
                   Contact us
@@ -256,15 +249,15 @@ const Footer = () => {
 
             <div className="flex gap-3 mt-5">
               <h5>What’s New</h5>
-              </div>
-              <div className="flex">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                  <div className="col-12 col-md-12 col-lg-12 position-relative mt-3">
+            </div>
+            <div className="flex">
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="col-12 col-md-12 col-lg-12 mt-3">
+                  <div className="d-flex align-items-start position-relative">
                     <input
                       type="text"
-                      className={`form-control input ${
-                        errors.email ? "is-invalid" : ""
-                      }`}
+                      className={`form-control input ${errors.email ? "is-invalid" : ""
+                        }`}
                       placeholder="Email"
                       {...register("email", {
                         required: "Email is required",
@@ -274,6 +267,13 @@ const Footer = () => {
                         },
                       })}
                     />
+                    <button
+                      type="submit"
+                      className="btn btn-primary btn-md"
+                    >
+                      Subscribe
+                    </button>
+
                     {errors.email && (
                       <div
                         className="invalid-feedback position-absolute"
@@ -282,17 +282,19 @@ const Footer = () => {
                         {String(errors.email.message)}
                       </div>
                     )}
-                 </div>
-                 <div className="col-12 col-md-12 col-lg-12 position-relative mt-2">   
+                  </div>
+                </div>
+
+                {/* <div className="d-flex col-12 col-md-12 col-lg-12 position-relative mt-2">   
                     <button
                       type="submit"
                       className="col-md-4 btn btn-primary btn-sm w-30"
                     >
                       Subscribe
                     </button>
-                  </div>
-                </form>
-              </div>
+                  </div> */}
+              </form>
+            </div>
           </div>
         </div>
       </footer>

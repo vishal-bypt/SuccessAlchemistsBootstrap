@@ -119,7 +119,7 @@ const page = () => {
                 className="img-fluid"
                 style={{
                   width: '100%',
-                  height: 'auto',
+                  height: '80%',
                   objectFit: 'cover'
                 }}
               />
