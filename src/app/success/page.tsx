@@ -120,8 +120,6 @@ const page = () => {
                 style={{
                   width: '100%',
                   height: 'auto',
-                  maxWidth: '800px',
-                  maxHeight: '800px',
                   objectFit: 'cover'
                 }}
               />
