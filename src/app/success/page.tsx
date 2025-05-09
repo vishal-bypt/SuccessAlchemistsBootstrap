@@ -9,7 +9,7 @@ import Curve_shape from "../home/images/Curve-shape.png";
 import right_arrow_btn from "../home/images/right-arrow-btn.png";
 import left_arrow_btn from "../home/images/left-arrow-btn.png";
 import Image from "next/image";
-import success from "../../app/success/images/Artboard 2.1@4x.png"
+import success from "../../app/success/images/Artboard 2.1@4x.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -27,7 +27,6 @@ const items = [
     description:
       "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
     src: " https://www.youtube.com/embed/mN0qCIfEr-8?si=cQHPlh9-GkF85pIe",
-   
   },
   {
     id: 2,
@@ -92,7 +91,8 @@ const page = () => {
               Our Success
             </p>
             <p className="subText" style={{ color: "white" }}>
-            We deliver Accelerated growth, Augmented value and Simplified business across geographies, sectors and domains to our clients.
+              We deliver Accelerated growth, Augmented value and Simplified
+              business across geographies, sectors and domains to our clients.
             </p>
           </div>
         </div>
@@ -107,12 +107,25 @@ const page = () => {
             VIEW MORE
           </button> */}
         </div>
-        <div className="casestudy-container">
-          <div className="row">
-            <div className="col-md-12">
-              <Image src={success} alt="case1" className="img-fluid w-100" />
+        <div
+          className="casestudy-container w-100 d-flex justify-content-center align-items-center"
+          style={{ minHeight: "100vh" }}
+        >
+          <div className="row w-100">
+            <div className="col-md-12 d-flex justify-content-center">
+              <Image
+                src={success}
+                alt="case1"
+                className="img-fluid"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxWidth: '800px',
+                  maxHeight: '800px',
+                  objectFit: 'cover'
+                }}
+              />
             </div>
-         
           </div>
         </div>
       </div>
@@ -194,14 +207,14 @@ const page = () => {
             <div onClick={forward}>
               <Image
                 src={right_arrow_btn}
-                className="img-fluid nav-left-btn" 
+                className="img-fluid nav-left-btn"
                 alt="right side image"
               />
             </div>
           </div>
         </div>
       </div>
-     {/*<div className="second_div_layout">
+      {/*<div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between">
           <p className="section-header">Latest blog posts</p>
           <button

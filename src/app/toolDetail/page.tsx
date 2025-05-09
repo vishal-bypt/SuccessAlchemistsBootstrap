@@ -43,7 +43,7 @@ const page = () => {
                     <div className="mt-4">
                         <div className="row g-4">
                             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-                                <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/People - FACe - Function Accountability Chart.pdf">
+                                <a className="tool-img-link" href="toolDetail/Function-Accountability-Chart">
                                     <Image src={People1} alt="case1" className="toolkit-img img-fluid" />
 
                                     <div className="overlay">
