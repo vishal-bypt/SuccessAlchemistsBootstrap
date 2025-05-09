@@ -33,7 +33,6 @@ const page = () => {
         setShowSpinner(true);
         const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/path-finder"; // Replace with your API URL
         const postData: any = data;
-    
         try {
           const response = await fetch(apiUrl, {
             method: "POST",
@@ -506,7 +505,7 @@ const page = () => {
                 </div>
               )}
             </div>
-            <div className="form-floating m-3">
+            {/* <div className="form-floating m-3">
               <input
                 type="text"
                 className={`form-control ${errors.jobTitle ? "is-invalid" : ""
@@ -523,7 +522,7 @@ const page = () => {
                   {String(errors.jobTitle.message)}
                 </div>
               )}
-            </div>
+            </div> */}
             <div className="form-floating m-3">
               <input
                 type="text"

@@ -802,19 +802,7 @@ const Home = () => {
             </div>
           </div>
         </div> */}
-      </div>
-      <div className="fifth_component">
-        <div className="fifth_component_div">
-          <div className="fifth_component_title_div">
-            Guaranteed growth solutions
-          </div>
-          <div className="col-md-12 fifth_component_sub_title_div">
-            We help ambitious entrepreneurs build successful & sustainable
-            businesses resulting in unlocking of large scale potential business
-            value by identifying the right:
-          </div>
-        </div>
-        <div
+          <div
           className="row"
           style={{
             display: "flex",
@@ -941,6 +929,19 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* <div className="fifth_component">
+        <div className="fifth_component_div">
+          <div className="fifth_component_title_div">
+            Guaranteed growth solutions
+          </div>
+          <div className="col-md-12 fifth_component_sub_title_div">
+            We help ambitious entrepreneurs build successful & sustainable
+            businesses resulting in unlocking of large scale potential business
+            value by identifying the right:
+          </div>
+        </div>
+      
+      </div> */}
       <div className="sixth_component">
         <div
           className="row"
@@ -983,7 +984,7 @@ const Home = () => {
             </div>
 
             <div className="sixth_component_btn_div">
-              <a href="https://q.esperto.one/q/sR4RRluSEazkK5XHPlVZ/6hDOhyCnHHDQf1Uzk3eg">
+              <a href="https://q.esperto.one/q/sR4RRluSEazkK5XHPlVZ/6hDOhyCnHHDQf1Uzk3eg" target="_blank">
                 TAKE THE ASSESSMENT
                 <Image className="img-fluid" src={Double_arrow} alt="right" />
               </a>

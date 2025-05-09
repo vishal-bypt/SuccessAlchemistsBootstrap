@@ -531,7 +531,7 @@ const page = () => {
                 </div>
               )}
             </div>
-            <div className="form-floating m-3">
+            {/* <div className="form-floating m-3">
               <input
                 type="text"
                 className={`form-control ${errors.jobTitle ? "is-invalid" : ""
@@ -548,7 +548,7 @@ const page = () => {
                   {String(errors.jobTitle.message)}
                 </div>
               )}
-            </div>
+            </div> */}
             <div className="form-floating m-3">
               <input
                 type="text"
