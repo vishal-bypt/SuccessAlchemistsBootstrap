@@ -12,11 +12,108 @@ import Book4 from "../../app/resources/images/ref-book4.png";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import Toast from "../../components/Toast";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Spinner from 'react-bootstrap/Spinner';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import Spinner from "react-bootstrap/Spinner";
+import People1 from "../toolDetail/images/People - FACe.jpg";
+import People2 from "../toolDetail/images/People-OPPP.jpg";
+import People3 from "../toolDetail/images/People-PACe.jpg";
+import People4 from "../toolDetail/images/People-Talent.jpg";
+import Strategy1 from "../toolDetail/images/Strategy-7Strata.jpg";
+import Strategy2 from "../toolDetail/images/Strategy-Brand Promise.jpg";
+import Strategy3 from "../toolDetail/images/Strategy-Vision.jpg";
+import Strategy4 from "../toolDetail/images/Strategy-SWT.jpg";
+import Execution1 from "../toolDetail/images/Execution-WWW.jpg"
+import Execution2 from "../toolDetail/images/Execution- Rockefeller.jpg"
+import Cash1 from "../toolDetail/images/Cash-CASh.jpg"
+import Cash2 from "../toolDetail/images/Cash-POO.jpg"
+import "../toolDetail/toolDetail.css";
+
+const peopleArray = [
+  {
+    title: "FACe",
+    desc: "Function Accountability Chart",
+    slug: "function-accountability-chart",
+    image: People1,
+  },
+  {
+    title: "OPPP",
+    desc: "One Page Personal Plan",
+    slug: "one-page-personal-plan",
+    image: People2,
+  },
+  {
+    title: "PACe",
+    desc: "Process Accountability Chart",
+    slug: "process-accountability-chart",
+    image: People3,
+  },
+  {
+    title: "Talent",
+    desc: "Talent Assessment Chart",
+    slug: "talent-assessment-chart",
+    image: People4,
+  },
+];
+
+const strategyArray = [
+  {
+    title: "Strategy",
+    desc: "7 Strata",
+    slug: "7-strata",
+    image: Strategy1,
+  },
+  {
+    title: "Strategy",
+    desc: "Brand Promise",
+    slug: "brand-promise",
+    image: Strategy2,
+  },
+  {
+    title: "OPSP",
+    desc: "One Page Strategic Plan",
+    slug: "one-page-strategic-plan",
+    image: Strategy3,
+  },
+  {
+    title: "SWT",
+    desc: "Strengths Weaknesses Trends",
+    slug: "strengths-weaknesses-trends",
+    image: Strategy4,
+  },
+];
+
+const executionArray = [
+  {
+    title: "WWW",
+    desc: "Who What When",
+    slug: "who-what-when",
+    image: Execution1,
+  },
+  {
+    title: "Execution",
+    desc: "Rockefeller Habits Checklist",
+    slug: "rockefeller-habits-checklist",
+    image: Execution2,
+  }
+];
+
+const cashArray = [
+  {
+    title: "CASh",
+    desc: "Cash Acceleration Strategies",
+    slug: "cash-acceleration-strategies",
+    image: Cash1,
+  },
+  {
+    title: "POO",
+    desc: "The Power of One",
+    slug: "the-power-of-one",
+    image: Cash2,
+  }
+];
 
 const page = () => {
   const {
@@ -28,14 +125,33 @@ const page = () => {
   const router = useRouter();
   const [showSpinner, setShowSpinner] = useState(false);
   const [show, setShow] = useState(false);
-
+  const [selectedCategory, setSelectedCategory] = useState<{
+    title: "People" | "Strategy" | "Execution" | "Cash";
+    categoryArray: any[];
+  } | null>(null);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const handleFormSubmit = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault(); // Prevent the default anchor click behavior
     //handleShow(); // Show the modal when the link is clicked
-    localStorage.getItem('hasSubmittedInquiry') === 'true' ? router.push("/toolDetail") : handleShow();
+    localStorage.getItem("hasSubmittedInquiry") === "true"
+      ? router.push("/toolDetail")
+      : handleShow();
+  };
+
+  const selectCategory = (
+    categoryTitle: "People" | "Strategy" | "Execution" | "Cash",
+    categoryArr: any[]
+  ) => {
+    if (selectedCategory?.title === categoryTitle) {
+      setSelectedCategory(null);
+    } else {
+      setSelectedCategory({
+        title: categoryTitle,
+        categoryArray: categoryArr,
+      });
+    }
   };
 
   const onSubmit = async (data: any) => {
@@ -59,11 +175,13 @@ const page = () => {
       const data = await response.json();
       reset();
       handleClose();
-      localStorage.setItem('hasSubmittedInquiry', 'true');
-      Toast.success("Your request for toolkit download has been registered! You can download now.");
+      localStorage.setItem("hasSubmittedInquiry", "true");
+      Toast.success(
+        "Your request for toolkit download has been registered! You can download now."
+      );
       setShowSpinner(false);
       setTimeout(() => {
-        router.push("/toolDetail"); // Redirect to the home page after 2 seconds  
+        router.push("/toolDetail"); // Redirect to the home page after 2 seconds
       }, 2000);
 
       //setResponseData(data);
@@ -83,7 +201,7 @@ const page = () => {
             <p className="heading" style={{ color: "white" }}>
               Resources
             </p>
-            <p className="subText" style={{ color: "white"}}>
+            <p className="subText" style={{ color: "white" }}>
               Links to articles, books, and tools that support the effective
               implementation of the Scaling Up framework
             </p>
@@ -103,7 +221,11 @@ const page = () => {
         <div className="mt-4">
           <div className="row g-4">
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <Link className="tool-img-link" onClick={handleFormSubmit} href="javascript:void(0);" >
+              <Link
+                className="tool-img-link"
+                onClick={() => selectCategory("People", peopleArray)}
+                href="javascript:void(0);"
+              >
                 <Image
                   src={Case2}
                   alt="case1"
@@ -117,7 +239,11 @@ const page = () => {
               </Link>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <Link className="tool-img-link" onClick={handleFormSubmit} href="javascript:void(0);" >
+              <Link
+                className="tool-img-link"
+                onClick={() => selectCategory("Strategy", strategyArray)}
+                href="javascript:void(0);"
+              >
                 <Image
                   src={Case1}
                   alt="case2"
@@ -130,7 +256,11 @@ const page = () => {
               </Link>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <Link className="tool-img-link" onClick={handleFormSubmit} href="javascript:void(0);" >
+              <Link
+                className="tool-img-link"
+                onClick={() => selectCategory("Execution", executionArray)}
+                href="javascript:void(0);"
+              >
                 <Image
                   src={Case3}
                   alt="case3"
@@ -143,7 +273,11 @@ const page = () => {
               </Link>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <Link className="tool-img-link" onClick={handleFormSubmit} href="javascript:void(0);" >
+              <Link
+                className="tool-img-link"
+                onClick={() => selectCategory("Cash", cashArray)}
+                href="javascript:void(0);"
+              >
                 <Image
                   src={Case4}
                   alt="case3"
@@ -157,6 +291,36 @@ const page = () => {
             </div>
           </div>
         </div>
+        {selectedCategory !== null && (
+          <div>
+            <div className="d-flex flex-row justify-content-between mt-2">
+              <p className="section-header-tool">{selectedCategory.title}</p>
+            </div>
+            <div className="row g-4 mt-4">
+              {selectedCategory.categoryArray.map((object) => (
+                <div
+                  className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div"
+                  key={object.slug}
+                >
+                  <a
+                    className="tool-img-link"
+                    href={`toolDetail/${object.slug}`}
+                  >
+                    <Image
+                      src={object.image}
+                      alt="case1"
+                      className="toolkit-img img-fluid"
+                    />
+                    <div className="overlay">
+                      <h2>{object.title}</h2>
+                      <p>{object.desc}</p>
+                    </div>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between">
@@ -294,13 +458,11 @@ const page = () => {
             <div className="form-floating m-3">
               <input
                 type="text"
-                className={`form-control ${errors.name ? "is-invalid" : ""
-                  }`}
+                className={`form-control ${errors.name ? "is-invalid" : ""}`}
                 id="name"
                 placeholder="Name"
                 {...register("name", {
                   required: "Name is required",
-
                 })}
               />
               <label htmlFor="name">Name</label>
@@ -313,8 +475,7 @@ const page = () => {
             <div className="form-floating m-3">
               <input
                 type="text"
-                className={`form-control ${errors.name ? "is-invalid" : ""
-                  }`}
+                className={`form-control ${errors.name ? "is-invalid" : ""}`}
                 id="email"
                 placeholder="Email"
                 {...register("email", {
@@ -323,7 +484,6 @@ const page = () => {
                     value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                     message: "Invalid email address",
                   },
-
                 })}
               />
               <label htmlFor="email">Email</label>
@@ -336,8 +496,7 @@ const page = () => {
             <div className="form-floating m-3">
               <input
                 type="text"
-                className={`form-control ${errors.name ? "is-invalid" : ""
-                  }`}
+                className={`form-control ${errors.name ? "is-invalid" : ""}`}
                 id="phone"
                 placeholder="Phone"
                 {...register("phone", {
@@ -354,8 +513,7 @@ const page = () => {
             <div className="form-floating m-3">
               <input
                 type="text"
-                className={`form-control ${errors.name ? "is-invalid" : ""
-                  }`}
+                className={`form-control ${errors.name ? "is-invalid" : ""}`}
                 id="company"
                 placeholder="Company Name"
                 {...register("company", {
@@ -369,14 +527,15 @@ const page = () => {
                 </div>
               )}
             </div>
-
           </Modal.Body>
           <Modal.Footer>
-            { showSpinner && <Spinner animation="border" variant="warning" /> }
+            {showSpinner && <Spinner animation="border" variant="warning" />}
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
           </Modal.Footer>
         </form>
       </Modal>

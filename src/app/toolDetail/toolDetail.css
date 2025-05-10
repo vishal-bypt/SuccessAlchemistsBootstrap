@@ -152,3 +152,32 @@
         border-radius: 8px;
     }
 }
+
+.btn_div {
+    display: flex;
+    width: fit-content;
+    border-radius: 12px;
+    padding: 12px 32px;
+    background: #fba819;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.gradient_bg_1 {
+    background: linear-gradient(90deg, #ED9E3F, #fff0) !important;
+}
+
+.gradient_bg_2 {
+    background: linear-gradient(90deg, #0184D4, #fff0) !important;
+}
+
+.gradient_bg_3 {
+    background: linear-gradient(90deg, #7D5C39, #fff0) !important;
+}
+
+.gradient_bg_4 {
+    background: linear-gradient(90deg, #86BE41, #fff0) !important;
+}
