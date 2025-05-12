@@ -101,6 +101,7 @@ const detailsMap = [
     slugName: "rockefeller-habits-checklist",
     title: "Execution - Rockefeller Habits Checklist",
     desc: "Execution-RockefellerHabitsChecklist.pdf",
+    file : "Execution-RockefellerHabitsChecklist.pdf"
   },
   {
     category: "cash",
