@@ -17,6 +17,9 @@ import "../toolDetail.css";
 import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useParams } from "next/navigation";
+import Toast from "@/components/Toast";
+import Spinner from 'react-bootstrap/Spinner';
+import { useRouter } from 'next/navigation';
 // import { useRouter } from "next/router";
 
 const detailsMap = [
@@ -25,90 +28,106 @@ const detailsMap = [
     image: People1,
     slugName: "function-accountability-chart",
     title: "FACe - Function Accountability Chart",
-    desc: "This is the description.",
+    desc: "",
+    file : "People-FACe-FunctionAccountabilityChart.pdf"
   },
   {
     category: "people",
     image: People2,
     slugName: "one-page-personal-plan",
     title: "OPPP - One Page Personal Plan",
-    desc: "This is the description.",
+    desc: "",
+    file : "People-OPPP-OnePagePersonalPlan.pdf"
   },
   {
     category: "people",
     image: People3,
     slugName: "process-accountability-chart",
     title: "PACe - Process Accountability Chart",
-    desc: "This is the description.",
+    desc: "",
+    file : "People-FACe-FunctionAccountabilityChart.pdf"
   },
   {
     category: "people",
     image: People4,
     slugName: "talent-assessment-chart",
     title: "Talent - Talent Assessment Chart",
-    desc: "This is the description.",
+    desc: "",
+    file : "People-TalentAssessmentChart.pdf"
   },
   {
     category: "strategy",
     image: Strategy1,
     slugName: "7-strata",
     title: "Strategy - 7 Strata",
-    desc: "This is the description.",
+    desc: "",
+    file : "Strategy-7Strata.pdf"
   },
   {
     category: "strategy",
     image: Strategy2,
     slugName: "brand-promise",
     title: "Strategy - Brand Promise",
-    desc: "This is the description.",
+    desc: "",
+    file : "Strategy-BrandPromise.pdf"
   },
   {
     category: "strategy",
     image: Strategy3,
     slugName: "one-page-strategic-plan",
     title: "OPSP - One Page Strategic Plan",
-    desc: "This is the description.",
+    desc: "",
+    file : "Strategy-OPSP-OnePageStrategicPlan.pdf"
   },
   {
     category: "strategy",
     image: Strategy4,
     slugName: "strengths-weaknesses-trends",
     title: "SWT - Strengths Weaknesses Trends",
-    desc: "This is the description.",
+    desc: "",
+    file : "Strategy-SWT-StrengthsWeaknessesTrends.pdf"
   },
   {
     category: "execution",
     image: Execution1,
     slugName: "who-what-when",
     title: "WWW - Who What When",
-    desc: "This is the description.",
+    desc: "",
+    file : "Execution-WWW-WhoWhatWhen.pdf"
   },
   {
     category: "execution",
     image: Execution2,
     slugName: "rockefeller-habits-checklist",
     title: "Execution - Rockefeller Habits Checklist",
-    desc: "This is the description.",
+    desc: "Execution-RockefellerHabitsChecklist.pdf",
   },
   {
     category: "cash",
     image: Cash1,
     slugName: "cash-acceleration-strategies",
     title: "CASh - Cash Acceleration Strategies",
-    desc: "This is the description.",
+    desc: "",
+    file : "Cash-CASh-CashAccelerationStrategies.pdf"
   },
   {
     category: "cash",
     image: Cash2,
     slugName: "the-power-of-one",
     title: "POO - The Power of One",
-    desc: "This is the description.",
+    desc: "",
+    file : "Cash-POO-ThePowerofOne.pdf"
   },
 ];
 export default function Page() {
   const params = useParams();
   const slug = params.slug;
   const [selected, setSelected] = useState<any>(null);
+  const [showSpinner, setShowSpinner] = useState(false);
+  const [show, setShow] = useState(false);
+  const router = useRouter();
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const {
     register,
     handleSubmit,
@@ -121,6 +140,49 @@ export default function Page() {
     setSelected(selectedObj);
   }, [slug]);
 
+  const onSubmit = async (data: any) => {
+      setShowSpinner(true);
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/toolkit"; // Replace with your API URL
+      const postData: any = data;
+      const downloadUrl = process.env.NEXT_PUBLIC_BASE_PATH + '/assets/images/pdf/'+ selected?.file;
+      //console.log("downloadUrl", downloadUrl);
+     
+      try {
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(postData),
+        });
+        //console.log("response", response);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+  
+        const data = await response.json();
+        reset();
+        handleClose();
+        localStorage.setItem('hasSubmittedInquiry', 'true');
+        Toast.success("Your request for toolkit download has been registered! You can download now.");
+        setShowSpinner(false);
+        //console.log("selected", selected);
+        const link = document.createElement('a');
+        link.href = downloadUrl;
+        link.download = selected?.file; // Suggests the filename
+        document.body.appendChild(link);
+        link.click();
+        // setTimeout(() => {
+        //   router.push("/toolDetail"); // Redirect to the home page after 2 seconds  
+        // }, 2000);
+  
+        //setResponseData(data);
+      } catch (error) {
+        console.error("Error:", error);
+        Toast.error("An error occurred while submitting the form.");
+      }
+    };
+    console.log("errors", errors);
   return (
     <>
       {selected && (
@@ -153,6 +215,7 @@ export default function Page() {
               className="d-flex justify-content-between flex-column"
               style={{ width: "70%", padding: "16px" }}
             >
+              <form onSubmit={handleSubmit(onSubmit)}>
               <div className="d-flex justify-content-between">
                 <div style={{ width: "50%" }}>
                   <div className="form-floating m-3">
@@ -178,7 +241,7 @@ export default function Page() {
                     <input
                       type="text"
                       className={`form-control ${
-                        errors.name ? "is-invalid" : ""
+                        errors.email ? "is-invalid" : ""
                       }`}
                       id="email"
                       placeholder="Email"
@@ -203,7 +266,7 @@ export default function Page() {
                     <input
                       type="text"
                       className={`form-control ${
-                        errors.name ? "is-invalid" : ""
+                        errors.phone ? "is-invalid" : ""
                       }`}
                       id="phone"
                       placeholder="Phone"
@@ -222,7 +285,7 @@ export default function Page() {
                     <input
                       type="text"
                       className={`form-control ${
-                        errors.name ? "is-invalid" : ""
+                        errors.company ? "is-invalid" : ""
                       }`}
                       id="company"
                       placeholder="Company Name"
@@ -239,6 +302,7 @@ export default function Page() {
                   </div>
                 </div>
               </div>
+               
               <div
                 style={{
                   width: "100%",
@@ -246,7 +310,11 @@ export default function Page() {
                   justifyContent: "end",
                 }}
               >
+
+                {showSpinner && <Spinner animation="border" variant="warning" style={{marginRight : '20px', marginTop : '20px'}} />} &nbsp;
+               
                 <button
+                type="submit"
                   style={{
                     width: 350,
                     backgroundColor:
@@ -264,7 +332,10 @@ export default function Page() {
                 >
                   Download
                 </button>
+                 
               </div>
+              </form>
+              
             </div>
           </div>
         </div>

@@ -302,9 +302,9 @@ const page = () => {
                   className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div"
                   key={object.slug}
                 >
-                  <a
+                  <Link
                     className="tool-img-link"
-                    href={`toolDetail/${object.slug}`}
+                    href={`/toolDetail/${object.slug}`}
                   >
                     <Image
                       src={object.image}
@@ -315,7 +315,7 @@ const page = () => {
                       <h2>{object.title}</h2>
                       <p>{object.desc}</p>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>

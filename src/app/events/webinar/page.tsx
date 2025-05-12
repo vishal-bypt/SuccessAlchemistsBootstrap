@@ -19,45 +19,45 @@ const page = () => {
   const handleShow = () => setShow(true);
 
   const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors },
-      } = useForm();
-      const router = useRouter();
-      const [showSpinner, setShowSpinner] = useState(false);
-      const [show2, setShow2] = useState(false);
-      const handleClose2 = () => setShow2(false);
-      const handleShow2 = () => setShow2(true);
-      const onSubmit = async (data: any) => {
-        setShowSpinner(true);
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/path-finder"; // Replace with your API URL
-        const postData: any = data;
-        try {
-          const response = await fetch(apiUrl, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(postData),
-          });
-          //console.log("response", response);
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-    
-          const data = await response.json();
-          reset();
-          handleClose();
-          Toast.success("Your request for pathfinders or masterminds speaker has been submitted!");
-          setShowSpinner(false);
-        
-          //setResponseData(data);
-        } catch (error) {
-          console.error("Error:", error);
-          Toast.error("An error occurred while submitting the form.");
-        }
-      };
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const router = useRouter();
+  const [showSpinner, setShowSpinner] = useState(false);
+  const [show2, setShow2] = useState(false);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
+  const onSubmit = async (data: any) => {
+    setShowSpinner(true);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/path-finder"; // Replace with your API URL
+    const postData: any = data;
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData),
+      });
+      //console.log("response", response);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      reset();
+      handleClose();
+      Toast.success("Your request for pathfinders or masterminds speaker has been submitted!");
+      setShowSpinner(false);
+
+      //setResponseData(data);
+    } catch (error) {
+      console.error("Error:", error);
+      Toast.error("An error occurred while submitting the form.");
+    }
+  };
   return (
     <div className="main_body_div">
       {/* <div className="first_div_layout webinar">
@@ -79,7 +79,7 @@ const page = () => {
       <div className="basecamp-hero-section">
         <Image className="blue-curve" src={bluecurve} alt="img2" />
         <div className="hero-content">
-        <div className="hero-icon-img">
+          <div className="hero-icon-img">
             <Image className="logo-image" src={basecamplogo2} alt="img2" />
           </div>
           <p className="heading" style={{ color: "white" }}>
@@ -90,10 +90,10 @@ const page = () => {
             have implemented strategies, insights, and best practices for
             business growth and transformation.
           </p>
-          <p><Button variant="primary" onClick={handleShow2}>
-        To become masterminds
-      </Button></p>
-          
+          {/* <p><Button variant="primary" onClick={handleShow2}>
+            To become masterminds
+          </Button></p> */}
+
         </div>
       </div>
 
@@ -110,23 +110,23 @@ const page = () => {
           </button> */}
         </div>
         <div className="webinar-content">
-          <p className="mb-2" style={{textAlign: "justify"}}>
+          <p className="mb-2" style={{ textAlign: "justify" }}>
             At Success Alchemists, we are dedicated to transforming businesses
             through the proven Scaling Up framework developed by Verne Harnish.
             With a diverse client base spanning various industries, we empower
             organizations to achieve sustainable growth and operational
             excellence.
           </p>
-          <p style={{textAlign: "justify"}}>
+          <p style={{ textAlign: "justify" }}>
             This webinar is an excellent platform to acquire actionable
             knowledge, enhance your growth strategies, and connect with
             like-minded individuals dedicated to success. Don’t miss this
             enriching experience to propel your business forward!
           </p>
         </div>
-        
 
-    
+
+
       </div>
 
       <div className="fourth_component">
@@ -139,7 +139,7 @@ const page = () => {
           <div className="row">
             <div className="col-md-6 fourth_component_bottom_component_gray_light right_border_div ">
               <h1 className="text_div">Entrepreneurs and Business Owners</h1>
-              <p className="fourth-webinar-content" style={{textAlign: "justify"}}>
+              <p className="fourth-webinar-content" style={{ textAlign: "justify" }}>
                 This group includes small business owners and entrepreneurs
                 seeking to scale their businesses for increased revenue and
                 growth.
@@ -147,7 +147,7 @@ const page = () => {
             </div>
             <div className="col-md-6 fourth_component_bottom_component_brack_div">
               <h1 className="text_div">Decision-Makers</h1>
-              <p className="fourth-webinar-content" style={{textAlign: "justify"}}>
+              <p className="fourth-webinar-content" style={{ textAlign: "justify" }}>
                 Managers, executives, and leaders within larger organizations
                 responsible for strategic decisions and business expansion.
               </p>
@@ -156,7 +156,7 @@ const page = () => {
           <div className="row">
             <div className="col-md-6 fourth_component_bottom_component_brack_div right_border_div top_border_div">
               <h1 className="text_div">Professionals and Financial Experts</h1>
-              <p className="fourth-webinar-content" style={{textAlign: "justify"}}>
+              <p className="fourth-webinar-content" style={{ textAlign: "justify" }}>
                 Individuals from diverse industries and financial backgrounds
                 looking to enhance their skills and strategies for business
                 growth and financial optimization.
@@ -164,7 +164,7 @@ const page = () => {
             </div>
             <div className="col-md-6 fourth_component_bottom_component_gray_light top_border_div">
               <h1 className="text_div">Entrepreneurs</h1>
-              <p className="fourth-webinar-content" style={{textAlign: "justify"}}>
+              <p className="fourth-webinar-content" style={{ textAlign: "justify" }}>
                 Entrepreneurs will discover invaluable open-book management
                 strategies, providing the foundation for building a transparent,
                 engaging, and scalable business model that empowers teams and
@@ -175,10 +175,12 @@ const page = () => {
         </div>
       </div>
 
+
+
       <div className="second_div_layout">
-  <p className="heading" style={{ color: "black" }}>
-            Upcoming Webinars
-          </p>
+        <p className="heading" style={{ color: "black" }}>
+          Upcoming Webinars
+        </p>
         <div className="webinar-main-box">
           <div className="webinar-box">
             <div className="row">
@@ -199,7 +201,7 @@ const page = () => {
                 <div className="webinar-box-content">
                   <div className="second-box-content">
                     <h3>Scaling Up- Pathway to Progress With Ajay Hiraskar</h3>
-                    <p style={{textAlign: "justify"}}>
+                    <p style={{ textAlign: "justify" }}>
                       In this webinar, Ajay dives into the transformative power
                       of the Scaling Up Framework, sharing the critical
                       strategies and tools that have propelled his clients to
@@ -207,18 +209,28 @@ const page = () => {
                       powerful framework.
                     </p>
                   </div>
-                  
+
                 </div>
               </div>
             </div>
           </div>
         </div>
-</div>
+      </div>
 
-<div className="second_div_layout">
-  <p className="heading" style={{ color: "black" }}>
-            Previous Webinars
-          </p>
+
+      <div className="banner">
+        <div className="overlay"></div>
+        <div className="content">
+          <h1 style={{color: 'white'}}>Want to be <Image alt="Masterminds" style={{width: '280px', height : 'auto' }}  src={basecamplogo2}/> speaker ?</h1>
+          <a href="javascript:void(0);" onClick={handleShow2} className="btnForOverlaySection">Click Here</a>
+        </div>
+      </div>
+
+
+      <div className="second_div_layout">
+        <p className="heading" style={{ color: "black" }}>
+          Previous Webinars
+        </p>
         <div className="webinar-main-box">
           <div className="webinar-box">
             <div className="row">
@@ -239,7 +251,7 @@ const page = () => {
                 <div className="webinar-box-content">
                   <div className="second-box-content">
                     <h3>Scaling Up- Pathway to Progress With Ajay Hiraskar</h3>
-                    <p style={{textAlign: "justify"}}>
+                    <p style={{ textAlign: "justify" }}>
                       In this webinar, Ajay dives into the transformative power
                       of the Scaling Up Framework, sharing the critical
                       strategies and tools that have propelled his clients to
@@ -247,7 +259,7 @@ const page = () => {
                       powerful framework.
                     </p>
                   </div>
-                  
+
                 </div>
               </div>
             </div>
@@ -271,7 +283,7 @@ const page = () => {
                 <div className="webinar-box-content">
                   <div className="second-box-content">
                     <h3>July2024 - Rajeev Malik of Only Ladders</h3>
-                    <p style={{textAlign: "justify"}}>
+                    <p style={{ textAlign: "justify" }}>
                       A seasoned Brand Strategist and Marketing Advisor with
                       over 35 years of experience. Rajeev has successfully
                       nurtured brands like Toyota, Daihatsu, Blue Star, and
@@ -305,12 +317,12 @@ const page = () => {
                     <h3>
                       March2024 - Siddharth Motiwale of Clarion Technologies
                     </h3>
-                    <p style={{textAlign: "justify"}}>
+                    <p style={{ textAlign: "justify" }}>
                       Strategic thinking and execution planning go hand in hand
                       to create a successful organization. The challenge is HOW?{" "}
                     </p>
 
-                    <p style={{textAlign: "justify"}}>
+                    <p style={{ textAlign: "justify" }}>
                       The problem statement: Most senior management
                       professionals are so tied up in transactional roles that
                       we often miss the big picture of Strategic thinking.
@@ -339,7 +351,7 @@ const page = () => {
                 <div className="webinar-box-content">
                   <div className="second-box-content">
                     <h3>May2024 - Sunny Bhanushali of Aliens Tattoo</h3>
-                    <p style={{textAlign: "justify"}}>
+                    <p style={{ textAlign: "justify" }}>
                       Our Guest Speaker Sunny Bhanushali, one of the most famous
                       names in the artistic world of Tattoo, is the man behind
                       them and many other famous people around the world!
@@ -350,20 +362,20 @@ const page = () => {
             </div>
           </div>
         </div>
-</div>
+      </div>
       <div className="third_div_layout shadow-lg">
         <Image src={curve1} alt="curve1" className="image3 img-fluid" />
         <p className="heading" style={{ color: "white" }}>
           What will you learn?
         </p>
-        <p className="subText webinar-sub-text" style={{ color: "white", textAlign: "justify"}}>
+        <p className="subText webinar-sub-text" style={{ color: "white", textAlign: "justify" }}>
           The Scaling Up methodology has helped thousands of business leaders
           break through their plateaus so they can grow and scale effectively.
           In this webinar, we’ll focus on how to harness the power of your
           business to achieve extraordinary results.
         </p>
       </div>
-      
+
       {/* modal html start here */}
       <Modal
         show={show}
@@ -567,8 +579,8 @@ const page = () => {
             <div className="form-floating m-3">
               <select value={selectedValue}  {...register("interested")} className={`form-select ${errors.interested ? "is-invalid" : ""}`} id="interested" aria-label="Default select example">
                 <option value="Pathfinders">Pathfinders</option>
-                <option value="Masterminds">Masterminds</option>  
-                <option value="Any">Any</option>  
+                <option value="Masterminds">Masterminds</option>
+                <option value="Any">Any</option>
               </select>
               <label htmlFor="interested">Are you interested in speaking on ?</label>
               {errors.interested && (
@@ -580,10 +592,10 @@ const page = () => {
             <div className="form-floating m-3">
               <select value={selectedValue2} {...register("expertise")} className={`form-select ${errors.expertise ? "is-invalid" : ""}`} id="interested" aria-label="Default select example">
                 <option selected value="Scaling Business">Scaling Business</option>
-                <option value="Leadership">Leadership</option>  
-                <option value="Startup Growth">Startup Growth</option>  
-                <option value="Operations">Operations</option> 
-                <option value="Fundraising">Fundraising</option>  
+                <option value="Leadership">Leadership</option>
+                <option value="Startup Growth">Startup Growth</option>
+                <option value="Operations">Operations</option>
+                <option value="Fundraising">Fundraising</option>
               </select>
               <label htmlFor="expertise">Preferred topics or Area of expertise</label>
               {errors.expertise && (
@@ -610,8 +622,8 @@ const page = () => {
                 </div>
               )}
             </div>
-            
-            
+
+
 
 
           </Modal.Body>
