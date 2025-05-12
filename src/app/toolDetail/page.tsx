@@ -16,6 +16,7 @@ import Cash2 from "./images/Cash-POO.jpg"
 
 import Image from "next/image";
 import bluecurve from "./images/blue-curve.svg";
+import Link from "next/link";
 const page = () => {
     return (
         <div className="main_body_div">
@@ -91,41 +92,41 @@ const page = () => {
                     <div className="mt-4">
                         <div className="row g-4">
                             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-                                <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Strategy - 7 Strata.pdf">
+                                <Link className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Strategy - 7 Strata.pdf">
                                     <Image src={Strategy1} alt="case1" className="toolkit-img img-fluid" />
 
                                     <div className="overlay">
                                         <h2>Strategy</h2>
                                         <p>7 Strata</p>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-                                <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Strategy - Brand Promise.pdf">
+                                <Link className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Strategy - Brand Promise.pdf">
                                     <Image src={Strategy2} alt="case2" className="toolkit-img img-fluid" />
                                     <div className="overlay">
                                         <h2>Strategy</h2>
                                         <p>Brand Promise</p>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-                                <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Strategy - OPSP - One Page Strategic Plan.pdf">
+                                <Link className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Strategy - OPSP - One Page Strategic Plan.pdf">
                                     <Image src={Strategy3} alt="case3" className="toolkit-img img-fluid" />
                                     <div className="overlay">
                                         <h2>OPSP</h2>
                                         <p>One Page Strategic Plan</p>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-                                <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Strategy - SWT - Strengths Weaknesses Trends.pdf">
+                                <Link className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Strategy - SWT - Strengths Weaknesses Trends.pdf">
                                     <Image src={Strategy4} alt="case3" className="toolkit-img img-fluid" />
                                     <div className="overlay">
                                         <h2>SWT</h2>
                                         <p>Strengths Weaknesses Trends</p>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
 
                         </div>
@@ -139,23 +140,23 @@ const page = () => {
                     <div className="mt-4">
                         <div className="row g-4">
                             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-                                <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Execution - WWW - Who What When.pdf">
+                                <Link className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Execution - WWW - Who What When.pdf">
                                     <Image src={Execution1} alt="case1" className="toolkit-img img-fluid" />
 
                                     <div className="overlay">
                                         <h2>WWW</h2>
                                         <p>Who What When</p>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-                                <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Execution- Rockefeller Habits Checklist.pdf">
+                                <Link className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Execution- Rockefeller Habits Checklist.pdf">
                                     <Image src={Execution2} alt="case2" className="toolkit-img img-fluid" />
                                     <div className="overlay">
                                         <h2>Execution</h2>
                                         <p>Rockefeller Habits Checklist</p>
                                     </div>
-                                </a>
+                                </Link>
                             </div>                         
 
                         </div>
@@ -170,23 +171,23 @@ const page = () => {
                     <div className="mt-4">
                         <div className="row g-4">
                             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-                                <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Cash - CASh - Cash Acceleration Strategies.pdf">
+                                <Link className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Cash - CASh - Cash Acceleration Strategies.pdf">
                                     <Image src={Cash1} alt="case1" className="toolkit-img img-fluid" />
 
                                     <div className="overlay">
                                         <h2>CASh</h2>
                                         <p>Cash Acceleration Strategies</p>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-                                <a className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Cash - POO -  The Power of One.pdf">
+                                <Link className="tool-img-link" target="_blank" href="../../../assets/images/PDF/Cash - POO -  The Power of One.pdf">
                                     <Image src={Cash1} alt="case2" className="toolkit-img img-fluid" />
                                     <div className="overlay">
                                         <h2>POO</h2>
                                         <p>The Power of One</p>
                                     </div>
-                                </a>
+                                </Link>
                             </div>                         
 
                         </div>

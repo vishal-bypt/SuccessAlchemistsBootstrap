@@ -84,9 +84,37 @@ const page = () => {
           <p className="subText" style={{ color: "white" }}>
             A podcast series where we delve into the inspiring journeys of successful business leaders, founders, and CEOs of Small and Medium-sized enterprises.
           </p>
-          <p><Button variant="primary" onClick={handleShow}>
+          {/* <p><Button variant="primary" onClick={handleShow}>
         To become Pathfinders
-      </Button></p>
+      </Button></p> */}
+        </div>
+      </div>
+      <div className="second_div_layout">
+        <div className="webinar-header">
+          <h1 className="webinar_heading">
+            Pathfinders  <span className="badge green-badge">Free</span>
+          </h1>
+          {/* <button
+            className="border-0 bg-transparent text-decoration-underline"
+            style={{ color: "rgba(251, 168, 25, 1)" }}
+          >
+            VIEW MORE
+          </button> */}
+        </div>
+        <div className="webinar-content">
+          <p style={{textAlign: "justify"}}>
+            Pathfinders Podcast takes you behind the scenes of entrepreneurship, where grit, vision, and strategy intersect. Each episode features candid conversations with dynamic business minds who have built and scaled small and medium-sized enterprises across diverse industries. Through their firsthand accounts, you'll discover the untold challenges, pivotal moments, and key decisions that shaped their paths to success.
+          </p>
+        </div>
+        
+
+    
+      </div>
+      <div className="banner">
+        <div className="overlay"></div>
+        <div className="content">
+          <h1 style={{color: 'white'}}>Want to be <Image alt="Masterminds" style={{width: '280px', height : 'auto' }}  src={basecamplogo2}/> speaker ?</h1>
+          <a href="javascript:void(0);" onClick={handleShow} className="btnForOverlaySection">Click Here</a>
         </div>
       </div>
       <div className="seventh_components shadow-lg">
