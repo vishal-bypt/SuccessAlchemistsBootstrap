@@ -167,11 +167,18 @@ export default function Page() {
         Toast.success("Your request for toolkit download has been registered! You can download now.");
         setShowSpinner(false);
         //console.log("selected", selected);
+        // const link = document.createElement('a');
+        // link.href = downloadUrl;
+        // link.download = selected?.file; // Suggests the filename
+        // document.body.appendChild(link);
+        // link.click();
         const link = document.createElement('a');
         link.href = downloadUrl;
-        link.download = selected?.file; // Suggests the filename
+        link.setAttribute('download', selected?.file || 'downloaded-file');
+        link.style.display = 'none';
         document.body.appendChild(link);
         link.click();
+        document.body.removeChild(link);
         // setTimeout(() => {
         //   router.push("/toolDetail"); // Redirect to the home page after 2 seconds  
         // }, 2000);
@@ -272,6 +279,10 @@ export default function Page() {
                       placeholder="Phone"
                       {...register("phone", {
                         required: "Phone is required",
+                        pattern: {
+                          value: /^[0-9]{10}$/,
+                          message: "Phone number must be 10 digits",
+                        },
                       })}
                     />
                     <label htmlFor="phone">Phone</label>
