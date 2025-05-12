@@ -984,7 +984,7 @@ const Home = () => {
             </div>
 
             <div className="sixth_component_btn_div">
-              <a href="https://q.esperto.one/q/sR4RRluSEazkK5XHPlVZ/6hDOhyCnHHDQf1Uzk3eg" target="_blank">
+              <a href="https://scalinguptoolkit.com/s/ScaleUpQA_AH" target="_blank">
                 TAKE THE ASSESSMENT
                 <Image className="img-fluid" src={Double_arrow} alt="right" />
               </a>
