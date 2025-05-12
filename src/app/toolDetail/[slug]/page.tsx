@@ -145,7 +145,7 @@ export default function Page() {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/toolkit"; // Replace with your API URL
       const postData: any = data;
       const downloadUrl = process.env.NEXT_PUBLIC_BASE_PATH + '/assets/images/pdf/'+ selected?.file;
-      //console.log("downloadUrl", downloadUrl);
+      console.log("downloadUrl", downloadUrl);
      
       try {
         const response = await fetch(apiUrl, {
