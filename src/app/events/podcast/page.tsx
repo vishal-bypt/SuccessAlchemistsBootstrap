@@ -92,7 +92,7 @@ const page = () => {
       <div className="second_div_layout">
         <div className="webinar-header">
           <h1 className="webinar_heading">
-            Pathfinders  <span className="badge green-badge">Free</span>
+            Pathfinders 
           </h1>
           {/* <button
             className="border-0 bg-transparent text-decoration-underline"
