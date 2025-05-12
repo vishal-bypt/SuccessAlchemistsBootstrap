@@ -29,7 +29,7 @@ const detailsMap = [
     slugName: "function-accountability-chart",
     title: "FACe - Function Accountability Chart",
     desc: "",
-    file : "people-face-functionaccountabilitychart.pdf"
+    file : "People-FACe-FunctionAccountabilityChart.pdf"
   },
   {
     category: "people",
@@ -144,7 +144,7 @@ export default function Page() {
       setShowSpinner(true);
       const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/toolkit"; // Replace with your API URL
       const postData: any = data;
-      const downloadUrl = process.env.NEXT_PUBLIC_BASE_PATH + '/assets/images/pdf/'+ selected?.file;
+      const downloadUrl = process.env.NEXT_PUBLIC_BASE_PATH + '/assets/images/PDF/'+ selected?.file;
       console.log("downloadUrl", downloadUrl);
      
       try {
