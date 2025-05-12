@@ -29,7 +29,7 @@ const detailsMap = [
     slugName: "function-accountability-chart",
     title: "FACe - Function Accountability Chart",
     desc: "",
-    file : "People-FACe-FunctionAccountabilityChart.pdf"
+    file : "people-face-functionaccountabilitychart.pdf"
   },
   {
     category: "people",
