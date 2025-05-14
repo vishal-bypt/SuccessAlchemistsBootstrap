@@ -182,9 +182,12 @@ const page = () => {
           Upcoming Webinars
         </p>
         <div className="webinar-main-box">
-          <div className="webinar-box">
+          <div className="webinar-box" style={{background : 'linear-gradient(to right, #fba819, #fff3cc)'}}>
             <div className="row">
-              <div className="col-md-4">
+              <div className="col-md-12 p-5">
+                  <h3 className="text-center">Coming Soon...</h3>
+              </div>
+              {/* <div className="col-md-4">
                 <iframe
                   className="video-iframe"
                   width="100%"
@@ -209,9 +212,8 @@ const page = () => {
                       powerful framework.
                     </p>
                   </div>
-
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
