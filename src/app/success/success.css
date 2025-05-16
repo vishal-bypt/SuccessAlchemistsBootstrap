@@ -145,3 +145,18 @@
 .swiper-pagination-bullet-active {
     background-color: #e99300 !important;
 }
+
+
+@media only screen and (max-width: 576px) {
+    .client-review-section {
+        padding: 28px;
+    }
+}
+
+@media only screen and (max-width: 320px) 
+{
+    .client-review-section {
+        padding: 18px;
+    }
+    
+}

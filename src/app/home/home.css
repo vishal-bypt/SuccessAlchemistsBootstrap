@@ -859,6 +859,9 @@
     .card.video-card .video-thumbnail iframe {
         height: 180px;
     }
+    .hero-container{
+        width: 100%;
+    }
     .inner_first_div {
         font-size: 26px;
         font-weight: 500;
@@ -880,6 +883,7 @@
     }
     .second_div_layout {
         display: flex;
+        flex-direction: column;
         gap: 32px;
         border-radius: 16px;
         background: #fff;
@@ -1077,4 +1081,21 @@
     }
 }
 
-@media only screen and (max-width: 320px) {}
+@media only screen and (max-width: 320px) 
+{
+    .gradient-overlay{
+        padding: 24px;
+    }
+    .hero-container{
+        width: 100%;
+    }
+    .second_div_layout{
+        flex-direction: column;
+    }
+    .second_div_right_div {   
+        width: 100%;
+    }
+    .company-logo.second_div_layout {
+        padding: 16px;
+    }
+}

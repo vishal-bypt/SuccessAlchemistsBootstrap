@@ -342,4 +342,51 @@
       border-radius: 10px;
       font-size: 1.2rem;
     }
+@media only screen and (max-width:767px) {
+    .fourth_component_bottom_component_gray_light{
+        border: none;
+    }
+    .fourth_component_bottom_component_brack_div{
+        border: none;
+    }
+}
 
+@media only screen and (max-width: 576px) {
+    .basecamp-hero-section{
+        padding: 28px;
+    }
+    .webinar-sub-text {
+        width: 100%;
+    }
+     .fourth_component{
+        padding: 28px;
+    }
+    .fourth_component_bottom_component_brack_div{
+        padding: 28px;
+    }
+    .fourth_component_bottom_component_gray_light{
+        padding: 28px;
+    }
+    .logo-image{
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 320px) 
+{
+    .basecamp-hero-section {
+        padding: 16px;
+    }
+    .webinar-box{
+        padding: 16px;
+    }
+    .fourth_component{
+        padding: 16px;
+    }
+    .fourth_component_bottom_component_brack_div{
+        padding: 16px;
+    }
+    .fourth_component_bottom_component_gray_light{
+        padding: 16px;
+    }
+}
