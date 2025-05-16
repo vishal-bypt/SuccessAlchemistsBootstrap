@@ -248,6 +248,7 @@ p {
     .res-row {
         row-gap: 16px;
     }
+    
 }
 
 @media (max-width: 480px) {
