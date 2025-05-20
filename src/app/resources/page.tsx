@@ -336,6 +336,7 @@ const page = () => {
         <div className="mt-2">
           <div className="row g-4">
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
+              <a href="https://www.amazon.in/Scaling-Up-Verne-Harnish/dp/9362053160/ref=sr_1_1?crid=3CN5G4C1QVDIL&dib=eyJ2IjoiMSJ9.Q0tvizYJ0XnyRfyYz3o-y7CO_UCqHuu9pxLnuyfXx3iSnIxn6TDXmp_H53TmNJnveQd7RJ8f0e2ZDTiZkeuQqnEAGjry5vuYU5xWQM-H905Jykiamn5W0pHC0H5yENxc_8pD3wn3HKfZJjaWjR_yrK5XSnBS9l9oV5BtwqXeaQGm9qYSwNSyxIk6BakZG6WVqtQidWK3LXSdVpXHkP4cGQOjqZrxX600ccDztcKFOlY.H79FBLE0SB4QKzzZt0qJdyYUf6fk_F_qoJwbg_W4p_U&dib_tag=se&keywords=scaling+up+verne+harnish&qid=1747738951&sprefix=scaling+up%2Caps%2C239&sr=8-1" target="_blank">
               <div className="card h-100 shadow-lg p-2">
                 <div className="card-image">
                   <Image
@@ -351,9 +352,10 @@ const page = () => {
                     </h5>
                   </div>
                 </div>
-              </div>
+              </div></a>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
+              <a href="https://www.amazon.in/Mastering-Rockefeller-Habits-22nd-Anniversary/dp/B0CXCDYCHN/ref=sr_1_2?crid=JY94OR1ETP4E&dib=eyJ2IjoiMSJ9.XCmjMAr4Yk8wug9W3WpiDjl6SS-1b_MHMGMVSAH1y9ou5dcGPG_BHAzfR-P6miC6zYV84yz6E6nCrRGfwAcjrvli8I9zb1eRclDJFT8ehFiF0hnxr_FuxqJkYEB-wkCoYoOblSDZQ877q75Jc8N_VQ.h-5DTB3NVfu_fKojnTo99hg_4IV_FPpE4co5oIYbRj8&dib_tag=se&keywords=mastering+the+rockefeller+habits&qid=1747739138&sprefix=mastering+the+roc%2Caps%2C264&sr=8-2" target="_blank">
               <div className="card h-100 shadow-lg p-2">
                 <div className="card-image">
                   <Image
@@ -369,9 +371,10 @@ const page = () => {
                     </h5>
                   </div>
                 </div>
-              </div>
+              </div></a>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
+              <a href="https://www.amazon.in/FORTUNE-Greatest-Business-Decisions-Time/dp/1603200592/ref=sr_1_1?crid=3AQJ39YJOKUD7&dib=eyJ2IjoiMSJ9.QdGnVr8cCeZDiDwBsgKITt4V9a2uKeJN9rKMyTX37v5o9QyKgTR1mAJh6C9g22z0Lxxa_WK31Kh15g-enMzziIrjBzF3Dzg9EczK10BXpWh9k2I3w9cGDkrIpo4jrN_5xCqW4NEoUTsotsErSPiPmzghLSgOeDiXj5zMPTzSBDcTLX1uwUaPrt_xp96XZoTg.T39xR92Mx5OvAKOGvXCSmx4raKm0M1XVNIDmdUWXHuw&dib_tag=se&keywords=The+Greatest+business+decisions+of+all+time&qid=1747739685&sprefix=the+greatest+business+decisions+of+all+time%2Caps%2C265&sr=8-1" target="_blank">
               <div className="card h-100 shadow-lg p-2">
                 <div className="card-image">
                   <Image
@@ -387,9 +390,10 @@ const page = () => {
                     </h5>
                   </div>
                 </div>
-              </div>
+              </div></a>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
+              <a href="https://www.amazon.in/12-Habits-Valuable-Employees-Roadmap-ebook/dp/B0CQ62WD2T/ref=sr_1_1?crid=2DRXTOCN79UD2&dib=eyJ2IjoiMSJ9.lAMQzcVHfJop0DkuMY-hQ3yvhU8dWijmXI2Yhu_hMFivWc2BB-3Qa8aS1b_AN1A26B1WQ0x55tCLj4l44XrR1w.QXgrOQ_pzuPSl9WT8cJ_aq0AwFjuAjf7KrS7wBUixFU&dib_tag=se&keywords=12+Habits+of+valuable+employees&qid=1747739730&sprefix=12+habits+of+valuable+employees%2Caps%2C260&sr=8-1" target="_blank">
               <div className="card h-100 shadow-lg p-2">
                 <div className="card-image">
                   <Image
@@ -405,9 +409,10 @@ const page = () => {
                     </h5>
                   </div>
                 </div>
-              </div>
+              </div></a>
             </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
+              <a href="https://www.amazon.in/Scaling-Compensation-Principles-Strategic-Advantage/dp/1955884188/ref=sr_1_1?crid=2RFRHK4U3YH9Z&dib=eyJ2IjoiMSJ9.wNkxzcraLxuC1iQ4vk3rz0QHxqwZSdTRhh2JE1gGqPXGjHj071QN20LucGBJIEps.JOCHobagUJGhj8nOrMwaqe65QTigzCZIued5H3mqHY4&dib_tag=se&keywords=Scaling+up+compensation&qid=1747739772&sprefix=scaling+up+compensation%2Caps%2C288&sr=8-1" target="_blank">
               <div className="card h-100 shadow-lg p-2">
                 <div className="card-image">
                   <Image
@@ -421,7 +426,7 @@ const page = () => {
                     <h5 className="card-title">Scaling up compensation</h5>
                   </div>
                 </div>
-              </div>
+              </div></a>
             </div>
           </div>
         </div>
