@@ -65,10 +65,16 @@ const Footer = () => {
       }
 
       const data = await response.json();
+      console.log("data", data);
       reset();
       handleClose();
       localStorage.setItem('hasSubmittedInquiry', 'true');
-      Toast.success("Your request for newsletter has been submitted.");
+      if(data.success) {
+        Toast.success("Your request for newsletter has been submitted.");
+      } else {
+        Toast.error(data?.message);
+      }
+      
       setShowSpinner(false);
       // setTimeout(() => {
       //   router.push("/"); // Redirect to the home page after 2 seconds  
