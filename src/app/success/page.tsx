@@ -109,7 +109,7 @@ const page = () => {
         </div>
         <div
           className="casestudy-container w-100 d-flex justify-content-center align-items-center"
-          style={{ minHeight: "100vh" }}
+          // style={{ minHeight: "100vh" }}
         >
           <div className="row w-100">
             <div className="col-md-12 d-flex justify-content-center">

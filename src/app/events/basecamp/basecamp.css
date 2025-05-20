@@ -335,4 +335,33 @@
     .attend-time-div {
         padding: 16px 24px;
     }
+    .right_border_div{
+        border: none;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .logo-image{
+        width: 250px;
+    }
+    .basecamp-hero-section{
+        padding: 28px;
+    }   
+    .fourth_component{
+        padding: 28px;
+    }
+    .fourth_component_bottom_component_gray_light{
+        padding: 18px;
+    }
+    .fourth_component_bottom_component_brack_div{
+        padding: 18px;
+    }
+}
+@media only screen and (max-width: 320px) 
+{
+    .basecamp-hero-section {
+        padding: 16px;
+    }
+    .fourth_component{
+        padding: 18px;
+    }
 }
