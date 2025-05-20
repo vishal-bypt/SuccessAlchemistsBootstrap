@@ -151,6 +151,31 @@
         padding-bottom: 8px;
         border-radius: 8px;
     }
+    .second_div_responsive{
+        flex-direction: column !important;
+        height: auto !important;
+    } 
+    .toolkit-img {
+        max-width: 60%;
+    } 
+    .second_input_div{
+        width: 100% !important;
+        font-size: 13px;
+    }
+    .second_btn_div{
+        justify-content: center !important;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .toolkit-img {
+        max-width: 100%;
+    }
+    .second_input_div{
+        padding: 8px !important;
+    }
+    .second_input_box{
+        margin: 16px 4px !important;
+    }
 }
 
 .btn_div {
@@ -181,3 +206,5 @@
 .gradient_bg_4 {
     background: linear-gradient(90deg, #86BE41, #fff0) !important;
 }
+
+

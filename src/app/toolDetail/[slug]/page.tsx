@@ -213,6 +213,7 @@ export default function Page() {
           </div>
           <div
             style={{ height: "300px", display: "flex", flexDirection: "row" }}
+            className = "second_div_responsive"
           >
             <Image
               src={selected?.image}
@@ -220,13 +221,13 @@ export default function Page() {
               className="toolkit-img img-fluid"
             />
             <div
-              className="d-flex justify-content-between flex-column"
+              className="second_input_div d-flex justify-content-between flex-column"
               style={{ width: "70%", padding: "16px" }}
             >
               <form onSubmit={handleSubmit(onSubmit)}>
               <div className="d-flex justify-content-between">
                 <div style={{ width: "50%" }}>
-                  <div className="form-floating m-3">
+                  <div className="second_input_box form-floating m-3">
                     <input
                       type="text"
                       className={`form-control ${
@@ -245,7 +246,7 @@ export default function Page() {
                       </div>
                     )}
                   </div>
-                  <div className="form-floating m-3 mt-5">
+                  <div className="second_input_box form-floating m-3 mt-5">
                     <input
                       type="text"
                       className={`form-control ${
@@ -270,7 +271,7 @@ export default function Page() {
                   </div>
                 </div>
                 <div style={{ width: "50%" }}>
-                  <div className="form-floating m-3">
+                  <div className="second_input_box form-floating m-3">
                     <input
                       type="text"
                       className={`form-control ${
@@ -293,7 +294,7 @@ export default function Page() {
                       </div>
                     )}
                   </div>
-                  <div className="form-floating m-3 mt-5">
+                  <div className="second_input_box form-floating m-3 mt-5">
                     <input
                       type="text"
                       className={`form-control ${
@@ -321,6 +322,7 @@ export default function Page() {
                   display: "flex",
                   justifyContent: "end",
                 }}
+                className = "second_btn_div"
               >
 
                 {showSpinner && <Spinner animation="border" variant="warning" style={{marginRight : '20px', marginTop : '20px'}} />} &nbsp;
