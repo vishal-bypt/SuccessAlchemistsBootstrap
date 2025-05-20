@@ -5,7 +5,8 @@ import Case1 from "./images/tools-final-08.png";
 import Case2 from "./images/tools-final-09.png";
 import Case3 from "./images/tools-final-10.png";
 import Case4 from "./images/tools-final-11.png";
-import Book1 from "../../app/resources/images/ref-book1.webp";
+import Book0 from "../../app/resources/images/scaling_up.jpeg";
+import Book1 from "../../app/resources/images/mastering_the_rockefeller.jpeg";
 import Book2 from "../../app/resources/images/ref-book2.png";
 import Book3 from "../../app/resources/images/ref-book3.png";
 import Book4 from "../../app/resources/images/ref-book4.png";
@@ -67,8 +68,8 @@ const strategyArray = [
   },
   {
     title: "Strategy",
-    desc: "Brand Promise",
-    slug: "brand-promise",
+    desc: "Vision Summary",
+    slug: "vision-summary",
     image: Strategy2,
   },
   {
@@ -334,6 +335,24 @@ const page = () => {
         </div>
         <div className="mt-2">
           <div className="row g-4">
+            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
+              <div className="card h-100 shadow-lg p-2">
+                <div className="card-image">
+                  <Image
+                    src={Book0}
+                    className="card-img-top img-fluid"
+                    alt="case4"
+                  />
+                </div>
+                <div className="card-body">
+                  <div className="gap-2">
+                    <h5 className="card-title">
+                      Scaling up
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12">
               <div className="card h-100 shadow-lg p-2">
                 <div className="card-image">

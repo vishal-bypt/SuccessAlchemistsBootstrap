@@ -66,10 +66,10 @@ const detailsMap = [
   {
     category: "strategy",
     image: Strategy2,
-    slugName: "brand-promise",
-    title: "Strategy - Brand Promise",
+    slugName: "vision-summary",
+    title: "Strategy - Vision Summary",
     desc: "",
-    file : "Strategy-BrandPromise.pdf"
+    file : "Strategy-VisionSummary.pdf"
   },
   {
     category: "strategy",
