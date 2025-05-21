@@ -750,7 +750,7 @@ const Home = () => {
         </div>
       </div>
       <div className="fourth_component">
-        <Image
+          <Image
           src={idea_icon}
           className="img-fluid bulb-image"
           alt="right side "
@@ -759,6 +759,7 @@ const Home = () => {
         <div className="fourth_component_first_div">
           <div className="fourth_component_title_div">
             We become successful, when we help you become successful
+          
           </div>
           <div className="fourth_component_p_tag  col-md-12">
             At Success Alchemists, we believe that our success is tied to yours.
@@ -768,6 +769,7 @@ const Home = () => {
             management thinking, and while the path may seem simple, it often
             involves a steep learning curve.
           </div>
+        
           <div className="fourth_component_p_tag col-md-12">
             Leveraging proven methods that have empowered over 2,700 firms
             worldwide, we provide business coaching, management development, and

@@ -16,6 +16,7 @@ import Toast from "../../src/components/Toast";
 import { useRouter } from 'next/navigation';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 const arr = [
   "/home",
   "/about",
@@ -258,11 +259,11 @@ const Footer = () => {
             </div>
             <div className="flex">
               <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="col-12 col-md-12 col-lg-12 mt-3">
-                  <div className="d-flex align-items-start position-relative">
-                    <input
+                <div className="row mt-3">
+                  <div className="col-md-6">
+                      <input
                       type="text"
-                      className={`form-control input ${errors.email ? "is-invalid" : ""
+                      className={`form-control newsletter-input input ${errors.email ? "is-invalid" : ""
                         }`}
                       placeholder="Email"
                       {...register("email", {
@@ -273,13 +274,16 @@ const Footer = () => {
                         },
                       })}
                     />
+                  </div>
+                   <div className="col-md-6">
+                    
                     <button
                       type="submit"
-                      className="btn btn-primary btn-md"
+                      className="btn btn-primary btn-md subscribe-btn"
                     >
                       Subscribe
                     </button>
-
+                  </div>
                     {errors.email && (
                       <div
                         className="invalid-feedback position-absolute"
@@ -289,7 +293,7 @@ const Footer = () => {
                       </div>
                     )}
                   </div>
-                </div>
+               
 
                 {/* <div className="d-flex col-12 col-md-12 col-lg-12 position-relative mt-2">   
                     <button

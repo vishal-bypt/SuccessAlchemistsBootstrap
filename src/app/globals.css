@@ -183,6 +183,11 @@ p {
     margin: 0;
 }
 
+  .subscribe-btn{
+        position: relative;
+        right : 25px;
+    }
+
 
 /*media query start here*/
 
@@ -201,6 +206,12 @@ p {
 @media only screen and (min-width: 601px) and (max-width: 1180px) {
     .second_div_layout {
         padding: 16px 40px;
+    }
+
+    
+  .subscribe-btn{
+        position: relative;
+        right : 0px;
     }
 }
 
@@ -248,6 +259,15 @@ p {
     .res-row {
         row-gap: 16px;
     }
+
+    .newsletter-input {
+        padding: 12px !important;
+    }
+
+    .subscribe-btn{
+        position: relative;
+        right : 0px;
+    }
     
 }
 
@@ -261,6 +281,11 @@ p {
     }
     .subText{
         font-size: 16px;
+    }
+
+      .subscribe-btn{
+        position: relative;
+        right : 0px;
     }
 }
 @media only screen and (max-width: 576px) {
