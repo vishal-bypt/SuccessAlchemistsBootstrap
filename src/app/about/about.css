@@ -431,6 +431,9 @@
     .card-coach {
         padding: 1.25rem;
     }
+    .team-head {
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -440,6 +443,9 @@
     }
     .card-coach {
         padding: 1rem;
+    }
+    .team-head {
+        font-size: 24px;
     }
 }
 
@@ -452,4 +458,8 @@
     .card-coach {
         padding: 0.75rem;
     }
+    .team-head {
+        font-size: 24px;
+    }
+
 }

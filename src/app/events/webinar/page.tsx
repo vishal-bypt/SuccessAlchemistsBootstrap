@@ -182,10 +182,10 @@ const page = () => {
           Upcoming Webinars
         </p>
         <div className="webinar-main-box">
-          <div className="webinar-box" style={{background : 'linear-gradient(to right, #fba819, #fff3cc)'}}>
+          <div className="webinar-box" style={{ background: 'linear-gradient(to right, #fba819, #fff3cc)' }}>
             <div className="row">
               <div className="col-md-12 p-5">
-                  <h3 className="text-center">Coming Soon...</h3>
+                <h3 className="text-center">Coming Soon...</h3>
               </div>
               {/* <div className="col-md-4">
                 <iframe
@@ -223,7 +223,7 @@ const page = () => {
       <div className="banner">
         <div className="overlay"></div>
         <div className="content">
-          <h1 style={{color: 'white'}}>Want to be <Image alt="Masterminds" style={{width: '280px', height : 'auto' }}  src={basecamplogo2}/> speaker ?</h1>
+          <h1 style={{ color: 'white' }}>Want to be <Image alt="Masterminds" style={{ width: '280px', height: 'auto' }} src={basecamplogo2} /> speaker ?</h1>
           <a href="javascript:void(0);" onClick={handleShow2} className="btnForOverlaySection">Click Here</a>
         </div>
       </div>
@@ -515,6 +515,10 @@ const page = () => {
                 placeholder="Phone"
                 {...register("phone", {
                   required: "Phone is required",
+                  pattern: {
+                    value: /^[0-9]{10}$/, // Example: validates 10-digit numbers
+                    message: "Phone number must be 10 digits",
+                  },
                 })}
               />
               <label htmlFor="phone">Phone</label>
@@ -617,7 +621,7 @@ const page = () => {
                   required: "Reason is required",
                 })}
               />
-              <label htmlFor="reason">Why do you want to be a speaker on our platform?</label>
+              <label htmlFor="reason">Why do you want to be a speaker?</label>
               {errors.reason && (
                 <div className="invalid-feedback">
                   {String(errors.reason.message)}

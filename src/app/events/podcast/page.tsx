@@ -532,6 +532,10 @@ const page = () => {
                 placeholder="Phone"
                 {...register("phone", {
                   required: "Phone is required",
+                   pattern: {
+                    value: /^[0-9]{10}$/, // Example: validates 10-digit numbers
+                    message: "Phone number must be 10 digits",
+                  },
                 })}
               />
               <label htmlFor="phone">Phone</label>
@@ -634,7 +638,7 @@ const page = () => {
                   required: "Reason is required",
                 })}
               />
-              <label htmlFor="reason">Why do you want to be a speaker on our platform?</label>
+              <label htmlFor="reason">Why do you want to be a speaker?</label>
               {errors.reason && (
                 <div className="invalid-feedback">
                   {String(errors.reason.message)}
