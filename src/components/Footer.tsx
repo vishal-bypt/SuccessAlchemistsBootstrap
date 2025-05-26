@@ -269,7 +269,7 @@ const Footer = () => {
                     />
                     <button
                       type="submit"
-                      className="btn btn-primary btn-md"
+                      className="btn btn-primary btn-md mt-0"
                     >
                       Subscribe
                     </button>

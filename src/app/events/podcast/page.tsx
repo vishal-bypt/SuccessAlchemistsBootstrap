@@ -113,7 +113,7 @@ const page = () => {
       <div className="banner">
         <div className="overlay"></div>
         <div className="content">
-          <h1 style={{color: 'white'}}>Want to be <Image alt="Masterminds" style={{width: '280px', height : 'auto' }}  src={basecamplogo2}/> speaker ?</h1>
+          <h1 style={{color: 'white'}}>Want to be <Image alt="Masterminds" className="banner_img" style={{width: '280px', height : 'auto' }}  src={basecamplogo2}/> speaker ?</h1>
           <a href="javascript:void(0);" onClick={handleShow} className="btnForOverlaySection">Click Here</a>
         </div>
       </div>

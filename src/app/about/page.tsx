@@ -293,7 +293,7 @@ const About = () => {
                       {coaches
                         .slice(currentIndex, currentIndex + itemsPerPage)
                         .map((coach, index) => (
-                          <div key={index} className="col-lg-4 col-md-6 col-sm-12">
+                          <div key={index} className="second_div_section col-lg-4 col-md-6 col-sm-12">
                             <div className="card-coach h-100 shadow-lg">
                               <Image
                                 src={coach.image}
@@ -345,7 +345,7 @@ const About = () => {
                       {coaches1
                         .slice(currentIndex1, currentIndex1 + itemsPerPage)
                         .map((coach, index) => (
-                          <div key={index} className="col-lg-4 col-md-6 col-sm-12">
+                          <div key={index} className="second_div_section col-lg-4 col-md-6 col-sm-12">
                             <div className="card-coach  h-100 shadow-lg">
                               <Image
                                 src={coach.image}

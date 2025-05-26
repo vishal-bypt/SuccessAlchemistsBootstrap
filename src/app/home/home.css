@@ -1029,6 +1029,15 @@
     .seventh_components div.row {
         row-gap: 16px;
     }
+    .company-logo.second_div_layout {
+        padding: 16px;
+    }
+    .second_div_right_div {   
+        width: 100%;
+    }
+    .fourth_component_title_div{
+        width: 85%;
+    }
 }
 
 .container {
@@ -1092,10 +1101,7 @@
     .second_div_layout{
         flex-direction: column;
     }
-    .second_div_right_div {   
-        width: 100%;
-    }
-    .company-logo.second_div_layout {
-        padding: 16px;
+    .fourth_component_title_div{
+        width: 70%;
     }
 }

@@ -48,3 +48,10 @@
         justify-content: center;
     }
 }
+
+@media (max-width: 480px) {
+    .submit_btn{
+        margin: 0px !important;
+        color: aquamarine;
+    }
+}

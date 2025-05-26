@@ -355,6 +355,13 @@
     .fourth_component_bottom_component_brack_div{
         padding: 18px;
     }
+    .logo-image{
+        width: 200px;
+    }
+    .image3{
+        height: 120px;
+        width: 120px;
+    }
 }
 @media only screen and (max-width: 320px) 
 {
