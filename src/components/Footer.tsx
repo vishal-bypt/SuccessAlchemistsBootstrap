@@ -207,7 +207,7 @@ const Footer = () => {
                     D-702, Kumar Presidency Phase 1, Lane no.7, Koregaon Park,
                     Pune 411001
                   </p>
-                  <p className="get-direction-text">Get direction</p>
+                  <p className="get-direction-text"><a target="_blank" href="https://www.google.co.in/maps/place/Kumar+Presidency+Phase+1,+Meera+Nagar+Path,+Ashok+Chakra+Society,+Meera+Nagar,+Koregaon+Park,+Pune,+Maharashtra+411001/@18.5350351,73.8944142,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2c107c04032e9:0xff9c0461100e1ed1!8m2!3d18.5350352!4d73.8992851!16s%2Fg%2F12hy395q_?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D">Get direction</a></p>
                 </div>
               </li>
             </ul>
