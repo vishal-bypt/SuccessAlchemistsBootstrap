@@ -15,6 +15,7 @@ const page = () => {
   const [show, setShow] = useState(false);
   const [selectedValue, setSelectedValue] = useState("Pathfinders");
   const [selectedValue2, setSelectedValue2] = useState("Masterminds");
+  const [selectedRevanueValue, setSelectedRevanueValue] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -596,42 +597,36 @@ const page = () => {
               )}
             </div>
             <div className="form-floating m-3">
-              <select value={selectedValue2} {...register("expertise")} className={`form-select ${errors.expertise ? "is-invalid" : ""}`} id="interested" aria-label="Default select example">
-                <option selected value="Scaling Business">Scaling Business</option>
-                <option value="Leadership">Leadership</option>
-                <option value="Startup Growth">Startup Growth</option>
-                <option value="Operations">Operations</option>
-                <option value="Fundraising">Fundraising</option>
+              <select {...register("annual_revanue")} className={`form-select ${errors.interested ? "is-invalid" : ""}`} id="annual_revanue" aria-label="Annual Revenue (USD)">
+                <option value="Zero revenue - startup">Zero revenue - startup</option>
+                <option value="< t Mn USD>">&lt; 1 Mn USD</option>
+                <option value="1 to 10 Mn USD">1 to 10 Mn USD</option>
+                <option value="10 to 50 Mn USD">10 to 50 Mn USD</option>
+                <option value="> 50 Mn USD">&gt; 50 Mn USD</option>
               </select>
-              <label htmlFor="expertise">Preferred topics or Area of expertise</label>
-              {errors.expertise && (
+              <label htmlFor="interested">Annual Revenue (USD)</label>
+              {errors.annual_revanue && (
                 <div className="invalid-feedback">
-                  {String(errors.expertise.message)}
+                  {String(errors.annual_revanue.message)}
                 </div>
               )}
             </div>
             <div className="form-floating m-3">
               <input
                 type="text"
-                className={`form-control ${errors.reason ? "is-invalid" : ""
+                className={`form-control ${errors.unique_aspect_of_your_work ? "is-invalid" : ""
                   }`}
-                id="reason"
-                placeholder="Why do you want to be a speaker on our platform?"
-                {...register("reason", {
-                  required: "Reason is required",
-                })}
+                id="unique_aspect_of_your_work"
+                placeholder="Describe the unique aspects of your work"
+                {...register("unique_aspect_of_your_work")}
               />
-              <label htmlFor="reason">Why do you want to be a speaker?</label>
-              {errors.reason && (
+              <label htmlFor="unique_aspect_of_your_work">Describe the unique aspects of your work</label>
+              {errors.unique_aspect_of_your_work && (
                 <div className="invalid-feedback">
-                  {String(errors.reason.message)}
+                  {String(errors.unique_aspect_of_your_work.message)}
                 </div>
               )}
             </div>
-
-
-
-
           </Modal.Body>
           <Modal.Footer>
             {showSpinner && <Spinner animation="border" variant="warning" />}

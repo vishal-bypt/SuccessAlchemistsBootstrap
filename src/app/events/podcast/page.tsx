@@ -21,6 +21,7 @@ const page = () => {
   } = useForm();
   const router = useRouter();
   const [showSpinner, setShowSpinner] = useState(false);
+  const [selectedRevanueValue, setSelectedRevanueValue] = useState("");
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -613,6 +614,37 @@ const page = () => {
               )}
             </div>
             <div className="form-floating m-3">
+              <select {...register("annual_revanue")} className={`form-select ${errors.interested ? "is-invalid" : ""}`} id="annual_revanue" aria-label="Annual Revenue (USD)">
+                <option value="Zero revenue - startup">Zero revenue - startup</option>
+                <option value="< t Mn USD>">&lt; 1 Mn USD</option>
+                <option value="1 to 10 Mn USD">1 to 10 Mn USD</option>
+                <option value="10 to 50 Mn USD">10 to 50 Mn USD</option>
+                <option value="> 50 Mn USD">&gt; 50 Mn USD</option>
+              </select>
+              <label htmlFor="interested">Annual Revenue (USD)</label>
+              {errors.annual_revanue && (
+                <div className="invalid-feedback">
+                  {String(errors.annual_revanue.message)}
+                </div>
+              )}
+            </div>
+            <div className="form-floating m-3">
+              <input
+                type="text"
+                className={`form-control ${errors.unique_aspect_of_your_work ? "is-invalid" : ""
+                  }`}
+                id="unique_aspect_of_your_work"
+                placeholder="Describe the unique aspects of your work"
+                {...register("unique_aspect_of_your_work")}
+              />
+              <label htmlFor="unique_aspect_of_your_work">Describe the unique aspects of your work</label>
+              {errors.unique_aspect_of_your_work && (
+                <div className="invalid-feedback">
+                  {String(errors.unique_aspect_of_your_work.message)}
+                </div>
+              )}
+            </div>
+            {/* <div className="form-floating m-3">
               <select {...register("expertise")} className={`form-select ${errors.expertise ? "is-invalid" : ""}`} id="interested" aria-label="Default select example">
                 <option selected value="Scaling Business">Scaling Business</option>
                 <option value="Leadership">Leadership</option>  
@@ -644,7 +676,7 @@ const page = () => {
                   {String(errors.reason.message)}
                 </div>
               )}
-            </div>
+            </div> */}
             
             
 
