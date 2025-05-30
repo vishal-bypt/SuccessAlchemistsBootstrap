@@ -112,7 +112,7 @@ const page = () => {
           // style={{ minHeight: "100vh" }}
         >
           <div className="row w-100">
-            <div className="col-md-12 d-flex justify-content-center">
+            <div className="col-md-12 d-flex justify-content-center" style={{height : '80%'}}>
               <Image
                 src={success}
                 alt="case1"
