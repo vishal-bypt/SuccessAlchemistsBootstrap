@@ -459,13 +459,14 @@ const page = () => {
       </Modal>
       {/* modal html start here */}
 
-      <Modal show={show2} onHide={handleClose2}>
+      <Modal show={show2} onHide={handleClose2} >
         <form onSubmit={handleSubmit(onSubmit)}>
           <Modal.Header closeButton>
             <Modal.Title>Become Pathfinders or masterminds speaker</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <div className="form-floating m-3">
+            <div className="form-group m-3">
+              <label htmlFor="name">Name <span className="text-danger">*</span></label>
               <input
                 type="text"
                 className={`form-control ${errors.name ? "is-invalid" : ""
@@ -477,14 +478,15 @@ const page = () => {
 
                 })}
               />
-              <label htmlFor="name">Name</label>
+              
               {errors.name && (
                 <div className="invalid-feedback">
                   {String(errors.name.message)}
                 </div>
               )}
             </div>
-            <div className="form-floating m-3">
+            <div className="form-group m-3">
+              <label htmlFor="email">Email <span className="text-danger">*</span></label>
               <input
                 type="text"
                 className={`form-control ${errors.email ? "is-invalid" : ""
@@ -500,14 +502,15 @@ const page = () => {
 
                 })}
               />
-              <label htmlFor="email">Email</label>
+              
               {errors.email && (
                 <div className="invalid-feedback">
                   {String(errors.email.message)}
                 </div>
               )}
             </div>
-            <div className="form-floating m-3">
+            <div className="form-group m-3">
+              <label htmlFor="phone">Phone <span className="text-danger">*</span></label>
               <input
                 type="text"
                 className={`form-control ${errors.phone ? "is-invalid" : ""
@@ -522,14 +525,15 @@ const page = () => {
                   },
                 })}
               />
-              <label htmlFor="phone">Phone</label>
+              
               {errors.phone && (
                 <div className="invalid-feedback">
                   {String(errors.phone.message)}
                 </div>
               )}
             </div>
-            <div className="form-floating m-3">
+            <div className="form-group m-3">
+              <label htmlFor="company">Company Name <span className="text-danger">*</span></label>
               <input
                 type="text"
                 className={`form-control ${errors.company ? "is-invalid" : ""
@@ -540,7 +544,7 @@ const page = () => {
                   required: "Company Name is required",
                 })}
               />
-              <label htmlFor="company">Company Name</label>
+              
               {errors.company && (
                 <div className="invalid-feedback">
                   {String(errors.company.message)}
@@ -565,7 +569,8 @@ const page = () => {
                 </div>
               )}
             </div> */}
-            <div className="form-floating m-3">
+            <div className="form-group m-3">
+              <label htmlFor="linkedinProfile">LinkedIn Profile <span className="text-danger">*</span></label>
               <input
                 type="text"
                 className={`form-control ${errors.linkedinProfile ? "is-invalid" : ""
@@ -576,27 +581,29 @@ const page = () => {
                   required: "LinkedIn Profile is required",
                 })}
               />
-              <label htmlFor="linkedinProfile">LinkedIn Profile</label>
+              
               {errors.linkedinProfile && (
                 <div className="invalid-feedback">
                   {String(errors.linkedinProfile.message)}
                 </div>
               )}
             </div>
-            <div className="form-floating m-3">
+            <div className="form-group m-3">
+              <label htmlFor="interested">Are you interested in speaking on ? <span className="text-danger">*</span></label>
               <select value={selectedValue}  {...register("interested")} className={`form-select ${errors.interested ? "is-invalid" : ""}`} id="interested" aria-label="Default select example">
                 <option value="Pathfinders">Pathfinders</option>
                 <option value="Masterminds">Masterminds</option>
                 <option value="Any">Any</option>
               </select>
-              <label htmlFor="interested">Are you interested in speaking on ?</label>
+              
               {errors.interested && (
                 <div className="invalid-feedback">
                   {String(errors.interested.message)}
                 </div>
               )}
             </div>
-            <div className="form-floating m-3">
+            <div className="form-group m-3">
+              <label htmlFor="interested">Annual Revenue (USD)</label>
               <select {...register("annual_revanue")} className={`form-select ${errors.interested ? "is-invalid" : ""}`} id="annual_revanue" aria-label="Annual Revenue (USD)">
                 <option value="Zero revenue - startup">Zero revenue - startup</option>
                 <option value="< t Mn USD>">&lt; 1 Mn USD</option>
@@ -604,29 +611,29 @@ const page = () => {
                 <option value="10 to 50 Mn USD">10 to 50 Mn USD</option>
                 <option value="> 50 Mn USD">&gt; 50 Mn USD</option>
               </select>
-              <label htmlFor="interested">Annual Revenue (USD)</label>
+              
               {errors.annual_revanue && (
                 <div className="invalid-feedback">
                   {String(errors.annual_revanue.message)}
                 </div>
               )}
             </div>
-            <div className="form-floating m-3">
-              <input
-                type="text"
-                className={`form-control ${errors.unique_aspect_of_your_work ? "is-invalid" : ""
-                  }`}
-                id="unique_aspect_of_your_work"
-                placeholder="Describe the unique aspects of your work"
-                {...register("unique_aspect_of_your_work")}
-              />
-              <label htmlFor="unique_aspect_of_your_work">Describe the unique aspects of your work</label>
-              {errors.unique_aspect_of_your_work && (
-                <div className="invalid-feedback">
-                  {String(errors.unique_aspect_of_your_work.message)}
-                </div>
-              )}
-            </div>
+            <div className="form-group mb-3 m-3">
+            <label htmlFor="unique_aspect_of_your_work" className="form-label">
+              Please describe any special achievements or initiatives that highlight the impact you’ve made in your industry.
+            </label>
+            <textarea
+              className={`form-control ${errors.unique_aspect_of_your_work ? "is-invalid" : ""}`}
+              id="unique_aspect_of_your_work"
+              placeholder=""
+              {...register("unique_aspect_of_your_work")}
+            />
+            {errors.unique_aspect_of_your_work && (
+              <div className="invalid-feedback">
+                {String(errors.unique_aspect_of_your_work.message)}
+              </div>
+            )}
+          </div>
           </Modal.Body>
           <Modal.Footer>
             {showSpinner && <Spinner animation="border" variant="warning" />}
