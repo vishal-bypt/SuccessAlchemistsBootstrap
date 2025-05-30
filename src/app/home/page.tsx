@@ -84,7 +84,7 @@ const items = [
     id: 5,
     title: "Success Story #5 - InfraCloud Technologies",
     description:
-      "In this video, their CEO, Siddharth Motiwale talks about the 'secret sauce' which has helped Clarion grow systematically over the past few years. He also talks about the value added by Ajay as their coach.",
+      "In this video, Girish Shilamkar, the Founder & CEO, shares some key aspects of the Scaling Up framework, which helped him build a great culture within his company. These foundations ultimately helped ensure a successful exit in 2025.",
     src: "https://www.youtube.com/embed/N4PUd0g_vDs?si=gP3asGFHOusha3bX",
   },
   {
