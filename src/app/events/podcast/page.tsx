@@ -608,7 +608,7 @@ const page = () => {
             </div>
             <div className="form-group m-3">
               <label htmlFor="interested">Are you interested in speaking on ? <span className="text-danger">*</span></label>
-              <select value={selectedValue}  {...register("interested")} className={`form-select ${errors.interested ? "is-invalid" : ""}`} id="interested" aria-label="Default select example">
+              <select   {...register("interested")} className={`form-select ${errors.interested ? "is-invalid" : ""}`} id="interested" aria-label="Default select example">
                 <option value="Pathfinders">Pathfinders</option>
                 <option value="Masterminds">Masterminds</option>
                 <option value="Any">Any</option>
