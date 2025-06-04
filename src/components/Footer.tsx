@@ -100,7 +100,7 @@ const Footer = () => {
               style={{ width: "150px", height: "auto" }}
             />
             <div className="col-12 col-md-10 mt-3 col-lg-10 d-flex flex-column text-justify-content-center align-items-start gap-2" style={{ textAlign: "justify" }}>
-              At Success Alchemists, we believe that our success is tied to yours. If you're a CEO seeking to deliver accelerated growth, augmented value, and a simplified business model, our experienced Scaling Up Coaches are here to help
+              At Success Alchemists Business Coaching Pvt. Ltd., we believe that our success is tied to yours. If you're a CEO seeking to deliver accelerated growth, augmented value, and a simplified business model, our experienced Scaling Up Coaches are here to help
             </div>
 
           </div>
@@ -313,7 +313,7 @@ const Footer = () => {
         style={{ borderRadius: 15 }}
       >
         <p className="mb-0">
-          © Copyright 2025 Success Alchemists All rights reserved.
+          © Copyright 2025 Success Alchemists Business Coaching Pvt. Ltd. All rights reserved.
         </p>
       </div>
     </div>
