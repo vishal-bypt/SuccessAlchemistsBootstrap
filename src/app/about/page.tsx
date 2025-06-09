@@ -66,7 +66,7 @@ const About = () => {
     {
       name: "Ashima Gupta",
       role: "Associate Coach",
-      description: "Ashima Gupta is a seasoned IT leader with over 20 years of experience developing products and leading high-performing teams across various industries. With a deep expertise in Agilbreathworks, team building, and scaling complex systems, she has consistently driven growth and operational excellence. Ashima is also a certified yoga instructor and Art of Living teacher, passionate about integrating mindfulness and well-being into professional environments through meditation and breathwork.",
+      description: "Ashima Gupta is a seasoned IT leader with over 20 years of experience developing products and leading high-performing teams across various industries. With a deep expertise in Agile practices, team building, and scaling complex systems, she has consistently driven growth and operational excellence. Ashima is also a certified yoga instructor and Art of Living teacher, passionate about integrating mindfulness and well-being into professional environments through meditation and breathwork.",
       image: coach1,
     },
     {
