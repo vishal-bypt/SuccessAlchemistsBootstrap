@@ -1,5 +1,8 @@
 import React from 'react'
 import "./assessement.css";
+import Image from "next/image";
+import Herosection from "../../../src/app/assessment/images/Hero-section.png";
+import infographic from "../../../src/app/assessment/images/Infographics.png";
 
 const page = () => {
   return (
@@ -48,8 +51,16 @@ const page = () => {
               is your Business Ready to Scale?
             </p>
           </div>
-          <div>
-            <img src="E:\Swapnil\work\Success Alchemists\IMG 3" alt="" />
+          <div className="col-md-12 d-flex justify-content-center mt-3" style={{height : '50%'}}>            
+            <Image
+              src={infographic}
+              alt="Infographics"
+              className="img-fluid"
+              style={{
+                width: '100%',
+                objectFit: 'cover'
+              }}
+            />
           </div>
         </div>      
       </div>

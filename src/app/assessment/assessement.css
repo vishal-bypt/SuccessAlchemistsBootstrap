@@ -1,3 +1,9 @@
+.first_div_layout {
+    background: url(./images/Hero-section.png) no-repeat center;
+    background-size: cover;
+}
+
+
 .second_div_layout{
     margin-top: 16px;
 }
