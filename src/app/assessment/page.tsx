@@ -19,7 +19,7 @@ const page = () => {
     const response = await fetch(apiUrl + "/initiate-payment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ order_id, amount: '25000', billing_name: `${firstName} ${lastName}`, billing_email: email, billing_tel: phone })});
+      body: JSON.stringify({ order_id, amount: '29500', billing_name: `${firstName} ${lastName}`, billing_email: email, billing_tel: phone })});
 
     const data = await response.json();
 
@@ -77,7 +77,7 @@ const page = () => {
             style={{ justifyContent: "center", alignItems: "center" }}
           >
             <p className="heading" style={{ color: "white" }}>
-              is your Business Ready to Scale?
+              Is your Business Ready to Scale?
               Assess your readiness with
               Scaling Up Assessment.
             </p>
@@ -111,7 +111,7 @@ const page = () => {
         <div className="d-flex flex-column justify-content-between second_text_div">
           <div>
             <p className="subhead" style={{ color: "Black" }}>
-              is your Business Ready to Scale?
+              Is your Business Ready to Scale?
             </p>
           </div>
           <div className="col-md-12 d-flex justify-content-center mt-3" style={{ height: '50%' }}>
