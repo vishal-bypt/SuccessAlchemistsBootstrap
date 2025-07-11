@@ -147,7 +147,7 @@ const Footer = () => {
                       : "inactive-link font-normal"
                     } link-underline link-underline-opacity-0`}
                   href={
-                    "https://q.esperto.one/q/sR4RRluSEazkK5XHPlVZ/6hDOhyCnHHDQf1Uzk3eg"
+                    "/assessment"
                   }
                 >
                   Quick assessment

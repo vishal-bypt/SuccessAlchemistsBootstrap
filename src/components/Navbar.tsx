@@ -112,8 +112,8 @@ const NavbarMenu = () => {
           </Nav.Link>
           <Nav.Link
             as={Link}
-              href="https://scalinguptoolkit.com/s/ScaleUpQA_AH"
-              target="_blank"
+              href="/assessment"
+              // href="https://scalinguptoolkit.com/s/ScaleUpQA_AH"
               className={`${
                 pathname === "/assessment"
                   ? "active-link font-semibold"
