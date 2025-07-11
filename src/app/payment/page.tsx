@@ -14,8 +14,8 @@ export default function CCForm() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        amount: '25000.00',
-        billing_name: 'John Doe',
+        amount: '29500.00',
+        billing_name: '',
       }),
     });
     const result = await res.json();
