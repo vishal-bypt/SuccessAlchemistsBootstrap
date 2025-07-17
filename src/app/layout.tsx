@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import TawkChat from '../components/TawkChat';
 import { ToastContainer } from "react-toastify";
+import Script from 'next/script';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,11 +72,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
       <body
         style={{ background: "#F5F5F5" }}
         className={`${geistSans.variable} ${geistMono.variable} p-3`}
       >
+        {/* Google Analytics Script */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-V9F61S5HVC"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-V9F61S5HVC');
+            `,
+          }}
+        />
         <NavbarMenu />
         <ToastContainer />
         {children}
