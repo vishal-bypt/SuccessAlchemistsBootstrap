@@ -67,7 +67,7 @@ const items = [
     id: 7,
     title: "Success Story # 7- Suvrajit Ghosh",
     description:
-      "In this inspiring testimonial, Suvrajit Ghosh, CEO of Mount Meru Millers Uganda, shares how the Scaling Up framework has transformed their business growth and operations. He reveals the practical benefits and strategic advantages that helped Mount Meru Millers streamline processes, strengthen leadership, and accelerate success. Suvrajit highlights how weekly KPI reviews have aligned his team to the organization’s key priorities, and how meeting rhythms have created clarity and accountability across the company. He also shares how these practices have saved him over 18 hours a week translating into thousands of dollars in value. He also emphasizes the effectiveness of the 7 Strata tool as an essential driver for any growth-focused organization.",
+      "In this inspiring testimonial, Suvrajit Ghosh, CEO of Mount Meru Millers Uganda, shares how the Scaling Up framework has transformed their business growth and operations. He reveals the practical benefits and strategic advantages that helped Mount Meru Millers streamline processes, strengthen leadership, and accelerate success. Suvrajit highlights how weekly KPI reviews have aligned his team to the organization’s key priorities, and how meeting rhythms have created clarity and accountability across the company. He also shares how these practices have saved him over 18 hours a week translating into thousands of dollars in value.",
     src: "https://www.youtube.com/embed/o-OwjN6PqBU",
   },
   {

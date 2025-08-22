@@ -74,6 +74,7 @@
     position: relative;
     flex-direction: column;
     background: linear-gradient(45deg, #418ef8, #018bd3, #418ef8);
+    overflow: hidden;
 }
 
 .client_review_text {
@@ -149,7 +150,14 @@
 
 @media only screen and (max-width: 576px) {
     .client-review-section {
-        padding: 28px;
+        width: 100%;
+        border-radius: 16px;
+        padding: 16px;
+        gap: 16px;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        background: linear-gradient(45deg, #418ef8, #018bd3, #418ef8);
     }
 }
 
