@@ -63,6 +63,20 @@ const items = [
       "In this video, Jaymin (CEO) & Nital (COO) talk about the benefits of implementing the Scaling Up framework. They ensured alignment at all levels within their business & experienced the resultant growth.",
     src: "https://www.youtube.com/embed/8_HT9N82rh4?si=49oIAZ5JZzhLG0B5",
   },
+  {
+    id: 7,
+    title: "Success Story # 7- Suvrajit Ghosh",
+    description:
+      "In this inspiring testimonial, Suvrajit Ghosh, CEO of Mount Meru Millers Uganda, shares how the Scaling Up framework has transformed their business growth and operations. He reveals the practical benefits and strategic advantages that helped Mount Meru Millers streamline processes, strengthen leadership, and accelerate success. Suvrajit highlights how weekly KPI reviews have aligned his team to the organization’s key priorities, and how meeting rhythms have created clarity and accountability across the company. He also shares how these practices have saved him over 18 hours a week translating into thousands of dollars in value. He also emphasizes the effectiveness of the 7 Strata tool as an essential driver for any growth-focused organization.",
+    src: "https://www.youtube.com/embed/o-OwjN6PqBU",
+  },
+  {
+    id: 8,
+    title: "Success Story # 8- Chirag Savla",
+    description:
+      "Chirag Savla, CEO of C1 Agri Cluster, Mount Meru Group, shares the impactful journey his organisation had with the Scaling Up framework and the remarkable benefit it has had on their business. He highlights how the Power of One tool can drive significant improvements in the bottom line when applied effectively. Chirag also offers valuable insights for organizations new to Scaling Up, especially, what they should expect, and the key aspirations to keep in mind as they embark on this growth journey.",
+    src: "https://www.youtube.com/embed/XDx0wO5wkzs",
+  }
 ];
 const page = () => {
   const swiperRef = useRef<any>(null);
@@ -109,10 +123,10 @@ const page = () => {
         </div>
         <div
           className="casestudy-container w-100 d-flex justify-content-center align-items-center"
-          // style={{ minHeight: "100vh" }}
+        // style={{ minHeight: "100vh" }}
         >
           <div className="row w-100">
-            <div className="col-md-12 d-flex justify-content-center" style={{height : '80%'}}>
+            <div className="col-md-12 d-flex justify-content-center" style={{ height: '80%' }}>
               <Image
                 src={success}
                 alt="case1"
