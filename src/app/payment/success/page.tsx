@@ -23,11 +23,11 @@ export default function PaymentSuccess() {
     <div className="container mx-auto max-w-md shadow-md rounded-lg">
       <div className="p-6 flex flex-col items-center">
         <div >
-        <Lottie
-          animationData={successAnimation}
-          loop={false}
-          style={{height:"400px",width:"auto"}}
-        />
+          <Lottie
+            animationData={successAnimation}
+            loop={false}
+            style={{ height: "400px", width: "auto" }}
+          />
         </div>
         {data && (
           <div className="mt-6 text-center">
