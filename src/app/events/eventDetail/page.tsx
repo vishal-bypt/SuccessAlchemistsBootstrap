@@ -14,8 +14,17 @@ import money_icon from "./Images/money_icon.png";
 import people_icon from "./Images/people_icon.png";
 import execution_icon from "./Images/execution_icon.svg";
 import speaker_photo from "./Images/speaker-photo.png"
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 
 const page = () => {
+ const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
 
   return (
     <div className="main_body_div">
@@ -41,7 +50,7 @@ const page = () => {
               <div className="attend-time-div" style={{ background: '#fff' }}>
                 <div>
                   <p className="attend-text" style={{ color: '#fba819' }}>Attend the workshop</p>
-                  <p className="location-text" style={{ color: '#fba819' }}>On 18th June 2025 at J W mariott, Pune</p>
+                  <p className="location-text" style={{ color: '#fba819' }}>On 6th November 2025 at J W mariott, Pune</p>
                 </div>
                 <Image className="img-fluid" src={Double_arrow} alt="right" />
               </div>
@@ -533,7 +542,7 @@ const page = () => {
                   <p>for a group of 3 participants from the same company</p>
                 </div>
               </div>
-              <button className="register-btn-book">Register Now</button>
+              <button className="register-btn-book" onClick={handleShow}>Register Now</button>
             </div>
           </div>
           <div className="col-md-6">
@@ -552,7 +561,7 @@ const page = () => {
                   <p style={{color:"#fff"}}>for a group of 3 participants from the same company</p>
                 </div>
               </div>
-              <button className="register-btn-book">Register Now</button>
+              <button className="register-btn-book" onClick={handleShow}>Register Now</button>
             </div>
           </div>
 
@@ -560,6 +569,41 @@ const page = () => {
 
 
       </div>
+
+     
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Book Your Seat</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                autoFocus
+              />
+            </Form.Group>
+             <Form.Select aria-label="Default select example">
+            <option>- Select Plan -</option>
+            <option value="1">Early Bird - For Individuals - ₹8999</option>
+            <option value="2">Early Bird - For Teams - ₹20999</option>
+            <option value="3">Regular - For Individuals - ₹10999</option>
+            <option value="4">Regular - For Teams - ₹23999</option>
+          </Form.Select>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Submit
+          </Button>
+        </Modal.Footer>
+      </Modal>
+     
 
     </div>
 
