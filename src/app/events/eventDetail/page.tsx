@@ -210,7 +210,7 @@ const page = () => {
               <div className="col-md-12">
                 <div className="unselected_box blue-box">
                   <div>
-                    <div className="unselected_box_card_title blue-box-title">Founders</div>
+                    <div className="unselected_box_card_title blue-box-title">Founders, Entrepreneurs</div>
 
                   </div>
                   <div className="unselected_box_text blue-box-content">
@@ -225,7 +225,7 @@ const page = () => {
               <div className="col-md-12">
                 <div className="unselected_box blue-box">
                   <div>
-                    <div className="unselected_box_card_title blue-box-title">CEOs</div>
+                    <div className="unselected_box_card_title blue-box-title">CEOs, Promoters</div>
                   </div>
 
                   <div className="unselected_box_text blue-box-content">
@@ -246,6 +246,21 @@ const page = () => {
                   <div className="unselected_box_text blue-box-content">
                     <p className="list-image-name">
                       Equip the top leadership team with the tools and best practices needed to achieve breakthrough results.
+                    </p>
+
+                  </div>
+
+                </div>
+              </div>
+              <div className="col-md-12">
+                <div className="unselected_box blue-box">
+                  <div>
+                    <div className="unselected_box_card_title blue-box-title">Businesses scaling fast or aiming to scale</div>
+                  </div>
+
+                  <div className="unselected_box_text blue-box-content">
+                    <p className="list-image-name">
+                      If you want more than incremental growth,  if you want transformational growth, this is for you!
                     </p>
 
                   </div>
@@ -306,11 +321,10 @@ const page = () => {
       <div className="fifth_component blue_bg">
         <div className="fifth_component_div">
           <div className="fifth_component_title_div" style={{ color: "#fff" }}>
-            What will the
-            workshop cover?
+            About Scaling Up & Why It Works
           </div>
           <div className="col-md-12 fifth_component_sub_title_div" style={{ color: "#fff" }}>
-            The foundational Four Pillars of Scaling Up!
+            The Scaling Up framework by Verne Harnish (used globally by thousands of growing companies) rests on making four critical decisions:
           </div>
         </div>
         <div
@@ -337,7 +351,7 @@ const page = () => {
                 />
               </div>
               <div className="unselected_box_text mb-2">
-                Talent Assessment Exercise to evaluate the current leadership within your organization & draw up a roadmap for specific individuals. Also, understand the Process Accountability Chart (PACe) which will help you to improve processes within your organization.
+                Having A-Players in the right roles, clear accountabilities, strong culture.
               </div>
               <div className="bottom_arrow_div">
                 {/* <Image
@@ -365,7 +379,7 @@ const page = () => {
                 />
               </div>
               <div className="unselected_box_text mb-2">
-                Introduction to the One Page Strategic Plan (OPSP) which will help you build focus and alignment across all levels of your organization. You will build a Vision Summary (Simplified OPSP) for your organization.
+                Clear, differentiated, scalable plan with clarity around core values, purpose, core customers, market positioning and much more
               </div>
               <div className="bottom_arrow_div">
                 {/* <Image
@@ -393,7 +407,7 @@ const page = () => {
                 />
               </div>
               <div className="unselected_box_text mb-2">
-                Rockefeller Habits checklist which will help build seamless execution capabilities across your organization. Learn the use of the simple, but powerful Who-What-When (WWW) Summary to drive actions and accountabilities.
+                Disciplined processes, regular meeting rhythms, accountability & metrics.
               </div>
               <div className="bottom_arrow_div">
                 {/* <Image
@@ -422,7 +436,7 @@ const page = () => {
                 />
               </div>
               <div className="unselected_box_text mb-2">
-                The Power of One Tool which will show you the impact on cash-flow when making changes to the financial levers of your business
+                Ensuring strong cash flow and avoiding cash traps that growth tends to create.
               </div>
               <div className="bottom_arrow_div">
                 {/* <Image
@@ -520,8 +534,8 @@ const page = () => {
 
 
       <div className="book-seat-div">
-        <h2>2024 Success Alchemists Workshop</h2>
-        <p>18th June 2025 .	10:00 AM  . 	JW MARRIOTT, Senapati Bapat Road | Pune, 411053</p>
+        <h2>2025 Success Alchemists Workshop</h2>
+        <p>06th November 2025 .	10:00 AM  . 	JW MARRIOTT, Senapati Bapat Road | Pune, 411053</p>
       </div>
       <div className="col-md-11 book-seat-inner-div" id="bookID">
         <h3 className="book-header">Book Your Seat</h3>
