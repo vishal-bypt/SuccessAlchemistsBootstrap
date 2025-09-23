@@ -19,12 +19,115 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
 const page = () => {
- const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [plan, setPlan] = useState("");
+  const [order_id] = useState(`ORD${Date.now()}`);
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // ✅ Basic validations
+    if (!firstName || !lastName || !email || !phone || !plan) {
+      alert("All fields are required!");
+      return;
+    }
+
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+      alert("Enter a valid email!");
+      return;
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+      alert("Enter a valid 10-digit phone number!");
+      return;
+    }
+
+    await handlePayment({ firstName, lastName, email, phone, plan });
+
+    handleClose();
+  };
+
+  const handlePayment = async ({
+    firstName,
+    lastName,
+    email,
+    phone,
+    plan,
+  }: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    plan: string;
+  }) => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+    const payload = {
+      order_id: order_id,
+      amount: plan,
+      billing_name: `${firstName} ${lastName}`,
+      billing_email: email,
+      billing_tel: phone,
+    };
+
+    console.log("Records is:::::", payload);
+
+    const response = await fetch(apiUrl + "/initiate-payment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await response.json();
+    console.log("Response from /initiate-payment:", data);
+
+    if (data.paymentUrl) {
+      try {
+        const { encRequest, access_code, ccavenueUrl } = data;
+
+        if (encRequest && access_code) {
+          const existingForm = document.getElementById("ccavenue-payment-form");
+          if (existingForm) existingForm.remove();
+
+          const form = document.createElement("form");
+          form.method = "POST";
+          form.action = ccavenueUrl;
+          form.id = "ccavenue-payment-form";
+
+          const accessInput = document.createElement("input");
+          accessInput.type = "hidden";
+          accessInput.name = "access_code";
+          accessInput.value = access_code;
+          form.appendChild(accessInput);
+
+          const encInput = document.createElement("input");
+          encInput.type = "hidden";
+          encInput.name = "encRequest";
+          encInput.value = encRequest;
+          form.appendChild(encInput);
+
+          document.body.appendChild(form);
+          form.submit();
+        } else {
+          alert("Payment failed: Missing required data.");
+        }
+      } catch (error) {
+        alert("Payment failed: Invalid URL");
+        console.error(error);
+      }
+    } else {
+      alert("Payment failed: Server error");
+      console.error(data);
+    }
+  };
 
   return (
     <div className="main_body_div">
@@ -566,13 +669,13 @@ const page = () => {
               </label>
               <div className="content-label-div">
                 <div className="left-content-label">
-                  <h3 style={{color:"#fff"}}>For Individuals</h3>
-                  <h5 style={{color:"#fff"}}>₹10,999 <span>+ GST</span></h5>
+                  <h3 style={{ color: "#fff" }}>For Individuals</h3>
+                  <h5 style={{ color: "#fff" }}>₹10,999 <span>+ GST</span></h5>
                 </div>
                 <div className="left-content-label right-content-label">
-                  <h3 style={{color:"#fff"}}>For Teams</h3>
-                  <h5 style={{color:"#fff"}}>₹23,999 <span>+ GST</span></h5>
-                  <p style={{color:"#fff"}}>for a group of 3 participants from the same company</p>
+                  <h3 style={{ color: "#fff" }}>For Teams</h3>
+                  <h5 style={{ color: "#fff" }}>₹23,999 <span>+ GST</span></h5>
+                  <p style={{ color: "#fff" }}>for a group of 3 participants from the same company</p>
                 </div>
               </div>
               <button className="register-btn-book" onClick={handleShow}>Register Now</button>
@@ -580,44 +683,84 @@ const page = () => {
           </div>
 
         </div>
-
-
       </div>
 
-     
+
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Book Your Seat</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form onSubmit={handleSubmit}>
+          <Modal.Header closeButton>
+            <Modal.Title>Book Your Seat</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group className="mb-3">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="Enter first name"
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                type="text"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                placeholder="Enter last name"
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@example.com"
-                autoFocus
+                required
               />
             </Form.Group>
-             <Form.Select aria-label="Default select example">
-            <option>- Select Plan -</option>
-            <option value="1">Early Bird - For Individuals - ₹8999</option>
-            <option value="2">Early Bird - For Teams - ₹20999</option>
-            <option value="3">Regular - For Individuals - ₹10999</option>
-            <option value="4">Regular - For Teams - ₹23999</option>
-          </Form.Select>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Submit
-          </Button>
-        </Modal.Footer>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Phone Number</Form.Label>
+              <Form.Control
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="10-digit phone number"
+                required
+              />
+            </Form.Group>
+
+            <Form.Label>Plan</Form.Label>
+            <Form.Select
+              value={plan}
+              onChange={(e) => setPlan(e.target.value)}
+              required
+            >
+              <option value="">- Select Plan -</option>
+              <option value="8999">Early Bird - For Individuals - ₹8999</option>
+              <option value="20999">Early Bird - For Teams - ₹20999</option>
+              <option value="10999">Regular - For Individuals - ₹10999</option>
+              <option value="23999">Regular - For Teams - ₹23999</option>
+            </Form.Select>
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button type="submit" variant="primary">
+              Submit
+            </Button>
+          </Modal.Footer>
+        </Form>
       </Modal>
-     
+
 
     </div>
 
