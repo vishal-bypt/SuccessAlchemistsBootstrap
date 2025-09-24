@@ -730,8 +730,8 @@ const page = () => {
             >
               <option value="">- Select Plan -</option>
               <option value="9999">Early Bird - For Individuals - ₹9999</option>
-              <option value="11999">Early Bird - For Teams - ₹11999</option>
-              <option value="23999">Regular - For Individuals - ₹23999</option>
+              <option value="23999">Early Bird - For Teams - ₹23999</option>
+              <option value="11999">Regular - For Individuals - ₹11999</option>
               <option value="27999">Regular - For Teams - ₹27999</option>
             </Form.Select>
           </Modal.Body>
