@@ -646,16 +646,16 @@ const page = () => {
           <div className="col-md-6">
             <div className="left-div">
               <label className="till-date-label">
-                Early bird Till 5th June
+                Early bird Till 10th Oct 2025
               </label>
               <div className="content-label-div">
                 <div className="left-content-label">
                   <h3>For Individuals</h3>
-                  <h5>₹8,999 <span>+ GST</span></h5>
+                  <h5>₹9,999 <span>+ GST</span></h5>
                 </div>
                 <div className="left-content-label right-content-label">
                   <h3>For Teams</h3>
-                  <h5>₹20,999 <span>+ GST</span></h5>
+                  <h5>₹23,999 <span>+ GST</span></h5>
                   <p>for a group of 3 participants from the same company</p>
                 </div>
               </div>
@@ -665,16 +665,16 @@ const page = () => {
           <div className="col-md-6">
             <div className="left-div left-div-border">
               <label className="till-date-label till-date-grey" >
-                Regular 6th to 17th June
+                Regular after 11th Oct 2025
               </label>
               <div className="content-label-div">
                 <div className="left-content-label">
                   <h3 style={{ color: "#fff" }}>For Individuals</h3>
-                  <h5 style={{ color: "#fff" }}>₹10,999 <span>+ GST</span></h5>
+                  <h5 style={{ color: "#fff" }}>₹11,999 <span>+ GST</span></h5>
                 </div>
                 <div className="left-content-label right-content-label">
                   <h3 style={{ color: "#fff" }}>For Teams</h3>
-                  <h5 style={{ color: "#fff" }}>₹23,999 <span>+ GST</span></h5>
+                  <h5 style={{ color: "#fff" }}>₹27,999 <span>+ GST</span></h5>
                   <p style={{ color: "#fff" }}>for a group of 3 participants from the same company</p>
                 </div>
               </div>
@@ -743,10 +743,10 @@ const page = () => {
               required
             >
               <option value="">- Select Plan -</option>
-              <option value="8999">Early Bird - For Individuals - ₹8999</option>
-              <option value="20999">Early Bird - For Teams - ₹20999</option>
-              <option value="10999">Regular - For Individuals - ₹10999</option>
-              <option value="23999">Regular - For Teams - ₹23999</option>
+              <option value="9999">Early Bird - For Individuals - ₹9999</option>
+              <option value="11999">Early Bird - For Teams - ₹11999</option>
+              <option value="23999">Regular - For Individuals - ₹23999</option>
+              <option value="27999">Regular - For Teams - ₹27999</option>
             </Form.Select>
           </Modal.Body>
 
