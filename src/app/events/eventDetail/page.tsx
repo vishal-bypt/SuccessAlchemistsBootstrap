@@ -153,7 +153,7 @@ const page = () => {
               <div className="attend-time-div" style={{ background: '#fff' }}>
                 <div>
                   <p className="attend-text" style={{ color: '#fba819' }}>Attend the workshop</p>
-                  <p className="location-text" style={{ color: '#fba819' }}>On 6th November 2025 at J W mariott, Pune</p>
+                  <p className="location-text" style={{ color: '#fba819' }}>On 6th November 2025 at J W marriott, Pune</p>
                 </div>
                 <Image className="img-fluid" src={Double_arrow} alt="right" />
               </div>
@@ -539,7 +539,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className="fifth_component">
+      {/* <div className="fifth_component">
         <div className="who-basecamp">
           <h1 className="fifth_component_title_div">Who is the basecamp for?</h1>
           <div className="row mt-4">
@@ -558,9 +558,9 @@ const page = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="scalingup-all-div">
+      {/* <div className="scalingup-all-div">
         <div>
           <h1 className="fifth_component_title_div">What is Scaling Up all about?</h1>
           <p className="fifth_component_sub_title_div">Scaling Up is a proven methodology that has transformed countless organizations and helped them achieve remarkable success. Join us on this transformative journey and discover how Scaling Up can take your business to new heights.</p>
@@ -618,7 +618,7 @@ const page = () => {
 
         </div>
 
-      </div>
+      </div> */}
 
 
 
