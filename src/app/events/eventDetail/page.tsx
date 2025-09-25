@@ -153,7 +153,7 @@ const page = () => {
               <div className="attend-time-div" style={{ background: '#fff' }}>
                 <div>
                   <p className="attend-text" style={{ color: '#fba819' }}>Attend the workshop</p>
-                  <p className="location-text" style={{ color: '#fba819' }}>On 6th November 2025 at J W marriott, Pune</p>
+                  <p className="location-text" style={{ color: '#fba819' }}>On 6th November 2025 at J W Marriott, Pune</p>
                 </div>
                 <Image className="img-fluid" src={Double_arrow} alt="right" />
               </div>
@@ -638,7 +638,7 @@ const page = () => {
 
       <div className="book-seat-div">
         <h2>2025 Success Alchemists Workshop</h2>
-        <p>06th November 2025 .	10:00 AM  . 	JW MARRIOTT, Senapati Bapat Road | Pune, 411053</p>
+        <p>06th November 2025 .	10:00 AM  . 	J W Marriott, Senapati Bapat Road | Pune, 411053</p>
       </div>
       <div className="col-md-11 book-seat-inner-div" id="bookID">
         <h3 className="book-header">Book Your Seat</h3>
