@@ -259,7 +259,7 @@ const Footer = () => {
               <h5 className="mb-3">What’s New</h5>
 
               <form onSubmit={handleSubmit(onSubmit)} className="w-100">
-                <div className="row g-2 align-items-center">
+                <div className="row g-2 align-items-start">
                   {/* Email Input */}
                   <div className="col-12 col-sm-8">
                     <input
