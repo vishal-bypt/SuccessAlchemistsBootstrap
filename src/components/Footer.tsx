@@ -274,7 +274,6 @@ const Footer = () => {
                         },
                       })}
                       style={{
-                        padding: "12px 16px",
                         fontSize: "1rem",
                         borderRadius: "8px",
                       }}
@@ -290,11 +289,13 @@ const Footer = () => {
                   <div className="col-12 col-sm-4 d-grid">
                     <button
                       type="submit"
-                      className="btn btn-primary fw-semibold py-2 w-100"
+                      className="btn fw-semibold py-2 w-100"
                       style={{
                         borderRadius: "8px",
                         fontSize: "1rem",
                         letterSpacing: "0.5px",
+                        backgroundColor: "#FBA819",
+                        color: "#FFFFFF",
                         height: 38
                       }}
                     >
