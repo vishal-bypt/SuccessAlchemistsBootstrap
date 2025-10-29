@@ -39,6 +39,7 @@ import money_icon from "./images/money_icon.png";
 import people_icon from "./images/people_icon.png";
 import peoples_meeting_image from "./images/peoples_meeting_image.jpeg";
 import right_arrow_btn from "./images/right-arrow-btn.png";
+import whatsNew from "../home/animations/new_Label.json"
 
 // Import Swiper styles
 import "swiper/css";
@@ -50,6 +51,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "./home.css";
 import Typed from "typed.js";
 import { text } from "stream/consumers";
+import Lottie from "lottie-react";
 
 const items = [
   {
@@ -153,11 +155,95 @@ const Home = () => {
     setActiveIndex(index);
   };
 
+  const [blink, setBlink] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => setBlink((prev) => !prev), 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div
       className="hero-section box-shadow"
       style={{ display: "flex", gap: "16px", flexDirection: "column" }}
     >
+      {/* Basecamp Card */}
+      <div
+        className="position-relative w-100 d-flex flex-column flex-md-row justify-content-between align-items-center p-4 text-white"
+        style={{
+          background: "linear-gradient(45deg, #418ef8, #018bd3, #418ef8)",
+          borderRadius: "24px",
+          overflow: "hidden",
+
+        }}
+      >
+        {/* What's New Lottie Animation */}
+        <div
+          className={`position-absolute ${blink ? "opacity-100" : "opacity-75"}`}
+          style={{
+            top: "-5px",
+            left: "-10px",
+            transform: "rotate(-45deg)",
+            width: "120px", // adjust width as needed
+            height: "120px",
+            transition: "opacity 0.3s ease-in-out",
+            cursor: "pointer",
+          }}
+        >
+          <a target="_blank" rel="noopener noreferrer">
+            <Lottie
+              animationData={whatsNew}
+              loop={true}
+              autoplay={true}
+              style={{ width: "100%", height: "100%" }}
+            />
+          </a>
+        </div>
+
+        {/* Left Text Section */}
+        <div
+          className="text-center text-md-start mb-3 mb-md-0"
+          style={{ marginLeft: "60px" }}
+        >
+          <h2 className="inner_first_div mb-2">Basecamp</h2>
+          <p className="inner_second_div mb-0">
+            Unlock the frameworks to scale up your business.
+          </p>
+        </div>
+
+        {/* Right Button */}
+        <div
+          className="d-flex align-items-center justify-content-center gap-2 px-4 px-md-5 px-lg-4 py-2 py-md-2 py-lg-3 rounded-4 text-decoration-none bg-white mt-3 mt-md-0 me-md-1 me-lg-3"
+          style={{
+            color: "#007AFF",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+            border: "none",
+            whiteSpace: "nowrap",
+          }}
+        >
+          <a
+            href="/events/eventDetail"
+            className="text-decoration-none responsive-btn-text"
+            style={{ color: "#007AFF" }}
+          >
+            Attend the Workshop
+          </a>
+
+          <Image
+            className="img-fluid"
+            src={Double_arrow}
+            alt="right"
+            width={40}
+            height={40}
+            style={{
+              filter:
+                "brightness(0) saturate(100%) invert(34%) sepia(78%) saturate(3666%) hue-rotate(199deg) brightness(101%) contrast(110%)",
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Video Card */}
       <div className="video-wrapper">
         <video className="w-100 video-home" autoPlay loop muted>
           <source src="/Home-page-video.mp4" type="video/mp4" />

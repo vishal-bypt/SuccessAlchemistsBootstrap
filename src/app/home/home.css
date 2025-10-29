@@ -10,6 +10,34 @@
     background-size: cover;
 }
 
+/* Default (Mobile First) */
+.responsive-btn-text {
+  font-size: 16px; /* Mobile */
+  font-weight: 400;
+}
+
+/* Tablets (≥768px) */
+@media (min-width: 768px) {
+  .responsive-btn-text {
+    font-size: 20px;
+  }
+}
+
+/* Desktops (≥992px) */
+@media (min-width: 992px) {
+  .responsive-btn-text {
+    font-size: 25px;
+  }
+}
+
+/* Large Desktops (≥1200px) */
+@media (min-width: 1200px) {
+  .responsive-btn-text {
+    font-size: 27px;
+  }
+}
+
+
 .video-wrapper {
     position: relative;
     width: 100%;
