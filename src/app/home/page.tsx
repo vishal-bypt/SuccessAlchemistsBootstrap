@@ -40,6 +40,8 @@ import people_icon from "./images/people_icon.png";
 import peoples_meeting_image from "./images/peoples_meeting_image.jpeg";
 import right_arrow_btn from "./images/right-arrow-btn.png";
 import whatsNew from "../home/animations/new_Label.json"
+import Link from "next/link";
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -221,13 +223,9 @@ const Home = () => {
             whiteSpace: "nowrap",
           }}
         >
-          <a
-            href="/events/eventDetail"
-            className="text-decoration-none responsive-btn-text"
-            style={{ color: "#007AFF" }}
-          >
+          <Link href="/events/eventDetail" className="text-decoration-none responsive-btn-text" style={{ color: "#007AFF" }}>
             Attend the Workshop
-          </a>
+          </Link>
 
           <Image
             className="img-fluid"
