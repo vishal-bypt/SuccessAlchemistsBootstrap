@@ -214,31 +214,38 @@ const Home = () => {
         </div>
 
         {/* Right Button */}
-        <div
-          className="d-flex align-items-center justify-content-center gap-2 px-4 px-md-5 px-lg-4 py-2 py-md-2 py-lg-3 rounded-4 text-decoration-none bg-white mt-3 mt-md-0 me-md-1 me-lg-3"
-          style={{
-            color: "#007AFF",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-            border: "none",
-            whiteSpace: "nowrap",
-          }}
+        <Link
+          href="/events/eventDetail"
+          className="text-decoration-none"
+          style={{ textDecoration: "none" }}
         >
-          <Link href="/events/eventDetail" className="text-decoration-none responsive-btn-text" style={{ color: "#007AFF" }}>
-            Attend the Workshop
-          </Link>
-
-          <Image
-            className="img-fluid"
-            src={Double_arrow}
-            alt="right"
-            width={40}
-            height={40}
+          <div
+            className="d-flex align-items-center justify-content-center gap-2 px-4 px-md-5 px-lg-4 py-2 py-md-2 py-lg-3 rounded-4 bg-white mt-3 mt-md-0 me-md-1 me-lg-3"
             style={{
-              filter:
-                "brightness(0) saturate(100%) invert(34%) sepia(78%) saturate(3666%) hue-rotate(199deg) brightness(101%) contrast(110%)",
+              color: "#007AFF",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+              border: "none",
+              whiteSpace: "nowrap",
+              cursor: "pointer",
             }}
-          />
-        </div>
+          >
+            <span className="responsive-btn-text m-0">
+              Attend the Workshop
+            </span>
+
+            <Image
+              className="img-fluid"
+              src={Double_arrow}
+              alt="right"
+              width={40}
+              height={40}
+              style={{
+                filter:
+                  "brightness(0) saturate(100%) invert(34%) sepia(78%) saturate(3666%) hue-rotate(199deg) brightness(101%) contrast(110%)",
+              }}
+            />
+          </div>
+        </Link>
       </div>
 
       {/* Video Card */}
