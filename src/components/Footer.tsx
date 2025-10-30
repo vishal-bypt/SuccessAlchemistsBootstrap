@@ -70,12 +70,12 @@ const Footer = () => {
       reset();
       handleClose();
       localStorage.setItem('hasSubmittedInquiry', 'true');
-      if(data.success) {
+      if (data.success) {
         Toast.success("Your request for newsletter has been submitted.");
       } else {
         Toast.error(data?.message);
       }
-      
+
       setShowSpinner(false);
       // setTimeout(() => {
       //   router.push("/"); // Redirect to the home page after 2 seconds  
@@ -110,8 +110,8 @@ const Footer = () => {
               <li>
                 <Link
                   className={`${pathName === "/home"
-                      ? "active-link font-semibold"
-                      : "inactive-link font-normal"
+                    ? "active-link font-semibold"
+                    : "inactive-link font-normal"
                     } link-underline link-underline-opacity-0`}
                   href={"/home"}
                 >
@@ -121,8 +121,8 @@ const Footer = () => {
               <li>
                 <Link
                   className={`${pathName === "/about"
-                      ? "active-link font-semibold"
-                      : "inactive-link font-normal"
+                    ? "active-link font-semibold"
+                    : "inactive-link font-normal"
                     } link-underline link-underline-opacity-0`}
                   href={"/about"}
                 >
@@ -132,8 +132,8 @@ const Footer = () => {
               <li>
                 <Link
                   className={`${pathName === "/success"
-                      ? "active-link font-semibold"
-                      : "inactive-link font-normal"
+                    ? "active-link font-semibold"
+                    : "inactive-link font-normal"
                     } link-underline link-underline-opacity-0`}
                   href={"/success"}
                 >
@@ -143,8 +143,8 @@ const Footer = () => {
               <li>
                 <Link
                   className={`${pathName === "/assessment"
-                      ? "active-link font-semibold"
-                      : "inactive-link font-normal"
+                    ? "active-link font-semibold"
+                    : "inactive-link font-normal"
                     } link-underline link-underline-opacity-0`}
                   href={
                     "/assessment"
@@ -156,8 +156,8 @@ const Footer = () => {
               <li>
                 <Link
                   className={`${pathName === "/resources"
-                      ? "active-link font-semibold"
-                      : "inactive-link font-normal"
+                    ? "active-link font-semibold"
+                    : "inactive-link font-normal"
                     } link-underline link-underline-opacity-0`}
                   href={"/resources"}
                 >
@@ -167,13 +167,13 @@ const Footer = () => {
               <li>
                 <Link
                   className={`${[
-                      "/events/podcast",
-                      "/events/webinar",
-                      "/events/basecamp",
-                      "/events/webinarDetail",
-                    ].includes(pathName)
-                      ? "active-link font-semibold"
-                      : "inactive-link font-normal"
+                    "/events/podcast",
+                    "/events/webinar",
+                    "/events/basecamp",
+                    "/events/webinarDetail",
+                  ].includes(pathName)
+                    ? "active-link font-semibold"
+                    : "inactive-link font-normal"
                     } link-underline link-underline-opacity-0`}
                   href={"/events/webinar"}
                 >
@@ -183,8 +183,8 @@ const Footer = () => {
               <li>
                 <Link
                   className={`${pathName === "/contactUs"
-                      ? "active-link font-semibold"
-                      : "inactive-link font-normal"
+                    ? "active-link font-semibold"
+                    : "inactive-link font-normal"
                     } link-underline link-underline-opacity-0`}
                   href={"/contactUs"}
                 >
@@ -254,18 +254,18 @@ const Footer = () => {
               ))}
             </div>
 
-            <div className="flex gap-3 mt-5">
-              <h5>What’s New</h5>
-            </div>
-            <div className="flex">
-              <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="row mt-3">
-                  <div className="col-md-6">
-                      <input
+            {/* What's New Section */}
+            <div className="mt-5">
+              <h5 className="mb-3">What’s New</h5>
+
+              <form onSubmit={handleSubmit(onSubmit)} className="w-100">
+                <div className="row g-2 align-items-start">
+                  {/* Email Input */}
+                  <div className="col-12 col-sm-8">
+                    <input
                       type="text"
-                      className={`form-control newsletter-input input ${errors.email ? "is-invalid" : ""
-                        }`}
-                      placeholder="Email"
+                      className={`form-control ${errors.email ? "is-invalid" : ""}`}
+                      placeholder="Enter your email"
                       {...register("email", {
                         required: "Email is required",
                         pattern: {
@@ -273,38 +273,39 @@ const Footer = () => {
                           message: "Invalid email address",
                         },
                       })}
+                      style={{
+                        fontSize: "1rem",
+                        borderRadius: "8px",
+                      }}
                     />
-                  </div>
-                   <div className="col-md-6">
-                    
-                    <button
-                      type="submit"
-                      className="btn btn-primary btn-md subscribe-btn"
-                    >
-                      Subscribe
-                    </button>
-                  </div>
                     {errors.email && (
-                      <div
-                        className="invalid-feedback position-absolute"
-                        style={{ top: "100%", left: 0 }}
-                      >
+                      <div className="invalid-feedback d-block">
                         {String(errors.email.message)}
                       </div>
                     )}
                   </div>
-               
 
-                {/* <div className="d-flex col-12 col-md-12 col-lg-12 position-relative mt-2">   
+                  {/* Subscribe Button */}
+                  <div className="col-12 col-sm-4 d-grid">
                     <button
                       type="submit"
-                      className="col-md-4 btn btn-primary btn-sm w-30"
+                      className="btn fw-semibold py-2 w-100"
+                      style={{
+                        borderRadius: "8px",
+                        fontSize: "1rem",
+                        letterSpacing: "0.5px",
+                        backgroundColor: "#FBA819",
+                        color: "#FFFFFF",
+                        height: 38
+                      }}
                     >
                       Subscribe
                     </button>
-                  </div> */}
+                  </div>
+                </div>
               </form>
             </div>
+
           </div>
         </div>
       </footer>
