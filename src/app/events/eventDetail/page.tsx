@@ -665,7 +665,7 @@ const page = () => {
           <div className="col-md-6">
             <div className="left-div left-div-border">
               <label className="till-date-label till-date-grey" >
-                Regular after 23rd Oct 2025
+                Regular after 31st Oct 2025
               </label>
               <div className="content-label-div">
                 <div className="left-content-label">
