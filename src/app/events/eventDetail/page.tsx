@@ -659,13 +659,13 @@ const page = () => {
                   <p>for a group of 3 participants from the same company</p>
                 </div>
               </div>
-              <button className="register-btn-book" onClick={handleShow}>Register Now</button>
+              <button disabled className="register-btn-book" onClick={handleShow}>Register Now</button>
             </div>
           </div>
           <div className="col-md-6">
             <div className="left-div left-div-border">
               <label className="till-date-label till-date-grey" >
-                Regular after 31st Oct 2025
+                Regular
               </label>
               <div className="content-label-div">
                 <div className="left-content-label">
@@ -678,7 +678,7 @@ const page = () => {
                   <p style={{ color: "#fff" }}>for a group of 3 participants from the same company</p>
                 </div>
               </div>
-              <button disabled className="register-btn-book" onClick={handleShow}>Register Now</button>
+              <button className="register-btn-book" onClick={handleShow}>Register Now</button>
             </div>
           </div>
 
