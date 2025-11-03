@@ -659,7 +659,7 @@ const page = () => {
                   <p>for a group of 3 participants from the same company</p>
                 </div>
               </div>
-              <button disabled className="register-btn-book" onClick={handleShow}>Register Now</button>
+              <button disabled className="btn btn-secondary" onClick={handleShow}>Early Bird Offer Closed</button>
             </div>
           </div>
           <div className="col-md-6">
