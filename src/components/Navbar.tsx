@@ -173,7 +173,7 @@ const NavbarMenu = () => {
             id="basic-nav-dropdown"
           >
           
-            <NavDropdown.Item>
+            {/* <NavDropdown.Item>
               <Link
                 href="/events/webinar"
                 className={`${
@@ -184,7 +184,7 @@ const NavbarMenu = () => {
               >
                 Masterminds Webinar
               </Link>
-            </NavDropdown.Item>
+            </NavDropdown.Item> */}
             <NavDropdown.Item>
               <Link
                 href="/events/basecamp"
@@ -197,7 +197,7 @@ const NavbarMenu = () => {
                 Basecamp Workshop
               </Link>
             </NavDropdown.Item>
-            <NavDropdown.Item>
+            {/* <NavDropdown.Item>
               <Link
                 href="/events/podcast"
                 className={`${
@@ -209,7 +209,7 @@ const NavbarMenu = () => {
                 {" "}
                 Pathfinders Podcast
               </Link>
-            </NavDropdown.Item>
+            </NavDropdown.Item> */}
           </NavDropdown>
           <Nav.Link
             as={Link}

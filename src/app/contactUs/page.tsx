@@ -101,7 +101,7 @@ const ContactUs = () => {
                       pattern: noOnlySpaces,
                     })}
                   />
-                  <label htmlFor="name">Name</label>
+                  <label htmlFor="name">Name <span className="text-danger">*</span></label>
                   {errors.name && (
                     <div className="invalid-feedback">
                       {String(errors.name.message)}
@@ -127,7 +127,7 @@ const ContactUs = () => {
                       },
                     })}
                   />
-                  <label htmlFor="email">Email</label>
+                  <label htmlFor="email">Email <span className="text-danger">*</span></label>
                   {errors.email && (
                     <div className="invalid-feedback">
                       {String(errors.email.message)}
@@ -155,7 +155,7 @@ const ContactUs = () => {
                         noOnlySpaces.value.test(value) || noOnlySpaces.message,
                     })}
                   />
-                  <label htmlFor="phone">Phone number</label>
+                  <label htmlFor="phone">Phone number <span className="text-danger">*</span></label>
                   {errors.phone && (
                     <div className="invalid-feedback">
                       {String(errors.phone.message)}
@@ -177,7 +177,7 @@ const ContactUs = () => {
                       pattern: noOnlySpaces,
                     })}
                   ></textarea>
-                  <label htmlFor="message">Message</label>
+                  <label htmlFor="message">Message <span className="text-danger">*</span></label>
                   {errors.message && (
                     <div className="invalid-feedback">
                       {String(errors.message.message)}
