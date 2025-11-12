@@ -127,12 +127,12 @@ const page = () => {
           <Image src={curve1} alt="curve1" className="image3 img-fluid" />
           <div className="row align-items-center">
             <div className="col-md-5 col-lg-5 col-xxl-4">
-              <Link href="/events/eventDetail" style={{textDecoration:'none' }}>
-              {/* <Link href="javascript:void(0);" style={{textDecoration:'none' }}> */}
+              {/* <Link href="/events/eventDetail" style={{textDecoration:'none' }}> */}
+              <Link href="javascript:void(0);" style={{textDecoration:'none' }}>
               <div className="attend-time-div">
                 <div>
-                  {/* <p className="attend-text">Coming Soon</p> */}
-                <p className="attend-text">Attend the workshop</p>
+                  <p className="attend-text">Coming Soon</p>
+                {/* <p className="attend-text">Attend the workshop</p> */}
                 {/* <p className="location-text">On 18th June 2025 at J W mariott, Pune</p> */}
                 </div>
                 <Image className="img-fluid" src={Double_arrow} alt="right" />

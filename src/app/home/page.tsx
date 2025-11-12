@@ -122,6 +122,7 @@ const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const iframeRefs = useRef<(HTMLIFrameElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(null);
+  const [visible, setVisible] = useState(false);
   const typedRef = useRef(null);
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
@@ -170,7 +171,7 @@ const Home = () => {
       style={{ display: "flex", gap: "16px", flexDirection: "column" }}
     >
       {/* Basecamp Card */}
-      <div
+     {visible && ( <div
         className="position-relative w-100 d-flex flex-column flex-md-row justify-content-between align-items-center p-4 text-white"
         style={{
           background: "linear-gradient(45deg, #418ef8, #018bd3, #418ef8)",
@@ -247,7 +248,7 @@ const Home = () => {
           </div>
         </Link>
       </div>
-
+     )}
       {/* Video Card */}
       <div className="video-wrapper">
         <video className="w-100 video-home" autoPlay loop muted>
