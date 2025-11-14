@@ -620,6 +620,10 @@ const page = () => {
             slidesPerView: 1, // 1 slide on small screens like mobile devices
             spaceBetween: 10, // Reduce space between slides on mobile
           },
+          280: {
+            slidesPerView: 1, // 1 slide on small screens like mobile devices
+            spaceBetween: 10, // Reduce space between slides on mobile
+          },
         }}
         style={{ width: '100%' }}
       >
