@@ -64,6 +64,62 @@ const peopleArray = [
   },
 ];
 
+const strategyArray = [
+  {
+    title: "Strategy",
+    desc: "7 Strata",
+    slug: "7-strata",
+    image: Strategy1,
+  },
+  {
+    title: "Strategy",
+    desc: "Vision Summary",
+    slug: "vision-summary",
+    image: Strategy2,
+  },
+  {
+    title: "OPSP",
+    desc: "One Page Strategic Plan",
+    slug: "one-page-strategic-plan",
+    image: Strategy3,
+  },
+  {
+    title: "SWT",
+    desc: "Strengths Weaknesses Trends",
+    slug: "strengths-weaknesses-trends",
+    image: Strategy4,
+  },
+];
+
+const executionArray = [
+  {
+    title: "WWW",
+    desc: "Who What When",
+    slug: "who-what-when",
+    image: Execution1,
+  },
+  {
+    title: "Execution",
+    desc: "Rockefeller Habits Checklist",
+    slug: "rockefeller-habits-checklist",
+    image: Execution2,
+  }
+];
+
+const cashArray = [
+  {
+    title: "CASh",
+    desc: "Cash Acceleration Strategies",
+    slug: "cash-acceleration-strategies",
+    image: Cash1,
+  },
+  {
+    title: "POO",
+    desc: "The Power of One",
+    slug: "the-power-of-one",
+    image: Cash2,
+  }
+];
 
 const page = () => {
   const {
@@ -73,13 +129,36 @@ const page = () => {
     formState: { errors },
   } = useForm();
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    slidesToShow: 4,
-    slidesToScroll: 1
-  };
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+
+  responsive: [
+    {
+      breakpoint: 1024,   // tablet
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 768,    // mobile
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 480,    // small mobile
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
   const router = useRouter();
   const [showSpinner, setShowSpinner] = useState(false);
   const [show, setShow] = useState(false);
@@ -160,7 +239,7 @@ const page = () => {
               Resources
             </p>
              <p className="subText" style={{ color: "white" }}>
-             Toolkits, Books, Podcasts, Learning Modules - all <br/> at one place, so that you easily find what you <br/> need to grow your business.
+             Toolkits, Books, Podcasts, Learning Modules - all at one place,<br/> so that you easily find what you need to grow your business.
             </p>
           </div>
         </div>
@@ -211,10 +290,10 @@ const page = () => {
                     </div>
                     <div className="dropdown-content">
                       <ul className="dropdown_text">
-                        <li><a href="#" className="dropdown_text">FACe - Function Accountability Chart</a></li>
-                        <li><a href="#" className="dropdown_text">OPPP - One Page Personal Plan</a></li>
-                        <li><a href="#" className="dropdown_text">PACe - Process Accountablity Chart</a></li>
-                        <li><a href="#" className="dropdown_text">Talent - Talent Assessment Chart</a></li>
+                        <li><Link href={`/toolDetail/function-accountability-chart`} className="dropdown_text">FACe - Function Accountability Chart</Link></li>
+                        <li><Link href={`/toolDetail/one-page-personal-plan`} className="dropdown_text">OPPP - One Page Personal Plan</Link></li>
+                        <li><Link href={`/toolDetail/process-accountability-chart`} className="dropdown_text">PACe - Process Accountablity Chart</Link></li>
+                        <li><Link href={`/toolDetail/talent-assessment-chart`} className="dropdown_text">Talent - Talent Assessment Chart</Link></li>
                       </ul>
                     </div>
                   </div>
@@ -225,10 +304,10 @@ const page = () => {
                     </div>
                     <div className="dropdown-content">
                       <ul className="dropdown_text">
-                        <li><a href="#" className="dropdown_text">Strategy 7 strata</a></li>
-                        <li><a href="#" className="dropdown_text">Strategy Vision summary</a></li>
-                        <li><a href="#" className="dropdown_text">OPSP - One page Strategic Plan</a></li>
-                        <li><a href="#" className="dropdown_text">SWT - Strengths Weaknesses Trends</a></li>
+                        <li><Link href={`/toolDetail/7-strata`} className="dropdown_text">Strategy 7 strata</Link></li>
+                        <li><Link href={`/toolDetail/vision-summary`} className="dropdown_text">Strategy Vision summary</Link></li>
+                        <li><Link href={`/toolDetail/one-page-strategic-plan`} className="dropdown_text">OPSP - One page Strategic Plan</Link></li>
+                        <li><Link href={`/toolDetail/strengths-weaknesses-trends`} className="dropdown_text">SWT - Strengths Weaknesses Trends</Link></li>
                       </ul>
                     </div>
                   </div>
@@ -239,8 +318,8 @@ const page = () => {
                     </div>
                     <div className="dropdown-content">
                       <ul className="dropdown_text">
-                        <li><a href="#" className="dropdown_text">WWW - Who What When</a></li>
-                        <li><a href="#" className="dropdown_text">Execution - Rockefeller Habits Checklist</a></li>
+                        <li><Link href={`/toolDetail/who-what-when`} className="dropdown_text">WWW - Who What When</Link></li>
+                        <li><Link href={`/toolDetail/rockefeller-habits-checklist`} className="dropdown_text">Execution - Rockefeller Habits Checklist</Link></li>
                       </ul>
                     </div>
                   </div>
@@ -251,8 +330,8 @@ const page = () => {
                     </div>
                     <div className="dropdown-content">
                       <ul className="dropdown_text">
-                        <li><a href="#" className="dropdown_text">CASH - Cash Acceleration Strategies</a></li>
-                        <li><a href="#" className="dropdown_text">POO - The Power of One</a></li>
+                        <li><Link href={`/toolDetail/cash-acceleration-strategies`} className="dropdown_text">CASH - Cash Acceleration Strategies</Link></li>
+                        <li><Link href={`/toolDetail/the-power-of-one`} className="dropdown_text">POO - The Power of One</Link></li>
                       </ul>
                     </div>
                   </div>
@@ -278,7 +357,7 @@ const page = () => {
             <div className="row res-row">
               <div className="video_div_title">
                 <p className="section-header">Pathfinder Podcast</p>
-                <a href="#" className="video_div_text">
+                <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
                   <div>View all</div>
                 </a>
               </div>
@@ -352,7 +431,7 @@ const page = () => {
             <div className="row res-row">
               <div className="video_div_title">
                 <p className="section-header">Conversation with Mastermind</p>
-                <a href="#" className="video_div_text">
+                <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
                   <div>View all</div>
                 </a>
               </div>
@@ -617,23 +696,6 @@ const page = () => {
                 <a href="https://www.amazon.in/12-Habits-Valuable-Employees-Roadmap-ebook/dp/B0CQ62WD2T/ref=sr_1_1?crid=2DRXTOCN79UD2&dib=eyJ2IjoiMSJ9.lAMQzcVHfJop0DkuMY-hQ3yvhU8dWijmXI2Yhu_hMFivWc2BB-3Qa8aS1b_AN1A26B1WQ0x55tCLj4l44XrR1w.QXgrOQ_pzuPSl9WT8cJ_aq0AwFjuAjf7KrS7wBUixFU&dib_tag=se&keywords=12+Habits+of+valuable+employees&qid=1747739730&sprefix=12+habits+of+valuable+employees%2Caps%2C260&sr=8-1" target="_blank">
                   <div className="card h-100 shadow-lg p-2">
                     <Image
-                      src={Book3}
-                      className="card-img-top img-fluid"
-                      alt="case4"
-                      style={{
-                        height: "400px",       // 👈 force same height
-                        width: "600px",
-                        objectFit: "contain",   // keeps image fully visible
-                      }}
-                    />
-                  </div></a>
-              </div>
-            </div>
-            <div>
-              <div className="custom-col-5 p-2">
-                <a href="https://www.amazon.in/Scaling-Compensation-Principles-Strategic-Advantage/dp/1955884188/ref=sr_1_1?crid=2RFRHK4U3YH9Z&dib=eyJ2IjoiMSJ9.wNkxzcraLxuC1iQ4vk3rz0QHxqwZSdTRhh2JE1gGqPXGjHj071QN20LucGBJIEps.JOCHobagUJGhj8nOrMwaqe65QTigzCZIued5H3mqHY4&dib_tag=se&keywords=Scaling+up+compensation&qid=1747739772&sprefix=scaling+up+compensation%2Caps%2C288&sr=8-1" target="_blank">
-                  <div className="card h-100 shadow-lg p-2">
-                    <Image
                       src={Book4}
                       className="card-img-top img-fluid"
                       alt="case4"
@@ -646,6 +708,7 @@ const page = () => {
                   </div></a>
               </div>
             </div>
+            
           </Slider>
         </div>
 
