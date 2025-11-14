@@ -251,15 +251,16 @@ const page = () => {
 
         <div className="row g-4">
           {[
-            { title: "Scaling up Toolkit", img: Image1 },
-            { title: "Pathfinder Podcast", img: Image2 },
-            { title: "Conversation with Mastermind", img: Image3 },
-            { title: "Reference Books", img: Image4 },
+            { title: "Scaling up Toolkit", img: Image1, slug: "scaling_up_toolkit" },
+            { title: "Pathfinder Podcast", img: Image2, slug: "pathfinder_podcast" },
+            { title: "Conversation with Mastermind", img: Image3, slug: "conversation_with_mastermind" },
+            { title: "Reference Books", img: Image4, slug: "reference_books" },
           ].map((item, i) => (
             <div
               key={i}
               className="col-xxl-6 col-lg-6 col-md-6 col-sm-12"
             >
+              <a href={`#${item.slug}`}>
               <div className="card-item position-relative overflow-hidden">
                 <Image
                   src={item.img}
@@ -269,13 +270,13 @@ const page = () => {
                 <div className="card-overlay d-flex align-items-end">
                   <h5 className="card-title">{item.title}</h5>
                 </div>
-              </div>
+              </div></a>
             </div>
           ))}
         </div>
       </div>
       <div className="second_div_layout">
-        <div className="third_div">
+        <div className="third_div" id="scaling_up_toolkit">
           <div className="d-flex flex-row justify-content-between">
             <p className="section-header">Conversation with Mastermind</p>
           </div>
@@ -353,7 +354,7 @@ const page = () => {
 
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-center">
-          <div className="seventh_components">
+          <div className="seventh_components" id="pathfinder_podcast">
             <div className="row res-row">
               <div className="video_div_title">
                 <p className="section-header">Pathfinder Podcast</p>
@@ -427,7 +428,7 @@ const page = () => {
       </div>
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-center">
-          <div className="seventh_components">
+          <div className="seventh_components" id="conversation_with_mastermind">
             <div className="row res-row">
               <div className="video_div_title">
                 <p className="section-header">Conversation with Mastermind</p>
@@ -617,7 +618,7 @@ const page = () => {
         </div>
       </div> */}
 
-      <div className="second_div_layout">
+      <div className="second_div_layout" id="reference_books">
         <div className="d-flex flex-row justify-content-between align-items-center">
           <p className="section-header">Reference Books</p>
         </div>
