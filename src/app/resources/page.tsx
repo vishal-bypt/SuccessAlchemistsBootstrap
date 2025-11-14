@@ -344,7 +344,7 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://youtu.be/0zbgCJKyG2I?si=U2KkjLUZJ4O58Wf-"
+                        src="https://www.youtube.com/embed/0zbgCJKyG2I?si=qB8W3krA4ih9_1dv"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
@@ -364,7 +364,7 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://youtu.be/5XLMGHfovHc?si=TpZSqGzOm6ALTUK1"
+                        src="https://www.youtube.com/embed/5XLMGHfovHc?si=sROr3PEuzoI4gffR"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
@@ -384,7 +384,7 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://youtu.be/7JD3skmXJas?si=Syw-i08SdX80pZGO"
+                        src="https://www.youtube.com/embed/7JD3skmXJas?si=37qRdzCfHdQcww5P"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
@@ -418,7 +418,7 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://youtu.be/ppi7XogaQvQ?si=V8Eic5EKa3_X0gzQ"
+                        src="https://www.youtube.com/embed/0zbgCJKyG2I?si=Q2FJdjzLx5yip1M2"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
@@ -438,7 +438,7 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://youtu.be/cyii9Q_aWyc?si=vnBo-a6oks05apYA"
+                        src="https://www.youtube.com/embed/ppi7XogaQvQ?si=hR24aO5twKCPlA0C"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
@@ -458,7 +458,7 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://www.youtube.com/embed/048UdKxDsA8"
+                        src="https://www.youtube.com/embed/cyii9Q_aWyc?si=2PODo_ioSYG20z8-"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
