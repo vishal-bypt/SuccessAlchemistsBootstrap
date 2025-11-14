@@ -5,6 +5,11 @@ import Case1 from "./images/tools-final-08.png";
 import Case2 from "./images/tools-final-09.png";
 import Case3 from "./images/tools-final-10.png";
 import Case4 from "./images/tools-final-11.png";
+import Image1 from "./images/sec1-img1.jpg";
+import Image2 from "./images/sec1-img2.jpg";
+import Image3 from "./images/sec1-img3.jpg";
+import Image4 from "./images/sec1-img4.jpg";
+import Image5 from "./images/Case6.png";
 import Book0 from "../../app/resources/images/scaling_up.jpeg";
 import Book1 from "../../app/resources/images/mastering_the_rockefeller.jpeg";
 import Book2 from "../../app/resources/images/ref-book2.png";
@@ -31,6 +36,10 @@ import Execution2 from "../toolDetail/images/Execution- Rockefeller.jpg"
 import Cash1 from "../toolDetail/images/Cash-CASh.jpg"
 import Cash2 from "../toolDetail/images/Cash-POO.jpg"
 import "../toolDetail/toolDetail.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 const peopleArray = [
   {
@@ -123,6 +132,14 @@ const page = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    slidesToShow: 4,
+    slidesToScroll: 1
+  };
   const router = useRouter();
   const [showSpinner, setShowSpinner] = useState(false);
   const [show, setShow] = useState(false);
@@ -202,136 +219,270 @@ const page = () => {
             <p className="heading" style={{ color: "white" }}>
               Resources
             </p>
-            <p className="subText" style={{ color: "white" }}>
-              Links to articles, books, and tools that support the effective
-              implementation of the Scaling Up framework
+             <p className="subText" style={{ color: "white" }}>
+             Toolkits, Books, Podcasts, Learning Modules - all at one place, so that you easily find what you need to grow your business.
             </p>
           </div>
         </div>
       </div>
       <div className="second_div_layout">
-        <div className="d-flex flex-row justify-content-between">
-          <p className="section-header">Our latest tool kit</p>
-          {/*<button
-            className="border-0 bg-transparent text-decoration-underline"
-            style={{ color: "rgba(251, 168, 25, 1)" }} handleClose
-          >
-            VIEW MORE
-  </button>*/}
+        <div className="d-flex flex-row justify-content-between align-items-center mb-3">
+          <p className="section-header mb-0">What are you looking for today?</p>
         </div>
-        <div className="mt-4">
-          <div className="row g-4">
-            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <Link
-                className="tool-img-link"
-                onClick={() => selectCategory("People", peopleArray)}
-                href="javascript:void(0);"
-              >
-                <Image
-                  src={Case2}
-                  alt="case1"
-                  className="toolkit-img img-fluid"
-                />
 
-                <div className="overlay">
-                  <h2>People</h2>
-                  {/* <p>Cash Acceleration Strategies</p> */}
-                </div>
-              </Link>
-            </div>
-            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <Link
-                className="tool-img-link"
-                onClick={() => selectCategory("Strategy", strategyArray)}
-                href="javascript:void(0);"
-              >
+        <div className="row g-4">
+          {[
+            { title: "Scaling up Toolkit", img: Image1 },
+            { title: "Pathfinder Podcast", img: Image2 },
+            { title: "Conversation with Mastermind", img: Image3 },
+            { title: "Reference Books", img: Image4 },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="col-xxl-6 col-lg-6 col-md-6 col-sm-12"
+            >
+              <div className="card-item position-relative overflow-hidden">
                 <Image
-                  src={Case1}
-                  alt="case2"
-                  className="toolkit-img img-fluid"
+                  src={item.img}
+                  alt={item.title}
+                  className="card-img img-fluid"
                 />
-                <div className="overlay">
-                  <h2>Strategy</h2>
-                  {/* <p>The Power of One</p> */}
+                <div className="card-overlay d-flex align-items-end">
+                  <h5 className="card-title">{item.title}</h5>
                 </div>
-              </Link>
+              </div>
             </div>
-            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <Link
-                className="tool-img-link"
-                onClick={() => selectCategory("Execution", executionArray)}
-                href="javascript:void(0);"
-              >
-                <Image
-                  src={Case3}
-                  alt="case3"
-                  className="toolkit-img img-fluid"
-                />
-                <div className="overlay">
-                  <h2>Execution</h2>
-                  {/* <p>Function Accountability Chart</p> */}
-                </div>
-              </Link>
-            </div>
-            <div className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div">
-              <Link
-                className="tool-img-link"
-                onClick={() => selectCategory("Cash", cashArray)}
-                href="javascript:void(0);"
-              >
-                <Image
-                  src={Case4}
-                  alt="case3"
-                  className="toolkit-img img-fluid"
-                />
-                <div className="overlay">
-                  <h2>Cash</h2>
-                  {/* <p>Function Accountability Chart</p> */}
-                </div>
-              </Link>
-            </div>
-          </div>
+          ))}
         </div>
-        {selectedCategory !== null && (
-          <div>
-            <div className="d-flex flex-row justify-content-between mt-2">
-              <p className="section-header-tool">{selectedCategory.title}</p>
-            </div>
-            <div className="row g-4 mt-4">
-              {selectedCategory.categoryArray.map((object) => (
-                <div
-                  className="col-xxl-3 col-lg-3 col-md-6 col-sm-12 image-div"
-                  key={object.slug}
-                >
-                  <Link
-                    className="tool-img-link"
-                    href={`/toolDetail/${object.slug}`}
-                  >
-                    <Image
-                      src={object.image}
-                      alt="case1"
-                      className="toolkit-img img-fluid"
-                    />
-                    <div className="overlay">
-                      <h2>{object.title}</h2>
-                      <p>{object.desc}</p>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
       <div className="second_div_layout">
+        <div className="third_div">
+          <div className="d-flex flex-row justify-content-between">
+            <p className="section-header">Conversation with Mastermind</p>
+          </div>
+          <div className="mt-4">
+            <div className="row g-4">
+              <div className="col-xxl-6 col-lg-6 col-md-6 col-sm-12">
+                <div>
+                  <div className="dropdown">
+                    <div className="d-flex flex-row align-items-center">
+                      <p><i className="arrow right"></i></p>
+                      <p className="dropbtn">People</p>
+                    </div>
+                    <div className="dropdown-content">
+                      <ul className="dropdown_text">
+                        <li><a href="#" className="dropdown_text">FACe - Function Accountability Chart</a></li>
+                        <li><a href="#" className="dropdown_text">OPPP - One Page Personal Plan</a></li>
+                        <li><a href="#" className="dropdown_text">PACe - Process Accountablity Chart</a></li>
+                        <li><a href="#" className="dropdown_text">Talent - Talent Assessment Chart</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="dropdown">
+                    <div className="d-flex flex-row align-items-center">
+                      <p><i className="arrow right"></i></p>
+                      <p className="dropbtn">Strategy</p>
+                    </div>
+                    <div className="dropdown-content">
+                      <ul className="dropdown_text">
+                        <li><a href="#" className="dropdown_text">Strategy 7 strata</a></li>
+                        <li><a href="#" className="dropdown_text">Strategy Vision summary</a></li>
+                        <li><a href="#" className="dropdown_text">OPSP - One page Strategic Plan</a></li>
+                        <li><a href="#" className="dropdown_text">SWT - Strengths Weaknesses Trends</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="dropdown">
+                    <div className="d-flex flex-row align-items-center">
+                      <p><i className="arrow right"></i></p>
+                      <p className="dropbtn">Execution</p>
+                    </div>
+                    <div className="dropdown-content">
+                      <ul className="dropdown_text">
+                        <li><a href="#" className="dropdown_text">WWW - Who What When</a></li>
+                        <li><a href="#" className="dropdown_text">Execution - Rockefeller Habits Checklist</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="dropdown">
+                    <div className="d-flex flex-row align-items-center">
+                      <p><i className="arrow right"></i></p>
+                      <p className="dropbtn">Cash</p>
+                    </div>
+                    <div className="dropdown-content">
+                      <ul className="dropdown_text">
+                        <li><a href="#" className="dropdown_text">CASH - Cash Acceleration Strategies</a></li>
+                        <li><a href="#" className="dropdown_text">POO - The Power of One</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-xxl-6 col-lg-6 col-md-6 col-sm-12 image-div">
+                <div className="scalingup_div">
+                  <Image
+                    src={Image5}
+                    alt="case1"
+                    className="scallup_img img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="second_div_layout">
+        <div className="d-flex flex-row justify-content-center">
+          <div className="seventh_components">
+            <div className="row res-row">
+              <div className="video_div_title">
+                <p className="section-header">Pathfinder Podcast</p>
+                <a href="#" className="video_div_text">
+                  <div>View all</div>
+                </a>
+              </div>
+              <div className="col-md-4">
+                <div className="seventh_components_card_box">
+                  <div className="video-card">
+                    <div className="video-thumbnail">
+                      <iframe
+                        className="video-iframe"
+                        width="100%"
+                        height="200px"
+                        src="https://www.youtube.com/embed/PGgIAnehjR8"
+                        allow="autoplay; encrypted-media"
+                      ></iframe>
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title">
+                        Challenges of Scaling Up a Business
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="seventh_components_card_box">
+                  <div className="video-card">
+                    <div className="video-thumbnail">
+                      <iframe
+                        className="video-iframe"
+                        width="100%"
+                        height="200px"
+                        src="https://www.youtube.com/embed/pDNju3Ookq4"
+                        allow="autoplay; encrypted-media"
+                      ></iframe>
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title">
+                        The 10 Rockefeller Habits To Success
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="seventh_components_card_box">
+                  <div className="video-card">
+                    <div className="video-thumbnail">
+                      <iframe
+                        className="video-iframe"
+                        width="100%"
+                        height="200px"
+                        src="https://www.youtube.com/embed/048UdKxDsA8"
+                        allow="autoplay; encrypted-media"
+                      ></iframe>
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title">
+                        Scaling up - Anaheim Highlights
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="second_div_layout">
+        <div className="d-flex flex-row justify-content-center">
+          <div className="seventh_components">
+            <div className="row res-row">
+              <div className="video_div_title">
+                <p className="section-header">Conversation with Mastermind</p>
+                <a href="#" className="video_div_text">
+                  <div>View all</div>
+                </a>
+              </div>
+              <div className="col-md-4">
+                <div className="seventh_components_card_box">
+                  <div className="video-card">
+                    <div className="video-thumbnail">
+                      <iframe
+                        className="video-iframe"
+                        width="100%"
+                        height="200px"
+                        src="https://www.youtube.com/embed/PGgIAnehjR8"
+                        allow="autoplay; encrypted-media"
+                      ></iframe>
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title">
+                        Challenges of Scaling Up a Business
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="seventh_components_card_box">
+                  <div className="video-card">
+                    <div className="video-thumbnail">
+                      <iframe
+                        className="video-iframe"
+                        width="100%"
+                        height="200px"
+                        src="https://www.youtube.com/embed/pDNju3Ookq4"
+                        allow="autoplay; encrypted-media"
+                      ></iframe>
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title">
+                        The 10 Rockefeller Habits To Success
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="seventh_components_card_box">
+                  <div className="video-card">
+                    <div className="video-thumbnail">
+                      <iframe
+                        className="video-iframe"
+                        width="100%"
+                        height="200px"
+                        src="https://www.youtube.com/embed/048UdKxDsA8"
+                        allow="autoplay; encrypted-media"
+                      ></iframe>
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title">
+                        Scaling up - Anaheim Highlights
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between">
           <p className="section-header">Reference books</p>
-          {/* <button
-            className="border-0 bg-transparent text-decoration-underline"
-            style={{ color: "rgba(251, 168, 25, 1)" }}
-          >
-            VIEW MORE
-          </button> */}
         </div>
         <div className="mt-2">
           <div className="grid-5-col mt-2">
@@ -339,6 +490,7 @@ const page = () => {
               <a href="https://www.amazon.in/Scaling-Up-Verne-Harnish/dp/9362053160/ref=sr_1_1?crid=3CN5G4C1QVDIL&dib=eyJ2IjoiMSJ9.Q0tvizYJ0XnyRfyYz3o-y7CO_UCqHuu9pxLnuyfXx3iSnIxn6TDXmp_H53TmNJnveQd7RJ8f0e2ZDTiZkeuQqnEAGjry5vuYU5xWQM-H905Jykiamn5W0pHC0H5yENxc_8pD3wn3HKfZJjaWjR_yrK5XSnBS9l9oV5BtwqXeaQGm9qYSwNSyxIk6BakZG6WVqtQidWK3LXSdVpXHkP4cGQOjqZrxX600ccDztcKFOlY.H79FBLE0SB4QKzzZt0qJdyYUf6fk_F_qoJwbg_W4p_U&dib_tag=se&keywords=scaling+up+verne+harnish&qid=1747738951&sprefix=scaling+up%2Caps%2C239&sr=8-1" target="_blank">
               <div className="card h-100 shadow-lg p-2">
                 <div className="card-image">
+                <div className="card h-100 shadow-lg p-2">
                   <Image
                     src={Book0}
                     className="card-img-top img-fluid"
@@ -358,6 +510,11 @@ const page = () => {
               <a href="https://www.amazon.in/Mastering-Rockefeller-Habits-22nd-Anniversary/dp/B0CXCDYCHN/ref=sr_1_2?crid=JY94OR1ETP4E&dib=eyJ2IjoiMSJ9.XCmjMAr4Yk8wug9W3WpiDjl6SS-1b_MHMGMVSAH1y9ou5dcGPG_BHAzfR-P6miC6zYV84yz6E6nCrRGfwAcjrvli8I9zb1eRclDJFT8ehFiF0hnxr_FuxqJkYEB-wkCoYoOblSDZQ877q75Jc8N_VQ.h-5DTB3NVfu_fKojnTo99hg_4IV_FPpE4co5oIYbRj8&dib_tag=se&keywords=mastering+the+rockefeller+habits&qid=1747739138&sprefix=mastering+the+roc%2Caps%2C264&sr=8-2" target="_blank">
               <div className="card h-100 shadow-lg p-2">
                 <div className="card-image">
+                </div></a>
+            </div>
+            <div className="custom-col-5 p-2">
+              <a href="https://www.amazon.in/Mastering-Rockefeller-Habits-22nd-Anniversary/dp/B0CXCDYCHN/ref=sr_1_2?crid=JY94OR1ETP4E&dib=eyJ2IjoiMSJ9.XCmjMAr4Yk8wug9W3WpiDjl6SS-1b_MHMGMVSAH1y9ou5dcGPG_BHAzfR-P6miC6zYV84yz6E6nCrRGfwAcjrvli8I9zb1eRclDJFT8ehFiF0hnxr_FuxqJkYEB-wkCoYoOblSDZQ877q75Jc8N_VQ.h-5DTB3NVfu_fKojnTo99hg_4IV_FPpE4co5oIYbRj8&dib_tag=se&keywords=mastering+the+rockefeller+habits&qid=1747739138&sprefix=mastering+the+roc%2Caps%2C264&sr=8-2" target="_blank">
+                <div className="card h-100 shadow-lg p-2">
                   <Image
                     src={Book1}
                     className="card-img-top img-fluid"
@@ -377,6 +534,11 @@ const page = () => {
               <a href="https://www.amazon.in/FORTUNE-Greatest-Business-Decisions-Time/dp/1603200592/ref=sr_1_1?crid=3AQJ39YJOKUD7&dib=eyJ2IjoiMSJ9.QdGnVr8cCeZDiDwBsgKITt4V9a2uKeJN9rKMyTX37v5o9QyKgTR1mAJh6C9g22z0Lxxa_WK31Kh15g-enMzziIrjBzF3Dzg9EczK10BXpWh9k2I3w9cGDkrIpo4jrN_5xCqW4NEoUTsotsErSPiPmzghLSgOeDiXj5zMPTzSBDcTLX1uwUaPrt_xp96XZoTg.T39xR92Mx5OvAKOGvXCSmx4raKm0M1XVNIDmdUWXHuw&dib_tag=se&keywords=The+Greatest+business+decisions+of+all+time&qid=1747739685&sprefix=the+greatest+business+decisions+of+all+time%2Caps%2C265&sr=8-1" target="_blank">
               <div className="card h-100 shadow-lg p-2">
                 <div className="card-image">
+                </div></a>
+            </div>
+            <div className="custom-col-5 p-2">
+              <a href="https://www.amazon.in/FORTUNE-Greatest-Business-Decisions-Time/dp/1603200592/ref=sr_1_1?crid=3AQJ39YJOKUD7&dib=eyJ2IjoiMSJ9.QdGnVr8cCeZDiDwBsgKITt4V9a2uKeJN9rKMyTX37v5o9QyKgTR1mAJh6C9g22z0Lxxa_WK31Kh15g-enMzziIrjBzF3Dzg9EczK10BXpWh9k2I3w9cGDkrIpo4jrN_5xCqW4NEoUTsotsErSPiPmzghLSgOeDiXj5zMPTzSBDcTLX1uwUaPrt_xp96XZoTg.T39xR92Mx5OvAKOGvXCSmx4raKm0M1XVNIDmdUWXHuw&dib_tag=se&keywords=The+Greatest+business+decisions+of+all+time&qid=1747739685&sprefix=the+greatest+business+decisions+of+all+time%2Caps%2C265&sr=8-1" target="_blank">
+                <div className="card h-100 shadow-lg p-2">
                   <Image
                     src={Book2}
                     className="card-img-top img-fluid"
@@ -396,6 +558,11 @@ const page = () => {
               <a href="https://www.amazon.in/12-Habits-Valuable-Employees-Roadmap-ebook/dp/B0CQ62WD2T/ref=sr_1_1?crid=2DRXTOCN79UD2&dib=eyJ2IjoiMSJ9.lAMQzcVHfJop0DkuMY-hQ3yvhU8dWijmXI2Yhu_hMFivWc2BB-3Qa8aS1b_AN1A26B1WQ0x55tCLj4l44XrR1w.QXgrOQ_pzuPSl9WT8cJ_aq0AwFjuAjf7KrS7wBUixFU&dib_tag=se&keywords=12+Habits+of+valuable+employees&qid=1747739730&sprefix=12+habits+of+valuable+employees%2Caps%2C260&sr=8-1" target="_blank">
               <div className="card h-100 shadow-lg p-2">
                 <div className="card-image">
+                </div></a>
+            </div>
+            <div className="custom-col-5 p-2">
+              <a href="https://www.amazon.in/12-Habits-Valuable-Employees-Roadmap-ebook/dp/B0CQ62WD2T/ref=sr_1_1?crid=2DRXTOCN79UD2&dib=eyJ2IjoiMSJ9.lAMQzcVHfJop0DkuMY-hQ3yvhU8dWijmXI2Yhu_hMFivWc2BB-3Qa8aS1b_AN1A26B1WQ0x55tCLj4l44XrR1w.QXgrOQ_pzuPSl9WT8cJ_aq0AwFjuAjf7KrS7wBUixFU&dib_tag=se&keywords=12+Habits+of+valuable+employees&qid=1747739730&sprefix=12+habits+of+valuable+employees%2Caps%2C260&sr=8-1" target="_blank">
+                <div className="card h-100 shadow-lg p-2">
                   <Image
                     src={Book3}
                     className="card-img-top img-fluid"
@@ -415,21 +582,133 @@ const page = () => {
               <a href="https://www.amazon.in/Scaling-Compensation-Principles-Strategic-Advantage/dp/1955884188/ref=sr_1_1?crid=2RFRHK4U3YH9Z&dib=eyJ2IjoiMSJ9.wNkxzcraLxuC1iQ4vk3rz0QHxqwZSdTRhh2JE1gGqPXGjHj071QN20LucGBJIEps.JOCHobagUJGhj8nOrMwaqe65QTigzCZIued5H3mqHY4&dib_tag=se&keywords=Scaling+up+compensation&qid=1747739772&sprefix=scaling+up+compensation%2Caps%2C288&sr=8-1" target="_blank">
               <div className="card h-100 shadow-lg p-2">
                 <div className="card-image">
+                </div></a>
+            </div>
+            <div className="custom-col-5 p-2">
+              <a href="https://www.amazon.in/Scaling-Compensation-Principles-Strategic-Advantage/dp/1955884188/ref=sr_1_1?crid=2RFRHK4U3YH9Z&dib=eyJ2IjoiMSJ9.wNkxzcraLxuC1iQ4vk3rz0QHxqwZSdTRhh2JE1gGqPXGjHj071QN20LucGBJIEps.JOCHobagUJGhj8nOrMwaqe65QTigzCZIued5H3mqHY4&dib_tag=se&keywords=Scaling+up+compensation&qid=1747739772&sprefix=scaling+up+compensation%2Caps%2C288&sr=8-1" target="_blank">
+                <div className="card h-100 shadow-lg p-2">
                   <Image
                     src={Book4}
                     className="card-img-top img-fluid"
                     alt="case4"
                   />
-                </div>
-                <div className="card-body">
-                  <div className="gap-2">
-                    <h5 className="card-title">Scaling up compensation</h5>
-                  </div>
-                </div>
-              </div></a>
+                </div></a>
             </div>
           </div>
         </div>
+      </div> */}
+
+      <div className="second_div_layout">
+        <div className="d-flex flex-row justify-content-between align-items-center">
+          <p className="section-header">Reference Books</p>
+        </div>
+        <div className="slider-container" style={{ width: "100%", margin: "0 auto" }}>
+          <Slider {...settings}>
+            <div>
+              <div className="custom-col-5 p-2">
+                <a href="https://www.amazon.in/Scaling-Up-Verne-Harnish/dp/9362053160/ref=sr_1_1?crid=3CN5G4C1QVDIL&dib=eyJ2IjoiMSJ9.Q0tvizYJ0XnyRfyYz3o-y7CO_UCqHuu9pxLnuyfXx3iSnIxn6TDXmp_H53TmNJnveQd7RJ8f0e2ZDTiZkeuQqnEAGjry5vuYU5xWQM-H905Jykiamn5W0pHC0H5yENxc_8pD3wn3HKfZJjaWjR_yrK5XSnBS9l9oV5BtwqXeaQGm9qYSwNSyxIk6BakZG6WVqtQidWK3LXSdVpXHkP4cGQOjqZrxX600ccDztcKFOlY.H79FBLE0SB4QKzzZt0qJdyYUf6fk_F_qoJwbg_W4p_U&dib_tag=se&keywords=scaling+up+verne+harnish&qid=1747738951&sprefix=scaling+up%2Caps%2C239&sr=8-1" target="_blank">
+                  <div className="card h-100 shadow-lg p-2">
+                    <Image
+                      src={Book0}
+                      className="card-img-top img-fluid"
+                      alt="case4"
+                      style={{
+                        height: "400px",       // 👈 force same height
+                        width: "100%",
+                        objectFit: "contain",   // keeps image fully visible
+                      }}
+                    />
+                  </div></a>
+              </div>
+            </div>
+            <div>
+              <div className="custom-col-5 p-2">
+                <a href="https://www.amazon.in/Mastering-Rockefeller-Habits-22nd-Anniversary/dp/B0CXCDYCHN/ref=sr_1_2?crid=JY94OR1ETP4E&dib=eyJ2IjoiMSJ9.XCmjMAr4Yk8wug9W3WpiDjl6SS-1b_MHMGMVSAH1y9ou5dcGPG_BHAzfR-P6miC6zYV84yz6E6nCrRGfwAcjrvli8I9zb1eRclDJFT8ehFiF0hnxr_FuxqJkYEB-wkCoYoOblSDZQ877q75Jc8N_VQ.h-5DTB3NVfu_fKojnTo99hg_4IV_FPpE4co5oIYbRj8&dib_tag=se&keywords=mastering+the+rockefeller+habits&qid=1747739138&sprefix=mastering+the+roc%2Caps%2C264&sr=8-2" target="_blank">
+                  <div className="card h-100 shadow-lg p-2">
+                    <Image
+                      src={Book1}
+                      className="card-img-top img-fluid"
+                      alt="case4"
+                      style={{
+                        height: "400px",       // 👈 force same height
+                        width: "600px",
+                        objectFit: "contain",   // keeps image fully visible
+                      }}
+                    />
+                  </div></a>
+              </div>
+            </div>
+            <div>
+              <div className="custom-col-5 p-2">
+                <a href="https://www.amazon.in/FORTUNE-Greatest-Business-Decisions-Time/dp/1603200592/ref=sr_1_1?crid=3AQJ39YJOKUD7&dib=eyJ2IjoiMSJ9.QdGnVr8cCeZDiDwBsgKITt4V9a2uKeJN9rKMyTX37v5o9QyKgTR1mAJh6C9g22z0Lxxa_WK31Kh15g-enMzziIrjBzF3Dzg9EczK10BXpWh9k2I3w9cGDkrIpo4jrN_5xCqW4NEoUTsotsErSPiPmzghLSgOeDiXj5zMPTzSBDcTLX1uwUaPrt_xp96XZoTg.T39xR92Mx5OvAKOGvXCSmx4raKm0M1XVNIDmdUWXHuw&dib_tag=se&keywords=The+Greatest+business+decisions+of+all+time&qid=1747739685&sprefix=the+greatest+business+decisions+of+all+time%2Caps%2C265&sr=8-1" target="_blank">
+                  <div className="card h-100 shadow-lg p-2">
+                    <Image
+                      src={Book2}
+                      className="card-img-top img-fluid"
+                      alt="case5"
+                      style={{
+                        height: "400px",       // 👈 force same height
+                        width: "600px",
+                        objectFit: "contain",   // keeps image fully visible
+                      }}
+                    />
+                  </div></a>
+              </div>
+            </div>
+            <div>
+              <div className="custom-col-5 p-2">
+                <a href="https://www.amazon.in/12-Habits-Valuable-Employees-Roadmap-ebook/dp/B0CQ62WD2T/ref=sr_1_1?crid=2DRXTOCN79UD2&dib=eyJ2IjoiMSJ9.lAMQzcVHfJop0DkuMY-hQ3yvhU8dWijmXI2Yhu_hMFivWc2BB-3Qa8aS1b_AN1A26B1WQ0x55tCLj4l44XrR1w.QXgrOQ_pzuPSl9WT8cJ_aq0AwFjuAjf7KrS7wBUixFU&dib_tag=se&keywords=12+Habits+of+valuable+employees&qid=1747739730&sprefix=12+habits+of+valuable+employees%2Caps%2C260&sr=8-1" target="_blank">
+                  <div className="card h-100 shadow-lg p-2">
+                    <Image
+                      src={Book3}
+                      className="card-img-top img-fluid"
+                      alt="case4"
+                      style={{
+                        height: "400px",       // 👈 force same height
+                        width: "600px",
+                        objectFit: "contain",   // keeps image fully visible
+                      }}
+                    />
+                  </div></a>
+              </div>
+            </div>
+            <div>
+              <div className="custom-col-5 p-2">
+                <a href="https://www.amazon.in/12-Habits-Valuable-Employees-Roadmap-ebook/dp/B0CQ62WD2T/ref=sr_1_1?crid=2DRXTOCN79UD2&dib=eyJ2IjoiMSJ9.lAMQzcVHfJop0DkuMY-hQ3yvhU8dWijmXI2Yhu_hMFivWc2BB-3Qa8aS1b_AN1A26B1WQ0x55tCLj4l44XrR1w.QXgrOQ_pzuPSl9WT8cJ_aq0AwFjuAjf7KrS7wBUixFU&dib_tag=se&keywords=12+Habits+of+valuable+employees&qid=1747739730&sprefix=12+habits+of+valuable+employees%2Caps%2C260&sr=8-1" target="_blank">
+                  <div className="card h-100 shadow-lg p-2">
+                    <Image
+                      src={Book3}
+                      className="card-img-top img-fluid"
+                      alt="case4"
+                      style={{
+                        height: "400px",       // 👈 force same height
+                        width: "600px",
+                        objectFit: "contain",   // keeps image fully visible
+                      }}
+                    />
+                  </div></a>
+              </div>
+            </div>
+            <div>
+              <div className="custom-col-5 p-2">
+                <a href="https://www.amazon.in/Scaling-Compensation-Principles-Strategic-Advantage/dp/1955884188/ref=sr_1_1?crid=2RFRHK4U3YH9Z&dib=eyJ2IjoiMSJ9.wNkxzcraLxuC1iQ4vk3rz0QHxqwZSdTRhh2JE1gGqPXGjHj071QN20LucGBJIEps.JOCHobagUJGhj8nOrMwaqe65QTigzCZIued5H3mqHY4&dib_tag=se&keywords=Scaling+up+compensation&qid=1747739772&sprefix=scaling+up+compensation%2Caps%2C288&sr=8-1" target="_blank">
+                  <div className="card h-100 shadow-lg p-2">
+                    <Image
+                      src={Book4}
+                      className="card-img-top img-fluid"
+                      alt="case4"
+                      style={{
+                        height: "400px",       // 👈 force same height
+                        width: "600px",
+                        objectFit: "contain",   // keeps image fully visible
+                      }}
+                    />
+                  </div></a>
+              </div>
+            </div>
+          </Slider>
+        </div>
+
       </div>
       {/* <div className="third_div_layout shadow-lg">
         <Image src={curve1} alt="curve1" className="image3 img-fluid" />
