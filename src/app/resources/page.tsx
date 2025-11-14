@@ -344,7 +344,7 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://www.youtube.com/embed/PGgIAnehjR8"
+                        src="https://youtu.be/0zbgCJKyG2I?si=U2KkjLUZJ4O58Wf-"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
@@ -364,7 +364,7 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://www.youtube.com/embed/pDNju3Ookq4"
+                        src="https://youtu.be/5XLMGHfovHc?si=TpZSqGzOm6ALTUK1"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
@@ -384,7 +384,7 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://www.youtube.com/embed/048UdKxDsA8"
+                        src="https://youtu.be/7JD3skmXJas?si=Syw-i08SdX80pZGO"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
@@ -406,7 +406,7 @@ const page = () => {
             <div className="row res-row">
               <div className="video_div_title">
                 <p className="section-header">Conversation with Mastermind</p>
-                <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
+                <a href="https://youtu.be/9hPHJj7h8VQ?si=dShvPR50bw0kfkYp" target="_blank" className="video_div_text">
                   <div>View all</div>
                 </a>
               </div>
@@ -418,7 +418,7 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://www.youtube.com/embed/PGgIAnehjR8"
+                        src="https://youtu.be/ppi7XogaQvQ?si=V8Eic5EKa3_X0gzQ"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
@@ -438,7 +438,7 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://www.youtube.com/embed/pDNju3Ookq4"
+                        src="https://youtu.be/cyii9Q_aWyc?si=vnBo-a6oks05apYA"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
@@ -617,6 +617,10 @@ const page = () => {
             spaceBetween: 10, // Reduce space between slides on mobile
           },
           380: {
+            slidesPerView: 1, // 1 slide on small screens like mobile devices
+            spaceBetween: 10, // Reduce space between slides on mobile
+          },
+          280: {
             slidesPerView: 1, // 1 slide on small screens like mobile devices
             spaceBetween: 10, // Reduce space between slides on mobile
           },
