@@ -431,10 +431,14 @@ const page = () => {
           <div className="seventh_components" id="conversation_with_mastermind">
             <div className="row res-row">
               <div className="video_div_title">
-                <p className="section-header">Conversation with Mastermind</p>
-                <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
-                  <div>View all</div>
-                </a>
+                <div className="video-title">
+                  <p className="section-header">Conversation with Mastermind</p>
+                </div>
+                <div>
+                  <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
+                    <div>View all</div>
+                  </a>
+                </div>
               </div>
               <div className="col-md-4">
                 <div className="seventh_components_card_box">

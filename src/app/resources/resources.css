@@ -156,12 +156,13 @@
 }
 
 .scalingup_div{
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .scallup_img {
-  width: 67%; 
+  width: 80%; 
 }
 
 .dropbtn {
@@ -281,7 +282,9 @@
 }
 
 
-
+.video-title{
+  width: 50%;
+}
 
 
 @media only screen and (max-width:767px) {
@@ -328,5 +331,14 @@
 @media (min-width: 1400px) {
   .grid-5-col {
     grid-template-columns: repeat(5, 1fr);
+  }
+  .scallup_img {
+    width: 70%; 
+  }
+}
+
+@media (min-width: 1960px) {
+  .scallup_img {
+    width: 50%; 
   }
 }
