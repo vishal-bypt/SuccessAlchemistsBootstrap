@@ -1,10 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import "./resources.css";
-import Case1 from "./images/tools-final-08.png";
-import Case2 from "./images/tools-final-09.png";
-import Case3 from "./images/tools-final-10.png";
-import Case4 from "./images/tools-final-11.png";
 import Image1 from "./images/sec1-img1.jpg";
 import Image2 from "./images/sec1-img2.jpg";
 import Image3 from "./images/sec1-img3.jpg";
@@ -68,62 +64,6 @@ const peopleArray = [
   },
 ];
 
-const strategyArray = [
-  {
-    title: "Strategy",
-    desc: "7 Strata",
-    slug: "7-strata",
-    image: Strategy1,
-  },
-  {
-    title: "Strategy",
-    desc: "Vision Summary",
-    slug: "vision-summary",
-    image: Strategy2,
-  },
-  {
-    title: "OPSP",
-    desc: "One Page Strategic Plan",
-    slug: "one-page-strategic-plan",
-    image: Strategy3,
-  },
-  {
-    title: "SWT",
-    desc: "Strengths Weaknesses Trends",
-    slug: "strengths-weaknesses-trends",
-    image: Strategy4,
-  },
-];
-
-const executionArray = [
-  {
-    title: "WWW",
-    desc: "Who What When",
-    slug: "who-what-when",
-    image: Execution1,
-  },
-  {
-    title: "Execution",
-    desc: "Rockefeller Habits Checklist",
-    slug: "rockefeller-habits-checklist",
-    image: Execution2,
-  }
-];
-
-const cashArray = [
-  {
-    title: "CASh",
-    desc: "Cash Acceleration Strategies",
-    slug: "cash-acceleration-strategies",
-    image: Cash1,
-  },
-  {
-    title: "POO",
-    desc: "The Power of One",
-    slug: "the-power-of-one",
-    image: Cash2,
-  }
-];
 
 const page = () => {
   const {
@@ -220,7 +160,7 @@ const page = () => {
               Resources
             </p>
              <p className="subText" style={{ color: "white" }}>
-             Toolkits, Books, Podcasts, Learning Modules - all at one place, so that you easily find what you need to grow your business.
+             Toolkits, Books, Podcasts, Learning Modules - all <br/> at one place, so that you easily find what you <br/> need to grow your business.
             </p>
           </div>
         </div>
