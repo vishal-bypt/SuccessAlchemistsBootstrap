@@ -73,13 +73,36 @@ const page = () => {
     formState: { errors },
   } = useForm();
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    slidesToShow: 4,
-    slidesToScroll: 1
-  };
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+
+  responsive: [
+    {
+      breakpoint: 1024,   // tablet
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 768,    // mobile
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 480,    // small mobile
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
   const router = useRouter();
   const [showSpinner, setShowSpinner] = useState(false);
   const [show, setShow] = useState(false);
