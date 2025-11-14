@@ -220,7 +220,7 @@ const page = () => {
       </div>
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between align-items-center mb-3">
-          <p className="section-header mb-0">What are you looking for today?</p>
+          <p className="subhead mb-0">What are you looking for today?</p>
         </div>
 
         <div className="row g-4">
@@ -252,7 +252,7 @@ const page = () => {
       <div className="second_div_layout">
         <div className="third_div" id="scaling_up_toolkit">
           <div className="d-flex flex-row justify-content-between">
-            <p className="section-header">Conversation with Mastermind</p>
+            <p className="subhead">Conversation with Mastermind</p>
           </div>
           <div className="mt-4">
             <div className="row g-4">
@@ -331,7 +331,7 @@ const page = () => {
           <div className="seventh_components" id="pathfinder_podcast">
             <div className="row res-row">
               <div className="video_div_title">
-                <p className="section-header">Pathfinder Podcast</p>
+                <p className="subhead">Pathfinder Podcast</p>
                 <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
                   <div>View all</div>
                 </a>
@@ -405,7 +405,7 @@ const page = () => {
           <div className="seventh_components" id="conversation_with_mastermind">
             <div className="row res-row">
               <div className="video_div_title">
-                <p className="section-header">Conversation with Mastermind</p>
+                <p className="subhead">Conversation with Mastermind</p>
                 <a href="https://youtu.be/9hPHJj7h8VQ?si=dShvPR50bw0kfkYp" target="_blank" className="video_div_text">
                   <div>View all</div>
                 </a>
@@ -594,7 +594,7 @@ const page = () => {
 
       <div className="second_div_layout" id="reference_books">
         <div className="d-flex flex-row justify-content-between align-items-center">
-          <p className="section-header">Reference Books</p>
+          <p className="subhead">Reference Books</p>
         </div>
          <div className="slider-container w-full mx-auto">
       <Swiper
