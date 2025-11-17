@@ -156,12 +156,13 @@
 }
 
 .scalingup_div{
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .scallup_img {
-  width: 67%; 
+  Width: 80%; 
 }
 
 .dropbtn {
@@ -326,5 +327,14 @@
 @media (min-width: 1400px) {
   .grid-5-col {
     grid-template-columns: repeat(5, 1fr);
+  }
+  .scallup_img {
+    Width: 70%; 
+  }
+}
+
+@media (min-width: 1920px) {
+  .scallup_img {
+    Width: 50%; 
   }
 }
