@@ -156,13 +156,12 @@
 }
 
 .scalingup_div{
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .scallup_img {
-  width: 80%; 
+  width: 67%; 
 }
 
 .dropbtn {
@@ -276,16 +275,12 @@
   margin: 0;
 }
 
-.custom-col-5 {
-  width: 100%;
-  max-width: 100%;
+.subhead{
+    font-size: 32px;
+    padding-bottom: 16px;
+    line-height: 36px;
+    font-weight: bold;
 }
-
-
-.video-title{
-  width: 50%;
-}
-
 
 @media only screen and (max-width:767px) {
     .input {
@@ -331,14 +326,5 @@
 @media (min-width: 1400px) {
   .grid-5-col {
     grid-template-columns: repeat(5, 1fr);
-  }
-  .scallup_img {
-    width: 70%; 
-  }
-}
-
-@media (min-width: 1960px) {
-  .scallup_img {
-    width: 50%; 
   }
 }
