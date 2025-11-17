@@ -348,11 +348,11 @@ const page = () => {
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
-                    <div className="card-body">
+                    {/* <div className="card-body">
                       <h5 className="card-title">
                         Challenges of Scaling Up a Business
                       </h5>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -368,11 +368,11 @@ const page = () => {
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
-                    <div className="card-body">
+                    {/* <div className="card-body">
                       <h5 className="card-title">
                         The 10 Rockefeller Habits To Success
                       </h5>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -388,11 +388,11 @@ const page = () => {
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
-                    <div className="card-body">
+                    {/* <div className="card-body">
                       <h5 className="card-title">
                         Scaling up - Anaheim Highlights
                       </h5>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -422,11 +422,11 @@ const page = () => {
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
-                    <div className="card-body">
+                    {/* <div className="card-body">
                       <h5 className="card-title">
                         Challenges of Scaling Up a Business
                       </h5>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -442,11 +442,11 @@ const page = () => {
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
-                    <div className="card-body">
+                    {/* <div className="card-body">
                       <h5 className="card-title">
                         The 10 Rockefeller Habits To Success
                       </h5>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -462,11 +462,11 @@ const page = () => {
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
-                    <div className="card-body">
+                    {/* <div className="card-body">
                       <h5 className="card-title">
                         Scaling up - Anaheim Highlights
                       </h5>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
