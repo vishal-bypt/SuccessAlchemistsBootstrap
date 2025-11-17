@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./resources.css";
 import Image1 from "./images/sec1-img1.jpg";
 import Image2 from "./images/sec1-img2.jpg";
@@ -32,12 +32,9 @@ import Execution2 from "../toolDetail/images/Execution- Rockefeller.jpg"
 import Cash1 from "../toolDetail/images/Cash-CASh.jpg"
 import Cash2 from "../toolDetail/images/Cash-POO.jpg"
 import "../toolDetail/toolDetail.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 const peopleArray = [
@@ -131,8 +128,38 @@ const page = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+
+  responsive: [
+    {
+      breakpoint: 1024,   // tablet
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 768,    // mobile
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 480,    // small mobile
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
   const router = useRouter();
-  const [mounted, setMounted] = useState(false);
   const [showSpinner, setShowSpinner] = useState(false);
   const [show, setShow] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<{
@@ -141,7 +168,6 @@ const page = () => {
   } | null>(null);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
 
   const handleFormSubmit = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault(); // Prevent the default anchor click behavior
@@ -202,7 +228,7 @@ const page = () => {
     }
   };
   return (
-    <div className="main_body_div" >
+    <div className="main_body_div">
       <div className="first_div_layout resource">
         <div className="main_first_div_body">
           <div
@@ -220,7 +246,7 @@ const page = () => {
       </div>
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between align-items-center mb-3">
-          <p className="subhead mb-0">What are you looking for today?</p>
+          <p className="section-header mb-0">What are you looking for today?</p>
         </div>
 
         <div className="row g-4">
@@ -252,7 +278,7 @@ const page = () => {
       <div className="second_div_layout">
         <div className="third_div" id="scaling_up_toolkit">
           <div className="d-flex flex-row justify-content-between">
-            <p className="subhead">Conversation with Mastermind</p>
+            <p className="section-header">Conversation with Mastermind</p>
           </div>
           <div className="mt-4">
             <div className="row g-4">
@@ -331,7 +357,7 @@ const page = () => {
           <div className="seventh_components" id="pathfinder_podcast">
             <div className="row res-row">
               <div className="video_div_title">
-                <p className="subhead">Pathfinder Podcast</p>
+                <p className="section-header">Pathfinder Podcast</p>
                 <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
                   <div>View all</div>
                 </a>
@@ -344,15 +370,15 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://www.youtube.com/embed/0zbgCJKyG2I?si=qB8W3krA4ih9_1dv"
+                        src="https://www.youtube.com/embed/PGgIAnehjR8"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
-                    <div className="card-body">
+                    {/* <div className="card-body">
                       <h5 className="card-title">
                         Challenges of Scaling Up a Business
                       </h5>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -364,15 +390,15 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://www.youtube.com/embed/5XLMGHfovHc?si=sROr3PEuzoI4gffR"
+                        src="https://www.youtube.com/embed/pDNju3Ookq4"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
-                    <div className="card-body">
+                    {/* <div className="card-body">
                       <h5 className="card-title">
                         The 10 Rockefeller Habits To Success
                       </h5>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -384,15 +410,15 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://www.youtube.com/embed/7JD3skmXJas?si=37qRdzCfHdQcww5P"
+                        src="https://www.youtube.com/embed/048UdKxDsA8"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
-                    <div className="card-body">
+                    {/* <div className="card-body">
                       <h5 className="card-title">
                         Scaling up - Anaheim Highlights
                       </h5>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -405,10 +431,14 @@ const page = () => {
           <div className="seventh_components" id="conversation_with_mastermind">
             <div className="row res-row">
               <div className="video_div_title">
-                <p className="subhead">Conversation with Mastermind</p>
-                <a href="https://youtu.be/9hPHJj7h8VQ?si=dShvPR50bw0kfkYp" target="_blank" className="video_div_text">
-                  <div>View all</div>
-                </a>
+                <div className="video-title">
+                  <p className="section-header">Conversation with Mastermind</p>
+                </div>
+                <div>
+                  <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
+                    <div>View all</div>
+                  </a>
+                </div>
               </div>
               <div className="col-md-4">
                 <div className="seventh_components_card_box">
@@ -418,15 +448,15 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://www.youtube.com/embed/0zbgCJKyG2I?si=Q2FJdjzLx5yip1M2"
+                        src="https://www.youtube.com/embed/PGgIAnehjR8"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
-                    <div className="card-body">
+                    {/* <div className="card-body">
                       <h5 className="card-title">
                         Challenges of Scaling Up a Business
                       </h5>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -438,15 +468,15 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://www.youtube.com/embed/ppi7XogaQvQ?si=hR24aO5twKCPlA0C"
+                        src="https://www.youtube.com/embed/pDNju3Ookq4"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
-                    <div className="card-body">
+                    {/* <div className="card-body">
                       <h5 className="card-title">
                         The 10 Rockefeller Habits To Success
                       </h5>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -458,15 +488,15 @@ const page = () => {
                         className="video-iframe"
                         width="100%"
                         height="200px"
-                        src="https://www.youtube.com/embed/cyii9Q_aWyc?si=2PODo_ioSYG20z8-"
+                        src="https://www.youtube.com/embed/048UdKxDsA8"
                         allow="autoplay; encrypted-media"
                       ></iframe>
                     </div>
-                    <div className="card-body">
+                    {/* <div className="card-body">
                       <h5 className="card-title">
                         Scaling up - Anaheim Highlights
                       </h5>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -594,155 +624,98 @@ const page = () => {
 
       <div className="second_div_layout" id="reference_books">
         <div className="d-flex flex-row justify-content-between align-items-center">
-          <p className="subhead">Reference Books</p>
+          <p className="section-header">Reference Books</p>
         </div>
-         <div className="slider-container w-full mx-auto">
-      <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={20}
-        slidesPerView={3}
-        navigation
-        pagination={{ clickable: false }}
-        loop={true}
-        breakpoints={{
-          // Adjust settings based on screen width
-          1024: {
-            slidesPerView: 3, // 3 slides on tablets and larger devices
-          },
-          768: {
-            slidesPerView: 2, // 2 slides on medium screens like tablets
-          },
-          480: {
-            slidesPerView: 1, // 1 slide on small screens like mobile devices
-            spaceBetween: 10, // Reduce space between slides on mobile
-          },
-          380: {
-            slidesPerView: 1, // 1 slide on small screens like mobile devices
-            spaceBetween: 10, // Reduce space between slides on mobile
-          },
-          280: {
-            slidesPerView: 1, // 1 slide on small screens like mobile devices
-            spaceBetween: 10, // Reduce space between slides on mobile
-          },
-        }}
-        style={{ width: '100%' }}
-      >
-        {/* 1 */}
-        <SwiperSlide>
-          <div className="custom-col-5 p-2">
-            <a
-              href="https://www.amazon.in/Scaling-Up-Verne-Harnish/dp/9362053160"
-              target="_blank"
-            >
-              <div className="card h-100 shadow-lg p-2">
-                <Image
-                  src={Book0}
-                  alt="Book 0"
-                  className="card-img-top img-fluid"
-                  style={{
-                    height: "400px",
-                    width: "100%",
-                    objectFit: "contain",
-                  }}
-                />
+        <div className="slider-container" style={{ width: "100%", margin: "0 auto" }}>
+          <Slider {...settings}>
+            <div>
+              <div className="custom-col-5 p-2">
+                <a href="https://www.amazon.in/Scaling-Up-Verne-Harnish/dp/9362053160/ref=sr_1_1?crid=3CN5G4C1QVDIL&dib=eyJ2IjoiMSJ9.Q0tvizYJ0XnyRfyYz3o-y7CO_UCqHuu9pxLnuyfXx3iSnIxn6TDXmp_H53TmNJnveQd7RJ8f0e2ZDTiZkeuQqnEAGjry5vuYU5xWQM-H905Jykiamn5W0pHC0H5yENxc_8pD3wn3HKfZJjaWjR_yrK5XSnBS9l9oV5BtwqXeaQGm9qYSwNSyxIk6BakZG6WVqtQidWK3LXSdVpXHkP4cGQOjqZrxX600ccDztcKFOlY.H79FBLE0SB4QKzzZt0qJdyYUf6fk_F_qoJwbg_W4p_U&dib_tag=se&keywords=scaling+up+verne+harnish&qid=1747738951&sprefix=scaling+up%2Caps%2C239&sr=8-1" target="_blank">
+                  <div className="card h-100 shadow-lg p-2">
+                    <Image
+                      src={Book0}
+                      className="card-img-top img-fluid"
+                      alt="case4"
+                      style={{
+                        height: "400px",       // 👈 force same height
+                        width: "100%",
+                        objectFit: "contain",   // keeps image fully visible
+                      }}
+                    />
+                  </div></a>
               </div>
-            </a>
-          </div>
-        </SwiperSlide>
-
-        {/* 2 */}
-        <SwiperSlide>
-          <div className="custom-col-5 p-2">
-            <a
-              href="https://www.amazon.in/Mastering-Rockefeller-Habits"
-              target="_blank"
-            >
-              <div className="card h-100 shadow-lg p-2">
-                <Image
-                  src={Book1}
-                  alt="Book 1"
-                  className="card-img-top img-fluid"
-                  style={{
-                    height: "400px",
-                    width: "100%",
-                    objectFit: "contain",
-                  }}
-                />
+            </div>
+            <div>
+              <div className="custom-col-5 p-2">
+                <a href="https://www.amazon.in/Mastering-Rockefeller-Habits-22nd-Anniversary/dp/B0CXCDYCHN/ref=sr_1_2?crid=JY94OR1ETP4E&dib=eyJ2IjoiMSJ9.XCmjMAr4Yk8wug9W3WpiDjl6SS-1b_MHMGMVSAH1y9ou5dcGPG_BHAzfR-P6miC6zYV84yz6E6nCrRGfwAcjrvli8I9zb1eRclDJFT8ehFiF0hnxr_FuxqJkYEB-wkCoYoOblSDZQ877q75Jc8N_VQ.h-5DTB3NVfu_fKojnTo99hg_4IV_FPpE4co5oIYbRj8&dib_tag=se&keywords=mastering+the+rockefeller+habits&qid=1747739138&sprefix=mastering+the+roc%2Caps%2C264&sr=8-2" target="_blank">
+                  <div className="card h-100 shadow-lg p-2">
+                    <Image
+                      src={Book1}
+                      className="card-img-top img-fluid"
+                      alt="case4"
+                      style={{
+                        height: "400px",       // 👈 force same height
+                        width: "600px",
+                        objectFit: "contain",   // keeps image fully visible
+                      }}
+                    />
+                  </div></a>
               </div>
-            </a>
-          </div>
-        </SwiperSlide>
-
-        {/* 3 */}
-        <SwiperSlide>
-          <div className="custom-col-5 p-2">
-            <a
-              href="https://www.amazon.in/FORTUNE-Greatest-Business-Decisions"
-              target="_blank"
-            >
-              <div className="card h-100 shadow-lg p-2">
-                <Image
-                  src={Book2}
-                  alt="Book 2"
-                  className="card-img-top img-fluid"
-                  style={{
-                    height: "400px",
-                    width: "100%",
-                    objectFit: "contain",
-                  }}
-                />
+            </div>
+            <div>
+              <div className="custom-col-5 p-2">
+                <a href="https://www.amazon.in/FORTUNE-Greatest-Business-Decisions-Time/dp/1603200592/ref=sr_1_1?crid=3AQJ39YJOKUD7&dib=eyJ2IjoiMSJ9.QdGnVr8cCeZDiDwBsgKITt4V9a2uKeJN9rKMyTX37v5o9QyKgTR1mAJh6C9g22z0Lxxa_WK31Kh15g-enMzziIrjBzF3Dzg9EczK10BXpWh9k2I3w9cGDkrIpo4jrN_5xCqW4NEoUTsotsErSPiPmzghLSgOeDiXj5zMPTzSBDcTLX1uwUaPrt_xp96XZoTg.T39xR92Mx5OvAKOGvXCSmx4raKm0M1XVNIDmdUWXHuw&dib_tag=se&keywords=The+Greatest+business+decisions+of+all+time&qid=1747739685&sprefix=the+greatest+business+decisions+of+all+time%2Caps%2C265&sr=8-1" target="_blank">
+                  <div className="card h-100 shadow-lg p-2">
+                    <Image
+                      src={Book2}
+                      className="card-img-top img-fluid"
+                      alt="case5"
+                      style={{
+                        height: "400px",       // 👈 force same height
+                        width: "600px",
+                        objectFit: "contain",   // keeps image fully visible
+                      }}
+                    />
+                  </div></a>
               </div>
-            </a>
-          </div>
-        </SwiperSlide>
-
-        {/* 4 */}
-        <SwiperSlide>
-          <div className="custom-col-5 p-2">
-            <a
-              href="https://www.amazon.in/12-Habits-Valuable-Employees"
-              target="_blank"
-            >
-              <div className="card h-100 shadow-lg p-2">
-                <Image
-                  src={Book3}
-                  alt="Book 3"
-                  className="card-img-top img-fluid"
-                  style={{
-                    height: "400px",
-                    width: "100%",
-                    objectFit: "contain",
-                  }}
-                />
+            </div>
+            <div>
+              <div className="custom-col-5 p-2">
+                <a href="https://www.amazon.in/12-Habits-Valuable-Employees-Roadmap-ebook/dp/B0CQ62WD2T/ref=sr_1_1?crid=2DRXTOCN79UD2&dib=eyJ2IjoiMSJ9.lAMQzcVHfJop0DkuMY-hQ3yvhU8dWijmXI2Yhu_hMFivWc2BB-3Qa8aS1b_AN1A26B1WQ0x55tCLj4l44XrR1w.QXgrOQ_pzuPSl9WT8cJ_aq0AwFjuAjf7KrS7wBUixFU&dib_tag=se&keywords=12+Habits+of+valuable+employees&qid=1747739730&sprefix=12+habits+of+valuable+employees%2Caps%2C260&sr=8-1" target="_blank">
+                  <div className="card h-100 shadow-lg p-2">
+                    <Image
+                      src={Book3}
+                      className="card-img-top img-fluid"
+                      alt="case4"
+                      style={{
+                        height: "400px",       // 👈 force same height
+                        width: "600px",
+                        objectFit: "contain",   // keeps image fully visible
+                      }}
+                    />
+                  </div></a>
               </div>
-            </a>
-          </div>
-        </SwiperSlide>
-
-        {/* 5 */}
-        <SwiperSlide>
-          <div className="custom-col-5 p-2">
-            <a
-              href="https://www.amazon.in/12-Habits-Valuable-Employees"
-              target="_blank"
-            >
-              <div className="card h-100 shadow-lg p-2">
-                <Image
-                  src={Book4}
-                  alt="Book 4"
-                  className="card-img-top img-fluid"
-                  style={{
-                    height: "400px",
-                    width: "100%",
-                    objectFit: "contain",
-                  }}
-                />
+            </div>
+            <div>
+              <div className="custom-col-5 p-2">
+                <a href="https://www.amazon.in/12-Habits-Valuable-Employees-Roadmap-ebook/dp/B0CQ62WD2T/ref=sr_1_1?crid=2DRXTOCN79UD2&dib=eyJ2IjoiMSJ9.lAMQzcVHfJop0DkuMY-hQ3yvhU8dWijmXI2Yhu_hMFivWc2BB-3Qa8aS1b_AN1A26B1WQ0x55tCLj4l44XrR1w.QXgrOQ_pzuPSl9WT8cJ_aq0AwFjuAjf7KrS7wBUixFU&dib_tag=se&keywords=12+Habits+of+valuable+employees&qid=1747739730&sprefix=12+habits+of+valuable+employees%2Caps%2C260&sr=8-1" target="_blank">
+                  <div className="card h-100 shadow-lg p-2">
+                    <Image
+                      src={Book4}
+                      className="card-img-top img-fluid"
+                      alt="case4"
+                      style={{
+                        height: "400px",       // 👈 force same height
+                        width: "600px",
+                        objectFit: "contain",   // keeps image fully visible
+                      }}
+                    />
+                  </div></a>
               </div>
-            </a>
-          </div>
-        </SwiperSlide>
-      </Swiper>
-    </div>
+            </div>
+            
+          </Slider>
+        </div>
 
       </div>
       {/* <div className="third_div_layout shadow-lg">
