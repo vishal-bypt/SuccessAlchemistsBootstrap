@@ -328,70 +328,72 @@ const page = () => {
 
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-center">
-          <div className="seventh_components" id="pathfinder_podcast">
-            <div className="row res-row">
-              <div className="video_div_title">
-                <p className="subhead">Pathfinder Podcast</p>
-                <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
-                  <div>View all</div>
-                </a>
-              </div>
-              <div className="col-md-4">
-                <div className="seventh_components_card_box">
-                  <div className="video-card">
-                    <div className="video-thumbnail">
-                      <iframe
-                        className="video-iframe"
-                        width="100%"
-                        height="200px"
-                        src="https://www.youtube.com/embed/0zbgCJKyG2I?si=qB8W3krA4ih9_1dv"
-                        allow="autoplay; encrypted-media"
-                      ></iframe>
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">
-                        Challenges of Scaling Up a Business
-                      </h5>
+          <div className="box_size">
+            <div className="seventh_components" id="pathfinder_podcast">
+              <div className="row res-row">
+                <div className="video_div_title">
+                  <p className="subhead">Pathfinder Podcast</p>
+                  <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
+                    <div>View all</div>
+                  </a>
+                </div>
+                <div className="col-md-4">
+                  <div className="seventh_components_card_box">
+                    <div className="video-card">
+                      <div className="video-thumbnail">
+                        <iframe
+                          className="video-iframe"
+                          width="100%"
+                          height="200px"
+                          src="https://www.youtube.com/embed/0zbgCJKyG2I?si=qB8W3krA4ih9_1dv"
+                          allow="autoplay; encrypted-media"
+                        ></iframe>
+                      </div>
+                      <div className="card-body">
+                        <h5 className="card-title">
+                          Challenges of Scaling Up a Business
+                        </h5>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-md-4">
-                <div className="seventh_components_card_box">
-                  <div className="video-card">
-                    <div className="video-thumbnail">
-                      <iframe
-                        className="video-iframe"
-                        width="100%"
-                        height="200px"
-                        src="https://www.youtube.com/embed/5XLMGHfovHc?si=sROr3PEuzoI4gffR"
-                        allow="autoplay; encrypted-media"
-                      ></iframe>
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">
-                        The 10 Rockefeller Habits To Success
-                      </h5>
+                <div className="col-md-4">
+                  <div className="seventh_components_card_box">
+                    <div className="video-card">
+                      <div className="video-thumbnail">
+                        <iframe
+                          className="video-iframe"
+                          width="100%"
+                          height="200px"
+                          src="https://www.youtube.com/embed/5XLMGHfovHc?si=sROr3PEuzoI4gffR"
+                          allow="autoplay; encrypted-media"
+                        ></iframe>
+                      </div>
+                      <div className="card-body">
+                        <h5 className="card-title">
+                          The 10 Rockefeller Habits To Success
+                        </h5>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-md-4">
-                <div className="seventh_components_card_box">
-                  <div className="video-card">
-                    <div className="video-thumbnail">
-                      <iframe
-                        className="video-iframe"
-                        width="100%"
-                        height="200px"
-                        src="https://www.youtube.com/embed/7JD3skmXJas?si=37qRdzCfHdQcww5P"
-                        allow="autoplay; encrypted-media"
-                      ></iframe>
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">
-                        Scaling up - Anaheim Highlights
-                      </h5>
+                <div className="col-md-4">
+                  <div className="seventh_components_card_box">
+                    <div className="video-card">
+                      <div className="video-thumbnail">
+                        <iframe
+                          className="video-iframe"
+                          width="100%"
+                          height="200px"
+                          src="https://www.youtube.com/embed/7JD3skmXJas?si=37qRdzCfHdQcww5P"
+                          allow="autoplay; encrypted-media"
+                        ></iframe>
+                      </div>
+                      <div className="card-body">
+                        <h5 className="card-title">
+                          Scaling up - Anaheim Highlights
+                        </h5>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -402,70 +404,72 @@ const page = () => {
       </div>
       <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-center">
-          <div className="seventh_components" id="conversation_with_mastermind">
-            <div className="row res-row">
-              <div className="video_div_title">
-                <p className="subhead">Conversation with Mastermind</p>
-                <a href="https://youtu.be/9hPHJj7h8VQ?si=dShvPR50bw0kfkYp" target="_blank" className="video_div_text">
-                  <div>View all</div>
-                </a>
-              </div>
-              <div className="col-md-4">
-                <div className="seventh_components_card_box">
-                  <div className="video-card">
-                    <div className="video-thumbnail">
-                      <iframe
-                        className="video-iframe"
-                        width="100%"
-                        height="200px"
-                        src="https://www.youtube.com/embed/0zbgCJKyG2I?si=Q2FJdjzLx5yip1M2"
-                        allow="autoplay; encrypted-media"
-                      ></iframe>
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">
-                        Challenges of Scaling Up a Business
-                      </h5>
+          <div className="box_size">
+            <div className="seventh_components" id="conversation_with_mastermind">
+              <div className="row res-row">
+                <div className="video_div_title">
+                  <p className="subhead">Conversation with Mastermind</p>
+                  <a href="https://youtu.be/9hPHJj7h8VQ?si=dShvPR50bw0kfkYp" target="_blank" className="video_div_text">
+                    <div>View all</div>
+                  </a>
+                </div>
+                <div className="col-md-4">
+                  <div className="seventh_components_card_box">
+                    <div className="video-card">
+                      <div className="video-thumbnail">
+                        <iframe
+                          className="video-iframe"
+                          width="100%"
+                          height="200px"
+                          src="https://www.youtube.com/embed/0zbgCJKyG2I?si=Q2FJdjzLx5yip1M2"
+                          allow="autoplay; encrypted-media"
+                        ></iframe>
+                      </div>
+                      <div className="card-body">
+                        <h5 className="card-title">
+                          Challenges of Scaling Up a Business
+                        </h5>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-md-4">
-                <div className="seventh_components_card_box">
-                  <div className="video-card">
-                    <div className="video-thumbnail">
-                      <iframe
-                        className="video-iframe"
-                        width="100%"
-                        height="200px"
-                        src="https://www.youtube.com/embed/ppi7XogaQvQ?si=hR24aO5twKCPlA0C"
-                        allow="autoplay; encrypted-media"
-                      ></iframe>
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">
-                        The 10 Rockefeller Habits To Success
-                      </h5>
+                <div className="col-md-4">
+                  <div className="seventh_components_card_box">
+                    <div className="video-card">
+                      <div className="video-thumbnail">
+                        <iframe
+                          className="video-iframe"
+                          width="100%"
+                          height="200px"
+                          src="https://www.youtube.com/embed/ppi7XogaQvQ?si=hR24aO5twKCPlA0C"
+                          allow="autoplay; encrypted-media"
+                        ></iframe>
+                      </div>
+                      <div className="card-body">
+                        <h5 className="card-title">
+                          The 10 Rockefeller Habits To Success
+                        </h5>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-md-4">
-                <div className="seventh_components_card_box">
-                  <div className="video-card">
-                    <div className="video-thumbnail">
-                      <iframe
-                        className="video-iframe"
-                        width="100%"
-                        height="200px"
-                        src="https://www.youtube.com/embed/cyii9Q_aWyc?si=2PODo_ioSYG20z8-"
-                        allow="autoplay; encrypted-media"
-                      ></iframe>
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title">
-                        Scaling up - Anaheim Highlights
-                      </h5>
+                <div className="col-md-4">
+                  <div className="seventh_components_card_box">
+                    <div className="video-card">
+                      <div className="video-thumbnail">
+                        <iframe
+                          className="video-iframe"
+                          width="100%"
+                          height="200px"
+                          src="https://www.youtube.com/embed/cyii9Q_aWyc?si=2PODo_ioSYG20z8-"
+                          allow="autoplay; encrypted-media"
+                        ></iframe>
+                      </div>
+                      <div className="card-body">
+                        <h5 className="card-title">
+                          Scaling up - Anaheim Highlights
+                        </h5>
+                      </div>
                     </div>
                   </div>
                 </div>
