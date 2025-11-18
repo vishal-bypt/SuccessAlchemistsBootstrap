@@ -326,11 +326,8 @@ const page = () => {
         </div>
       </div>
 
-      <div className="second_div_layout">
-        <div className="d-flex flex-row justify-content-center">
-          <div className="box_size">
-            <div className="seventh_components" id="pathfinder_podcast">
-              <div className="row res-row">
+      <div className="second_div_layout" id="pathfinder_podcast">
+         <div className="row res-row">
                 <div className="video_div_title">
                   <p className="subhead">Pathfinder Podcast</p>
                   <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
@@ -398,14 +395,9 @@ const page = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
       </div>
       <div className="second_div_layout">
-        <div className="d-flex flex-row justify-content-center">
-          <div className="box_size">
-            <div className="seventh_components" id="conversation_with_mastermind">
+         <div className="seventh_components" id="conversation_with_mastermind">
               <div className="row res-row">
                 <div className="video_div_title">
                   <p className="subhead">Conversation with Mastermind</p>
@@ -475,8 +467,6 @@ const page = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
       </div>
       {/* <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between">
