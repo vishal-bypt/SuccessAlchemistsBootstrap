@@ -413,7 +413,7 @@ const page = () => {
                           className="video-iframe"
                           width="100%"
                           height="200px"
-                          src="https://www.youtube.com/embed/0zbgCJKyG2I?si=Q2FJdjzLx5yip1M2"
+                          src="https://www.youtube.com/embed/wpegrdNokHo?si=nSo77dD-10IIyXnc"
                           allow="autoplay; encrypted-media"
                         ></iframe>
                       </div>
