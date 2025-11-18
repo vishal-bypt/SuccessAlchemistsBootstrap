@@ -401,7 +401,7 @@ const page = () => {
               <div className="row res-row">
                 <div className="video_div_title">
                   <p className="subhead">Conversation with Mastermind</p>
-                  <a href="https://youtu.be/9hPHJj7h8VQ?si=dShvPR50bw0kfkYp" target="_blank" className="video_div_text">
+                  <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
                     <div>View all</div>
                   </a>
                 </div>
@@ -625,7 +625,7 @@ const page = () => {
         <SwiperSlide>
           <div className="custom-col-5 p-2">
             <a
-              href="https://www.amazon.in/Scaling-Up-Verne-Harnish/dp/9362053160"
+              //href="https://www.amazon.in/Scaling-Up-Verne-Harnish/dp/9362053160"
               target="_blank"
             >
               <div className="card h-100 shadow-lg p-2">
@@ -648,7 +648,7 @@ const page = () => {
         <SwiperSlide>
           <div className="custom-col-5 p-2">
             <a
-              href="https://www.amazon.in/Mastering-Rockefeller-Habits"
+              //href="https://www.amazon.in/Mastering-Rockefeller-Habits"
               target="_blank"
             >
               <div className="card h-100 shadow-lg p-2">
@@ -671,7 +671,7 @@ const page = () => {
         <SwiperSlide>
           <div className="custom-col-5 p-2">
             <a
-              href="https://www.amazon.in/FORTUNE-Greatest-Business-Decisions"
+              //href="https://www.amazon.in/FORTUNE-Greatest-Business-Decisions"
               target="_blank"
             >
               <div className="card h-100 shadow-lg p-2">
@@ -694,7 +694,7 @@ const page = () => {
         <SwiperSlide>
           <div className="custom-col-5 p-2">
             <a
-              href="https://www.amazon.in/12-Habits-Valuable-Employees"
+              //href="https://www.amazon.in/12-Habits-Valuable-Employees"
               target="_blank"
             >
               <div className="card h-100 shadow-lg p-2">
@@ -717,7 +717,7 @@ const page = () => {
         <SwiperSlide>
           <div className="custom-col-5 p-2">
             <a
-              href="https://www.amazon.in/12-Habits-Valuable-Employees"
+              //href="https://www.amazon.in/12-Habits-Valuable-Employees"
               target="_blank"
             >
               <div className="card h-100 shadow-lg p-2">
