@@ -252,7 +252,7 @@ const page = () => {
       <div className="second_div_layout">
         <div className="third_div" id="scaling_up_toolkit">
           <div className="d-flex flex-row justify-content-between">
-            <p className="subhead">Conversation with Mastermind</p>
+            <p className="subhead">Scaling Up Toolkits</p>
           </div>
           <div className="mt-4">
             <div className="row g-4">
