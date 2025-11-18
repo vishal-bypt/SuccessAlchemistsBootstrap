@@ -401,7 +401,7 @@ const page = () => {
               <div className="row res-row">
                 <div className="video_div_title">
                   <p className="subhead">Conversation with Mastermind</p>
-                  <a href="https://youtu.be/9hPHJj7h8VQ?si=dShvPR50bw0kfkYp" target="_blank" className="video_div_text">
+                  <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
                     <div>View all</div>
                   </a>
                 </div>
