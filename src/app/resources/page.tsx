@@ -225,9 +225,9 @@ const page = () => {
 
         <div className="row g-4">
           {[
-            { title: "Scaling up Toolkit", img: Image1, slug: "scaling_up_toolkit" },
-            { title: "Pathfinder Podcast", img: Image2, slug: "pathfinder_podcast" },
-            { title: "Conversation with Mastermind", img: Image3, slug: "conversation_with_mastermind" },
+            { title: "Scaling up Toolkits", img: Image1, slug: "scaling_up_toolkit" },
+            { title: "Pathfinder Podcasts", img: Image2, slug: "pathfinder_podcast" },
+            { title: "Conversation with Masterminds", img: Image3, slug: "conversation_with_mastermind" },
             { title: "Reference Books", img: Image4, slug: "reference_books" },
           ].map((item, i) => (
             <div
@@ -329,7 +329,7 @@ const page = () => {
       <div className="second_div_layout" id="pathfinder_podcast">
          <div className="row res-row">
                 <div className="video_div_title">
-                  <p className="subhead">Pathfinder Podcast</p>
+                  <p className="subhead">Pathfinder Podcasts</p>
                   <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
                     <div>View all</div>
                   </a>
@@ -400,7 +400,7 @@ const page = () => {
          <div className="seventh_components" id="conversation_with_mastermind">
               <div className="row res-row">
                 <div className="video_div_title">
-                  <p className="subhead">Conversation with Mastermind</p>
+                  <p className="subhead">Conversation with Masterminds</p>
                   <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
                     <div>View all</div>
                   </a>
@@ -413,7 +413,7 @@ const page = () => {
                           className="video-iframe"
                           width="100%"
                           height="200px"
-                          src="https://www.youtube.com/embed/0zbgCJKyG2I?si=Q2FJdjzLx5yip1M2"
+                          src="https://www.youtube.com/embed/wpegrdNokHo?si=nSo77dD-10IIyXnc"
                           allow="autoplay; encrypted-media"
                         ></iframe>
                       </div>
