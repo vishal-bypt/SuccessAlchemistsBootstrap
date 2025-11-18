@@ -396,8 +396,7 @@ const page = () => {
                 </div>
               </div>
       </div>
-      <div className="second_div_layout">
-         <div className="seventh_components" id="conversation_with_mastermind">
+      <div className="second_div_layout" id="conversation_with_mastermind">
               <div className="row res-row">
                 <div className="video_div_title">
                   <p className="subhead">Conversation with Masterminds</p>
@@ -466,7 +465,6 @@ const page = () => {
                   </div>
                 </div>
               </div>
-            </div>
       </div>
       {/* <div className="second_div_layout">
         <div className="d-flex flex-row justify-content-between">
