@@ -625,7 +625,7 @@ const page = () => {
         <SwiperSlide>
           <div className="custom-col-5 p-2">
             <a
-              href="https://www.amazon.in/Scaling-Up-Verne-Harnish/dp/9362053160"
+              //href="https://www.amazon.in/Scaling-Up-Verne-Harnish/dp/9362053160"
               target="_blank"
             >
               <div className="card h-100 shadow-lg p-2">
@@ -648,7 +648,7 @@ const page = () => {
         <SwiperSlide>
           <div className="custom-col-5 p-2">
             <a
-              href="https://www.amazon.in/Mastering-Rockefeller-Habits"
+              //href="https://www.amazon.in/Mastering-Rockefeller-Habits"
               target="_blank"
             >
               <div className="card h-100 shadow-lg p-2">
@@ -671,7 +671,7 @@ const page = () => {
         <SwiperSlide>
           <div className="custom-col-5 p-2">
             <a
-              href="https://www.amazon.in/FORTUNE-Greatest-Business-Decisions"
+              //href="https://www.amazon.in/FORTUNE-Greatest-Business-Decisions"
               target="_blank"
             >
               <div className="card h-100 shadow-lg p-2">
@@ -694,7 +694,7 @@ const page = () => {
         <SwiperSlide>
           <div className="custom-col-5 p-2">
             <a
-              href="https://www.amazon.in/12-Habits-Valuable-Employees"
+              //href="https://www.amazon.in/12-Habits-Valuable-Employees"
               target="_blank"
             >
               <div className="card h-100 shadow-lg p-2">
@@ -717,7 +717,7 @@ const page = () => {
         <SwiperSlide>
           <div className="custom-col-5 p-2">
             <a
-              href="https://www.amazon.in/12-Habits-Valuable-Employees"
+              //href="https://www.amazon.in/12-Habits-Valuable-Employees"
               target="_blank"
             >
               <div className="card h-100 shadow-lg p-2">
