@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./resources.css";
-import Image1 from "./images/sec1-img1.jpg";
-import Image2 from "./images/sec1-img2.jpg";
-import Image3 from "./images/sec1-img3.jpg";
-import Image4 from "./images/sec1-img4.jpg";
+import Image1 from "./images/Scaling Up Toolkit.jpg";
+import Image2 from "./images/Pathfinders Podcasts.jpg";
+import Image3 from "./images/Conversations with Masterminds.jpg";
+import Image4 from "./images/Reference Books.jpg";
 import Image5 from "./images/Case6.png";
 import Book0 from "../../app/resources/images/scaling_up.jpeg";
 import Book1 from "../../app/resources/images/mastering_the_rockefeller.jpeg";
