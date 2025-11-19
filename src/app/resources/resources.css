@@ -302,9 +302,9 @@
   flex: 0 0 auto;
 }
 @media (max-width: 1200px) {
-  .custom-col-5 {
-    width: 33.33%; /* 3 columns for medium screens */
-  }
+  /* .custom-col-5 {
+    width: 33.33%; 3 columns for medium screens
+  } */
 }
 @media (max-width: 1024) {
   .custom-col-5 {
