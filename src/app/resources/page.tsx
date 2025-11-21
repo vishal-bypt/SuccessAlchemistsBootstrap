@@ -226,8 +226,8 @@ const page = () => {
         <div className="row g-4">
           {[
             { title: "Scaling up Toolkits", img: Image1, slug: "scaling_up_toolkit" },
-            { title: "Pathfinder Podcasts", img: Image2, slug: "pathfinder_podcast" },
-            { title: "Conversation with Masterminds", img: Image3, slug: "conversation_with_mastermind" },
+            { title: "Pathfinders Podcasts", img: Image2, slug: "pathfinder_podcast" },
+            { title: "Conversations with Masterminds", img: Image3, slug: "conversation_with_mastermind" },
             { title: "Reference Books", img: Image4, slug: "reference_books" },
           ].map((item, i) => (
             <div
@@ -329,7 +329,7 @@ const page = () => {
       <div className="second_div_layout" id="pathfinder_podcast">
          <div className="row res-row">
                 <div className="video_div_title">
-                  <p className="subhead">Pathfinder Podcasts</p>
+                  <p className="subhead">Pathfinders Podcasts</p>
                   <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
                     <div>View all</div>
                   </a>
@@ -399,7 +399,7 @@ const page = () => {
       <div className="second_div_layout" id="conversation_with_mastermind">
               <div className="row res-row">
                 <div className="video_div_title">
-                  <p className="subhead">Conversation with Masterminds</p>
+                  <p className="subhead">Conversations with Masterminds</p>
                   <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
                     <div>View all</div>
                   </a>
