@@ -1562,6 +1562,14 @@ img {
     .nav-arrow {
         font-size: 28px;
     }
+    .sub-job-details {
+        margin-left: 0;
+        margin-top : 10px;
+    }
+
+    .sub-job-details h3{
+        font-size : 18px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1580,6 +1588,15 @@ img {
 
     .video-frame {
         border-width: 8px;
+    }
+
+    .sub-job-details {
+        margin-left: 0;
+        margin-top : 10px;
+    }
+
+    .sub-job-details h3{
+        font-size : 18px;
     }
 }
 
@@ -1620,6 +1637,14 @@ img {
     .video-frame {
         border-width: 6px;
     }
+     .sub-job-details {
+        margin-left: 0;
+        margin-top : 10px;
+    }
+
+    .sub-job-details h3{
+        font-size : 14px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -1643,6 +1668,15 @@ img {
 
     .video-frame {
         border-width: 5px;
+    }
+
+    .sub-job-details {
+        margin-left: 0;
+        margin-top : 10px;
+    }
+
+    .sub-job-details h3{
+        font-size : 14px;
     }
 }
 
