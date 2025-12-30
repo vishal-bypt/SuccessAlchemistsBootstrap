@@ -92,10 +92,16 @@ export default function BasecampPage() {
           <div className="row align-items-center justify-content-center">
             <div className="col-lg-3 col-md-12 col-12 order-lg-1 order-1">
               <div className="hero-content">
-               <div className="hero-icon-img">
-                <Image className="logo-image" src={basecamplogo2} alt="img2" />
-              </div>
-                <p className="hero-subtitle">8th Edition | Pune</p>
+                <div className="hero-icon-img">
+                  <Image
+                    className="logo-image"
+                    src={basecamplogo2}
+                    alt="img2"
+                  />
+                </div>
+                <p className="hero-subtitle text-center text-md-left">
+                  8th Edition | Pune
+                </p>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 col-12 order-lg-2 order-2">
@@ -122,7 +128,9 @@ export default function BasecampPage() {
                     </div>
                     <div></div>
                   </div>
-                  <button className="btn btn-cta">REGISTER NOW</button>
+                  <button className="btn btn-cta w-100 w-md-auto">
+                    REGISTER NOW
+                  </button>
                 </div>
               </div>
             </div>
@@ -140,12 +148,12 @@ export default function BasecampPage() {
             <div className="col-md-3">&nbsp;</div>
             <div className="col-md-6">
               <p className="section-subtitle text-center">
-                Success Alchemists leverage the Scaling Up framework <br />
-                - which is a globally proven framework - to grow <br />
+                Success Alchemists leverage the Scaling Up framework{" "}
+                <br className="d-none d-md-block" />- which is a globally proven
+                framework - to grow <br className="d-none d-md-block" />
                 businesses exponentially & sustainably.
               </p>
             </div>
-            <div className="row">&nbsp;</div>
             <div className="row">&nbsp;</div>
             <div className="col-md-3">&nbsp;</div>
           </div>
@@ -154,9 +162,12 @@ export default function BasecampPage() {
             <div className="col-md-3">&nbsp;</div>
             <div className="col-md-6">
               <p className="section-subtitle text-center">
-                In the Basecamp 1-day workshop, we deep dive into the <br />4
-                pillars of a business - People, Strategy, Execution & <br />
-                Cash - and teach you how to use Scaling Up to drive <br />
+                In the Basecamp 1-day workshop, we deep dive into the{" "}
+                <br className="d-none d-md-block" />4 pillars of a business -
+                People, Strategy, Execution &{" "}
+                <br className="d-none d-md-block" />
+                Cash - and teach you how to use Scaling Up to drive{" "}
+                <br className="d-none d-md-block" />
                 your next big decision(s) to scale your business.
               </p>
             </div>
@@ -165,19 +176,19 @@ export default function BasecampPage() {
           </div>
 
           <div className="row metrics-container">
-            <div className="col-md-4">
+            <div className="col-md-4 col-12">
               <div className="metric-box">
                 <div className="metric-value">80,000</div>
                 <div className="metric-label">Companies Worldwide</div>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 col-12">
               <div className="metric-box">
                 <div className="metric-value">10X</div>
                 <div className="metric-label">Valuations Multiplied</div>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 col-12">
               <div className="metric-box">
                 <div className="metric-value">3X</div>
                 <div className="metric-label">Profitability Increased</div>
@@ -191,14 +202,15 @@ export default function BasecampPage() {
       <section className="experience-section">
         <div className="container">
           <h1 className="experience-section-title">
-            What You'll <br /> Experience At <br /> BASECAMP?
+            What You'll <br className="d-none d-md-block" /> Experience At{" "}
+            <br className="d-none d-md-block" /> BASECAMP?
           </h1>
 
           <div className="row experience-grid">
-            <div className="col-md-6">
+            <div className="col-md-6 col-12">
               <div className="experience-item">
                 <div className="experience-icon">
-                  <img src="arrow.png" width="200" />
+                  <img src="arrow.png" width="200" alt="arrow" />
                 </div>
                 <div className="experience-text">
                   Discover how other players in your industry are scaling their
@@ -206,10 +218,10 @@ export default function BasecampPage() {
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-12">
               <div className="experience-item">
                 <div className="experience-icon">
-                  <img src="arrow.png" width="200" />
+                  <img src="arrow.png" width="200" alt="arrow" />
                 </div>
                 <div className="experience-text">
                   Learn the nuances of business growth from scaling up certified
@@ -217,10 +229,10 @@ export default function BasecampPage() {
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-12">
               <div className="experience-item">
                 <div className="experience-icon">
-                  <img src="arrow.png" width="200" />
+                  <img src="arrow.png" width="200" alt="arrow" />
                 </div>
                 <div className="experience-text">
                   Identify the gaps in your current business that's hindering
@@ -228,10 +240,10 @@ export default function BasecampPage() {
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-12">
               <div className="experience-item">
                 <div className="experience-icon">
-                  <img src="arrow.png" width="200" />
+                  <img src="arrow.png" width="200" alt="arrow" />
                 </div>
                 <div className="experience-text">
                   Network with business owners & leaders with over 100CR
@@ -246,14 +258,16 @@ export default function BasecampPage() {
               <img src="./rocket_growth.png" width="240" />
             </div>
             <div className="highlight-text">
-              In our past workshops, leaders <br />
+              In our past workshops, leaders{" "}
+              <br className="d-none d-md-block" />
               have figured out a{" "}
               <span className="highlight-yellow">
-                5-15% <br />
+                5-15% <br className="d-none d-md-block" />
                 Cashflow Growth Strategy{" "}
               </span>
-              for <br />
-              their respective businesses during <br />
+              for <br className="d-none d-md-block" />
+              their respective businesses during{" "}
+              <br className="d-none d-md-block" />
               the sessions.
             </div>
           </div>
@@ -365,28 +379,79 @@ export default function BasecampPage() {
           </h1>
           <div className="row">&nbsp;</div>
           <div className="row">
-            <div className="col-md-1">&nbsp;</div>
-            <div className="col-md-11 excite-section-list">
+            <div className="col-md-1 d-none d-md-block">&nbsp;</div>
+            <div className="col-md-11 col-12 excite-section-list">
               <i className="fa-solid fa-arrow-trend-up me-2"></i> You are
               running a Multi-Million Dollar company
             </div>
           </div>
           <div className="row">&nbsp;</div>
           <div className="row">
-            <div className="col-md-1">&nbsp;</div>
-            <div className="col-md-11 excite-section-list">
+            <div className="col-md-1 d-none d-md-block">&nbsp;</div>
+            <div className="col-md-11 col-12 excite-section-list">
               <i className="fa-solid fa-arrow-trend-up me-2"></i> You are
-              serious about scaling up your business <br />
+              serious about scaling up your business{" "}
+              <br className="d-none d-md-block" />
               exponentially in the next 10 years
             </div>
           </div>
           <div className="row">&nbsp;</div>
           <div className="row">
-            <div className="col-md-1">&nbsp;</div>
-            <div className="col-md-11 excite-section-list">
+            <div className="col-md-1 d-none d-md-block">&nbsp;</div>
+            <div className="col-md-11 col-12 excite-section-list">
               <i className="fa-solid fa-arrow-trend-up me-2"></i> You know what
-              has taken you this far, won’t take you to <br />
+              has taken you this far, won't take you to{" "}
+              <br className="d-none d-md-block" />
               the next big leap
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="join-section">
+        <div className="row g-0">
+          <div className="col-lg-6">
+            <div className="join-left">
+              <h2>We’re Coming To Your City</h2>
+              <h1>BASECAMP</h1>
+              <div className="join-details">
+                <div className="sub-job-details">
+                  <h3>
+                    <strong>Pune - 12th Feb’25</strong>
+                  </h3>
+                </div>
+                <div className="sub-job-details">
+                  <h3>
+                    <strong>Mumbai - 26th Feb’25</strong>
+                  </h3>
+                </div>
+                <div className="sub-job-details">
+                  <h3>
+                    <strong>DELHI-NCR - 24th MAr’25</strong>
+                  </h3>
+                </div>
+              </div>
+              <button
+                className="btn btn-cta text-center"
+                style={{ width: "100%", color: "#000000" }}
+              >
+                Early Bird Prices Start At Rs 7999
+                <br />
+                <span className="btn-text">
+                  <strong>REGISTER NOW</strong>
+                </span>{" "}
+              </button>
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <div className="join-right">
+              <div className="">
+                <img
+                  src="banner.png"
+                  style={{ height: "50% !important", zIndex:9999 }}
+                  className="img-responsive"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -467,8 +532,18 @@ export default function BasecampPage() {
           <div className="row align-items-center justify-content-center">
             <div className="col-lg-8 col-md-12 col-12 order-lg-1 order-1">
               <div className="hero-content-footer text-center">
-                <h3 style={{ fontSize: 79, color: "#FFFFFF" }}>
+                <h3
+                  className="d-none d-md-block"
+                  style={{ fontSize: 79, color: "#FFFFFF" }}
+                >
                   Are You <br />{" "}
+                  <span style={{ color: "#fdae07" }}>Ready To Scale?</span>
+                </h3>
+                <h3
+                  className="d-block d-md-none"
+                  style={{ fontSize: 36, color: "#FFFFFF", lineHeight: 1.2 }}
+                >
+                  Are You{" "}
                   <span style={{ color: "#fdae07" }}>Ready To Scale?</span>
                 </h3>
                 <p className="hero-subtitle">
@@ -477,7 +552,7 @@ export default function BasecampPage() {
                     style={{ width: "100%", color: "#000000" }}
                   >
                     Limited spots Available
-                    <br />
+                    <br className="d-none d-sm-block" />
                     <span className="btn-text">
                       <strong>ReGISTER NOW for basecamp</strong>
                     </span>{" "}
