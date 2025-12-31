@@ -418,6 +418,8 @@ export default function BasecampPage() {
           <div className="col-lg-6">
             <div className="join-left">
               <h2>We’re Coming To Your City</h2>
+                              {/* <div className="row spacer"></div> */}
+              <br></br>
               <h1>BASECAMP</h1>
               <div className="row spacer"></div>
               <div className="join-details">
