@@ -275,103 +275,49 @@ export default function BasecampPage() {
       </section>
 
       {/* VIDEO CAROUSEL */}
-      <div>
-        {/* VIDEO CAROUSEL */}
-        <div
-          className="carousel-wrapper text-center position-relative"
-          style={{ maxWidth: 900, margin: "40px auto", padding: "0 15px" }}
-        >
-          <button className="nav-arrow nav-left" onClick={prevVideo}>
-            <i className="fa-solid fa-chevron-left"></i>
-          </button>
-          <button className="nav-arrow nav-right" onClick={nextVideo}>
-            <i className="fa-solid fa-chevron-right"></i>
-          </button>
-
-          <div
-            className="video-frame position-relative"
-            style={{
-              aspectRatio: "16/9",
-              background: "#000",
-              border: "10px solid #1a1a1a",
-              borderRadius: 10,
-              overflow: "hidden",
-            }}
-          >
-            {v.type === "youtube" ? (
-              <div className="video-overlay" onClick={() => openYT(v.id)}>
-                <i
-                  className="fa-brands fa-youtube text-warning"
-                  style={{ fontSize: 40 }}
-                ></i>
-                <div className="text-white">Watch on YouTube</div>
-              </div>
-            ) : (
-              <>
-                {/* MP4 Overlay */}
-                {/* MP4 Overlay */}
-                {!isPlaying && (
-                  <div
-                    id="mp4Overlay"
-                    className="video-overlay"
-                    onClick={playMP4}
-                  >
-                    <Image
-                      src={v.thumbnail}
-                      alt="mp4"
-                      fill
-                      className="object-cover opacity-60"
-                    />
-                    <i
-                      className="fa-solid fa-circle-play text-warning"
-                      style={{ fontSize: 40 }}
-                    ></i>
-                  </div>
-                )}
-
-                {/* MP4 Player */}
-                <video
-                  id="mp4Video"
-                  ref={playerRef}
-                  controls
-                  className="w-full h-full"
-                  style={{
-                    display: v.type === "mp4" && isPlaying ? "block" : "none",
-                  }} // 👈 FIX
-                  onEnded={() => setPlaying(false)}
-                >
-                  <source key={v.src} src={v.src} type="video/mp4" />{" "}
-                  {/* 👈 also add key */}
-                </video>
-
-                {/* Optional Play/Pause Toggle */}
-                {isPlaying && v.type === "mp4" && (
-                  <button
-                    className="absolute bottom-3 right-3 bg-black/50 px-3 py-1 rounded text-white text-sm"
-                    onClick={togglePlay}
-                  >
-                    {playerRef.current?.paused ? "Play" : "Pause"}
-                  </button>
-                )}
-              </>
-            )}
+      <div
+        className="video-frame position-relative"
+        style={{
+          maxWidth: 900,
+          margin: "40px auto",
+          aspectRatio: "16/9",
+          background: "#000",
+          border: "10px solid #1a1a1a",
+          borderRadius: 10,
+          overflow: "hidden",
+          position: "relative",
+        }}
+      >
+        {!isPlaying && (
+          <div className="video-overlay" onClick={() => setPlaying(true)}>
+            <Image
+              src="https://img.youtube.com/vi/7ZCfJEMV4nE/maxresdefault.jpg"
+              alt="youtube"
+              fill
+              className="object-cover opacity-60"
+            />
+            <i
+              className="fa-solid fa-circle-play text-warning"
+              style={{ fontSize: 45 }}
+            ></i>
+            <div className="text-white mt-2 text-sm">Play Video</div>
           </div>
+        )}
 
-          {/* PROGRESS SLIDER */}
-          <div
-            className="progress-container mt-3"
-            style={{
-              height: 3,
-              background: "#d9d9d9",
-              borderRadius: 2,
-              position: "relative",
-            }}
-          >
-            <div style={{ width: progress + "%" }} className="progress"></div>
-            <div style={{ left: progress + "%" }} className="slider-dot"></div>
-          </div>
-        </div>
+        {isPlaying && (
+          <iframe
+            ref={playerRef}
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/7ZCfJEMV4nE?si=zuuvzaP_Wk3pN-tE"
+            title="YouTube video player"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            className="w-full h-full"
+          ></iframe>
+        )}
       </div>
+
       <section className="section excite-section">
         <div className="container">
           <h1 className="experience-section-title">
@@ -448,7 +394,7 @@ export default function BasecampPage() {
               <div className="">
                 <img
                   src="banner.png"
-                  style={{ height: "50% !important", zIndex:9999 }}
+                  style={{ height: "50% !important", zIndex: 9999 }}
                   className="img-responsive"
                 />
               </div>

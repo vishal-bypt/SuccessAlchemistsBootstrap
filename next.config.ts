@@ -1,16 +1,22 @@
 import type { NextConfig } from "next";
 
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ["img.youtube.com"],
+  },
+
   async redirects() {
     return [
       {
-        source: '/',
-        destination: '/home',
+        source: "/",
+        destination: "/home",
         permanent: true,
       },
-    ]
-  }
+    ];
+  },
 };
 
 export default nextConfig;
+
+
