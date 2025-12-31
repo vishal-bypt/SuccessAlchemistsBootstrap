@@ -161,15 +161,18 @@ export default function BasecampPage() {
           <div className="row">
             <div className="col-md-3">&nbsp;</div>
             <div className="col-md-6">
-              <p className="section-subtitle text-center">
-                In the Basecamp 1-day workshop, we deep dive into the{" "}
-                <br className="d-none d-md-block" />4 pillars of a business -
-                People, Strategy, Execution &{" "}
-                <br className="d-none d-md-block" />
-                Cash - and teach you how to use Scaling Up to drive{" "}
-                <br className="d-none d-md-block" />
-                your next big decision(s) to scale your business.
-              </p>
+             <p className="section-subtitle text-center">
+  In the Basecamp 1-day workshop, we deep dive into the{" "}
+  <br className="d-none d-md-block" />
+  4 pillars of a business –
+  <strong> People, Strategy,{" "}
+  Execution & </strong>  
+  <br className="d-none d-md-block" />
+  <strong>Cash</strong> – and teach you how to use Scaling Up to drive{" "}
+  <br className="d-none d-md-block" />
+  your next big decision(s) to scale your business.
+</p>
+
             </div>
           </div>
 
@@ -279,7 +282,7 @@ export default function BasecampPage() {
         {/* VIDEO CAROUSEL */}
         <div
           className="carousel-wrapper text-center position-relative"
-          style={{ maxWidth: 900, margin: "40px auto", padding: "0 15px" }}
+          style={{ maxWidth: 1000, margin: "40px auto", padding: "0 15px" }}
         >
           <button className="nav-arrow nav-left" onClick={prevVideo}>
             <i className="fa-solid fa-chevron-left"></i>
@@ -372,6 +375,10 @@ export default function BasecampPage() {
           </div>
         </div>
       </div>
+      <div className="container">
+              <h2 className="section-title ">Leaders who attended the Basecamp workshops in the past said this</h2>
+              <div className="row spacer"></div>
+            </div>    
       <section className="section excite-section">
         <div className="container">
           <h1 className="experience-section-title">

@@ -1026,10 +1026,10 @@ img {
     }
 
     .experience-item {
-        padding: 20px 0;
-        margin-bottom: 20px;
+        padding: 5px 0;
+        margin-bottom: 5px;
         flex-direction: column;
-        gap: 15px;
+        gap: 5px;
         align-items: center;
         text-align: center;
     }
@@ -1318,8 +1318,8 @@ img {
     }
 
     .experience-item {
-        padding: 18px 0;
-        margin-bottom: 18px;
+        padding: 3px 0;
+        margin-bottom: 3px;
     }
 
     .experience-icon img {
