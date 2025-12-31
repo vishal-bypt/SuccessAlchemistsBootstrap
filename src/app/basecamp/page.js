@@ -142,8 +142,8 @@ export default function BasecampPage() {
       <section className="unlock-section">
         <div className="container">
           <h2 className="section-title">Unlock The Power Of Scaling Up</h2>
-          <div className="row">&nbsp;</div>
-          <div className="row">&nbsp;</div>
+          <div className="row spacer"></div>
+          <div className="row spacer"></div>
           <div className="row">
             <div className="col-md-3">&nbsp;</div>
             <div className="col-md-6">
@@ -154,8 +154,8 @@ export default function BasecampPage() {
                 businesses exponentially & sustainably.
               </p>
             </div>
-            <div className="row">&nbsp;</div>
-            <div className="col-md-3">&nbsp;</div>
+            <div className="row spacer"></div>
+          <div className="row spacer"></div>
           </div>
 
           <div className="row">
@@ -171,8 +171,6 @@ export default function BasecampPage() {
                 your next big decision(s) to scale your business.
               </p>
             </div>
-
-            <div className="col-md-3">&nbsp;</div>
           </div>
 
           <div className="row metrics-container">
@@ -246,8 +244,7 @@ export default function BasecampPage() {
                   <img src="arrow.png" width="200" alt="arrow" />
                 </div>
                 <div className="experience-text">
-                  Network with business owners & leaders with over 100CR
-                  turnover
+                  Network with other ambitious business owners & leaders
                 </div>
               </div>
             </div>
@@ -257,7 +254,7 @@ export default function BasecampPage() {
             <div className="highlight-icon">
               <img src="./rocket_growth.png" width="240" />
             </div>
-            <div className="highlight-text">
+            {/* <div className="highlight-text">
               In our past workshops, leaders{" "}
               <br className="d-none d-md-block" />
               have figured out a{" "}
@@ -269,6 +266,9 @@ export default function BasecampPage() {
               their respective businesses during{" "}
               <br className="d-none d-md-block" />
               the sessions.
+            </div> */}
+            <div className="highlight-text">
+              Tools & Frameworks that’ll enable you to navigate through the chaos that comes when you’re trying to scale your business.
             </div>
           </div>
         </div>
@@ -381,8 +381,7 @@ export default function BasecampPage() {
           <div className="row">
             <div className="col-md-1 d-none d-md-block">&nbsp;</div>
             <div className="col-md-11 col-12 excite-section-list">
-              <i className="fa-solid fa-arrow-trend-up me-2"></i> You are
-              running a Multi-Million Dollar company
+              <i className="fa-solid fa-arrow-trend-up me-2"></i> You are running a company with turnover of 50 CR+
             </div>
           </div>
           <div className="row">&nbsp;</div>
@@ -399,10 +398,9 @@ export default function BasecampPage() {
           <div className="row">
             <div className="col-md-1 d-none d-md-block">&nbsp;</div>
             <div className="col-md-11 col-12 excite-section-list">
-              <i className="fa-solid fa-arrow-trend-up me-2"></i> You know what
-              has taken you this far, won't take you to{" "}
+              <i className="fa-solid fa-arrow-trend-up me-2"></i> You know what got you here, won’t take you to the next{" "}
               <br className="d-none d-md-block" />
-              the next big leap
+              level
             </div>
           </div>
         </div>
