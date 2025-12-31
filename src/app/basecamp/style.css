@@ -102,8 +102,37 @@ body {
     position: relative !important;
     overflow: hidden !important;
     padding: 60px 0 !important;
-    height: 570px;
+    /* height: 600px; */
 }
+
+/* WEB / DESKTOP ONLY */
+@media (min-width: 992px) {
+    .hero-section1 {
+        height: 600px;
+        min-height: 600px;
+    }
+}
+
+/* MOBILE ONLY */
+@media (max-width: 991px) {
+    .hero-section1 {
+        height: auto;
+        min-height: unset;
+    }
+}
+
+.spacer {
+    height: 20px; /* desktop space */
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .spacer {
+        height: 5px; /* smaller space */
+    }
+}
+
+
 
 .hero-section-footer {
     background: linear-gradient(rgba(15, 36, 55, 0.85), rgba(15, 36, 55, 0.85)), url(../../../public/1000312751.png);
@@ -1238,12 +1267,12 @@ img {
     }
 
     .metrics-container {
-        margin-top: 35px;
+        margin-top: 10px;
     }
 
     .metric-box {
         padding: 20px 10px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .metric-value {
