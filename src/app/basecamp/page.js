@@ -527,7 +527,7 @@ export default function BasecampPage() {
 
           <div className="contact-info">
             <p>
-              For more info, write to us at{" "}
+              For more info, write to us at{" "}<br></br>
               <a href="mailto:lakshmy@success-alchemists.com">
                 lakshmy@success-alchemists.com
               </a>
@@ -561,7 +561,7 @@ export default function BasecampPage() {
                     style={{ width: "100%", color: "#000000" }}
                   >
                     Limited spots Available
-                    <br className="d-none d-sm-block" />
+                    <br />
                     <span className="btn-text">
                       <strong>ReGISTER NOW for basecamp</strong>
                     </span>{" "}
