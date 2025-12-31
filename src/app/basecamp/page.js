@@ -100,7 +100,7 @@ export default function BasecampPage() {
                   />
                 </div>
                 <p className="hero-subtitle text-center text-md-left">
-                  8th Edition | Pune
+                  Learn To Scale With Clarity
                 </p>
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function BasecampPage() {
               <div className="hero-right">
                 <div
                   className="hero-image-placeholder"
-                  style={{ backgroundImage: "url('1000312741.png')" }}
+                  style={{ backgroundImage: "url('girl.png')" }}
                 ></div>
               </div>
             </div>
@@ -116,8 +116,8 @@ export default function BasecampPage() {
               <div className="hero-right">
                 <div className="hero-info">
                   <p>
-                    A workshop that can <br className="d-none d-md-block" />
-                    make Crores of Cash for your business
+                    A workshop that can help you identify roadblocks & gaps in your exponential growth journey. <br className="d-none d-md-block" />
+                    {/* make Crores of Cash for your business */}
                   </p>
                   <div className="date-time">
                     <div>
@@ -128,7 +128,7 @@ export default function BasecampPage() {
                     </div>
                     <div></div>
                   </div>
-                  <button className="btn btn-cta w-100 w-md-auto">
+                  <button className="btn btn-cta w-100 w-md-auto text-center">
                     REGISTER NOW
                   </button>
                 </div>
@@ -204,7 +204,7 @@ export default function BasecampPage() {
             <br className="d-none d-md-block" /> BASECAMP?
           </h1>
 
-          <div className="row experience-grid">
+          <div className="row experience-grid ">
             <div className="col-md-6 col-12">
               <div className="experience-item">
                 <div className="experience-icon">
@@ -384,7 +384,7 @@ export default function BasecampPage() {
               <i className="fa-solid fa-arrow-trend-up me-2"></i> You are running a company with turnover of 50 CR+
             </div>
           </div>
-          <div className="row">&nbsp;</div>
+          <div className="row spacer"></div>
           <div className="row">
             <div className="col-md-1 d-none d-md-block">&nbsp;</div>
             <div className="col-md-11 col-12 excite-section-list">
@@ -394,7 +394,7 @@ export default function BasecampPage() {
               exponentially in the next 10 years
             </div>
           </div>
-          <div className="row">&nbsp;</div>
+          <div className="row spacer"></div>
           <div className="row">
             <div className="col-md-1 d-none d-md-block">&nbsp;</div>
             <div className="col-md-11 col-12 excite-section-list">
@@ -418,11 +418,14 @@ export default function BasecampPage() {
                     <strong>Pune - 12th Feb’25</strong>
                   </h3>
                 </div>
+                  <div className="row spacer"></div>
+
                 <div className="sub-job-details">
                   <h3>
                     <strong>Mumbai - 26th Feb’25</strong>
                   </h3>
                 </div>
+                <div className="row spacer"></div>
                 <div className="sub-job-details">
                   <h3>
                     <strong>DELHI-NCR - 24th MAr’25</strong>
