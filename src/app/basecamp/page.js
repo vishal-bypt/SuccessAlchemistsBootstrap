@@ -100,7 +100,7 @@ export default function BasecampPage() {
                   />
                 </div>
                 <p className="hero-subtitle text-center text-md-left">
-                  8th Edition | Pune
+                  Learn To Scale With Clarity
                 </p>
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function BasecampPage() {
               <div className="hero-right">
                 <div
                   className="hero-image-placeholder"
-                  style={{ backgroundImage: "url('1000312741.png')" }}
+                  style={{ backgroundImage: "url('girl.png')" }}
                 ></div>
               </div>
             </div>
@@ -116,8 +116,8 @@ export default function BasecampPage() {
               <div className="hero-right">
                 <div className="hero-info">
                   <p>
-                    A workshop that can <br className="d-none d-md-block" />
-                    make Crores of Cash for your business
+                    A workshop that can help you identify roadblocks & gaps in your exponential growth journey. <br className="d-none d-md-block" />
+                    {/* make Crores of Cash for your business */}
                   </p>
                   <div className="date-time">
                     <div>
@@ -128,7 +128,7 @@ export default function BasecampPage() {
                     </div>
                     <div></div>
                   </div>
-                  <button className="btn btn-cta w-100 w-md-auto">
+                  <button className="btn btn-cta w-100 w-md-auto text-center">
                     REGISTER NOW
                   </button>
                 </div>
@@ -161,15 +161,18 @@ export default function BasecampPage() {
           <div className="row">
             <div className="col-md-3">&nbsp;</div>
             <div className="col-md-6">
-              <p className="section-subtitle text-center">
-                In the Basecamp 1-day workshop, we deep dive into the{" "}
-                <br className="d-none d-md-block" />4 pillars of a business -
-                People, Strategy, Execution &{" "}
-                <br className="d-none d-md-block" />
-                Cash - and teach you how to use Scaling Up to drive{" "}
-                <br className="d-none d-md-block" />
-                your next big decision(s) to scale your business.
-              </p>
+             <p className="section-subtitle text-center">
+  In the Basecamp 1-day workshop, we deep dive into the{" "}
+  <br className="d-none d-md-block" />
+  4 pillars of a business –
+  <strong> People, Strategy,{" "}
+  Execution & </strong>  
+  <br className="d-none d-md-block" />
+  <strong>Cash</strong> – and teach you how to use Scaling Up to drive{" "}
+  <br className="d-none d-md-block" />
+  your next big decision(s) to scale your business.
+</p>
+
             </div>
           </div>
 
@@ -204,7 +207,7 @@ export default function BasecampPage() {
             <br className="d-none d-md-block" /> BASECAMP?
           </h1>
 
-          <div className="row experience-grid">
+          <div className="row experience-grid ">
             <div className="col-md-6 col-12">
               <div className="experience-item">
                 <div className="experience-icon">
@@ -317,7 +320,6 @@ export default function BasecampPage() {
           ></iframe>
         )}
       </div>
-
       <section className="section excite-section">
         <div className="container">
           <h1 className="experience-section-title">
@@ -330,7 +332,7 @@ export default function BasecampPage() {
               <i className="fa-solid fa-arrow-trend-up me-2"></i> You are running a company with turnover of 50 CR+
             </div>
           </div>
-          <div className="row">&nbsp;</div>
+          <div className="row spacer"></div>
           <div className="row">
             <div className="col-md-1 d-none d-md-block">&nbsp;</div>
             <div className="col-md-11 col-12 excite-section-list">
@@ -340,7 +342,7 @@ export default function BasecampPage() {
               exponentially in the next 10 years
             </div>
           </div>
-          <div className="row">&nbsp;</div>
+          <div className="row spacer"></div>
           <div className="row">
             <div className="col-md-1 d-none d-md-block">&nbsp;</div>
             <div className="col-md-11 col-12 excite-section-list">
@@ -357,18 +359,24 @@ export default function BasecampPage() {
           <div className="col-lg-6">
             <div className="join-left">
               <h2>We’re Coming To Your City</h2>
+                              {/* <div className="row spacer"></div> */}
+              <br></br>
               <h1>BASECAMP</h1>
+              <div className="row spacer"></div>
               <div className="join-details">
                 <div className="sub-job-details">
                   <h3>
                     <strong>Pune - 12th Feb’25</strong>
                   </h3>
                 </div>
+                  <div className="row spacer"></div>
+
                 <div className="sub-job-details">
                   <h3>
                     <strong>Mumbai - 26th Feb’25</strong>
                   </h3>
                 </div>
+                <div className="row spacer"></div>
                 <div className="sub-job-details">
                   <h3>
                     <strong>DELHI-NCR - 24th MAr’25</strong>
@@ -379,7 +387,7 @@ export default function BasecampPage() {
                 className="btn btn-cta text-center"
                 style={{ width: "100%", color: "#000000" }}
               >
-                Early Bird Prices Start At Rs 7999
+                Early Bird Prices Start At <span className="nowrap">Rs 7999</span>
                 <br />
                 <span className="btn-text">
                   <strong>REGISTER NOW</strong>
@@ -462,7 +470,7 @@ export default function BasecampPage() {
 
           <div className="contact-info">
             <p>
-              For more info, write to us at{" "}
+              For more info, write to us at{" "}<br></br>
               <a href="mailto:lakshmy@success-alchemists.com">
                 lakshmy@success-alchemists.com
               </a>
@@ -496,7 +504,7 @@ export default function BasecampPage() {
                     style={{ width: "100%", color: "#000000" }}
                   >
                     Limited spots Available
-                    <br className="d-none d-sm-block" />
+                    <br />
                     <span className="btn-text">
                       <strong>ReGISTER NOW for basecamp</strong>
                     </span>{" "}
