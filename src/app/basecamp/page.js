@@ -444,7 +444,7 @@ export default function BasecampPage() {
                 className="btn btn-cta text-center"
                 style={{ width: "100%", color: "#000000" }}
               >
-                Early Bird Prices Start At Rs 7999
+                Early Bird Prices Start At <span className="nowrap">Rs 7999</span>
                 <br />
                 <span className="btn-text">
                   <strong>REGISTER NOW</strong>

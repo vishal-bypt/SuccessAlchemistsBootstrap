@@ -6,6 +6,11 @@
     --text-grey: #666666;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
+
 body {
     font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
     overflow-x: hidden !important;
