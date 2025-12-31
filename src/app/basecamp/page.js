@@ -3,9 +3,25 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import basecamplogo2 from "./Basecamp_White.png";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 import "./style.css";
 
 export default function BasecampPage() {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [plan, setPlan] = useState("");
+  const [order_id] = useState(`ORD${Date.now()}`);
+
   const videos = [
     // { type: "youtube", id: "ScMzIvxBSi4" },
     {
@@ -48,6 +64,98 @@ export default function BasecampPage() {
       playerRef.current.load();
     }
   }, [index]);
+
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      // ✅ Basic validations
+      if (!firstName || !lastName || !email || !phone || !plan) {
+        alert("All fields are required!");
+        return;
+      }
+  
+      if (!/^\S+@\S+\.\S+$/.test(email)) {
+        alert("Enter a valid email!");
+        return;
+      }
+  
+      if (!/^\d{10}$/.test(phone)) {
+        alert("Enter a valid 10-digit phone number!");
+        return;
+      }
+  
+      await handlePayment({ firstName, lastName, email, phone, plan });
+  
+      handleClose();
+    };
+  
+    const handlePayment = async ({
+      firstName,
+      lastName,
+      email,
+      phone,
+      plan,
+    }) => {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  
+      const payload = {
+        order_id: order_id,
+        amount: plan,
+        billing_name: `${firstName} ${lastName}`,
+        billing_email: email,
+        billing_tel: phone,
+      };
+  
+      console.log("Records is:::::", payload);
+  
+      const response = await fetch(apiUrl + "/initiate-payment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+  
+      const data = await response.json();
+      console.log("Response from /initiate-payment:", data);
+  
+      if (data.paymentUrl) {
+        try {
+          const { encRequest, access_code, ccavenueUrl } = data;
+  
+          if (encRequest && access_code) {
+            const existingForm = document.getElementById("ccavenue-payment-form");
+            if (existingForm) existingForm.remove();
+  
+            const form = document.createElement("form");
+            form.method = "POST";
+            form.action = ccavenueUrl;
+            form.id = "ccavenue-payment-form";
+  
+            const accessInput = document.createElement("input");
+            accessInput.type = "hidden";
+            accessInput.name = "access_code";
+            accessInput.value = access_code;
+            form.appendChild(accessInput);
+  
+            const encInput = document.createElement("input");
+            encInput.type = "hidden";
+            encInput.name = "encRequest";
+            encInput.value = encRequest;
+            form.appendChild(encInput);
+  
+            document.body.appendChild(form);
+            form.submit();
+          } else {
+            alert("Payment failed: Missing required data.");
+          }
+        } catch (error) {
+          alert("Payment failed: Invalid URL");
+          console.error(error);
+        }
+      } else {
+        alert("Payment failed: Server error");
+        console.error(data);
+      }
+    };
 
   const openYT = (id) => {
     window.open("https://www.youtube.com/watch?v=" + id, "_blank");
@@ -128,7 +236,7 @@ export default function BasecampPage() {
                     </div>
                     <div></div>
                   </div>
-                  <button className="btn btn-cta w-100 w-md-auto text-center">
+                  <button className="btn btn-cta w-100 w-md-auto text-center" onClick={handleShow}>
                     REGISTER NOW
                   </button>
                 </div>
@@ -386,6 +494,7 @@ export default function BasecampPage() {
               <button
                 className="btn btn-cta text-center"
                 style={{ width: "100%", color: "#000000" }}
+                onClick={handleShow}
               >
                 Early Bird Prices Start At <span className="nowrap">Rs 7999</span>
                 <br />
@@ -502,6 +611,7 @@ export default function BasecampPage() {
                   <button
                     className="btn btn-cta-footer text-center"
                     style={{ width: "100%", color: "#000000" }}
+                    onClick={handleShow}
                   >
                     Limited spots Available
                     <br />
@@ -515,6 +625,82 @@ export default function BasecampPage() {
           </div>
         </div>
       </section>
+
+              <Modal show={show} onHide={handleClose}>
+                <Form onSubmit={handleSubmit}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Book Your Seat</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Form.Group className="mb-3">
+                      <Form.Label>First Name</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        placeholder="Enter first name"
+                        required
+                      />
+                    </Form.Group>
+        
+                    <Form.Group className="mb-3">
+                      <Form.Label>Last Name</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        placeholder="Enter last name"
+                        required
+                      />
+                    </Form.Group>
+        
+                    <Form.Group className="mb-3">
+                      <Form.Label>Email address</Form.Label>
+                      <Form.Control
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="name@example.com"
+                        required
+                      />
+                    </Form.Group>
+        
+                    <Form.Group className="mb-3">
+                      <Form.Label>Phone Number</Form.Label>
+                      <Form.Control
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder="10-digit phone number"
+                        required
+                      />
+                    </Form.Group>
+        
+                    <Form.Label>Plan</Form.Label>
+                    <Form.Select
+                      value={plan}
+                      onChange={(e) => setPlan(e.target.value)}
+                      required
+                    >
+                      <option value="">- Select Plan -</option>
+                      {/* <option value="9999">Early Bird - For Individuals - ₹9999</option>
+                      <option value="23999">Early Bird - For Teams - ₹23999</option> */}
+                      <option value="11999">Regular - For Individuals - ₹11999</option>
+                      <option value="27999">Regular - For Teams - ₹27999</option>
+                    </Form.Select>
+                  </Modal.Body>
+        
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                      Close
+                    </Button>
+                    <Button type="submit" variant="primary">
+                      Submit
+                    </Button>
+                  </Modal.Footer>
+                </Form>
+              </Modal>
+
     </div>
   );
 }

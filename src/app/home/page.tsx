@@ -122,7 +122,7 @@ const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const iframeRefs = useRef<(HTMLIFrameElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const typedRef = useRef(null);
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
@@ -216,7 +216,7 @@ const Home = () => {
 
         {/* Right Button */}
         <Link
-          href="/events/eventDetail"
+          href="/basecamp"
           className="text-decoration-none"
           style={{ textDecoration: "none" }}
         >
