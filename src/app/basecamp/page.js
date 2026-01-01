@@ -428,6 +428,11 @@ export default function BasecampPage() {
           ></iframe>
         )}
       </div>
+
+            <div className="container">
+              <h2 className="section-title ">Leaders who attended the Basecamp workshops in the past said this</h2>
+              <div className="row spacer"></div>
+            </div>  
       <section className="section excite-section">
         <div className="container">
           <h1 className="experience-section-title">
@@ -474,20 +479,20 @@ export default function BasecampPage() {
               <div className="join-details">
                 <div className="sub-job-details">
                   <h3>
-                    <strong>Pune - 12th Feb’25</strong>
+                    <strong>Pune - 12th Feb’26</strong>
                   </h3>
                 </div>
                   <div className="row spacer"></div>
 
                 <div className="sub-job-details">
                   <h3>
-                    <strong>Mumbai - 26th Feb’25</strong>
+                    <strong>Mumbai - 26th Feb’26</strong>
                   </h3>
                 </div>
                 <div className="row spacer"></div>
                 <div className="sub-job-details">
                   <h3>
-                    <strong>DELHI-NCR - 24th MAr’25</strong>
+                    <strong>DELHI-NCR - Coming Soon</strong>
                   </h3>
                 </div>
               </div>
@@ -496,7 +501,7 @@ export default function BasecampPage() {
                 style={{ width: "100%", color: "#000000" }}
                 onClick={handleShow}
               >
-                Early Bird Prices Start At <span className="nowrap">Rs 7999</span>
+                Early Bird Prices Start At <span className="nowrap">Rs 7999 + GST</span>
                 <br />
                 <span className="btn-text">
                   <strong>REGISTER NOW</strong>
