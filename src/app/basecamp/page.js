@@ -607,8 +607,8 @@ export default function BasecampPage() {
           <div className="contact-info">
             <p>
               For more info, write to us at{" "}<br></br>
-              <a href="mailto:lakshmy@success-alchemists.com">
-                lakshmy@success-alchemists.com
+              <a href="mailto:events@success-alchemists.com">
+                events@success-alchemists.com 
               </a>
             </p>
           </div>
