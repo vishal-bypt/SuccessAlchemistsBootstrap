@@ -215,7 +215,7 @@ const Home = () => {
         </div>
 
         {/* Right Button */}
-        <Link
+        <a
           href="/basecamp"
           className="text-decoration-none"
           style={{ textDecoration: "none" }}
@@ -246,7 +246,7 @@ const Home = () => {
               }}
             />
           </div>
-        </Link>
+        </a>
       </div>
      )}
       {/* Video Card */}
