@@ -22,6 +22,13 @@ export default function BasecampPage() {
   const [plan, setPlan] = useState("");
   const [order_id] = useState(`ORD${Date.now()}`);
 
+  const [sentenceIndex, setSentenceIndex] = useState(0);
+  const sentences = [
+    "A workshop that can help you build a winning strategy for accelerated growth.",
+    "A workshop that can bring a culture of accountability & excellence in your teams.",
+    "A workshop that can help you identify roadblocks & gaps in your exponential growth journey."
+  ];
+
   const videos = [
     // { type: "youtube", id: "ScMzIvxBSi4" },
     {
@@ -64,6 +71,13 @@ export default function BasecampPage() {
       playerRef.current.load();
     }
   }, [index]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSentenceIndex((prev) => (prev + 1) % sentences.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleSubmit = async (e) => {
       e.preventDefault();
@@ -223,10 +237,18 @@ export default function BasecampPage() {
             <div className="col-lg-4 col-md-6 col-12 order-lg-3 order-3">
               <div className="hero-right">
                 <div className="hero-info">
-                  <p>
-                    A workshop that can help you identify roadblocks & gaps in your exponential growth journey. <br className="d-none d-md-block" />
-                    {/* make Crores of Cash for your business */}
+                  <p className="sentence-text">
+                    {sentences[sentenceIndex]} <br className="d-none d-md-block" />
                   </p>
+                  <div className="sentence-dots">
+                    {sentences.map((_, i) => (
+                      <span
+                        key={i}
+                        className={`dot ${i === sentenceIndex ? 'active' : ''}`}
+                        onClick={() => setSentenceIndex(i)}
+                      ></span>
+                    ))}
+                  </div>
                   <div className="date-time">
                     <div>
                       <i>
@@ -428,6 +450,11 @@ export default function BasecampPage() {
           ></iframe>
         )}
       </div>
+
+            <div className="container">
+              <h2 className="section-title ">Leaders who attended the Basecamp workshops in the past said this</h2>
+              <div className="row spacer"></div>
+            </div>  
       <section className="section excite-section">
         <div className="container">
           <h1 className="experience-section-title">
@@ -474,20 +501,20 @@ export default function BasecampPage() {
               <div className="join-details">
                 <div className="sub-job-details">
                   <h3>
-                    <strong>Pune - 12th Feb’25</strong>
+                    <strong>Pune - 12th Feb’26</strong>
                   </h3>
                 </div>
                   <div className="row spacer"></div>
 
                 <div className="sub-job-details">
                   <h3>
-                    <strong>Mumbai - 26th Feb’25</strong>
+                    <strong>Mumbai - 26th Feb’26</strong>
                   </h3>
                 </div>
                 <div className="row spacer"></div>
                 <div className="sub-job-details">
                   <h3>
-                    <strong>DELHI-NCR - 24th MAr’25</strong>
+                    <strong>DELHI-NCR - Coming Soon</strong>
                   </h3>
                 </div>
               </div>
@@ -496,7 +523,7 @@ export default function BasecampPage() {
                 style={{ width: "100%", color: "#000000" }}
                 onClick={handleShow}
               >
-                Early Bird Prices Start At <span className="nowrap">Rs 7999</span>
+                Early Bird Prices Start At <span className="nowrap">Rs 7999 + GST</span>
                 <br />
                 <span className="btn-text">
                   <strong>REGISTER NOW</strong>
@@ -580,8 +607,8 @@ export default function BasecampPage() {
           <div className="contact-info">
             <p>
               For more info, write to us at{" "}<br></br>
-              <a href="mailto:lakshmy@success-alchemists.com">
-                lakshmy@success-alchemists.com
+              <a href="mailto:events@success-alchemists.com">
+                events@success-alchemists.com 
               </a>
             </p>
           </div>
