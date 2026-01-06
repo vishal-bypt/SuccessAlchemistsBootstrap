@@ -16,11 +16,21 @@ export default function BasecampPage() {
   const handleShow = () => setShow(true);
 
   const [firstName, setFirstName] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [yourDesignation, setYourDesignation] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [plan, setPlan] = useState("");
+  const [basecampLocation, setBasecampLocation] = useState("");
   const [order_id] = useState(`ORD${Date.now()}`);
+
+  const [sentenceIndex, setSentenceIndex] = useState(0);
+  const sentences = [
+    "A workshop that can help you build a winning strategy for accelerated growth.",
+    "A workshop that can bring a culture of accountability & excellence in your teams.",
+    "A workshop that can help you identify roadblocks & gaps in your exponential growth journey."
+  ];
 
   const videos = [
     // { type: "youtube", id: "ScMzIvxBSi4" },
@@ -65,11 +75,18 @@ export default function BasecampPage() {
     }
   }, [index]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSentenceIndex((prev) => (prev + 1) % sentences.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const handleSubmit = async (e) => {
       e.preventDefault();
   
       // ✅ Basic validations
-      if (!firstName || !lastName || !email || !phone || !plan) {
+      if (!firstName || !lastName || !email || !phone || !plan || !companyName || !yourDesignation || !basecampLocation) {
         alert("All fields are required!");
         return;
       }
@@ -84,7 +101,7 @@ export default function BasecampPage() {
         return;
       }
   
-      await handlePayment({ firstName, lastName, email, phone, plan });
+      await handlePayment({ firstName, lastName, email, phone, plan, companyName, yourDesignation, basecampLocation });
   
       handleClose();
     };
@@ -95,6 +112,9 @@ export default function BasecampPage() {
       email,
       phone,
       plan,
+      companyName,
+      yourDesignation,
+      basecampLocation,
     }) => {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   
@@ -104,6 +124,9 @@ export default function BasecampPage() {
         billing_name: `${firstName} ${lastName}`,
         billing_email: email,
         billing_tel: phone,
+        company: companyName,
+        designation: yourDesignation,
+        basecamplocation: basecampLocation,
       };
   
       console.log("Records is:::::", payload);
@@ -223,10 +246,18 @@ export default function BasecampPage() {
             <div className="col-lg-4 col-md-6 col-12 order-lg-3 order-3">
               <div className="hero-right">
                 <div className="hero-info">
-                  <p>
-                    A workshop that can help you identify roadblocks & gaps in your exponential growth journey. <br className="d-none d-md-block" />
-                    {/* make Crores of Cash for your business */}
+                  <p className="sentence-text">
+                    {sentences[sentenceIndex]} <br className="d-none d-md-block" />
                   </p>
+                  <div className="sentence-dots">
+                    {sentences.map((_, i) => (
+                      <span
+                        key={i}
+                        className={`dot ${i === sentenceIndex ? 'active' : ''}`}
+                        onClick={() => setSentenceIndex(i)}
+                      ></span>
+                    ))}
+                  </div>
                   <div className="date-time">
                     <div>
                       <i>
@@ -428,6 +459,11 @@ export default function BasecampPage() {
           ></iframe>
         )}
       </div>
+
+            <div className="container">
+              <h2 className="section-title ">Leaders who attended the Basecamp workshops in the past said this</h2>
+              <div className="row spacer"></div>
+            </div>  
       <section className="section excite-section">
         <div className="container">
           <h1 className="experience-section-title">
@@ -474,20 +510,20 @@ export default function BasecampPage() {
               <div className="join-details">
                 <div className="sub-job-details">
                   <h3>
-                    <strong>Pune - 12th Feb’25</strong>
+                    <strong>Pune - 12th Feb’26</strong>
                   </h3>
                 </div>
                   <div className="row spacer"></div>
 
                 <div className="sub-job-details">
                   <h3>
-                    <strong>Mumbai - 26th Feb’25</strong>
+                    <strong>Mumbai - 26th Feb’26</strong>
                   </h3>
                 </div>
                 <div className="row spacer"></div>
                 <div className="sub-job-details">
                   <h3>
-                    <strong>DELHI-NCR - 24th MAr’25</strong>
+                    <strong>DELHI-NCR - Coming Soon</strong>
                   </h3>
                 </div>
               </div>
@@ -496,7 +532,7 @@ export default function BasecampPage() {
                 style={{ width: "100%", color: "#000000" }}
                 onClick={handleShow}
               >
-                Early Bird Prices Start At <span className="nowrap">Rs 7999</span>
+                Early Bird Prices Start At <span className="nowrap">Rs 7999 + GST</span>
                 <br />
                 <span className="btn-text">
                   <strong>REGISTER NOW</strong>
@@ -580,8 +616,8 @@ export default function BasecampPage() {
           <div className="contact-info">
             <p>
               For more info, write to us at{" "}<br></br>
-              <a href="mailto:lakshmy@success-alchemists.com">
-                lakshmy@success-alchemists.com
+              <a href="mailto:events@success-alchemists.com">
+                events@success-alchemists.com 
               </a>
             </p>
           </div>
@@ -633,6 +669,28 @@ export default function BasecampPage() {
                   </Modal.Header>
                   <Modal.Body>
                     <Form.Group className="mb-3">
+                      <Form.Label>Company Name</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={companyName}
+                        onChange={(e) => setCompanyName(e.target.value)}
+                        placeholder="Enter company name"
+                        required
+                      />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3">
+                      <Form.Label>Your Designation</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={yourDesignation}
+                        onChange={(e) => setYourDesignation(e.target.value)}
+                        placeholder="Enter your designation"
+                        required
+                      />
+                    </Form.Group>
+                    
+                    <Form.Group className="mb-3">
                       <Form.Label>First Name</Form.Label>
                       <Form.Control
                         type="text"
@@ -675,8 +733,23 @@ export default function BasecampPage() {
                         required
                       />
                     </Form.Group>
+
+                    <Form.Group className="mb-3">
+                    <Form.Label>Basecamp Location</Form.Label>
+                    <Form.Select
+                      value={basecampLocation}
+                      onChange={(e) => setBasecampLocation(e.target.value)}
+                      required
+                    >
+                      <option value="">- Select Basecamp Location -</option>
+                      <option value="Pune - 12th Feb'26">Pune - 12th Feb'26</option>
+                      <option value="Mumbai - 26th Feb'26">Mumbai - 26th Feb'26</option>
+                      {/* <option value="11999">Regular - For Individuals - ₹11999</option>
+                      <option value="27999">Regular - For Teams - ₹27999</option> */}
+                    </Form.Select>
+                    </Form.Group>
         
-                    <Form.Label>Plan</Form.Label>
+                    <Form.Label>No. of attendees</Form.Label>
                     <Form.Select
                       value={plan}
                       onChange={(e) => setPlan(e.target.value)}
