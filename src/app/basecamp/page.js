@@ -756,12 +756,13 @@ export default function BasecampPage() {
                       required
                     >
                       <option value="">- Select Plan -</option>
-                      <option value="7999">Early Bird - For Individuals - ₹7999</option>
-                      <option value="17999">Early Bird - For 3 Teams members - ₹17999</option>
+                      <option value="7999">Early Bird - For Individuals - ₹7999 + GST</option>
+                      <option value="17999">Early Bird - For 3 Teams members - ₹17999 + GST</option>
                       {/* <option value="11999">Regular - For Individuals - ₹11999</option>
                       <option value="27999">Regular - For Teams - ₹27999</option> */}
                     </Form.Select>
                   </Modal.Body>
+        
         
                   <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
