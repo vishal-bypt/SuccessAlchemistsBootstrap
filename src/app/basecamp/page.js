@@ -16,10 +16,13 @@ export default function BasecampPage() {
   const handleShow = () => setShow(true);
 
   const [firstName, setFirstName] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [yourDesignation, setYourDesignation] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [plan, setPlan] = useState("");
+  const [basecampLocation, setBasecampLocation] = useState("");
   const [order_id] = useState(`ORD${Date.now()}`);
 
   const [sentenceIndex, setSentenceIndex] = useState(0);
@@ -83,7 +86,7 @@ export default function BasecampPage() {
       e.preventDefault();
   
       // ✅ Basic validations
-      if (!firstName || !lastName || !email || !phone || !plan) {
+      if (!firstName || !lastName || !email || !phone || !plan || !companyName || !yourDesignation || !basecampLocation) {
         alert("All fields are required!");
         return;
       }
@@ -98,7 +101,7 @@ export default function BasecampPage() {
         return;
       }
   
-      await handlePayment({ firstName, lastName, email, phone, plan });
+      await handlePayment({ firstName, lastName, email, phone, plan, companyName, yourDesignation, basecampLocation });
   
       handleClose();
     };
@@ -109,6 +112,9 @@ export default function BasecampPage() {
       email,
       phone,
       plan,
+      companyName,
+      yourDesignation,
+      basecampLocation,
     }) => {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   
@@ -118,6 +124,9 @@ export default function BasecampPage() {
         billing_name: `${firstName} ${lastName}`,
         billing_email: email,
         billing_tel: phone,
+        company: companyName,
+        designation: yourDesignation,
+        basecamplocation: basecampLocation,
       };
   
       console.log("Records is:::::", payload);
@@ -660,6 +669,28 @@ export default function BasecampPage() {
                   </Modal.Header>
                   <Modal.Body>
                     <Form.Group className="mb-3">
+                      <Form.Label>Company Name</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={companyName}
+                        onChange={(e) => setCompanyName(e.target.value)}
+                        placeholder="Enter company name"
+                        required
+                      />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3">
+                      <Form.Label>Your Designation</Form.Label>
+                      <Form.Control
+                        type="text"
+                        value={yourDesignation}
+                        onChange={(e) => setYourDesignation(e.target.value)}
+                        placeholder="Enter your designation"
+                        required
+                      />
+                    </Form.Group>
+                    
+                    <Form.Group className="mb-3">
                       <Form.Label>First Name</Form.Label>
                       <Form.Control
                         type="text"
@@ -702,16 +733,31 @@ export default function BasecampPage() {
                         required
                       />
                     </Form.Group>
+
+                    <Form.Group className="mb-3">
+                    <Form.Label>Basecamp Location</Form.Label>
+                    <Form.Select
+                      value={basecampLocation}
+                      onChange={(e) => setBasecampLocation(e.target.value)}
+                      required
+                    >
+                      <option value="">- Select Basecamp Location -</option>
+                      <option value="Pune - 12th Feb'26">Pune - 12th Feb'26</option>
+                      <option value="Mumbai - 26th Feb'26">Mumbai - 26th Feb'26</option>
+                      {/* <option value="11999">Regular - For Individuals - ₹11999</option>
+                      <option value="27999">Regular - For Teams - ₹27999</option> */}
+                    </Form.Select>
+                    </Form.Group>
         
-                    <Form.Label>Plan</Form.Label>
+                    <Form.Label>No. of attendees</Form.Label>
                     <Form.Select
                       value={plan}
                       onChange={(e) => setPlan(e.target.value)}
                       required
                     >
-                      <option value="">- Select Plan -</option>
+                      <option value="">- Select No. of attendees -</option>
                       <option value="9439">Early Bird - For Individuals - ₹9439</option>
-                      <option value="21239">Early Bird - For Teams - ₹21239</option>
+                      <option value="21239">Early Bird - For 3 Team Members - ₹21239</option>
                       {/* <option value="11999">Regular - For Individuals - ₹11999</option>
                       <option value="27999">Regular - For Teams - ₹27999</option> */}
                     </Form.Select>
