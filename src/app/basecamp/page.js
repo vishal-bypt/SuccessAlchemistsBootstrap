@@ -433,7 +433,7 @@ export default function BasecampPage() {
         {!isPlaying && (
           <div className="video-overlay" onClick={() => setPlaying(true)}>
             <Image
-              src="https://img.youtube.com/vi/7ZCfJEMV4nE/maxresdefault.jpg"
+              src="https://img.youtube.com/vi/TsZWlEhQCEE/maxresdefault.jpg"
               alt="youtube"
               fill
               className="object-cover opacity-60"
@@ -451,7 +451,7 @@ export default function BasecampPage() {
             ref={playerRef}
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/7ZCfJEMV4nE?si=zuuvzaP_Wk3pN-tE"
+            src="https://www.youtube.com/embed/TsZWlEhQCEE?si=zuuvzaP_Wk3pN-tE"
             title="YouTube video player"
             allow="autoplay; encrypted-media"
             allowFullScreen
