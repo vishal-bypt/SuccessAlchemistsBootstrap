@@ -1799,3 +1799,8 @@ img {
 .dot.active {
   background-color: #fdae07;
 }
+
+.swiper-pagination { 
+    position: relative !important;
+    margin-top : 20px;
+}
