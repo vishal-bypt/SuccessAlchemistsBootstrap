@@ -6,12 +6,20 @@ import basecamplogo2 from "./Basecamp_White.png";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import left_arrow_btn from "../home/images/left-arrow-btn.png";
+import right_arrow_btn from "../home/images/right-arrow-btn.png";
 import "./style.css";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function BasecampPage() {
 
   const [show, setShow] = useState(false);
-
+  const swiperRef = useRef(null);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -31,6 +39,51 @@ export default function BasecampPage() {
     "A workshop that can bring a culture of accountability & excellence in your teams.",
     "A workshop that can help you identify roadblocks & gaps in your exponential growth journey."
   ];
+
+  const items = [
+  {
+    id: 1,
+    title: "Success story of #1 - Ador powerton",
+    description:
+      "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
+    src: " https://www.youtube.com/embed/TsZWlEhQCEE?si=GHnpWkNeviIjxGbA",
+  },
+  {
+    id: 2,
+    title: "Success Story #2 - Aliens Tattoo",
+    description:
+      "In this video, Sunny Bhanushali the Founder & CEO of Aliens Tattoo talks about experiencing challenges of rapid growth, the biggest benefit of implementing a structured framework & the value added by their coach.",
+    src: "https://www.youtube.com/embed/t7gy9PWwzkg?si=2BNeC0AwFZgAFN-J",
+  },
+  {
+    id: 3,
+    title: "Success Story #3 - Grauer & Weil (Engineering Division)",
+    description:
+      "Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years. At the end, there is a reference to the Coach and the support provided in this growth journey.",
+    src: "https://www.youtube.com/embed/Wv00isXLFps?si=3a2ZD0rIFcaUfi5P",
+  },
+  {
+    id: 4,
+    title: "Success Story #4 - Clarion Technologies",
+    description:
+      "In this video, their CEO, Siddharth Motiwale talks about the 'secret sauce' which has helped Clarion grow systematically over the past few years. He also talks about the value added by Ajay as their coach.",
+    src: "https://www.youtube.com/embed/5IWQidzMnNk?si=w7nPc1N3ZTS9_6Sy",
+  },
+  {
+    id: 5,
+    title: "Success Story #5 - InfraCloud Technologies",
+    description:
+      "In this video, Girish Shilamkar, the Founder & CEO, shares some key aspects of the Scaling Up framework, which helped him build a great culture within his company. These foundations ultimately helped ensure a successful exit in 2025.",
+    src: "https://www.youtube.com/embed/jy5Ik158dxA?si=mlb22p62AGgp1l1g",
+  },
+  {
+    id: 6,
+    title: "Success Story #6 - Uplers & Mavlers",
+    description:
+      "In this video, Jaymin (CEO) & Nital (COO) talk about the benefits of implementing the Scaling Up framework. They ensured alignment at all levels within their business & experienced the resultant growth.",
+    src: "https://www.youtube.com/embed/Eb1vlLvFVqM?si=Cf5iO_xiK7KrN4ud",
+  }, 
+];
 
   const videos = [
     // { type: "youtube", id: "ScMzIvxBSi4" },
@@ -81,6 +134,17 @@ export default function BasecampPage() {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
+    const forward = () => {
+    if (currentIndex === items.length) return;
+    swiperRef.current.swiper.slideTo(currentIndex + 1);
+    setCurrentIndex(currentIndex + 1);
+  };
+  const backward = () => {
+    if (currentIndex === 0) return;
+    swiperRef.current.swiper.slideTo(currentIndex - 1);
+    setCurrentIndex(currentIndex - 1);
+  };
 
   const handleSubmit = async (e) => {
       e.preventDefault();
@@ -416,49 +480,58 @@ export default function BasecampPage() {
         </div>
       </section>
 
-      {/* VIDEO CAROUSEL */}
-      <div
-        className="video-frame position-relative"
-        style={{
-          maxWidth: 900,
-          margin: "40px auto",
-          aspectRatio: "16/9",
-          background: "#000",
-          border: "10px solid #1a1a1a",
-          borderRadius: 10,
-          overflow: "hidden",
-          position: "relative",
-        }}
-      >
-        {!isPlaying && (
-          <div className="video-overlay" onClick={() => setPlaying(true)}>
-            <Image
-              src="https://img.youtube.com/vi/Eb1vlLvFVqM/maxresdefault.jpg"
-              alt="youtube"
-              fill
-              className="object-cover opacity-60"
-            />
-            <i
-              className="fa-solid fa-circle-play text-warning"
-              style={{ fontSize: 45 }}
-            ></i>
-            <div className="text-white mt-2 text-sm">Play Video</div>
-          </div>
-        )}
-
-        {isPlaying && (
-          <iframe
-            ref={playerRef}
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/Eb1vlLvFVqM?si=zuuvzaP_Wk3pN-tE"
-            title="YouTube video player"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-            className="w-full h-full"
-          ></iframe>
-        )}
-      </div>
+      <div className="row">&nbsp;</div>
+       <div style={{ position: "relative" }}>
+                <Swiper
+                  ref={swiperRef}
+                  slidesPerView={"auto"}
+                  centeredSlides={true}
+                  navigation={false}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  modules={[Pagination, Navigation]}
+                  className="mySwiper"
+                >
+                  {items?.map((d, i) => (
+                    <SwiperSlide key={i}>
+                      <div className="row slider-row" align="center">
+                        <div className="video col-md-2"></div>
+                        <div className="video col-md-8">
+                          <div className="ratio ratio-16x9">
+                            <iframe
+                              key={i}
+                              src={d.src}
+                              className="home-video"
+                              title="YouTube video player"
+                              allowFullScreen={true}
+                              onClick={() => handleClick(i)}
+                            ></iframe>
+                          </div>
+                        </div>
+                         <div className="video col-md-2"></div>
+                       
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+                <div className="img-fluid navigation-buttons">
+                  <div onClick={backward}>
+                    <Image
+                      src={left_arrow_btn}
+                      className="img-fluid nav-left-btn"
+                      alt="right side image"
+                    />
+                  </div>
+                  <div onClick={forward}>
+                    <Image
+                      src={right_arrow_btn}
+                      className="img-fluid nav-left-btn"
+                      alt="right side image"
+                    />
+                  </div>
+                </div>
+              </div>
 
             <div className="container">
               <h2 className="section-title ">Leaders who attended the Basecamp workshops in the past said this</h2>
