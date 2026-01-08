@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import basecamplogo2 from "./Basecamp_White.png";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import left_arrow_btn from "../home/images/left-arrow-btn.png";
@@ -17,7 +17,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function BasecampPage() {
-
   const [show, setShow] = useState(false);
   const swiperRef = useRef(null);
   const handleClose = () => setShow(false);
@@ -37,53 +36,53 @@ export default function BasecampPage() {
   const sentences = [
     "A workshop that can help you build a winning strategy for accelerated growth.",
     "A workshop that can bring a culture of accountability & excellence in your teams.",
-    "A workshop that can help you identify roadblocks & gaps in your exponential growth journey."
+    "A workshop that can help you identify roadblocks & gaps in your exponential growth journey.",
   ];
 
   const items = [
-  {
-    id: 1,
-    title: "Success story of #1 - Ador powerton",
-    description:
-      "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
-    src: " https://www.youtube.com/embed/TsZWlEhQCEE?si=GHnpWkNeviIjxGbA",
-  },
-  {
-    id: 2,
-    title: "Success Story #2 - Aliens Tattoo",
-    description:
-      "In this video, Sunny Bhanushali the Founder & CEO of Aliens Tattoo talks about experiencing challenges of rapid growth, the biggest benefit of implementing a structured framework & the value added by their coach.",
-    src: "https://www.youtube.com/embed/t7gy9PWwzkg?si=2BNeC0AwFZgAFN-J",
-  },
-  {
-    id: 3,
-    title: "Success Story #3 - Grauer & Weil (Engineering Division)",
-    description:
-      "Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years. At the end, there is a reference to the Coach and the support provided in this growth journey.",
-    src: "https://www.youtube.com/embed/Wv00isXLFps?si=3a2ZD0rIFcaUfi5P",
-  },
-  {
-    id: 4,
-    title: "Success Story #4 - Clarion Technologies",
-    description:
-      "In this video, their CEO, Siddharth Motiwale talks about the 'secret sauce' which has helped Clarion grow systematically over the past few years. He also talks about the value added by Ajay as their coach.",
-    src: "https://www.youtube.com/embed/5IWQidzMnNk?si=w7nPc1N3ZTS9_6Sy",
-  },
-  {
-    id: 5,
-    title: "Success Story #5 - InfraCloud Technologies",
-    description:
-      "In this video, Girish Shilamkar, the Founder & CEO, shares some key aspects of the Scaling Up framework, which helped him build a great culture within his company. These foundations ultimately helped ensure a successful exit in 2025.",
-    src: "https://www.youtube.com/embed/jy5Ik158dxA?si=mlb22p62AGgp1l1g",
-  },
-  {
-    id: 6,
-    title: "Success Story #6 - Uplers & Mavlers",
-    description:
-      "In this video, Jaymin (CEO) & Nital (COO) talk about the benefits of implementing the Scaling Up framework. They ensured alignment at all levels within their business & experienced the resultant growth.",
-    src: "https://www.youtube.com/embed/Eb1vlLvFVqM?si=Cf5iO_xiK7KrN4ud",
-  }, 
-];
+    {
+      id: 1,
+      title: "Success story of #1 - Ador powerton",
+      description:
+        "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
+      src: " https://www.youtube.com/embed/TsZWlEhQCEE?enablejsapi=1",
+    },
+    {
+      id: 2,
+      title: "Success Story #2 - Aliens Tattoo",
+      description:
+        "In this video, Sunny Bhanushali the Founder & CEO of Aliens Tattoo talks about experiencing challenges of rapid growth, the biggest benefit of implementing a structured framework & the value added by their coach.",
+      src: "https://www.youtube.com/embed/t7gy9PWwzkg?enablejsapi=1",
+    },
+    {
+      id: 3,
+      title: "Success Story #3 - Grauer & Weil (Engineering Division)",
+      description:
+        "Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years. At the end, there is a reference to the Coach and the support provided in this growth journey.",
+      src: "https://www.youtube.com/embed/Wv00isXLFps?enablejsapi=1",
+    },
+    {
+      id: 4,
+      title: "Success Story #4 - Clarion Technologies",
+      description:
+        "In this video, their CEO, Siddharth Motiwale talks about the 'secret sauce' which has helped Clarion grow systematically over the past few years. He also talks about the value added by Ajay as their coach.",
+      src: "https://www.youtube.com/embed/5IWQidzMnNk?enablejsapi=1",
+    },
+    {
+      id: 5,
+      title: "Success Story #5 - InfraCloud Technologies",
+      description:
+        "In this video, Girish Shilamkar, the Founder & CEO, shares some key aspects of the Scaling Up framework, which helped him build a great culture within his company. These foundations ultimately helped ensure a successful exit in 2025.",
+      src: "https://www.youtube.com/embed/jy5Ik158dxA?si=mlb22p62AGgp1l1g?enablejsapi=1",
+    },
+    {
+      id: 6,
+      title: "Success Story #6 - Uplers & Mavlers",
+      description:
+        "In this video, Jaymin (CEO) & Nital (COO) talk about the benefits of implementing the Scaling Up framework. They ensured alignment at all levels within their business & experienced the resultant growth.",
+      src: "https://www.youtube.com/embed/Eb1vlLvFVqM?si=Cf5iO_xiK7KrN4ud?enablejsapi=1",
+    },
+  ];
 
   const videos = [
     // { type: "youtube", id: "ScMzIvxBSi4" },
@@ -135,7 +134,7 @@ export default function BasecampPage() {
     return () => clearInterval(interval);
   }, []);
 
-    const forward = () => {
+  const forward = () => {
     if (currentIndex === items.length) return;
     swiperRef.current.swiper.slideTo(currentIndex + 1);
     setCurrentIndex(currentIndex + 1);
@@ -147,30 +146,34 @@ export default function BasecampPage() {
   };
 
   const handleSubmit = async (e) => {
-      e.preventDefault();
-  
-      // ✅ Basic validations
-      if (!firstName || !lastName || !email || !phone || !plan || !companyName || !yourDesignation || !basecampLocation) {
-        alert("All fields are required!");
-        return;
-      }
-  
-      if (!/^\S+@\S+\.\S+$/.test(email)) {
-        alert("Enter a valid email!");
-        return;
-      }
-  
-      if (!/^\d{10}$/.test(phone)) {
-        alert("Enter a valid 10-digit phone number!");
-        return;
-      }
-  
-      await handlePayment({ firstName, lastName, email, phone, plan, companyName, yourDesignation, basecampLocation });
-  
-      handleClose();
-    };
-  
-    const handlePayment = async ({
+    e.preventDefault();
+
+    // ✅ Basic validations
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !phone ||
+      !plan ||
+      !companyName ||
+      !yourDesignation ||
+      !basecampLocation
+    ) {
+      alert("All fields are required!");
+      return;
+    }
+
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+      alert("Enter a valid email!");
+      return;
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+      alert("Enter a valid 10-digit phone number!");
+      return;
+    }
+
+    await handlePayment({
       firstName,
       lastName,
       email,
@@ -179,105 +182,93 @@ export default function BasecampPage() {
       companyName,
       yourDesignation,
       basecampLocation,
-    }) => {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  
-      const payload = {
-        order_id: order_id,
-        amount: plan,
-        billing_name: `${firstName} ${lastName}`,
-        billing_email: email,
-        billing_tel: phone,
-        company: companyName,
-        designation: yourDesignation,
-        basecamplocation: basecampLocation,
-      };
-  
-      console.log("Records is:::::", payload);
-  
-      const response = await fetch(apiUrl + "/initiate-payment", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-  
-      const data = await response.json();
-      console.log("Response from /initiate-payment:", data);
-  
-      if (data.paymentUrl) {
-        try {
-          const { encRequest, access_code, ccavenueUrl } = data;
-  
-          if (encRequest && access_code) {
-            const existingForm = document.getElementById("ccavenue-payment-form");
-            if (existingForm) existingForm.remove();
-  
-            const form = document.createElement("form");
-            form.method = "POST";
-            form.action = ccavenueUrl;
-            form.id = "ccavenue-payment-form";
-  
-            const accessInput = document.createElement("input");
-            accessInput.type = "hidden";
-            accessInput.name = "access_code";
-            accessInput.value = access_code;
-            form.appendChild(accessInput);
-  
-            const encInput = document.createElement("input");
-            encInput.type = "hidden";
-            encInput.name = "encRequest";
-            encInput.value = encRequest;
-            form.appendChild(encInput);
-  
-            document.body.appendChild(form);
-            form.submit();
-          } else {
-            alert("Payment failed: Missing required data.");
-          }
-        } catch (error) {
-          alert("Payment failed: Invalid URL");
-          console.error(error);
-        }
-      } else {
-        alert("Payment failed: Server error");
-        console.error(data);
-      }
+    });
+
+    handleClose();
+  };
+
+  const handlePayment = async ({
+    firstName,
+    lastName,
+    email,
+    phone,
+    plan,
+    companyName,
+    yourDesignation,
+    basecampLocation,
+  }) => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+    const payload = {
+      order_id: order_id,
+      amount: plan,
+      billing_name: `${firstName} ${lastName}`,
+      billing_email: email,
+      billing_tel: phone,
+      company: companyName,
+      designation: yourDesignation,
+      basecamplocation: basecampLocation,
     };
 
-  const openYT = (id) => {
-    window.open("https://www.youtube.com/watch?v=" + id, "_blank");
-  };
+    console.log("Records is:::::", payload);
 
-  const playMP4 = () => {
-    const overlay = document.getElementById("mp4Overlay");
-    const video = document.getElementById("mp4Video");
-    if (overlay && video) {
-      overlay.style.display = "none";
-      video.style.display = "block";
-      video.play();
-      setPlaying(true);
+    const response = await fetch(apiUrl + "/initiate-payment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await response.json();
+    console.log("Response from /initiate-payment:", data);
+
+    if (data.paymentUrl) {
+      try {
+        const { encRequest, access_code, ccavenueUrl } = data;
+
+        if (encRequest && access_code) {
+          const existingForm = document.getElementById("ccavenue-payment-form");
+          if (existingForm) existingForm.remove();
+
+          const form = document.createElement("form");
+          form.method = "POST";
+          form.action = ccavenueUrl;
+          form.id = "ccavenue-payment-form";
+
+          const accessInput = document.createElement("input");
+          accessInput.type = "hidden";
+          accessInput.name = "access_code";
+          accessInput.value = access_code;
+          form.appendChild(accessInput);
+
+          const encInput = document.createElement("input");
+          encInput.type = "hidden";
+          encInput.name = "encRequest";
+          encInput.value = encRequest;
+          form.appendChild(encInput);
+
+          document.body.appendChild(form);
+          form.submit();
+        } else {
+          alert("Payment failed: Missing required data.");
+        }
+      } catch (error) {
+        alert("Payment failed: Invalid URL");
+        console.error(error);
+      }
+    } else {
+      alert("Payment failed: Server error");
+      console.error(data);
     }
   };
 
-  const togglePlay = () => {
-    const v = videos[index];
-    if (v.type === "mp4" && playerRef.current) {
-      if (playerRef.current.paused) playerRef.current.play();
-      else playerRef.current.pause();
-      setPlaying(!playerRef.current.paused);
-    }
+  const handleSlideChange = () => {
+    document.querySelectorAll(".home-video").forEach(iframe => {
+      iframe.contentWindow?.postMessage(
+        '{"event":"command","func":"pauseVideo","args":""}',
+        "*"
+      );
+    });
   };
-
-  const nextVideo = () => {
-    if (index < videos.length - 1) setIndex(index + 1);
-  };
-
-  const prevVideo = () => {
-    if (index > 0) setIndex(index - 1);
-  };
-
-  const v = videos[index];
-  const progress = ((index + 1) / videos.length) * 100;
 
   return (
     <div>
@@ -311,13 +302,14 @@ export default function BasecampPage() {
               <div className="hero-right">
                 <div className="hero-info">
                   <p className="sentence-text">
-                    {sentences[sentenceIndex]} <br className="d-none d-md-block" />
+                    {sentences[sentenceIndex]}{" "}
+                    <br className="d-none d-md-block" />
                   </p>
                   <div className="sentence-dots">
                     {sentences.map((_, i) => (
                       <span
                         key={i}
-                        className={`dot ${i === sentenceIndex ? 'active' : ''}`}
+                        className={`dot ${i === sentenceIndex ? "active" : ""}`}
                         onClick={() => setSentenceIndex(i)}
                       ></span>
                     ))}
@@ -331,7 +323,10 @@ export default function BasecampPage() {
                     </div>
                     <div></div>
                   </div>
-                  <button className="btn btn-cta w-100 w-md-auto text-center" onClick={handleShow}>
+                  <button
+                    className="btn btn-cta w-100 w-md-auto text-center"
+                    onClick={handleShow}
+                  >
                     REGISTER NOW
                   </button>
                 </div>
@@ -358,24 +353,21 @@ export default function BasecampPage() {
               </p>
             </div>
             <div className="row spacer"></div>
-          <div className="row spacer"></div>
+            <div className="row spacer"></div>
           </div>
 
           <div className="row">
             <div className="col-md-3">&nbsp;</div>
             <div className="col-md-6">
-             <p className="section-subtitle text-center">
-  In the Basecamp 1-day workshop, we deep dive into the{" "}
-  <br className="d-none d-md-block" />
-  4 pillars of a business –
-  <strong> People, Strategy,{" "}
-  Execution & </strong>  
-  <br className="d-none d-md-block" />
-  <strong>Cash</strong> – and teach you how to use Scaling Up to drive{" "}
-  <br className="d-none d-md-block" />
-  your next big decision(s) to scale your business.
-</p>
-
+              <p className="section-subtitle text-center">
+                In the Basecamp 1-day workshop, we deep dive into the{" "}
+                <br className="d-none d-md-block" />4 pillars of a business –
+                <strong> People, Strategy, Execution & </strong>
+                <br className="d-none d-md-block" />
+                <strong>Cash</strong> – and teach you how to use Scaling Up to
+                drive <br className="d-none d-md-block" />
+                your next big decision(s) to scale your business.
+              </p>
             </div>
           </div>
 
@@ -474,69 +466,73 @@ export default function BasecampPage() {
               the sessions.
             </div> */}
             <div className="highlight-text">
-              Tools & Frameworks that’ll enable you to navigate through the chaos that comes when you’re trying to scale your business.
+              Tools & Frameworks that’ll enable you to navigate through the
+              chaos that comes when you’re trying to scale your business.
             </div>
           </div>
         </div>
       </section>
 
       <div className="row">&nbsp;</div>
-       <div style={{ position: "relative" }}>
-                <Swiper
-                  ref={swiperRef}
-                  slidesPerView={"auto"}
-                  centeredSlides={true}
-                  navigation={false}
-                  pagination={{
-                    clickable: true,
-                  }}
-                  modules={[Pagination, Navigation]}
-                  className="mySwiper"
-                >
-                  {items?.map((d, i) => (
-                    <SwiperSlide key={i}>
-                      <div className="row slider-row" align="center">
-                        <div className="video col-md-2"></div>
-                        <div className="video col-md-8">
-                          <div className="ratio ratio-16x9">
-                            <iframe
-                              key={i}
-                              src={d.src}
-                              className="home-video"
-                              title="YouTube video player"
-                              allowFullScreen={true}
-                              onClick={() => handleClick(i)}
-                            ></iframe>
-                          </div>
-                        </div>
-                         <div className="video col-md-2"></div>
-                       
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-                <div className="img-fluid navigation-buttons">
-                  <div onClick={backward}>
-                    <Image
-                      src={left_arrow_btn}
-                      className="img-fluid nav-left-btn"
-                      alt="right side image"
-                    />
-                  </div>
-                  <div onClick={forward}>
-                    <Image
-                      src={right_arrow_btn}
-                      className="img-fluid nav-left-btn"
-                      alt="right side image"
-                    />
+      <div style={{ position: "relative" }}>
+        <Swiper
+          ref={swiperRef}
+          slidesPerView={"auto"}
+          onSlideChange={handleSlideChange}
+          centeredSlides={true}
+          navigation={false}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
+        >
+          {items?.map((d, i) => (
+            <SwiperSlide key={i}>
+              <div className="row slider-row" align="center">
+                <div className="video col-md-2"></div>
+                <div className="video col-md-8">
+                  <div className="ratio ratio-16x9">
+                    <iframe
+                      key={i}
+                      src={d.src}
+                      className="home-video"
+                      title="YouTube video player"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen={true}
+                      onClick={() => handleClick(i)}
+                    ></iframe>
                   </div>
                 </div>
+                <div className="video col-md-2"></div>
               </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="img-fluid navigation-buttons">
+          <div onClick={backward}>
+            <Image
+              src={left_arrow_btn}
+              className="img-fluid nav-left-btn"
+              alt="right side image"
+            />
+          </div>
+          <div onClick={forward}>
+            <Image
+              src={right_arrow_btn}
+              className="img-fluid nav-left-btn"
+              alt="right side image"
+            />
+          </div>
+        </div>
+      </div>
 
-            <div className="container">
-              <h2 className="section-title ">Leaders who attended the Basecamp workshops in the past said this</h2>
-              <div className="row spacer"></div>
-            </div>  
+      <div className="container">
+        <h2 className="section-title ">
+          Leaders who attended the Basecamp workshops in the past said this
+        </h2>
+        <div className="row spacer"></div>
+      </div>
       <section className="section excite-section">
         <div className="container">
           <h1 className="experience-section-title">
@@ -546,7 +542,8 @@ export default function BasecampPage() {
           <div className="row">
             <div className="col-md-1 d-none d-md-block">&nbsp;</div>
             <div className="col-md-11 col-12 excite-section-list">
-              <i className="fa-solid fa-arrow-trend-up me-2"></i> You are running a company with turnover of 50 CR+
+              <i className="fa-solid fa-arrow-trend-up me-2"></i> You are
+              running a company with turnover of 50 CR+
             </div>
           </div>
           <div className="row spacer"></div>
@@ -563,7 +560,8 @@ export default function BasecampPage() {
           <div className="row">
             <div className="col-md-1 d-none d-md-block">&nbsp;</div>
             <div className="col-md-11 col-12 excite-section-list">
-              <i className="fa-solid fa-arrow-trend-up me-2"></i> You know what got you here, won’t take you to the next{" "}
+              <i className="fa-solid fa-arrow-trend-up me-2"></i> You know what
+              got you here, won’t take you to the next{" "}
               <br className="d-none d-md-block" />
               level
             </div>
@@ -576,7 +574,7 @@ export default function BasecampPage() {
           <div className="col-lg-6">
             <div className="join-left">
               <h2>We’re Coming To Your City</h2>
-                              {/* <div className="row spacer"></div> */}
+              {/* <div className="row spacer"></div> */}
               <br></br>
               <h1>BASECAMP</h1>
               <div className="row spacer"></div>
@@ -586,7 +584,7 @@ export default function BasecampPage() {
                     <strong>Pune - 12th Feb’26</strong>
                   </h3>
                 </div>
-                  <div className="row spacer"></div>
+                <div className="row spacer"></div>
 
                 <div className="sub-job-details">
                   <h3>
@@ -605,7 +603,8 @@ export default function BasecampPage() {
                 style={{ width: "100%", color: "#000000" }}
                 onClick={handleShow}
               >
-                Early Bird Prices Start At <span className="nowrap">Rs 7999 + GST</span>
+                Early Bird Prices Start At{" "}
+                <span className="nowrap">Rs 7999 + GST</span>
                 <br />
                 <span className="btn-text">
                   <strong>REGISTER NOW</strong>
@@ -688,9 +687,9 @@ export default function BasecampPage() {
 
           <div className="contact-info">
             <p>
-              For more info, write to us at{" "}<br></br>
+              For more info, write to us at <br></br>
               <a href="mailto:events@success-alchemists.com">
-                events@success-alchemists.com 
+                events@success-alchemists.com
               </a>
             </p>
           </div>
@@ -735,119 +734,123 @@ export default function BasecampPage() {
         </div>
       </section>
 
-              <Modal show={show} onHide={handleClose}>
-                <Form onSubmit={handleSubmit}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>Book Your Seat</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>
-                    <Form.Group className="mb-3">
-                      <Form.Label>Company Name</Form.Label>
-                      <Form.Control
-                        type="text"
-                        value={companyName}
-                        onChange={(e) => setCompanyName(e.target.value)}
-                        placeholder="Enter company name"
-                        required
-                      />
-                    </Form.Group>
+      <Modal show={show} onHide={handleClose}>
+        <Form onSubmit={handleSubmit}>
+          <Modal.Header closeButton>
+            <Modal.Title>Book Your Seat</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group className="mb-3">
+              <Form.Label>Company Name</Form.Label>
+              <Form.Control
+                type="text"
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
+                placeholder="Enter company name"
+                required
+              />
+            </Form.Group>
 
-                    <Form.Group className="mb-3">
-                      <Form.Label>Your Designation</Form.Label>
-                      <Form.Control
-                        type="text"
-                        value={yourDesignation}
-                        onChange={(e) => setYourDesignation(e.target.value)}
-                        placeholder="Enter your designation"
-                        required
-                      />
-                    </Form.Group>
-                    
-                    <Form.Group className="mb-3">
-                      <Form.Label>First Name</Form.Label>
-                      <Form.Control
-                        type="text"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                        placeholder="Enter first name"
-                        required
-                      />
-                    </Form.Group>
-        
-                    <Form.Group className="mb-3">
-                      <Form.Label>Last Name</Form.Label>
-                      <Form.Control
-                        type="text"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                        placeholder="Enter last name"
-                        required
-                      />
-                    </Form.Group>
-        
-                    <Form.Group className="mb-3">
-                      <Form.Label>Email address</Form.Label>
-                      <Form.Control
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="name@example.com"
-                        required
-                      />
-                    </Form.Group>
-        
-                    <Form.Group className="mb-3">
-                      <Form.Label>Phone Number</Form.Label>
-                      <Form.Control
-                        type="tel"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        placeholder="10-digit phone number"
-                        required
-                      />
-                    </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Your Designation</Form.Label>
+              <Form.Control
+                type="text"
+                value={yourDesignation}
+                onChange={(e) => setYourDesignation(e.target.value)}
+                placeholder="Enter your designation"
+                required
+              />
+            </Form.Group>
 
-                    <Form.Group className="mb-3">
-                    <Form.Label>Basecamp Location</Form.Label>
-                    <Form.Select
-                      value={basecampLocation}
-                      onChange={(e) => setBasecampLocation(e.target.value)}
-                      required
-                    >
-                      <option value="">- Select Basecamp Location -</option>
-                      <option value="Pune - 12th Feb'26">Pune - 12th Feb'26</option>
-                      <option value="Mumbai - 26th Feb'26">Mumbai - 26th Feb'26</option>
-                      {/* <option value="11999">Regular - For Individuals - ₹11999</option>
+            <Form.Group className="mb-3">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="Enter first name"
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                type="text"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                placeholder="Enter last name"
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="name@example.com"
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Phone Number</Form.Label>
+              <Form.Control
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="10-digit phone number"
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Basecamp Location</Form.Label>
+              <Form.Select
+                value={basecampLocation}
+                onChange={(e) => setBasecampLocation(e.target.value)}
+                required
+              >
+                <option value="">- Select Basecamp Location -</option>
+                <option value="Pune - 12th Feb'26">Pune - 12th Feb'26</option>
+                <option value="Mumbai - 26th Feb'26">
+                  Mumbai - 26th Feb'26
+                </option>
+                {/* <option value="11999">Regular - For Individuals - ₹11999</option>
                       <option value="27999">Regular - For Teams - ₹27999</option> */}
-                    </Form.Select>
-                    </Form.Group>
-        
-                    <Form.Label>No. of attendees</Form.Label>
-                    <Form.Select
-                      value={plan}
-                      onChange={(e) => setPlan(e.target.value)}
-                      required
-                    >
-                      <option value="">- Select Plan -</option>
-                      <option value="7999">Early Bird - For Individuals - ₹7999 + GST</option>
-                      <option value="17999">Early Bird - For 3 Teams members - ₹17999 + GST</option>
-                      {/* <option value="11999">Regular - For Individuals - ₹11999</option>
-                      <option value="27999">Regular - For Teams - ₹27999</option> */}
-                    </Form.Select>
-                  </Modal.Body>
-        
-        
-                  <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                      Close
-                    </Button>
-                    <Button type="submit" variant="primary">
-                      Submit
-                    </Button>
-                  </Modal.Footer>
-                </Form>
-              </Modal>
+              </Form.Select>
+            </Form.Group>
 
+            <Form.Label>No. of attendees</Form.Label>
+            <Form.Select
+              value={plan}
+              onChange={(e) => setPlan(e.target.value)}
+              required
+            >
+              <option value="">- Select Plan -</option>
+              <option value="7999">
+                Early Bird - For Individuals - ₹7999 + GST
+              </option>
+              <option value="17999">
+                Early Bird - For 3 Teams members - ₹17999 + GST
+              </option>
+              {/* <option value="11999">Regular - For Individuals - ₹11999</option>
+                      <option value="27999">Regular - For Teams - ₹27999</option> */}
+            </Form.Select>
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button type="submit" variant="primary">
+              Submit
+            </Button>
+          </Modal.Footer>
+        </Form>
+      </Modal>
     </div>
   );
 }
