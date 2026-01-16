@@ -1,9 +1,139 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import basecamplogo2 from "./Basecamp_White.png";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
 import "./webinar.css";
 import vikram2 from "../../app/who/images/vikram2.jpg";
-import Image from "next/image";
 
 const WebinarPage = () => {
+  const [show, setShow] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [yourDesignation, setYourDesignation] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [plan, setPlan] = useState("");
+  const [basecampLocation, setBasecampLocation] = useState("");
+  const [order_id] = useState(`ORD${Date.now()}`);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    
+    // ✅ Basic validations
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !phone ||
+      !companyName ||
+      !yourDesignation
+    ) {
+      alert("All fields are required!");
+      return;
+    }
+
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+      alert("Enter a valid email!");
+      return;
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+      alert("Enter a valid 10-digit phone number!");
+      return;
+    }
+
+    await handlePayment({
+      firstName,
+      lastName,
+      email,
+      phone,
+      companyName,
+      yourDesignation,
+    });
+
+    handleClose();
+  };
+
+    const handlePayment = async ({
+    firstName,
+    lastName,
+    email,
+    phone,
+    companyName,
+    yourDesignation
+  } : any) => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+    const payload = {
+      order_id: order_id,
+      amount: 299.00,
+      billing_name: `${firstName} ${lastName}`,
+      billing_email: email,
+      billing_tel: phone,
+      company: companyName,
+      designation: yourDesignation,
+      basecamplocation: basecampLocation,
+      type : "webinar"
+    };
+
+    console.log("Records is:::::", payload);
+
+    const response = await fetch(apiUrl + "/initiate-payment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await response.json();
+    console.log("Response from /initiate-payment:", data);
+
+    if (data.paymentUrl) {
+      try {
+        const { encRequest, access_code, ccavenueUrl } = data;
+
+        if (encRequest && access_code) {
+          const existingForm = document.getElementById("ccavenue-payment-form");
+          if (existingForm) existingForm.remove();
+
+          const form = document.createElement("form");
+          form.method = "POST";
+          form.action = ccavenueUrl;
+          form.id = "ccavenue-payment-form";
+
+          const accessInput = document.createElement("input");
+          accessInput.type = "hidden";
+          accessInput.name = "access_code";
+          accessInput.value = access_code;
+          form.appendChild(accessInput);
+
+          const encInput = document.createElement("input");
+          encInput.type = "hidden";
+          encInput.name = "encRequest";
+          encInput.value = encRequest;
+          form.appendChild(encInput);
+
+          document.body.appendChild(form);
+          form.submit();
+        } else {
+          alert("Payment failed: Missing required data.");
+        }
+      } catch (error) {
+        alert("Payment failed: Invalid URL");
+        console.error(error);
+      }
+    } else {
+      alert("Payment failed: Server error");
+      console.error(data);
+    }
+  };
+
+
   return (
     <div className="main_body_div">
       {/* EXPERIENCE SECTION */}
@@ -64,7 +194,7 @@ const WebinarPage = () => {
                 *Special Price for <br /> first 100 participants only
               </p>
 
-              <button className="register-btn">REGISTER NOW</button>
+              <button className="register-btn"  onClick={handleShow}>REGISTER NOW</button>
             </div>
           </div>
         </div>
@@ -160,7 +290,7 @@ const WebinarPage = () => {
           </button>
         </div>
 
-        <button className="secure-spot-btn">Secure Your Spot Now</button>
+        <button className="secure-spot-btn" onClick={handleShow}>Secure Your Spot Now</button>
         <div className="just">
           Just 2 Hours <br /> can change the trajectory of your business growth
         </div>
@@ -277,7 +407,7 @@ const WebinarPage = () => {
     </div>
   </div>
 
-  <button className="cta-btn">Make Your Vision A Reality</button>
+  <button className="cta-btn" onClick={handleShow}>Make Your Vision A Reality</button>
 
   <p className="cta-text">
     Join The Masterclass.<br />
@@ -352,7 +482,7 @@ const WebinarPage = () => {
                   <button
                     className="btn btn-cta-footer text-center"
                     style={{ width: "100%", color: "#000000" }}
-                    // onClick={handleShow}
+                    onClick={handleShow}
                   >
                     Limited spots Available
                     <br />
@@ -366,6 +496,91 @@ const WebinarPage = () => {
           </div>
         </div>
       </section>
+      <Modal show={show} onHide={handleClose}>
+              <Form onSubmit={handleSubmit}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Book Your Webinar Seat</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Company Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={companyName}
+                      onChange={(e) => setCompanyName(e.target.value)}
+                      placeholder="Enter company name"
+                      required
+                    />
+                  </Form.Group>
+      
+                  <Form.Group className="mb-3">
+                    <Form.Label>Your Designation</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={yourDesignation}
+                      onChange={(e) => setYourDesignation(e.target.value)}
+                      placeholder="Enter your designation"
+                      required
+                    />
+                  </Form.Group>
+      
+                  <Form.Group className="mb-3">
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      placeholder="Enter first name"
+                      required
+                    />
+                  </Form.Group>
+      
+                  <Form.Group className="mb-3">
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      placeholder="Enter last name"
+                      required
+                    />
+                  </Form.Group>
+      
+                  <Form.Group className="mb-3">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="name@example.com"
+                      required
+                    />
+                  </Form.Group>
+      
+                  <Form.Group className="mb-3">
+                    <Form.Label>Phone Number</Form.Label>
+                    <Form.Control
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="10-digit phone number"
+                      required
+                    />
+                  </Form.Group>
+      
+                  
+                </Modal.Body>
+      
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    Close
+                  </Button>
+                  <Button type="submit" variant="primary">
+                    Submit
+                  </Button>
+                </Modal.Footer>
+              </Form>
+            </Modal>
     </div>
   );
 };
