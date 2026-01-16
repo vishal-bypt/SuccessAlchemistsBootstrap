@@ -287,7 +287,7 @@ export default function BasecampPage() {
                   />
                 </div>
                 <p className="hero-subtitle text-center text-md-left">
-                  Learn To Scale With Clarity
+                  Scale With More Clarity, Robust Systems, Increased Cashflows and More Productive Teams
                 </p>
               </div>
             </div>
@@ -595,7 +595,7 @@ export default function BasecampPage() {
                 <div className="row spacer"></div>
                 <div className="sub-job-details">
                   <h3>
-                    <strong>DELHI-NCR - Coming Soon</strong>
+                    <strong>Delhi-NCR - Coming Soon</strong>
                   </h3>
                 </div>
               </div>
@@ -604,7 +604,7 @@ export default function BasecampPage() {
                 style={{ width: "100%", color: "#000000" }}
                 onClick={handleShow}
               >
-                Early Bird Prices Start At{" "}
+                EARLY BIRD PRICES START AT {" "}
                 <span className="nowrap">Rs 7999 + GST</span>
                 <br />
                 <span className="btn-text">
@@ -664,7 +664,7 @@ export default function BasecampPage() {
             </div>
             <div className="faq-answer">
               A. Real business coaches who mentor companies with cumulative
-              turnover of $xxx million dollars will take you through the Scaling
+              turnover of $2.07 Billions dollars will take you through the Scaling
               Up framework using case studies, tools, and insights that you can
               take back to your company & implement as it is for driving growth.{" "}
             </div>
