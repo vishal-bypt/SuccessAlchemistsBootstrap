@@ -41,42 +41,35 @@ const WebinarPage = () => {
       title: "Success story of #1 - Ador powerton",
       description:
         "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
-      src: " https://www.youtube.com/embed/TsZWlEhQCEE?enablejsapi=1",
+      src: "https://www.youtube.com/embed/o-OwjN6PqBU?si=YZUPPow4mhKLpYbX?enablejsapi=1",
     },
     {
       id: 2,
       title: "Success Story #2 - Aliens Tattoo",
       description:
         "In this video, Sunny Bhanushali the Founder & CEO of Aliens Tattoo talks about experiencing challenges of rapid growth, the biggest benefit of implementing a structured framework & the value added by their coach.",
-      src: "https://www.youtube.com/embed/t7gy9PWwzkg?enablejsapi=1",
+      src: "https://www.youtube.com/embed/8_HT9N82rh4?si=CdL3RxS50W7InGdW?enablejsapi=1",
     },
     {
       id: 3,
       title: "Success Story #3 - Grauer & Weil (Engineering Division)",
       description:
         "Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years. At the end, there is a reference to the Coach and the support provided in this growth journey.",
-      src: "https://www.youtube.com/embed/Wv00isXLFps?enablejsapi=1",
+      src: "https://www.youtube.com/embed/N4PUd0g_vDs?si=vLW8KfcG9_KUc1cJ?enablejsapi=1",
     },
     {
       id: 4,
       title: "Success Story #4 - Clarion Technologies",
       description:
         "In this video, their CEO, Siddharth Motiwale talks about the 'secret sauce' which has helped Clarion grow systematically over the past few years. He also talks about the value added by Ajay as their coach.",
-      src: "https://www.youtube.com/embed/5IWQidzMnNk?enablejsapi=1",
+      src: "https://www.youtube.com/embed/UrIxZUvzovo?si=M6EvIs5zWR5d2A6T?enablejsapi=1",
     },
     {
       id: 5,
       title: "Success Story #5 - InfraCloud Technologies",
       description:
         "In this video, Girish Shilamkar, the Founder & CEO, shares some key aspects of the Scaling Up framework, which helped him build a great culture within his company. These foundations ultimately helped ensure a successful exit in 2025.",
-      src: "https://www.youtube.com/embed/jy5Ik158dxA?si=mlb22p62AGgp1l1g?enablejsapi=1",
-    },
-    {
-      id: 6,
-      title: "Success Story #6 - Uplers & Mavlers",
-      description:
-        "In this video, Jaymin (CEO) & Nital (COO) talk about the benefits of implementing the Scaling Up framework. They ensured alignment at all levels within their business & experienced the resultant growth.",
-      src: "https://www.youtube.com/embed/Eb1vlLvFVqM?si=Cf5iO_xiK7KrN4ud?enablejsapi=1",
+      src: "https://www.youtube.com/embed/mN0qCIfEr-8?si=FYfuga7JrBG3lz-d?enablejsapi=1",
     },
   ];
 
@@ -267,7 +260,7 @@ Global Business Coach
             <div className="right-section">
               <div className="info">
                 <p>
-                  <Image src={calendar} alt="Date" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> Date – 28<sup>th</sup> January 2026
+                  <Image src={calendar} alt="Date" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> Date – 1<sup>st</sup> February 2026
                 </p>
                 <p><Image src={clock} alt="Time" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> 7.30 pm – 9.30 pm</p>
                 <p><Image src={meet} alt="Online" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> ZOOM session (online)</p>
@@ -329,20 +322,20 @@ Global Business Coach
           {/* Top Cards */}
           <div className="card">
             <h2>The 4 Pillars of Scaled Businesses</h2>
-            <p>Running a company with turnover of Rs 50 CR+</p>
-            <p>Lorem ipsum</p>
+            <p>Fuel your growth trajectory by optimising People , Strategy , Execution , and Cash</p>
+            <p>Stop guessing and start moving faster.</p>
           </div>
 
           <div className="card">
-            <h2>Identify Gaps In Your Org</h2>
-            <p>Running a company with turnover of Rs 50 CR+</p>
-            <p>Lorem ipsum</p>
+            <h2>Stop Being The Bottleneck In Your Own Business</h2>
+            <p>Learn why decisions, approvals, and problem-solving keep coming back to you </p>
+            <p>and how to design a company that runs without constant founder intervention.</p>
           </div>
 
           <div className="card">
-            <h2>Blueprint to become System-Driven</h2>
-            <p>Running a company with turnover of Rs 50 CR+</p>
-            <p>Lorem ipsum</p>
+            <h2>Blueprint To Become System-Driven</h2>
+            <p>Learn how to build the business that runs on systems, and not on your memory, energy, or heroics.</p>
+            <p>Find out which rhythms, dashboards, and habits separate successful companies from perpetually busy ones.</p>
           </div>
 
           {/* Bottom Buttons */}
@@ -563,37 +556,20 @@ Global Business Coach
 
           <div className="faq-item">
             <p className="question">
-              Q. Can multiple people from the same company join?
+              Q. What will I learn in the session that I don't already know?
             </p>
             <p className="answer">
-              A. Yes. Don’t forget to avail group offers.
+              A. You will get a clear understanding of what is the Scaling Up framework, and what kind of problems that are de-accelerating your company can be addressed using this framework.
             </p>
           </div>
 
           <div className="faq-item">
-            <p className="question">Q. Who is the BASECAMP for?</p>
+            <p className="question">Q. Tell me more about the speaker?</p>
             <p className="answer">
-              A. Founders, CXOs, L1 Leaders, Board Members
+              A. The main speaker at the Masterclass is Mr. Vikram Panjwani. Vikram comes with over two decades of professional experience in high-performance roles in companies such as Vodafone, Reliance, Tata Teleservices, etc. Before becoming a coach, he successfully ran his own entrepreneurship venture. He is one of the very few certified Scaling Up coaches in India. Being an expert in the framework, he coaches several companies across the globe to implement Scaling Up and subsequently scale sustainably.
             </p>
           </div>
 
-          <div className="faq-item">
-            <p className="question">Q. What’s the duration of this workshop?</p>
-            <p className="answer">A. 7 hours</p>
-          </div>
-
-          <div className="faq-item">
-            <p className="question">
-              Q. How is Basecamp different than other generic business gyaan
-              sessions?
-            </p>
-            <p className="answer">
-              A. Real business coaches who mentor companies with cumulative
-              turnover of $xxx million dollars will take you through the Scaling
-              Up framework using case studies, tools, and insights that you can
-              take back to your company & implement as it is for driving growth.
-            </p>
-          </div>
         </div>
       </section>
 
@@ -611,10 +587,10 @@ Global Business Coach
                 </h3>
                 <p className="hero-subtitle">
                   <button className="btn btn-cta-footer text-center" onClick={handleShow}>
-                    Limited spots Available
+                    Just 2 hours & Rs 299
                     <br />
                     <span className="btn-text">
-                      <strong>REGISTER NOW for basecamp</strong>
+                      <strong>What is stopping you?</strong>
                     </span>
                   </button>
                 </p>

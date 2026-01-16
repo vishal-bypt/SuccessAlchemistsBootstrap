@@ -206,7 +206,7 @@ const NavbarMenu = () => {
                     : "inactive-link font-normal"
                 }  nav_text_div link-underline link-underline-opacity-0`}
               >
-                Webinar
+                Masterclass
               </Link>
             </NavDropdown.Item>
             {/* <NavDropdown.Item>
