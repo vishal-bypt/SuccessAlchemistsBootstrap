@@ -187,9 +187,9 @@ const NavbarMenu = () => {
             </NavDropdown.Item> */}
             <NavDropdown.Item>
               <Link
-                href="/events/basecamp"
+                href="/basecamp"
                 className={`${
-                  pathname === "/events/basecamp"
+                  pathname === "/basecamp"
                     ? "active-link font-semibold"
                     : "inactive-link font-normal"
                 }  nav_text_div link-underline link-underline-opacity-0`}
