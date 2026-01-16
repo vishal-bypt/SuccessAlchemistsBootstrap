@@ -132,7 +132,7 @@ const page = () => {
   return (
     <div className="main_body_div">
       <div className="basecamp-hero-section">
-        <Image className="blue-curve" src={bluecurve} alt="img2" />
+        <Image className="blue-curve" src={bluecurve} alt="Basecamp" />
         <div className="hero-content">
 
           <p className="heading" style={{ color: "white" }}>
