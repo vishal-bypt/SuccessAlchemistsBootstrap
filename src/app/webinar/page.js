@@ -1,14 +1,26 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import "./webinar.css";
+import vikram2 from "../../app/who/images/vikram2.jpg";
 import Image from "next/image";
-import basecamplogo2 from "./Basecamp_White.png";
+import clock from "../../app/who/images/clock.png";
+import calendar from "../../app/who/images/calendar.png";
+import meet from "../../app/who/images/meet.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import { useRef, useState } from "react";
+import left_arrow_btn from "../home/images/left-arrow-btn.png";
+import right_arrow_btn from "../home/images/right-arrow-btn.png";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import "./webinar.css";
-import vikram2 from "../../app/who/images/vikram2.jpg";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const WebinarPage = () => {
+  
   const [show, setShow] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [companyName, setCompanyName] = useState("");
@@ -22,7 +34,78 @@ const WebinarPage = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+
+  const items = [
+    {
+      id: 1,
+      title: "Success story of #1 - Ador powerton",
+      description:
+        "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
+      src: " https://www.youtube.com/embed/TsZWlEhQCEE?enablejsapi=1",
+    },
+    {
+      id: 2,
+      title: "Success Story #2 - Aliens Tattoo",
+      description:
+        "In this video, Sunny Bhanushali the Founder & CEO of Aliens Tattoo talks about experiencing challenges of rapid growth, the biggest benefit of implementing a structured framework & the value added by their coach.",
+      src: "https://www.youtube.com/embed/t7gy9PWwzkg?enablejsapi=1",
+    },
+    {
+      id: 3,
+      title: "Success Story #3 - Grauer & Weil (Engineering Division)",
+      description:
+        "Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years. At the end, there is a reference to the Coach and the support provided in this growth journey.",
+      src: "https://www.youtube.com/embed/Wv00isXLFps?enablejsapi=1",
+    },
+    {
+      id: 4,
+      title: "Success Story #4 - Clarion Technologies",
+      description:
+        "In this video, their CEO, Siddharth Motiwale talks about the 'secret sauce' which has helped Clarion grow systematically over the past few years. He also talks about the value added by Ajay as their coach.",
+      src: "https://www.youtube.com/embed/5IWQidzMnNk?enablejsapi=1",
+    },
+    {
+      id: 5,
+      title: "Success Story #5 - InfraCloud Technologies",
+      description:
+        "In this video, Girish Shilamkar, the Founder & CEO, shares some key aspects of the Scaling Up framework, which helped him build a great culture within his company. These foundations ultimately helped ensure a successful exit in 2025.",
+      src: "https://www.youtube.com/embed/jy5Ik158dxA?si=mlb22p62AGgp1l1g?enablejsapi=1",
+    },
+    {
+      id: 6,
+      title: "Success Story #6 - Uplers & Mavlers",
+      description:
+        "In this video, Jaymin (CEO) & Nital (COO) talk about the benefits of implementing the Scaling Up framework. They ensured alignment at all levels within their business & experienced the resultant growth.",
+      src: "https://www.youtube.com/embed/Eb1vlLvFVqM?si=Cf5iO_xiK7KrN4ud?enablejsapi=1",
+    },
+  ];
+
+  const swiperRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const forward = () => {
+    if (currentIndex === items.length - 1) return;
+    swiperRef.current.swiper.slideTo(currentIndex + 1);
+    setCurrentIndex(currentIndex + 1);
+  };
+  
+  const backward = () => {
+    if (currentIndex === 0) return;
+    swiperRef.current.swiper.slideTo(currentIndex - 1);
+    setCurrentIndex(currentIndex - 1);
+  };
+    
+  const handleSlideChange = (swiper) => {
+    setCurrentIndex(swiper.activeIndex);
+    document.querySelectorAll(".home-video").forEach(iframe => {
+      iframe.contentWindow?.postMessage(
+        '{"event":"command","func":"pauseVideo","args":""}',
+        "*"
+      );
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // ✅ Basic validations
@@ -67,7 +150,7 @@ const WebinarPage = () => {
     phone,
     companyName,
     yourDesignation
-  } : any) => {
+  }) => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
     const payload = {
@@ -133,7 +216,9 @@ const WebinarPage = () => {
     }
   };
 
-
+  const handleClick = (index) => {
+    // Handle video click if needed
+  };
   return (
     <div className="main_body_div">
       {/* EXPERIENCE SECTION */}
@@ -169,23 +254,23 @@ const WebinarPage = () => {
 
               <h2 className="speaker-name">Vikram Panjwani</h2>
               <p className="speaker-title">
-                Certified Coach – Scaling Up <br />
-                Senior Business Coach – Success Alchemists
+                Scaling Up Certified 
+Global Business Coach
               </p>
-              <p className="speaker-desc">
+              {/* <p className="speaker-desc">
                 Over 20 years of experience in shaping growing businesses in
                 companies like Vodafone, Tata, Reliance, etc.
-              </p>
+              </p> */}
             </div>
 
             {/* RIGHT SECTION */}
             <div className="right-section">
               <div className="info">
                 <p>
-                  📅 Date – 28<sup>th</sup> January 2026
+                  <Image src={calendar} alt="Date" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> Date – 28<sup>th</sup> January 2026
                 </p>
-                <p>⏰ 7.30 pm – 9.30 pm</p>
-                <p>💻 ZOOM session (online)</p>
+                <p><Image src={clock} alt="Time" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> 7.30 pm – 9.30 pm</p>
+                <p><Image src={meet} alt="Online" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> ZOOM session (online)</p>
               </div>
 
               <div className="price">Rs 299/- Only</div>
@@ -194,7 +279,7 @@ const WebinarPage = () => {
                 *Special Price for <br /> first 100 participants only
               </p>
 
-              <button className="register-btn"  onClick={handleShow}>REGISTER NOW</button>
+              <button className="register-btn" onClick={handleShow}>REGISTER NOW</button>
             </div>
           </div>
         </div>
@@ -359,6 +444,59 @@ const WebinarPage = () => {
           Testimonials Who Have Applied <br />
           This Framework
         </h1>
+
+              <div style={{ position: "relative" }}>
+        <Swiper
+          ref={swiperRef}
+          slidesPerView={1}
+          onSlideChange={handleSlideChange}
+          centeredSlides={true}
+          navigation={false}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
+        >
+          {items?.map((d, i) => (
+            <SwiperSlide key={i}>
+              <div className="row slider-row" align="center">
+                <div className="video col-md-2"></div>
+                <div className="video col-md-8">
+                  <div className="ratio ratio-16x9">
+                    <iframe
+                      key={i}
+                      src={d.src}
+                      className="home-video"
+                      title="YouTube video player"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen={true}
+                      onClick={() => handleClick(i)}
+                    ></iframe>
+                  </div>
+                </div>
+                <div className="video col-md-2"></div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="img-fluid navigation-buttons">
+          <div onClick={backward}>
+            <Image
+              src={left_arrow_btn}
+              className="img-fluid nav-left-btn"
+              alt="left navigation arrow"
+            />
+          </div>
+          <div onClick={forward}>
+            <Image
+              src={right_arrow_btn}
+              className="img-fluid nav-left-btn"
+              alt="right navigation arrow"
+            />
+          </div>
+        </div>
+      </div>
       </section>
 
       <section className="section excite-section">
@@ -392,29 +530,29 @@ const WebinarPage = () => {
         </p>
 
         <section className="cta-section">
-  <div className="stats">
-    <div className="stat">
-      <h3>1,00,000</h3>
-      <p>companies</p>
-    </div>
-    <div className="stat">
-      <h3>10X</h3>
-      <p>Valuation</p>
-    </div>
-    <div className="stat">
-      <h3>3X</h3>
-      <p>Profitability</p>
-    </div>
-  </div>
+          <div className="stats">
+            <div className="stat">
+              <h3>1,00,000</h3>
+              <p>companies</p>
+            </div>
+            <div className="stat">
+              <h3>10X</h3>
+              <p>Valuation</p>
+            </div>
+            <div className="stat">
+              <h3>3X</h3>
+              <p>Profitability</p>
+            </div>
+          </div>
 
-  <button className="cta-btn" onClick={handleShow}>Make Your Vision A Reality</button>
+          <button className="cta-btn" onClick={handleShow}>Make Your Vision A Reality</button>
 
-  <p className="cta-text">
-    Join The Masterclass.<br />
-    Get Absolute Clarity On Your Next Steps
-  </p>
-</section>
-
+          <p className="cta-text">
+            Join The Masterclass.
+            <br />
+            Get Absolute Clarity On Your Next Steps
+          </p>
+        </section>
       </section>
 
       <section className="faq-section">
@@ -464,31 +602,20 @@ const WebinarPage = () => {
           <div className="row align-items-center justify-content-center">
             <div className="col-lg-8 col-md-12 col-12 order-lg-1 order-1">
               <div className="hero-content-footer text-center">
-                <h3
-                  className="d-none d-md-block"
-                  style={{ fontSize: 79, color: "#FFFFFF" }}
-                >
-                  Are You <br />{" "}
-                  <span style={{ color: "#fdae07" }}>Ready To Scale?</span>
+                <h3 className="d-none d-md-block">
+                  Are You <br />
+                  <span>Ready To Scale?</span>
                 </h3>
-                <h3
-                  className="d-block d-md-none"
-                  style={{ fontSize: 36, color: "#FFFFFF", lineHeight: 1.2 }}
-                >
-                  Are You{" "}
-                  <span style={{ color: "#fdae07" }}>Ready To Scale?</span>
+                <h3 className="d-block d-md-none">
+                  Are You <span>Ready To Scale?</span>
                 </h3>
                 <p className="hero-subtitle">
-                  <button
-                    className="btn btn-cta-footer text-center"
-                    style={{ width: "100%", color: "#000000" }}
-                    onClick={handleShow}
-                  >
+                  <button className="btn btn-cta-footer text-center" onClick={handleShow}>
                     Limited spots Available
                     <br />
                     <span className="btn-text">
-                      <strong>ReGISTER NOW for basecamp</strong>
-                    </span>{" "}
+                      <strong>REGISTER NOW for basecamp</strong>
+                    </span>
                   </button>
                 </p>
               </div>
