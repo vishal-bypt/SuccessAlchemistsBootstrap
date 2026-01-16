@@ -208,6 +208,7 @@ export default function BasecampPage() {
       company: companyName,
       designation: yourDesignation,
       basecamplocation: basecampLocation,
+      type : "basecamp"
     };
 
     console.log("Records is:::::", payload);
