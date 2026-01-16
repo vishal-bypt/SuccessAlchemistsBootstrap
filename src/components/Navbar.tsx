@@ -196,6 +196,18 @@ const NavbarMenu = () => {
               >
                 Basecamp Workshop
               </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+               <Link
+                href="/webinar"
+                className={`${
+                  pathname === "/webinar"
+                    ? "active-link font-semibold"
+                    : "inactive-link font-normal"
+                }  nav_text_div link-underline link-underline-opacity-0`}
+              >
+                Webinar
+              </Link>
             </NavDropdown.Item>
             {/* <NavDropdown.Item>
               <Link
