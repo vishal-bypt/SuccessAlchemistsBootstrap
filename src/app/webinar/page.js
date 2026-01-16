@@ -1,6 +1,6 @@
 "use client";
 import "./webinar.css";
-import vikram2 from "../../app/who/images/vikram2.jpg";
+import vikram2 from "../../app/who/images/vikram2.png";
 import Image from "next/image";
 import clock from "../../app/who/images/clock.png";
 import calendar from "../../app/who/images/calendar.png";
