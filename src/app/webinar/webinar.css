@@ -462,7 +462,7 @@
   padding: 18px 45px;
   font-size: 17px;
   font-weight: 600;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   border-radius: 50px;
   margin-top: 25px;
   letter-spacing: 0.5px;

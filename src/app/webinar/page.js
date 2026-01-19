@@ -590,10 +590,10 @@ Global Business Coach
                 </h3>
                 <p className="hero-subtitle">
                   <button className="btn btn-cta-footer text-center" onClick={handleShow}>
-                    Just 2 hours & Rs 299
+                    JUST 2 HOURS & Rs 299
                     <br />
                     <span className="btn-text">
-                      <strong>What is stopping you?</strong>
+                      <strong>WHAT IS STOPPING YOU?</strong>
                     </span>
                   </button>
                 </p>
