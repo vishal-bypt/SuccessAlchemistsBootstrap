@@ -504,8 +504,7 @@ Global Business Coach
           <p className="about-us-text">
             Success Alchemists is the brainchild of Mr. Ajay Hiraskar, who is the
             1st global Scaling Up Business Coach from India. <br /> <br />
-            Founded in 2021, Success Alchemists today has coached several
-            mid-sized companies across India, Dubai, Africa & USA in various
+            Founded in 2016, Success Alchemists has coached several mid-sized companies across India, Dubai, Africa & USA in various
             industries such as Manufacturing, Petroleum, Technology, Education,
             Recruitment Services, SAAS, Martech, Logistics & Supply Chain, etc.
             with a cumulative turnover of over $2 Billion.
