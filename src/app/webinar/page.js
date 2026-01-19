@@ -136,7 +136,7 @@ const WebinarPage = () => {
     handleClose();
   };
 
-    const handlePayment = async ({
+  const handlePayment = async ({
     firstName,
     lastName,
     email,
@@ -172,6 +172,17 @@ const WebinarPage = () => {
     if (data.paymentUrl) {
       try {
         const { encRequest, access_code, ccavenueUrl } = data;
+
+         
+        // 2️⃣ Fire Google Ads conversion
+        window.gtag('event', 'conversion', {
+              send_to: 'AW-17882487402/Jbp8CM7T7OcbEOq0hM9C',
+        });
+
+        // 3️⃣ Optional: redirect / show success message
+        console.log('Lead submitted & conversion tracked');
+        
+
 
         if (encRequest && access_code) {
           const existingForm = document.getElementById("ccavenue-payment-form");

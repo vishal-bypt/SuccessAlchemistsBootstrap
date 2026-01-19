@@ -224,6 +224,17 @@ export default function BasecampPage() {
 
     if (data.paymentUrl) {
       try {
+
+        
+          // 2️⃣ Fire Google Ads conversion
+          window.gtag('event', 'conversion', {
+              send_to: 'AW-17882487402/Jbp8CM7T7OcbEOq0hM9C',
+          });
+
+            // 3️⃣ Optional: redirect / show success message
+          console.log('Lead submitted & conversion tracked');
+        
+
         const { encRequest, access_code, ccavenueUrl } = data;
 
         if (encRequest && access_code) {
