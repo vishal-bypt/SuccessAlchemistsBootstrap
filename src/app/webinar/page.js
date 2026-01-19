@@ -271,16 +271,19 @@ Global Business Coach
             <div className="right-section">
               <div className="info">
                 <p>
-                  <Image src={calendar} alt="Date" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> Date – 1<sup>st</sup> February 2026
+                  <Image src={calendar} alt="Date" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> Date – 31<sup>st</sup> January 2026
                 </p>
-                <p><Image src={clock} alt="Time" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> 7.30 pm – 9.30 pm</p>
+                <p><Image src={clock} alt="Time" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> 11 am – 1 pm IST</p>
                 <p><Image src={meet} alt="Online" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> ZOOM session (online)</p>
               </div>
 
-              <div className="price">Rs 299/- Only</div>
+              <div className="price">
+                <div style={{textDecoration: 'line-through', color: '#999', marginBottom: '5px'}}>Rs 999/-</div>
+                Rs 299/- Only
+              </div>
 
               <p className="note">
-                *Special Price for <br /> first 100 participants only
+                *This is for the first 25 registrations only
               </p>
 
               <button className="register-btn" onClick={handleShow}>REGISTER NOW</button>
@@ -444,9 +447,9 @@ Global Business Coach
       <section>
         <h1 className="clients">
           {" "}
-          Success Alchemists Clients <br />
-          Testimonials Who Have Applied <br />
-          This Framework
+          {/* Success Alchemists Clients <br /> */}
+          Testimonials from clients <br /> who have leveraged <br />
+          this framework
         </h1>
 
               <div style={{ position: "relative" }}>
@@ -510,13 +513,12 @@ Global Business Coach
 
         <div className="signs-container mt-5">
           <p className="about-us-text">
-            Success Alchemists is the brainchild of Mr.Ajay Hiraskar, who is the
+            Success Alchemists is the brainchild of Mr. Ajay Hiraskar, who is the
             1st global Scaling Up Business Coach from India. <br /> <br />
-            Founded in 2021, Success Alchemists today has coached several
-            mid-sized companies across India, Dubai, Africa & USA in various
+            Founded in 2016, Success Alchemists has coached several mid-sized companies across India, Dubai, Africa & USA in various
             industries such as Manufacturing, Petroleum, Technology, Education,
             Recruitment Services, SAAS, Martech, Logistics & Supply Chain, etc.
-            with a cumulative turnover of over $2 Billions.
+            with a cumulative turnover of over $2 Billion.
             <br /> <br />
             Our team comprises of 4 Scaling Up certified coaches and over 8
             Associate Business coaches, in addition to Accountability Partners &
@@ -530,7 +532,7 @@ Global Business Coach
           tools and execution insights to achieve superlative growth. <br />{" "}
           <br />
           Success Alchemists utilises these frameworks alongwith other proven
-          mythologies to enable business owners in their journey to scale.
+          methodologies to enable business owners in their journey to scale.
         </p>
 
         <section className="cta-section">
@@ -598,10 +600,10 @@ Global Business Coach
                 </h3>
                 <p className="hero-subtitle">
                   <button className="btn btn-cta-footer text-center" onClick={handleShow}>
-                    Just 2 hours & Rs 299
+                    JUST 2 HOURS & Rs 299
                     <br />
                     <span className="btn-text">
-                      <strong>What is stopping you?</strong>
+                      <strong>WHAT IS STOPPING YOU?</strong>
                     </span>
                   </button>
                 </p>

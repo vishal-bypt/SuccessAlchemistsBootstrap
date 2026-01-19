@@ -348,6 +348,40 @@ export default function BasecampPage() {
         </div>
       </section>
 
+<div class="page-wrapper">
+
+    {/* <!-- TOP SECTION --> */}
+    <section class="hero">
+        <h1>Your company is growing but<br />your growth is unpredictable</h1>
+
+        <p class="description">
+            Business owners often come to a point where what was working earlier for them stops working altogether. The team doesn’t feel equipped to handle the new scale that is envisioned, and the overall pressure across the company is building up.
+        </p>
+          <br />      
+        <p class="description">
+            Basecamp workshop provides a proven playbook to business owners to
+            scale with absolute clarity and freedom.
+        </p>
+    </section>
+
+    {/* <!-- OFFER SECTION --> */}
+    <section class="offer">
+        <h2>EARLY BIRD OFFER</h2>
+
+        <div class="price">
+            <span class="old-price">Rs 9999</span>
+            <span class="new-price">Rs 7999 only</span>
+        </div>
+
+        <button class="cta-btn">SIGN UP TODAY</button>
+
+        <p class="guarantee">
+            Money Back Guarantee<br />
+            No questions asked if you don’t find the workshop valuable.
+        </p>
+    </section>
+
+</div>
       {/* UNLOCK SECTION */}
       <section className="unlock-section">
         <div className="container">
