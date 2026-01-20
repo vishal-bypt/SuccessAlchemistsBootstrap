@@ -32,6 +32,31 @@ export default function BasecampPage() {
   const [basecampLocation, setBasecampLocation] = useState("");
   const [order_id] = useState(`ORD${Date.now()}`);
 
+  const [promoCode, setPromoCode] = useState("");
+  const [discount, setDiscount] = useState(0);
+  const [promoApplied, setPromoApplied] = useState(false);
+
+  //const VALID_PROMO = "SAVE20";
+  const exclusiveArray = [
+    "CREDAI_EXCLUSIVE",
+    "PMA_EXCLUSIVE",
+    "MCCAI_EXCLUSIVE",
+    "PCMC_EXCLUSIVE",
+    "EO_EXCLUSIVE",
+    "YPO_EXCLUSIVE",
+    "ASCENT_EXCLUSIVE",
+    "SS_EXCLUSIVE",
+    "TIE_EXCLUSIVE",
+    "JITO_EXCLUSIVE",
+    "MU_EXCLUSIVE",
+    "HIA_EXCLUSIVE",
+    "CA_EXCLUSIVE",
+    "NMIA_EXCLUSIVE",
+    "ISB_EXCLUSIVE",
+    "IIM_EXCLUSIVE",
+    "SPECIAL20",
+  ];
+
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const sentences = [
     "A workshop that can help you build a winning strategy for accelerated growth.",
@@ -73,14 +98,16 @@ export default function BasecampPage() {
       title: "Success Story #5 - InfraCloud Technologies",
       description:
         "In this video, Girish Shilamkar, the Founder & CEO, shares some key aspects of the Scaling Up framework, which helped him build a great culture within his company. These foundations ultimately helped ensure a successful exit in 2025.",
-      src: "https://www.youtube.com/embed/jy5Ik158dxA?si=mlb22p62AGgp1l1g?enablejsapi=1",
+      src:
+        "https://www.youtube.com/embed/jy5Ik158dxA?si=mlb22p62AGgp1l1g?enablejsapi=1",
     },
     {
       id: 6,
       title: "Success Story #6 - Uplers & Mavlers",
       description:
         "In this video, Jaymin (CEO) & Nital (COO) talk about the benefits of implementing the Scaling Up framework. They ensured alignment at all levels within their business & experienced the resultant growth.",
-      src: "https://www.youtube.com/embed/Eb1vlLvFVqM?si=Cf5iO_xiK7KrN4ud?enablejsapi=1",
+      src:
+        "https://www.youtube.com/embed/Eb1vlLvFVqM?si=Cf5iO_xiK7KrN4ud?enablejsapi=1",
     },
   ];
 
@@ -201,14 +228,14 @@ export default function BasecampPage() {
 
     const payload = {
       order_id: order_id,
-      amount: plan,
+      amount: Number(plan) - Number(discount),
       billing_name: `${firstName} ${lastName}`,
       billing_email: email,
       billing_tel: phone,
       company: companyName,
       designation: yourDesignation,
       basecamplocation: basecampLocation,
-      type : "basecamp"
+      type: "basecamp",
     };
 
     console.log("Records is:::::", payload);
@@ -224,16 +251,13 @@ export default function BasecampPage() {
 
     if (data.paymentUrl) {
       try {
+        // 2️⃣ Fire Google Ads conversion
+        window.gtag("event", "conversion", {
+          send_to: "AW-17882487402/Jbp8CM7T7OcbEOq0hM9C",
+        });
 
-        
-          // 2️⃣ Fire Google Ads conversion
-          window.gtag('event', 'conversion', {
-              send_to: 'AW-17882487402/Jbp8CM7T7OcbEOq0hM9C',
-          });
-
-            // 3️⃣ Optional: redirect / show success message
-          console.log('Lead submitted & conversion tracked');
-        
+        // 3️⃣ Optional: redirect / show success message
+        console.log("Lead submitted & conversion tracked");
 
         const { encRequest, access_code, ccavenueUrl } = data;
 
@@ -274,12 +298,28 @@ export default function BasecampPage() {
   };
 
   const handleSlideChange = () => {
-    document.querySelectorAll(".home-video").forEach(iframe => {
+    document.querySelectorAll(".home-video").forEach((iframe) => {
       iframe.contentWindow?.postMessage(
         '{"event":"command","func":"pauseVideo","args":""}',
         "*"
       );
     });
+  };
+  const handleApplyPromo = () => {
+    if (!plan || Number(plan) === 0) {
+      alert("Please select a plan first");
+      return;
+    }
+
+    if (exclusiveArray.includes(promoCode?.toUpperCase())) {
+      const discountAmount = Math.round(Number(plan) * 0.2);
+      setDiscount(discountAmount);
+      setPromoApplied(true);
+    } else {
+      alert("Invalid promo code");
+      setDiscount(0);
+      setPromoApplied(false);
+    }
   };
 
   return (
@@ -298,7 +338,8 @@ export default function BasecampPage() {
                   />
                 </div>
                 <p className="hero-subtitle text-center text-md-left">
-                  Scale With More Clarity, Robust Systems, Increased Cashflows and More Productive Teams
+                  Scale With More Clarity, Robust Systems, Increased Cashflows
+                  and More Productive Teams
                 </p>
               </div>
             </div>
@@ -348,40 +389,46 @@ export default function BasecampPage() {
         </div>
       </section>
 
-<div class="page-wrapper">
+      <div class="page-wrapper">
+        {/* <!-- TOP SECTION --> */}
+        <section class="hero">
+          <h1>
+            Your company is growing but
+            <br />
+            your growth is unpredictable
+          </h1>
 
-    {/* <!-- TOP SECTION --> */}
-    <section class="hero">
-        <h1>Your company is growing but<br />your growth is unpredictable</h1>
-
-        <p class="description">
-            Business owners often come to a point where what was working earlier for them stops working altogether. The team doesn’t feel equipped to handle the new scale that is envisioned, and the overall pressure across the company is building up.
-        </p>
-          <br />      
-        <p class="description">
+          <p class="description">
+            Business owners often come to a point where what was working earlier
+            for them stops working altogether. The team doesn’t feel equipped to
+            handle the new scale that is envisioned, and the overall pressure
+            across the company is building up.
+          </p>
+          <br />
+          <p class="description">
             Basecamp workshop provides a proven playbook to business owners to
             scale with absolute clarity and freedom.
-        </p>
-    </section>
+          </p>
+        </section>
 
-    {/* <!-- OFFER SECTION --> */}
-    <section class="offer">
-        <h2>EARLY BIRD OFFER</h2>
+        {/* <!-- OFFER SECTION --> */}
+        <section class="offer">
+          <h2>EARLY BIRD OFFER</h2>
 
-        <div class="price">
+          <div class="price">
             <span class="old-price">Rs 9999</span>
             <span class="new-price">Rs 7999 only</span>
-        </div>
+          </div>
 
-        <button class="cta-btn">SIGN UP TODAY</button>
+          <button class="cta-btn">SIGN UP TODAY</button>
 
-        <p class="guarantee">
-            Money Back Guarantee<br />
+          <p class="guarantee">
+            Money Back Guarantee
+            <br />
             No questions asked if you don’t find the workshop valuable.
-        </p>
-    </section>
-
-</div>
+          </p>
+        </section>
+      </div>
       {/* UNLOCK SECTION */}
       <section className="unlock-section">
         <div className="container">
@@ -649,7 +696,7 @@ export default function BasecampPage() {
                 style={{ width: "100%", color: "#000000" }}
                 onClick={handleShow}
               >
-                EARLY BIRD PRICES START AT {" "}
+                EARLY BIRD PRICES START AT{" "}
                 <span className="nowrap">Rs 7999 + GST</span>
                 <br />
                 <span className="btn-text">
@@ -709,9 +756,10 @@ export default function BasecampPage() {
             </div>
             <div className="faq-answer">
               A. Real business coaches who mentor companies with cumulative
-              turnover of $2.07 Billions dollars will take you through the Scaling
-              Up framework using case studies, tools, and insights that you can
-              take back to your company & implement as it is for driving growth.{" "}
+              turnover of $2.07 Billions dollars will take you through the
+              Scaling Up framework using case studies, tools, and insights that
+              you can take back to your company & implement as it is for driving
+              growth.{" "}
             </div>
           </div>
           <div className="faq-item">
@@ -885,6 +933,32 @@ export default function BasecampPage() {
               {/* <option value="11999">Regular - For Individuals - ₹11999</option>
                       <option value="27999">Regular - For Teams - ₹27999</option> */}
             </Form.Select>
+            <div className="row">&nbsp;</div>
+            <Form.Group className="mb-3">
+              <Form.Label>Apply Promo Code</Form.Label>
+              <div className="d-flex gap-2">
+                <Form.Control
+                  type="text"
+                  value={promoCode}
+                  onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
+                  placeholder="Enter promo code"
+                  disabled={promoApplied}
+                />
+                <Button
+                  variant="success"
+                  onClick={handleApplyPromo}
+                  disabled={promoApplied}
+                >
+                  Apply
+                </Button>
+              </div>
+
+              {promoApplied && (
+                <small className="text-success">
+                  Promo applied! You saved ₹{discount.toFixed(2)}
+                </small>
+              )}
+            </Form.Group>
           </Modal.Body>
 
           <Modal.Footer>
