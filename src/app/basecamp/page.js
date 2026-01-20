@@ -305,14 +305,45 @@ export default function BasecampPage() {
       );
     });
   };
+  // const handleApplyPromo = () => {console.log("plan", plan);
+  //   if (!plan || Number(plan) === 0) {
+  //     alert("Please select a plan first");
+  //     return;
+  //   }
+
+  //   if (exclusiveArray.includes(promoCode?.toUpperCase())) {
+  //     const discountAmount = Math.round(Number(plan) * 0.2);
+  //     setDiscount(discountAmount);
+  //     setPromoApplied(true);
+  //   } else {
+  //     alert("Invalid promo code");
+  //     setDiscount(0);
+  //     setPromoApplied(false);
+  //   }
+  // };
+  useEffect(() => {
+    if (promoCode) {
+      const discountAmount = calculateDiscount(plan, promoCode);
+      setDiscount(discountAmount);
+      setPromoApplied(discountAmount > 0);
+    }
+  }, [plan]);
+
+  const handleRemovePromo = () => {
+    setPromoCode("");
+    setDiscount(0);
+    setPromoApplied(false);
+  };
+
   const handleApplyPromo = () => {
-    if (!plan || Number(plan) === 0) {
+    if (!plan) {
       alert("Please select a plan first");
       return;
     }
 
-    if (exclusiveArray.includes(promoCode?.toUpperCase())) {
-      const discountAmount = Math.round(Number(plan) * 0.2);
+    const discountAmount = calculateDiscount(plan, promoCode);
+
+    if (discountAmount > 0) {
       setDiscount(discountAmount);
       setPromoApplied(true);
     } else {
@@ -320,6 +351,16 @@ export default function BasecampPage() {
       setDiscount(0);
       setPromoApplied(false);
     }
+  };
+
+  const calculateDiscount = (planAmount, code) => {
+    if (!planAmount || !code) return 0;
+
+    if (exclusiveArray.includes(code.toUpperCase())) {
+      return Math.round(Number(planAmount) * 0.2);
+    }
+
+    return 0;
   };
 
   return (
@@ -940,22 +981,25 @@ export default function BasecampPage() {
                 <Form.Control
                   type="text"
                   value={promoCode}
+                  disabled={promoApplied}   // 👈 THIS LINE
                   onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
                   placeholder="Enter promo code"
-                  disabled={promoApplied}
                 />
-                <Button
-                  variant="success"
-                  onClick={handleApplyPromo}
-                  disabled={promoApplied}
-                >
-                  Apply
-                </Button>
+
+                {!promoApplied ? (
+                  <Button variant="success" onClick={handleApplyPromo}>
+                    Apply
+                  </Button>
+                ) : (
+                  <Button variant="danger" onClick={handleRemovePromo}>
+                    Remove
+                  </Button>
+                )}
               </div>
 
               {promoApplied && (
                 <small className="text-success">
-                  Promo applied! You saved ₹{discount.toFixed(2)}
+                  Promo applied! You saved ₹{discount}
                 </small>
               )}
             </Form.Group>
