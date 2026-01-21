@@ -372,13 +372,13 @@
 }
 
 /* FAQ Section */
-.faq-section {
+.webinar-faq-section {
   max-width: 900px;
   margin: 50px auto;
   padding: 0 20px;
 }
 
-.faq-title {
+.webinar-faq-title {
   text-align: center;
   font-size: 36px;
   font-weight: 700;
@@ -393,18 +393,18 @@
   color: #000000;
 }
 
-.faq-item {
+.webinar-faq-item {
   margin-bottom: 28px;
 }
 
-.question {
+.webinar-question {
   font-size: 18px;
   margin-bottom: 6px;
   color: #000000;
   font-weight: 600;
 }
 
-.answer {
+.webinar-answer {
   font-size: 17px;
   line-height: 1.6;
   margin-left: 2px;
@@ -742,7 +742,7 @@
     margin: 25px auto;
   }
 
-  .faq-title {
+  .webinar-faq-title {
     font-size: 28px;
     margin-bottom: 40px;
   }
@@ -751,11 +751,11 @@
     font-size: 20px;
   }
 
-  .question {
+  .webinar-question {
     font-size: 16px;
   }
 
-  .answer {
+  .webinar-answer {
     font-size: 15px;
   }
 
@@ -997,12 +997,12 @@
     padding: 0 15px;
   }
 
-  .faq-section {
+  .webinar-faq-section {
     margin: 40px auto;
     padding: 0 15px;
   }
 
-  .faq-title {
+  .webinar-faq-title {
     font-size: 24px;
     margin-bottom: 30px;
   }
@@ -1012,16 +1012,16 @@
     margin-bottom: 20px;
   }
 
-  .faq-item {
+  .webinar-faq-item {
     margin-bottom: 20px;
   }
 
-  .question {
+  .webinar-question {
     font-size: 15px;
     margin-bottom: 5px;
   }
 
-  .answer {
+  .webinar-answer {
     font-size: 14px;
   }
 

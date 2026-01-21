@@ -561,24 +561,24 @@ Global Business Coach
         </section>
       </section>
 
-      <section className="faq-section">
-        <h1 className="faq-title">FAQs</h1>
+      <section className="webinar-faq-section">
+        <h1 className="webinar-faq-title">FAQs</h1>
 
         <div className="faq-content">
           <h2>FAQs</h2>
 
-          <div className="faq-item">
-            <p className="question">
+          <div className="webinar-faq-item">
+            <p className="webinar-question">
               Q. What will I learn in the session that I don't already know?
             </p>
-            <p className="answer">
+            <p className="webinar-answer">
               A. You will get a clear understanding of what is the Scaling Up framework, and what kind of problems that are de-accelerating your company can be addressed using this framework.
             </p>
           </div>
 
-          <div className="faq-item">
-            <p className="question">Q. Tell me more about the speaker?</p>
-            <p className="answer">
+          <div className="webinar-faq-item">
+            <p className="webinar-question">Q. Tell me more about the speaker?</p>
+            <p className="webinar-answer">
               A. The main speaker at the Masterclass is Mr. Vikram Panjwani. Vikram comes with over two decades of professional experience in high-performance roles in companies such as Vodafone, Reliance, Tata Teleservices, etc. Before becoming a coach, he successfully ran his own entrepreneurship venture. He is one of the very few certified Scaling Up coaches in India. Being an expert in the framework, he coaches several companies across the globe to implement Scaling Up and subsequently scale sustainably.
             </p>
           </div>
