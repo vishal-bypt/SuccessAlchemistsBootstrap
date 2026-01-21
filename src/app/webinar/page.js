@@ -226,17 +226,17 @@ const WebinarPage = () => {
   return (
     <div className="main_body_div">
       {/* EXPERIENCE SECTION */}
-      <section className="experience-section">
+      <section className="experience-section1">
         <div className="containers">
           <div className="business-content">
             If your business is growing, but you’re feeling <br />
             more stressed, stretched or stuck… <br />
             this workshop is for you
           </div>
-          <h1 className="experience-section-title">
+          <h1 className="experience-section-title1">
             SCALE WITHOUT CHAOS MASTERCLASS
           </h1>
-          <div className="experience-text">
+          <div className="experience-text1">
             Discover the playbook used by <br />
             1, 00,000+ companies globally to scale your business with <br />
             <span className="yellow-text">
@@ -320,9 +320,9 @@ Global Business Coach
         </div>
       </div>
 
-      <section className="experience-section">
+      <section className="experience-section1">
         <div className="container">
-          <h1 className="experience-section-title">
+          <h1 className="experience-section-title1">
             What You’ll Learn In This Masterclass
           </h1>
           <div className="yellow-text">
@@ -585,6 +585,7 @@ Global Business Coach
 
         </div>
       </section>
+      
 
       <section className="hero-section-footer">
         <div className="container">
