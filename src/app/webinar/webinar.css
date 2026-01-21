@@ -102,11 +102,11 @@
   flex: 1;
 }
 
-.info {
+.webinar-event-info {
   margin-bottom: 30px;
 }
 
-.info p {
+.webinar-event-info p {
   font-size: 26px;
   padding-bottom: 20px;
   font-weight: 500;
@@ -114,21 +114,21 @@
   margin: 0;
 }
 
-.price {
+.webinar-price {
   font-size: 66px;
   font-weight: bold;
   margin: 20px 0 10px;
   color: #ffffff;
 }
 
-.note {
+.webinar-event-note {
   font-size: 26px;
   opacity: 0.8;
   margin-bottom: 20px;
   color: #ffffff;
 }
 
-.register-btn {
+.webinar-register-button {
   background: #fdae07;
   color: #000;
   border: none;
@@ -142,7 +142,7 @@
   transition: background 0.3s ease;
 }
 
-.register-btn:hover {
+.webinar-register-button:hover {
   background: #e0a800;
 }
 
@@ -175,14 +175,14 @@
 }
 
 /* Container */
-.container {
+.webinar-container {
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.containers {
+.webinar-container-large {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -190,7 +190,7 @@
 }
 
 /* Cards */
-.card {
+.webinar-feature-card {
   border: 2px solid rgba(255, 255, 255, 0.7);
   border-radius: 22px;
   padding: 28px;
@@ -199,14 +199,14 @@
   background-color: transparent;
 }
 
-.card h2 {
+.webinar-feature-card h2 {
   font-size: 40px;
   padding-bottom: 12px;
   color: #ffffff;
   margin: 0 0 15px 0;
 }
 
-.card p {
+.webinar-feature-card p {
   font-size: 30px;
   opacity: 0.85;
   line-height: 1.5;
@@ -215,7 +215,7 @@
 }
 
 /* Buttons Grid */
-.buttonGrid {
+.webinar-button-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
@@ -223,7 +223,7 @@
   align-items: center;
 }
 
-.buttonGrid button {
+.webinar-button-grid button {
   background: #ffb703;
   border: none;
   padding: 14px 10px;
@@ -235,11 +235,11 @@
   font-weight: 500;
 }
 
-.buttonGrid button:hover {
+.webinar-button-grid button:hover {
   transform: translateY(-3px);
 }
 
-.secure-spot-btn {
+.webinar-secure-spot-button {
   background: #ffffff;
   color: #000;
   border: none;
@@ -253,7 +253,7 @@
   transition: opacity 0.3s ease;
 }
 
-.secure-spot-btn:hover {
+.webinar-secure-spot-button:hover {
   opacity: 0.9;
 }
 
@@ -493,24 +493,24 @@
   flex-wrap: wrap;
 }
 
-.stat {
+.webinar-stat {
   text-align: center;
 }
 
-.stat h3 {
+.webinar-stat h3 {
   font-size: 34px;
   font-weight: 800;
   margin-bottom: 6px;
   color: #000;
 }
 
-.stat p {
+.webinar-stat p {
   font-size: 18px;
   color: #000;
   margin: 0;
 }
 
-.cta-btn {
+.webinar-cta-button {
   background: #ffb703;
   border: none;
   padding: 16px 46px;
@@ -523,11 +523,11 @@
   transition: opacity 0.3s ease;
 }
 
-.cta-btn:hover {
+.webinar-cta-button:hover {
   opacity: 0.9;
 }
 
-.cta-text {
+.webinar-cta-text {
   font-size: 18px;
   line-height: 1.4;
   color: #000;
@@ -558,7 +558,7 @@
     font-size: 24px;
   }
 
-  .buttonGrid {
+  .webinar-button-grid {
     margin: 10px 10% 40px;
   }
 
@@ -625,19 +625,19 @@
     font-size: 22px;
   }
 
-  .info p {
+  .webinar-event-info p {
     font-size: 22px;
   }
 
-  .price {
+  .webinar-price {
     font-size: 48px;
   }
 
-  .note {
+  .webinar-event-note {
     font-size: 22px;
   }
 
-  .register-btn {
+  .webinar-register-button {
     font-size: 28px;
     padding: 20px 35px;
     width: 100%;
@@ -660,30 +660,30 @@
     font-size: 14px;
   }
 
-  .card {
+  .webinar-feature-card {
     padding: 24px 20px;
   }
 
-  .card h2 {
+  .webinar-feature-card h2 {
     font-size: 28px;
   }
 
-  .card p {
+  .webinar-feature-card p {
     font-size: 22px;
   }
 
-  .buttonGrid {
+  .webinar-button-grid {
     grid-template-columns: repeat(2, 1fr);
     margin: 10px 5% 40px;
     gap: 15px;
   }
 
-  .buttonGrid button {
+  .webinar-button-grid button {
     font-size: 18px;
     padding: 12px 8px;
   }
 
-  .secure-spot-btn {
+  .webinar-secure-spot-button {
     font-size: 24px;
     padding: 12px 30px;
     margin: 30px auto 0;
@@ -777,20 +777,20 @@
     gap: 40px;
   }
 
-  .stat h3 {
+  .webinar-stat h3 {
     font-size: 28px;
   }
 
-  .stat p {
+  .webinar-stat p {
     font-size: 16px;
   }
 
-  .cta-btn {
+  .webinar-cta-button {
     font-size: 20px;
     padding: 14px 36px;
   }
 
-  .cta-text {
+  .webinar-cta-text {
     font-size: 16px;
   }
 }
@@ -852,26 +852,26 @@
     padding: 20px 15px;
   }
 
-  .info {
+  .webinar-event-info {
     margin-bottom: 20px;
   }
 
-  .info p {
+  .webinar-event-info p {
     font-size: 18px;
     padding-bottom: 15px;
   }
 
-  .price {
+  .webinar-price {
     font-size: 36px;
     margin: 15px 0 8px;
   }
 
-  .note {
+  .webinar-event-note {
     font-size: 18px;
     margin-bottom: 15px;
   }
 
-  .register-btn {
+  .webinar-register-button {
     font-size: 22px;
     padding: 18px 30px;
     width: 100%;
@@ -896,33 +896,33 @@
     font-size: 12px;
   }
 
-  .card {
+  .webinar-feature-card {
     padding: 20px 15px;
     margin-bottom: 20px;
     border-radius: 16px;
   }
 
-  .card h2 {
+  .webinar-feature-card h2 {
     font-size: 22px;
     padding-bottom: 10px;
   }
 
-  .card p {
+  .webinar-feature-card p {
     font-size: 18px;
   }
 
-  .buttonGrid {
+  .webinar-button-grid {
     grid-template-columns: 1fr;
     margin: 10px 15px 30px;
     gap: 12px;
   }
 
-  .buttonGrid button {
+  .webinar-button-grid button {
     font-size: 16px;
     padding: 12px 8px;
   }
 
-  .secure-spot-btn {
+  .webinar-secure-spot-button {
     font-size: 20px;
     padding: 12px 25px;
     margin: 25px auto 0;
@@ -1046,15 +1046,15 @@
     margin-bottom: 30px;
   }
 
-  .stat h3 {
+  .webinar-stat h3 {
     font-size: 32px;
   }
 
-  .stat p {
+  .webinar-stat p {
     font-size: 15px;
   }
 
-  .cta-btn {
+  .webinar-cta-button {
     font-size: 18px;
     padding: 12px 30px;
     margin-bottom: 18px;
@@ -1062,7 +1062,7 @@
     max-width: 300px;
   }
 
-  .cta-text {
+  .webinar-cta-text {
     font-size: 15px;
   }
 }

@@ -227,7 +227,7 @@ const WebinarPage = () => {
     <div className="main_body_div">
       {/* EXPERIENCE SECTION */}
       <section className="experience-section1">
-        <div className="containers">
+        <div className="webinar-container-large">
           <div className="business-content">
             If your business is growing, but you’re feeling <br />
             more stressed, stretched or stuck… <br />
@@ -269,7 +269,7 @@ Global Business Coach
 
             {/* RIGHT SECTION */}
             <div className="right-section">
-              <div className="info">
+              <div className="webinar-event-info">
                 <p>
                   <Image src={calendar} alt="Date" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> Date – 31<sup>st</sup> January 2026
                 </p>
@@ -277,16 +277,16 @@ Global Business Coach
                 <p><Image src={meet} alt="Online" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> ZOOM session (online)</p>
               </div>
 
-              <div className="price">
+              <div className="webinar-price">
                 <div style={{textDecoration: 'line-through', color: '#999', marginBottom: '5px'}}>Rs 999/-</div>
                 Rs 299/- Only
               </div>
 
-              <p className="note">
+              <p className="webinar-event-note">
                 *This is for the first 25 registrations only
               </p>
 
-              <button className="register-btn" onClick={handleShow}>REGISTER NOW</button>
+              <button className="webinar-register-button" onClick={handleShow}>REGISTER NOW</button>
             </div>
           </div>
         </div>
@@ -321,7 +321,7 @@ Global Business Coach
       </div>
 
       <section className="experience-section1">
-        <div className="container">
+        <div className="webinar-container">
           <h1 className="experience-section-title1">
             What You’ll Learn In This Masterclass
           </h1>
@@ -332,21 +332,21 @@ Global Business Coach
           </div>
         </div>
 
-        <section className="container mt-5">
+        <section className="webinar-container mt-5">
           {/* Top Cards */}
-          <div className="card">
+          <div className="webinar-feature-card">
             <h2>The 4 Pillars of Scaled Businesses</h2>
             <p>Fuel your growth trajectory by optimising People , Strategy , Execution , and Cash</p>
             <p>Stop guessing and start moving faster.</p>
           </div>
 
-          <div className="card">
+          <div className="webinar-feature-card">
             <h2>Stop Being The Bottleneck In Your Own Business</h2>
             <p>Learn why decisions, approvals, and problem-solving keep coming back to you </p>
             <p>and how to design a company that runs without constant founder intervention.</p>
           </div>
 
-          <div className="card">
+          <div className="webinar-feature-card">
             <h2>Blueprint To Become System-Driven</h2>
             <p>Learn how to build the business that runs on systems, and not on your memory, energy, or heroics.</p>
             <p>Find out which rhythms, dashboards, and habits separate successful companies from perpetually busy ones.</p>
@@ -354,7 +354,7 @@ Global Business Coach
 
           {/* Bottom Buttons */}
         </section>
-        <div className="buttonGrid">
+        <div className="webinar-button-grid">
           <button>
             Talent Management
             <br />
@@ -382,14 +382,14 @@ Global Business Coach
           </button>
         </div>
 
-        <button className="secure-spot-btn" onClick={handleShow}>Secure Your Spot Now</button>
+        <button className="webinar-secure-spot-button" onClick={handleShow}>Secure Your Spot Now</button>
         <div className="just">
           Just 2 Hours <br /> can change the trajectory of your business growth
         </div>
       </section>
 
       <section className="section excite-section-webinar">
-        <div className="container">
+        <div className="webinar-container">
           <h1 className="why-join-title">
             Who Should Attend This Masterclass?
           </h1>
@@ -507,7 +507,7 @@ Global Business Coach
       </section>
 
       <section className="section excite-section">
-        <div className="container">
+        <div className="webinar-container">
           <h1 className="why-join-title">More About Us</h1>
         </div>
 
@@ -537,23 +537,23 @@ Global Business Coach
 
         <section className="cta-section">
           <div className="stats">
-            <div className="stat">
+            <div className="webinar-stat">
               <h3>1,00,000</h3>
               <p>companies</p>
             </div>
-            <div className="stat">
+            <div className="webinar-stat">
               <h3>10X</h3>
               <p>Valuation</p>
             </div>
-            <div className="stat">
+            <div className="webinar-stat">
               <h3>3X</h3>
               <p>Profitability</p>
             </div>
           </div>
 
-          <button className="cta-btn" onClick={handleShow}>Make Your Vision A Reality</button>
+          <button className="webinar-cta-button" onClick={handleShow}>Make Your Vision A Reality</button>
 
-          <p className="cta-text">
+          <p className="webinar-cta-text">
             Join The Masterclass.
             <br />
             Get Absolute Clarity On Your Next Steps
@@ -588,7 +588,7 @@ Global Business Coach
       
 
       <section className="hero-section-footer-webinar">
-        <div className="container">
+        <div className="webinar-container">
           <div className="row align-items-center justify-content-center">
             <div className="col-lg-8 col-md-12 col-12 order-lg-1 order-1">
               <div className="hero-content-footer-webinar text-center">
