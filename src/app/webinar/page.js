@@ -294,26 +294,26 @@ Global Business Coach
 
       <div className="row metrics-container">
         <div className="col-md-4 col-12">
-          <div className="metric-box">
-            <div className="metric-value">1500+</div>
-            <div className="metric-label">
+          <div className="metric-box-webinar">
+            <div className="metric-value-webinar">1500+</div>
+            <div className="metric-label-webinar">
               Entrepreneurs & <br />
               leaders coached
             </div>
           </div>
         </div>
         <div className="col-md-4 col-12">
-          <div className="metric-box">
-            <div className="metric-value">$2.07 Bn</div>
-            <div className="metric-label">
+          <div className="metric-box-webinar">
+            <div className="metric-value-webinar">$2.07 Bn</div>
+            <div className="metric-label-webinar">
               Client’s cum. <br /> business turnover
             </div>
           </div>
         </div>
         <div className="col-md-4 col-12">
-          <div className="metric-box">
-            <div className="metric-value">5000+</div>
-            <div className="metric-label">
+          <div className="metric-box-webinar">
+            <div className="metric-value-webinar">5000+</div>
+            <div className="metric-label-webinar">
               Client coaching <br /> sessions
             </div>
           </div>
@@ -388,7 +388,7 @@ Global Business Coach
         </div>
       </section>
 
-      <section className="section excite-section">
+      <section className="section excite-section-webinar">
         <div className="container">
           <h1 className="why-join-title">
             Who Should Attend This Masterclass?
@@ -399,7 +399,7 @@ Global Business Coach
           <div className="row">&nbsp;</div>
           <div className="row">
             <div className="col-md-1 d-none d-md-block">&nbsp;</div>
-            <div className="col-md-11 col-12 excite-section-list">
+            <div className="col-md-11 col-12 excite-section-list-webinar">
               <i className="fa-solid fa-arrow-trend-up me-2"></i> Running a
               company with turnover of Rs 50 CR+
             </div>
@@ -407,7 +407,7 @@ Global Business Coach
           <div className="row spacer"></div>
           <div className="row">
             <div className="col-md-1 d-none d-md-block">&nbsp;</div>
-            <div className="col-md-11 col-12 excite-section-list">
+            <div className="col-md-11 col-12 excite-section-list-webinar">
               <i className="fa-solid fa-arrow-trend-up me-2"></i> Serious about
               scaling up your business exponentially in the next 10 years
             </div>
@@ -415,7 +415,7 @@ Global Business Coach
           <div className="row spacer"></div>
           <div className="row">
             <div className="col-md-1 d-none d-md-block">&nbsp;</div>
-            <div className="col-md-11 col-12 excite-section-list">
+            <div className="col-md-11 col-12 excite-section-list-webinar">
               <i className="fa-solid fa-arrow-trend-up me-2"></i> Wanting more
               time and freedom, while business grows
             </div>
@@ -440,7 +440,7 @@ Global Business Coach
             </li>
           </ul>
 
-          <p className="highlight-text">This masterclass webinar is for you.</p>
+          <p className="highlight-text-webinar">This masterclass webinar is for you.</p>
         </div>
       </section>
 
@@ -587,11 +587,11 @@ Global Business Coach
       </section>
       
 
-      <section className="hero-section-footer">
+      <section className="hero-section-footer-webinar">
         <div className="container">
           <div className="row align-items-center justify-content-center">
             <div className="col-lg-8 col-md-12 col-12 order-lg-1 order-1">
-              <div className="hero-content-footer text-center">
+              <div className="hero-content-footer-webinar text-center">
                 <h3 className="d-none d-md-block">
                   Are You <br />
                   <span>Ready To Scale?</span>
@@ -600,7 +600,7 @@ Global Business Coach
                   Are You <span>Ready To Scale?</span>
                 </h3>
                 <p className="hero-subtitle">
-                  <button className="btn btn-cta-footer text-center" onClick={handleShow}>
+                  <button className="btn btn-cta-footer-webinar text-center" onClick={handleShow}>
                     JUST 2 HOURS & Rs 299
                     <br />
                     <span className="btn-text">
