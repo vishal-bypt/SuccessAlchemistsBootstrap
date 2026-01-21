@@ -436,7 +436,7 @@
   color: #ffffff;
   margin: 0 0 20px 0;
   line-height: 1.2;
-   font-size: 70px;
+  font-size: 70px;
 }
 
 .hero-content-footer-webinar h3 .d-none.d-md-block {
@@ -800,6 +800,32 @@
    ============================================ */
 
 @media (max-width: 480px) {
+  .hero-section-footer-webinar {
+    min-height: 380px;
+    padding: 32px 14px;
+    background-position: center;
+  }
+
+  .hero-content-footer-webinar {
+    text-align: center;
+  }
+
+  .hero-content-footer-webinar h3 {
+    font-size: 32px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+
+  .hero-content-footer-webinar h3 span {
+    display: block;
+  }
+
+  .btn-cta-footer-webinar {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+
   .experience-section1 {
     padding: 30px 15px;
   }
@@ -1066,303 +1092,306 @@
     font-size: 15px;
   }
 }
+
 /* ============================================
    SWIPER & CAROUSEL STYLES (from basecamp)
    ============================================ */
 
 .carousel-wrapper {
-    margin: 60px auto;
-    padding: 0 40px;
-    position: relative;
-    max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
+  position: relative;
+  max-width: 1200px;
 }
 
 .carousel {
-    position: relative;
+  position: relative;
 }
 
 .carousel-item {
-    display: none;
+  display: none;
 }
 
 .carousel-item.active {
-    display: block;
-    animation: fadeIn 0.5s ease-in-out;
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .video-frame {
-    aspect-ratio: 16/9;
-    background: #000;
-    border: 10px solid #1a1a1a;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  aspect-ratio: 16/9;
+  background: #000;
+  border: 10px solid #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .video-frame iframe,
 .video-frame video {
-    width: 100%;
-    height: 100%;
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .video-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 22px;
-    text-align: center;
-    gap: 12px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 22px;
+  text-align: center;
+  gap: 12px;
 }
 
 .video-overlay img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
 }
 
 .video-overlay i {
-    font-size: 50px;
-    color: #FFC107;
-    z-index: 2;
-    position: relative;
+  font-size: 50px;
+  color: #FFC107;
+  z-index: 2;
+  position: relative;
 }
 
 @media (max-width: 768px) {
-    .video-overlay i {
-        font-size: 40px;
-    }
+  .video-overlay i {
+    font-size: 40px;
+  }
 }
 
 @media (max-width: 576px) {
-    .video-overlay i {
-        font-size: 35px;
-    }
+  .video-overlay i {
+    font-size: 35px;
+  }
 }
 
 .nav-arrow {
-    position: absolute;
-    top: 42%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 32px;
-    color: #0f2437;
-    cursor: pointer;
-    z-index: 10;
-    padding: 10px;
-    transition: all 0.3s ease;
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #0f2437;
+  cursor: pointer;
+  z-index: 10;
+  padding: 10px;
+  transition: all 0.3s ease;
 }
 
 .nav-arrow:hover {
-    color: #FFC107;
-    transform: translateY(-50%) scale(1.1);
+  color: #FFC107;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .nav-left {
-    left: -70px;
+  left: -70px;
 }
 
 .nav-right {
-    right: -70px;
+  right: -70px;
 }
 
 /* Responsive styles for navigation arrows */
 @media (max-width: 992px) {
-    .nav-left {
-        left: -50px;
-    }
+  .nav-left {
+    left: -50px;
+  }
 
-    .nav-right {
-        right: -50px;
-    }
+  .nav-right {
+    right: -50px;
+  }
 
-    .nav-arrow {
-        font-size: 28px;
-    }
-    .sub-job-details {
-        margin-left: 0;
-        margin-top : 10px;
-    }
+  .nav-arrow {
+    font-size: 28px;
+  }
 
-    .sub-job-details h3{
-        font-size : 18px;
-    }
+  .sub-job-details {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .sub-job-details h3 {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 768px) {
-    .nav-left {
-        left: -40px;
-    }
+  .nav-left {
+    left: -40px;
+  }
 
-    .nav-right {
-        right: -40px;
-    }
+  .nav-right {
+    right: -40px;
+  }
 
-    .nav-arrow {
-        font-size: 24px;
-        padding: 8px;
-    }
+  .nav-arrow {
+    font-size: 24px;
+    padding: 8px;
+  }
 
-    .video-frame {
-        border-width: 8px;
-    }
+  .video-frame {
+    border-width: 8px;
+  }
 
-    .sub-job-details {
-        margin-left: 0;
-        margin-top : 10px;
-    }
+  .sub-job-details {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 
-    .sub-job-details h3{
-        font-size : 18px;
-    }
+  .sub-job-details h3 {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 576px) {
-    .nav-left {
-        left: 10px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .nav-left {
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .nav-right {
-        right: 10px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .nav-right {
+    right: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .nav-arrow {
-        font-size: 20px;
-        padding: 0;
-        color: #0f2437;
-    }
+  .nav-arrow {
+    font-size: 20px;
+    padding: 0;
+    color: #0f2437;
+  }
 
-    .carousel-wrapper {
-        margin: 40px auto;
-        padding: 0 15px;
-    }
+  .carousel-wrapper {
+    margin: 40px auto;
+    padding: 0 15px;
+  }
 
-    .video-frame {
-        border-width: 6px;
-    }
-     .sub-job-details {
-        margin-left: 0;
-        margin-top : 10px;
-    }
+  .video-frame {
+    border-width: 6px;
+  }
 
-    .sub-job-details h3{
-        font-size : 14px;
-    }
+  .sub-job-details {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .sub-job-details h3 {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 400px) {
-    .nav-left {
-        left: 5px;
-    }
+  .nav-left {
+    left: 5px;
+  }
 
-    .nav-right {
-        right: 5px;
-    }
+  .nav-right {
+    right: 5px;
+  }
 
-    .nav-arrow {
-        font-size: 18px;
-    }
+  .nav-arrow {
+    font-size: 18px;
+  }
 
-    .nav-left,
-    .nav-right {
-        width: 35px;
-        height: 35px;
-    }
+  .nav-left,
+  .nav-right {
+    width: 35px;
+    height: 35px;
+  }
 
-    .video-frame {
-        border-width: 5px;
-    }
+  .video-frame {
+    border-width: 5px;
+  }
 
-    .sub-job-details {
-        margin-left: 0;
-        margin-top : 10px;
-    }
+  .sub-job-details {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 
-    .sub-job-details h3{
-        font-size : 14px;
-    }
+  .sub-job-details h3 {
+    font-size: 14px;
+  }
 }
 
 .progress-container {
-    width: 100%;
-    height: 3px;
-    background: #d9d9d9;
-    margin-top: 20px;
-    border-radius: 2px;
-    position: relative;
+  width: 100%;
+  height: 3px;
+  background: #d9d9d9;
+  margin-top: 20px;
+  border-radius: 2px;
+  position: relative;
 }
 
 .progress {
-    height: 100%;
-    background: #b00;
-    width: 0%;
+  height: 100%;
+  background: #b00;
+  width: 0%;
 }
 
 .slider-dot {
-    width: 12px;
-    height: 12px;
-    background: #b00;
-    border-radius: 50%;
-    position: absolute;
-    top: -4.5px;
-    left: 0%;
-    transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: #b00;
+  border-radius: 50%;
+  position: absolute;
+  top: -4.5px;
+  left: 0%;
+  transform: translateX(-50%);
 }
 
 .controls {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 15px;
 }
 
 .controls i {
-    font-size: 20px;
-    color: #0f2437;
-    cursor: pointer;
+  font-size: 20px;
+  color: #0f2437;
+  cursor: pointer;
 }
 
 .caption {
-    margin-top: 35px;
+  margin-top: 35px;
 }
 
 .caption h2 {
-    font-size: 20px;
-    font-weight: 900;
-    color: #0f2437;
-    margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  color: #0f2437;
+  margin: 0;
 }
 
 .caption h3 {
-    font-size: 32px;
-    font-weight: 900;
-    color: #0f2437;
-    margin: 6px 0 0;
+  font-size: 32px;
+  font-weight: 900;
+  color: #0f2437;
+  margin: 6px 0 0;
 }
 
 .sentence-text {
@@ -1370,8 +1399,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .sentence-dots {
@@ -1394,60 +1428,60 @@
   background-color: #fdae07;
 }
 
-.swiper-pagination { 
-    position: relative !important;
-    margin-top : 20px;
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 20px;
 }
 
 /* Navigation Buttons */
 .navigation-buttons {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    pointer-events: none;
-    z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 10;
 }
 
-.navigation-buttons > div {
-    pointer-events: all;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.navigation-buttons>div {
+  pointer-events: all;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.navigation-buttons > div:hover {
-    transform: scale(1.1);
+.navigation-buttons>div:hover {
+  transform: scale(1.1);
 }
 
 .navigation-buttons .nav-left-btn {
-    width: auto;
-    height: auto;
-    max-width: 60px;
+  width: auto;
+  height: auto;
+  max-width: 60px;
 }
 
 @media (max-width: 768px) {
-    .navigation-buttons .nav-left-btn {
-        max-width: 50px;
-    }
+  .navigation-buttons .nav-left-btn {
+    max-width: 50px;
+  }
 }
 
 @media (max-width: 576px) {
-    .navigation-buttons {
-        padding: 0 10px;
-    }
-    
-    .navigation-buttons .nav-left-btn {
-        max-width: 40px;
-    }
+  .navigation-buttons {
+    padding: 0 10px;
+  }
+
+  .navigation-buttons .nav-left-btn {
+    max-width: 40px;
+  }
 }
 
 /* Swiper Container */
 .mySwiper {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .slider-row {
-    margin: 0;
+  margin: 0;
 }
