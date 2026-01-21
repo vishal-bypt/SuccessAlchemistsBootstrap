@@ -27,7 +27,7 @@ const NavbarMenu = () => {
   console.log(pathname, "pathname");
   return (
     <Navbar expand="lg" className="">
-      <Navbar.Brand href="/home">
+      <Navbar.Brand href="/home" onClick={() => window.location.href = "/home"}>
         <div className="main_logo" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -35,6 +35,7 @@ const NavbarMenu = () => {
         <Nav className="ms-auto">
         <Nav.Link
         as={Link}
+        onClick={() => window.location.href = "/home"}
         href="/home"
         className={`${
           pathname === "/home"

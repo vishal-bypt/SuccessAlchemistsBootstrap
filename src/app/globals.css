@@ -189,6 +189,10 @@ p {
     }
 
 
+.swiper-pagination{
+    text-align: center !important;
+}
+
 /*media query start here*/
 
 @media (prefers-color-scheme: dark) {

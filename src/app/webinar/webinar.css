@@ -3,12 +3,12 @@
    ============================================ */
 
 /* Experience Section */
-.experience-section {
+.experience-section1 {
   background-color: #0f2437;
   padding: 60px 10%;
 }
 
-.experience-section-title {
+.experience-section-title1 {
   color: #ffffff;
   font-size: 72px;
   font-weight: 600;
@@ -25,7 +25,7 @@
   padding: 5px;
 }
 
-.experience-text {
+.experience-text1 {
   color: #ffffff;
   font-size: 27px;
   font-weight: 600;
