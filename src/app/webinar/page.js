@@ -506,7 +506,7 @@ Global Business Coach
       </div>
       </section>
 
-      <section className="section excite-section">
+      <section className="section excite-section-webinar">
         <div className="webinar-container">
           <h1 className="why-join-title">More About Us</h1>
         </div>
