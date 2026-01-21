@@ -102,11 +102,11 @@
   flex: 1;
 }
 
-.info {
+.webinar-event-info {
   margin-bottom: 30px;
 }
 
-.info p {
+.webinar-event-info p {
   font-size: 26px;
   padding-bottom: 20px;
   font-weight: 500;
@@ -114,21 +114,21 @@
   margin: 0;
 }
 
-.price {
+.webinar-price {
   font-size: 66px;
   font-weight: bold;
   margin: 20px 0 10px;
   color: #ffffff;
 }
 
-.note {
+.webinar-event-note {
   font-size: 26px;
   opacity: 0.8;
   margin-bottom: 20px;
   color: #ffffff;
 }
 
-.register-btn {
+.webinar-register-button {
   background: #fdae07;
   color: #000;
   border: none;
@@ -142,23 +142,23 @@
   transition: background 0.3s ease;
 }
 
-.register-btn:hover {
+.webinar-register-button:hover {
   background: #e0a800;
 }
 
 /* Metrics Container */
-.metrics-container {
+.metrics-container-webinar {
   margin: 60px 20px;
   border-radius: 18px;
   background-color: #d3d5d9;
 }
 
-.metric-box {
+.metric-box-webinar {
   text-align: center;
   padding: 50px 20px;
 }
 
-.metric-value {
+.metric-value-webinar {
   font-size: 42px;
   font-weight: 500;
   color: #000000;
@@ -167,7 +167,7 @@
   letter-spacing: -3px;
 }
 
-.metric-label {
+.metric-label-webinar {
   font-size: 15px;
   color: #666;
   text-transform: uppercase;
@@ -175,14 +175,14 @@
 }
 
 /* Container */
-.container {
+.webinar-container {
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.containers {
+.webinar-container-large {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -190,7 +190,7 @@
 }
 
 /* Cards */
-.card {
+.webinar-feature-card {
   border: 2px solid rgba(255, 255, 255, 0.7);
   border-radius: 22px;
   padding: 28px;
@@ -199,14 +199,14 @@
   background-color: transparent;
 }
 
-.card h2 {
+.webinar-feature-card h2 {
   font-size: 40px;
   padding-bottom: 12px;
   color: #ffffff;
   margin: 0 0 15px 0;
 }
 
-.card p {
+.webinar-feature-card p {
   font-size: 30px;
   opacity: 0.85;
   line-height: 1.5;
@@ -215,7 +215,7 @@
 }
 
 /* Buttons Grid */
-.buttonGrid {
+.webinar-button-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
@@ -223,7 +223,7 @@
   align-items: center;
 }
 
-.buttonGrid button {
+.webinar-button-grid button {
   background: #ffb703;
   border: none;
   padding: 14px 10px;
@@ -235,11 +235,11 @@
   font-weight: 500;
 }
 
-.buttonGrid button:hover {
+.webinar-button-grid button:hover {
   transform: translateY(-3px);
 }
 
-.secure-spot-btn {
+.webinar-secure-spot-button {
   background: #ffffff;
   color: #000;
   border: none;
@@ -253,7 +253,7 @@
   transition: opacity 0.3s ease;
 }
 
-.secure-spot-btn:hover {
+.webinar-secure-spot-button:hover {
   opacity: 0.9;
 }
 
@@ -267,18 +267,18 @@
 }
 
 /* Excite Section */
-.excite-section {
+.excite-section-webinar {
   background-color: #d3d5d9;
   padding: 30px 20px 60px;
 }
 
-.excite-section h1 {
+.excite-section-webinar h1 {
   color: #0f2437;
   text-align: center;
   margin: 0;
 }
 
-.excite-section-list {
+.excite-section-list-webinar {
   color: #000000;
   font-size: 29.4px;
   text-align: left;
@@ -334,7 +334,7 @@
   line-height: 1.6;
 }
 
-.highlight-text {
+.highlight-text-webinar {
   font-size: 30px;
   font-weight: 600;
   text-align: center;
@@ -372,13 +372,13 @@
 }
 
 /* FAQ Section */
-.faq-section {
+.webinar-faq-section {
   max-width: 900px;
   margin: 50px auto;
   padding: 0 20px;
 }
 
-.faq-title {
+.webinar-faq-title {
   text-align: center;
   font-size: 36px;
   font-weight: 700;
@@ -393,18 +393,18 @@
   color: #000000;
 }
 
-.faq-item {
+.webinar-faq-item {
   margin-bottom: 28px;
 }
 
-.question {
+.webinar-question {
   font-size: 18px;
   margin-bottom: 6px;
   color: #000000;
   font-weight: 600;
 }
 
-.answer {
+.webinar-answer {
   font-size: 17px;
   line-height: 1.6;
   margin-left: 2px;
@@ -412,7 +412,7 @@
 }
 
 /* Hero Section Footer */
-.hero-section-footer {
+.hero-section-footer-webinar {
   background: linear-gradient(rgba(15, 36, 55, 0.85), rgba(15, 36, 55, 0.85)),
     url(../../../public/1000312751.png);
   background-repeat: no-repeat;
@@ -426,28 +426,28 @@
   padding: 60px 20px;
 }
 
-.hero-content-footer {
+.hero-content-footer-webinar {
   position: relative;
   z-index: 999;
   width: 100%;
 }
 
-.hero-content-footer h3 {
+.hero-content-footer-webinar h3 {
   color: #ffffff;
   margin: 0 0 20px 0;
   line-height: 1.2;
-   font-size: 70px;
+  font-size: 70px;
 }
 
-.hero-content-footer h3 .d-none.d-md-block {
+.hero-content-footer-webinar h3 .d-none.d-md-block {
   font-size: 79px;
 }
 
-.hero-content-footer h3 .d-block.d-md-none {
+.hero-content-footer-webinar h3 .d-block.d-md-none {
   font-size: 36px;
 }
 
-.hero-content-footer h3 span {
+.hero-content-footer-webinar h3 span {
   color: #fdae07;
 }
 
@@ -455,7 +455,7 @@
   margin: 0;
 }
 
-.btn-cta-footer {
+.btn-cta-footer-webinar {
   background-color: #fff;
   color: #000000;
   border: none;
@@ -473,7 +473,7 @@
   width: 100%;
 }
 
-.btn-cta-footer:hover {
+.btn-cta-footer-webinar:hover {
   background-color: #e0e0e0;
   transform: translateY(-2px);
 }
@@ -493,24 +493,24 @@
   flex-wrap: wrap;
 }
 
-.stat {
+.webinar-stat {
   text-align: center;
 }
 
-.stat h3 {
+.webinar-stat h3 {
   font-size: 34px;
   font-weight: 800;
   margin-bottom: 6px;
   color: #000;
 }
 
-.stat p {
+.webinar-stat p {
   font-size: 18px;
   color: #000;
   margin: 0;
 }
 
-.cta-btn {
+.webinar-cta-button {
   background: #ffb703;
   border: none;
   padding: 16px 46px;
@@ -523,11 +523,11 @@
   transition: opacity 0.3s ease;
 }
 
-.cta-btn:hover {
+.webinar-cta-button:hover {
   opacity: 0.9;
 }
 
-.cta-text {
+.webinar-cta-text {
   font-size: 18px;
   line-height: 1.4;
   color: #000;
@@ -538,11 +538,11 @@
    ============================================ */
 
 @media (max-width: 1024px) {
-  .experience-section {
+  .experience-section1 {
     padding: 50px 5%;
   }
 
-  .experience-section-title {
+  .experience-section-title1 {
     font-size: 56px;
   }
 
@@ -550,7 +550,7 @@
     font-size: 24px;
   }
 
-  .experience-text {
+  .experience-text1 {
     font-size: 24px;
   }
 
@@ -558,7 +558,7 @@
     font-size: 24px;
   }
 
-  .buttonGrid {
+  .webinar-button-grid {
     margin: 10px 10% 40px;
   }
 
@@ -576,11 +576,11 @@
    ============================================ */
 
 @media (max-width: 768px) {
-  .experience-section {
+  .experience-section1 {
     padding: 40px 20px;
   }
 
-  .experience-section-title {
+  .experience-section-title1 {
     font-size: 42px;
     padding: 15px 0;
   }
@@ -590,7 +590,7 @@
     padding: 12px;
   }
 
-  .experience-text {
+  .experience-text1 {
     font-size: 20px;
   }
 
@@ -625,65 +625,65 @@
     font-size: 22px;
   }
 
-  .info p {
+  .webinar-event-info p {
     font-size: 22px;
   }
 
-  .price {
+  .webinar-price {
     font-size: 48px;
   }
 
-  .note {
+  .webinar-event-note {
     font-size: 22px;
   }
 
-  .register-btn {
+  .webinar-register-button {
     font-size: 28px;
     padding: 20px 35px;
     width: 100%;
     max-width: 400px;
   }
 
-  .metrics-container {
+  .metrics-container-webinar {
     margin: 40px 15px;
   }
 
-  .metric-box {
+  .metric-box-webinar {
     padding: 40px 15px;
   }
 
-  .metric-value {
+  .metric-value-webinar {
     font-size: 36px;
   }
 
-  .metric-label {
+  .metric-label-webinar {
     font-size: 14px;
   }
 
-  .card {
+  .webinar-feature-card {
     padding: 24px 20px;
   }
 
-  .card h2 {
+  .webinar-feature-card h2 {
     font-size: 28px;
   }
 
-  .card p {
+  .webinar-feature-card p {
     font-size: 22px;
   }
 
-  .buttonGrid {
+  .webinar-button-grid {
     grid-template-columns: repeat(2, 1fr);
     margin: 10px 5% 40px;
     gap: 15px;
   }
 
-  .buttonGrid button {
+  .webinar-button-grid button {
     font-size: 18px;
     padding: 12px 8px;
   }
 
-  .secure-spot-btn {
+  .webinar-secure-spot-button {
     font-size: 24px;
     padding: 12px 30px;
     margin: 30px auto 0;
@@ -706,7 +706,7 @@
     font-size: 20px;
   }
 
-  .excite-section-list {
+  .excite-section-list-webinar {
     font-size: 22px;
   }
 
@@ -724,7 +724,7 @@
     font-size: 20px;
   }
 
-  .highlight-text {
+  .highlight-text-webinar {
     font-size: 22px;
   }
 
@@ -742,7 +742,7 @@
     margin: 25px auto;
   }
 
-  .faq-title {
+  .webinar-faq-title {
     font-size: 28px;
     margin-bottom: 40px;
   }
@@ -751,24 +751,24 @@
     font-size: 20px;
   }
 
-  .question {
+  .webinar-question {
     font-size: 16px;
   }
 
-  .answer {
+  .webinar-answer {
     font-size: 15px;
   }
 
-  .hero-section-footer {
+  .hero-section-footer-webinar {
     min-height: 500px;
     padding: 40px 15px;
   }
 
-  .hero-content-footer h3 .d-none.d-md-block {
+  .hero-content-footer-webinar h3 .d-none.d-md-block {
     font-size: 48px;
   }
 
-  .btn-cta-footer {
+  .btn-cta-footer-webinar {
     padding: 16px 35px;
     font-size: 16px;
   }
@@ -777,20 +777,20 @@
     gap: 40px;
   }
 
-  .stat h3 {
+  .webinar-stat h3 {
     font-size: 28px;
   }
 
-  .stat p {
+  .webinar-stat p {
     font-size: 16px;
   }
 
-  .cta-btn {
+  .webinar-cta-button {
     font-size: 20px;
     padding: 14px 36px;
   }
 
-  .cta-text {
+  .webinar-cta-text {
     font-size: 16px;
   }
 }
@@ -800,11 +800,37 @@
    ============================================ */
 
 @media (max-width: 480px) {
-  .experience-section {
+  .hero-section-footer-webinar {
+    min-height: 380px;
+    padding: 32px 14px;
+    background-position: center;
+  }
+
+  .hero-content-footer-webinar {
+    text-align: center;
+  }
+
+  .hero-content-footer-webinar h3 {
+    font-size: 32px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+
+  .hero-content-footer-webinar h3 span {
+    display: block;
+  }
+
+  .btn-cta-footer-webinar {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+
+  .experience-section1 {
     padding: 30px 15px;
   }
 
-  .experience-section-title {
+  .experience-section-title1 {
     font-size: 28px;
     padding: 12px 0;
     line-height: 1.3;
@@ -816,7 +842,7 @@
     margin-bottom: 15px;
   }
 
-  .experience-text {
+  .experience-text1 {
     font-size: 16px;
     margin: 15px 0;
   }
@@ -852,77 +878,77 @@
     padding: 20px 15px;
   }
 
-  .info {
+  .webinar-event-info {
     margin-bottom: 20px;
   }
 
-  .info p {
+  .webinar-event-info p {
     font-size: 18px;
     padding-bottom: 15px;
   }
 
-  .price {
+  .webinar-price {
     font-size: 36px;
     margin: 15px 0 8px;
   }
 
-  .note {
+  .webinar-event-note {
     font-size: 18px;
     margin-bottom: 15px;
   }
 
-  .register-btn {
+  .webinar-register-button {
     font-size: 22px;
     padding: 18px 30px;
     width: 100%;
     margin-top: 20px;
   }
 
-  .metrics-container {
+  .metrics-container-webinar {
     margin: 30px 10px;
     border-radius: 12px;
   }
 
-  .metric-box {
+  .metric-box-webinar {
     padding: 30px 10px;
   }
 
-  .metric-value {
+  .metric-value-webinar {
     font-size: 32px;
     letter-spacing: -2px;
   }
 
-  .metric-label {
+  .metric-label-webinar {
     font-size: 12px;
   }
 
-  .card {
+  .webinar-feature-card {
     padding: 20px 15px;
     margin-bottom: 20px;
     border-radius: 16px;
   }
 
-  .card h2 {
+  .webinar-feature-card h2 {
     font-size: 22px;
     padding-bottom: 10px;
   }
 
-  .card p {
+  .webinar-feature-card p {
     font-size: 18px;
   }
 
-  .buttonGrid {
+  .webinar-button-grid {
     grid-template-columns: 1fr;
     margin: 10px 15px 30px;
     gap: 12px;
   }
 
-  .buttonGrid button {
+  .webinar-button-grid button {
     font-size: 16px;
     padding: 12px 8px;
   }
 
-  .secure-spot-btn {
+  .webinar-secure-spot-button {
     font-size: 20px;
     padding: 12px 25px;
     margin: 25px auto 0;
@@ -935,7 +961,7 @@
     margin-top: 10px;
   }
 
-  .excite-section {
+  .excite-section-webinar {
     padding: 25px 10px 40px;
   }
 
@@ -949,7 +975,7 @@
     padding-top: 10px;
   }
 
-  .excite-section-list {
+  .excite-section-list-webinar {
     font-size: 18px;
     margin-bottom: 15px;
   }
@@ -975,7 +1001,7 @@
     margin-bottom: 12px;
   }
 
-  .highlight-text {
+  .highlight-text-webinar {
     font-size: 18px;
     margin-top: 15px;
   }
@@ -997,12 +1023,12 @@
     padding: 0 15px;
   }
 
-  .faq-section {
+  .webinar-faq-section {
     margin: 40px auto;
     padding: 0 15px;
   }
 
-  .faq-title {
+  .webinar-faq-title {
     font-size: 24px;
     margin-bottom: 30px;
   }
@@ -1012,16 +1038,16 @@
     margin-bottom: 20px;
   }
 
-  .faq-item {
+  .webinar-faq-item {
     margin-bottom: 20px;
   }
 
-  .question {
+  .webinar-question {
     font-size: 15px;
     margin-bottom: 5px;
   }
 
-  .answer {
+  .webinar-answer {
     font-size: 14px;
   }
 
@@ -1046,15 +1072,15 @@
     margin-bottom: 30px;
   }
 
-  .stat h3 {
+  .webinar-stat h3 {
     font-size: 32px;
   }
 
-  .stat p {
+  .webinar-stat p {
     font-size: 15px;
   }
 
-  .cta-btn {
+  .webinar-cta-button {
     font-size: 18px;
     padding: 12px 30px;
     margin-bottom: 18px;
@@ -1062,307 +1088,310 @@
     max-width: 300px;
   }
 
-  .cta-text {
+  .webinar-cta-text {
     font-size: 15px;
   }
 }
+
 /* ============================================
    SWIPER & CAROUSEL STYLES (from basecamp)
    ============================================ */
 
 .carousel-wrapper {
-    margin: 60px auto;
-    padding: 0 40px;
-    position: relative;
-    max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
+  position: relative;
+  max-width: 1200px;
 }
 
 .carousel {
-    position: relative;
+  position: relative;
 }
 
 .carousel-item {
-    display: none;
+  display: none;
 }
 
 .carousel-item.active {
-    display: block;
-    animation: fadeIn 0.5s ease-in-out;
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .video-frame {
-    aspect-ratio: 16/9;
-    background: #000;
-    border: 10px solid #1a1a1a;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  aspect-ratio: 16/9;
+  background: #000;
+  border: 10px solid #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .video-frame iframe,
 .video-frame video {
-    width: 100%;
-    height: 100%;
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .video-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 22px;
-    text-align: center;
-    gap: 12px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 22px;
+  text-align: center;
+  gap: 12px;
 }
 
 .video-overlay img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
 }
 
 .video-overlay i {
-    font-size: 50px;
-    color: #FFC107;
-    z-index: 2;
-    position: relative;
+  font-size: 50px;
+  color: #FFC107;
+  z-index: 2;
+  position: relative;
 }
 
 @media (max-width: 768px) {
-    .video-overlay i {
-        font-size: 40px;
-    }
+  .video-overlay i {
+    font-size: 40px;
+  }
 }
 
 @media (max-width: 576px) {
-    .video-overlay i {
-        font-size: 35px;
-    }
+  .video-overlay i {
+    font-size: 35px;
+  }
 }
 
 .nav-arrow {
-    position: absolute;
-    top: 42%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 32px;
-    color: #0f2437;
-    cursor: pointer;
-    z-index: 10;
-    padding: 10px;
-    transition: all 0.3s ease;
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #0f2437;
+  cursor: pointer;
+  z-index: 10;
+  padding: 10px;
+  transition: all 0.3s ease;
 }
 
 .nav-arrow:hover {
-    color: #FFC107;
-    transform: translateY(-50%) scale(1.1);
+  color: #FFC107;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .nav-left {
-    left: -70px;
+  left: -70px;
 }
 
 .nav-right {
-    right: -70px;
+  right: -70px;
 }
 
 /* Responsive styles for navigation arrows */
 @media (max-width: 992px) {
-    .nav-left {
-        left: -50px;
-    }
+  .nav-left {
+    left: -50px;
+  }
 
-    .nav-right {
-        right: -50px;
-    }
+  .nav-right {
+    right: -50px;
+  }
 
-    .nav-arrow {
-        font-size: 28px;
-    }
-    .sub-job-details {
-        margin-left: 0;
-        margin-top : 10px;
-    }
+  .nav-arrow {
+    font-size: 28px;
+  }
 
-    .sub-job-details h3{
-        font-size : 18px;
-    }
+  .sub-job-details {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .sub-job-details h3 {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 768px) {
-    .nav-left {
-        left: -40px;
-    }
+  .nav-left {
+    left: -40px;
+  }
 
-    .nav-right {
-        right: -40px;
-    }
+  .nav-right {
+    right: -40px;
+  }
 
-    .nav-arrow {
-        font-size: 24px;
-        padding: 8px;
-    }
+  .nav-arrow {
+    font-size: 24px;
+    padding: 8px;
+  }
 
-    .video-frame {
-        border-width: 8px;
-    }
+  .video-frame {
+    border-width: 8px;
+  }
 
-    .sub-job-details {
-        margin-left: 0;
-        margin-top : 10px;
-    }
+  .sub-job-details {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 
-    .sub-job-details h3{
-        font-size : 18px;
-    }
+  .sub-job-details h3 {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 576px) {
-    .nav-left {
-        left: 10px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .nav-left {
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .nav-right {
-        right: 10px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .nav-right {
+    right: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .nav-arrow {
-        font-size: 20px;
-        padding: 0;
-        color: #0f2437;
-    }
+  .nav-arrow {
+    font-size: 20px;
+    padding: 0;
+    color: #0f2437;
+  }
 
-    .carousel-wrapper {
-        margin: 40px auto;
-        padding: 0 15px;
-    }
+  .carousel-wrapper {
+    margin: 40px auto;
+    padding: 0 15px;
+  }
 
-    .video-frame {
-        border-width: 6px;
-    }
-     .sub-job-details {
-        margin-left: 0;
-        margin-top : 10px;
-    }
+  .video-frame {
+    border-width: 6px;
+  }
 
-    .sub-job-details h3{
-        font-size : 14px;
-    }
+  .sub-job-details {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .sub-job-details h3 {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 400px) {
-    .nav-left {
-        left: 5px;
-    }
+  .nav-left {
+    left: 5px;
+  }
 
-    .nav-right {
-        right: 5px;
-    }
+  .nav-right {
+    right: 5px;
+  }
 
-    .nav-arrow {
-        font-size: 18px;
-    }
+  .nav-arrow {
+    font-size: 18px;
+  }
 
-    .nav-left,
-    .nav-right {
-        width: 35px;
-        height: 35px;
-    }
+  .nav-left,
+  .nav-right {
+    width: 35px;
+    height: 35px;
+  }
 
-    .video-frame {
-        border-width: 5px;
-    }
+  .video-frame {
+    border-width: 5px;
+  }
 
-    .sub-job-details {
-        margin-left: 0;
-        margin-top : 10px;
-    }
+  .sub-job-details {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 
-    .sub-job-details h3{
-        font-size : 14px;
-    }
+  .sub-job-details h3 {
+    font-size: 14px;
+  }
 }
 
 .progress-container {
-    width: 100%;
-    height: 3px;
-    background: #d9d9d9;
-    margin-top: 20px;
-    border-radius: 2px;
-    position: relative;
+  width: 100%;
+  height: 3px;
+  background: #d9d9d9;
+  margin-top: 20px;
+  border-radius: 2px;
+  position: relative;
 }
 
 .progress {
-    height: 100%;
-    background: #b00;
-    width: 0%;
+  height: 100%;
+  background: #b00;
+  width: 0%;
 }
 
 .slider-dot {
-    width: 12px;
-    height: 12px;
-    background: #b00;
-    border-radius: 50%;
-    position: absolute;
-    top: -4.5px;
-    left: 0%;
-    transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: #b00;
+  border-radius: 50%;
+  position: absolute;
+  top: -4.5px;
+  left: 0%;
+  transform: translateX(-50%);
 }
 
 .controls {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 15px;
 }
 
 .controls i {
-    font-size: 20px;
-    color: #0f2437;
-    cursor: pointer;
+  font-size: 20px;
+  color: #0f2437;
+  cursor: pointer;
 }
 
 .caption {
-    margin-top: 35px;
+  margin-top: 35px;
 }
 
 .caption h2 {
-    font-size: 20px;
-    font-weight: 900;
-    color: #0f2437;
-    margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  color: #0f2437;
+  margin: 0;
 }
 
 .caption h3 {
-    font-size: 32px;
-    font-weight: 900;
-    color: #0f2437;
-    margin: 6px 0 0;
+  font-size: 32px;
+  font-weight: 900;
+  color: #0f2437;
+  margin: 6px 0 0;
 }
 
 .sentence-text {
@@ -1370,8 +1399,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .sentence-dots {
@@ -1394,60 +1428,60 @@
   background-color: #fdae07;
 }
 
-.swiper-pagination { 
-    position: relative !important;
-    margin-top : 20px;
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 20px;
 }
 
 /* Navigation Buttons */
 .navigation-buttons {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    pointer-events: none;
-    z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 10;
 }
 
-.navigation-buttons > div {
-    pointer-events: all;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.navigation-buttons>div {
+  pointer-events: all;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.navigation-buttons > div:hover {
-    transform: scale(1.1);
+.navigation-buttons>div:hover {
+  transform: scale(1.1);
 }
 
 .navigation-buttons .nav-left-btn {
-    width: auto;
-    height: auto;
-    max-width: 60px;
+  width: auto;
+  height: auto;
+  max-width: 60px;
 }
 
 @media (max-width: 768px) {
-    .navigation-buttons .nav-left-btn {
-        max-width: 50px;
-    }
+  .navigation-buttons .nav-left-btn {
+    max-width: 50px;
+  }
 }
 
 @media (max-width: 576px) {
-    .navigation-buttons {
-        padding: 0 10px;
-    }
-    
-    .navigation-buttons .nav-left-btn {
-        max-width: 40px;
-    }
+  .navigation-buttons {
+    padding: 0 10px;
+  }
+
+  .navigation-buttons .nav-left-btn {
+    max-width: 40px;
+  }
 }
 
 /* Swiper Container */
 .mySwiper {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .slider-row {
-    margin: 0;
+  margin: 0;
 }
