@@ -292,7 +292,7 @@ Global Business Coach
         </div>
       </section>
 
-      <div className="row metrics-container">
+      <div className="row metrics-container-webinar">
         <div className="col-md-4 col-12">
           <div className="metric-box-webinar">
             <div className="metric-value-webinar">1500+</div>
