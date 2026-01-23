@@ -221,7 +221,7 @@ const Footer = () => {
                   imageSrc: Facebook,
                 },
                 {
-                  link: "https://www.instagram.com/alchemistsuccess",
+                  link: "https://www.instagram.com/success_alchemists/",
                   imageSrc: Instagram,
                 },
                 {
