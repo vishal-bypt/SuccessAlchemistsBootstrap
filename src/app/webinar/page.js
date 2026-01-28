@@ -8,6 +8,7 @@ import meet from "../../app/who/images/meet.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { useRef, useState } from "react";
+import { useForm } from "react-hook-form";
 import left_arrow_btn from "../home/images/left-arrow-btn.png";
 import right_arrow_btn from "../home/images/right-arrow-btn.png";
 import Button from "react-bootstrap/Button";
@@ -22,17 +23,28 @@ import "swiper/css/pagination";
 const WebinarPage = () => {
   
   const [show, setShow] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [yourDesignation, setYourDesignation] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [plan, setPlan] = useState("");
   const [basecampLocation, setBasecampLocation] = useState("");
   const [order_id] = useState(`ORD${Date.now()}`);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  // React Hook Form setup
+  const {
+    register,
+    handleSubmit: handleFormSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      companyName: "",
+      yourDesignation: "",
+    },
+    mode: "onBlur",
+  });
 
 
   const items = [
@@ -98,41 +110,9 @@ const WebinarPage = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    // ✅ Basic validations
-    if (
-      !firstName ||
-      !lastName ||
-      !email ||
-      !phone ||
-      !companyName ||
-      !yourDesignation
-    ) {
-      alert("All fields are required!");
-      return;
-    }
-
-    if (!/^\S+@\S+\.\S+$/.test(email)) {
-      alert("Enter a valid email!");
-      return;
-    }
-
-    if (!/^\d{10}$/.test(phone)) {
-      alert("Enter a valid 10-digit phone number!");
-      return;
-    }
-
-    await handlePayment({
-      firstName,
-      lastName,
-      email,
-      phone,
-      companyName,
-      yourDesignation,
-    });
-
+  const handleSubmit = async (formData) => {
+    await handlePayment(formData);
+    reset();
     handleClose();
   };
 
@@ -175,12 +155,12 @@ const WebinarPage = () => {
 
          
         // 2️⃣ Fire Google Ads conversion
-        window.gtag('event', 'conversion', {
-              send_to: 'AW-17882487402/Jbp8CM7T7OcbEOq0hM9C',
-        });
+        // window.gtag('event', 'conversion', {
+        //       send_to: 'AW-17882487402/Jbp8CM7T7OcbEOq0hM9C',
+        // });
 
         // 3️⃣ Optional: redirect / show success message
-        console.log('Lead submitted & conversion tracked');
+        //console.log('Lead submitted & conversion tracked');
         
 
 
@@ -225,6 +205,17 @@ const WebinarPage = () => {
   };
   return (
     <div className="main_body_div">
+      {/* FLOATING REGISTER DIV */}
+      <div className="floating-register-div">
+        <div className="floating-register-left">
+          <p className="floating-register-text">Only 10 Spots Remain. Reserve Yours Now.</p>
+          <p className="floating-register-subtext"></p>
+        </div>
+        <div className="floating-register-right">
+          <button className="floating-register-button" onClick={handleShow}>SECURE YOUR SPOT NOW</button>
+        </div>
+      </div>
+
       {/* EXPERIENCE SECTION */}
       <section className="experience-section1">
         <div className="webinar-container-large">
@@ -271,7 +262,7 @@ Global Business Coach
             <div className="right-section">
               <div className="webinar-event-info">
                 <p>
-                  <Image src={calendar} alt="Date" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> Date – 31<sup>st</sup> January 2026
+                  <Image src={calendar} alt="Date" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> Date – 7<sup>th</sup> February 2026
                 </p>
                 <p><Image src={clock} alt="Time" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> 11 am – 1 pm IST</p>
                 <p><Image src={meet} alt="Online" width={20} height={20} style={{filter: 'brightness(0) invert(1)'}} /> ZOOM session (online)</p>
@@ -614,90 +605,156 @@ Global Business Coach
         </div>
       </section>
       <Modal show={show} onHide={handleClose}>
-              <Form onSubmit={handleSubmit}>
-                <Modal.Header closeButton>
-                  <Modal.Title>Book Your Webinar Seat</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Company Name</Form.Label>
-                    <Form.Control
-                      type="text"
-                      value={companyName}
-                      onChange={(e) => setCompanyName(e.target.value)}
-                      placeholder="Enter company name"
-                      required
-                    />
-                  </Form.Group>
-      
-                  <Form.Group className="mb-3">
-                    <Form.Label>Your Designation</Form.Label>
-                    <Form.Control
-                      type="text"
-                      value={yourDesignation}
-                      onChange={(e) => setYourDesignation(e.target.value)}
-                      placeholder="Enter your designation"
-                      required
-                    />
-                  </Form.Group>
-      
-                  <Form.Group className="mb-3">
-                    <Form.Label>First Name</Form.Label>
-                    <Form.Control
-                      type="text"
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)}
-                      placeholder="Enter first name"
-                      required
-                    />
-                  </Form.Group>
-      
-                  <Form.Group className="mb-3">
-                    <Form.Label>Last Name</Form.Label>
-                    <Form.Control
-                      type="text"
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
-                      placeholder="Enter last name"
-                      required
-                    />
-                  </Form.Group>
-      
-                  <Form.Group className="mb-3">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="name@example.com"
-                      required
-                    />
-                  </Form.Group>
-      
-                  <Form.Group className="mb-3">
-                    <Form.Label>Phone Number</Form.Label>
-                    <Form.Control
-                      type="tel"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      placeholder="10-digit phone number"
-                      required
-                    />
-                  </Form.Group>
-      
-                  
-                </Modal.Body>
-      
-                <Modal.Footer>
-                  <Button variant="secondary" onClick={handleClose}>
-                    Close
-                  </Button>
-                  <Button type="submit" variant="primary">
-                    Submit
-                  </Button>
-                </Modal.Footer>
-              </Form>
-            </Modal>
+        <Form onSubmit={handleFormSubmit(handleSubmit)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Book Your Webinar Seat</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group className="mb-3">
+              <Form.Label>Company Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter company name"
+                {...register("companyName", {
+                  required: "Company name is required",
+                  minLength: {
+                    value: 2,
+                    message: "Company name must be at least 2 characters",
+                  },
+                })}
+                isInvalid={!!errors.companyName}
+              />
+              {errors.companyName && (
+                <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
+                  {errors.companyName.message}
+                </Form.Control.Feedback>
+              )}
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Your Designation</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter your designation"
+                {...register("yourDesignation", {
+                  required: "Designation is required",
+                  minLength: {
+                    value: 2,
+                    message: "Designation must be at least 2 characters",
+                  },
+                })}
+                isInvalid={!!errors.yourDesignation}
+              />
+              {errors.yourDesignation && (
+                <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
+                  {errors.yourDesignation.message}
+                </Form.Control.Feedback>
+              )}
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter first name"
+                {...register("firstName", {
+                  required: "First name is required",
+                  minLength: {
+                    value: 2,
+                    message: "First name must be at least 2 characters",
+                  },
+                  pattern: {
+                    value: /^[a-zA-Z\s]*$/,
+                    message: "First name can only contain letters and spaces",
+                  },
+                })}
+                isInvalid={!!errors.firstName}
+              />
+              {errors.firstName && (
+                <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
+                  {errors.firstName.message}
+                </Form.Control.Feedback>
+              )}
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter last name"
+                {...register("lastName", {
+                  required: "Last name is required",
+                  minLength: {
+                    value: 2,
+                    message: "Last name must be at least 2 characters",
+                  },
+                  pattern: {
+                    value: /^[a-zA-Z\s]*$/,
+                    message: "Last name can only contain letters and spaces",
+                  },
+                })}
+                isInvalid={!!errors.lastName}
+              />
+              {errors.lastName && (
+                <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
+                  {errors.lastName.message}
+                </Form.Control.Feedback>
+              )}
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Please enter a valid email address",
+                  },
+                })}
+                isInvalid={!!errors.email}
+              />
+              {errors.email && (
+                <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
+                  {errors.email.message}
+                </Form.Control.Feedback>
+              )}
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Phone Number</Form.Label>
+              <Form.Control
+                type="tel"
+                placeholder="10-digit phone number"
+                {...register("phone", {
+                  required: "Phone number is required",
+                  pattern: {
+                    value: /^\d{10}$/,
+                    message: "Please enter a valid 10-digit phone number",
+                  },
+                })}
+                isInvalid={!!errors.phone}
+              />
+              {errors.phone && (
+                <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
+                  {errors.phone.message}
+                </Form.Control.Feedback>
+              )}
+            </Form.Group>
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button type="submit" variant="primary">
+              Submit
+            </Button>
+          </Modal.Footer>
+        </Form>
+      </Modal>
     </div>
   );
 };

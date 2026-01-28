@@ -1,8 +1,25 @@
 "use client";
+import dynamic from "next/dynamic";
 import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import React, { useEffect } from "react";
+import { usePathname } from "next/navigation";
+
+
+const EXCLUDED_ROUTES = [
+  "/basecamp",
+  "/webinar",
+];
 
 const TawkChat = () => {
+   const pathname = usePathname();
+  console.log("Current pathname:", pathname);
+
+   // 🚫 Don't load Tawk on excluded pages
+  if (EXCLUDED_ROUTES.includes(pathname)) {
+    return null;
+  }
+
+
   return (
     <>
     <TawkMessengerReact

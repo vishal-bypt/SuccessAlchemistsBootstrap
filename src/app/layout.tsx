@@ -140,7 +140,7 @@ export default function RootLayout({
         <NavbarMenu />
         <ToastContainer />
         {children}
-        <TawkChat />
+        {/* <TawkChat /> */}
         <Footer />
       </body>
     </html>

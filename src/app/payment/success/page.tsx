@@ -17,6 +17,15 @@ export default function PaymentSuccess() {
     if (stored) {
       setData(JSON.parse(stored));
     }
+
+    // Event snippet for Submit lead form conversion page
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-17882487402/Jbp8CM7T7OcbEOq0hM9C'
+      });
+    }
+
+    console.log('Lead submitted & conversion tracked');
   }, []);
 
   return (

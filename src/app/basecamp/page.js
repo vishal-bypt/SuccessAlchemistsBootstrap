@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useForm } from "react-hook-form";
 import Image from "next/image";
 import basecamplogo2 from "./Basecamp_White.png";
 import Button from "react-bootstrap/Button";
@@ -22,19 +23,34 @@ export default function BasecampPage() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [firstName, setFirstName] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [yourDesignation, setYourDesignation] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [plan, setPlan] = useState("");
-  const [basecampLocation, setBasecampLocation] = useState("");
-  const [order_id] = useState(`ORD${Date.now()}`);
+  const {
+    register,
+    handleSubmit: rhfHandleSubmit,
+    formState: { errors },
+    watch,
+    setValue,
+    reset,
+  } = useForm({
+    mode: "onChange",
+    defaultValues: {
+      companyName: "",
+      yourDesignation: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      basecampLocation: "",
+      plan: "",
+      promoCode: "",
+    },
+  });
 
-  const [promoCode, setPromoCode] = useState("");
+  const [order_id] = useState(`ORD${Date.now()}`);
   const [discount, setDiscount] = useState(0);
   const [promoApplied, setPromoApplied] = useState(false);
+
+  const promoCode = watch("promoCode");
+  const plan = watch("plan");
 
   //const VALID_PROMO = "SAVE20";
   const exclusiveArray = [
@@ -172,35 +188,13 @@ export default function BasecampPage() {
     setCurrentIndex(currentIndex - 1);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (data) => {
+    await handlePayment(data);
+    handleClose();
+  };
 
-    // ✅ Basic validations
-    if (
-      !firstName ||
-      !lastName ||
-      !email ||
-      !phone ||
-      !plan ||
-      !companyName ||
-      !yourDesignation ||
-      !basecampLocation
-    ) {
-      alert("All fields are required!");
-      return;
-    }
-
-    if (!/^\S+@\S+\.\S+$/.test(email)) {
-      alert("Enter a valid email!");
-      return;
-    }
-
-    if (!/^\d{10}$/.test(phone)) {
-      alert("Enter a valid 10-digit phone number!");
-      return;
-    }
-
-    await handlePayment({
+  const handlePayment = async (data) => {
+    const {
       firstName,
       lastName,
       email,
@@ -209,21 +203,8 @@ export default function BasecampPage() {
       companyName,
       yourDesignation,
       basecampLocation,
-    });
+    } = data;
 
-    handleClose();
-  };
-
-  const handlePayment = async ({
-    firstName,
-    lastName,
-    email,
-    phone,
-    plan,
-    companyName,
-    yourDesignation,
-    basecampLocation,
-  }) => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
     const payload = {
@@ -246,10 +227,10 @@ export default function BasecampPage() {
       body: JSON.stringify(payload),
     });
 
-    const data = await response.json();
-    console.log("Response from /initiate-payment:", data);
+    const paymentData = await response.json();
+    console.log("Response from /initiate-payment:", paymentData);
 
-    if (data.paymentUrl) {
+    if (paymentData.paymentUrl) {
       try {
         // 2️⃣ Fire Google Ads conversion
         window.gtag("event", "conversion", {
@@ -259,7 +240,7 @@ export default function BasecampPage() {
         // 3️⃣ Optional: redirect / show success message
         console.log("Lead submitted & conversion tracked");
 
-        const { encRequest, access_code, ccavenueUrl } = data;
+        const { encRequest, access_code, ccavenueUrl } = paymentData;
 
         if (encRequest && access_code) {
           const existingForm = document.getElementById("ccavenue-payment-form");
@@ -293,7 +274,7 @@ export default function BasecampPage() {
       }
     } else {
       alert("Payment failed: Server error");
-      console.error(data);
+      console.error(paymentData);
     }
   };
 
@@ -321,16 +302,8 @@ export default function BasecampPage() {
   //     setPromoApplied(false);
   //   }
   // };
-  useEffect(() => {
-    if (promoCode) {
-      const discountAmount = calculateDiscount(plan, promoCode);
-      setDiscount(discountAmount);
-      setPromoApplied(discountAmount > 0);
-    }
-  }, [plan]);
-
   const handleRemovePromo = () => {
-    setPromoCode("");
+    setValue("promoCode", "");
     setDiscount(0);
     setPromoApplied(false);
   };
@@ -365,6 +338,16 @@ export default function BasecampPage() {
 
   return (
     <div>
+      {/* FLOATING REGISTER DIV */}
+      <div className="floating-register-div">
+        <div className="floating-register-left">
+          <p className="floating-register-text">Only 10 Spots Remain. Reserve Yours Now.</p>
+          <p className="floating-register-subtext"></p>
+        </div>
+        <div className="floating-register-right">
+          <button className="floating-register-button" onClick={handleShow}>SECURE YOUR SPOT NOW</button>
+        </div>
+      </div>
       {/* HERO SECTION */}
       <section className="hero-section1">
         <div className="container">
@@ -508,7 +491,7 @@ export default function BasecampPage() {
           <div className="row metrics-container">
             <div className="col-md-4 col-12">
               <div className="metric-box">
-                <div className="metric-value">80,000</div>
+                <div className="metric-value">100K +</div>
                 <div className="metric-label">Companies Worldwide</div>
               </div>
             </div>
@@ -870,7 +853,7 @@ export default function BasecampPage() {
       </section>
 
       <Modal show={show} onHide={handleClose}>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={rhfHandleSubmit(handleSubmit)}>
           <Modal.Header closeButton>
             <Modal.Title>Book Your Seat</Modal.Title>
           </Modal.Header>
@@ -879,90 +862,141 @@ export default function BasecampPage() {
               <Form.Label>Company Name</Form.Label>
               <Form.Control
                 type="text"
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
                 placeholder="Enter company name"
-                required
+                {...register("companyName", {
+                  required: "Company name is required",
+                  minLength: {
+                    value: 2,
+                    message: "Company name must be at least 2 characters",
+                  },
+                })}
+                isInvalid={!!errors.companyName}
               />
+              <Form.Control.Feedback type="invalid">
+                {errors.companyName?.message}
+              </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Your Designation</Form.Label>
               <Form.Control
                 type="text"
-                value={yourDesignation}
-                onChange={(e) => setYourDesignation(e.target.value)}
                 placeholder="Enter your designation"
-                required
+                {...register("yourDesignation", {
+                  required: "Designation is required",
+                  minLength: {
+                    value: 2,
+                    message: "Designation must be at least 2 characters",
+                  },
+                })}
+                isInvalid={!!errors.yourDesignation}
               />
+              <Form.Control.Feedback type="invalid">
+                {errors.yourDesignation?.message}
+              </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>First Name</Form.Label>
               <Form.Control
                 type="text"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
                 placeholder="Enter first name"
-                required
+                {...register("firstName", {
+                  required: "First name is required",
+                  minLength: {
+                    value: 2,
+                    message: "First name must be at least 2 characters",
+                  },
+                })}
+                isInvalid={!!errors.firstName}
               />
+              <Form.Control.Feedback type="invalid">
+                {errors.firstName?.message}
+              </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Last Name</Form.Label>
               <Form.Control
                 type="text"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
                 placeholder="Enter last name"
-                required
+                {...register("lastName", {
+                  required: "Last name is required",
+                  minLength: {
+                    value: 2,
+                    message: "Last name must be at least 2 characters",
+                  },
+                })}
+                isInvalid={!!errors.lastName}
               />
+              <Form.Control.Feedback type="invalid">
+                {errors.lastName?.message}
+              </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@example.com"
-                required
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Invalid email address",
+                  },
+                })}
+                isInvalid={!!errors.email}
               />
+              <Form.Control.Feedback type="invalid">
+                {errors.email?.message}
+              </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Phone Number</Form.Label>
               <Form.Control
                 type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
                 placeholder="10-digit phone number"
-                required
+                {...register("phone", {
+                  required: "Phone number is required",
+                  pattern: {
+                    value: /^\d{10}$/,
+                    message: "Phone number must be 10 digits",
+                  },
+                })}
+                isInvalid={!!errors.phone}
               />
+              <Form.Control.Feedback type="invalid">
+                {errors.phone?.message}
+              </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Basecamp Location</Form.Label>
               <Form.Select
-                value={basecampLocation}
-                onChange={(e) => setBasecampLocation(e.target.value)}
-                required
+                {...register("basecampLocation", {
+                  required: "Please select a basecamp location",
+                })}
+                isInvalid={!!errors.basecampLocation}
               >
                 <option value="">- Select Basecamp Location -</option>
                 <option value="Pune - 12th Feb'26">Pune - 12th Feb'26</option>
                 <option value="Mumbai - 26th Feb'26">
                   Mumbai - 26th Feb'26
                 </option>
-                {/* <option value="11999">Regular - For Individuals - ₹11999</option>
-                      <option value="27999">Regular - For Teams - ₹27999</option> */}
               </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                {errors.basecampLocation?.message}
+              </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Label>No. of attendees</Form.Label>
             <Form.Select
-              value={plan}
-              onChange={(e) => setPlan(e.target.value)}
-              required
+              {...register("plan", {
+                required: "Please select a plan",
+              })}
+              isInvalid={!!errors.plan}
             >
               <option value="">- Select Plan -</option>
               <option value="7999">
@@ -971,19 +1005,20 @@ export default function BasecampPage() {
               <option value="17999">
                 Early Bird - For 3 Teams members - ₹17999 + GST
               </option>
-              {/* <option value="11999">Regular - For Individuals - ₹11999</option>
-                      <option value="27999">Regular - For Teams - ₹27999</option> */}
             </Form.Select>
+            <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
+              {errors.plan?.message}
+            </Form.Control.Feedback>
+
             <div className="row">&nbsp;</div>
             <Form.Group className="mb-3">
               <Form.Label>Apply Promo Code</Form.Label>
               <div className="d-flex gap-2">
                 <Form.Control
                   type="text"
-                  value={promoCode}
-                  disabled={promoApplied}   // 👈 THIS LINE
-                  onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
+                  disabled={promoApplied}
                   placeholder="Enter promo code"
+                  {...register("promoCode")}
                 />
 
                 {!promoApplied ? (
