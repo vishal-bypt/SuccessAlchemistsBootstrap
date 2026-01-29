@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import "./contactus.css";
 import { useForm } from "react-hook-form";
 import Toast from "../../components/Toast";
 import { useRouter } from 'next/navigation';
-
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import curveShape2 from "../../../public/assets/images/Curve-shape2.svg";
 
 const ContactUs = () => {
@@ -15,10 +16,18 @@ const ContactUs = () => {
     formState: { errors },
   } = useForm();
   const router = useRouter();
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [recaptchaReady, setRecaptchaReady] = useState(false);
   const noOnlySpaces = {
     value: /^(?!\s*$).+/,
     message: "Invalid input: Cannot be empty or contain only spaces",
   };
+
+  useEffect(() => {
+  if (executeRecaptcha) {
+    setRecaptchaReady(true);
+  }
+}, [executeRecaptcha]);
 
   const onSubmit = async(data: any) => {
     //console.log("BASE URL", process.env.NEXT_PUBLIC_API_URL);
@@ -27,19 +36,24 @@ const ContactUs = () => {
 
     try {
 
+      if (!executeRecaptcha) {
+        Toast.error("reCAPTCHA not ready");
+        return;
+      }
       if (postData.website) {
         //return res.status(400).json({ error: 'Spam detected' });
         console.error("Error:", 'Spam detected');
         Toast.error("Spam detected.");
         throw new Error(`Spam detected`);
       }
+      const recaptchaToken = await executeRecaptcha("contact_form");
 
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(postData),
+        body: JSON.stringify({...postData, recaptchaToken}),
       });
       //console.log("response", response);
       if (!response.ok) {
@@ -193,7 +207,13 @@ const ContactUs = () => {
                     </div>
                   )}
                 </div>
-                <input type="text" name="website" style={{ display: 'none' }} tabIndex={-1} autoComplete="off"></input>
+                <input
+                  type="text"
+                  {...register("website")}
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
               </div>
             </div>
 
@@ -201,8 +221,9 @@ const ContactUs = () => {
               <button
                 type="submit"
                 className="btnstyle btn-submit"
+                disabled={!recaptchaReady}
               >
-                SEND NOW
+                {recaptchaReady ? "SEND NOW" : "Loading..."}
               </button>
             </div>
           </form>

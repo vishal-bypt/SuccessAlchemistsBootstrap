@@ -20,6 +20,7 @@ import { useParams } from "next/navigation";
 import Toast from "@/components/Toast";
 import Spinner from 'react-bootstrap/Spinner';
 import { useRouter } from 'next/navigation';
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 // import { useRouter } from "next/router";
 
 const detailsMap = [
@@ -126,6 +127,8 @@ export default function Page() {
   const [selected, setSelected] = useState<any>(null);
   const [showSpinner, setShowSpinner] = useState(false);
   const [show, setShow] = useState(false);
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [recaptchaReady, setRecaptchaReady] = useState(false);
   const router = useRouter();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -135,6 +138,13 @@ export default function Page() {
     reset,
     formState: { errors },
   } = useForm();
+
+  useEffect(() => {
+  if (executeRecaptcha) {
+    setRecaptchaReady(true);
+  }
+}, [executeRecaptcha]);
+
 
   useEffect(() => {
     const selectedObj = detailsMap.find((item) => item.slugName === slug);
@@ -148,6 +158,11 @@ export default function Page() {
     const downloadUrl = process.env.NEXT_PUBLIC_BASE_PATH + '/assets/images/PDF/' + selected?.file;
     console.log("downloadUrl", downloadUrl);
 
+    if (!executeRecaptcha) {
+      Toast.error("reCAPTCHA not ready");
+      return;
+    }
+
     if (postData.website) {
       //return res.status(400).json({ error: 'Spam detected' });
       console.error("Error:", 'Spam detected');
@@ -156,12 +171,13 @@ export default function Page() {
     }
 
     try {
+      const recaptchaToken = await executeRecaptcha("contact_form");
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(postData),
+        body: JSON.stringify({ ...postData, recaptchaToken }),
       });
       //console.log("response", response);
       if (!response.ok) {
@@ -347,8 +363,9 @@ export default function Page() {
                                 : "",
                     }}
                     className="py-3 btn_div"
+                    disabled={!recaptchaReady}
                   >
-                    Download
+                    {recaptchaReady ? "Download" : "Loading..."}
                   </button>
 
                 </div>

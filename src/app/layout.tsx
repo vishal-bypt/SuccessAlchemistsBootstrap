@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import TawkChat from '../components/TawkChat';
 import { ToastContainer } from "react-toastify";
 import Script from 'next/script';
+import RecaptchaProvider from "@/components/RecaptchaProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -139,7 +140,10 @@ export default function RootLayout({
 
         <NavbarMenu />
         <ToastContainer />
-        {children}
+        <RecaptchaProvider>
+          {children}
+        </RecaptchaProvider>
+       
         {/* <TawkChat /> */}
         <Footer />
       </body>
