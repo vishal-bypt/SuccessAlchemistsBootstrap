@@ -32,7 +32,7 @@ const WebinarPage = () => {
   const {
     register,
     handleSubmit: handleFormSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     reset,
   } = useForm({
     defaultValues: {
@@ -749,7 +749,7 @@ Global Business Coach
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button type="submit" variant="primary">
+            <Button type="submit" variant="primary" disabled={!isValid}>
               Submit
             </Button>
           </Modal.Footer>

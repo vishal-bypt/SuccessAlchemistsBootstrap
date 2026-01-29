@@ -26,7 +26,7 @@ export default function BasecampPage() {
   const {
     register,
     handleSubmit: rhfHandleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     watch,
     setValue,
     reset,
@@ -1044,7 +1044,7 @@ export default function BasecampPage() {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button type="submit" variant="primary">
+            <Button type="submit" variant="primary" disabled={!isValid}>
               Submit
             </Button>
           </Modal.Footer>
