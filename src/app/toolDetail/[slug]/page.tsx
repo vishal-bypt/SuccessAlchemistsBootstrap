@@ -29,7 +29,7 @@ const detailsMap = [
     slugName: "function-accountability-chart",
     title: "FACe - Function Accountability Chart",
     desc: "",
-    file : "People-FACe-FunctionAccountabilityChart.pdf"
+    file: "People-FACe-FunctionAccountabilityChart.pdf"
   },
   {
     category: "people",
@@ -37,7 +37,7 @@ const detailsMap = [
     slugName: "one-page-personal-plan",
     title: "OPPP - One Page Personal Plan",
     desc: "",
-    file : "People-OPPP-OnePagePersonalPlan.pdf"
+    file: "People-OPPP-OnePagePersonalPlan.pdf"
   },
   {
     category: "people",
@@ -45,7 +45,7 @@ const detailsMap = [
     slugName: "process-accountability-chart",
     title: "PACe - Process Accountability Chart",
     desc: "",
-    file : "People-FACe-FunctionAccountabilityChart.pdf"
+    file: "People-FACe-FunctionAccountabilityChart.pdf"
   },
   {
     category: "people",
@@ -53,7 +53,7 @@ const detailsMap = [
     slugName: "talent-assessment-chart",
     title: "Talent - Talent Assessment Chart",
     desc: "",
-    file : "People-TalentAssessmentChart.pdf"
+    file: "People-TalentAssessmentChart.pdf"
   },
   {
     category: "strategy",
@@ -61,7 +61,7 @@ const detailsMap = [
     slugName: "7-strata",
     title: "Strategy - 7 Strata",
     desc: "",
-    file : "Strategy-7Strata.pdf"
+    file: "Strategy-7Strata.pdf"
   },
   {
     category: "strategy",
@@ -69,7 +69,7 @@ const detailsMap = [
     slugName: "vision-summary",
     title: "Strategy - Vision Summary",
     desc: "",
-    file : "Strategy-VisionSummary.pdf"
+    file: "Strategy-VisionSummary.pdf"
   },
   {
     category: "strategy",
@@ -77,7 +77,7 @@ const detailsMap = [
     slugName: "one-page-strategic-plan",
     title: "OPSP - One Page Strategic Plan",
     desc: "",
-    file : "Strategy-OPSP-OnePageStrategicPlan.pdf"
+    file: "Strategy-OPSP-OnePageStrategicPlan.pdf"
   },
   {
     category: "strategy",
@@ -85,7 +85,7 @@ const detailsMap = [
     slugName: "strengths-weaknesses-trends",
     title: "SWT - Strengths Weaknesses Trends",
     desc: "",
-    file : "Strategy-SWT-StrengthsWeaknessesTrends.pdf"
+    file: "Strategy-SWT-StrengthsWeaknessesTrends.pdf"
   },
   {
     category: "execution",
@@ -93,7 +93,7 @@ const detailsMap = [
     slugName: "who-what-when",
     title: "WWW - Who What When",
     desc: "",
-    file : "Execution-WWW-WhoWhatWhen.pdf"
+    file: "Execution-WWW-WhoWhatWhen.pdf"
   },
   {
     category: "execution",
@@ -101,7 +101,7 @@ const detailsMap = [
     slugName: "rockefeller-habits-checklist",
     title: "Execution - Rockefeller Habits Checklist",
     desc: "Execution-RockefellerHabitsChecklist.pdf",
-    file : "Execution-RockefellerHabitsChecklist.pdf"
+    file: "Execution-RockefellerHabitsChecklist.pdf"
   },
   {
     category: "cash",
@@ -109,7 +109,7 @@ const detailsMap = [
     slugName: "cash-acceleration-strategies",
     title: "CASh - Cash Acceleration Strategies",
     desc: "",
-    file : "Cash-CASh-CashAccelerationStrategies.pdf"
+    file: "Cash-CASh-CashAccelerationStrategies.pdf"
   },
   {
     category: "cash",
@@ -117,7 +117,7 @@ const detailsMap = [
     slugName: "the-power-of-one",
     title: "POO - The Power of One",
     desc: "",
-    file : "Cash-POO-ThePowerofOne.pdf"
+    file: "Cash-POO-ThePowerofOne.pdf"
   },
 ];
 export default function Page() {
@@ -142,70 +142,76 @@ export default function Page() {
   }, [slug]);
 
   const onSubmit = async (data: any) => {
-      setShowSpinner(true);
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/toolkit"; // Replace with your API URL
-      const postData: any = data;
-      const downloadUrl = process.env.NEXT_PUBLIC_BASE_PATH + '/assets/images/PDF/'+ selected?.file;
-      console.log("downloadUrl", downloadUrl);
-     
-      try {
-        const response = await fetch(apiUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(postData),
-        });
-        //console.log("response", response);
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-  
-        const data = await response.json();
-        reset();
-        handleClose();
-        localStorage.setItem('hasSubmittedInquiry', 'true');
-        Toast.success("Your request for toolkit download has been registered! You can download now.");
-        setShowSpinner(false);
-        //console.log("selected", selected);
-        // const link = document.createElement('a');
-        // link.href = downloadUrl;
-        // link.download = selected?.file; // Suggests the filename
-        // document.body.appendChild(link);
-        // link.click();
-        const link = document.createElement('a');
-        link.href = downloadUrl;
-        link.setAttribute('download', selected?.file || 'downloaded-file');
-        link.style.display = 'none';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        // setTimeout(() => {
-        //   router.push("/toolDetail"); // Redirect to the home page after 2 seconds  
-        // }, 2000);
-  
-        //setResponseData(data);
-      } catch (error) {
-        console.error("Error:", error);
-        Toast.error("An error occurred while submitting the form.");
+    setShowSpinner(true);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/toolkit"; // Replace with your API URL
+    const postData: any = data;
+    const downloadUrl = process.env.NEXT_PUBLIC_BASE_PATH + '/assets/images/PDF/' + selected?.file;
+    console.log("downloadUrl", downloadUrl);
+
+    if (postData.website) {
+      //return res.status(400).json({ error: 'Spam detected' });
+      console.error("Error:", 'Spam detected');
+      Toast.error("Spam detected.");
+      throw new Error(`Spam detected`);
+    }
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData),
+      });
+      //console.log("response", response);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
-    };
-    console.log("errors", errors);
+
+      const data = await response.json();
+      reset();
+      handleClose();
+      localStorage.setItem('hasSubmittedInquiry', 'true');
+      Toast.success("Your request for toolkit download has been registered! You can download now.");
+      setShowSpinner(false);
+      //console.log("selected", selected);
+      // const link = document.createElement('a');
+      // link.href = downloadUrl;
+      // link.download = selected?.file; // Suggests the filename
+      // document.body.appendChild(link);
+      // link.click();
+      const link = document.createElement('a');
+      link.href = downloadUrl;
+      link.setAttribute('download', selected?.file || 'downloaded-file');
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      // setTimeout(() => {
+      //   router.push("/toolDetail"); // Redirect to the home page after 2 seconds  
+      // }, 2000);
+
+      //setResponseData(data);
+    } catch (error) {
+      console.error("Error:", error);
+      Toast.error("An error occurred while submitting the form.");
+    }
+  };
+  console.log("errors", errors);
   return (
     <>
       {selected && (
         <div
-          className={`second_div_layout ${
-            selected?.category === "people"
+          className={`second_div_layout ${selected?.category === "people"
               ? "gradient_bg_1"
               : selected?.category === "strategy"
-              ? "gradient_bg_2"
-              : selected?.category === "execution"
-              ? "gradient_bg_3"
-              : selected?.category === "cash"
-              ? "gradient_bg_4"
-              : ""
-          }`}
+                ? "gradient_bg_2"
+                : selected?.category === "execution"
+                  ? "gradient_bg_3"
+                  : selected?.category === "cash"
+                    ? "gradient_bg_4"
+                    : ""
+            }`}
         >
           <div className="mb-4">
             <h2 className="heading text-center">{selected?.title}</h2>
@@ -213,7 +219,7 @@ export default function Page() {
           </div>
           <div
             style={{ height: "300px", display: "flex", flexDirection: "row" }}
-            className = "second_div_responsive"
+            className="second_div_responsive"
           >
             <Image
               src={selected?.image}
@@ -225,131 +231,129 @@ export default function Page() {
               style={{ width: "70%", padding: "16px" }}
             >
               <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="d-flex justify-content-between">
-                <div style={{ width: "50%" }}>
-                  <div className="second_input_box form-floating m-3">
-                    <input
-                      type="text"
-                      className={`form-control ${
-                        errors.name ? "is-invalid" : ""
-                      }`}
-                      id="name"
-                      placeholder="Name"
-                      {...register("name", {
-                        required: "Name is required",
-                      })}
-                    />
-                    <label htmlFor="name">Name</label>
-                    {errors.name && (
-                      <div className="invalid-feedback">
-                        {String(errors.name.message)}
-                      </div>
-                    )}
+                <div className="d-flex justify-content-between">
+                  <div style={{ width: "50%" }}>
+                    <div className="second_input_box form-floating m-3">
+                      <input
+                        type="text"
+                        className={`form-control ${errors.name ? "is-invalid" : ""
+                          }`}
+                        id="name"
+                        placeholder="Name"
+                        {...register("name", {
+                          required: "Name is required",
+                        })}
+                      />
+                      <label htmlFor="name">Name</label>
+                      {errors.name && (
+                        <div className="invalid-feedback">
+                          {String(errors.name.message)}
+                        </div>
+                      )}
+                    </div>
+                    <div className="second_input_box form-floating m-3 mt-5">
+                      <input
+                        type="text"
+                        className={`form-control ${errors.email ? "is-invalid" : ""
+                          }`}
+                        id="email"
+                        placeholder="Email"
+                        {...register("email", {
+                          required: "Email is required",
+                          pattern: {
+                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                            message: "Invalid email address",
+                          },
+                        })}
+                      />
+                      <label htmlFor="email">Email</label>
+                      {errors.email && (
+                        <div className="invalid-feedback">
+                          {String(errors.email.message)}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <div className="second_input_box form-floating m-3 mt-5">
-                    <input
-                      type="text"
-                      className={`form-control ${
-                        errors.email ? "is-invalid" : ""
-                      }`}
-                      id="email"
-                      placeholder="Email"
-                      {...register("email", {
-                        required: "Email is required",
-                        pattern: {
-                          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                          message: "Invalid email address",
-                        },
-                      })}
-                    />
-                    <label htmlFor="email">Email</label>
-                    {errors.email && (
-                      <div className="invalid-feedback">
-                        {String(errors.email.message)}
-                      </div>
-                    )}
-                  </div>
-                </div>
-                <div style={{ width: "50%" }}>
-                  <div className="second_input_box form-floating m-3">
-                    <input
-                      type="text"
-                      className={`form-control ${
-                        errors.phone ? "is-invalid" : ""
-                      }`}
-                      id="phone"
-                      placeholder="Phone"
-                      {...register("phone", {
-                        required: "Phone is required",
-                        pattern: {
-                          value: /^[0-9]{10}$/,
-                          message: "Phone number must be 10 digits",
-                        },
-                      })}
-                    />
-                    <label htmlFor="phone">Phone</label>
-                    {errors.phone && (
-                      <div className="invalid-feedback">
-                        {String(errors.phone.message)}
-                      </div>
-                    )}
-                  </div>
-                  <div className="second_input_box form-floating m-3 mt-5">
-                    <input
-                      type="text"
-                      className={`form-control ${
-                        errors.company ? "is-invalid" : ""
-                      }`}
-                      id="company"
-                      placeholder="Company Name"
-                      {...register("company", {
-                        required: "Company Name is required",
-                      })}
-                    />
-                    <label htmlFor="company">Company Name</label>
-                    {errors.company && (
-                      <div className="invalid-feedback">
-                        {String(errors.company.message)}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-               
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "end",
-                }}
-                className = "second_btn_div"
-              >
+                  <div style={{ width: "50%" }}>
+                    <div className="second_input_box form-floating m-3">
+                      <input
+                        type="text"
+                        className={`form-control ${errors.phone ? "is-invalid" : ""
+                          }`}
+                        id="phone"
+                        placeholder="Phone"
+                        {...register("phone", {
+                          required: "Phone is required",
+                          pattern: {
+                            value: /^[0-9]{10}$/,
+                            message: "Phone number must be 10 digits",
+                          },
+                        })}
+                      />
+                      <label htmlFor="phone">Phone</label>
+                      {errors.phone && (
+                        <div className="invalid-feedback">
+                          {String(errors.phone.message)}
+                        </div>
+                      )}
+                    </div>
+                    <div className="second_input_box form-floating m-3 mt-5">
+                      <input
+                        type="text"
+                        className={`form-control ${errors.company ? "is-invalid" : ""
+                          }`}
+                        id="company"
+                        placeholder="Company Name"
+                        {...register("company", {
+                          required: "Company Name is required",
+                        })}
+                      />
+                      <label htmlFor="company">Company Name</label>
+                      {errors.company && (
+                        <div className="invalid-feedback">
+                          {String(errors.company.message)}
+                        </div>
+                      )}
 
-                {showSpinner && <Spinner animation="border" variant="warning" style={{marginRight : '20px', marginTop : '20px'}} />} &nbsp;
-               
-                <button
-                type="submit"
+                      <input type="text" name="website" style={{ display: 'none' }} tabIndex={-1} autoComplete="off"></input>
+                    </div>
+                  </div>
+                </div>
+
+                <div
                   style={{
-                    width: 350,
-                    backgroundColor:
-                      selected?.category === "people"
-                        ? "#ED9E3F"
-                        : selected?.category === "strategy"
-                        ? "#0184D4"
-                        : selected?.category === "execution"
-                        ? "#7D5C39"
-                        : selected?.category === "cash"
-                        ? "#86BE41"
-                        : "",
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "end",
                   }}
-                  className="py-3 btn_div"
+                  className="second_btn_div"
                 >
-                  Download
-                </button>
-                 
-              </div>
+
+                  {showSpinner && <Spinner animation="border" variant="warning" style={{ marginRight: '20px', marginTop: '20px' }} />} &nbsp;
+
+                  <button
+                    type="submit"
+                    style={{
+                      width: 350,
+                      backgroundColor:
+                        selected?.category === "people"
+                          ? "#ED9E3F"
+                          : selected?.category === "strategy"
+                            ? "#0184D4"
+                            : selected?.category === "execution"
+                              ? "#7D5C39"
+                              : selected?.category === "cash"
+                                ? "#86BE41"
+                                : "",
+                    }}
+                    className="py-3 btn_div"
+                  >
+                    Download
+                  </button>
+
+                </div>
               </form>
-              
+
             </div>
           </div>
         </div>

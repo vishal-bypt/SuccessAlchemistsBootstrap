@@ -26,6 +26,14 @@ const ContactUs = () => {
     const postData:any = data;
 
     try {
+
+      if (postData.website) {
+        //return res.status(400).json({ error: 'Spam detected' });
+        console.error("Error:", 'Spam detected');
+        Toast.error("Spam detected.");
+        throw new Error(`Spam detected`);
+      }
+
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
@@ -38,6 +46,7 @@ const ContactUs = () => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
+      
       const data = await response.json();
       reset();
       Toast.success("Your enquiry has been submitted successfully!");
@@ -184,6 +193,7 @@ const ContactUs = () => {
                     </div>
                   )}
                 </div>
+                <input type="text" name="website" style={{ display: 'none' }} tabIndex={-1} autoComplete="off"></input>
               </div>
             </div>
 
