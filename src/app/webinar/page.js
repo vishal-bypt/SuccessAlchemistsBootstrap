@@ -208,7 +208,7 @@ const WebinarPage = () => {
       {/* FLOATING REGISTER DIV */}
       <div className="floating-register-div">
         <div className="floating-register-left">
-          <p className="floating-register-text">Only 10 Spots Remain. Reserve Yours Now.</p>
+          <p className="floating-register-text">Only Few Spots Remain. Reserve Yours Now.</p>
           <p className="floating-register-subtext"></p>
         </div>
         <div className="floating-register-right">
