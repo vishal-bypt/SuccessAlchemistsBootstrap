@@ -82,30 +82,20 @@ export default function RootLayout({
       >
         {/* Google Analytics Script */}
         <Script
-          strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-V9F61S5HVC"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-V9F61S5HVC');
-            `,
-          }}
-        />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17882487402"
           strategy="afterInteractive"
         />
-        <Script id="gtag-init" strategy="afterInteractive">
+
+        <Script id="google-tags" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+
+            // GA4
+            gtag('config', 'G-V9F61S5HVC');
+
+            // Google Ads
             gtag('config', 'AW-17882487402');
           `}
         </Script>
