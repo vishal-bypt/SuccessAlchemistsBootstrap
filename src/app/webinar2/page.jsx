@@ -204,6 +204,16 @@ const Webinar2Page = () => {
       <div className="container-fluid masterclass-wrapper min-vh-100 d-flex align-items-center">
         <div className="row w-100 justify-content-center">
           <div className="col-12 col-md-6 first-container ">
+            {/* FLOATING REGISTER DIV */}
+      <div className="floating-register-div">
+        <div className="floating-register-left">
+          <p className="floating-register-text">Only Few Spots Remain. Reserve Yours Now.</p>
+          <p className="floating-register-subtext"></p>
+        </div>
+        <div className="floating-register-right">
+          <button className="floating-register-button" onClick={handleShow}>SECURE YOUR SPOT NOW</button>
+        </div>
+      </div>
             <div className="card masterclass-card text-center p-4 border-0">
               {/* Logo */}
               
