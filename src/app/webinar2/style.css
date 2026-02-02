@@ -1,0 +1,393 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.masterclass-wrapper {
+  background: linear-gradient(180deg, #0c1f33, #081625);
+}
+
+.masterclass-card {
+  background: transparent;
+}
+
+.logo-img {
+  height: 40px;
+}
+
+.coach-title{
+  font-size: 72px;
+}
+
+.subtitle {
+  color: #ffb400;
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.speaker-img img {
+  max-width: 70%;
+  border-radius: 6px;
+}
+
+.speaker-role {
+  color: #ffb400;
+  font-size: 0.85rem;
+}
+
+.first-container{
+  width: 85% !important;
+}
+
+.coach_section{
+  display: flex;
+}
+
+.event-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.event-details p {
+  color: #ffffff;
+  font-size: 26px;
+  margin-bottom: 22px;
+}
+
+.event-details i {
+  color: #ffb400;
+  margin-right: 8px;
+}
+
+.price-box {
+  background-color: #0f2a45;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top : 2rem!important;
+}
+
+.price-box h3 {
+  color: #ffb400;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.price-box small {
+  color: #cfd8dc;
+}
+
+/* SECOND SECTION */
+.learn-section {
+  background-color: #f6a800;
+}
+
+.section-title {
+  font-weight: 800;
+  font-size: 60px;
+}
+
+.learn-card {
+  background-color: #ffffff;
+  color: #000;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 12px 8px;
+  border-radius: 4px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.highlight-box {
+  background-color: #004aad;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.audience-title {
+  font-weight: 800;
+  color: #000;
+  font-size: 30px;
+}
+
+.audience-subtitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+
+.audience-list {
+  font-size: 20px;
+  padding-left: 16px;
+  margin-right: 35px;
+  float: right;
+}
+
+.audience-list li {
+  margin-bottom: 8px;
+}
+
+
+/* THIRD SECTION */
+.testimonials-section {
+  background-color: #ffffff;
+}
+
+.testimonials-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #000;
+}
+
+.video-box {
+  padding: 0 10px;
+}
+
+.video-placeholder {
+  background-color: #ffffff;
+  border: 3px solid #000;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.brand-slider {
+  background-color: #ffe15a;
+  padding: 16px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+}
+
+.stats-row h4 {
+  font-weight: 800;
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.stats-row p {
+  font-size: 18px;
+  margin-bottom: 0;
+  color: #000;
+}
+
+/* FOURTH SECTION */
+.about-section {
+  background-color: #e5e5e5;
+}
+
+.about-logo {
+  height: 45px;
+}
+
+.about-title {
+  font-weight: 800;
+  font-size: 52px;
+  line-height: 1.2;
+}
+
+.about-box {
+  background-color: #ffffff;
+  border: 3px solid #ffb703;
+  border-radius: 20px;
+  font-size: 26px;
+  padding: 50px 60px !important;
+}
+
+.about-box p {
+  margin-bottom: 10px;
+}
+
+.about-description {
+  font-size: 24px;
+  color: #000;
+}
+
+.about-stats h4 {
+  font-weight: 800;
+  font-size: 34px;
+}
+
+.about-stats p {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.cta-btn {
+  font-weight: 700;
+  border-radius: 20px;
+  font-size: 22px;
+}
+
+.cta-subtext {
+  font-size: 18px;
+  color: #000;
+}
+
+@media screen and (max-width: 1025px) {
+  .masterclass-card {
+    padding: 16px !important;
+  }
+  .event-details p{
+    font-size: 18px;
+  }
+  .coach-title{
+    font-size: 56px !important;
+  }
+  .section-title {
+    font-size: 56px;
+  }
+  .subtitle {
+    font-size: 24px;
+  }
+  .about-title {
+    font-size: 44px;
+  }
+}
+
+
+@media screen and (max-width: 991px) {
+  .first-container{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .masterclass-card {
+    padding: 16px !important;
+  }
+  .coach_section{
+    flex-direction: column;
+  }
+  .coach-title{
+    font-size: 42px !important;
+  }
+  .section-title {
+    font-size: 42px;
+  }
+  .event-section{
+    width: 100%;
+  }
+  .subtitle {
+    font-size: 20px;
+  }
+  .event-details{
+    text-align: center !important;
+  }
+  .price-box{
+    margin-top : 12px !important;
+    margin-bottom: 32px !important;
+  }
+
+
+  .testimonials-title {
+    font-size: 32px;
+  }
+  .stats-row h4 {
+    font-size: 28px;
+  }
+  .stats-row p {
+    font-size: 16px;
+  } 
+  .testimonial-text{
+    margin-bottom: 30px;
+  }
+
+  .brand-slider {
+    font-size: 20px;
+  }
+  .cta-btn {
+    font-size: 20px;  
+  }
+
+  .learn-card {
+    font-size: 18px;
+  }
+  .highlight-box {
+    font-size: 18px;
+  }
+
+
+  .about-title {
+    font-size: 42px;
+  }
+  .about-box {
+    padding: 30px 20px !important;
+    font-size: 20px;
+  }
+  .about-description {
+    font-size: 20px;
+  }
+  .about-stats h4 {
+    font-size: 28px;
+  }
+  .about-stats p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .masterclass-card, .first-container {
+    padding: 0px !important;
+  }
+
+  .coach-title{
+    font-size: 28px !important;
+  }
+
+
+  .section-title {
+    font-size: 28px;
+  }
+
+
+  .subtitle {
+    font-size: 18px;
+  }
+  .event-details p{
+    font-size: 16px;
+  }
+  .learn-card {
+    font-size: 16px;
+  }
+  .learn-box{
+    display: flex;
+    flex-direction: column;
+  }
+  .highlight-box {
+    font-size: 16px;
+  }
+
+  .testimonials-title {
+    font-size: 24px;
+  }
+
+  .about-box{
+    padding: 25px 20px !important;
+  }
+  .about-title {
+    font-size: 28px;
+  }
+  .about-box p{
+    font-size: 18px;
+  }
+  .about-description{
+    font-size: 18px;
+  }
+} 
+
+.swiper-pagination{
+  position: relative !important;
+  margin-top: 25px !important;
+}
