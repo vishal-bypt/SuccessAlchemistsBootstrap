@@ -10,11 +10,18 @@ import Image from "next/image";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+
+const LogoCarousel = dynamic(() => import("../home/components/LogoCarousel"), {
+  ssr: false,
+  loading: () => <div style={{ minHeight: "200px" }}>Loading...</div>,
+});
 
 const Webinar2Page = () => {
   const [show, setShow] = useState(false);
@@ -205,18 +212,24 @@ const Webinar2Page = () => {
         <div className="row w-100 justify-content-center">
           <div className="col-12 col-md-6 first-container ">
             {/* FLOATING REGISTER DIV */}
-      <div className="floating-register-div">
-        <div className="floating-register-left">
-          <p className="floating-register-text">Only Few Spots Remain. Reserve Yours Now.</p>
-          <p className="floating-register-subtext"></p>
-        </div>
-        <div className="floating-register-right">
-          <button className="floating-register-button" onClick={handleShow}>SECURE YOUR SPOT NOW</button>
-        </div>
-      </div>
+            <div className="floating-register-div">
+              <div className="floating-register-left">
+                <p className="floating-register-text">
+                  Only Few Spots Remain. Reserve Yours Now.
+                </p>
+                <p className="floating-register-subtext"></p>
+              </div>
+              <div className="floating-register-right">
+                <button
+                  className="floating-register-button"
+                  onClick={handleShow}
+                >
+                  SECURE YOUR SPOT NOW
+                </button>
+              </div>
+            </div>
             <div className="card masterclass-card text-center p-4 border-0">
               {/* Logo */}
-              
 
               {/* Heading */}
               <h2 className="text-white coach-title fw-bold">
@@ -249,11 +262,11 @@ const Webinar2Page = () => {
                   <div className="event-details text-start mt-4">
                     <p>
                       <i className="bi bi-calendar-event"></i>
-                      <strong>Date:</strong> 28<sup>th</sup> January 2026
+                      <strong>Date:</strong> 7<sup>th</sup> February 2026
                     </p>
                     <p>
                       <i className="bi bi-clock"></i>
-                      <strong>Time:</strong> 7.30 pm – 9.30 pm
+                      <strong>Time:</strong> 11 am – 1 pm IST
                     </p>
                     <p>
                       <i className="bi bi-camera-video"></i>
@@ -262,7 +275,11 @@ const Webinar2Page = () => {
                   </div>
 
                   {/* Price */}
-                  <div className="price-box mt-3" style={{cursor:"pointer"}} onClick={handleShow}>
+                  <div
+                    className="price-box mt-3"
+                    style={{ cursor: "pointer" }}
+                    onClick={handleShow}
+                  >
                     <h3>Rs 299/- Only</h3>
                     <small>
                       *Special price for first 100 participants only
@@ -372,63 +389,71 @@ const Webinar2Page = () => {
 
                   {/* Video Placeholder */}
                   <div className="video-box mb-4">
-                              <div style={{ position: "relative" }}>
-        <Swiper
-          ref={swiperRef}
-          slidesPerView={1}
-          onSlideChange={handleSlideChange}
-          centeredSlides={true}
-          navigation={false}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination, Navigation]}
-          className="mySwiper"
-        >
-          {items?.map((d, i) => (
-            <SwiperSlide key={i}>
-              <div className="row slider-row" align="center">
-                {/* <div className="video col-md-2"></div> */}
-                <div className="video col-md-12">
-                  <div className="ratio ratio-16x9">
-                    <iframe
-                      key={i}
-                      src={d.src}
-                      className="home-video"
-                      title="YouTube video player"
-                      allow="autoplay; encrypted-media"
-                      allowFullScreen={true}
-                      onClick={() => handleClick(i)}
-                    ></iframe>
+                    <div style={{ position: "relative" }}>
+                      <Swiper
+                        ref={swiperRef}
+                        slidesPerView={1}
+                        onSlideChange={handleSlideChange}
+                        centeredSlides={true}
+                        navigation={false}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        modules={[Pagination, Navigation]}
+                        className="mySwiper"
+                      >
+                        {items?.map((d, i) => (
+                          <SwiperSlide key={i}>
+                            <div className="row slider-row" align="center">
+                              {/* <div className="video col-md-2"></div> */}
+                              <div className="video col-md-12">
+                                <div className="ratio ratio-16x9">
+                                  <iframe
+                                    key={i}
+                                    src={d.src}
+                                    className="home-video"
+                                    title="YouTube video player"
+                                    allow="autoplay; encrypted-media"
+                                    allowFullScreen={true}
+                                    onClick={() => handleClick(i)}
+                                  ></iframe>
+                                </div>
+                              </div>
+                              {/* <div className="video col-md-2"></div> */}
+                            </div>
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
+                      <div className="img-fluid navigation-buttons">
+                        <div onClick={backward}>
+                          <Image
+                            src={left_arrow_btn}
+                            className="img-fluid nav-left-btn"
+                            alt="left navigation arrow"
+                          />
+                        </div>
+                        <div onClick={forward}>
+                          <Image
+                            src={right_arrow_btn}
+                            className="img-fluid nav-left-btn"
+                            alt="right navigation arrow"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                {/* <div className="video col-md-2"></div> */}
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="img-fluid navigation-buttons">
-          <div onClick={backward}>
-            <Image
-              src={left_arrow_btn}
-              className="img-fluid nav-left-btn"
-              alt="left navigation arrow"
-            />
-          </div>
-          <div onClick={forward}>
-            <Image
-              src={right_arrow_btn}
-              className="img-fluid nav-left-btn"
-              alt="right navigation arrow"
-            />
-          </div>
-        </div>
-      </div>
-                  </div>
-
+                <div className="col-12 col-md-12 text-center">
                   {/* Brand Logos Slider Placeholder */}
-                  <div className="brand-slider mb-4">
-                    CLIENT BRAND LOGOS SLIDER
+                  <div className="mb-4">
+                    {/* Logo Carousel */}
+                    <Suspense
+                      fallback={
+                        <div style={{ minHeight: "200px" }}>Loading...</div>
+                      }
+                    >
+                      <LogoCarousel />
+                    </Suspense>
                   </div>
 
                   {/* Stats */}
@@ -537,157 +562,177 @@ const Webinar2Page = () => {
               </div>
             </div>
           </section>
-           <Modal show={show} onHide={handleClose}>
-        <Form onSubmit={handleFormSubmit(handleSubmit)}>
-          <Modal.Header closeButton>
-            <Modal.Title>Book Your Webinar Seat</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Form.Group className="mb-3">
-              <Form.Label>Company Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter company name"
-                {...register("companyName", {
-                  required: "Company name is required",
-                  minLength: {
-                    value: 2,
-                    message: "Company name must be at least 2 characters",
-                  },
-                })}
-                isInvalid={!!errors.companyName}
-              />
-              {errors.companyName && (
-                <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
-                  {errors.companyName.message}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
+          <Modal show={show} onHide={handleClose}>
+            <Form onSubmit={handleFormSubmit(handleSubmit)}>
+              <Modal.Header closeButton>
+                <Modal.Title>Book Your Webinar Seat</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Form.Group className="mb-3">
+                  <Form.Label>Company Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter company name"
+                    {...register("companyName", {
+                      required: "Company name is required",
+                      minLength: {
+                        value: 2,
+                        message: "Company name must be at least 2 characters",
+                      },
+                    })}
+                    isInvalid={!!errors.companyName}
+                  />
+                  {errors.companyName && (
+                    <Form.Control.Feedback
+                      type="invalid"
+                      style={{ display: "block" }}
+                    >
+                      {errors.companyName.message}
+                    </Form.Control.Feedback>
+                  )}
+                </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Your Designation</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter your designation"
-                {...register("yourDesignation", {
-                  required: "Designation is required",
-                  minLength: {
-                    value: 2,
-                    message: "Designation must be at least 2 characters",
-                  },
-                })}
-                isInvalid={!!errors.yourDesignation}
-              />
-              {errors.yourDesignation && (
-                <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
-                  {errors.yourDesignation.message}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
+                <Form.Group className="mb-3">
+                  <Form.Label>Your Designation</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter your designation"
+                    {...register("yourDesignation", {
+                      required: "Designation is required",
+                      minLength: {
+                        value: 2,
+                        message: "Designation must be at least 2 characters",
+                      },
+                    })}
+                    isInvalid={!!errors.yourDesignation}
+                  />
+                  {errors.yourDesignation && (
+                    <Form.Control.Feedback
+                      type="invalid"
+                      style={{ display: "block" }}
+                    >
+                      {errors.yourDesignation.message}
+                    </Form.Control.Feedback>
+                  )}
+                </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>First Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter first name"
-                {...register("firstName", {
-                  required: "First name is required",
-                  minLength: {
-                    value: 2,
-                    message: "First name must be at least 2 characters",
-                  },
-                  pattern: {
-                    value: /^[a-zA-Z\s]*$/,
-                    message: "First name can only contain letters and spaces",
-                  },
-                })}
-                isInvalid={!!errors.firstName}
-              />
-              {errors.firstName && (
-                <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
-                  {errors.firstName.message}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
+                <Form.Group className="mb-3">
+                  <Form.Label>First Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter first name"
+                    {...register("firstName", {
+                      required: "First name is required",
+                      minLength: {
+                        value: 2,
+                        message: "First name must be at least 2 characters",
+                      },
+                      pattern: {
+                        value: /^[a-zA-Z\s]*$/,
+                        message:
+                          "First name can only contain letters and spaces",
+                      },
+                    })}
+                    isInvalid={!!errors.firstName}
+                  />
+                  {errors.firstName && (
+                    <Form.Control.Feedback
+                      type="invalid"
+                      style={{ display: "block" }}
+                    >
+                      {errors.firstName.message}
+                    </Form.Control.Feedback>
+                  )}
+                </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter last name"
-                {...register("lastName", {
-                  required: "Last name is required",
-                  minLength: {
-                    value: 2,
-                    message: "Last name must be at least 2 characters",
-                  },
-                  pattern: {
-                    value: /^[a-zA-Z\s]*$/,
-                    message: "Last name can only contain letters and spaces",
-                  },
-                })}
-                isInvalid={!!errors.lastName}
-              />
-              {errors.lastName && (
-                <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
-                  {errors.lastName.message}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
+                <Form.Group className="mb-3">
+                  <Form.Label>Last Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter last name"
+                    {...register("lastName", {
+                      required: "Last name is required",
+                      minLength: {
+                        value: 2,
+                        message: "Last name must be at least 2 characters",
+                      },
+                      pattern: {
+                        value: /^[a-zA-Z\s]*$/,
+                        message:
+                          "Last name can only contain letters and spaces",
+                      },
+                    })}
+                    isInvalid={!!errors.lastName}
+                  />
+                  {errors.lastName && (
+                    <Form.Control.Feedback
+                      type="invalid"
+                      style={{ display: "block" }}
+                    >
+                      {errors.lastName.message}
+                    </Form.Control.Feedback>
+                  )}
+                </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="name@example.com"
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: "Please enter a valid email address",
-                  },
-                })}
-                isInvalid={!!errors.email}
-              />
-              {errors.email && (
-                <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
-                  {errors.email.message}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
+                <Form.Group className="mb-3">
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="name@example.com"
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                        message: "Please enter a valid email address",
+                      },
+                    })}
+                    isInvalid={!!errors.email}
+                  />
+                  {errors.email && (
+                    <Form.Control.Feedback
+                      type="invalid"
+                      style={{ display: "block" }}
+                    >
+                      {errors.email.message}
+                    </Form.Control.Feedback>
+                  )}
+                </Form.Group>
 
-            <Form.Group className="mb-3">
-              <Form.Label>Phone Number</Form.Label>
-              <Form.Control
-                type="tel"
-                placeholder="10-digit phone number"
-                {...register("phone", {
-                  required: "Phone number is required",
-                  pattern: {
-                    value: /^\d{10}$/,
-                    message: "Please enter a valid 10-digit phone number",
-                  },
-                })}
-                isInvalid={!!errors.phone}
-              />
-              {errors.phone && (
-                <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
-                  {errors.phone.message}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
-          </Modal.Body>
+                <Form.Group className="mb-3">
+                  <Form.Label>Phone Number</Form.Label>
+                  <Form.Control
+                    type="tel"
+                    placeholder="10-digit phone number"
+                    {...register("phone", {
+                      required: "Phone number is required",
+                      pattern: {
+                        value: /^\d{10}$/,
+                        message: "Please enter a valid 10-digit phone number",
+                      },
+                    })}
+                    isInvalid={!!errors.phone}
+                  />
+                  {errors.phone && (
+                    <Form.Control.Feedback
+                      type="invalid"
+                      style={{ display: "block" }}
+                    >
+                      {errors.phone.message}
+                    </Form.Control.Feedback>
+                  )}
+                </Form.Group>
+              </Modal.Body>
 
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button type="submit" variant="primary" disabled={!isValid}>
-              Submit
-            </Button>
-          </Modal.Footer>
-        </Form>
-      </Modal>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Close
+                </Button>
+                <Button type="submit" variant="primary" disabled={!isValid}>
+                  Submit
+                </Button>
+              </Modal.Footer>
+            </Form>
+          </Modal>
         </div>
       </div>
     </>
