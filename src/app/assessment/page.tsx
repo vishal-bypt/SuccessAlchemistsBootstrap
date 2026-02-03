@@ -19,7 +19,7 @@ const page = () => {
     const response = await fetch(apiUrl + "/initiate-payment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ order_id, amount: '29500', billing_name: `${firstName} ${lastName}`, billing_email: email, billing_tel: phone })});
+      body: JSON.stringify({ order_id, amount: '29500', billing_name: `${firstName} ${lastName}`, billing_email: email, billing_tel: phone, company : "NA", designation : "NA" })});
 
     const data = await response.json();
 
@@ -153,7 +153,7 @@ const page = () => {
                 Ready to Take the First Step Towards Smarter Scaling?
               </p>
               <p className="text pt-2" style={{ fontWeight: "Bold" }}>
-                Complete your Scaling Up Assessment for just ₹25,000.
+                Complete your Scaling Up Assessment for just ₹25,000 + GST.
               </p>
               <p className="text pt-2">
                 Proceed to make your payment here and share your team’s details to activate your Scaling Up Assessment.
