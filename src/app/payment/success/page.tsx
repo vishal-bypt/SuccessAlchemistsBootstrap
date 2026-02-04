@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Lottie from 'lottie-react';
+import Script from "next/script";
 import successAnimation from '@/app/payment/images/payment_sucessful.json';
 
 type PaymentResponse = {
@@ -30,6 +31,18 @@ export default function PaymentSuccess() {
 
   return (
     <div className="container mx-auto max-w-md shadow-md rounded-lg">
+      <Script id="linkedin-insight" strategy="afterInteractive">
+        {`
+          _linkedin_partner_id = "8646652";
+          window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+          window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+        `}
+      </Script>
+
+      <Script
+        src="https://snap.licdn.com/li.lms-analytics/insight.min.js"
+        strategy="afterInteractive"
+      />
       <div className="p-6 flex flex-col items-center">
         <div >
           <Lottie
