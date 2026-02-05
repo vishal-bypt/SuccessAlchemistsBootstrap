@@ -51,6 +51,7 @@ export default function BasecampPage() {
 
   const promoCode = watch("promoCode");
   const plan = watch("plan");
+  const basecampLocation = watch("basecampLocation");
 
   //const VALID_PROMO = "SAVE20";
   const exclusiveArray = [
@@ -221,60 +222,77 @@ export default function BasecampPage() {
 
     console.log("Records is:::::", payload);
 
-    const response = await fetch(apiUrl + "/initiate-payment", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
+    // Check if API URL is defined
+    if (!apiUrl) {
+      alert("Payment failed: API URL is not configured. Please check your environment variables.");
+      console.error("NEXT_PUBLIC_API_URL is not defined");
+      return;
+    }
 
-    const paymentData = await response.json();
-    console.log("Response from /initiate-payment:", paymentData);
+    try {
+      const response = await fetch(apiUrl + "/initiate-payment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    if (paymentData.paymentUrl) {
-      try {
-        // 2️⃣ Fire Google Ads conversion
-        window.gtag("event", "conversion", {
-          send_to: "AW-17882487402/Jbp8CM7T7OcbEOq0hM9C",
-        });
-
-        // 3️⃣ Optional: redirect / show success message
-        console.log("Lead submitted & conversion tracked");
-
-        const { encRequest, access_code, ccavenueUrl } = paymentData;
-
-        if (encRequest && access_code) {
-          const existingForm = document.getElementById("ccavenue-payment-form");
-          if (existingForm) existingForm.remove();
-
-          const form = document.createElement("form");
-          form.method = "POST";
-          form.action = ccavenueUrl;
-          form.id = "ccavenue-payment-form";
-
-          const accessInput = document.createElement("input");
-          accessInput.type = "hidden";
-          accessInput.name = "access_code";
-          accessInput.value = access_code;
-          form.appendChild(accessInput);
-
-          const encInput = document.createElement("input");
-          encInput.type = "hidden";
-          encInput.name = "encRequest";
-          encInput.value = encRequest;
-          form.appendChild(encInput);
-
-          document.body.appendChild(form);
-          form.submit();
-        } else {
-          alert("Payment failed: Missing required data.");
-        }
-      } catch (error) {
-        alert("Payment failed: Invalid URL");
-        console.error(error);
+      // Check if response is ok
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    } else {
-      alert("Payment failed: Server error");
-      console.error(paymentData);
+
+      const paymentData = await response.json();
+      console.log("Response from /initiate-payment:", paymentData);
+
+      if (paymentData.paymentUrl) {
+        try {
+          // 2️⃣ Fire Google Ads conversion
+          window.gtag("event", "conversion", {
+            send_to: "AW-17882487402/Jbp8CM7T7OcbEOq0hM9C",
+          });
+
+          // 3️⃣ Optional: redirect / show success message
+          console.log("Lead submitted & conversion tracked");
+
+          const { encRequest, access_code, ccavenueUrl } = paymentData;
+
+          if (encRequest && access_code) {
+            const existingForm = document.getElementById("ccavenue-payment-form");
+            if (existingForm) existingForm.remove();
+
+            const form = document.createElement("form");
+            form.method = "POST";
+            form.action = ccavenueUrl;
+            form.id = "ccavenue-payment-form";
+
+            const accessInput = document.createElement("input");
+            accessInput.type = "hidden";
+            accessInput.name = "access_code";
+            accessInput.value = access_code;
+            form.appendChild(accessInput);
+
+            const encInput = document.createElement("input");
+            encInput.type = "hidden";
+            encInput.name = "encRequest";
+            encInput.value = encRequest;
+            form.appendChild(encInput);
+
+            document.body.appendChild(form);
+            form.submit();
+          } else {
+            alert("Payment failed: Missing required data.");
+          }
+        } catch (error) {
+          alert("Payment failed: Invalid URL");
+          console.error(error);
+        }
+      } else {
+        alert("Payment failed: Server error");
+        console.error(paymentData);
+      }
+    } catch (error) {
+      console.error("Payment fetch error:", error);
+      alert(`Payment failed: ${error.message || "Network error. Please check your connection and try again."}`);
     }
   };
 
@@ -335,6 +353,32 @@ export default function BasecampPage() {
 
     return 0;
   };
+
+  // Plan options based on location
+  const getPlanOptions = () => {
+    if (!basecampLocation) return [];
+    
+    if (basecampLocation === "Pune - 12th Feb'26") {
+      return [
+        { value: "9999", label: "For Individuals - ₹9999 + GST" },
+        { value: "22499", label: "For Team of 3 members - ₹22499 + GST" },
+      ];
+    } else if (basecampLocation === "Mumbai - 26th Feb'26") {
+      return [
+        { value: "79999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        { value: "17999", label: "Early Bird - For 3 Team members - ₹17999 + GST" },
+      ];
+    }
+    
+    return [];
+  };
+
+  // Reset plan when basecamp location changes
+  useEffect(() => {
+    setValue("plan", "");
+    setDiscount(0);
+    setPromoApplied(false);
+  }, [basecampLocation, setValue]);
 
   return (
     <div>
@@ -992,24 +1036,31 @@ export default function BasecampPage() {
               </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Label>No. of attendees</Form.Label>
-            <Form.Select
-              {...register("plan", {
-                required: "Please select a plan",
-              })}
-              isInvalid={!!errors.plan}
-            >
-              <option value="">- Select Plan -</option>
-              <option value="7999">
-                Early Bird - For Individuals - ₹7999 + GST
-              </option>
-              <option value="17999">
-                Early Bird - For 3 Teams members - ₹17999 + GST
-              </option>
-            </Form.Select>
-            <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
-              {errors.plan?.message}
-            </Form.Control.Feedback>
+            <Form.Group className="mb-3">
+              <Form.Label>No. of attendees</Form.Label>
+              <Form.Select
+                {...register("plan", {
+                  required: "Please select a plan",
+                })}
+                isInvalid={!!errors.plan}
+                disabled={!basecampLocation}
+              >
+                <option value="">- Select Plan -</option>
+                {getPlanOptions().map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </Form.Select>
+              <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
+                {errors.plan?.message}
+              </Form.Control.Feedback>
+              {!basecampLocation && (
+                <Form.Text className="text-muted">
+                  Please select a basecamp location first
+                </Form.Text>
+              )}
+            </Form.Group>
 
             <div className="row">&nbsp;</div>
             <Form.Group className="mb-3">
