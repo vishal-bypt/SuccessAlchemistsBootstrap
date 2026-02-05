@@ -341,7 +341,7 @@ export default function BasecampPage() {
       {/* FLOATING REGISTER DIV */}
       <div className="floating-register-div">
         <div className="floating-register-left">
-          <p className="floating-register-text">Only 10 Spots Remain. Reserve Yours Now.</p>
+          <p className="floating-register-text">Early Bird Offer Ending Soon. Only 10 Spots Remain. Reserve Yours Now.</p>
           <p className="floating-register-subtext"></p>
         </div>
         <div className="floating-register-right">
@@ -443,7 +443,8 @@ export default function BasecampPage() {
             <span class="old-price">Rs 9999</span>
             <span class="new-price">Rs 7999 only</span>
           </div>
-
+           <p style={{color:"#0b2239"}}><h5>Ending Soon. Hurry!</h5></p>           
+           <p>&nbsp;</p>         
           <button class="cta-btn">SIGN UP TODAY</button>
 
           <p class="guarantee">
