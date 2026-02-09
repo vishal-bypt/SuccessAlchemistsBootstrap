@@ -741,6 +741,11 @@ img {
            RESPONSIVE DESIGN - TABLET (992px and below)
            ============================================ */
 @media (max-width: 1200px) {
+
+    .metric-value {
+        font-size: 50px;
+    }
+
     .hero-content h1 {
         font-size: 90px;
     }
