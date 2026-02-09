@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import left_arrow_btn from "../home/images/left-arrow-btn.png";
 import right_arrow_btn from "../home/images/right-arrow-btn.png";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import "./style.css";
 // Import Swiper styles
 import "swiper/css";
@@ -48,6 +49,9 @@ export default function BasecampPage() {
   const [order_id] = useState(`ORD${Date.now()}`);
   const [discount, setDiscount] = useState(0);
   const [promoApplied, setPromoApplied] = useState(false);
+
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [recaptchaReady, setRecaptchaReady] = useState(false);
 
   const promoCode = watch("promoCode");
   const plan = watch("plan");
@@ -172,6 +176,12 @@ export default function BasecampPage() {
   }, [index]);
 
   useEffect(() => {
+    if (executeRecaptcha) {
+      setRecaptchaReady(true);
+    }
+  }, [executeRecaptcha]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setSentenceIndex((prev) => (prev + 1) % sentences.length);
     }, 3000);
@@ -190,6 +200,12 @@ export default function BasecampPage() {
   };
 
   const handleSubmit = async (data) => {
+    if (data.website) {
+      //return res.status(400).json({ error: 'Spam detected' });
+      console.error("Error:", "Spam detected");
+      Toast.error("Spam detected.");
+      throw new Error(`Spam detected`);
+    }
     await handlePayment(data);
     handleClose();
   };
@@ -222,18 +238,27 @@ export default function BasecampPage() {
 
     console.log("Records is:::::", payload);
 
+     if (!executeRecaptcha) {
+        Toast.error("reCAPTCHA not ready");
+        return;
+      }
+
     // Check if API URL is defined
     if (!apiUrl) {
-      alert("Payment failed: API URL is not configured. Please check your environment variables.");
+      alert(
+        "Payment failed: API URL is not configured. Please check your environment variables."
+      );
       console.error("NEXT_PUBLIC_API_URL is not defined");
       return;
     }
 
     try {
+
+      const recaptchaToken = await executeRecaptcha("basecamp_form");
       const response = await fetch(apiUrl + "/initiate-payment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({...payload, recaptchaToken}),
       });
 
       // Check if response is ok
@@ -257,7 +282,9 @@ export default function BasecampPage() {
           const { encRequest, access_code, ccavenueUrl } = paymentData;
 
           if (encRequest && access_code) {
-            const existingForm = document.getElementById("ccavenue-payment-form");
+            const existingForm = document.getElementById(
+              "ccavenue-payment-form"
+            );
             if (existingForm) existingForm.remove();
 
             const form = document.createElement("form");
@@ -292,7 +319,12 @@ export default function BasecampPage() {
       }
     } catch (error) {
       console.error("Payment fetch error:", error);
-      alert(`Payment failed: ${error.message || "Network error. Please check your connection and try again."}`);
+      alert(
+        `Payment failed: ${
+          error.message ||
+          "Network error. Please check your connection and try again."
+        }`
+      );
     }
   };
 
@@ -357,7 +389,7 @@ export default function BasecampPage() {
   // Plan options based on location
   const getPlanOptions = () => {
     if (!basecampLocation) return [];
-    
+
     if (basecampLocation === "Pune - 12th Feb'26") {
       return [
         { value: "9999", label: "For Individuals - ₹9999 + GST" },
@@ -365,11 +397,14 @@ export default function BasecampPage() {
       ];
     } else if (basecampLocation === "Mumbai - 26th Feb'26") {
       return [
-        { value: "79999", label: "Early Bird - For Individuals - ₹7999 + GST" },
-        { value: "17999", label: "Early Bird - For 3 Team members - ₹17999 + GST" },
+        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        {
+          value: "17999",
+          label: "Early Bird - For 3 Team members - ₹17999 + GST",
+        },
       ];
     }
-    
+
     return [];
   };
 
@@ -385,11 +420,16 @@ export default function BasecampPage() {
       {/* FLOATING REGISTER DIV */}
       <div className="floating-register-div">
         <div className="floating-register-left">
-          <p className="floating-register-text">Early Bird Offer Ending Soon. Only 10 Spots Remain. Reserve Yours Now.</p>
+          <p className="floating-register-text">
+            Early Bird Offer Ending Soon. Only 10 Spots Remain. Reserve Yours
+            Now.
+          </p>
           <p className="floating-register-subtext"></p>
         </div>
         <div className="floating-register-right">
-          <button className="floating-register-button" onClick={handleShow}>SECURE YOUR SPOT NOW</button>
+          <button className="floating-register-button" onClick={handleShow}>
+            SECURE YOUR SPOT NOW
+          </button>
         </div>
       </div>
       {/* HERO SECTION */}
@@ -487,8 +527,10 @@ export default function BasecampPage() {
             <span class="old-price">Rs 9999</span>
             <span class="new-price">Rs 7999 only</span>
           </div>
-           <p style={{color:"#0b2239"}}><h5>Ending Soon. Hurry!</h5></p>           
-           <p>&nbsp;</p>         
+          <p style={{ color: "#0b2239" }}>
+            <h5>Ending Soon. Hurry!</h5>
+          </p>
+          <p>&nbsp;</p>
           <button class="cta-btn">SIGN UP TODAY</button>
 
           <p class="guarantee">
@@ -898,7 +940,7 @@ export default function BasecampPage() {
       </section>
 
       <Modal show={show} onHide={handleClose}>
-        <Form onSubmit={rhfHandleSubmit(handleSubmit)}>
+        <Form onSubmit={rhfHandleSubmit(handleSubmit)} name="basecamp_form" id="basecamp_form">
           <Modal.Header closeButton>
             <Modal.Title>Book Your Seat</Modal.Title>
           </Modal.Header>
@@ -1052,7 +1094,10 @@ export default function BasecampPage() {
                   </option>
                 ))}
               </Form.Select>
-              <Form.Control.Feedback type="invalid" style={{ display: "block" }}>
+              <Form.Control.Feedback
+                type="invalid"
+                style={{ display: "block" }}
+              >
                 {errors.plan?.message}
               </Form.Control.Feedback>
               {!basecampLocation && (
@@ -1090,6 +1135,13 @@ export default function BasecampPage() {
                 </small>
               )}
             </Form.Group>
+              <input
+              type="text"
+              {...register("website")}
+              style={{ display: "none" }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
           </Modal.Body>
 
           <Modal.Footer>
