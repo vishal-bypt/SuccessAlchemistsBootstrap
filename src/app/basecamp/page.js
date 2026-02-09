@@ -12,6 +12,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import left_arrow_btn from "../home/images/left-arrow-btn.png";
 import right_arrow_btn from "../home/images/right-arrow-btn.png";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import Toast from "../../components/Toast";
 import "./style.css";
 // Import Swiper styles
 import "swiper/css";
