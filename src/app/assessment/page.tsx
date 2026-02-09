@@ -1,8 +1,10 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./assessement.css";
 import Image from "next/image";
 import infographic from "../../../src/app/assessment/images/Infographics.png";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import Toast from "../../components/Toast";
 
 const page = () => {
 
@@ -12,14 +14,29 @@ const page = () => {
   const [designation, setDesignation] = useState('');
   const [email, setEmail] = useState('');
   const [order_id] = useState(`ORD${Date.now()}`);
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [recaptchaReady, setRecaptchaReady] = useState(false);
+
+  
+    useEffect(() => {
+      if (executeRecaptcha) {
+        setRecaptchaReady(true);
+      }
+    }, [executeRecaptcha]);
+  
 
   const handlePayment = async (e: any) => {
     e.preventDefault();
+    if (!executeRecaptcha) {
+      Toast.error("reCAPTCHA not ready");
+      return;
+    }
+    const recaptchaToken = await executeRecaptcha("assessment_form");
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const response = await fetch(apiUrl + "/initiate-payment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ order_id, amount: '29500', billing_name: `${firstName} ${lastName}`, billing_email: email, billing_tel: phone, company : "NA", designation })});
+      body: JSON.stringify({ order_id, amount: '29500', billing_name: `${firstName} ${lastName}`, billing_email: email, billing_tel: phone, company : "NA", designation, recaptchaToken })});
 
     const data = await response.json();
 
@@ -148,7 +165,7 @@ const page = () => {
       <div className="second_div_layout">
         <div className="d-flex flex-column justify-content-between second_text_div">
           <div className="d-flex flex-column justify-content-between innerdiv">
-            <form className="w-100" onSubmit={handlePayment}>
+            <form className="w-100" onSubmit={handlePayment} name="assessment_form" id="assessment_form">
               <p className="subhead" style={{ color: "white" }}>
                 Ready to Take the First Step Towards Smarter Scaling?
               </p>
