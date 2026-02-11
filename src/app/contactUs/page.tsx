@@ -13,7 +13,7 @@ const ContactUs = () => {
     register,
     reset,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting  },
   } = useForm();
   const router = useRouter();
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -30,7 +30,7 @@ const ContactUs = () => {
 }, [executeRecaptcha]);
 
   const onSubmit = async(data: any) => {
-    //console.log("BASE URL", process.env.NEXT_PUBLIC_API_URL);
+    console.log("DATA", data);
     const apiUrl = process.env.NEXT_PUBLIC_API_URL+"/contact"; // Replace with your API URL
     const postData:any = data;
 
@@ -214,6 +214,7 @@ const ContactUs = () => {
                   tabIndex={-1}
                   autoComplete="off"
                 />
+                <input type="hidden" {...register("formLoadTime", { value: Date.now().toString() })} />
               </div>
             </div>
 
@@ -221,9 +222,9 @@ const ContactUs = () => {
               <button
                 type="submit"
                 className="btnstyle btn-submit"
-                disabled={!recaptchaReady}
+                disabled={!recaptchaReady || isSubmitting}
               >
-                {recaptchaReady ? "SEND NOW" : "Loading..."}
+                {isSubmitting ? "Submitting..." : recaptchaReady ? "SEND NOW" : "Loading..."}
               </button>
             </div>
           </form>

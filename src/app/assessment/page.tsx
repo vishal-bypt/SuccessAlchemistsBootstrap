@@ -248,6 +248,7 @@ const page = () => {
                 <button
                   type="submit"
                   className="btnstyle btn-submit"
+                  disabled={!recaptchaReady}
                 >
                   Proceed with Payment
                 </button>
