@@ -34,7 +34,7 @@ const WebinarPage = () => {
   const {
     register,
     handleSubmit: handleFormSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isSubmitting },
     reset,
   } = useForm({
     defaultValues: {
@@ -869,8 +869,8 @@ const WebinarPage = () => {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button type="submit" variant="primary" disabled={!isValid}>
-              Submit
+            <Button type="submit" variant="primary" disabled={!recaptchaReady || isSubmitting || !isValid}>
+               {isSubmitting ? "Submitting..." : recaptchaReady ? "Submit" : "Loading..."}
             </Button>
           </Modal.Footer>
         </Form>

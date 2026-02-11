@@ -28,7 +28,7 @@ export default function BasecampPage() {
   const {
     register,
     handleSubmit: rhfHandleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isSubmitting },
     watch,
     setValue,
     reset,
@@ -1149,8 +1149,8 @@ export default function BasecampPage() {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button type="submit" variant="primary" disabled={!isValid}>
-              Submit
+            <Button type="submit" variant="primary" disabled={!recaptchaReady || isSubmitting || !isValid}>
+               {isSubmitting ? "Submitting..." : recaptchaReady ? "Submit" : "Loading..."}
             </Button>
           </Modal.Footer>
         </Form>

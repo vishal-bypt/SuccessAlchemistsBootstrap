@@ -136,7 +136,7 @@ export default function Page() {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting  },
   } = useForm();
 
   useEffect(() => {
@@ -331,7 +331,8 @@ export default function Page() {
                         </div>
                       )}
 
-                      <input type="text" name="website" style={{ display: 'none' }} tabIndex={-1} autoComplete="off"></input>
+                      <input type="text" {...register("website")} style={{ display: 'none' }} tabIndex={-1} autoComplete="off"></input>
+                      <input type="hidden" {...register("formLoadTime", { value: Date.now().toString() })} />
                     </div>
                   </div>
                 </div>
@@ -363,9 +364,9 @@ export default function Page() {
                                 : "",
                     }}
                     className="py-3 btn_div"
-                    disabled={!recaptchaReady}
+                    disabled={!recaptchaReady || isSubmitting}
                   >
-                    {recaptchaReady ? "Download" : "Loading..."}
+                    {isSubmitting ? "Submitting..." : recaptchaReady ? "Download" : "Loading..."}
                   </button>
 
                 </div>
