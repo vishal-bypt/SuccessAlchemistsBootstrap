@@ -172,6 +172,11 @@ const WebinarPage = () => {
     });
 
     const data = await response.json();
+    if(!data?.success)  {
+      Toast.error(data?.message || "Unknown error");
+      console.error("Payment initiation failed:", data?.message || "Unknown error");
+      return;
+    } 
     console.log("Response from /initiate-payment:", data);
 
     if (data.paymentUrl) {
