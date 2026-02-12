@@ -52,7 +52,11 @@ const page = () => {
     });
 
     const data = await response.json();
-
+    if(!data.success)  {
+        Toast.error(data.message || "An error occurred while initiating payment.");
+        setIsSubmitting(false);
+        return;
+      }
     console.log("Response from /initiate-payment:", data);
     if (data.paymentUrl) {
       try {
