@@ -268,6 +268,10 @@ export default function BasecampPage() {
       }
 
       const paymentData = await response.json();
+      if(!paymentData.success)  {
+        Toast.error(paymentData.message || "An error occurred while initiating payment.");
+        return;
+      }
       console.log("Response from /initiate-payment:", paymentData);
 
       if (paymentData.paymentUrl) {
