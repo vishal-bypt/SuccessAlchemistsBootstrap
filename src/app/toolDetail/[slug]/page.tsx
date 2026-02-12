@@ -185,6 +185,13 @@ export default function Page() {
       }
 
       const data = await response.json();
+
+      if(data.success === false) {
+        Toast.error(data.message || "An error occurred while submitting the form.");
+        setShowSpinner(false);
+        return;
+      }
+
       reset();
       handleClose();
       localStorage.setItem('hasSubmittedInquiry', 'true');

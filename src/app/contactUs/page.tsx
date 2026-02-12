@@ -62,6 +62,10 @@ const ContactUs = () => {
 
       
       const data = await response.json();
+      if(!data.success) {
+        Toast.error(data.message || "An error occurred while submitting the form.");
+        return;
+      }
       reset();
       Toast.success("Your enquiry has been submitted successfully!");
       // setTimeout(() => {
