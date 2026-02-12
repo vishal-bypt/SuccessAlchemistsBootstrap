@@ -15,6 +15,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Modal from "react-bootstrap/Modal";
+import Toast from "../../components/Toast";
 
 // Import Swiper styles
 import "swiper/css";
@@ -175,7 +176,7 @@ const WebinarPage = () => {
     if(!data?.success)  {
       Toast.error(data?.message || "Unknown error");
       console.error("Payment initiation failed:", data?.message || "Unknown error");
-      return;
+      return false;
     } 
     console.log("Response from /initiate-payment:", data);
 
