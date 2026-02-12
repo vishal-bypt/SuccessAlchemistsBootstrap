@@ -369,7 +369,7 @@ export default function BasecampBasicPage() {
             <span class="new-price">Rs 7999 only</span>
           </div> */}
           <p style={{ color: "#0b2239" }}>
-            <h3>Scaling Up Basecamps are held accross Mumbai, Pune, <br/> Delhi-NCR, Bangalore, Dubai.</h3>
+            <h3>Scaling Up Basecamps are held accross Mumbai, Pune, <br/> Delhi-NCR, Bangalore & Dubai.</h3>
           </p>
           <p>&nbsp;</p>
           <button  onClick={handleShow} class="cta-btn">SIGN UP TODAY</button>
