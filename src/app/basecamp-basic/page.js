@@ -362,17 +362,17 @@ export default function BasecampBasicPage() {
 
         {/* <!-- OFFER SECTION --> */}
         <section class="offer">
-          <h2>EARLY BIRD OFFER</h2>
+          {/* <h2>EARLY BIRD OFFER</h2> */}
 
-          <div class="price">
+          {/* <div class="price">
             <span class="old-price">Rs 9999</span>
             <span class="new-price">Rs 7999 only</span>
-          </div>
+          </div> */}
           <p style={{ color: "#0b2239" }}>
-            <h5>Ending Soon. Hurry!</h5>
+            <h3>Scaling Up Basecamps are held accross Mumbai, Pune, <br/> Delhi-NCR, Bangalore, Dubai.</h3>
           </p>
           <p>&nbsp;</p>
-          <button class="cta-btn">SIGN UP TODAY</button>
+          <button  onClick={handleShow} class="cta-btn">SIGN UP TODAY</button>
 
           <p class="guarantee">
             Money Back Guarantee
@@ -918,9 +918,9 @@ export default function BasecampBasicPage() {
                   isInvalid={!!errors.basecampLocation}
                 >
                   <option value="">- Select Basecamp Location -</option>
-                  <option value="Delhi-NCR - Coming Soon">Delhi-NCR - Coming Soon</option>
-                  <option value="Bangalore - Coming Soon">Bangalore - Coming Soon</option>
-                  <option value="Dubai">Dubai - Coming Soon</option>
+                  <option value="Delhi-NCR">Delhi-NCR</option>
+                  <option value="Bangalore">Bangalore</option>
+                  <option value="Dubai">Dubai</option>
                   <option value="Pune">Pune</option>
                   <option value="Mumbai">Mumbai</option>
                 </Form.Select>
