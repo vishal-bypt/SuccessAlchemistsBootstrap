@@ -13,30 +13,43 @@ const page = () => {
   const [phone, setPhone] = useState('');
   const [designation, setDesignation] = useState('');
   const [email, setEmail] = useState('');
+  const [website, setWebsite] = useState('');
   const [order_id] = useState(`ORD${Date.now()}`);
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [recaptchaReady, setRecaptchaReady] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  
-    useEffect(() => {
-      if (executeRecaptcha) {
-        setRecaptchaReady(true);
-      }
-    }, [executeRecaptcha]);
-  
+
+  useEffect(() => {
+    if (executeRecaptcha) {
+      setRecaptchaReady(true);
+    }
+  }, [executeRecaptcha]);
+
 
   const handlePayment = async (e: any) => {
     e.preventDefault();
-    if (!executeRecaptcha) {
-      Toast.error("reCAPTCHA not ready");
-      return;
-    }
-    const recaptchaToken = await executeRecaptcha("assessment_form");
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+    try {
+      if (!executeRecaptcha) {
+        Toast.error("reCAPTCHA not ready");
+        setIsSubmitting(false);
+        return;
+      }
+      if (website) {
+        console.error("Error:", "Spam detected");
+        Toast.error("Spam detected.");
+        setIsSubmitting(false);
+        return;
+      }
+      const recaptchaToken = await executeRecaptcha("assessment_form");
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const response = await fetch(apiUrl + "/initiate-payment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ order_id, amount: '29500', billing_name: `${firstName} ${lastName}`, billing_email: email, billing_tel: phone, company : "NA", designation, recaptchaToken })});
+      body: JSON.stringify({ order_id, amount: '29500', billing_name: `${firstName} ${lastName}`, billing_email: email, billing_tel: phone, company: "NA", designation, recaptchaToken })
+    });
 
     const data = await response.json();
 
@@ -71,17 +84,25 @@ const page = () => {
 
           document.body.appendChild(form);
           form.submit();
+          return; // navigation started, no need to reset isSubmitting
         } else {
           console.error("Missing access_code or encRequest in payment URL");
           alert("Payment failed: Missing required data.");
+          setIsSubmitting(false);
         }
       } catch (error) {
         console.error("Invalid paymentUrl format", error);
         alert("Payment failed: Invalid URL");
+        setIsSubmitting(false);
       }
     } else {
       console.error("Invalid response from API:", data);
       alert("Payment failed: Server error");
+      setIsSubmitting(false);
+    }
+    } catch (err) {
+      console.error(err);
+      setIsSubmitting(false);
     }
   };
 
@@ -242,15 +263,23 @@ const page = () => {
                     />
                     <label>Email</label>
                   </div>
+                  <input
+                    type="text"
+                    name="website"
+                    style={{ display: "none" }}
+                    onChange={(e) => setWebsite(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
                 </div>
               </div>
               <div className="submit-btn-div paymentbtn">
                 <button
                   type="submit"
                   className="btnstyle btn-submit"
-                  disabled={!recaptchaReady}
+                  disabled={!recaptchaReady || isSubmitting}
                 >
-                  Proceed with Payment
+                  {isSubmitting ? 'Processing...' : 'Proceed with Payment'}
                 </button>
               </div>
             </form>
