@@ -48,7 +48,7 @@ const page = () => {
     const response = await fetch(apiUrl + "/initiate-payment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ order_id, amount: '29500', billing_name: `${firstName} ${lastName}`, billing_email: email, billing_tel: phone, company: "NA", designation, recaptchaToken })
+      body: JSON.stringify({ order_id, amount: '29500', billing_name: `${firstName} ${lastName}`, billing_email: email, billing_tel: phone, company: "NOT APPLICABLE", designation, recaptchaToken })
     });
 
     const data = await response.json();
