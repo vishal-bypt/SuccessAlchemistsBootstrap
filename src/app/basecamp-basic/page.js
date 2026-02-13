@@ -189,7 +189,6 @@ export default function BasecampBasicPage() {
     } = data;
 
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-
     const payload = {
       billing_name: `${firstName} ${lastName}`,
       billing_email: email,
