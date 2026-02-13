@@ -303,7 +303,8 @@ const WebinarPage = () => {
                     height={20}
                     style={{ filter: "brightness(0) invert(1)" }}
                   />{" "}
-                  Date – 7<sup>th</sup> February 2026
+                  {/* Date – 7<sup>th</sup> February 2026 */}
+                  Date : Coming Soon
                 </p>
                 <p>
                   <Image
@@ -313,7 +314,7 @@ const WebinarPage = () => {
                     height={20}
                     style={{ filter: "brightness(0) invert(1)" }}
                   />{" "}
-                  11 am – 1 pm IST
+                 <del>11 am – 1 pm IST</del>
                 </p>
                 <p>
                   <Image
