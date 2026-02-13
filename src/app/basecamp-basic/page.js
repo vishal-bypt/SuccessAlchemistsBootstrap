@@ -232,7 +232,6 @@ export default function BasecampBasicPage() {
       }
       const paymentData = await response.json();
       if(!paymentData.success) {
-        reset();
         Toast.error(paymentData?.message || "Registration failed. Please try again later.");
         return false;
       }
