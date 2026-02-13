@@ -44,66 +44,66 @@ const page = () => {
         return;
       }
       const recaptchaToken = await executeRecaptcha("assessment_form");
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-    const response = await fetch(apiUrl + "/initiate-payment", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ order_id, amount: '29500', billing_name: `${firstName} ${lastName}`, billing_email: email, billing_tel: phone, company: "NOT APPLICABLE", designation, recaptchaToken })
-    });
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      const response = await fetch(apiUrl + "/initiate-payment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ order_id, amount: '29500', billing_name: `${firstName} ${lastName}`, billing_email: email, billing_tel: phone, company: "NOT APPLICABLE", designation, recaptchaToken })
+      });
 
-    const data = await response.json();
-    if(!data.success)  {
+      const data = await response.json();
+      if (!data.success) {
         Toast.error(data.message || "An error occurred while initiating payment.");
         setIsSubmitting(false);
         return;
       }
-    console.log("Response from /initiate-payment:", data);
-    if (data.paymentUrl) {
-      try {
+      console.log("Response from /initiate-payment:", data);
+      if (data.paymentUrl) {
+        try {
 
-        const encRequest = data.encRequest;
-        const access_code = data.access_code;
+          const encRequest = data.encRequest;
+          const access_code = data.access_code;
 
-        if (encRequest && access_code) {
+          if (encRequest && access_code) {
 
-          const existingForm = document.getElementById("ccavenue-payment-form");
-          if (existingForm) existingForm.remove();
+            const existingForm = document.getElementById("ccavenue-payment-form");
+            if (existingForm) existingForm.remove();
 
-          const form = document.createElement("form");
-          form.method = "POST";
-          form.action = data.ccavenueUrl;
-          form.id = "ccavenue-payment-form";
+            const form = document.createElement("form");
+            form.method = "POST";
+            form.action = data.ccavenueUrl;
+            form.id = "ccavenue-payment-form";
 
-          const accessInput = document.createElement("input");
-          accessInput.type = "hidden";
-          accessInput.name = "access_code";
-          accessInput.value = access_code;
-          form.appendChild(accessInput);
+            const accessInput = document.createElement("input");
+            accessInput.type = "hidden";
+            accessInput.name = "access_code";
+            accessInput.value = access_code;
+            form.appendChild(accessInput);
 
-          const encInput = document.createElement("input");
-          encInput.type = "hidden";
-          encInput.name = "encRequest";
-          encInput.value = encRequest;
-          form.appendChild(encInput);
+            const encInput = document.createElement("input");
+            encInput.type = "hidden";
+            encInput.name = "encRequest";
+            encInput.value = encRequest;
+            form.appendChild(encInput);
 
-          document.body.appendChild(form);
-          form.submit();
-          return; // navigation started, no need to reset isSubmitting
-        } else {
-          console.error("Missing access_code or encRequest in payment URL");
-          alert("Payment failed: Missing required data.");
+            document.body.appendChild(form);
+            form.submit();
+            return; // navigation started, no need to reset isSubmitting
+          } else {
+            console.error("Missing access_code or encRequest in payment URL");
+            alert("Payment failed: Missing required data.");
+            setIsSubmitting(false);
+          }
+        } catch (error) {
+          console.error("Invalid paymentUrl format", error);
+          alert("Payment failed: Invalid URL");
           setIsSubmitting(false);
         }
-      } catch (error) {
-        console.error("Invalid paymentUrl format", error);
-        alert("Payment failed: Invalid URL");
+      } else {
+        console.error("Invalid response from API:", data);
+        alert("Payment failed: Server error");
         setIsSubmitting(false);
       }
-    } else {
-      console.error("Invalid response from API:", data);
-      alert("Payment failed: Server error");
-      setIsSubmitting(false);
-    }
     } catch (err) {
       console.error(err);
       setIsSubmitting(false);
