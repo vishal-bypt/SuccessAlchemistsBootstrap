@@ -435,7 +435,7 @@ export default function BasecampPage() {
           <p className="floating-register-subtext"></p>
         </div>
         <div className="floating-register-right">
-          <button className="floating-register-button" onClick={handleShow}>
+          <button className="floating-register-button" disabled onClick={handleShow}>
             SECURE YOUR SPOT NOW
           </button>
         </div>
