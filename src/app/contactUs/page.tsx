@@ -31,44 +31,49 @@ const ContactUs = () => {
 
   const onSubmit = async (formData: any) => {
     if (!executeRecaptcha) {
-      Toast.error("Security verification is not ready. Please try again.");
-      return;
+      return Toast.error("Security verification is not ready. Please try again.");
     }
 
-    if (formData.website) {
-      Toast.error("Spam detected.");
-      return;
+    if (formData.website?.trim()) {
+      return Toast.error("Spam detected.");
     }
-
-    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/contact`;
 
     try {
-      // Get reCAPTCHA token
       const recaptchaToken = await executeRecaptcha("contact_form");
 
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...formData, recaptchaToken }),
-      });
+      if (!recaptchaToken) {
+        return Toast.error("Security verification failed. Please try again.");
+      }
 
-      const result = await response.json();
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/contact`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, recaptchaToken }),
+        }
+      );
 
-      if (!response.ok || !result.success) {
-        Toast.error(result?.message || "Failed to submit the form.");
-        return;
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok) {
+        //throw new Error(result?.message || "Failed to submit the form.");
+        return Toast.error(result?.message || "Failed to submit the form.");
+      }
+
+      if (!result?.success) {
+        return Toast.error(result?.message || "Submission failed.");
       }
 
       reset();
       Toast.success("Your enquiry has been submitted successfully!");
 
-    } catch (error) {
+    } catch (error: any) {
       console.error("Contact form submission error:", error);
-      Toast.error("Something went wrong. Please try again later.");
+      Toast.error(error.message || "Something went wrong. Please try again later.");
     }
   };
+
 
   return (
     <div className="main_body_div">
