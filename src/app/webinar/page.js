@@ -131,7 +131,10 @@ const WebinarPage = () => {
       throw new Error(`Spam detected`);
     }
 
-    await handlePayment(formData);
+    const result = await handlePayment(formData);
+    if (result === false) {
+      return;
+    }
     reset();
     handleClose();
   };

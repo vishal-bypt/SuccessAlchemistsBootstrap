@@ -170,7 +170,10 @@ export default function BasecampBasicPage() {
       Toast.error("Spam detected.");
       throw new Error(`Spam detected`);
     }
-    await handlePayment(data);
+    const result = await handlePayment(data);
+    if (result === false) {
+      return;
+    }
     handleClose();
   };
 
@@ -202,7 +205,7 @@ export default function BasecampBasicPage() {
 
      if (!executeRecaptcha) {
         Toast.error("reCAPTCHA not ready");
-        return;
+        return false;
       }
 
     // Check if API URL is defined
@@ -211,7 +214,7 @@ export default function BasecampBasicPage() {
         "Payment failed: API URL is not configured. Please check your environment variables."
       );
       console.error("NEXT_PUBLIC_API_URL is not defined");
-      return;
+      return false;
     }
 
     try {
@@ -228,14 +231,10 @@ export default function BasecampBasicPage() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const paymentData = await response.json();
-      if(!paymentData.success)  {
-        Toast.error(paymentData.message || "An error occurred while initiating payment.");
-        return;
-      }
       if(!paymentData.success) {
         reset();
         Toast.error(paymentData?.message || "Registration failed. Please try again later.");
-        return;
+        return false;
       }
       reset();
       Toast.success("Registration submitted successfully!");
@@ -373,7 +372,7 @@ export default function BasecampBasicPage() {
             <span class="new-price">Rs 7999 only</span>
           </div> */}
           <p style={{ color: "#0b2239" }}>
-            <h3>Scaling Up Basecamps are held accross Mumbai, Pune, <br/> Delhi-NCR, Bangalore & Dubai.</h3>
+            <h3>Scaling Up Basecamps are held across Mumbai, Pune, <br/> Delhi-NCR, Bangalore & Dubai.</h3>
           </p>
           <p>&nbsp;</p>
           <button  onClick={handleShow} class="cta-btn">SIGN UP TODAY</button>
