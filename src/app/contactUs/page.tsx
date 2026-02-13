@@ -13,7 +13,7 @@ const ContactUs = () => {
     register,
     reset,
     handleSubmit,
-    formState: { errors, isSubmitting  },
+    formState: { errors, isSubmitting },
   } = useForm();
   const router = useRouter();
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -24,28 +24,26 @@ const ContactUs = () => {
   };
 
   useEffect(() => {
-  if (executeRecaptcha) {
-    setRecaptchaReady(true);
-  }
-}, [executeRecaptcha]);
+    if (executeRecaptcha) {
+      setRecaptchaReady(true);
+    }
+  }, [executeRecaptcha]);
 
-  const onSubmit = async(data: any) => {
-    console.log("DATA", data);
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL+"/contact"; // Replace with your API URL
-    const postData:any = data;
+  const onSubmit = async (formData: any) => {
+    if (!executeRecaptcha) {
+      Toast.error("Security verification is not ready. Please try again.");
+      return;
+    }
+
+    if (formData.website) {
+      Toast.error("Spam detected.");
+      return;
+    }
+
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/contact`;
 
     try {
-
-      if (!executeRecaptcha) {
-        Toast.error("reCAPTCHA not ready");
-        return;
-      }
-      if (postData.website) {
-        //return res.status(400).json({ error: 'Spam detected' });
-        console.error("Error:", 'Spam detected');
-        Toast.error("Spam detected.");
-        throw new Error(`Spam detected`);
-      }
+      // Get reCAPTCHA token
       const recaptchaToken = await executeRecaptcha("contact_form");
 
       const response = await fetch(apiUrl, {
@@ -53,31 +51,25 @@ const ContactUs = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({...postData, recaptchaToken}),
+        body: JSON.stringify({ ...formData, recaptchaToken }),
       });
-      //console.log("response", response);
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
 
-      
-      const data = await response.json();
-      if(!data.success) {
-        Toast.error(data.message || "An error occurred while submitting the form.");
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        Toast.error(result?.message || "Failed to submit the form.");
         return;
       }
+
       reset();
       Toast.success("Your enquiry has been submitted successfully!");
-      // setTimeout(() => {
-      //   router.push("/"); // Redirect to the home page after 2 seconds  
-      // }, 2000);
-      
-      //setResponseData(data);
+
     } catch (error) {
-      console.error("Error:", error);
-      Toast.error("An error occurred while submitting the form.");
+      console.error("Contact form submission error:", error);
+      Toast.error("Something went wrong. Please try again later.");
     }
   };
+
   return (
     <div className="main_body_div">
       <div className="first_div_layout contactUs">
@@ -118,9 +110,8 @@ const ContactUs = () => {
                 <div className="form-floating">
                   <input
                     type="text"
-                    className={`form-control ${
-                      errors.name ? "is-invalid" : ""
-                    }`}
+                    className={`form-control ${errors.name ? "is-invalid" : ""
+                      }`}
                     id="name"
                     placeholder="Name"
                     {...register("name", {
@@ -141,9 +132,8 @@ const ContactUs = () => {
                 <div className="form-floating">
                   <input
                     type="email"
-                    className={`form-control ${
-                      errors.email ? "is-invalid" : ""
-                    }`}
+                    className={`form-control ${errors.email ? "is-invalid" : ""
+                      }`}
                     id="email"
                     placeholder="Email"
                     {...register("email", {
@@ -167,9 +157,8 @@ const ContactUs = () => {
                 <div className="form-floating">
                   <input
                     type="tel"
-                    className={`form-control ${
-                      errors.phone ? "is-invalid" : ""
-                    }`}
+                    className={`form-control ${errors.phone ? "is-invalid" : ""
+                      }`}
                     id="phone"
                     placeholder="Phone Number"
                     {...register("phone", {
@@ -194,9 +183,8 @@ const ContactUs = () => {
               <div className="col-md-12">
                 <div className="form-floating">
                   <textarea
-                    className={`form-control contact-textarea ${
-                      errors.message ? "is-invalid" : ""
-                    }`}
+                    className={`form-control contact-textarea ${errors.message ? "is-invalid" : ""
+                      }`}
                     id="message"
                     placeholder="Leave a comment here"
                     {...register("message", {

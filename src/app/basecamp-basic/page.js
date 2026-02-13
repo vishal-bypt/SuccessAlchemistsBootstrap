@@ -128,7 +128,6 @@ export default function BasecampBasicPage() {
     },
   ];
 
-
   useEffect(() => {
     setPlaying(false);
     if (playerRef.current) {
@@ -186,7 +185,7 @@ export default function BasecampBasicPage() {
       plan,
       companyName,
       yourDesignation,
-      basecampLocation
+      basecampLocation,
     } = data;
 
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -203,10 +202,10 @@ export default function BasecampBasicPage() {
 
     //console.log("Records is:::::", payload);
 
-     if (!executeRecaptcha) {
-        Toast.error("reCAPTCHA not ready");
-        return false;
-      }
+    if (!executeRecaptcha) {
+      Toast.error("reCAPTCHA not ready");
+      return false;
+    }
 
     // Check if API URL is defined
     if (!apiUrl) {
@@ -218,26 +217,29 @@ export default function BasecampBasicPage() {
     }
 
     try {
-
       const recaptchaToken = await executeRecaptcha("basecamp_form");
       const response = await fetch(apiUrl + "/register-interest", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({...payload, recaptchaToken}),
+        body: JSON.stringify({ ...payload, recaptchaToken }),
       });
 
       // Check if response is ok
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
       const paymentData = await response.json();
-      if(!paymentData.success) {
-        Toast.error(paymentData?.message || "Registration failed. Please try again later.");
+
+      if (!response.ok || !paymentData.success) {
+        Toast.error(paymentData?.message || "Failed to submit the form.");
+        return false;
+      }
+
+      if (!paymentData.success) {
+        Toast.error(
+          paymentData?.message || "Registration failed. Please try again later."
+        );
         return false;
       }
       reset();
       Toast.success("Registration submitted successfully!");
-      
     } catch (error) {
       console.error("Basecamp form error:", error);
       alert(
@@ -257,7 +259,6 @@ export default function BasecampBasicPage() {
       );
     });
   };
-  
 
   return (
     <div>
@@ -271,7 +272,7 @@ export default function BasecampBasicPage() {
         </div>
         <div className="floating-register-right">
           <button className="floating-register-button" onClick={handleShow}>
-           Register Your Interest
+            Register Your Interest
           </button>
         </div>
       </div>
@@ -371,10 +372,15 @@ export default function BasecampBasicPage() {
             <span class="new-price">Rs 7999 only</span>
           </div> */}
           <p style={{ color: "#0b2239" }}>
-            <h3>Scaling Up Basecamps are held across Mumbai, Pune, <br/> Delhi-NCR, Bangalore & Dubai.</h3>
+            <h3>
+              Scaling Up Basecamps are held across Mumbai, Pune, <br />{" "}
+              Delhi-NCR, Bangalore & Dubai.
+            </h3>
           </p>
           <p>&nbsp;</p>
-          <button  onClick={handleShow} class="cta-btn">SIGN UP TODAY</button>
+          <button onClick={handleShow} class="cta-btn">
+            SIGN UP TODAY
+          </button>
 
           <p class="guarantee">
             Money Back Guarantee
@@ -780,7 +786,6 @@ export default function BasecampBasicPage() {
                     style={{ width: "100%", color: "#000000" }}
                     onClick={handleShow}
                   >
-                   
                     <span className="btn-text">
                       <strong>Register Your Interest</strong>
                     </span>{" "}
@@ -793,7 +798,11 @@ export default function BasecampBasicPage() {
       </section>
 
       <Modal show={show} onHide={handleClose}>
-        <Form onSubmit={rhfHandleSubmit(handleSubmit)} name="basecamp_form" id="basecamp_form">
+        <Form
+          onSubmit={rhfHandleSubmit(handleSubmit)}
+          name="basecamp_form"
+          id="basecamp_form"
+        >
           <Modal.Header closeButton>
             <Modal.Title>Register Your Interest</Modal.Title>
           </Modal.Header>
@@ -840,7 +849,7 @@ export default function BasecampBasicPage() {
               <Form.Label>First Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter first name"
+                placeholder="For Example : John"
                 {...register("firstName", {
                   required: "First name is required",
                   minLength: {
@@ -859,7 +868,7 @@ export default function BasecampBasicPage() {
               <Form.Label>Last Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter last name"
+                placeholder="For Example : Smith"
                 {...register("lastName", {
                   required: "Last name is required",
                   minLength: {
@@ -912,26 +921,26 @@ export default function BasecampBasicPage() {
               </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="mb-3">
-                <Form.Label>Upcoming Basecamp Locations</Form.Label>
-                <Form.Select
-                  {...register("basecampLocation", {
-                    required: "Please select a basecamp location",
-                  })}
-                  isInvalid={!!errors.basecampLocation}
-                >
-                  <option value="">- Select Basecamp Location -</option>
-                  <option value="Delhi-NCR">Delhi-NCR</option>
-                  <option value="Bangalore">Bangalore</option>
-                  <option value="Dubai">Dubai</option>
-                  <option value="Pune">Pune</option>
-                  <option value="Mumbai">Mumbai</option>
-                </Form.Select>
-                <Form.Control.Feedback type="invalid">
-                  {errors.basecampLocation?.message}
-                </Form.Control.Feedback>
-              </Form.Group>
+              <Form.Label>Upcoming Basecamp Locations</Form.Label>
+              <Form.Select
+                {...register("basecampLocation", {
+                  required: "Please select a basecamp location",
+                })}
+                isInvalid={!!errors.basecampLocation}
+              >
+                <option value="">- Select Basecamp Location -</option>
+                <option value="Delhi-NCR">Delhi-NCR</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Pune">Pune</option>
+                <option value="Mumbai">Mumbai</option>
+              </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                {errors.basecampLocation?.message}
+              </Form.Control.Feedback>
+            </Form.Group>
             <div className="row">&nbsp;</div>
-              <input
+            <input
               type="text"
               {...register("website")}
               style={{ display: "none" }}
@@ -944,8 +953,16 @@ export default function BasecampBasicPage() {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button type="submit" variant="primary" disabled={!recaptchaReady || isSubmitting || !isValid}>
-               {isSubmitting ? "Submitting..." : recaptchaReady ? "Submit" : "Loading..."}
+            <Button
+              type="submit"
+              variant="primary"
+              disabled={!recaptchaReady || isSubmitting || !isValid}
+            >
+              {isSubmitting
+                ? "Submitting..."
+                : recaptchaReady
+                ? "Submit"
+                : "Loading..."}
             </Button>
           </Modal.Footer>
         </Form>

@@ -180,15 +180,10 @@ export default function Page() {
         body: JSON.stringify({ ...postData, recaptchaToken }),
       });
       //console.log("response", response);
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
       const data = await response.json();
-
-      if(data.success === false) {
-        Toast.error(data.message || "An error occurred while submitting the form.");
+      if (!response.ok || !data.success) {
         setShowSpinner(false);
+        Toast.error(data?.message || "Failed to submit the form.");
         return;
       }
 
