@@ -495,6 +495,7 @@ export default function BasecampPage() {
                   <button
                     className="btn btn-cta w-100 w-md-auto text-center"
                     onClick={handleShow}
+                    disabled
                   >
                     REGISTER NOW
                   </button>
@@ -814,6 +815,7 @@ export default function BasecampPage() {
                 className="btn btn-cta text-center"
                 style={{ width: "100%", color: "#000000" }}
                 onClick={handleShow}
+                 disabled
               >
                 EARLY BIRD PRICES START AT{" "}
                 <span className="nowrap">Rs 7999 + GST</span>
@@ -933,6 +935,7 @@ export default function BasecampPage() {
                     className="btn btn-cta-footer text-center"
                     style={{ width: "100%", color: "#000000" }}
                     onClick={handleShow}
+                     disabled
                   >
                     Limited spots Available
                     <br />
