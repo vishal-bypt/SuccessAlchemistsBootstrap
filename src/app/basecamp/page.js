@@ -208,6 +208,9 @@ export default function BasecampPage() {
       throw new Error(`Spam detected`);
     }
     await handlePayment(data);
+    if (result === false) {
+      return;
+    }
     handleClose();
   };
 
@@ -270,7 +273,7 @@ export default function BasecampPage() {
       const paymentData = await response.json();
       if(!paymentData.success)  {
         Toast.error(paymentData.message || "An error occurred while initiating payment.");
-        return;
+        return false;
       }
       console.log("Response from /initiate-payment:", paymentData);
 
