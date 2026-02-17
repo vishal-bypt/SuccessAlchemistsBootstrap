@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { memo, useState, useEffect } from "react";
 import "./contactus.css";
 import { useForm } from "react-hook-form";
 import Toast from "../../components/Toast";
@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import curveShape2 from "../../../public/assets/images/Curve-shape2.svg";
 
-const ContactUs = () => {
+const ContactUs = memo(() => {
   const {
     register,
     reset,
@@ -229,6 +229,6 @@ const ContactUs = () => {
       </div>
     </div>
   );
-};
+});
 
 export default ContactUs;

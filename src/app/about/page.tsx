@@ -1,24 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import Image from "next/image";
-import Circle1 from "../../../src/app/about/images/Circle1.png";
-import Circle2 from "../../../src/app/about/images/Circle2.png";
-import Circle3 from "../../../src/app/about/images/Circle3.png";
-import Circle4 from "../../../src/app/about/images/Circle4.png";
 import curve from "../../../src/app/about/images/curve.png";
-import downArrow from "../../../src/app/about/images/Downarrow.png";
 import image2 from "../../../src/app/about/images/Image2.png";
-import corevalue from "../about/images/corevalue-infographic.svg"
 import curve1 from "../../../src/app/about/images/curve1.png";
 import coach1 from "../../app/who/images/coach1.png";
 import coach2 from "../../app/who/images/coach2.png";
 import coach3 from "../../app/who/images/coach3.png";
 import man from "../../app/who/images/man.svg";
 import man2 from "../../app/who/images/vikram.svg";
-
-// import coach4 from "../../app/who/images/coach4.png";
-// import coach5 from "../../app/who/images/coach5.png";
 import coach6 from "../../app/who/images/coach6.png";
 import coach7 from "../../app/who/images/coach7.png";
 import blog4 from "../../app/who/images/Blog4.png";
@@ -31,7 +22,7 @@ import about from "../../app/about/images/Success7.png"
 import "./about.css";
 
 
-const About = () => {
+const About = memo(() => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndex1, setCurrentIndex1] = useState(0);
   const itemsPerPage = 3;
@@ -404,6 +395,6 @@ const About = () => {
     
     </div>
   );
-};
+});
 
 export default About;
