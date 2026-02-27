@@ -314,7 +314,7 @@ const Footer = () => {
         style={{ borderRadius: 15 }}
       >
         <p className="mb-0">
-          © Copyright 2025 Success Alchemists Business Coaching Pvt. Ltd. All rights reserved.
+          © Copyright 2026 Success Alchemists Business Coaching Pvt. Ltd. All rights reserved.
         </p>
       </div>
     </div>
