@@ -208,6 +208,16 @@ const Footer = () => {
                 </div>
               </li> */}
             </ul>
+
+                <h5>Our Locations</h5>
+            <ul className="list-unstyled mt-3">
+              <li className="mb-2  align-items-center gap-2">
+   
+                <p className="mb-0">India - Pune, Mumbai, Delhi-NCR, Bangalore, Hyderabad, Goa</p>
+                <p className="mb-0">UAE - Dubai</p>
+              </li>
+            </ul>
+             
           </div>
           <div className="col-12 col-md-3 col-lg-3 d-flex flex-column  ">
             <h5>Social Networks</h5>
