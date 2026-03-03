@@ -19,8 +19,8 @@ const FourthComponent = memo(() => {
 
       <div className="home2-fourth-component-first-div">
         <div className="home2-fourth-component-title-div">
-          Not just coaching...
-we help with implementation
+          Not Just Coaching...
+We Help With Implementation
         </div>
         <div className="home2-fourth-component-p-tag col-md-12">
           Your company is growing, but it's also becoming increasingly unstable. Your team is not aligning with your vision, need for speed and scaling-up dreams.
