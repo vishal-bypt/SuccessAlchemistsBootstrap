@@ -8,7 +8,7 @@ import peoples_meeting_image from "../images/peoples_meeting_image.jpeg";
 const SixthComponent = memo(() => {
   return (
     <div className="home2-sixth_component">
-          <h1 className="fw-bold mb-4">Do You Need The <br />
+          <h1 className=" mb-4">Do You Need The 
         Scaling Up Framework?</h1>
       <div
         className="row"

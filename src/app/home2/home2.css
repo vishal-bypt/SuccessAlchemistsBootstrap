@@ -204,6 +204,13 @@
     line-height: 57.6px;
 }
 
+/* shrink home2 hero logo */
+.home2-hero-icon-img .logo-image {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+}
+
 .home2-client-review-text {
     color: #fff;
     font-size: 48px;
@@ -227,7 +234,7 @@
 
 .home2-video-detail-p-tag {
     color: #fff;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 28.9px;
     font-weight: 400;
     text-align: justify;
@@ -259,8 +266,8 @@
 
 .home2-fourth-component-p-tag {
     font-weight: 400;
-    font-size: 24px;
-    line-height: 34.68px;
+    font-size: 22px;
+    /* line-height: 34.68px; */
     color: #616161;
     text-align: justify;
 }
@@ -1139,8 +1146,8 @@
 }
 
 .home2-section-title {
-    font-size: 52px;
-    font-weight: 800;
+    font-size: 48px;
+    font-weight: 600;
     color: #0f2437;
     margin-bottom: 25px;
     text-align: center;
@@ -1221,7 +1228,9 @@
 
 .home2-sixth_component h1{
       color: #fff;
-  text-align: center;
+      font-size: 48px;
+      font-weight: 600;
+  /* text-align: center; */
 }
 
 /* keep original class aliases for images used in the component */

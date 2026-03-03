@@ -3,6 +3,7 @@ import { memo, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Double_arrow from "../images/Double_arrow.png";
+import basecamplogo2 from "../../../../public/assets/images/Basecamp_White.png";
 
 // Lazy load Lottie component
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
@@ -61,7 +62,14 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
         className="text-center text-md-start mb-3 mb-md-0"
         style={{ marginLeft: "60px" }}
       >
-        <h2 className="home2-inner-first-div mb-2">Basecamp</h2>
+        <div className="home2-hero-icon-img">
+          <Image
+            className="logo-image"
+            src={basecamplogo2}
+            alt="img2"
+          />
+        </div>
+        {/* <h2 className="home2-inner-first-div mb-2">Basecamp</h2> */}
         <p className="home2-inner-second-div mb-0">
           Unlock the frameworks to scale up your business.
         </p>
