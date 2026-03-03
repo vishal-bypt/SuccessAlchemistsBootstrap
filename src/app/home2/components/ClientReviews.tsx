@@ -172,7 +172,7 @@ const ClientReviews = memo(() => {
         <Image
           src={Curve_shape}
           className="img-fluid"
-          style={{ borderRadius: "24px" }}
+          // style={{ borderRadius: "24px" }}  
           alt="right side image"
           loading="lazy"
         />
