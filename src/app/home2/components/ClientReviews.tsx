@@ -184,6 +184,7 @@ const ClientReviews = memo(() => {
           slidesPerView={"auto"}
           centeredSlides={true}
           navigation={false}
+          spaceBetween={16}
           pagination={{
             clickable: true,
           }}

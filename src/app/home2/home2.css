@@ -17,7 +17,7 @@
 
 /* Default (Mobile First) */
 .home2-responsive-btn-text {
-  font-size: 16px; /* Mobile */
+  font-size: 20px; /* Mobile */
   font-weight: 400;
 }
 
@@ -671,7 +671,7 @@
     }
 
     .home2-fifth-component {
-        padding: 48px;
+        padding: 24px;
     }
 
     .home2-fifth-component-title-div {
@@ -941,9 +941,13 @@
     }
 
     .home2-video-detail-div {
-        gap: 16px;
+        gap: 8px;
     }
 
+    .home2-slider-row {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
 
     .swiper-pagination-fraction,
     .swiper-pagination-custom,
@@ -1041,7 +1045,8 @@
     }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 420px) {
+
     .home2-gradient-overlay {
         padding: 24px;
     }
@@ -1233,6 +1238,14 @@
   /* text-align: center; */
 }
 
+
+@media (max-width: 768px) {
+  .home2-sixth_component h1 {
+    font-size: 25px;
+  }
+  
+}
+
 /* keep original class aliases for images used in the component */
 .image_div_image,
 .home2-image_div_image {
@@ -1319,7 +1332,7 @@
     }
 
     .home2-client-review-section {
-        padding: 48px;
+        padding: 24px;
         gap: 24px;
     }
 
@@ -1351,7 +1364,7 @@
     }
 
     .home2-fourth-component {
-        padding: 48px;
+        padding: 24px;
     }
 
     .home2-fourth-component-title-div {
@@ -1389,7 +1402,7 @@
     }
 
     .home2-sixth_component {
-        padding: 48px;
+        padding: 24px;
     }
 
     .home2-curve-image {
@@ -1423,7 +1436,7 @@
     }
 
     .home2-seventh_components {
-        padding: 48px;
+        padding: 24px;
     }
 
     .home2-text-div {
