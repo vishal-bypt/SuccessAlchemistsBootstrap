@@ -15,6 +15,10 @@
     background-size: cover;
 }
 
+.text-center h2 {
+  font-weight: 500;
+}
+
 /* Default (Mobile First) */
 .home2-responsive-btn-text {
   font-size: 20px; /* Mobile */
