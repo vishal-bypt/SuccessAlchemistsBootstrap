@@ -167,12 +167,12 @@ const Footer = () => {
               <li>
                 <Link
                   className={`${[
-                    "/basecamp-basic",
+                    "/basecamp",
                   ].includes(pathName)
                     ? "active-link font-semibold"
                     : "inactive-link font-normal"
                     } link-underline link-underline-opacity-0`}
-                  href={"/basecamp-basic"}
+                  href={"/basecamp"}
                 >
                   Events
                 </Link>

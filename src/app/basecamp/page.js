@@ -92,28 +92,28 @@ export default function BasecampPage() {
       title: "Success story of #1 - Ador powerton",
       description:
         "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
-      src: " https://www.youtube.com/embed/TsZWlEhQCEE?enablejsapi=1",
+      src: " https://youtu.be/GyCb1FzL8f0",
     },
     {
       id: 2,
       title: "Success Story #2 - Aliens Tattoo",
       description:
         "In this video, Sunny Bhanushali the Founder & CEO of Aliens Tattoo talks about experiencing challenges of rapid growth, the biggest benefit of implementing a structured framework & the value added by their coach.",
-      src: "https://www.youtube.com/embed/t7gy9PWwzkg?enablejsapi=1",
+      src: "https://youtu.be/yZYbwIRNFGo",
     },
     {
       id: 3,
       title: "Success Story #3 - Grauer & Weil (Engineering Division)",
       description:
         "Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years. At the end, there is a reference to the Coach and the support provided in this growth journey.",
-      src: "https://www.youtube.com/embed/Wv00isXLFps?enablejsapi=1",
+      src: "https://youtu.be/tVbpVpNADlw",
     },
     {
       id: 4,
       title: "Success Story #4 - Clarion Technologies",
       description:
         "In this video, their CEO, Siddharth Motiwale talks about the 'secret sauce' which has helped Clarion grow systematically over the past few years. He also talks about the value added by Ajay as their coach.",
-      src: "https://www.youtube.com/embed/5IWQidzMnNk?enablejsapi=1",
+      src: "https://youtu.be/WO1A4s2Zjy8",
     },
     {
       id: 5,
@@ -121,7 +121,7 @@ export default function BasecampPage() {
       description:
         "In this video, Girish Shilamkar, the Founder & CEO, shares some key aspects of the Scaling Up framework, which helped him build a great culture within his company. These foundations ultimately helped ensure a successful exit in 2025.",
       src:
-        "https://www.youtube.com/embed/jy5Ik158dxA?si=mlb22p62AGgp1l1g?enablejsapi=1",
+        "https://youtu.be/kVqcCXjmE4w",
     },
     {
       id: 6,
@@ -129,7 +129,7 @@ export default function BasecampPage() {
       description:
         "In this video, Jaymin (CEO) & Nital (COO) talk about the benefits of implementing the Scaling Up framework. They ensured alignment at all levels within their business & experienced the resultant growth.",
       src:
-        "https://www.youtube.com/embed/Eb1vlLvFVqM?si=Cf5iO_xiK7KrN4ud?enablejsapi=1",
+        "https://youtu.be/KrLvC80Cbks",
     },
   ];
 
@@ -161,6 +161,12 @@ export default function BasecampPage() {
       thumbnail: "/video_thumbnail.png",
     },
   ];
+
+    function getEmbedUrl(url) {
+  const regExp = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/;
+  const match = url.match(regExp);
+  return match ? `https://www.youtube.com/embed/${match[1]}?enablejsapi=1` : url;
+}
 
   const [index, setIndex] = useState(0);
   const [isPlaying, setPlaying] = useState(false);
@@ -530,6 +536,10 @@ export default function BasecampPage() {
 
         {/* <!-- OFFER SECTION --> */}
         <section class="offer">
+          <p class="guarantee">
+            Delhi-NCR - 15th April’26
+          </p>
+          <br/>
           <h2>EARLY BIRD OFFER</h2>
 
           <div class="price">
@@ -708,7 +718,7 @@ export default function BasecampPage() {
                   <div className="ratio ratio-16x9">
                     <iframe
                       key={i}
-                      src={d.src}
+                        src={getEmbedUrl(d.src)}
                       className="home-video"
                       title="YouTube video player"
                       allow="autoplay; encrypted-media"
@@ -794,20 +804,26 @@ export default function BasecampPage() {
               <div className="join-details">
                 <div className="sub-job-details">
                   <h3>
-                    <strong>Pune - 12th Feb’26</strong>
+                    <strong>Pune - 12th Feb’26 (Completed)</strong>
                   </h3>
                 </div>
                 <div className="row spacer"></div>
 
                 <div className="sub-job-details">
                   <h3>
-                    <strong>Mumbai - 26th Feb’26</strong>
+                    <strong>Mumbai - 26th Feb’26 (Completed)</strong>
                   </h3>
                 </div>
                 <div className="row spacer"></div>
                 <div className="sub-job-details">
                   <h3>
-                    <strong>Delhi-NCR - Coming Soon</strong>
+                    <strong>Delhi-NCR - 15th April’26</strong>
+                  </h3>
+                </div>
+                                <div className="row spacer"></div>
+                 <div className="sub-job-details">
+                  <h3>
+                    <strong>Bangalore - Coming Soon</strong>
                   </h3>
                 </div>
               </div>

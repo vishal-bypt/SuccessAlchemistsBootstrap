@@ -77,7 +77,7 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
 
       {/* Right Button */}
       <a
-        href="/basecamp-basic"
+        href="/basecamp"
         className="text-decoration-none"
         style={{ textDecoration: "none" }}
       >
