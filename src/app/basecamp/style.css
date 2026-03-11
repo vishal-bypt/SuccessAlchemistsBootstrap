@@ -291,7 +291,7 @@ img {
     background-color: #FFB300;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
-    color: var(--text-white);
+    color: #000;
 }
 
 
