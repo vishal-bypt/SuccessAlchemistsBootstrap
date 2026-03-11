@@ -544,9 +544,9 @@ export default function BasecampPage() {
 
         {/* <!-- OFFER SECTION --> */}
         <section class="offer">
-          <p class="guarantee">
+          <h2>
             Delhi-NCR - 15th April’26
-          </p>
+          </h2>
           <br/>
           <h2>EARLY BIRD OFFER</h2>
 
@@ -812,14 +812,14 @@ export default function BasecampPage() {
               <div className="join-details">
                 <div className="sub-job-details">
                   <h3>
-                    <strong>Pune - 12th Feb’26 (Completed)</strong>
+                    <strong>Pune - 12th Feb’26 <i class="fa-solid fa-circle-check"></i></strong>
                   </h3>
                 </div>
                 <div className="row spacer"></div>
 
                 <div className="sub-job-details">
                   <h3>
-                    <strong>Mumbai - 26th Feb’26 (Completed)</strong>
+                    <strong>Mumbai - 26th Feb’26  <i class="fa-solid fa-circle-check"></i></strong>
                   </h3>
                 </div>
                 <div className="row spacer"></div>
