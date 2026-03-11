@@ -740,7 +740,7 @@ export default function BasecampPage() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="img-fluid navigation-buttons">
+        {/* <div className="img-fluid navigation-buttons">
           <div onClick={backward}>
             <Image
               src={left_arrow_btn}
@@ -755,7 +755,7 @@ export default function BasecampPage() {
               alt="right side image"
             />
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="container">
