@@ -417,7 +417,15 @@ export default function BasecampPage() {
           label: "Early Bird - For 3 Team members - ₹17999 + GST",
         },
       ];
-    }
+    } else if (basecampLocation === "Delhi-NCR - 15th April’26") {
+      return [
+        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        {
+          value: "17999",
+          label: "Early Bird - For 3 Team members - ₹17999 + GST",
+        },
+      ];
+    } 
 
     return [];
   };
@@ -1095,9 +1103,12 @@ export default function BasecampPage() {
                 isInvalid={!!errors.basecampLocation}
               >
                 <option value="">- Select Basecamp Location -</option>
-                <option value="Pune - 12th Feb'26">Pune - 12th Feb'26</option>
+                {/* <option value="Pune - 12th Feb'26">Pune - 12th Feb'26</option>
                 <option value="Mumbai - 26th Feb'26">
                   Mumbai - 26th Feb'26
+                </option> */}
+                <option value="Delhi-NCR - 15th April’26">
+                  Delhi-NCR - 15th April’26
                 </option>
               </Form.Select>
               <Form.Control.Feedback type="invalid">
