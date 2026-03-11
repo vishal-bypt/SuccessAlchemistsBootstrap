@@ -443,13 +443,12 @@ export default function BasecampPage() {
       <div className="floating-register-div">
         <div className="floating-register-left">
           <p className="floating-register-text">
-            Early Bird Offer Ending Soon. Only 10 Spots Remain. Reserve Yours
-            Now.
+            Early Bird Offer for Delhi-NCR Basecamp on 15th April
           </p>
           <p className="floating-register-subtext"></p>
         </div>
         <div className="floating-register-right">
-          <button className="floating-register-button" disabled onClick={handleShow}>
+          <button className="floating-register-button" onClick={handleShow}>
             SECURE YOUR SPOT NOW
           </button>
         </div>
