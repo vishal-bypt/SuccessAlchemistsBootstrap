@@ -204,7 +204,7 @@ const ClientReviews = memo(() => {
                 </div>
                 <div className="video col-md-7 home2-video-detail-div">
                   <div className="home2-video-detail-div-title-text">{d.title}</div>
-                  <div className="home2-video-detail-div-title-text">{d.designation}</div>
+                  <div className="home2-video-detail-div-title-subText">{d.designation}</div>
                   <div className="home2-video-detail-p-tag">{d.description}</div>
                 </div>
               </div>

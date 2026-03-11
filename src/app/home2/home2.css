@@ -233,6 +233,12 @@
     color: #fff;
     font-size: 32px;
     line-height: 46.24px;
+    font-weight: 600;
+}
+
+.home2-video-detail-div-title-subText {
+    color: #fff;
+    font-size: 20px;
     font-weight: 500;
 }
 
@@ -1116,7 +1122,7 @@
   color: #ffffff;
   margin: 0 0 20px 0;
   line-height: 1.2;
-  font-size: 70px;
+  font-size: clamp(50px, 5vw, 70px);
 }
 
 .home2-hero-content-footer-webinar h3 span {
@@ -1419,7 +1425,7 @@
     }
 
     .home2-sixth_component_header_div {
-        font-size: 40px;
+        font-size: 30px;
         line-height: calc(40px * 1.2);
     }
 
