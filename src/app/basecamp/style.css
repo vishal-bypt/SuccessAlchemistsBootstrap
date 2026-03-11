@@ -585,7 +585,7 @@ img {
     font-size: 29px;
     line-height: 1.7;
     font-weight: 400;
-    letter-spacing: 6px;
+    /* letter-spacing: 6px; */
     padding: 40px;
 }
 
