@@ -558,7 +558,7 @@ export default function BasecampPage() {
             <h5>Ending Soon. Hurry!</h5>
           </p>
           <p>&nbsp;</p>
-          <button class="cta-btn">SIGN UP TODAY</button>
+          <button class="cta-btn" onClick={handleShow}>SIGN UP TODAY</button>
 
           <p class="guarantee">
             Money Back Guarantee
