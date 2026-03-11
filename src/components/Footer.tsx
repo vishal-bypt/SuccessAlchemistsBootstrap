@@ -99,7 +99,7 @@ const Footer = () => {
               className="Footer_main_logo"
               style={{ width: "150px", height: "auto" }}
             />
-            <div className="col-12 col-md-10 mt-3 col-lg-10 d-flex flex-column text-justify-content-center align-items-start gap-2" style={{ textAlign: "justify" }}>
+            <div className="col-12 col-md-10 mt-3 col-lg-10 d-flex flex-column text-justify-content-center align-items-start gap-2" style={{ textAlign: "left" }}>
               At Success Alchemists Business Coaching Pvt. Ltd., we believe that our success is tied to yours. If you're a CEO seeking to deliver accelerated growth, augmented value, and a simplified business model, our experienced Scaling Up Coaches are here to help
             </div>
 
