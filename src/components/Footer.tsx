@@ -213,8 +213,8 @@ const Footer = () => {
             <ul className="list-unstyled mt-3">
               <li className="mb-2  align-items-center gap-2">
    
-                <p className="mb-0">India - Pune, Mumbai, Delhi-NCR, Bangalore, Hyderabad, Goa</p>
-                <p className="mb-0">UAE - Dubai</p>
+                <p className="mb-2"><strong>India</strong> - Pune, Mumbai, Delhi-NCR, Bangalore, Hyderabad & Goa</p>
+                <p className="mb-0"><strong>UAE</strong> - Dubai</p>
               </li>
             </ul>
              
