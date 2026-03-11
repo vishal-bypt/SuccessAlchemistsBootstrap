@@ -273,7 +273,7 @@ img {
 
 .btn-cta {
     background-color: var(--accent-yellow);
-    color: var(--text-white);
+    /* color: var(--text-white); */
     border: none;
     padding: 18px 45px;
     font-size: 17px;
