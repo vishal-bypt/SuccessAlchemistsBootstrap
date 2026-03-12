@@ -69,7 +69,7 @@ export default function BasecampPage() {
         lastName: "",
         email: "",
         phone: "",
-        basecampLocation: "",
+        basecampLocation: "Bangalore",
         plan: "",
         promoCode: "",
       },
@@ -1461,18 +1461,18 @@ export default function BasecampPage() {
 
       <Form.Group className="mb-3">
         <Form.Label>Upcoming Basecamp Locations</Form.Label>
-        <Form.Select
+        <Form.Select disabled
           {...register2("basecampLocation", {
             required: "Please select a basecamp location",
           })}
           isInvalid={!!errors2.basecampLocation}
         >
           <option value="">- Select Basecamp Location -</option>
-          <option value="Delhi-NCR">Delhi-NCR</option>
+          {/* <option value="Delhi-NCR">Delhi-NCR</option> */}
           <option value="Bangalore">Bangalore</option>
-          <option value="Dubai">Dubai</option>
+          {/* <option value="Dubai">Dubai</option>
           <option value="Pune">Pune</option>
-          <option value="Mumbai">Mumbai</option>
+          <option value="Mumbai">Mumbai</option> */}
         </Form.Select>
 
         <Form.Control.Feedback type="invalid">
