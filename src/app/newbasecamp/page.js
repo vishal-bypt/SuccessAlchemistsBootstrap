@@ -346,7 +346,7 @@ export default function BasecampPage() {
           );
           return false;
         }
-        reset();
+        reset2();
         Toast.success("Registration submitted successfully!");
             handleClose2();
       } catch (error) {
