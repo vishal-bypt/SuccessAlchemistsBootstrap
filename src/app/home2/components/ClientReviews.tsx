@@ -15,7 +15,9 @@ const items = [
     title: "Ravin Mirchandani",
     designation: "Executive Chairperson, Ador Powertron",
     description:
-      "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
+      "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron.",
+    // description:
+    //   "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
     src: " https://www.youtube.com/embed/mN0qCIfEr-8?si=cQHPlh9-GkF85pIe",
   },
   {
@@ -31,7 +33,9 @@ const items = [
     title: "Rohit More",
     designation: "Director, Grauer & Weil",
     description:
-      "Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years. At the end, there is a reference to the Coach and the support provided in this growth journey.",
+      "Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years.",
+    // description:
+    //   "Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years. At the end, there is a reference to the Coach and the support provided in this growth journey.",
     src: "https://www.youtube.com/embed/UrIxZUvzovo?si=nrjwyoMuQsnzgUsz",
   },
   {
@@ -63,7 +67,9 @@ const items = [
     title: "Suvrajit Ghosh",
     designation: "CEO, Mount Meru Millers Uganda",
     description:
-      "In this inspiring testimonial, Suvrajit Ghosh, CEO of Mount Meru Millers Uganda, shares how the Scaling Up framework has transformed their business growth and operations. He reveals the practical benefits and strategic advantages that helped Mount Meru Millers streamline processes, strengthen leadership, and accelerate success. Suvrajit highlights how weekly KPI reviews have aligned his team to the organization's key priorities, and how meeting rhythms have created clarity and accountability across the company. He also shares how these practices have saved him over 18 hours a week translating into thousands of dollars in value.",
+      "In this inspiring testimonial, Suvrajit Ghosh, CEO of Mount Meru Millers Uganda, shares how the Scaling Up framework has transformed their business growth and operations.",
+    // description:
+    //   "In this inspiring testimonial, Suvrajit Ghosh, CEO of Mount Meru Millers Uganda, shares how the Scaling Up framework has transformed their business growth and operations. He reveals the practical benefits and strategic advantages that helped Mount Meru Millers streamline processes, strengthen leadership, and accelerate success. Suvrajit highlights how weekly KPI reviews have aligned his team to the organization's key priorities, and how meeting rhythms have created clarity and accountability across the company. He also shares how these practices have saved him over 18 hours a week translating into thousands of dollars in value.",
     src: "https://www.youtube.com/embed/o-OwjN6PqBU",
   },
   {
@@ -71,7 +77,9 @@ const items = [
     title: "Chirag Savla",
     designation: "CEO, C1 Agri Cluster, Mount Meru Group",
     description:
-      "Chirag Savla, CEO of C1 Agri Cluster, Mount Meru Group, shares the impactful journey his organisation had with the Scaling Up framework and the remarkable benefit it has had on their business. He highlights how the Power of One tool can drive significant improvements in the bottom line when applied effectively. Chirag also offers valuable insights for organizations new to Scaling Up, especially, what they should expect, and the key aspirations to keep in mind as they embark on this growth journey.",
+      "Chirag Savla, CEO of C1 Agri Cluster, Mount Meru Group, shares the impactful journey his organisation had with the Scaling Up framework and the remarkable benefit it has had on their business.",
+    // description:
+    //   "Chirag Savla, CEO of C1 Agri Cluster, Mount Meru Group, shares the impactful journey his organisation had with the Scaling Up framework and the remarkable benefit it has had on their business. He highlights how the Power of One tool can drive significant improvements in the bottom line when applied effectively. Chirag also offers valuable insights for organizations new to Scaling Up, especially, what they should expect, and the key aspirations to keep in mind as they embark on this growth journey.",
     src: "https://www.youtube.com/embed/XDx0wO5wkzs",
   },
 ];
