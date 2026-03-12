@@ -762,7 +762,7 @@ img {
     font-size: 36px;
     font-weight: 800;
     color: var(--text-dark);
-    margin-bottom: 35px;
+    /* margin-bottom: 35px; */
 }
 
 .faq-item {
@@ -789,7 +789,6 @@ img {
 }
 
 .contact-info {
-    margin-top: 40px;
     text-align: center;
     color: var(--text-grey);
     font-size: 16px;
@@ -907,9 +906,7 @@ img {
     }
 
     /* Unlock Section - Tablet */
-    .unlock-section {
-        padding: 80px 0;
-    }
+ 
 
     .section-title {
         font-size: 42px;
@@ -1069,10 +1066,6 @@ img {
         font-size: 14px !important;
     }
 
-    /* Unlock Section - Mobile */
-    .unlock-section {
-        padding: 60px 0;
-    }
 
     .section-title {
         font-size: 36px;
@@ -1095,7 +1088,7 @@ img {
 
     .metric-box {
         padding: 25px 15px;
-        margin-bottom: 25px;
+      
     }
 
     .metric-value {
@@ -1225,7 +1218,7 @@ img {
 
     .faq-heading {
         font-size: 28px;
-        margin-bottom: 25px;
+        /* margin-bottom: 25px; */
     }
 
     .faq-item {
@@ -1243,7 +1236,6 @@ img {
     }
 
     .contact-info {
-        margin-top: 30px;
         font-size: 14px;
     }
 }
@@ -1344,9 +1336,7 @@ img {
     }
 
     /* Unlock Section - Small Mobile */
-    .unlock-section {
-        padding: 50px 0;
-    }
+
 
     .section-title {
         font-size: 28px;
@@ -1365,11 +1355,9 @@ img {
         display: none;
     }
 
-
-
     .metric-box {
-        padding: 20px 10px;
-        margin-bottom: 10px;
+        padding: 15px 10px;
+       
     }
 
     .metric-value {
@@ -1383,7 +1371,7 @@ img {
 
     /* Excite Section - Small Mobile */
     .excite-section {
-        padding: 50px 0;
+        padding: 20px 0;
     }
 
     .excite-section h1 {
@@ -1465,7 +1453,7 @@ img {
 
     /* FAQ Section - Small Mobile */
     .faq-section {
-        padding: 50px 0;
+        padding: 20px 0;
     }
 
     .faq-section .section-title {
@@ -1475,7 +1463,7 @@ img {
 
     .faq-heading {
         font-size: 24px;
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
     }
 
     .faq-item {
@@ -1493,7 +1481,7 @@ img {
     }
 
     .contact-info {
-        margin-top: 25px;
+        margin-top: 10px;
         font-size: 13px;
     }
 }

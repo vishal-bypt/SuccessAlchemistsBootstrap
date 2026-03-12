@@ -682,7 +682,7 @@ export default function BasecampPage() {
         <div className="container">
           <div className="unlock-title ">Unlock The Power Of Scaling Up</div>
           <div className="row">
-            <div className="col-md-3">&nbsp;</div>
+            <div className="col-md-3 d-none d-md-block">&nbsp;</div>
             <div className="col-md-6">
               <p className="section-subtitle text-center">
                 Success Alchemists leverage the Scaling Up framework{" "}
@@ -738,9 +738,9 @@ export default function BasecampPage() {
 
       <div className="slider-container">
 
-        <button className="arrow left" onClick={scrollLeft}>
-      &#8249;
-    </button>
+        <button className="arrow left d-block d-md-none" onClick={scrollLeft}>
+  &#8249;
+</button>
 
 
         <div className="city-slider" ref={sliderRef}>
@@ -809,7 +809,7 @@ export default function BasecampPage() {
 
         </div>
 
-        <button className="arrow right" onClick={scrollRight}>
+        <button className="arrow right d-block d-md-none" onClick={scrollRight}>
   &#8250;
 </button>
 
@@ -961,7 +961,7 @@ export default function BasecampPage() {
         <div className="unlock-title ">
           Leaders who attended the Basecamp workshops in the past said this
         </div>
-        <div className="row spacer"></div>
+       
       </div>
       <section className="section excite-section">
         <div className="container">
@@ -1003,7 +1003,7 @@ export default function BasecampPage() {
           <h2 className="unlock-title">Have Questions About BASECAMP?</h2>
           <br />
           <h1 className="faq-heading">FAQs</h1>
-          <br />
+          {/* <br /> */}
           <br />
 
           <div className="faq-item">
