@@ -29,7 +29,7 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
       className="position-relative w-100 d-flex flex-column flex-md-row justify-content-between align-items-center p-4 text-white"
       style={{
         background: "linear-gradient(45deg, #fdae07, #fdae07, #fdae07)",
-        borderRadius: "24px",
+        // borderRadius: "24px",
         overflow: "hidden",
       }}
     >
