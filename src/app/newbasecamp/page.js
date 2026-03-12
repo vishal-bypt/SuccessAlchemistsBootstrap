@@ -348,6 +348,7 @@ export default function BasecampPage() {
         }
         reset();
         Toast.success("Registration submitted successfully!");
+            handleClose2();
       } catch (error) {
         console.error("Basecamp form error:", error);
         alert(
