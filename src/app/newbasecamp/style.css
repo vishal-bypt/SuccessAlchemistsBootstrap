@@ -2214,6 +2214,7 @@ img {
   overflow-x:auto;
   scroll-behavior:smooth;
   scrollbar-width:none;
+   scroll-snap-type: x mandatory; 
   /* REMOVE THIS FOR MORE SLIDES NEED TO SCROLL */
 justify-content: center;
 }
@@ -2225,8 +2226,9 @@ justify-content: center;
 /* CARD */
 
 .city-card{
-  min-width:320px;
+  min-width: calc(100% - 32px);
   background:#102a3c;
+  scroll-snap-align: center;
   padding:30px;
   border-radius:24px;
   text-align:left;
