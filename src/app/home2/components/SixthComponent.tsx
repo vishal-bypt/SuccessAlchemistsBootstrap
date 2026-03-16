@@ -42,9 +42,9 @@ const SixthComponent = memo(() => {
           <div>
             <div className="home2-sixth_component_title_div">SCALING UP</div>
             <div className="home2-sixth_component_header_div">Team assessment</div>
-            <div className="home2-sixth_component_sub_header_div">
+            {/* <div className="home2-sixth_component_sub_header_div">
               Welcome to the Scaling Up 4 Decisions Assessment!
-            </div>
+            </div> */}
             <p className="home2-sixth_component_content">
               This tool will help you evaluate and strengthen your business
               across the critical areas of People, Strategy, Execution, and

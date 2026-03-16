@@ -24,6 +24,9 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
 
   if (!mounted) return null;
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
+
   return (
     <div
       className="position-relative w-100 d-flex flex-column flex-md-row justify-content-between align-items-center p-4 text-white"
@@ -37,8 +40,8 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
       <div
         className={`position-absolute ${blink ? " opacity-100" : " opacity-75"}`}
         style={{
-          top: "-5px",
-          left: "-10px",
+          top: isMobile ? "-25px" : "-5px",
+          left: isMobile ? "-25px" :"-10px",
           transform: "rotate(-45deg)",
           width: "120px",
           height: "120px",
@@ -60,7 +63,10 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
       {/* Left Text Section */}
       <div
         className="text-center text-md-start mb-3 mb-md-0"
-        style={{ marginLeft: "60px" }}
+        style={{
+    marginLeft: isMobile ? "0px" : "60px",
+    marginTop: isMobile ? "20px" : "0px",
+  }}
       >
         <div className="home2-hero-icon-img">
           <Image
