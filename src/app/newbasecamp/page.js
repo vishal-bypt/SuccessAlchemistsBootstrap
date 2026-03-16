@@ -166,6 +166,7 @@ export default function BasecampPage() {
   {
     id: 1,
     name: "Delhi-NCR",
+    location: "IIT Delhi Campus",
     date: "15th April’26",
     image: delhi,
     earlyBird: "Early bird offer end 31st Mar' 26",
@@ -817,7 +818,7 @@ export default function BasecampPage() {
     </svg>
   </span>{city.name}
               </h3>
-
+            <div className="city-location ">{city.location}</div>
               <p className="city-date">
                  <span className="icon">
     <svg
