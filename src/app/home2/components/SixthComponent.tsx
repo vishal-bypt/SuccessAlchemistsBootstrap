@@ -62,6 +62,8 @@ const SixthComponent = memo(() => {
               <Image
                 className="img-fluid"
                 src={Double_arrow}
+                height={35}
+                width={35}
                 alt="right arrow"
                 loading="lazy"
               />
