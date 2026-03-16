@@ -180,7 +180,7 @@ export default function BasecampPage() {
     date: "28th May’26",
     image: bangalore,
     status: "Registrations Yet To Start",
-    button: "REGISTER YOUR INTEREST"
+    button: "REGISTER INTEREST"
   },
   
 ];
