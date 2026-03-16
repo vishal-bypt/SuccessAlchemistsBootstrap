@@ -13,6 +13,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Toast from "../../components/Toast";
+import backgroundImage from "./../../../public/DSC03514.jpg";
 import "./style.css";
 // Import Swiper styles
 import "swiper/css";
@@ -610,9 +611,58 @@ export default function BasecampPage() {
           </button>
         </div>
       </div>
+      {/* FIRST BASECAMP SECTION FOR MOBILE*/}
+      <section className="d-block d-md-none">
+        <div className="hero">
+             <div className="hero-left">
+       <Image
+                    // className="logo-image"
+                    src={basecamplogo2}
+                    alt="img2"
+                  />
+      <p className="flag-subtitle">Our Flagship Scaling Up Workshop</p>
+      <p className="hero-small">
+        Exclusively crafted for Founders <br />
+        & Top Executives
+      </p>
+    </div>
+
+     <Image
+                    // className="logo-image"
+                    src={backgroundImage}
+                    alt="img2"
+                    className="back-image"
+                  />
+
+                  <div className="hero-center">
+    
+                  <p className="sentence-text">
+                    {sentences[sentenceIndex]}{" "}
+                    <br className="d-none d-md-block" />
+                  </p>
+                  <div className="sentence-dots">
+                    {sentences.map((_, i) => (
+                      <span
+                        key={i}
+                        className={`dot ${i === sentenceIndex ? "active" : ""}`}
+                        onClick={() => setSentenceIndex(i)}
+                      ></span>
+                    ))}
+                  </div>
+                
+              
+          
+
+      <button className=" btn-cta text-center"
+                    onClick={handleShow}>REGISTER NOW</button>
+    </div>
+        </div>
+
+      </section>
 
       {/* FIRST BASECAMP SECTION */}
-      <section className="basecamp-hero">
+      <div className="d-none d-md-block">
+<section className="basecamp-hero ">
   <div className="hero-container">
 
     <div className="hero-left">
@@ -653,6 +703,8 @@ export default function BasecampPage() {
 
   </div>
 </section>
+      </div>
+      
 
       <div class="page-wrapper">
         {/* <!-- TOP SECTION --> */}

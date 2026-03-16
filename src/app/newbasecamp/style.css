@@ -2386,31 +2386,6 @@ min-width:100%;
 
 }
 
-
-
-
-
-/* .basecamp-hero {
-  width: 100%;
-  min-height: 700px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background:
-   linear-gradient(rgba(79, 68, 53, 0.75), rgba(79, 68, 53, 0.75)),
-    url("/DSC03514.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  text-align: center;
-  color: white;
-  padding: 40px 20px;
-} */
-
 .basecamp-hero {
   width: 100%;
   min-height: 700px;
@@ -2463,6 +2438,10 @@ min-width:100%;
   font-weight: 600;
   margin-top: 10px;
   margin-left: 15px;
+}
+
+.back-image {
+    margin-top: 15px;
 }
 
 /* CENTER CONTENT */
@@ -2548,7 +2527,7 @@ min-width:100%;
   }
 
   .hero-center {
-    margin-top: 60px;
+    margin-top: 10px;
   }
 
   .flag-subtitle {
