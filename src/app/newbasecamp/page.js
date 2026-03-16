@@ -166,7 +166,7 @@ export default function BasecampPage() {
   {
     id: 1,
     name: "Delhi-NCR",
-    date: "25th April’26",
+    date: "15th April’26",
     image: delhi,
     earlyBird: "Early bird offer end 31st Mar' 26",
     price1: "Rs 9999",
@@ -710,9 +710,7 @@ export default function BasecampPage() {
         {/* <!-- TOP SECTION --> */}
         <section class="hero">
           <div className="company-title">
-            Your company is growing but
-            <br />
-            your growth is unpredictable
+            Your company is growing but your growth is unpredictable
           </div>
 
           <p class="description">
