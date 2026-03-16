@@ -2226,7 +2226,7 @@ justify-content: center;
 /* CARD */
 
 .city-card{
-  min-width: calc(100% - 32px);
+      min-width:320px;
   background:#102a3c;
   scroll-snap-align: center;
   padding:30px;
@@ -2383,7 +2383,8 @@ justify-content: flex-start;
 }
 
 .city-card{
-min-width:100%;
+
+  min-width: 100%
 }
 
 }
