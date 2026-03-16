@@ -300,6 +300,7 @@ const Footer = () => {
                       style={{
                         borderRadius: "8px",
                         fontSize: "1rem",
+                        marginBottom: "10px",
                         letterSpacing: "0.5px",
                         backgroundColor: "#FBA819",
                         color: "#FFFFFF",
