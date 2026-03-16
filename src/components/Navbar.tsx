@@ -26,7 +26,7 @@ const NavbarMenu = () => {
   }, []);
   console.log(pathname, "pathname");
   return (
-    <Navbar expand="lg" className="">
+    <Navbar expand="lg" className="p-3">
       <Navbar.Brand href="/home" onClick={() => window.location.href = "/home"}>
         <div className="main_logo" />
       </Navbar.Brand>

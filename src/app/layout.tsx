@@ -78,7 +78,7 @@ export default function RootLayout({
       </head>
       <body
         style={{ background: "#F5F5F5" }}
-        className={`${geistSans.variable} ${geistMono.variable} p-3`}
+        className={`${geistSans.variable} ${geistMono.variable}`}
       >
         {/* Google Analytics Script */}
         <Script
