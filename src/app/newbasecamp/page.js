@@ -167,7 +167,7 @@ export default function BasecampPage() {
     name: "Delhi-NCR",
     date: "25th April’26",
     image: delhi,
-    earlyBird: "Early Bird Going On",
+    earlyBird: "Early bird offer end 31st Mar' 26",
     price1: "Rs 9999",
     price2: "Rs 7999",
     button: "REGISTER NOW"
@@ -175,7 +175,7 @@ export default function BasecampPage() {
   {
     id: 2,
     name: "Bangalore",
-    date: "12th May’26",
+    date: "28th May’26",
     image: bangalore,
     status: "Registrations Yet To Start",
     button: "REGISTER YOUR INTEREST"
@@ -791,7 +791,7 @@ export default function BasecampPage() {
                   <p className="early-bird">{city.earlyBird}</p>
 
                   <div className="price-row">
-                    <span>{city.price1}</span>
+                    <span className="price-old">{city.price1}</span>
                     <span>{city.price2}</span>
                   </div>
                 </>
@@ -958,7 +958,7 @@ export default function BasecampPage() {
       </div>
 
       <div className="container">
-        <div className="unlock-title ">
+        <div className="leader-title ">
           Leaders who attended the Basecamp workshops in the past said this
         </div>
        
@@ -969,7 +969,7 @@ export default function BasecampPage() {
             This Should Excite You If…{" "}
           </div>
           <div className="row">
-            <div className="col-md-1 d-none d-md-block">&nbsp;</div>
+            {/* <div className="col-md-1 d-none d-md-block">&nbsp;</div> */}
             <div className="col-md-11 col-12 excite-section-list">
               <i className="fa-solid fa-arrow-trend-up me-2"></i> You are
               running a company with turnover of 50 CR+
@@ -977,21 +977,21 @@ export default function BasecampPage() {
           </div>
           {/* <div className="row spacer"></div> */}
           <div className="row">
-            <div className="col-md-1 d-none d-md-block">&nbsp;</div>
+            {/* <div className="col-md-1 d-none d-md-block">&nbsp;</div> */}
             <div className="col-md-11 col-12 excite-section-list">
               <i className="fa-solid fa-arrow-trend-up me-2"></i> You are
               serious about scaling up your business{" "}
-              <br className="d-none d-md-block" />
+              {/* <br className="d-none d-md-block" /> */}
               exponentially in the next 10 years
             </div>
           </div>
           {/* <div className="row spacer"></div> */}
           <div className="row">
-            <div className="col-md-1 d-none d-md-block">&nbsp;</div>
+            {/* <div className="col-md-1 d-none d-md-block">&nbsp;</div> */}
             <div className="col-md-11 col-12 excite-section-list">
               <i className="fa-solid fa-arrow-trend-up me-2"></i> You know what
               got you here, won’t take you to the next{" "}
-              <br className="d-none d-md-block" />
+              {/* <br className="d-none d-md-block" /> */}
               level
             </div>
           </div>

@@ -79,6 +79,11 @@ body {
     font-size: 14px;
 }
 
+.price-old {
+  text-decoration: line-through;
+  color: #888;
+}
+
 .company-title{
   color:#fff;
   font-size:48px;
@@ -95,6 +100,26 @@ font-size:36px;
 @media (max-width:600px) {
 .company-title{
 font-size:26px;
+}
+}
+
+
+.leader-title{
+  font-size:36px;
+  font-weight:600;
+  text-align: center;
+    margin-bottom:25px;
+}
+
+@media (max-width: 992px) {
+    .leader-title{
+font-size:26px;
+}
+}
+
+@media (max-width:600px) {
+.leader-title{
+font-size:16px;
 }
 }
 
