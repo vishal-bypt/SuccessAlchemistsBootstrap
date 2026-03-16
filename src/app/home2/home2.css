@@ -1297,7 +1297,11 @@
     display: flex;
     width: fit-content;
     border-radius: 12px;
-    padding: 12px 32px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 10px;
+    /* padding: 12px 32px; */
     background: #fba819;
     color: #fff;
     font-weight: 500;
