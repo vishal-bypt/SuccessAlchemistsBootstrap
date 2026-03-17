@@ -27,11 +27,15 @@ export default function BasecampPage() {
 
   const swiperRef = useRef(null);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+const handleShow = () => {
+  reset();   // ✅ reset here
+  setShow(true);
+};
   const handleClose2 = () => setShow2(false);
-  const handleShow2 = () => setShow2(true);
-
+  const handleShow2 = () => {
+  reset2();   // ✅ reset here
+  setShow2(true);
+};
   const {
     register,
     handleSubmit: rhfHandleSubmit,
@@ -179,8 +183,11 @@ export default function BasecampPage() {
     name: "Bangalore",
     date: "28th May’26",
     image: bangalore,
-    status: "Registrations Yet To Start",
-    button: "REGISTER INTEREST"
+    price1: "Rs 9999",
+    price2: "Rs 7999",
+    earlyBird: "Early bird offer",
+    // status: "Registrations Yet To Start",
+    button: "REGISTER NOW"
   },
   
 ];
@@ -567,7 +574,15 @@ export default function BasecampPage() {
           label: "Early Bird - For 3 Team members - ₹17999 + GST",
         },
       ];
-    } 
+    } else if (basecampLocation === "Bangalore - 28th May’26") {
+      return [
+        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        {
+          value: "17999",
+          label: "Early Bird - For 3 Team members - ₹17999 + GST",
+        },
+      ];
+    }
 
     return [];
   };
@@ -602,7 +617,7 @@ export default function BasecampPage() {
       <div className="floating-register-div">
         <div className="floating-register-left">
           <p className="floating-register-text">
-            Early Bird Offer for Delhi-NCR Basecamp on 15th April
+            Early Bird Offer for Delhi-NCR & Bangalore Basecamp Expire Soon
           </p>
           <p className="floating-register-subtext"></p>
         </div>
@@ -1294,6 +1309,9 @@ export default function BasecampPage() {
                 </option> */}
                 <option value="Delhi-NCR - 15th April’26">
                   Delhi-NCR - 15th April’26
+                </option>
+                <option value="Bangalore - 28th May’26">
+                  Bangalore - 28th May’26
                 </option>
               </Form.Select>
               <Form.Control.Feedback type="invalid">

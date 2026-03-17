@@ -2435,15 +2435,16 @@ justify-content: flex-start;
 }
 
 .flag-subtitle {
-  font-size: 22px;
+  font-size: 25px;
   margin-top: 15px;
+  font-weight: 600;
   margin-left: 15px;
 }
 
 .hero-small {
   font-size: 20px;
   font-style: italic;
-  font-weight: 600;
+  
   margin-top: 10px;
   margin-left: 15px;
 }
@@ -2508,7 +2509,7 @@ justify-content: flex-start;
   }
 
   .flag-subtitle {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .hero-small {
@@ -2539,7 +2540,7 @@ justify-content: flex-start;
   }
 
   .flag-subtitle {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .hero-small {
@@ -2562,7 +2563,7 @@ justify-content: flex-start;
 @media (max-width: 480px) {
 
   .flag-subtitle {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .hero-small {
