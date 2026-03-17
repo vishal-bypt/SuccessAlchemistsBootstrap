@@ -2202,7 +2202,7 @@ img {
 
 /* SLIDER */
 
-.slider-container{
+.basecamp-slider-container{
   position:relative;
   max-width:1200px;
   margin:auto;

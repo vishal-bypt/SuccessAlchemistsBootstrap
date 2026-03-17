@@ -802,7 +802,7 @@ const handleShow = () => {
 
       <h2 className="city-title mb-5">We’re coming to your city</h2>
 
-      <div className="slider-container">
+      <div className="basecamp-slider-container">
 
         <button className="arrow left d-block d-md-none" onClick={scrollLeft}>
   &#8249;
