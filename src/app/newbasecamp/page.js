@@ -105,7 +105,7 @@ export default function BasecampPage() {
     "NMIA_EXCLUSIVE",
     "ISB_EXCLUSIVE",
     "IIM_EXCLUSIVE",
-    //"SPECIAL20",
+    "SPECIAL20",
   ];
 
   const [sentenceIndex, setSentenceIndex] = useState(0);
