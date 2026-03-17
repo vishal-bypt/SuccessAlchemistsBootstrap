@@ -617,7 +617,7 @@ const handleShow = () => {
       <div className="floating-register-div">
         <div className="floating-register-left">
           <p className="floating-register-text">
-            Early Bird Offer for Delhi-NCR & Bangalore Basecamp Expire Soon
+            Early Bird Offer for Delhi-NCR & Bangalore Basecamp Expires Soon
           </p>
           <p className="floating-register-subtext"></p>
         </div>
