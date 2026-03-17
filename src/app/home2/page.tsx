@@ -84,10 +84,10 @@ const Home = () => {
       <section className="home2-unlock-section">
         <div className="container">
           <h2 className="home2-section-title">Unlock The Power Of Scaling Up</h2>
-          <div className="row home2-spacer"></div>
+          {/* <div className="row home2-spacer"></div> */}
           <div className="row home2-spacer"></div>
           <div className="row">
-            <div className="col-md-3">&nbsp;</div>
+            <div className="col-md-3 d-none d-md-block">&nbsp;</div>
             <div className="col-md-6">
               <p className="home2-section-subtitle text-center">
                 Success Alchemists leverage the Scaling Up framework{" "}
@@ -97,7 +97,7 @@ const Home = () => {
               </p>
             </div>
             <div className="row home2-spacer"></div>
-            <div className="row home2-spacer"></div>
+            {/* <div className="row home2-spacer"></div> */}
           </div>
 
           <div className="row">
@@ -114,7 +114,6 @@ const Home = () => {
               </p>
             </div>
           </div>
-
           <div className="row home2-metrics-container">
             <div className="col-md-4 col-12">
               <div className="home2-metric-box">
