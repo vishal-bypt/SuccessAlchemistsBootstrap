@@ -3,28 +3,39 @@
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
-import basecamplogo2 from "./Basecamp_White.png";
+import basecamplogo2 from "./Artboard.png";
+import delhi from "./delhi.png";
+import bangalore from "./bangaluru.jpg";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import left_arrow_btn from "../home/images/left-arrow-btn.png";
-import right_arrow_btn from "../home/images/right-arrow-btn.png";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Toast from "../../components/Toast";
+import backgroundImage from "./../../../public/DSC03514.jpg";
 import "./style.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+
 export default function BasecampPage() {
   const [show, setShow] = useState(false);
+    const [show2, setShow2] = useState(false);
+
   const swiperRef = useRef(null);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+const handleShow = () => {
+  reset();   // ✅ reset here
+  setShow(true);
+};
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => {
+  reset2();   // ✅ reset here
+  setShow2(true);
+};
   const {
     register,
     handleSubmit: rhfHandleSubmit,
@@ -46,6 +57,28 @@ export default function BasecampPage() {
       promoCode: "",
     },
   });
+
+    const {
+      register: register2,
+  handleSubmit: form2Submit,
+  formState: { errors: errors2, isValid: isValid2, isSubmitting: isSubmitting2 },
+  watch: watch2,
+  setValue: setValue2,
+  reset: reset2,
+    } = useForm({
+      mode: "onChange",
+      defaultValues: {
+        companyName: "",
+        yourDesignation: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        basecampLocation: "Bangalore",
+        plan: "",
+        promoCode: "",
+      },
+    });
 
   const [order_id] = useState(`ORD${Date.now()}`);
   const [discount, setDiscount] = useState(0);
@@ -76,7 +109,7 @@ export default function BasecampPage() {
     "NMIA_EXCLUSIVE",
     "ISB_EXCLUSIVE",
     "IIM_EXCLUSIVE",
-    //"SPECIAL20",
+    "SPECIAL20",
   ];
 
   const [sentenceIndex, setSentenceIndex] = useState(0);
@@ -132,6 +165,33 @@ export default function BasecampPage() {
         "https://youtu.be/KrLvC80Cbks",
     },
   ];
+
+  const cityList = [
+  {
+    id: 1,
+    name: "Delhi-NCR",
+    location: "IIT Delhi Campus",
+    date: "15th April’26",
+    image: delhi,
+    earlyBird: "Early bird offer end 31st Mar' 26",
+    price1: "Rs 9999",
+    price2: "Rs 7999",
+    button: "REGISTER NOW"
+  },
+  {
+    id: 2,
+    name: "Bangalore",
+    date: "28th May’26",
+    image: bangalore,
+    price1: "Rs 9999",
+    price2: "Rs 7999",
+    earlyBird: "Early bird offer",
+    // status: "Registrations Yet To Start",
+    button: "REGISTER NOW"
+  },
+  
+];
+
 
   const videos = [
     // { type: "youtube", id: "ScMzIvxBSi4" },
@@ -219,6 +279,95 @@ export default function BasecampPage() {
     }
     handleClose();
   };
+
+    const handleSubmitForm2 = async (data) => {
+    if (data.website) {
+      //return res.status(400).json({ error: 'Spam detected' });
+      console.error("Error:", "Spam detected");
+      Toast.error("Spam detected.");
+      throw new Error(`Spam detected`);
+    }
+    await handlePayment2(data);
+    if (result === false) {
+      return;
+    }
+    handleClose2();
+  };
+
+    const handlePayment2 = async (data) => {
+      const {
+        firstName,
+        lastName,
+        email,
+        phone,
+        plan,
+        companyName,
+        yourDesignation,
+        basecampLocation,
+      } = data;
+  
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      const payload = {
+        billing_name: `${firstName} ${lastName}`,
+        billing_email: email,
+        billing_tel: phone,
+        company: companyName,
+        designation: yourDesignation,
+        basecampLocation: basecampLocation,
+        type: "basecamp-basic",
+      };
+  
+      //console.log("Records is:::::", payload);
+  
+      if (!executeRecaptcha) {
+        Toast.error("reCAPTCHA not ready");
+        return false;
+      }
+  
+      // Check if API URL is defined
+      if (!apiUrl) {
+        alert(
+          "Payment failed: API URL is not configured. Please check your environment variables."
+        );
+        console.error("NEXT_PUBLIC_API_URL is not defined");
+        return false;
+      }
+  
+      try {
+        const recaptchaToken = await executeRecaptcha("basecamp_form");
+        const response = await fetch(apiUrl + "/register-interest", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...payload, recaptchaToken }),
+        });
+  
+        // Check if response is ok
+        const paymentData = await response.json();
+  
+        if (!response.ok || !paymentData.success) {
+          Toast.error(paymentData?.message || "Failed to submit the form.");
+          return false;
+        }
+  
+        if (!paymentData.success) {
+          Toast.error(
+            paymentData?.message || "Registration failed. Please try again later."
+          );
+          return false;
+        }
+        reset2();
+        Toast.success("Registration submitted successfully!");
+            handleClose2();
+      } catch (error) {
+        console.error("Basecamp form error:", error);
+        alert(
+          `Basecamp registration failed: ${
+            error.message ||
+            "Network error. Please check your connection and try again."
+          }`
+        );
+      }
+    };
 
   const handlePayment = async (data) => {
     const {
@@ -425,7 +574,15 @@ export default function BasecampPage() {
           label: "Early Bird - For 3 Team members - ₹17999 + GST",
         },
       ];
-    } 
+    } else if (basecampLocation === "Bangalore - 28th May’26") {
+      return [
+        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        {
+          value: "17999",
+          label: "Early Bird - For 3 Team members - ₹17999 + GST",
+        },
+      ];
+    }
 
     return [];
   };
@@ -437,13 +594,30 @@ export default function BasecampPage() {
     setPromoApplied(false);
   }, [basecampLocation, setValue]);
 
+
+  const sliderRef = useRef(null);
+
+  const scrollLeft = () => {
+    sliderRef.current.scrollBy({
+      left: -550,
+      behavior: "smooth"
+    });
+  };
+
+  const scrollRight = () => {
+    sliderRef.current.scrollBy({
+      left: 550,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <div>
       {/* FLOATING REGISTER DIV */}
       <div className="floating-register-div">
         <div className="floating-register-left">
           <p className="floating-register-text">
-            Early Bird Offer for Delhi-NCR Basecamp on 15th April
+            Early Bird Offer for Delhi-NCR & Bangalore Basecamp Expires Soon
           </p>
           <p className="floating-register-subtext"></p>
         </div>
@@ -453,36 +627,31 @@ export default function BasecampPage() {
           </button>
         </div>
       </div>
-      {/* HERO SECTION */}
-      <section className="hero-section1">
-        <div className="container">
-          <div className="row align-items-center justify-content-center">
-            <div className="col-lg-3 col-md-12 col-12 order-lg-1 order-1">
-              <div className="hero-content">
-                <div className="hero-icon-img">
-                  <Image
-                    className="logo-image"
+      {/* FIRST BASECAMP SECTION FOR MOBILE*/}
+      <section className="d-block d-md-none">
+        <div className="hero">
+             <div className="hero-left">
+       <Image
+                    // className="logo-image"
                     src={basecamplogo2}
                     alt="img2"
                   />
-                </div>
-                <p className="hero-subtitle text-center text-md-left">
-                  Scale With More Clarity, Robust Systems, Increased Cashflows
-                  and More Productive Teams
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-12 order-lg-2 order-2">
-              <div className="hero-right">
-                <div
-                  className="hero-image-placeholder"
-                  style={{ backgroundImage: "url('girl.png')" }}
-                ></div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-12 order-lg-3 order-3">
-              <div className="hero-right">
-                <div className="hero-info">
+      <p className="flag-subtitle">Our Flagship Scaling Up Workshop</p>
+      <p className="hero-small">
+        Exclusively crafted for Founders <br />
+        & Top Executives
+      </p>
+    </div>
+
+     <Image
+                    // className="logo-image"
+                    src={backgroundImage}
+                    alt="img2"
+                    className="back-image"
+                  />
+
+                  <div className="hero-center">
+    
                   <p className="sentence-text">
                     {sentences[sentenceIndex]}{" "}
                     <br className="d-none d-md-block" />
@@ -496,37 +665,69 @@ export default function BasecampPage() {
                       ></span>
                     ))}
                   </div>
-                  <div className="date-time">
-                    <div>
-                      <i>
-                        Exclusively crafted for Founders{" "}
-                        <br className="d-none d-md-block" />& Top Executives
-                      </i>
-                    </div>
-                    <div></div>
-                  </div>
-                  <button
-                    className="btn btn-cta w-100 w-md-auto text-center"
-                    onClick={handleShow}
-                    // disabled
-                  >
-                    REGISTER NOW
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+                
+              
+          
+
+      <button className=" btn-cta text-center"
+                    onClick={handleShow}>REGISTER NOW</button>
+    </div>
         </div>
+
       </section>
+
+      {/* FIRST BASECAMP SECTION */}
+      <div className="d-none d-md-block">
+<section className="basecamp-hero ">
+  <div className="hero-container">
+
+    <div className="hero-left">
+       <Image
+                    // className="logo-image"
+                    src={basecamplogo2}
+                    alt="img2"
+                  />
+      <p className="flag-subtitle">Our Flagship Scaling Up Workshop</p>
+      <p className="hero-small">
+        Exclusively crafted for Founders <br />
+        & Top Executives
+      </p>
+    </div>
+
+    <div className="hero-center">
+    
+                  <p className="sentence-text">
+                    {sentences[sentenceIndex]}{" "}
+                    <br className="d-none d-md-block" />
+                  </p>
+                  <div className="sentence-dots">
+                    {sentences.map((_, i) => (
+                      <span
+                        key={i}
+                        className={`dot ${i === sentenceIndex ? "active" : ""}`}
+                        onClick={() => setSentenceIndex(i)}
+                      ></span>
+                    ))}
+                  </div>
+                
+              
+          
+
+      <button className=" btn-cta text-center"
+                    onClick={handleShow}>REGISTER NOW</button>
+    </div>
+
+  </div>
+</section>
+      </div>
+      
 
       <div class="page-wrapper">
         {/* <!-- TOP SECTION --> */}
         <section class="hero">
-          <h1>
-            Your company is growing but
-            <br />
-            your growth is unpredictable
-          </h1>
+          <div className="company-title">
+            Your company is growing but your growth is unpredictable
+          </div>
 
           <p class="description">
             Business owners often come to a point where what was working earlier
@@ -541,39 +742,13 @@ export default function BasecampPage() {
           </p>
         </section>
 
-        {/* <!-- OFFER SECTION --> */}
-        <section class="offer">
-          <h2>
-            Delhi-NCR - 15th April’26
-          </h2>
-          <br/>
-          <h2>EARLY BIRD OFFER</h2>
-
-          <div class="price">
-            <span class="old-price">Rs 9999</span>
-            <span class="new-price">Rs 7999 only</span>
-          </div>
-          <p style={{ color: "#0b2239" }}>
-            <h5>Ending Soon. Hurry!</h5>
-          </p>
-          <p>&nbsp;</p>
-          <button class="cta-btn" onClick={handleShow}>SIGN UP TODAY</button>
-
-          <p class="guarantee">
-            Money Back Guarantee
-            <br />
-            No questions asked if you don’t find the workshop valuable.
-          </p>
-        </section>
       </div>
       {/* UNLOCK SECTION */}
       <section className="unlock-section">
         <div className="container">
-          <h2 className="section-title">Unlock The Power Of Scaling Up</h2>
-          <div className="row spacer"></div>
-          <div className="row spacer"></div>
+          <div className="unlock-title ">Unlock The Power Of Scaling Up</div>
           <div className="row">
-            <div className="col-md-3">&nbsp;</div>
+            <div className="col-md-3 d-none d-md-block">&nbsp;</div>
             <div className="col-md-6">
               <p className="section-subtitle text-center">
                 Success Alchemists leverage the Scaling Up framework{" "}
@@ -582,7 +757,6 @@ export default function BasecampPage() {
                 businesses exponentially & sustainably.
               </p>
             </div>
-            <div className="row spacer"></div>
             <div className="row spacer"></div>
           </div>
 
@@ -623,20 +797,112 @@ export default function BasecampPage() {
           </div>
         </div>
       </section>
+      {/* REGISTRATION */}
+       <section className="city-section">
+
+      <h2 className="city-title mb-5">We’re coming to your city</h2>
+
+      <div className="slider-container">
+
+        <button className="arrow left d-block d-md-none" onClick={scrollLeft}>
+  &#8249;
+</button>
+
+
+        <div className="city-slider" ref={sliderRef}>
+
+          {cityList.map((city) => (
+            <div className="city-card" key={city.id}>
+
+              <Image src={city.image} alt={city.name} className="city-img"/>
+
+              <h3 className="city-name">
+                   
+  {/* Location Icon */}
+  <span className="icon">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="25"
+      height="25"
+      viewBox="0 0 24 24"
+      fill="white"
+    >
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
+      9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 
+      1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+    </svg>
+  </span>{city.name}
+              </h3>
+            <div className="city-location ">{city.location}</div>
+              <p className="city-date">
+                 <span className="icon">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="25"
+      height="25"
+      viewBox="0 0 24 24"
+      fill="white"
+    >
+      <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 
+      0-2 .9-2 2v14c0 1.1.9 2 2 
+      2h14c1.1 0 2-.9 
+      2-2V6c0-1.1-.9-2-2-2zm0 
+      16H5V9h14v11z"/>
+    </svg>
+  </span>{city.date}
+              </p>
+
+              {city.earlyBird && (
+                <>
+                  <p className="early-bird">{city.earlyBird}</p>
+
+                  <div className="price-row">
+                    <span className="price-old">{city.price1}</span>
+                    <span>{city.price2}</span>
+                  </div>
+                </>
+              )}
+
+              {city.status && (
+                <p className="coming">{city.status}</p>
+              )}
+
+              <button className="city-btn" onClick={city.earlyBird ? handleShow :  handleShow2}>
+                {city.button}
+              </button>
+            </div>
+          ))}
+
+        </div>
+
+        <button className="arrow right d-block d-md-none" onClick={scrollRight}>
+  &#8250;
+</button>
+
+      </div>
+
+    </section>             
+
+      {/* MONEY BACK SECTION */}
+       <section className="money-back-section">
+      <div className="money-back-container">
+        <h2>MONEY-BACK GUARANTEE</h2>
+        <p>No questions asked if you don’t find the workshop valuable.</p>
+      </div>
+    </section>
 
       {/* EXPERIENCE SECTION */}
       <section className="experience-section">
         <div className="container">
-          <h1 className="experience-section-title">
-            What You'll <br className="d-none d-md-block" /> Experience At{" "}
-            <br className="d-none d-md-block" /> BASECAMP?
-          </h1>
+          <div className="experience-section-title">
+            What You'll Experience At{" "} BASECAMP?
+          </div>
 
           <div className="row experience-grid ">
             <div className="col-md-6 col-12">
               <div className="experience-item">
                 <div className="experience-icon">
-                  <img src="arrow.png" width="200" alt="arrow" />
+                  <img src="arrow.png" width="150" alt="arrow" />
                 </div>
                 <div className="experience-text">
                   Discover how other players in your industry are scaling their
@@ -647,7 +913,7 @@ export default function BasecampPage() {
             <div className="col-md-6 col-12">
               <div className="experience-item">
                 <div className="experience-icon">
-                  <img src="arrow.png" width="200" alt="arrow" />
+                  <img src="arrow.png" width="150" alt="arrow" />
                 </div>
                 <div className="experience-text">
                   Learn the nuances of business growth from scaling up certified
@@ -658,7 +924,7 @@ export default function BasecampPage() {
             <div className="col-md-6 col-12">
               <div className="experience-item">
                 <div className="experience-icon">
-                  <img src="arrow.png" width="200" alt="arrow" />
+                  <img src="arrow.png" width="150" alt="arrow" />
                 </div>
                 <div className="experience-text">
                   Identify the gaps in your current business that's hindering
@@ -669,7 +935,7 @@ export default function BasecampPage() {
             <div className="col-md-6 col-12">
               <div className="experience-item">
                 <div className="experience-icon">
-                  <img src="arrow.png" width="200" alt="arrow" />
+                  <img src="arrow.png" width="150" alt="arrow" />
                 </div>
                 <div className="experience-text">
                   Network with other ambitious business owners & leaders
@@ -758,106 +1024,41 @@ export default function BasecampPage() {
       </div>
 
       <div className="container">
-        <h2 className="section-title ">
+        <div className="leader-title ">
           Leaders who attended the Basecamp workshops in the past said this
-        </h2>
-        <div className="row spacer"></div>
+        </div>
+       
       </div>
       <section className="section excite-section">
         <div className="container">
-          <h1 className="experience-section-title">
+          <div className="unlock-title">
             This Should Excite You If…{" "}
-          </h1>
-          <div className="row">&nbsp;</div>
+          </div>
           <div className="row">
-            <div className="col-md-1 d-none d-md-block">&nbsp;</div>
+            {/* <div className="col-md-1 d-none d-md-block">&nbsp;</div> */}
             <div className="col-md-11 col-12 excite-section-list">
               <i className="fa-solid fa-arrow-trend-up me-2"></i> You are
               running a company with turnover of 50 CR+
             </div>
           </div>
-          <div className="row spacer"></div>
+          {/* <div className="row spacer"></div> */}
           <div className="row">
-            <div className="col-md-1 d-none d-md-block">&nbsp;</div>
+            {/* <div className="col-md-1 d-none d-md-block">&nbsp;</div> */}
             <div className="col-md-11 col-12 excite-section-list">
               <i className="fa-solid fa-arrow-trend-up me-2"></i> You are
               serious about scaling up your business{" "}
-              <br className="d-none d-md-block" />
+              {/* <br className="d-none d-md-block" /> */}
               exponentially in the next 10 years
             </div>
           </div>
-          <div className="row spacer"></div>
+          {/* <div className="row spacer"></div> */}
           <div className="row">
-            <div className="col-md-1 d-none d-md-block">&nbsp;</div>
+            {/* <div className="col-md-1 d-none d-md-block">&nbsp;</div> */}
             <div className="col-md-11 col-12 excite-section-list">
               <i className="fa-solid fa-arrow-trend-up me-2"></i> You know what
               got you here, won’t take you to the next{" "}
-              <br className="d-none d-md-block" />
+              {/* <br className="d-none d-md-block" /> */}
               level
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="join-section">
-        <div className="row g-0">
-          <div className="col-lg-6">
-            <div className="join-left">
-              <h2>We’re Coming To Your City</h2>
-              {/* <div className="row spacer"></div> */}
-              <br></br>
-              <h1>BASECAMP</h1>
-              <div className="row spacer"></div>
-              <div className="join-details">
-                <div className="sub-job-details">
-                  <h3>
-                    <strong>Pune - 12th Feb’26 <i class="fa-solid fa-circle-check"></i></strong>
-                  </h3>
-                </div>
-                <div className="row spacer"></div>
-
-                <div className="sub-job-details">
-                  <h3>
-                    <strong>Mumbai - 26th Feb’26  <i class="fa-solid fa-circle-check"></i></strong>
-                  </h3>
-                </div>
-                <div className="row spacer"></div>
-                <div className="sub-job-details">
-                  <h3>
-                    <strong>Delhi-NCR - 15th April’26</strong>
-                  </h3>
-                </div>
-                                <div className="row spacer"></div>
-                 <div className="sub-job-details">
-                  <h3>
-                    <strong>Bangalore - Coming Soon</strong>
-                  </h3>
-                </div>
-              </div>
-              <button
-                className="btn btn-cta text-center"
-                style={{ width: "100%", color: "#000000" }}
-                onClick={handleShow}
-                //  disabled
-              >
-                EARLY BIRD PRICES START AT{" "}
-                <span className="nowrap">Rs 7999 + GST</span>
-                <br />
-                <span className="btn-text">
-                  <strong>REGISTER NOW</strong>
-                </span>{" "}
-              </button>
-            </div>
-          </div>
-          <div className="col-lg-6">
-            <div className="join-right">
-              <div className="">
-                <img
-                  src="banner.png"
-                  style={{ height: "50% !important", zIndex: 9999 }}
-                  className="img-responsive"
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -865,10 +1066,10 @@ export default function BasecampPage() {
 
       <section className="faq-section">
         <div className="container">
-          <h2 className="section-title">Have Questions About BASECAMP?</h2>
+          <h2 className="unlock-title">Have Questions About BASECAMP?</h2>
           <br />
           <h1 className="faq-heading">FAQs</h1>
-          <br />
+          {/* <br /> */}
           <br />
 
           <div className="faq-item">
@@ -935,43 +1136,43 @@ export default function BasecampPage() {
       </section>
 
       <section className="hero-section-footer">
-        <div className="container">
-          <div className="row align-items-center justify-content-center">
-            <div className="col-lg-8 col-md-12 col-12 order-lg-1 order-1">
-              <div className="hero-content-footer text-center">
-                <h3
-                  className="d-none d-md-block"
-                  style={{ fontSize: 79, color: "#FFFFFF" }}
-                >
-                  Are You <br />{" "}
-                  <span style={{ color: "#fdae07" }}>Ready To Scale?</span>
-                </h3>
-                <h3
-                  className="d-block d-md-none"
-                  style={{ fontSize: 36, color: "#FFFFFF", lineHeight: 1.2 }}
-                >
-                  Are You{" "}
-                  <span style={{ color: "#fdae07" }}>Ready To Scale?</span>
-                </h3>
-                <p className="hero-subtitle">
-                  <button
-                    className="btn btn-cta-footer text-center"
-                    style={{ width: "100%", color: "#000000" }}
-                    onClick={handleShow}
-                    //  disabled
-                  >
-                    Limited spots Available
-                    <br />
-                    <span className="btn-text">
-                      <strong>ReGISTER NOW for basecamp</strong>
-                    </span>{" "}
-                  </button>
-                </p>
-              </div>
-            </div>
+    <div className="container">
+      <div className="row align-items-center justify-content-center">
+        <div className="col-lg-8 col-md-12 col-12 order-lg-1 order-1">
+          <div className="hero-content-footer text-center">
+            <h3
+              className="d-none d-md-block"
+              
+            >
+              Are You <br />{" "}
+              <span style={{ color: "#fdae07" }}>Ready To Scale?</span>
+            </h3>
+            <h3
+              className="d-block d-md-none"
+             
+            >
+              Are You{" "}
+              <span style={{ color: "#fdae07" }}>Ready To Scale?</span>
+            </h3>
+            <p className="hero-subtitle">
+              <button
+                className=" btn-cta-footer text-center"
+                style={{ width: "60%", color: "#000000"}}
+                onClick={handleShow}
+                //  disabled
+              >
+                Limited spots Available
+                <br />
+                <span className="btn-text">
+                  <strong>ReGISTER NOW for basecamp</strong>
+                </span>{" "}
+              </button>
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
       <Modal show={show} onHide={handleClose}>
         <Form onSubmit={rhfHandleSubmit(handleSubmit)} name="basecamp_form" id="basecamp_form">
@@ -1109,6 +1310,9 @@ export default function BasecampPage() {
                 <option value="Delhi-NCR - 15th April’26">
                   Delhi-NCR - 15th April’26
                 </option>
+                <option value="Bangalore - 28th May’26">
+                  Bangalore - 28th May’26
+                </option>
               </Form.Select>
               <Form.Control.Feedback type="invalid">
                 {errors.basecampLocation?.message}
@@ -1191,6 +1395,192 @@ export default function BasecampPage() {
           </Modal.Footer>
         </Form>
       </Modal>
+
+      <Modal show={show2} onHide={handleClose2}>
+  <Form
+    onSubmit={form2Submit(handleSubmitForm2)}
+    name="basecamp_form"
+    id="basecamp_form"
+  >
+    <Modal.Header closeButton>
+      <Modal.Title>Register Your Interest</Modal.Title>
+    </Modal.Header>
+
+    <Modal.Body>
+
+      <Form.Group className="mb-3">
+        <Form.Label>Company Name</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Enter company name"
+          {...register2("companyName", {
+            required: "Company name is required",
+            minLength: {
+              value: 2,
+              message: "Company name must be at least 2 characters",
+            },
+          })}
+          isInvalid={!!errors2.companyName}
+        />
+        <Form.Control.Feedback type="invalid">
+          {errors2.companyName?.message}
+        </Form.Control.Feedback>
+      </Form.Group>
+
+
+      <Form.Group className="mb-3">
+        <Form.Label>Your Designation</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Enter your designation"
+          {...register2("yourDesignation", {
+            required: "Designation is required",
+            minLength: {
+              value: 2,
+              message: "Designation must be at least 2 characters",
+            },
+          })}
+          isInvalid={!!errors2.yourDesignation}
+        />
+        <Form.Control.Feedback type="invalid">
+          {errors2.yourDesignation?.message}
+        </Form.Control.Feedback>
+      </Form.Group>
+
+
+      <Form.Group className="mb-3">
+        <Form.Label>First Name</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="For Example : John"
+          {...register2("firstName", {
+            required: "First name is required",
+            minLength: {
+              value: 2,
+              message: "First name must be at least 2 characters",
+            },
+          })}
+          isInvalid={!!errors2.firstName}
+        />
+        <Form.Control.Feedback type="invalid">
+          {errors2.firstName?.message}
+        </Form.Control.Feedback>
+      </Form.Group>
+
+
+      <Form.Group className="mb-3">
+        <Form.Label>Last Name</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="For Example : Smith"
+          {...register2("lastName", {
+            required: "Last name is required",
+            minLength: {
+              value: 2,
+              message: "Last name must be at least 2 characters",
+            },
+          })}
+          isInvalid={!!errors2.lastName}
+        />
+        <Form.Control.Feedback type="invalid">
+          {errors2.lastName?.message}
+        </Form.Control.Feedback>
+      </Form.Group>
+
+
+      <Form.Group className="mb-3">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control
+          type="email"
+          placeholder="name@example.com"
+          {...register2("email", {
+            required: "Email is required",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "Invalid email address",
+            },
+          })}
+          isInvalid={!!errors2.email}
+        />
+        <Form.Control.Feedback type="invalid">
+          {errors2.email?.message}
+        </Form.Control.Feedback>
+      </Form.Group>
+
+
+      <Form.Group className="mb-3">
+        <Form.Label>Phone Number</Form.Label>
+        <Form.Control
+          type="tel"
+          placeholder="10-digit phone number"
+          {...register2("phone", {
+            required: "Phone number is required",
+            pattern: {
+              value: /^\d{10}$/,
+              message: "Phone number must be 10 digits",
+            },
+          })}
+          isInvalid={!!errors2.phone}
+        />
+        <Form.Control.Feedback type="invalid">
+          {errors2.phone?.message}
+        </Form.Control.Feedback>
+      </Form.Group>
+
+
+      <Form.Group className="mb-3">
+        <Form.Label>Upcoming Basecamp Locations</Form.Label>
+        <Form.Select disabled
+          {...register2("basecampLocation", {
+            required: "Please select a basecamp location",
+          })}
+          isInvalid={!!errors2.basecampLocation}
+        >
+          <option value="">- Select Basecamp Location -</option>
+          {/* <option value="Delhi-NCR">Delhi-NCR</option> */}
+          <option value="Bangalore">Bangalore</option>
+          {/* <option value="Dubai">Dubai</option>
+          <option value="Pune">Pune</option>
+          <option value="Mumbai">Mumbai</option> */}
+        </Form.Select>
+
+        <Form.Control.Feedback type="invalid">
+          {errors2.basecampLocation?.message}
+        </Form.Control.Feedback>
+      </Form.Group>
+
+
+      <input
+        type="text"
+        {...register2("website")}
+        style={{ display: "none" }}
+        tabIndex={-1}
+        autoComplete="off"
+      />
+
+    </Modal.Body>
+
+    <Modal.Footer>
+      <Button variant="secondary" onClick={handleClose2}>
+        Close
+      </Button>
+
+      <Button
+        type="submit"
+        variant="primary"
+        disabled={!recaptchaReady || isSubmitting2 || !isValid2}
+      >
+        {isSubmitting2
+          ? "Submitting..."
+          : recaptchaReady
+          ? "Submit"
+          : "Loading..."}
+      </Button>
+
+    </Modal.Footer>
+
+  </Form>
+</Modal>
     </div>
   );
 }
