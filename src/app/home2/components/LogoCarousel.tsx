@@ -63,7 +63,7 @@ const LogoCarousel = memo(() => {
   return (
     <div className="home2-company-logo home2-second-div-layout">
       <div className="text-center">
-        <div className="home2-section-title">Trusted By Top Brands</div>
+        <div className="section-title-black">Trusted By Top Brands</div>
       </div>
       <div
         className="home2-second-div-layout-row"

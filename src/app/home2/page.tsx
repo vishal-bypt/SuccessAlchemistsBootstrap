@@ -83,27 +83,23 @@ const Home = () => {
      {/* UNLOCK SECTION */}
       <section className="home2-unlock-section">
         <div className="container">
-          <h2 className="home2-section-title">Unlock The Power Of Scaling Up</h2>
-          {/* <div className="row home2-spacer"></div> */}
-          <div className="row home2-spacer"></div>
+          <h2 className="section-title-black">Unlock The Power Of Scaling Up</h2>
           <div className="row">
             <div className="col-md-3 d-none d-md-block">&nbsp;</div>
             <div className="col-md-6">
-              <p className="home2-section-subtitle text-center">
+              <p className="black-subtitle-text text-center">
                 Success Alchemists leverage the Scaling Up framework{" "}
                 <br className="d-none d-md-block" />- which is a globally proven
                 framework - to grow <br className="d-none d-md-block" />
                 businesses exponentially & sustainably.
               </p>
-            </div>
-            <div className="row home2-spacer"></div>
-            {/* <div className="row home2-spacer"></div> */}
+            </div>            
           </div>
-
+           <div className="col-md-3 d-none d-md-block">&nbsp;</div>
           <div className="row">
             <div className="col-md-3">&nbsp;</div>
             <div className="col-md-6">
-              <p className="home2-section-subtitle text-center">
+              <p className="black-subtitle-text text-center">
                 In the Basecamp 1-day workshop, we deep dive into the{" "}
                 <br className="d-none d-md-block" />4 pillars of a business –
                 <strong> People, Strategy, Execution & </strong>
@@ -146,7 +142,7 @@ const Home = () => {
         <FourthComponent />
       </Suspense>
 
-      {/* Fourth Component */}
+      {/* Sixth Component */}
       <Suspense fallback={<div style={{ minHeight: "300px" }}>Loading...</div>}>
         <SixthComponent />
       </Suspense>
@@ -166,17 +162,17 @@ const Home = () => {
               Are You <span>Ready To Scale?</span>
             </h3>
             <p className="home2-hero-subtitle">
-              <a href="/contactUs" className="text-decoration-none">
-              <button className="btn home2-btn-cta-footer-webinar text-center" >
+              {/* <a href="/contactUs" className="text-decoration-none"> */}
+              <button className="btn home2-btn-cta-footer-webinar text-center"  onClick={() => window.location.href = "/contactUs"}>
                 <strong>REQUEST A CALLBACK</strong>
               </button>
-              </a>
+              {/* </a> */}
             </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+        </section>
 
     </div>
   );

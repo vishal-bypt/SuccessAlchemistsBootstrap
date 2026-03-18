@@ -175,17 +175,8 @@ const ClientReviews = memo(() => {
   }, []);
 
   return (
-    <div className="container-fluid home2-client-review-section box-shadow">
-      <div className="img-fluid home2-client-review-curve">
-        <Image
-          src={Curve_shape}
-          className="img-fluid"
-          // style={{ borderRadius: "24px" }}  
-          alt="right side image"
-          loading="lazy"
-        />
-      </div>
-      <div className="home2-client-review-text">Client Reviews</div>
+    <div className="container-fluid home2-client-review-section">
+      <div className="section-title-white mb-4">Client Reviews</div>
       <div style={{ position: "relative" }}>
         <Swiper
           ref={swiperRef}
@@ -213,7 +204,7 @@ const ClientReviews = memo(() => {
                 <div className="video col-md-7 home2-video-detail-div">
                   <div className="home2-video-detail-div-title-text">{d.title}</div>
                   <div className="home2-video-detail-div-title-subText">{d.designation}</div>
-                  <div className="home2-video-detail-p-tag">{d.description}</div>
+                  <div className="white-subtitle-text subtitle-spacing">{d.description}</div>
                 </div>
               </div>
             </SwiperSlide>

@@ -16,19 +16,12 @@ const HeroSection = memo(() => {
         <div className="home2-hero-container">
           <div className="home2-inner-first-div">
             Are you ready for
-            {/* <br />
-            have more */}
             <br />
             <TypedComponent />
             <br /> while doing business.
           </div>
-          <div className="home2-inner-second-div">
+          <div className="white-subtitle-text">
             India’s 1st Scaling-Up Coach, Ajay Hiraskar & his team of seasoned business coaches can help you achieve your ambitious business goals while building up your organization to sustain that scale and speed.
-            {/* Learn from India's first certified Scaling Up coach{" "}
-            <span className="home2-inner-second-div-span">Ajay Hiraskar </span>
-            who has led the implementation of the Scaling Up performance
-            platform across many industry verticals. This platform has already
-            guided more than 80,000 companies world wide to succeed and grow. */}
           </div>
         </div>
       </div>

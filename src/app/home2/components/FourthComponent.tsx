@@ -12,30 +12,30 @@ const FourthComponent = memo(() => {
     <div className="home2-fourth-component">
       <Image
         src={idea_icon}
-        className="img-fluid home2-bulb-image"
+        className="img-fluid home2-bulb-image "
         alt="idea icon"
         loading="lazy"
       />
 
       <div className="home2-fourth-component-first-div">
-        <div className="home2-fourth-component-title-div">
+        <div className="section-title-black text-left ">
           Not Just Coaching...
 We Help With Implementation
         </div>
-        <div className="home2-fourth-component-p-tag col-md-12">
+        <div className="grey-subtitle-text col-md-12 mb-1">
           Your company is growing, but it's also becoming increasingly unstable. Your team is not aligning with your vision, need for speed and scaling-up dreams.
         </div>
 
-        <div className="home2-fourth-component-p-tag col-md-12">
+        <div className="grey-subtitle-text col-md-12 mb-1">
           That's where we come in.
         </div>
-        <div className="home2-fourth-component-p-tag col-md-12">
+        <div className="grey-subtitle-text col-md-12 mb-1">
           We help your leadership team shift their mindset, align with the larger vision, and deliver superlative growth by using the concepts, frameworks and tools of Scaling Up & beyond.
         </div>
-        <div className="home2-fourth-component-p-tag col-md-12">
+        <div className="grey-subtitle-text col-md-12 mb-1">
           We serve as your sounding board, partners in strategy development, and facilitators for fixing cultural issues in the organization..
         </div>
-        <div className="home2-fourth-component-p-tag col-md-12">
+        <div className="grey-subtitle-text col-md-12 mb-1">
           Our business coaching methology builds clarity, agility and commitment along the 4 pillars of growth:
         </div>
       </div>

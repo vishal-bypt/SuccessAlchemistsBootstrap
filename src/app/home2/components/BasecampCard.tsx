@@ -76,7 +76,7 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
           />
         </div>
         {/* <h2 className="home2-inner-first-div mb-2">Basecamp</h2> */}
-        <p className="home2-inner-second-div mb-0">
+        <p className="white-subtitle-text mb-0">
           Unlock the frameworks to scale up your business.
         </p>
       </div>
@@ -88,14 +88,7 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
         style={{ textDecoration: "none" }}
       >
         <div
-          className="d-flex align-items-center justify-content-center gap-2 px-4 px-md-5 px-lg-4 py-2 py-md-2 py-lg-3 rounded-4 bg-white mt-3 mt-md-0 me-md-1 me-lg-3"
-          style={{
-            color: "#007AFF",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-            border: "none",
-            whiteSpace: "nowrap",
-            cursor: "pointer",
-          }}
+          className="attend-button d-flex align-items-center justify-content-center gap-2 px-4 px-md-5 px-lg-4 py-1 py-md-1 py-lg-2 rounded-3 bg-white mt-md-0 me-md-1 me-lg-3"
         >
           <span className="home2-responsive-btn-text m-0">Attend the Workshop</span>
           <Image
