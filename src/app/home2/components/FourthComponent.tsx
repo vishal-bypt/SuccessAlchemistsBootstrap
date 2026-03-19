@@ -12,13 +12,13 @@ const FourthComponent = memo(() => {
     <div className="home2-fourth-component">
       <Image
         src={idea_icon}
-        className="img-fluid home2-bulb-image "
+        className="img-fluid home2-bulb-image"
         alt="idea icon"
         loading="lazy"
       />
 
       <div className="home2-fourth-component-first-div">
-        <div className="section-title-black text-left ">
+        <div className="section-title-black text-left home2-title-with-icon">
           Not Just Coaching...
 We Help With Implementation
         </div>
