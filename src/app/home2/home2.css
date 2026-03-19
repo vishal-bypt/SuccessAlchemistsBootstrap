@@ -163,7 +163,7 @@
 }
 
 .home2-metric-value {
-      font-size: clamp(35px, 5vw, 70px);
+    font-size: clamp(35px, 5vw, 70px);
     letter-spacing: clamp(-1px, -0.3vw, -3px);
     font-weight: 900;
     color: #000000;
