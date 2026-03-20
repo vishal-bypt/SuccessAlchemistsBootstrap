@@ -3,6 +3,7 @@ import { memo, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Double_arrow from "../images/Double_arrow.png";
+import basecamplogo2 from "../../../../public/assets/images/Basecamp_White.png";
 
 // Lazy load Lottie component
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
@@ -23,21 +24,24 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
 
   if (!mounted) return null;
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
+
   return (
     <div
       className="position-relative w-100 d-flex flex-column flex-md-row justify-content-between align-items-center p-4 text-white"
       style={{
-        background: "linear-gradient(45deg, #418ef8, #018bd3, #418ef8)",
-        borderRadius: "24px",
+        background: "linear-gradient(45deg, #fdae07, #fdae07, #fdae07)",
+        // borderRadius: "24px",
         overflow: "hidden",
       }}
     >
       {/* What's New Lottie Animation */}
       <div
-        className={`position-absolute ${blink ? "opacity-100" : "opacity-75"}`}
+        className={`position-absolute ${blink ? " opacity-100" : " opacity-75"}`}
         style={{
-          top: "-5px",
-          left: "-10px",
+          top: isMobile ? "-25px" : "-5px",
+          left: isMobile ? "-25px" :"-10px",
           transform: "rotate(-45deg)",
           width: "120px",
           height: "120px",
@@ -50,6 +54,7 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
             animationData={whatsNewAnimation}
             loop={true}
             autoplay={true}
+            
             style={{ width: "100%", height: "100%" }}
           />
         </a>
@@ -58,10 +63,20 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
       {/* Left Text Section */}
       <div
         className="text-center text-md-start mb-3 mb-md-0"
-        style={{ marginLeft: "60px" }}
+        style={{
+    marginLeft: isMobile ? "0px" : "60px",
+    marginTop: isMobile ? "20px" : "0px",
+  }}
       >
-        <h2 className="inner_first_div mb-2">Basecamp</h2>
-        <p className="inner_second_div mb-0">
+        <div className="home2-hero-icon-img">
+          <Image
+            className="logo-image"
+            src={basecamplogo2}
+            alt="img2"
+          />
+        </div>
+        {/* <h2 className="home2-inner-first-div mb-2">Basecamp</h2> */}
+        <p className="white-subtitle-text mb-0">
           Unlock the frameworks to scale up your business.
         </p>
       </div>
@@ -73,16 +88,9 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
         style={{ textDecoration: "none" }}
       >
         <div
-          className="d-flex align-items-center justify-content-center gap-2 px-4 px-md-5 px-lg-4 py-2 py-md-2 py-lg-3 rounded-4 bg-white mt-3 mt-md-0 me-md-1 me-lg-3"
-          style={{
-            color: "#007AFF",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-            border: "none",
-            whiteSpace: "nowrap",
-            cursor: "pointer",
-          }}
+          className="attend-button d-flex align-items-center justify-content-center gap-2 px-4 px-md-5 px-lg-4 py-1 py-md-1 py-lg-2 rounded-3 bg-white mt-md-0 me-md-1 me-lg-3"
         >
-          <span className="responsive-btn-text m-0">Attend the Workshop</span>
+          <span className="home2-responsive-btn-text m-0">Attend the Workshop</span>
           <Image
             className="img-fluid"
             src={Double_arrow}

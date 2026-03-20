@@ -9,37 +9,34 @@ import money_icon from "../images/money_icon.png";
 
 const FourthComponent = memo(() => {
   return (
-    <div className="fourth_component">
+    <div className="home2-fourth-component">
       <Image
         src={idea_icon}
-        className="img-fluid bulb-image"
+        className="img-fluid home2-bulb-image"
         alt="idea icon"
         loading="lazy"
       />
 
-      <div className="fourth_component_first_div">
-        <div className="fourth_component_title_div">
-          We become successful, when we help you become successful
+      <div className="home2-fourth-component-first-div">
+        <div className="section-title-black text-left home2-title-with-icon">
+          Not Just Coaching...
+We Help With Implementation
         </div>
-        <div className="fourth_component_p_tag col-md-12">
-          At Success Alchemists, we believe that our success is tied to yours.
-          If you're a CEO seeking to deliver accelerated growth, augmented
-          value, and a simplified business model, our experienced Scaling Up
-          Coaches are here to help. Scaling up requires a significant shift in
-          management thinking, and while the path may seem simple, it often
-          involves a steep learning curve.
+        <div className="grey-subtitle-text col-md-12 mb-1">
+          Your company is growing, but it's also becoming increasingly unstable. Your team is not aligning with your vision, need for speed and scaling-up dreams.
         </div>
 
-        <div className="fourth_component_p_tag col-md-12">
-          Leveraging proven methods that have empowered over 2,700 firms
-          worldwide, we provide business coaching, management development, and
-          organizational change strategies to propel your business onto an
-          unparalleled growth trajectory.
+        <div className="grey-subtitle-text col-md-12 mb-1">
+          That's where we come in.
         </div>
-        <div className="fourth_component_p_tag col-md-12">
-          For the business owner developing strategy, fixing cultural issues
-          and differentiating in complex markets, business coaching can deliver
-          agility, clarity and commitment in four main areas:
+        <div className="grey-subtitle-text col-md-12 mb-1">
+          We help your leadership team shift their mindset, align with the larger vision, and deliver superlative growth by using the concepts, frameworks and tools of Scaling Up & beyond.
+        </div>
+        <div className="grey-subtitle-text col-md-12 mb-1">
+          We serve as your sounding board, partners in strategy development, and facilitators for fixing cultural issues in the organization..
+        </div>
+        <div className="grey-subtitle-text col-md-12 mb-1">
+          Our business coaching methology builds clarity, agility and commitment along the 4 pillars of growth:
         </div>
       </div>
       <div
@@ -52,7 +49,7 @@ const FourthComponent = memo(() => {
         }}
       >
         <div className="col-md-6 col-lg-3">
-          <div className="unselected_box unselected_box1">
+          <div className="home2-unselected-box home2-unselected-box1">
             <div
               style={{
                 display: "flex",
@@ -60,23 +57,23 @@ const FourthComponent = memo(() => {
                 alignItems: "center",
               }}
             >
-              <div className="unselected_box_card_title">People</div>
+              <div className="home2-unselected-box-card-title">People</div>
               <Image
                 src={people_icon}
-                className="img-fluid growth-icon"
+                className="img-fluid home2-growth-icon"
                 alt="people icon"
                 loading="lazy"
               />
             </div>
-            <div className="unselected_box_text">
+            <div className="home2-unselected-box-text">
               Get the right people in the right seats, aligned with culture and
               strategy.
             </div>
-            <div className="bottom_arrow_div"></div>
+            <div className="home2-bottom-arrow-div"></div>
           </div>
         </div>
         <div className="col-md-6 col-lg-3">
-          <div className="unselected_box unselected_box2">
+          <div className="home2-unselected-box home2-unselected-box2">
             <div
               style={{
                 display: "flex",
@@ -84,23 +81,23 @@ const FourthComponent = memo(() => {
                 alignItems: "center",
               }}
             >
-              <div className="unselected_box_card_title">Strategy</div>
+              <div className="home2-unselected-box-card-title">Strategy</div>
               <Image
                 src={market_analysis}
-                className="img-fluid growth-icon"
+                className="img-fluid home2-growth-icon"
                 alt="strategy icon"
                 loading="lazy"
               />
             </div>
-            <div className="unselected_box_text">
+            <div className="home2-unselected-box-text">
               Develop a clear, differentiated, and scalable plan for sustainable
               growth.
             </div>
-            <div className="bottom_arrow_div"></div>
+            <div className="home2-bottom-arrow-div"></div>
           </div>
         </div>
         <div className="col-md-6 col-lg-3">
-          <div className="unselected_box unselected_box3">
+          <div className="home2-unselected-box home2-unselected-box3">
             <div
               style={{
                 display: "flex",
@@ -108,23 +105,23 @@ const FourthComponent = memo(() => {
                 alignItems: "center",
               }}
             >
-              <div className="unselected_box_card_title">Execution</div>
+              <div className="home2-unselected-box-card-title">Execution</div>
               <Image
                 src={execution_icon}
-                className="img-fluid growth-icon"
+                className="img-fluid home2-growth-icon"
                 alt="execution icon"
                 loading="lazy"
               />
             </div>
-            <div className="unselected_box_text">
+            <div className="home2-unselected-box-text">
               Drive disciplined processes to ensure flawless implementation and
               accountability.
             </div>
-            <div className="bottom_arrow_div"></div>
+            <div className="home2-bottom-arrow-div"></div>
           </div>
         </div>
         <div className="col-md-6 col-lg-3">
-          <div className="unselected_box unselected_box4">
+          <div className="home2-unselected-box home2-unselected-box4">
             <div
               style={{
                 display: "flex",
@@ -132,19 +129,19 @@ const FourthComponent = memo(() => {
                 alignItems: "center",
               }}
             >
-              <div className="unselected_box_card_title">Cash</div>
+              <div className="home2-unselected-box-card-title">Cash</div>
               <Image
                 src={money_icon}
-                className="img-fluid growth-icon"
+                className="img-fluid home2-growth-icon"
                 alt="cash icon"
                 loading="lazy"
               />
             </div>
-            <div className="unselected_box_text">
+            <div className="home2-unselected-box-text">
               Maintain strong cash flow to fuel growth and avoid financial
               constraints.
             </div>
-            <div className="bottom_arrow_div"></div>
+            <div className="home2-bottom-arrow-div"></div>
           </div>
         </div>
       </div>

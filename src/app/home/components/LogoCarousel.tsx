@@ -61,12 +61,12 @@ const logos = [
 
 const LogoCarousel = memo(() => {
   return (
-    <div className="company-logo second_div_layout">
+    <div className="home2-company-logo home2-second-div-layout">
       <div className="text-center">
-        <h3>Trusted by top brands</h3>
+        <div className="section-title-black">Trusted By Top Brands</div>
       </div>
       <div
-        className="second_div_layout_row"
+        className="home2-second-div-layout-row"
         style={{
           width: "auto",
           overflowX: "auto",
@@ -74,9 +74,9 @@ const LogoCarousel = memo(() => {
           marginTop: "16px",
         }}
       >
-        <div className="second_div_right_div">
-          <div className="slider-container">
-            <div className="slider-track">
+        <div className="home2-second-div-right-div">
+          <div className="home2-slider-container">
+            <div className="home2-slider-track">
               {/* First set of logos */}
               {logos.map((logo, index) => (
                 <div

@@ -19,7 +19,7 @@ const TypedComponent = () => {
     return () => typed.destroy();
   }, []);
 
-  return <span className="inner_first_div_span" ref={typedRef}></span>;
+  return <span className="home2-inner-first-div-span" ref={typedRef}></span>;
 };
 
 export default TypedComponent;
