@@ -5,7 +5,7 @@
 
 /* FIRST SECTION */
 .about2_first_div_layout.about2_aboutUs {
-    background: linear-gradient(  rgba(15, 32, 39, 0.7), rgba(44, 83, 100, 0.7)),url(./images/who-we-are.jpg);
+    background: linear-gradient(  rgba(15, 32, 39, 0.7), rgba(44, 83, 100, 0.7)),url(./images/BannerImage.jpeg);
     background-size: cover;
     position: relative;
     min-height: 600px;
@@ -174,6 +174,13 @@
     color: #fba819;  
 }
 
+.custom-img {
+  width: 650px;
+  height: 450px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
 .linkedin-white-bg {
     width: 36px;
     height: 36px;
@@ -304,6 +311,7 @@
     width: 180px;
     height: auto;
     margin: 0 auto;
+    /* background-color: #FBA819; */
 }
 
 .about2_member_name {
@@ -411,6 +419,11 @@
     .about2_card_text {
         font-size: 18px;
     }
+
+    .custom-img {
+        width: 550px;
+        height: 380px;
+    }
 }
 
 /* 📱 Tablet (768px - 991px) */
@@ -441,6 +454,11 @@
 
     .about2_card_text {
         font-size: 16px;
+    }
+
+    .custom-img {
+        width: 100%;
+        height: 320px;
     }
 }
 
@@ -482,6 +500,12 @@
     .about2_card_text {
         font-size: 14px;
     }
+
+    .custom-img {
+        width: 100%;
+        height: 260px;
+        border-radius: 16px;
+    }
 }
 
 /* 📱 Small Mobile (<576px) */
@@ -497,5 +521,11 @@
 
     .about2_slider_btn {
         padding: 6px 12px;
+    }
+
+    .custom-img {
+        width: 100%;
+        height: 220px;
+        border-radius: 12px;
     }
 }

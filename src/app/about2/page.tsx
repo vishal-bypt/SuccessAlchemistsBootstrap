@@ -4,22 +4,27 @@ import Image from "next/image";
 import { memo, useState } from "react";
 import about from "../../app/about/images/Success7.png";
 import Backward from "../../app/who/images/Backward.png";
-import blog4 from "../../app/who/images/Blog4.png";
-import blog5 from "../../app/who/images/Blog5.png";
-import blog6 from "../../app/who/images/Blog6.png";
-import blog7 from "../../app/who/images/Blog7.png";
-import coach1 from "../../app/who/images/coach1.png";
-import coach2 from "../../app/who/images/coach2.png";
-import coach3 from "../../app/who/images/coach3.png";
-import coach6 from "../../app/who/images/coach6.png";
-import coach7 from "../../app/who/images/coach7.png";
 import Forward from "../../app/who/images/Forward1.png";
-import man from "../../app/who/images/man.svg";
-import india from "./images/india.jpg";
-import uae from "./images/uae.png";
-import africa from "./images/africa.jpeg";
-import man2 from "../../app/who/images/vikram.svg";
 import "./about2.css";
+import abhishek from "./images/Abhishek.png";
+import africa from "./images/africa.jpeg";
+import ashima from "./images/Ashima.png";
+import ashutosh from "./images/Ashutosh.png";
+import augustine from "./images/Augustine.png";
+import bobby from "./images/Bobby.png";
+import india from "./images/india.jpg";
+import jyoti from "./images/Jyoti.png";
+import kavita from "./images/Kavita.png";
+import lakshmy from "./images/Lakshmi.png";
+import nd from "./images/ND.png";
+import nimisha from "./images/Nimisha.png";
+import puja from "./images/Puja.png";
+import rahul from "./images/Rahul.png";
+import sandesh from "./images/Sandesh.png";
+import sangeeta from "./images/Sangeeta.png";
+import uae from "./images/uae.png";
+import ajay from "./images/Ajay.png";
+import vikram from "./images/vikram.png";
 
 
 const About = memo(() => {
@@ -55,62 +60,96 @@ const About = memo(() => {
   };
   const coaches = [
     {
-      name: "Ashima Gupta",
-      role: "Associate Coach",
-      description: "Ashima Gupta is a seasoned IT leader with over 20 years of experience developing products and leading high-performing teams across various industries. With a deep expertise in Agile practices, team building, and scaling complex systems, she has consistently driven growth and operational excellence. Ashima is also a certified yoga instructor and Art of Living teacher, passionate about integrating mindfulness and well-being into professional environments through meditation and breathwork.",
-      image: coach1,
+      name: "Chirag Savla",
+      role: "Certified Scaling Up Coach | Ex-CEO, Godrej East Africa",
+      description: "Chirag is a seasoned business operator with 20+ years of P&L leadership across Africa, the Middle East, and India — including an 11-year tenure at Godrej Consumer Products as CEO for East Africa and Regional Head for the Rest of Africa and Middle East. He has led multi-country operations spanning brand building, manufacturing, exports, and financial strategy at scale. As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth. His coaching is grounded in operating reality, not theory - built on two decades of running businesses where the stakes were real.",
+      image: nd,
+    },
+    {
+      name: "N. Dharmadhikari",
+      role: "Certified Alchemist Coach| Independent Director",
+      description: "ND is a seasoned corporate leader with 25+ years of experience spanning telecom and technology sectors across India and the Middle East — including senior roles at Etisalat, Reliance Communications, and Idea Cellular. He has led high-stakes portfolio strategy, revenue transformation, and go-to-market execution at an international scale, including overseeing the merger of two major telecom entities serving markets across MENA. Today, as an Independent Business Consultant and Director, he advises Tech Solutions companies on closing the gap between commercial ambition and operational discipline. His edge: knowing exactly where growth leaks profitability, and fixing it.",
+      image: nd,
     },
     {
       name: "Lakshmy S Nair",
-      role: "Associate Coach",
-      description: "With a rich background spanning 15 years across various industries, Lakshmy brings a wealth of knowledge and experience to the table. Her career journey encompasses roles in business analysis, banking and credit analysis, education, and life and wellness coaching. She holds a postgraduate degree in Business Economics and is CAIIB certified, alongside being a Certified Credit Analyst.",
-      image: coach2,
-    },
-    {
-      name: "N Dharmadhikari",
-      role: "Associate Coach",
-      description: "Enriched with vast and extensive experience in varied commercial faculties within telecommunication industry in India and the UAE, N Dharmadhikari has successfully led teams to surpass yearly product revenue budgets of ~ $1 bn USD. A management graduate majoring in Marketing, he has been able to play multiple roles and drive business growth successfully in Marketing, Strategy and P&L.",
-      image: coach3,
+      role: "Certified Alchemist Coach | Ex-Banker",
+      description: "Lakshmy brings a rare combination of financial acumen and human potential expertise to her coaching practice. With nearly a decade as Credit Manager at Federal Bank, she developed a sharp understanding of business risk, performance, and decision-making before transitioning into coaching and leadership development. A Certified Alchemist Coach at Success Alchemists, a Master Practitioner in NLP, and a Certified Credit Professional, she works at the intersection of mindset and execution — helping professionals and organisations unlock performance that numbers alone cannot explain. Her grounding in both banking discipline and behavioural science makes her a coach who understands the pressures leaders face from the inside out.",
+      image: lakshmy,
     },
     {
       name: "Sandesh Banger",
-      role: "Associate Coach",
-      description: "An MBA graduate from IIM Kozhikode with 15 years of extensive experience in Banking, Finance Consulting, and Training. Throughout his career, Sandesh has exposure working with businesses across multiple industries. As our go-to expert on cash management tools, with his profound financial domain knowledge and expertise, Sandesh’s insights are invaluable. He is also USA CFA Level 2 qualified. Sandesh has a passion for content creation and a keen interest in public speaking.",
-      image: coach6,
+      role: "Certified Alchemist Coach | Ex-Banker | IIM-K",
+      description: "Sandesh brings 15 years of experience across banking, finance, and technology — with stints at ICICI Bank, RBL Bank, and CDAC — before transitioning into the training and consulting space in 2018. He founded Hipertap Consulting, a boutique financial training firm delivering workshops and consulting across Financial Analysis, Credit Risk, Wholesale Banking, and Investment Banking. As a Certified Alchemist Coach at Success Alchemists, he now works directly with CXOs, senior leadership teams, and business heads to build scalable, profitable enterprises. His rare combination of deep financial expertise and front-line business coaching makes him a trusted advisor for ambitious entrepreneurs ready to grow with discipline.",
+      image: sandesh,
     },
     {
-      name: "Sangeeta Acharya",
-      role: "Associate Coach & Head Accountability",
-      description: "Sangeeta holds an MBA from Pune University and brings 14 years of extensive experience in the telecom industry. She has demonstrated expertise in Customer Experience, Credit Risk Management, Collections, and Business Analysis. Sangeeta excels at driving operational excellence and leading strategic initiatives. She is also passionate about continuous learning and is an avid reader.",
-      image: coach7,
+      name: "Ashima Gupta",
+      role: "Associate Coach | Agile Expert",
+      description: "Ashima brings over two decades of technology leadership to her coaching practice, with senior engineering roles at Dell, BambooBox, Support.com, and Aptean spanning software development, product management, and organisational design. As a Director of Engineering and Agile practitioner, she has led high-performance technical teams through complex builds, rapid growth, and structural transformation. Now, as a Scaling Up Associate Coach at Success Alchemists, she helps entrepreneurs and organisations translate that operational depth into scalable, structured growth. Her edge is distinctive — she speaks the language of both the boardroom and the engineering floor.",
+      image: ashima,
     },
-
-
+    {
+      name: "Harjinder Kohli (Bobby)",
+      role: "Certified Scaling Up Coach| ex- COO North America, Clarion",
+      description: "Bobby is a seasoned technology and enterprise sales leader with nearly three decades of experience scaling businesses across India, government sectors, and North America. He has held VP and Head roles at Airtel and Reliance Jio, and spent over 12 years at Sify Technologies driving system integration and global alliances at the SVP level. At Clarion Technologies, he progressed from CEO of India & Government Business to his current role as COO North America — overseeing operations, partnerships, and growth across one of the most competitive technology markets in the world. His career is a masterclass in building and scaling technology-driven businesses across geographies, sectors, and market cycles. As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth.",
+      image: bobby,
+    },
+    {
+      name: "Abhishek Hiraskar",
+      role: "Associate Coach | Sports & Media Business Leader",
+      description: "Abhishek is a sports industry professional with 10+ years of experience spanning broadcast, sponsorships, brand partnerships, and media rights across some of the world's most recognised sporting properties — including BCCI, IOC, NBA, ISL, EPL, and ICC Events. He has held partnerships and content leadership roles at JioStar and Ultrahuman, managing elite athlete programs and forging strategic alliances with marquee brands. Now, as an Associate Coach at Growth Alchemists Business Coaching, he channels that high-performance commercial background into helping businesses scale with clarity and purpose. He brings to coaching what few others can — a front-row view of how the world's biggest sporting brands are built and grown.",
+      image: abhishek,
+    },
+    {
+      name: "Rahul Chaure",
+      role: "Associate Coach| Entrepreneur",
+      description: "Rahul Chaure is the rare kind of coach who has lived the entrepreneurial journey firsthand — not just advised on it. With over 15 years at the helm of EduVed Learning Solutions, a multi-product education technology company he has built and scaled from the ground up, he understands the real weight of P&L decisions, team building, and long-term strategy. Before EduVed, he held Business Head and Sales Head roles at Reliance Communications and DSK Digital Technologies, sharpening a commercial edge that cuts across telecom, technology, and education. Now, as an Associate Coach at Success Alchemists, he brings that founder's instinct and operator's discipline to help other entrepreneurs build businesses that are structured, scalable, and built to last.",
+      image: rahul,
+    },
+    {
+      name: "Nimisha Sainani",
+      role: "Associate Coach,| Ex-CGO, Savart | ISB",
+      description: "Nimisha is a growth-focused marketing and product leader with 12+ years of experience scaling startups across fintech, consumer tech, and digital products — with stints at Paytm, Multipl, Savart, and Little. As Chief Growth Officer at Savart, she led the full revenue and monetisation function for an AI-based wealth management platform, working across product, marketing, sales, and design. Her proven strength lies in driving outsized business outcomes with lean teams and limited resources — a discipline she now channels as a Business Coach at Success Alchemists, helping entrepreneurs build scalable, profitable businesses using the Scaling Up framework.",
+      image: nimisha,
+    },
+    {
+      name: "Ashutosh Sharma",
+      role: "Scaling Up Coach | Fractional CMO",
+      description: "Ashutosh is a senior marketing and business leader with over three decades of experience across SaaS, Media, Retail, FMCG, and Digital — spanning organisations like Times Internet, NowFloats, Euro RSCG, Ogilvy, and Cheil Communication. He has built and led marketing functions, digital businesses, and content operations at scale, delivering measurable growth across diverse sectors and business models. As a Fractional CMO, he brings CMO-level strategic depth to growth-stage companies without the full-time overhead. Now, as a Scaling Up Coach in Certification at Success Alchemists, he works towards installing the habits, rhythms, and decision-making infrastructure that turn growth ambitions into consistent, compounding results.",
+      image: ashutosh,
+    },
+    {
+      name: "Augustine Vaz",
+      role: "Associate Coach| Customer Strategy & Data Leader",
+      description: "Augustine brings over three decades of global consulting and business leadership experience, with senior roles at Capgemini, Ericsson, SAS Institute, and AT&T spanning the UK, US, and India. He has led customer lifecycle strategy, data-driven business transformation, and digital solutions for clients across telecoms, B2B2X, and enterprise sectors — consistently turning data and insights into measurable commercial outcomes. At Capgemini New York, he spearheaded Customer First & Data Strategy consulting for global organisations; at Ericsson, he drove digital business solutions across pre-sales and delivery for over five years. Now, as a Business Coach at Success Alchemists, he brings that rare global perspective and analytical rigour to help ambitious businesses scale with precision and purpose.",
+      image: augustine,
+    },
   ];
   const coaches1 = [
     {
       name: "Jyoti Hiraskar",
       role: "Happiness Champion",
       description: "Jyoti Hiraskar joins Success Alchemists after her successful stint as a Teacher, having worked in various schools in Mumbai and Pune. Besides being an accountability partner at Success Alchemists, she is also an IT professional and an inner transformation teacher with “Art of living”, helping people understand the purpose of their life through yoga & pranayam.",
-      image: blog4,
+      image: jyoti,
     },
     {
       name: "Kavita Lakshman",
       role: "Accountability Partner",
       description: "Kavita holds a Bachelor of Arts degree from Mumbai University and has completed a Postgraduate Diploma in Travel and Tourism from the esteemed Garware Institute at Mumbai University. With over 16 years of experience in multinational companies, Kavita brings a wealth of expertise and a proven track record of success in the industry.",
-      image: blog5,
+      image: kavita,
     },
     {
       name: "Puja S Barori",
       role: "Accountability Partner",
       description: "Puja S Barori is a multifaceted individual with 10 years of experience in the BPO-ITO industry, offering outstanding team leadership training and developing efficient teams. She is a creative artist, a voyager and a passionate fitness and nutrition coach with an urge to promote a safe, enjoyable and sustainable platform for people aiming to achieve health and fitness goals.",
-      image: blog6,
+      image: puja,
     },
-    {
-      name: "Dashrath",
-      role: "Accountability Partner",
-      description: "Dashrath comes from a startup background and believes in the power of accountability to drive growth.He helps individuals stay focused, take consistent action, and achieve their goals. With the right support and guidance, he ensures progress feels both motivating and achievable.",
-      image: blog7,
+   {
+      name: "Sangeeta Acharya",
+      role: "Associate Coach & Head Accountability",
+      description: "Sangeeta holds an MBA from Pune University and brings 14 years of extensive experience in the telecom industry. She has demonstrated expertise in Customer Experience, Credit Risk Management, Collections, and Business Analysis. Sangeeta excels at driving operational excellence and leading strategic initiatives. She is also passionate about continuous learning and is an avid reader.",
+      image: sangeeta,
     },
 
   ];
@@ -224,14 +263,14 @@ const About = memo(() => {
       </section>
 
       <section className="about2_fifth_layout">
-                <p className="section-title-white">Our leadership</p>
+                <p className="section-title-white mb-2">Our leadership</p>
                 <div className="about2-leadership-section">
                   <div className="row">
                     <div className="col-lg-5 d-flex justify-content-start">
                       <Image
-                        src={man}
+                        src={ajay}
                         alt="Ajay Hiraskar"
-                        className="img-fluid"
+                        className="img-fluid custom-img"
                       />
                     </div>
                     <div className="col-lg-7 leadership-content">
@@ -297,9 +336,9 @@ const About = memo(() => {
                     </div>
                     <div className="col-lg-5 d-flex justify-content-end order-1 order-lg-2">
                       <Image
-                        src={man2}
-                        alt="Ajay Hiraskar"
-                        className="img-fluid"
+                        src={vikram}
+                        alt="Vikram Panjwani"
+                        className="img-fluid custom-img"
                       />
                     </div>             
                   </div>
@@ -339,7 +378,7 @@ const About = memo(() => {
                   <div className="about2_team_sub_container">
                     <div className="d-flex flex-row justify-content-between scaling-row">
                       <div className="section-title-black text-left no-padding">
-                        Scaling Up coaches
+                        Scaling Up Coaches
                       </div>
                       <div className="about2_btnContainer">
                         <button
@@ -392,7 +431,7 @@ const About = memo(() => {
                     <div className="d-flex flex-row justify-content-between scaling-row">
                       <div className="section-title-black text-left no-padding" >
       
-                        Accountability team
+                        Management Team
                       </div>
                       <div className="about2_btnContainer">
                         <button
