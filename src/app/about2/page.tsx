@@ -59,12 +59,12 @@ const About = memo(() => {
     );
   };
   const coaches = [
-    {
-      name: "Chirag Savla",
-      role: "Certified Scaling Up Coach | Ex-CEO, Godrej East Africa",
-      description: "Chirag is a seasoned business operator with 20+ years of P&L leadership across Africa, the Middle East, and India — including an 11-year tenure at Godrej Consumer Products as CEO for East Africa and Regional Head for the Rest of Africa and Middle East. He has led multi-country operations spanning brand building, manufacturing, exports, and financial strategy at scale. As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth. His coaching is grounded in operating reality, not theory - built on two decades of running businesses where the stakes were real.",
-      image: nd,
-    },
+    // {
+    //   name: "Chirag Savla",
+    //   role: "Certified Scaling Up Coach | Ex-CEO, Godrej East Africa",
+    //   description: "Chirag is a seasoned business operator with 20+ years of P&L leadership across Africa, the Middle East, and India — including an 11-year tenure at Godrej Consumer Products as CEO for East Africa and Regional Head for the Rest of Africa and Middle East. He has led multi-country operations spanning brand building, manufacturing, exports, and financial strategy at scale. As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth. His coaching is grounded in operating reality, not theory - built on two decades of running businesses where the stakes were real.",
+    //   image: nd,
+    // },
     {
       name: "N. Dharmadhikari",
       role: "Certified Alchemist Coach| Independent Director",
