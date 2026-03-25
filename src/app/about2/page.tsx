@@ -263,7 +263,7 @@ const About = memo(() => {
       </section>
 
       <section className="about2_fifth_layout">
-                <p className="section-title-white mb-2">Our leadership</p>
+                <p className="section-title-white mb-2">Our Leadership</p>
                 <div className="about2-leadership-section">
                   <div className="row">
                     <div className="col-lg-5 d-flex justify-content-start">
