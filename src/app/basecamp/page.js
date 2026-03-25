@@ -110,6 +110,7 @@ const handleShow = () => {
     "ISB_EXCLUSIVE",
     "IIM_EXCLUSIVE",
     "SPECIAL20",
+    "DMS20",
   ];
 
   const [sentenceIndex, setSentenceIndex] = useState(0);
