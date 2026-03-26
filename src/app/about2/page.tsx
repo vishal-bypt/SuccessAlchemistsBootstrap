@@ -32,7 +32,7 @@ const About = memo(() => {
   const [currentIndex1, setCurrentIndex1] = useState(0);
   const getItemsPerPage = () => (window.innerWidth < 768 ? 1 : 3);
 
-  const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage());
+  const [itemsPerPage, setItemsPerPage] = useState(3);
 
   useEffect(() => {
     const handleResize = () => {
