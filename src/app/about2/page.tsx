@@ -303,7 +303,7 @@ const About = memo(() => {
       </section>
 
       <section className="about2_fifth_layout">
-                <p className="section-title-white mb-2">Our Leadership</p>
+                <p className="section-title-white mb-3">Our Leadership</p>
                 <div className="about2-leadership-section">
                   <div className="row">
                     <div className="col-lg-5 d-flex justify-content-start">
@@ -314,7 +314,7 @@ const About = memo(() => {
                       />
                     </div>
                     <div className="col-lg-7 leadership-content">
-                      <div className="leadership-content-title-logo">
+                      <div className="leadership-content-title-logo mt-2">
                          <div className="leader-name">
                           Ajay Hiraskar
                          </div>
@@ -322,8 +322,6 @@ const About = memo(() => {
                         <div className="linkedin-white-bg">
                           <svg
                             viewBox="0 0 25 25"
-                            width="25"
-                            height="25"
                             fill="#0f2437"
                           >
                             <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.54v6.2zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
@@ -347,7 +345,7 @@ const About = memo(() => {
       
                   <div className="row align-items-center">
                     <div className="col-lg-7 leadership-content order-2 order-lg-1">
-                      <div className="leadership-content-title-logo">
+                      <div className="leadership-content-title-logo mt-2">
                          <div className="leader-name">
                           Vikram Panjwani
                          </div>
@@ -355,8 +353,6 @@ const About = memo(() => {
                         <div className="linkedin-white-bg">
                           <svg
                             viewBox="0 0 25 25"
-                            width="25"
-                            height="25"
                             fill="#0f2437"
                           >
                             <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.54v6.2zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
@@ -392,7 +388,7 @@ const About = memo(() => {
                       />
                     </div>
                     <div className="col-lg-7 leadership-content">
-                      <div className="leadership-content-title-logo">
+                      <div className="leadership-content-title-logo mt-2">
                          <div className="leader-name">
                           Harjinder Kohli (Bobby)
                          </div>
@@ -400,8 +396,6 @@ const About = memo(() => {
                         <div className="linkedin-white-bg">
                           <svg
                             viewBox="0 0 25 25"
-                            width="25"
-                            height="25"
                             fill="#0f2437"
                           >
                             <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.54v6.2zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
@@ -445,7 +439,7 @@ const About = memo(() => {
                 </p>
               </section> */}
               <section className="about2_seventh_layout">
-                <div className="section-title-black text-left no-padding">Team</div>
+                <div className="section-title-black text-left no-padding mb-2">Team</div>
                 <div className="black-subtitle-text">
                   We are a dedicated team of high performers, committed to our
                   clients’ success. Ajay Hiraskar, our founder and Chief Alchemist, is
