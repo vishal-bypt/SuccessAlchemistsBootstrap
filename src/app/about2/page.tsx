@@ -33,6 +33,7 @@ const About = memo(() => {
 
   const [itemsPerPage, setItemsPerPage] = useState(3);
   const [expanded, setExpanded] = useState(false);
+  const [managementExpanded, setManagementExpanded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -395,7 +396,7 @@ const About = memo(() => {
                   </div>
                 </div>
               </section>
-              <section className="about2_sixth_layout">
+              {/* <section className="about2_sixth_layout">
                 <p className="section-title-white mb-2">
                   About Success Alchemists and the Team
                 </p>
@@ -414,7 +415,7 @@ const About = memo(() => {
                   and globally across various sectors, including manufacturing, IT
                   services, marketing solutions, recruitment, and more.
                 </p>
-              </section>
+              </section> */}
               <section className="about2_seventh_layout">
                 <div className="section-title-black text-left no-padding">Team</div>
                 <div className="black-subtitle-text">
@@ -531,15 +532,15 @@ const About = memo(() => {
                                     {coach.role}
                                   </p>
                                 </div>
-                                <p className={`about2_card_text ${expanded ? "expanded" : ""}`}>
+                                <p className={`about2_card_text ${managementExpanded ? "expanded" : ""}`}>
                                     {coach.description}
                                   </p>
 
                                   {/* Show button only on mobile */}
                                     <button
                                       className="read-more-btn"
-                                      onClick={() => setExpanded(!expanded)}>
-                                      {expanded ? "Read Less" : "Read More"}
+                                      onClick={() => setManagementExpanded(!managementExpanded)}>
+                                      {managementExpanded ? "Read Less" : "Read More"}
                                   </button>    
                               </div>
                             </div>
