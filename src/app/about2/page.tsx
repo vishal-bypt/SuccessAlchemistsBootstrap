@@ -1,7 +1,7 @@
 "use client";
-
+import React, { useState, useEffect } from 'react';
 import Image from "next/image";
-import { memo, useState } from "react";
+import { memo } from "react";
 import about from "../../app/about/images/Success7.png";
 import Backward from "../../app/who/images/Backward.png";
 import Forward from "../../app/who/images/Forward1.png";
@@ -30,7 +30,19 @@ import vikram from "./images/vikram.png";
 const About = memo(() => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndex1, setCurrentIndex1] = useState(0);
-  const itemsPerPage = 3;
+  const getItemsPerPage = () => (window.innerWidth < 768 ? 1 : 3);
+
+  const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage());
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(getItemsPerPage());
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex - itemsPerPage < 0 ? 0 : prevIndex - itemsPerPage
