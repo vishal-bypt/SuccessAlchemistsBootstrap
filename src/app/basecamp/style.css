@@ -180,7 +180,7 @@ font-size:26px;
 }
 
 /* Hero Section */
-/* .hero-section1 {
+.hero-section1 {
     background: linear-gradient(rgba(15, 36, 55, 0.85), rgba(15, 36, 55, 0.85)), url(../../../public/1000312751.png);
     background-repeat: no-repeat !important;
     background-position: center 50% !important;
@@ -191,7 +191,7 @@ font-size:26px;
     position: relative !important;
     overflow: hidden !important;
     padding: 60px 0 !important;
-} */
+}
 
 /* WEB / DESKTOP ONLY */
 @media (min-width: 992px) {
