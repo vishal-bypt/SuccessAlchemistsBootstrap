@@ -6,7 +6,6 @@ import about from "../../app/about/images/Success7.png";
 import Backward from "../../app/who/images/Backward.png";
 import Forward from "../../app/who/images/Forward1.png";
 import "./about2.css";
-import abhishek from "./images/Abhishek.png";
 import africa from "./images/africa.jpeg";
 import ashima from "./images/Ashima.png";
 import ashutosh from "./images/Ashutosh.png";
@@ -102,18 +101,18 @@ const About = memo(() => {
       description: "Ashima brings over two decades of technology leadership to her coaching practice, with senior engineering roles at Dell, BambooBox, Support.com, and Aptean spanning software development, product management, and organisational design. As a Director of Engineering and Agile practitioner, she has led high-performance technical teams through complex builds, rapid growth, and structural transformation. Now, as a Scaling Up Associate Coach at Success Alchemists, she helps entrepreneurs and organisations translate that operational depth into scalable, structured growth. Her edge is distinctive — she speaks the language of both the boardroom and the engineering floor.",
       image: ashima,
     },
-    {
-      name: "Harjinder Kohli (Bobby)",
-      role: "Certified Scaling Up Coach| ex- COO North America, Clarion",
-      description: "Bobby is a seasoned technology and enterprise sales leader with nearly three decades of experience scaling businesses across India, government sectors, and North America. He has held VP and Head roles at Airtel and Reliance Jio, and spent over 12 years at Sify Technologies driving system integration and global alliances at the SVP level. At Clarion Technologies, he progressed from CEO of India & Government Business to his current role as COO North America — overseeing operations, partnerships, and growth across one of the most competitive technology markets in the world. His career is a masterclass in building and scaling technology-driven businesses across geographies, sectors, and market cycles. As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth.",
-      image: bobby,
-    },
-    {
-      name: "Abhishek Hiraskar",
-      role: "Associate Coach | Sports & Media Business Leader",
-      description: "Abhishek is a sports industry professional with 10+ years of experience spanning broadcast, sponsorships, brand partnerships, and media rights across some of the world's most recognised sporting properties — including BCCI, IOC, NBA, ISL, EPL, and ICC Events. He has held partnerships and content leadership roles at JioStar and Ultrahuman, managing elite athlete programs and forging strategic alliances with marquee brands. Now, as an Associate Coach at Growth Alchemists Business Coaching, he channels that high-performance commercial background into helping businesses scale with clarity and purpose. He brings to coaching what few others can — a front-row view of how the world's biggest sporting brands are built and grown.",
-      image: abhishek,
-    },
+    // {
+    //   name: "Harjinder Kohli (Bobby)",
+    //   role: "Certified Scaling Up Coach| ex- COO North America, Clarion",
+    //   description: "Bobby is a seasoned technology and enterprise sales leader with nearly three decades of experience scaling businesses across India, government sectors, and North America. He has held VP and Head roles at Airtel and Reliance Jio, and spent over 12 years at Sify Technologies driving system integration and global alliances at the SVP level. At Clarion Technologies, he progressed from CEO of India & Government Business to his current role as COO North America — overseeing operations, partnerships, and growth across one of the most competitive technology markets in the world. His career is a masterclass in building and scaling technology-driven businesses across geographies, sectors, and market cycles. As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth.",
+    //   image: bobby,
+    // },
+    // {
+    //   name: "Abhishek Hiraskar",
+    //   role: "Associate Coach | Sports & Media Business Leader",
+    //   description: "Abhishek is a sports industry professional with 10+ years of experience spanning broadcast, sponsorships, brand partnerships, and media rights across some of the world's most recognised sporting properties — including BCCI, IOC, NBA, ISL, EPL, and ICC Events. He has held partnerships and content leadership roles at JioStar and Ultrahuman, managing elite athlete programs and forging strategic alliances with marquee brands. Now, as an Associate Coach at Growth Alchemists Business Coaching, he channels that high-performance commercial background into helping businesses scale with clarity and purpose. He brings to coaching what few others can — a front-row view of how the world's biggest sporting brands are built and grown.",
+    //   image: abhishek,
+    // },
     {
       name: "Rahul Chaure",
       role: "Associate Coach| Entrepreneur",
@@ -143,8 +142,14 @@ const About = memo(() => {
     {
       name: "Jyoti Hiraskar",
       role: "Happiness Champion",
-      description: "Jyoti Hiraskar joins Success Alchemists after her successful stint as a Teacher, having worked in various schools in Mumbai and Pune. Besides being an accountability partner at Success Alchemists, she is also an IT professional and an inner transformation teacher with “Art of living”, helping people understand the purpose of their life through yoga & pranayam.",
+      description: "Following a successful career as a teacher across schools in Mumbai and Pune, Jyoti Hiraskar joined Success Alchemists, bringing a unique perspective to the team. In her role as Happiness Champion, she leverages her expertise as an \"Art of Living\" teacher to guide others toward inner transformation. By integrating yoga and pranayama, Jyoti empowers our team to align with their life’s purpose and find clarity in their personal and professional journeys.",
       image: jyoti,
+    },
+     {
+      name: "Sangeeta Acharya",
+      role: "Associate Coach & Head Accountability",
+      description: "Sangeeta holds an MBA from Pune University and brings 14 years of extensive experience in the telecom industry. She has demonstrated expertise in Customer Experience, Credit Risk Management, Collections, and Business Analysis. Sangeeta excels at driving operational excellence and leading strategic initiatives. She is also passionate about continuous learning and is an avid reader.",
+      image: sangeeta,
     },
     {
       name: "Kavita Lakshman",
@@ -158,13 +163,6 @@ const About = memo(() => {
       description: "Puja S Barori is a multifaceted individual with 10 years of experience in the BPO-ITO industry, offering outstanding team leadership training and developing efficient teams. She is a creative artist, a voyager and a passionate fitness and nutrition coach with an urge to promote a safe, enjoyable and sustainable platform for people aiming to achieve health and fitness goals.",
       image: puja,
     },
-   {
-      name: "Sangeeta Acharya",
-      role: "Associate Coach & Head Accountability",
-      description: "Sangeeta holds an MBA from Pune University and brings 14 years of extensive experience in the telecom industry. She has demonstrated expertise in Customer Experience, Credit Risk Management, Collections, and Business Analysis. Sangeeta excels at driving operational excellence and leading strategic initiatives. She is also passionate about continuous learning and is an avid reader.",
-      image: sangeeta,
-    },
-
   ];
 
   const countries = [
@@ -291,7 +289,7 @@ const About = memo(() => {
                          <div className="leader-name">
                           Ajay Hiraskar
                          </div>
-                         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                         <a href="https://www.linkedin.com/in/ajayhiraskar?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">
                         <div className="linkedin-white-bg">
                           <svg
                             viewBox="0 0 25 25"
@@ -324,7 +322,7 @@ const About = memo(() => {
                          <div className="leader-name">
                           Vikram Panjwani
                          </div>
-                         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                         <a href="https://www.linkedin.com/in/vikram-panjwani?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">
                         <div className="linkedin-white-bg">
                           <svg
                             viewBox="0 0 25 25"
@@ -354,6 +352,46 @@ const About = memo(() => {
                         className="img-fluid custom-img"
                       />
                     </div>             
+                  </div>
+
+                  <div className="row">
+                    <div className="col-lg-5 d-flex justify-content-start">
+                      <Image
+                        src={bobby}
+                        alt="Bobby"
+                        className="img-fluid custom-img"
+                      />
+                    </div>
+                    <div className="col-lg-7 leadership-content">
+                      <div className="leadership-content-title-logo">
+                         <div className="leader-name">
+                          Harjinder Kohli (Bobby)
+                         </div>
+                         {/* <a href="https://www.linkedin.com/in/ajayhiraskar?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">
+                        <div className="linkedin-white-bg">
+                          <svg
+                            viewBox="0 0 25 25"
+                            width="25"
+                            height="25"
+                            fill="#0f2437"
+                          >
+                            <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.54v6.2zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                          </svg>
+                        </div>
+                      </a> */}
+                      </div>
+                      <p className="white-subtitle-text" >
+                        Bobby is a seasoned technology and enterprise sales leader with nearly three decades of experience scaling businesses across India, government sectors, and North America.
+                      </p>
+
+                      <p className="white-subtitle-text" >
+                         He has held VP and Head roles at Airtel and Reliance Jio, and spent over 12 years at Sify Technologies driving system integration and global alliances at the SVP level. At Clarion Technologies, he progressed from CEO of India & Government Business to his current role as COO North America — overseeing operations, partnerships, and growth across one of the most competitive technology markets in the world.
+                      </p>
+
+                      <p className="white-subtitle-text" >
+                        His career is a masterclass in building and scaling technology-driven businesses across geographies, sectors, and market cycles. As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth. 
+                      </p>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -391,7 +429,7 @@ const About = memo(() => {
                   <div className="about2_team_sub_container">
                     <div className="d-flex flex-row justify-content-between scaling-row">
                       <div className="section-title-black text-left no-padding">
-                        Scaling Up Coaches
+                        Associate Coaches
                       </div>
                       <div className="about2_btnContainer">
                         <button
