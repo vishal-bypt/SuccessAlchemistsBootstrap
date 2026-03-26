@@ -33,6 +33,7 @@ const About = memo(() => {
   const getItemsPerPage = () => (window.innerWidth < 768 ? 1 : 3);
 
   const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -431,7 +432,16 @@ const About = memo(() => {
                                     {coach.role}
                                   </p>
                                 </div>
-                                <p className="about2_card_text">{coach.description}</p>
+                                  <p className={`about2_card_text ${expanded ? "expanded" : ""}`}>
+                                    {coach.description}
+                                  </p>
+
+                                  {/* Show button only on mobile */}
+                                    <button
+                                      className="read-more-btn"
+                                      onClick={() => setExpanded(!expanded)}>
+                                      {expanded ? "Read Less" : "Read More"}
+                                  </button>       
                               </div>
                             </div>
                           </div>
@@ -483,7 +493,16 @@ const About = memo(() => {
                                     {coach.role}
                                   </p>
                                 </div>
-                                <p className="about2_card_text">{coach.description}</p>
+                                <p className={`about2_card_text ${expanded ? "expanded" : ""}`}>
+                                    {coach.description}
+                                  </p>
+
+                                  {/* Show button only on mobile */}
+                                    <button
+                                      className="read-more-btn"
+                                      onClick={() => setExpanded(!expanded)}>
+                                      {expanded ? "Read Less" : "Read More"}
+                                  </button>    
                               </div>
                             </div>
                           </div>
