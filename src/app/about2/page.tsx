@@ -24,6 +24,7 @@ import sangeeta from "./images/Sangeeta.png";
 import uae from "./images/uae.png";
 import ajay from "./images/Ajay.png";
 import vikram from "./images/vikram.png";
+import bannerImage from "./images/BannerImage.jpeg";
 
 
 const About = memo(() => {
@@ -187,7 +188,34 @@ const About = memo(() => {
 
   return (
     <div className="about2_main_body_div">
-      <section className="about2_first_div_layout about2_aboutUs">
+       {/* FIRST BASECAMP SECTION FOR MOBILE*/}
+       <section className="d-block d-md-none">
+        <div className="aboutHero">
+             
+     <p className="heading-white">
+                Success Alchemists help  
+                <span className="highlight-text"> accelerate</span> your business  
+                <span className="highlight-text"> growth</span> with  
+                <span className="highlight-text"> execution-focussed</span> business coaching
+              </p>
+
+     <Image
+                    // className="logo-image"
+                    src={bannerImage}
+                    alt="img2"
+                    className="banner-image"
+                  />
+                   <div className="white-subtitle-text mt-3" >
+               When we work with Founders & businesses, our core focus stays in bringing measurable impact through Leadership Development, Team Alignment, Structured Execution, and Strategic Insights. 
+              </div>
+              <div className="white-subtitle-text">
+              We create sustainable transformation in the four foundational pillars of every growing business - People, Strategy, Execution & Cash. 
+            </div>
+
+        </div>
+
+      </section>
+      <section className="about2_first_div_layout about2_aboutUs d-none d-md-block">
         
         <div className="about2_main_first_div_body_new">
             <div
