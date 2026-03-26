@@ -450,7 +450,7 @@ const About = memo(() => {
                 </div>
               <div className="about2_sub_seventh_layout">
                   <div className="about2_team_sub_container">
-                    <div className="d-flex flex-row justify-content-between scaling-row">
+                    <div className="d-flex flex-row justify-content-between scaling-row gap-2">
                       <div className="section-title-black text-left no-padding">
                         Associate Coaches
                       </div>
@@ -511,7 +511,7 @@ const About = memo(() => {
       
                   </div>
                   <div className="about2_team_sub_container">
-                    <div className="d-flex flex-row justify-content-between scaling-row">
+                    <div className="d-flex flex-row justify-content-between scaling-row gap-2">
                       <div className="section-title-black text-left no-padding" >
       
                         Management Team
