@@ -35,6 +35,10 @@ const About = memo(() => {
   const [itemsPerPage, setItemsPerPage] = useState(3);
   const [expanded, setExpanded] = useState(false);
   const [managementExpanded, setManagementExpanded] = useState(false);
+  const [ajayExpanded, setAjayExpanded] = useState(false);
+  const [vikramExpanded, setVikramExpanded] = useState(false);
+  const [bobbyExpanded, setBobbyExpanded] = useState(false);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -69,7 +73,7 @@ const About = memo(() => {
 
   const handlePrev1 = () => {
 
-          if (currentIndex1 === 0) {
+      if (currentIndex1 === 0) {
         const remainder = coaches1.length % itemsPerPage;
         const lastIndex =
           remainder === 0
@@ -346,17 +350,34 @@ const About = memo(() => {
                         </div>
                       </a>
                       </div>
-                      <p className="white-subtitle-text" >
-                        India’s 1st Scaling-Up Coach, Ajay brings 37 years of experience building and scaling companies across telecom, IT services, publishing, and industrial sectors. 
+                      <div>
+                      <div className={`about2_text_container ${ajayExpanded ? "expanded" : ""}`}>
+                      <p className="white-subtitle-text mb-3">
+                        India’s 1st Scaling-Up Coach, Ajay brings 37 years of experience building and scaling companies across telecom, IT services, publishing, and industrial sectors.
                       </p>
 
-                      <p className="white-subtitle-text" >
+                      <p className="white-subtitle-text mb-3">
                         He has helped businesses across technology, recruitment, manufacturing, and B2C implement the Scaling Up framework to accelerate growth.
                       </p>
 
-                      <p className="white-subtitle-text" >
+                      <p className="white-subtitle-text">
                         A long-time Charter and Governing Council Member of TiE Pune, Ajay also mentors startups and has helped organize TiECon, Pune’s largest startup conference.
                       </p>
+
+                     
+                    </div>
+
+                      <button
+                      className="read-more-btn-leadership"
+                      onClick={() => setAjayExpanded(!ajayExpanded)}
+                    >
+                      {ajayExpanded ? "Read Less" : "Read More"}
+                    </button>
+                      </div>
+                      
+
+                   
+                      
                     </div>
                   </div>
       
@@ -377,15 +398,28 @@ const About = memo(() => {
                         </div>
                       </a>
                       </div>
-                      <p className="white-subtitle-text">
+                       <div>
+                      <div className={`about2_text_container ${vikramExpanded ? "expanded" : ""}`}>
+                      <p className="white-subtitle-text mb-3">
                         Vikram is a certified Scaling Up business coach and growth advisor who works with founders and leadership teams to build scalable, high-performance companies. 
                       </p>
-                      <p className="white-subtitle-text">
+                      <p className="white-subtitle-text mb-3">
                         With nearly three decades of experience in building and leading consumer and telecom businesses, he brings practical insight into sales, marketing, and P&L management.
                       </p>
                       <p className="white-subtitle-text">
                         Having previously served as CEO of Denkali and held leadership roles at companies such as Vodafone and Tata Teleservices, Vikram now helps entrepreneurs implement the proven Scaling Up framework to achieve structured, sustainable growth.
                       </p>
+                     
+                    </div>
+
+                      <button
+                      className="read-more-btn-leadership"
+                      onClick={() => setVikramExpanded(!vikramExpanded)}
+                    >
+                      {vikramExpanded ? "Read Less" : "Read More"}
+                    </button>
+                      </div>
+                      
                     </div>
                     <div className="col-lg-5 d-flex justify-content-end order-1 order-lg-2">
                       <Image
@@ -420,17 +454,30 @@ const About = memo(() => {
                         </div>
                       </a>
                       </div>
-                      <p className="white-subtitle-text" >
+                       <div>
+                      <div className={`about2_text_container ${bobbyExpanded ? "expanded" : ""}`}>
+                     <p className="white-subtitle-text mb-3" >
                         Bobby is a seasoned technology and enterprise sales leader with nearly three decades of experience scaling businesses across India, government sectors, and North America.
                       </p>
 
-                      <p className="white-subtitle-text" >
+                      <p className="white-subtitle-text mb-3" >
                          He has held VP and Head roles at Airtel and Reliance Jio, and spent over 12 years at Sify Technologies driving system integration and global alliances at the SVP level. At Clarion Technologies, he progressed from CEO of India & Government Business to his current role as COO North America — overseeing operations, partnerships, and growth across one of the most competitive technology markets in the world.
                       </p>
 
                       <p className="white-subtitle-text" >
                         His career is a masterclass in building and scaling technology-driven businesses across geographies, sectors, and market cycles. As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth. 
                       </p>
+                     
+                    </div>
+
+                      <button
+                      className="read-more-btn-leadership"
+                      onClick={() => setBobbyExpanded(!bobbyExpanded)}
+                    >
+                      {bobbyExpanded ? "Read Less" : "Read More"}
+                    </button>
+                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -514,7 +561,6 @@ const About = memo(() => {
                                     {coach.description}
                                   </p>
 
-                                  {/* Show button only on mobile */}
                                     <button
                                       className="read-more-btn"
                                       onClick={() => setExpanded(!expanded)}>

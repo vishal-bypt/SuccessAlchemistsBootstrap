@@ -159,6 +159,15 @@
     margin: 0;
 }
 
+.read-more-btn-leadership {
+    display: none;
+    background: none;
+    border: none;
+    color: #fba819;
+    cursor: pointer;
+    padding: 0;
+}
+
 .section-title-white{
   font-size:48px;
   font-weight:600;
@@ -543,6 +552,23 @@
         height: 25px;
         border-radius: 3px;
     }
+
+    .about2_text_container {
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* 👈 show 3 lines initially */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .about2_text_container.expanded {
+        -webkit-line-clamp: unset;
+        overflow: visible;
+    }
+
+    .read-more-btn-leadership {
+        display: inline;
+    }
+
 }
 
 /* 📱 Small Mobile (<576px) */
