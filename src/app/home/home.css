@@ -434,7 +434,7 @@
 .home2-sixth_component_btn_div {
     display: flex;
     width: fit-content;
-    border-radius: 12px;
+    border-radius: 10px;
     padding-top: 12px;
     padding-bottom: 10px;
     padding-left: 20px;
@@ -668,6 +668,11 @@
         padding: 16px 20px !important;
         font-size: 14px !important; 
     }
+
+    .home2-sixth_component_btn_div {
+        padding: 4px 20px !important;
+        font-size: 14px !important; 
+    }
 }
 
 /* 📱 Small Mobile (<576px) */
@@ -697,14 +702,24 @@
     }
 
     .home2-sixth_component_title_div {
-        font-size: 34px;
-        line-height: 28.68px;
+        font-size: 26px;
+        line-height: 2.2px;
+    }
+
+    .home2-sixth_component_header_div {
+        font-size: 26px;
+        line-height: 40px;
     }
 
     .home2-btn-cta-footer-webinar {
         width: 100% !important;
         max-width: 100%;
         padding: 14px 15px !important;
+        font-size: 14px !important;
+    }
+
+    .home2-sixth_component_btn_div{
+        padding: 4px 15px !important;
         font-size: 14px !important;
     }
 }

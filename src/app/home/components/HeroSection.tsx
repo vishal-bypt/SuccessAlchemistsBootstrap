@@ -14,7 +14,7 @@ const HeroSection = memo(() => {
       </video>
       <div className="home2-gradient-overlay">
         <div className="home2-hero-container">
-          <div className="home2-inner-first-div">
+          <div className="home2-inner-first-div mb-3">
             Are you ready for
             <br />
             <TypedComponent />
