@@ -392,7 +392,7 @@ const About = memo(() => {
                          <div className="leader-name">
                           Harjinder Kohli (Bobby)
                          </div>
-                         {/* <a href="https://www.linkedin.com/in/ajayhiraskar?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">
+                         <a href="https://www.linkedin.com/in/harjinder-kohli-bobby-kohli-4b69988?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">
                         <div className="linkedin-white-bg">
                           <svg
                             viewBox="0 0 25 25"
@@ -401,7 +401,7 @@ const About = memo(() => {
                             <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.54v6.2zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
                           </svg>
                         </div>
-                      </a> */}
+                      </a>
                       </div>
                       <p className="white-subtitle-text" >
                         Bobby is a seasoned technology and enterprise sales leader with nearly three decades of experience scaling businesses across India, government sectors, and North America.
