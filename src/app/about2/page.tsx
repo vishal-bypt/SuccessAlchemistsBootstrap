@@ -651,9 +651,9 @@ const About = memo(() => {
             <h3 className="d-block d-md-none">
               Are You <span>Ready To Scale?</span>
             </h3>
-            <p className="home2-hero-subtitle">
+            <p >
               {/* <a href="/contactUs" className="text-decoration-none"> */}
-              <button className="btn home2-btn-cta-footer-webinar text-center"  onClick={() => window.location.href = "/contactUs"}>
+              <button className="home2-btn-cta-footer-webinar text-center"  onClick={() => window.location.href = "/contactUs"}>
                 <strong>REQUEST A CALLBACK</strong>
               </button>
               {/* </a> */}

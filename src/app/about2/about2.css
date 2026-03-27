@@ -410,9 +410,9 @@
   color: #000000;
   border: none;
   padding: 18px 40px;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
-  border-radius: 12px;
+  border-radius: 10px;
   margin-top: 25px;
   letter-spacing: 0.5px;
   text-align: center;
@@ -433,7 +433,7 @@
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 /* 💻 Laptop (992px - 1199px) */
@@ -569,6 +569,12 @@
         display: inline;
     }
 
+    .home2-btn-cta-footer-webinar{
+        width: 100% !important;
+        max-width: 100%;
+        padding: 16px 20px !important;
+        font-size: 14px !important; 
+    }
 }
 
 /* 📱 Small Mobile (<576px) */
@@ -594,5 +600,12 @@
         width: 100%;
         height: 220px;
         border-radius: 12px;
+    }
+
+    .home2-btn-cta-footer-webinar {
+        width: 100% !important;
+        max-width: 100%;
+        padding: 14px 15px !important;
+        font-size: 14px !important;
     }
 }
