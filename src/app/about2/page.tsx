@@ -192,7 +192,7 @@ const About = memo(() => {
        <section className="d-block d-md-none">
         <div className="aboutHero">
              
-     <p className="heading-white">
+              <p className="heading-white">
                 Success Alchemists help  
                 <span className="highlight-text"> accelerate</span> your business  
                 <span className="highlight-text"> growth</span> with  
@@ -222,7 +222,7 @@ const About = memo(() => {
               className="innerContainer"
               style={{ justifyContent: "center", alignItems: "center" }}
             >
-              <p className="heading-white">
+              <p className="heading-white mb-4">
                 Success Alchemists help  
                 <span className="highlight-text"> accelerate</span> your business  
                 <span className="highlight-text"> growth</span> with  

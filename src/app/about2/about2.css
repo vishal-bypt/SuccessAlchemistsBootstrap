@@ -35,7 +35,7 @@
 }
 
 .heading-white {
-    font-size: 64px;
+    font-size: 48px;
     font-weight: 500;
     color: #fff;
     line-height: 1.2;
@@ -107,9 +107,10 @@
 
 .country-name {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 11px;
   letter-spacing: 1px;
   color: #333;
+  font-weight: 600;
 }
 
 /* THIRD SECTION */
@@ -425,9 +426,6 @@
 
 /* 💻 Laptop (992px - 1199px) */
 @media (max-width: 1199px) {
-    .heading-white {
-        font-size: 56px;
-    }
 
     .white-subtitle-text,
     .black-subtitle-text{
@@ -457,9 +455,6 @@
 
 /* 📱 Tablet (768px - 991px) */
 @media (max-width: 991px) {
-    .heading-white {
-        font-size: 46px;
-    }
 
     .white-subtitle-text,
     .black-subtitle-text {
@@ -554,7 +549,7 @@
 /* 📱 Small Mobile (<576px) */
 @media (max-width: 575px) {
     .heading-white {
-        font-size: 30px;
+        font-size: 26px;
     }
 
     .section-title-black,
