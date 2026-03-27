@@ -45,32 +45,49 @@ const About = memo(() => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex - itemsPerPage < 0 ? 0 : prevIndex - itemsPerPage
-    );
-  };
+    const handlePrev = () => {
+      if (currentIndex === 0) {
+        const remainder = coaches.length % itemsPerPage;
+        const lastIndex =
+          remainder === 0
+            ? coaches.length - itemsPerPage
+            : coaches.length - remainder;
+
+        setCurrentIndex(lastIndex); // 🔁 go to last set
+      } else {
+        setCurrentIndex(currentIndex - itemsPerPage);
+      }
+    };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + itemsPerPage >= coaches.length
-        ? prevIndex
-        : prevIndex + itemsPerPage
-    );
+    if (currentIndex + itemsPerPage >= coaches.length) {
+      setCurrentIndex(0); // 🔁 go back to start
+    } else {
+      setCurrentIndex(currentIndex + itemsPerPage);
+    }
   };
 
   const handlePrev1 = () => {
-    setCurrentIndex1((prevIndex) =>
-      prevIndex - itemsPerPage < 0 ? 0 : prevIndex - itemsPerPage
-    );
+
+          if (currentIndex1 === 0) {
+        const remainder = coaches1.length % itemsPerPage;
+        const lastIndex =
+          remainder === 0
+            ? coaches1.length - itemsPerPage
+            : coaches1.length - remainder;
+
+        setCurrentIndex1(lastIndex); // 🔁 go to last set
+      } else {
+        setCurrentIndex1(currentIndex1 - itemsPerPage);
+      }
   };
 
   const handleNext1 = () => {
-    setCurrentIndex1((prevIndex) =>
-      prevIndex + itemsPerPage >= coaches1.length
-        ? prevIndex
-        : prevIndex + itemsPerPage
-    );
+     if (currentIndex1 + itemsPerPage >= coaches1.length) {
+      setCurrentIndex1(0); // 🔁 go back to start
+    } else {
+      setCurrentIndex1(currentIndex1 + itemsPerPage);
+    }
   };
   const coaches = [
     // {
@@ -458,14 +475,14 @@ const About = memo(() => {
                         <button
                           className="about2_slider_btn about2_prev_btn"
                           onClick={handlePrev}
-                          disabled={currentIndex === 0}
+                          disabled={false}
                         >
                           <Image src={Backward} alt="backward" />
                         </button>
                         <button
                           className="about2_slider_btn about2_next_btn"
                           onClick={handleNext}
-                          disabled={currentIndex + itemsPerPage >= coaches.length}
+                          disabled={false}
                         >
                           <Image src={Forward} alt="forward" />
                         </button>
@@ -520,14 +537,14 @@ const About = memo(() => {
                         <button
                           className="about2_slider_btn about2_prev_btn"
                           onClick={handlePrev1}
-                          disabled={currentIndex1 === 0}
+                          disabled={false}
                         >
                           <Image src={Backward} alt="backward" />
                         </button>
                         <button
                           className="about2_slider_btn about2_next_btn"
                           onClick={handleNext1}
-                          disabled={currentIndex1 + itemsPerPage >= coaches1.length}
+                          disabled={false}
                         >
                           <Image src={Forward} alt="forward" />
                         </button>
