@@ -345,6 +345,10 @@
     color: #616161;
     margin-top: 8px;
     font-size: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .about2_card_text.expanded {
@@ -352,7 +356,6 @@
 }
 
 .read-more-btn {
-  display: none;
   background: none;
   border: none;
   color: #007bff;
@@ -523,10 +526,6 @@
 
     .about2_card_text {
         font-size: 14px;
-        display: -webkit-box;
-        -webkit-line-clamp: 4; 
-        -webkit-box-orient: vertical;
-        overflow: hidden;
     }
 
     .custom-img {
