@@ -227,10 +227,10 @@ const About = memo(() => {
                     className="banner-image"
                   />
                    <div className="white-subtitle-text mt-3" >
-               When we work with Founders & businesses, our core focus stays in bringing measurable impact through Leadership Development, Team Alignment, Structured Execution, and Strategic Insights. 
+               We partner with founders to drive measurable impact through leadership, alignment, execution, and strategic clarity.
               </div>
               <div className="white-subtitle-text">
-              We create sustainable transformation in the four foundational pillars of every growing business - People, Strategy, Execution & Cash. 
+              Our focus is building sustainable growth across People, Strategy, Execution, and Cash.
             </div>
 
         </div>
@@ -250,10 +250,12 @@ const About = memo(() => {
                 <span className="highlight-text"> execution-focussed</span> business coaching
               </p>
               <div className="white-subtitle-text" >
-               When we work with Founders & businesses, our core focus stays in bringing measurable impact through Leadership Development, Team Alignment, Structured Execution, and Strategic Insights. 
+               We partner with founders to drive measurable impact through leadership, alignment, execution, and strategic clarity.
+
               </div>
               <div className="white-subtitle-text">
-              We create sustainable transformation in the four foundational pillars of every growing business - People, Strategy, Execution & Cash. 
+              Our focus is building sustainable growth across People, Strategy, Execution, and Cash.
+
             </div>
             </div>
           </div>
@@ -457,16 +459,16 @@ const About = memo(() => {
                        <div>
                       <div className={`about2_text_container ${bobbyExpanded ? "expanded" : ""}`}>
                      <p className="white-subtitle-text mb-3" >
-                        Bobby is a seasoned technology and enterprise sales leader with nearly three decades of experience scaling businesses across India, government sectors, and North America.
+                        Bobby is a seasoned technology and enterprise sales leader with nearly three decades of experience scaling businesses across India, government sectors, and North America. He served as CEO – India & Government Business and as COO – North America at Clarion Technologies, after leadership roles at Airtel, Reliance Jio, and Sify Technologies.
                       </p>
 
                       <p className="white-subtitle-text mb-3" >
-                         He has held VP and Head roles at Airtel and Reliance Jio, and spent over 12 years at Sify Technologies driving system integration and global alliances at the SVP level. At Clarion Technologies, he progressed from CEO of India & Government Business to his current role as COO North America — overseeing operations, partnerships, and growth across one of the most competitive technology markets in the world.
+                         A Certified Scaling Up Coach, he partners with founders and leadership teams to drive structured, predictable growth beyond entrepreneurial hustle.
                       </p>
 
-                      <p className="white-subtitle-text" >
+                      {/* <p className="white-subtitle-text" >
                         His career is a masterclass in building and scaling technology-driven businesses across geographies, sectors, and market cycles. As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth. 
-                      </p>
+                      </p> */}
                      
                     </div>
 
