@@ -1,236 +1,494 @@
 "use client";
-
-import React, { memo, useState } from "react";
+import React, { useState, useEffect } from 'react';
 import Image from "next/image";
-import curve from "../../../src/app/about/images/curve.png";
-import image2 from "../../../src/app/about/images/Image2.png";
-import curve1 from "../../../src/app/about/images/curve1.png";
-import coach1 from "../../app/who/images/coach1.png";
-import coach2 from "../../app/who/images/coach2.png";
-import coach3 from "../../app/who/images/coach3.png";
-import man from "../../app/who/images/man.svg";
-import man2 from "../../app/who/images/vikram.svg";
-import coach6 from "../../app/who/images/coach6.png";
-import coach7 from "../../app/who/images/coach7.png";
-import blog4 from "../../app/who/images/Blog4.png";
-import blog5 from "../../app/who/images/Blog5.png";
-import blog6 from "../../app/who/images/Blog6.png";
-import Forward from "../../app/who/images/Forward1.png";
+import { memo } from "react";
+import about from "./images/Success7.png";
 import Backward from "../../app/who/images/Backward.png";
-import blog7 from "../../app/who/images/Blog7.png";
-import about from "../../app/about/images/Success7.png"
+import Forward from "../../app/who/images/Forward1.png";
 import "./about.css";
+import africa from "./images/africa.jpeg";
+import ashima from "./images/Ashima.png";
+import ashutosh from "./images/Ashutosh.png";
+import augustine from "./images/Augustine.png";
+import bobby from "./images/Bobby.png";
+import india from "./images/india.jpg";
+import jyoti from "./images/Jyoti.png";
+import kavita from "./images/Kavita.png";
+import lakshmy from "./images/Lakshmi.png";
+import nd from "./images/ND.png";
+import nimisha from "./images/Nimisha.png";
+import puja from "./images/Puja.png";
+import rahul from "./images/Rahul.png";
+import sandesh from "./images/Sandesh.png";
+import sangeeta from "./images/Sangeeta.png";
+import uae from "./images/uae.png";
+import ajay from "./images/Ajay.png";
+import vikram from "./images/vikram.png";
+import bannerImage from "./images/BannerImage.jpeg";
 
 
 const About = memo(() => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndex1, setCurrentIndex1] = useState(0);
-  const itemsPerPage = 3;
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex - itemsPerPage < 0 ? 0 : prevIndex - itemsPerPage
-    );
-  };
+  const getItemsPerPage = () => (window.innerWidth < 768 ? 1 : 3);
+
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [expanded, setExpanded] = useState(false);
+  const [managementExpanded, setManagementExpanded] = useState(false);
+  const [ajayExpanded, setAjayExpanded] = useState(false);
+  const [vikramExpanded, setVikramExpanded] = useState(false);
+  const [bobbyExpanded, setBobbyExpanded] = useState(false);
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(getItemsPerPage());
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+    const handlePrev = () => {
+      if (currentIndex === 0) {
+        const remainder = coaches.length % itemsPerPage;
+        const lastIndex =
+          remainder === 0
+            ? coaches.length - itemsPerPage
+            : coaches.length - remainder;
+
+        setCurrentIndex(lastIndex); // 🔁 go to last set
+      } else {
+        setCurrentIndex(currentIndex - itemsPerPage);
+      }
+    };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + itemsPerPage >= coaches.length
-        ? prevIndex
-        : prevIndex + itemsPerPage
-    );
+    if (currentIndex + itemsPerPage >= coaches.length) {
+      setCurrentIndex(0); // 🔁 go back to start
+    } else {
+      setCurrentIndex(currentIndex + itemsPerPage);
+    }
   };
 
   const handlePrev1 = () => {
-    setCurrentIndex1((prevIndex) =>
-      prevIndex - itemsPerPage < 0 ? 0 : prevIndex - itemsPerPage
-    );
+
+      if (currentIndex1 === 0) {
+        const remainder = coaches1.length % itemsPerPage;
+        const lastIndex =
+          remainder === 0
+            ? coaches1.length - itemsPerPage
+            : coaches1.length - remainder;
+
+        setCurrentIndex1(lastIndex); // 🔁 go to last set
+      } else {
+        setCurrentIndex1(currentIndex1 - itemsPerPage);
+      }
   };
 
   const handleNext1 = () => {
-    setCurrentIndex1((prevIndex) =>
-      prevIndex + itemsPerPage >= coaches1.length
-        ? prevIndex
-        : prevIndex + itemsPerPage
-    );
+     if (currentIndex1 + itemsPerPage >= coaches1.length) {
+      setCurrentIndex1(0); // 🔁 go back to start
+    } else {
+      setCurrentIndex1(currentIndex1 + itemsPerPage);
+    }
   };
   const coaches = [
+    // {
+    //   name: "Chirag Savla",
+    //   role: "Certified Scaling Up Coach | Ex-CEO, Godrej East Africa",
+    //   description: "Chirag is a seasoned business operator with 20+ years of P&L leadership across Africa, the Middle East, and India — including an 11-year tenure at Godrej Consumer Products as CEO for East Africa and Regional Head for the Rest of Africa and Middle East. He has led multi-country operations spanning brand building, manufacturing, exports, and financial strategy at scale. As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth. His coaching is grounded in operating reality, not theory - built on two decades of running businesses where the stakes were real.",
+    //   image: nd,
+    // },
     {
-      name: "Ashima Gupta",
-      role: "Associate Coach",
-      description: "Ashima Gupta is a seasoned IT leader with over 20 years of experience developing products and leading high-performing teams across various industries. With a deep expertise in Agile practices, team building, and scaling complex systems, she has consistently driven growth and operational excellence. Ashima is also a certified yoga instructor and Art of Living teacher, passionate about integrating mindfulness and well-being into professional environments through meditation and breathwork.",
-      image: coach1,
+      name: "N. Dharmadhikari",
+      role: "Certified Alchemist Coach| Independent Director",
+      description: "ND is a seasoned corporate leader with 25+ years of experience spanning telecom and technology sectors across India and the Middle East — including senior roles at Etisalat, Reliance Communications, and Idea Cellular. He has led high-stakes portfolio strategy, revenue transformation, and go-to-market execution at an international scale, including overseeing the merger of two major telecom entities serving markets across MENA. Today, as an Independent Business Consultant and Director, he advises Tech Solutions companies on closing the gap between commercial ambition and operational discipline. His edge: knowing exactly where growth leaks profitability, and fixing it.",
+      image: nd,
     },
     {
       name: "Lakshmy S Nair",
-      role: "Associate Coach",
-      description: "With a rich background spanning 15 years across various industries, Lakshmy brings a wealth of knowledge and experience to the table. Her career journey encompasses roles in business analysis, banking and credit analysis, education, and life and wellness coaching. She holds a postgraduate degree in Business Economics and is CAIIB certified, alongside being a Certified Credit Analyst.",
-      image: coach2,
-    },
-    {
-      name: "N Dharmadhikari",
-      role: "Associate Coach",
-      description: "Enriched with vast and extensive experience in varied commercial faculties within telecommunication industry in India and the UAE, N Dharmadhikari has successfully led teams to surpass yearly product revenue budgets of ~ $1 bn USD. A management graduate majoring in Marketing, he has been able to play multiple roles and drive business growth successfully in Marketing, Strategy and P&L.",
-      image: coach3,
+      role: "Certified Alchemist Coach | Ex-Banker",
+      description: "Lakshmy brings a rare combination of financial acumen and human potential expertise to her coaching practice. With nearly a decade as Credit Manager at Federal Bank, she developed a sharp understanding of business risk, performance, and decision-making before transitioning into coaching and leadership development. A Certified Alchemist Coach at Success Alchemists, a Master Practitioner in NLP, and a Certified Credit Professional, she works at the intersection of mindset and execution — helping professionals and organisations unlock performance that numbers alone cannot explain. Her grounding in both banking discipline and behavioural science makes her a coach who understands the pressures leaders face from the inside out.",
+      image: lakshmy,
     },
     {
       name: "Sandesh Banger",
-      role: "Associate Coach",
-      description: "An MBA graduate from IIM Kozhikode with 15 years of extensive experience in Banking, Finance Consulting, and Training. Throughout his career, Sandesh has exposure working with businesses across multiple industries. As our go-to expert on cash management tools, with his profound financial domain knowledge and expertise, Sandesh’s insights are invaluable. He is also USA CFA Level 2 qualified. Sandesh has a passion for content creation and a keen interest in public speaking.",
-      image: coach6,
+      role: "Certified Alchemist Coach | Ex-Banker | IIM-K",
+      description: "Sandesh brings 15 years of experience across banking, finance, and technology — with stints at ICICI Bank, RBL Bank, and CDAC — before transitioning into the training and consulting space in 2018. He founded Hipertap Consulting, a boutique financial training firm delivering workshops and consulting across Financial Analysis, Credit Risk, Wholesale Banking, and Investment Banking. As a Certified Alchemist Coach at Success Alchemists, he now works directly with CXOs, senior leadership teams, and business heads to build scalable, profitable enterprises. His rare combination of deep financial expertise and front-line business coaching makes him a trusted advisor for ambitious entrepreneurs ready to grow with discipline.",
+      image: sandesh,
     },
     {
-      name: "Sangeeta Acharya",
-      role: "Associate Coach & Head Accountability",
-      description: "Sangeeta holds an MBA from Pune University and brings 14 years of extensive experience in the telecom industry. She has demonstrated expertise in Customer Experience, Credit Risk Management, Collections, and Business Analysis. Sangeeta excels at driving operational excellence and leading strategic initiatives. She is also passionate about continuous learning and is an avid reader.",
-      image: coach7,
+      name: "Ashima Gupta",
+      role: "Associate Coach | Agile Expert",
+      description: "Ashima brings over two decades of technology leadership to her coaching practice, with senior engineering roles at Dell, BambooBox, Support.com, and Aptean spanning software development, product management, and organisational design. As a Director of Engineering and Agile practitioner, she has led high-performance technical teams through complex builds, rapid growth, and structural transformation. Now, as a Scaling Up Associate Coach at Success Alchemists, she helps entrepreneurs and organisations translate that operational depth into scalable, structured growth. Her edge is distinctive — she speaks the language of both the boardroom and the engineering floor.",
+      image: ashima,
     },
-
-
+    // {
+    //   name: "Harjinder Kohli (Bobby)",
+    //   role: "Certified Scaling Up Coach| ex- COO North America, Clarion",
+    //   description: "Bobby is a seasoned technology and enterprise sales leader with nearly three decades of experience scaling businesses across India, government sectors, and North America. He has held VP and Head roles at Airtel and Reliance Jio, and spent over 12 years at Sify Technologies driving system integration and global alliances at the SVP level. At Clarion Technologies, he progressed from CEO of India & Government Business to his current role as COO North America — overseeing operations, partnerships, and growth across one of the most competitive technology markets in the world. His career is a masterclass in building and scaling technology-driven businesses across geographies, sectors, and market cycles. As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth.",
+    //   image: bobby,
+    // },
+    // {
+    //   name: "Abhishek Hiraskar",
+    //   role: "Associate Coach | Sports & Media Business Leader",
+    //   description: "Abhishek is a sports industry professional with 10+ years of experience spanning broadcast, sponsorships, brand partnerships, and media rights across some of the world's most recognised sporting properties — including BCCI, IOC, NBA, ISL, EPL, and ICC Events. He has held partnerships and content leadership roles at JioStar and Ultrahuman, managing elite athlete programs and forging strategic alliances with marquee brands. Now, as an Associate Coach at Growth Alchemists Business Coaching, he channels that high-performance commercial background into helping businesses scale with clarity and purpose. He brings to coaching what few others can — a front-row view of how the world's biggest sporting brands are built and grown.",
+    //   image: abhishek,
+    // },
+    {
+      name: "Rahul Chaure",
+      role: "Associate Coach| Entrepreneur",
+      description: "Rahul Chaure is the rare kind of coach who has lived the entrepreneurial journey firsthand — not just advised on it. With over 15 years at the helm of EduVed Learning Solutions, a multi-product education technology company he has built and scaled from the ground up, he understands the real weight of P&L decisions, team building, and long-term strategy. Before EduVed, he held Business Head and Sales Head roles at Reliance Communications and DSK Digital Technologies, sharpening a commercial edge that cuts across telecom, technology, and education. Now, as an Associate Coach at Success Alchemists, he brings that founder's instinct and operator's discipline to help other entrepreneurs build businesses that are structured, scalable, and built to last.",
+      image: rahul,
+    },
+    {
+      name: "Nimisha Sainani",
+      role: "Associate Coach | Ex-CGO | ISB",
+      description: "Nimisha is a growth-focused marketing and product leader with 12+ years of experience scaling startups across fintech, consumer tech, and digital products — with stints at Paytm, Multipl, Savart, and Little. As Chief Growth Officer at Savart, she led the full revenue and monetisation function for an AI-based wealth management platform, working across product, marketing, sales, and design. Her proven strength lies in driving outsized business outcomes with lean teams and limited resources — a discipline she now channels as a Business Coach at Success Alchemists, helping entrepreneurs build scalable, profitable businesses using the Scaling Up framework.",
+      image: nimisha,
+    },
+    {
+      name: "Ashutosh Sharma",
+      role: "Scaling Up Coach | Fractional CMO",
+      description: "Ashutosh is a senior marketing and business leader with over three decades of experience across SaaS, Media, Retail, FMCG, and Digital — spanning organisations like Times Internet, NowFloats, Euro RSCG, Ogilvy, and Cheil Communication. He has built and led marketing functions, digital businesses, and content operations at scale, delivering measurable growth across diverse sectors and business models. As a Fractional CMO, he brings CMO-level strategic depth to growth-stage companies without the full-time overhead. Now, as a Scaling Up Coach in Certification at Success Alchemists, he works towards installing the habits, rhythms, and decision-making infrastructure that turn growth ambitions into consistent, compounding results.",
+      image: ashutosh,
+    },
+    {
+      name: "Augustine Vaz",
+      role: "Associate Coach| Customer Strategy & Data Leader",
+      description: "Augustine brings over three decades of global consulting and business leadership experience, with senior roles at Capgemini, Ericsson, SAS Institute, and AT&T spanning the UK, US, and India. He has led customer lifecycle strategy, data-driven business transformation, and digital solutions for clients across telecoms, B2B2X, and enterprise sectors — consistently turning data and insights into measurable commercial outcomes. At Capgemini New York, he spearheaded Customer First & Data Strategy consulting for global organisations; at Ericsson, he drove digital business solutions across pre-sales and delivery for over five years. Now, as a Business Coach at Success Alchemists, he brings that rare global perspective and analytical rigour to help ambitious businesses scale with precision and purpose.",
+      image: augustine,
+    },
   ];
   const coaches1 = [
     {
       name: "Jyoti Hiraskar",
       role: "Happiness Champion",
-      description: "Jyoti Hiraskar joins Success Alchemists after her successful stint as a Teacher, having worked in various schools in Mumbai and Pune. Besides being an accountability partner at Success Alchemists, she is also an IT professional and an inner transformation teacher with “Art of living”, helping people understand the purpose of their life through yoga & pranayam.",
-      image: blog4,
+      description: "Following a successful career as a teacher across schools in Mumbai and Pune, Jyoti Hiraskar joined Success Alchemists, bringing a unique perspective to the team. In her role as Happiness Champion, she leverages her expertise as an \"Art of Living\" teacher to guide others toward inner transformation. By integrating yoga and pranayama, Jyoti empowers our team to align with their life’s purpose and find clarity in their personal and professional journeys.",
+      image: jyoti,
+    },
+     {
+      name: "Sangeeta Acharya",
+      role: "Associate Coach & Head Accountability",
+      description: "Sangeeta holds an MBA from Pune University and brings 14 years of extensive experience in the telecom industry. She has demonstrated expertise in Customer Experience, Credit Risk Management, Collections, and Business Analysis. Sangeeta excels at driving operational excellence and leading strategic initiatives. She is also passionate about continuous learning and is an avid reader.",
+      image: sangeeta,
     },
     {
       name: "Kavita Lakshman",
       role: "Accountability Partner",
       description: "Kavita holds a Bachelor of Arts degree from Mumbai University and has completed a Postgraduate Diploma in Travel and Tourism from the esteemed Garware Institute at Mumbai University. With over 16 years of experience in multinational companies, Kavita brings a wealth of expertise and a proven track record of success in the industry.",
-      image: blog5,
+      image: kavita,
     },
     {
       name: "Puja S Barori",
       role: "Accountability Partner",
       description: "Puja S Barori is a multifaceted individual with 10 years of experience in the BPO-ITO industry, offering outstanding team leadership training and developing efficient teams. She is a creative artist, a voyager and a passionate fitness and nutrition coach with an urge to promote a safe, enjoyable and sustainable platform for people aiming to achieve health and fitness goals.",
-      image: blog6,
+      image: puja,
     },
-    {
-      name: "Dashrath",
-      role: "Accountability Partner",
-      description: "Dashrath comes from a startup background and believes in the power of accountability to drive growth.He helps individuals stay focused, take consistent action, and achieve their goals. With the right support and guidance, he ensures progress feels both motivating and achievable.",
-      image: blog7,
-    },
-
   ];
+
+  const countries = [
+  {
+    id: 1,
+    name: "INDIA",
+    image: india,
+  },
+  {
+    id: 2,
+    name: "UAE",
+    image: uae,
+  },
+  {
+    id: 3,
+    name: "AFRICA",
+    image: africa,
+  },
+];
 
 
   return (
-    <div className="main_body_div">
-      <div className="first_div_layout aboutUs">
+    <div className="about2_main_body_div">
+       {/* FIRST BASECAMP SECTION FOR MOBILE*/}
+       <section className="d-block d-md-none">
+        <div className="aboutHero">
+             
+              <p className="heading-white">
+                Success Alchemists help  
+                <span className="highlight-text"> accelerate</span> your business  
+                <span className="highlight-text"> growth</span> with  
+                <span className="highlight-text"> execution-focussed</span> business coaching
+              </p>
+
+     <Image
+                    // className="logo-image"
+                    src={bannerImage}
+                    alt="img2"
+                    className="banner-image"
+                  />
+                   <div className="white-subtitle-text mt-3" >
+               We partner with founders to drive measurable impact through leadership, alignment, execution, and strategic clarity.
+              </div>
+              <div className="white-subtitle-text">
+              Our focus is building sustainable growth across People, Strategy, Execution, and Cash.
+            </div>
+
+        </div>
+
+      </section>
+      <section className="about2_first_div_layout about2_aboutUs d-none d-md-block">
         
-        <div className="main_first_div_body">
+        <div className="about2_main_first_div_body_new">
             <div
               className="innerContainer"
               style={{ justifyContent: "center", alignItems: "center" }}
             >
-              <p className="heading" style={{ color: "white" }}>
-                About us
+              <p className="heading-white mb-4">
+                Success Alchemists help  
+                <span className="highlight-text"> accelerate</span> your business  
+                <span className="highlight-text"> growth</span> with  
+                <span className="highlight-text"> execution-focussed</span> business coaching
               </p>
-              <p className="subText" style={{ color: "white", textAlign: 'justify' }}>
-                Success Alchemists is a growth acceleration firm dedicated to transforming businesses through strategic insights, structured execution, and leadership development. We partner with entrepreneurs and organizations to drive scalable, sustainable success using the proven Scaling Up Framework.
-              </p>
-              <p className="subText" style={{ color: "white", textAlign: 'justify' }}>
-              We become successful
-              when we help you become successful
-            </p>
+              <div className="white-subtitle-text" >
+               We partner with founders to drive measurable impact through leadership, alignment, execution, and strategic clarity.
+
+              </div>
+              <div className="white-subtitle-text">
+              Our focus is building sustainable growth across People, Strategy, Execution, and Cash.
+
+            </div>
             </div>
           </div>
-      </div> 
-   
-      <div className="second_div_layout">
-        <div className="main_second_div_body row align-items-center">
-          <div className="innerContainer1 col-md-6 text-center text-md-start">
-            <p className="section-header">We’re all about helping you</p>
-            <p className="subText1">
-            At Success Alchemists, we are dedicated to transforming businesses through the proven Scaling Up framework developed by Verne Harnish. With a diverse client base spanning various industries, we empower organizations to achieve sustainable growth and operational excellence.
-            </p>
-            <p className="subText1">
-            Our approach combines tailored implementation of the Scaling Up principles with executive coaching and execution support, ensuring that our clients not only set ambitious goals but also have the strategies and resources to achieve them. We believe that with the right guidance and support, every organization can unlock its full potential and thrive in today's competitive landscape.
-            </p>
-            <a className="section-btn" href="/contactUs" style={{textDecoration:'none'}}>Join us on the journey to success</a>
+      </section> 
+      
+      <section className="about2-second-layout"><div className="row metrics-container">
+            <div className="col-md-4 col-12">
+              <div className="metric-box">
+                <div className="metric-value">$2 Bn</div>
+                <div className="metric-label">CUM. Turnover of businesses coached last year</div>
+              </div>
+            </div>
+            <div className="col-md-4 col-12">
+              <div className="metric-box">
+                <div className="metric-value">800+</div>
+                <div className="metric-label">Leaders Impacted</div>
+              </div>
+            </div>
+            <div className="col-md-4 col-12">
+              <div className="metric-box">
+                <div className="metric-value">12</div>
+                <div className="metric-label">High performance Business Coaches</div>
+              </div>
+            </div>
           </div>
-
-          {/* Right Image Section */}
-          <div className="col-md-6 text-center">
-            <Image
-              className="img-fluid rounded journey-image"
-              src={image2}
-              style={{ width: "100%", height: "auto" }}
-              alt="img2"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="third_div_layout" style={{background:'#fff'}}>
-        <div className="row align-items-center">
-          <div className="col-12 col-md-3 position-absolute text-md-start text-center top-0 start-0">
-            <Image className="mission-curve-img" src={curve} alt="curve" />
-          </div>
-          <div className="col-12 col-md-12 d-flex flex-column flex-md-row justify-content-evenly main">
-          <Image className="corevalue-img img-fluid" src={about} style={{width: "95%", height: "auto"}} alt="graph" />
+           <div className="section-title-black">Our Presence</div>
+          <div className="country-section">
+  {countries.map((item) => (
+    <div className="country-card" key={item.id}>
+      <Image
+        src={item.image}
+        alt={item.name}
+        width={150}
+        height={100}
+        className="country-img"
+      />
+      <p className="country-name">{item.name}</p>
+    </div>
+  ))}
+</div>
+          </section>
+    
+         
+      <section className="about2_third_layout">
+        <div className="about2_main_second_div_body row">
+          <div className="about2_innerContainer1">
+            <div className="section-title-black text-left no-padding">We’re all about helping you</div>
            
-     
+            <div className="black-subtitle-text">
+            At Success Alchemists, we are dedicated to transforming businesses. With a diverse client base spanning across various industries, and countries, we empower organizations to achieve sustainable growth and operational excellence.
+            </div>
+         
+            <div className="black-subtitle-text">
+            Our approach combines tailored implementation of the Scaling Up principles with executive coaching and execution support, ensuring that our clients not only set ambitious goals but also have the strategies and resources to achieve them. 
+            </div>
+         
+            <div className="black-subtitle-text">
+              We believe that with the right guidance and support, every organization can unlock its full potential and thrive in today's competitive landscape.
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div className="second_div_layout">
-                <p className="section-header">Our leadership</p>
-                <div className="leadership-section">
-      
-                  <div className="row align-items-center profile-section">
-                    <div className="col-lg-7">
-                      <p className="section-subText" style={{ textAlign: "justify" }}>
-                        Ajay Hiraskar - As the first certified Scaling Up Coach in
-                        India, he brings 37 years of experience in starting, building,
-                        and growing businesses both locally and globally. His career
-                        spans telecom, IT services, publishing, and industrial
-                        products, where he has led complex projects and large teams
-                        under challenging conditions. As a Scaling Up Coach, he has
-                        helped companies in technology, recruitment, manufacturing,
-                        B2C, and industrial services implement key growth strategies.
-                        For the past decade, he has been an active member of TiE Pune,
-                        serving as a Charter and Governing Council Member. He has also
-                        played a key role in mentoring start-ups and organizing Pune’s
-                        largest start-up conference, TiECon.
-                      </p>
-                    </div>
-                    <div className="col-lg-5 d-flex justify-content-end">
-                      <Image
-                        src={man}
-                        alt="Ajay Hiraskar"
-                        className="img-fluid rounded-3"
-                      />
-                      {/* <Image src={curve2} alt="curve" className="curve" /> */}
-                    </div>
-                  </div>
-      
-                  <div className="row align-items-center profile-section">
+        </div>
+      </section>
+      <section className="about2_fourth_layout">
+          <div className="d-flex justify-content-evenly">
+          <Image src={about} style={{width: "95%", height: "auto"}} alt="graph" />
+          </div>
+      </section>
+
+      <section className="about2_fifth_layout">
+                <p className="section-title-white mb-3">Our Leadership</p>
+                <div className="about2-leadership-section">
+                  <div className="row">
                     <div className="col-lg-5 d-flex justify-content-start">
                       <Image
-                        src={man2}
+                        src={ajay}
                         alt="Ajay Hiraskar"
-                        className="img-fluid rounded-3 "
+                        className="img-fluid custom-img"
                       />
-                      {/* <Image src={curve2} alt="curve" className="curve" /> */}
                     </div>
-                    <div className="col-lg-7">
-                      <p className="section-subText" style={{ textAlign: "justify" }}>
-                        Vikram Panjwani - With 28 years of experience in building and scaling consumer businesses, Vikram is now dedicated to helping entrepreneurs achieve their growth potential. His expertise, combined with the invaluable insights gained from implementing the Scaling Up Performance Platform at Denkali, positions him to guide ambitious entrepreneurs in utilizing these proven tools for success.
+                    <div className="col-lg-7 leadership-content">
+                      <div className="leadership-content-title-logo mt-2">
+                         <div className="leader-name">
+                          Ajay Hiraskar
+                         </div>
+                         <a href="https://www.linkedin.com/in/ajayhiraskar?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">
+                        <div className="linkedin-white-bg">
+                          <svg
+                            viewBox="0 0 25 25"
+                            fill="#0f2437"
+                          >
+                            <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.54v6.2zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                          </svg>
+                        </div>
+                      </a>
+                      </div>
+                      <div>
+                      <div className={`about2_text_container ${ajayExpanded ? "expanded" : ""}`}>
+                      <p className="white-subtitle-text mb-3">
+                        India’s 1st Scaling-Up Coach, Ajay brings 37 years of experience building and scaling companies across telecom, IT services, publishing, and industrial sectors.
                       </p>
+
+                      <p className="white-subtitle-text mb-3">
+                        He has helped businesses across technology, recruitment, manufacturing, and B2C implement the Scaling Up framework to accelerate growth.
+                      </p>
+
+                      <p className="white-subtitle-text">
+                        A long-time Charter and Governing Council Member of TiE Pune, Ajay also mentors startups and has helped organize TiECon, Pune’s largest startup conference.
+                      </p>
+
+                     
+                    </div>
+
+                      <button
+                      className="read-more-btn-leadership"
+                      onClick={() => setAjayExpanded(!ajayExpanded)}
+                    >
+                      {ajayExpanded ? "Read Less" : "Read More"}
+                    </button>
+                      </div>
+                      
+
+                   
+                      
                     </div>
                   </div>
       
+                  <div className="row align-items-center">
+                    <div className="col-lg-7 leadership-content order-2 order-lg-1">
+                      <div className="leadership-content-title-logo mt-2">
+                         <div className="leader-name">
+                          Vikram Panjwani
+                         </div>
+                         <a href="https://www.linkedin.com/in/vikram-panjwani?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">
+                        <div className="linkedin-white-bg">
+                          <svg
+                            viewBox="0 0 25 25"
+                            fill="#0f2437"
+                          >
+                            <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.54v6.2zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                          </svg>
+                        </div>
+                      </a>
+                      </div>
+                       <div>
+                      <div className={`about2_text_container ${vikramExpanded ? "expanded" : ""}`}>
+                      <p className="white-subtitle-text mb-3">
+                        Vikram is a certified Scaling Up business coach and growth advisor who works with founders and leadership teams to build scalable, high-performance companies. 
+                      </p>
+                      <p className="white-subtitle-text mb-3">
+                        With nearly three decades of experience in building and leading consumer and telecom businesses, he brings practical insight into sales, marketing, and P&L management.
+                      </p>
+                      <p className="white-subtitle-text">
+                        Having previously served as CEO of Denkali and held leadership roles at companies such as Vodafone and Tata Teleservices, Vikram now helps entrepreneurs implement the proven Scaling Up framework to achieve structured, sustainable growth.
+                      </p>
+                     
+                    </div>
+
+                      <button
+                      className="read-more-btn-leadership"
+                      onClick={() => setVikramExpanded(!vikramExpanded)}
+                    >
+                      {vikramExpanded ? "Read Less" : "Read More"}
+                    </button>
+                      </div>
+                      
+                    </div>
+                    <div className="col-lg-5 d-flex justify-content-end order-1 order-lg-2">
+                      <Image
+                        src={vikram}
+                        alt="Vikram Panjwani"
+                        className="img-fluid custom-img"
+                      />
+                    </div>             
+                  </div>
+
+                  <div className="row">
+                    <div className="col-lg-5 d-flex justify-content-start">
+                      <Image
+                        src={bobby}
+                        alt="Bobby"
+                        className="img-fluid custom-img"
+                      />
+                    </div>
+                    <div className="col-lg-7 leadership-content">
+                      <div className="leadership-content-title-logo mt-2">
+                         <div className="leader-name">
+                          Harjinder Kohli (Bobby)
+                         </div>
+                         <a href="https://www.linkedin.com/in/harjinder-kohli-bobby-kohli-4b69988?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">
+                        <div className="linkedin-white-bg">
+                          <svg
+                            viewBox="0 0 25 25"
+                            fill="#0f2437"
+                          >
+                            <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.54v6.2zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                          </svg>
+                        </div>
+                      </a>
+                      </div>
+                       <div>
+                      <div className={`about2_text_container ${bobbyExpanded ? "expanded" : ""}`}>
+                     <p className="white-subtitle-text mb-3" >
+                        Bobby is a seasoned technology and enterprise sales leader with nearly three decades of experience scaling businesses across India, government sectors, and North America. He served as CEO – India & Government Business and as COO – North America at Clarion Technologies, after leadership roles at Airtel, Reliance Jio, and Sify Technologies.
+                      </p>
+
+                      <p className="white-subtitle-text mb-3" >
+                         A Certified Scaling Up Coach, he partners with founders and leadership teams to drive structured, predictable growth beyond entrepreneurial hustle.
+                      </p>
+
+                      {/* <p className="white-subtitle-text" >
+                        His career is a masterclass in building and scaling technology-driven businesses across geographies, sectors, and market cycles. As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth. 
+                      </p> */}
+                     
+                    </div>
+
+                      <button
+                      className="read-more-btn-leadership"
+                      onClick={() => setBobbyExpanded(!bobbyExpanded)}
+                    >
+                      {bobbyExpanded ? "Read Less" : "Read More"}
+                    </button>
+                      </div>
+                      
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="third_div_layout shadow-lg">
-                <Image src={curve1} alt="curve1" className="image3" />
-                <p className="section-header" style={{ color: "white" }}>
+              </section>
+              {/* <section className="about2_sixth_layout">
+                <p className="section-title-white mb-2">
                   About Success Alchemists and the Team
                 </p>
-                <p className="team-content" style={{ color: "white", textAlign: "justify" }}>
+                <p className="white-subtitle-text">
                   At Success Alchemists, we harness the transformative power of the
                   Scaling Up framework, with strategic focus on the four pillars of
                   PEOPLE, STRATEGY, EXECUTION, and CASH. Since our inception in 2015,
@@ -245,63 +503,71 @@ const About = memo(() => {
                   and globally across various sectors, including manufacturing, IT
                   services, marketing solutions, recruitment, and more.
                 </p>
-              </div>
-              <div className="forth_div_layout">
-                <p className="section-header">Team</p>
-                <p className="section-subText" style={{ textAlign: "justify" }}>
+              </section> */}
+              <section className="about2_seventh_layout">
+                <div className="section-title-black text-left no-padding mb-2">Team</div>
+                <div className="black-subtitle-text">
                   We are a dedicated team of high performers, committed to our
                   clients’ success. Ajay Hiraskar, our founder and Chief Alchemist, is
                   the first certified Scaling Up Coach in India and the sole certified
                   coach in West and South India. With extensive knowledge and
                   experience, Ajay leads our team in delivering outstanding results.
                   The core Success Alchemists team is made up of experienced professionals, each bringing a diverse mix of expertise and experience from various domains. This collective knowledge positions us as an ideal partner for clients across industries, enabling us to tailor our approach to meet the unique needs of each business we serve.
-                </p>
-                <div className="sub_forth_div_layout">
-                  <div className="team-sub-container">
-                    <div className="d-flex flex-row justify-content-between">
-                      <p className="team-head">
-                        Scaling Up coaches
-                      </p>
-                      <div className="btnContainer">
+                </div>
+              <div className="about2_sub_seventh_layout">
+                  <div className="about2_team_sub_container">
+                    <div className="d-flex flex-row justify-content-between scaling-row gap-2">
+                      <div className="section-title-black text-left no-padding">
+                        Associate Coaches
+                      </div>
+                      <div className="about2_btnContainer">
                         <button
-                          className="slider-btn prev-btn"
+                          className="about2_slider_btn about2_prev_btn"
                           onClick={handlePrev}
-                          disabled={currentIndex === 0}
+                          disabled={false}
                         >
                           <Image src={Backward} alt="backward" />
                         </button>
                         <button
-                          className="slider-btn next-btn"
+                          className="about2_slider_btn about2_next_btn"
                           onClick={handleNext}
-                          disabled={currentIndex + itemsPerPage >= coaches.length}
+                          disabled={false}
                         >
                           <Image src={Forward} alt="forward" />
                         </button>
                       </div>
                     </div>
       
-                    <div className="row">
+                    <div className="row g-4">
                       {coaches
                         .slice(currentIndex, currentIndex + itemsPerPage)
                         .map((coach, index) => (
                           <div key={index} className="col-lg-4 col-md-6 col-sm-12">
-                            <div className="card-coach h-100 shadow-lg">
+                            <div className="about2_card_coach h-100 shadow-lg">
                               <Image
                                 src={coach.image}
-                                className="card-img-top img-fluid"
+                                className="about2_card_img_top img-fluid"
                                 alt={coach.name}
                               />
-                              <div className="card-body">
+                              <div className="about2_card_body">
                                 <div className="gap-2">
-                                  <p className="member-name">{coach.name}</p>
+                                  <p className="about2_member_name">{coach.name}</p>
                                   <p
-                                    className="member-role"
+                                    className="about2_member_role"
                                     style={{ color: "rgba(251, 168, 25, 1)" }}
                                   >
                                     {coach.role}
                                   </p>
                                 </div>
-                                <p className="card-text">{coach.description}</p>
+                                  <p className={`about2_card_text ${expanded ? "expanded" : ""}`}>
+                                    {coach.description}
+                                  </p>
+
+                                    <button
+                                      className="read-more-btn"
+                                      onClick={() => setExpanded(!expanded)}>
+                                      {expanded ? "Read Less" : "Read More"}
+                                  </button>       
                               </div>
                             </div>
                           </div>
@@ -309,51 +575,60 @@ const About = memo(() => {
                     </div>
       
                   </div>
-                  <div className="team-sub-container">
-                    <div className="d-flex flex-row justify-content-between">
-                      <p className="team-head" >
+                  <div className="about2_team_sub_container">
+                    <div className="d-flex flex-row justify-content-between scaling-row gap-2">
+                      <div className="section-title-black text-left no-padding" >
       
-                        Accountability team
-                      </p>
-                      <div className="btnContainer">
+                        Management Team
+                      </div>
+                      <div className="about2_btnContainer">
                         <button
-                          className="slider-btn prev-btn"
+                          className="about2_slider_btn about2_prev_btn"
                           onClick={handlePrev1}
-                          disabled={currentIndex1 === 0}
+                          disabled={false}
                         >
                           <Image src={Backward} alt="backward" />
                         </button>
                         <button
-                          className="slider-btn next-btn"
+                          className="about2_slider_btn about2_next_btn"
                           onClick={handleNext1}
-                          disabled={currentIndex1 + itemsPerPage >= coaches1.length}
+                          disabled={false}
                         >
                           <Image src={Forward} alt="forward" />
                         </button>
                       </div>
                     </div>
-                    <div className="row">
+                    <div className="row g-4">
                       {coaches1
                         .slice(currentIndex1, currentIndex1 + itemsPerPage)
                         .map((coach, index) => (
                           <div key={index} className="col-lg-4 col-md-6 col-sm-12">
-                            <div className="card-coach  h-100 shadow-lg">
+                            <div className="about2_card_coach  h-100 shadow-lg">
                               <Image
                                 src={coach.image}
-                                className="card-img-top img-fluid"
+                                className="about2_card_img_top img-fluid"
                                 alt={coach.name}
                               />
-                              <div className="card-body">
+                              <div className="about2_card_body">
                                 <div>
-                                  <p className="member-name">{coach.name}</p>
+                                  <p className="about2_member_name">{coach.name}</p>
                                   <p
-                                    className="member-role"
+                                    className="about2_member_role"
                                     style={{ color: "rgba(251, 168, 25, 1)" }}
                                   >
                                     {coach.role}
                                   </p>
                                 </div>
-                                <p className="card-text">{coach.description}</p>
+                                <p className={`about2_card_text ${managementExpanded ? "expanded" : ""}`}>
+                                    {coach.description}
+                                  </p>
+
+                                  {/* Show button only on mobile */}
+                                    <button
+                                      className="read-more-btn"
+                                      onClick={() => setManagementExpanded(!managementExpanded)}>
+                                      {managementExpanded ? "Read Less" : "Read More"}
+                                  </button>    
                               </div>
                             </div>
                           </div>
@@ -361,38 +636,35 @@ const About = memo(() => {
                     </div>
       
                   </div>
-                </div>
-      
-              </div>
-      {/* <div className="forth_div_layout align-items-center bg-white">
-        <div className="row align-items-center">
-          <div className="col-lg-6 col-md-12">
-            <div>
-              <p className="key-text">Key Factors for Success:</p>
-              <p className="key-text">Accelerated Growth, Greater</p>
-              <p className="key-text">Value, and Simplicity</p>
-            </div>
-            <div className="mt-4">
-              {[
-                "Accelerated growth",
-                "Greater value",
-                "Simplified business",
-              ].map((text, index) => (
-                <div key={index} className="d-flex align-items-center gap-3 mb-3">
-                  <Image src={forward} alt="forward" width={24} height={24} />
-                  <p className="forward-text">{text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Right Side Image 
-          <div className="col-lg-6 col-md-12 text-center">
-            <Image src={img} alt="Key Factors" className="img-fluid rounded" />
+              
+                </div>
+              </section>
+    
+     <section className="home2-hero-section-footer-webinar">
+    <div className="home2-webinar-container">
+      <div className="row align-items-center justify-content-center">
+        <div className="col-lg-8 col-md-12 col-12 order-lg-1 order-1">
+          <div className="home2-hero-content-footer-webinar text-center">
+            <h3 className="d-none d-md-block">
+              Are You <br />
+              <span>Ready To Scale?</span>
+            </h3>
+            <h3 className="d-block d-md-none">
+              Are You <span>Ready To Scale?</span>
+            </h3>
+            <p >
+              {/* <a href="/contactUs" className="text-decoration-none"> */}
+              <button className="home2-btn-cta-footer-webinar text-center"  onClick={() => window.location.href = "/contactUs"}>
+                <strong>REQUEST A CALLBACK</strong>
+              </button>
+              {/* </a> */}
+            </p>
           </div>
         </div>
-      </div> */}
-    
+      </div>
+    </div>
+        </section>
     </div>
   );
 });
