@@ -4,7 +4,6 @@ import blogimg1 from "../../../../public/assets/images/ajay-sir-photo.svg";
 import basecamp1 from "../../../../public/assets/images/basecamp1.jpeg";
 import basecamp2 from "../../../../public/assets/images/basecamp2.jpeg";
 import basecamp4 from "../../../../public/assets/images/basecamp4.jpeg";
-import curve1 from "../../../../src/app/about/images/curve1.png";
 import Double_arrow from "../../home/images/Double_arrow.png";
 import basecamplogo2 from "../basecamp/Images/Basecamp_White.png";
 import bluecurve from "../basecamp/Images/blue-curve.svg";
@@ -124,7 +123,7 @@ const page = () => {
           </p>
         </div>
         <div className="third_div_layout shadow-lg mt-3">
-          <Image src={curve1} alt="curve1" className="image3 img-fluid" />
+          {/* <Image src={curve1} alt="curve1" className="image3 img-fluid" /> */}
           <div className="row align-items-center">
             <div className="col-md-5 col-lg-5 col-xxl-4">
               <Link href="/basecamp" style={{textDecoration:'none' }}>

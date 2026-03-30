@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import curve1 from "../../../../src/app/about/images/curve1.png";
 import bluecurve from "../basecamp/Images/blue-curve.svg";
 import basecamplogo2 from "../webinar/images/Masterminds_White.png";
 import Toast from "../../../components/Toast";
@@ -367,7 +366,7 @@ const page = () => {
         </div>
       </div>
       <div className="third_div_layout shadow-lg">
-        <Image src={curve1} alt="curve1" className="image3 img-fluid" />
+        {/* <Image src={curve1} alt="curve1" className="image3 img-fluid" /> */}
         <p className="heading" style={{ color: "white" }}>
           What will you learn?
         </p>

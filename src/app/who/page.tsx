@@ -6,7 +6,6 @@ import "./who.css";
 import man2 from "../../app/who/images/vikram.svg";
 import man from "../../app/who/images/man.svg";
 import Image from "next/image";
-import curve1 from "../../../src/app/about/images/curve1.png";
 import coach1 from "../../app/who/images/coach1.png";
 import coach2 from "../../app/who/images/coach2.png";
 import coach3 from "../../app/who/images/coach3.png";
@@ -181,7 +180,7 @@ const page = () => {
           </div>
         </div>
         <div className="third_div_layout shadow-lg">
-          <Image src={curve1} alt="curve1" className="image3" />
+          {/* <Image src={curve1} alt="curve1" className="image3" /> */}
           <p className="section-header" style={{ color: "white" }}>
             About Success Alchemists and the Team
           </p>

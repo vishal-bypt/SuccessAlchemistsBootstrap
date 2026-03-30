@@ -1,6 +1,5 @@
 'use client';
 import Image from "next/image";
-import curve1 from "../../../../src/app/about/images/curve1.png";
 import bluecurve from "../basecamp/Images/blue-curve.svg";
 import basecamplogo2 from "../podcast/images/Pathfinders_White.png";
 import Toast from "../../../components/Toast";
@@ -454,7 +453,7 @@ const page = () => {
         </div>
       </div>
       <div className="third_div_layout shadow-lg">
-        <Image src={curve1} alt="curve1" className="image3 img-fluid" />
+        {/* <Image src={curve1} alt="curve1" className="image3 img-fluid" /> */}
         <div className="row align-items-center">
           <div className="col-md-12">
             <p
