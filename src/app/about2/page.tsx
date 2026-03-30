@@ -144,7 +144,7 @@ const About = memo(() => {
     },
     {
       name: "Nimisha Sainani",
-      role: "Associate Coach,| Ex-CGO, Savart | ISB",
+      role: "Associate Coach | Ex-CGO | ISB",
       description: "Nimisha is a growth-focused marketing and product leader with 12+ years of experience scaling startups across fintech, consumer tech, and digital products — with stints at Paytm, Multipl, Savart, and Little. As Chief Growth Officer at Savart, she led the full revenue and monetisation function for an AI-based wealth management platform, working across product, marketing, sales, and design. Her proven strength lies in driving outsized business outcomes with lean teams and limited resources — a discipline she now channels as a Business Coach at Success Alchemists, helping entrepreneurs build scalable, profitable businesses using the Scaling Up framework.",
       image: nimisha,
     },
