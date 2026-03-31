@@ -215,9 +215,9 @@ const About = memo(() => {
              
               <p className="heading-white">
                 Success Alchemists help  
-                <span className="highlight-text"> accelerate</span> your business  
-                <span className="highlight-text"> growth</span> with  
-                <span className="highlight-text"> execution-focussed</span> business coaching
+                <span className="highlighted-text"> accelerate</span> your business  
+                <span className="highlighted-text"> growth</span> with  
+                <span className="highlighted-text"> execution-focussed</span> business coaching
               </p>
 
      <Image
@@ -245,9 +245,9 @@ const About = memo(() => {
             >
               <p className="heading-white mb-4">
                 Success Alchemists help  
-                <span className="highlight-text"> accelerate</span> your business  
-                <span className="highlight-text"> growth</span> with  
-                <span className="highlight-text"> execution-focussed</span> business coaching
+                <span className="highlighted-text"> accelerate</span> your business  
+                <span className="highlighted-text"> growth</span> with  
+                <span className="highlighted-text"> execution-focussed</span> business coaching
               </p>
               <div className="white-subtitle-text" >
                We partner with founders to drive measurable impact through leadership, alignment, execution, and strategic clarity.
