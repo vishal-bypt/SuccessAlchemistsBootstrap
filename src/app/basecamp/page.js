@@ -111,7 +111,7 @@ const handleShow = () => {
     "IIM_EXCLUSIVE",
     "SPECIAL20",
     "DMS20",
-    "365Circle"
+    "365CIRCLE"
   ];
 
   const [sentenceIndex, setSentenceIndex] = useState(0);
