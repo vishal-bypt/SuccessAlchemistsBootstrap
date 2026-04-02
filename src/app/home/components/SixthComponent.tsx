@@ -12,9 +12,9 @@ const SixthComponent = memo(() => {
         Scaling Up Framework?</div>
       <div
         className="row"
-        style={{ display: "flex", justifyContent: "space-between" }}
+        style={{ display: "flex", gap: "0px"}}
       >
-        <div className="col-md-4" style={{ position: "relative" }}>
+        <div className="col-md-3" style={{ position: "relative" }}>
           {/* <div className="img-fluid curve-image" style={{}}>
             <Image
               src={Curve_shape}
@@ -28,17 +28,18 @@ const SixthComponent = memo(() => {
             style={{
               paddingTop: "16px",
               paddingLeft: "6px",
-            }}
+            }}  
           >
             <Image
-              className="image_div_image img-fluid"
+              className=" img-fluid"
               src={peoples_meeting_image}
               alt="people meeting"
               loading="lazy"
+              style={{ borderRadius: "16px" }}  
             />
           </div>
         </div>
-        <div className="col-md-7 home2-right_div_sixth_component">
+        <div className="col-md-9 home2-right_div_sixth_component">
           <div>
             <div className="home2-sixth_component_title_div mt-4">SCALING UP</div>
             <div className="home2-sixth_component_header_div">Team assessment</div>
