@@ -102,7 +102,7 @@ const About = memo(() => {
     // },
     {
       name: "N. Dharmadhikari",
-      role: "Certified Alchemist Coach| Independent Director",
+      role: "Certified Alchemist Coach | Independent Director",
       description: "ND is a seasoned corporate leader with 25+ years of experience spanning telecom and technology sectors across India and the Middle East — including senior roles at Etisalat, Reliance Communications, and Idea Cellular. He has led high-stakes portfolio strategy, revenue transformation, and go-to-market execution at an international scale, including overseeing the merger of two major telecom entities serving markets across MENA. Today, as an Independent Business Consultant and Director, he advises Tech Solutions companies on closing the gap between commercial ambition and operational discipline. His edge: knowing exactly where growth leaks profitability, and fixing it.",
       image: nd,
     },
@@ -126,7 +126,7 @@ const About = memo(() => {
     },
     // {
     //   name: "Harjinder Kohli (Bobby)",
-    //   role: "Certified Scaling Up Coach| ex- COO North America, Clarion",
+    //   role: "Certified Scaling Up Coach | ex- COO North America, Clarion",
     //   description: "Bobby is a seasoned technology and enterprise sales leader with nearly three decades of experience scaling businesses across India, government sectors, and North America. He has held VP and Head roles at Airtel and Reliance Jio, and spent over 12 years at Sify Technologies driving system integration and global alliances at the SVP level. At Clarion Technologies, he progressed from CEO of India & Government Business to his current role as COO North America — overseeing operations, partnerships, and growth across one of the most competitive technology markets in the world. His career is a masterclass in building and scaling technology-driven businesses across geographies, sectors, and market cycles. As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth.",
     //   image: bobby,
     // },
@@ -138,7 +138,7 @@ const About = memo(() => {
     // },
     {
       name: "Rahul Chaure",
-      role: "Associate Coach| Entrepreneur",
+      role: "Associate Coach | Entrepreneur",
       description: "Rahul Chaure is the rare kind of coach who has lived the entrepreneurial journey firsthand — not just advised on it. With over 15 years at the helm of EduVed Learning Solutions, a multi-product education technology company he has built and scaled from the ground up, he understands the real weight of P&L decisions, team building, and long-term strategy. Before EduVed, he held Business Head and Sales Head roles at Reliance Communications and DSK Digital Technologies, sharpening a commercial edge that cuts across telecom, technology, and education. Now, as an Associate Coach at Success Alchemists, he brings that founder's instinct and operator's discipline to help other entrepreneurs build businesses that are structured, scalable, and built to last.",
       image: rahul,
     },
@@ -156,7 +156,7 @@ const About = memo(() => {
     },
     {
       name: "Augustine Vaz",
-      role: "Associate Coach| Customer Strategy & Data Leader",
+      role: "Associate Coach | Customer Strategy & Data Leader",
       description: "Augustine brings over three decades of global consulting and business leadership experience, with senior roles at Capgemini, Ericsson, SAS Institute, and AT&T spanning the UK, US, and India. He has led customer lifecycle strategy, data-driven business transformation, and digital solutions for clients across telecoms, B2B2X, and enterprise sectors — consistently turning data and insights into measurable commercial outcomes. At Capgemini New York, he spearheaded Customer First & Data Strategy consulting for global organisations; at Ericsson, he drove digital business solutions across pre-sales and delivery for over five years. Now, as a Business Coach at Success Alchemists, he brings that rare global perspective and analytical rigour to help ambitious businesses scale with precision and purpose.",
       image: augustine,
     },
@@ -281,7 +281,7 @@ const About = memo(() => {
               </div>
             </div>
           </div>
-           <div className="section-title-black">Our Presence</div>
+           <div className="section-title-black">Client Across</div>
           <div className="country-section">
   {countries.map((item) => (
     <div className="country-card" key={item.id}>
