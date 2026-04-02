@@ -80,6 +80,7 @@ export default function RootLayout({
         style={{ background: "#F5F5F5" }}
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
         {/* Google Analytics Script */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-V9F61S5HVC"

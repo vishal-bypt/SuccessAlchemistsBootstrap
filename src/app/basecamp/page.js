@@ -47,9 +47,9 @@ const handleShow = () => {
     mode: "onChange",
     defaultValues: {
       companyName: "",
-      yourDesignation: "",
-      firstName: "",
-      lastName: "",
+      // yourDesignation: "",
+      name: "",
+      // lastName: "",
       email: "",
       phone: "",
       basecampLocation: "",
@@ -111,6 +111,7 @@ const handleShow = () => {
     "IIM_EXCLUSIVE",
     "SPECIAL20",
     "DMS20",
+    "365Circle"
   ];
 
   const [sentenceIndex, setSentenceIndex] = useState(0);
@@ -372,13 +373,13 @@ const handleShow = () => {
 
   const handlePayment = async (data) => {
     const {
-      firstName,
-      lastName,
+      name,
+      // lastName,
       email,
       phone,
       plan,
       companyName,
-      yourDesignation,
+      // yourDesignation,
       basecampLocation,
     } = data;
 
@@ -387,11 +388,11 @@ const handleShow = () => {
     const payload = {
       order_id: order_id,
       amount: Number(plan) - Number(discount),
-      billing_name: `${firstName} ${lastName}`,
+      billing_name: name,
       billing_email: email,
       billing_tel: phone,
       company: companyName,
-      designation: yourDesignation,
+      // designation: yourDesignation,
       basecamplocation: basecampLocation,
       type: "basecamp",
     };
@@ -433,57 +434,47 @@ const handleShow = () => {
       }
       console.log("Response from /initiate-payment:", paymentData);
 
-      if (paymentData.paymentUrl) {
-        try {
-          // 2️⃣ Fire Google Ads conversion
-          window.gtag("event", "conversion", {
-            send_to: "AW-17882487402/Jbp8CM7T7OcbEOq0hM9C",
+      // ✅ Open Razorpay popup
+      const options = {
+        key: paymentData.data.key,
+        amount: paymentData.data.amount * 100,
+        currency: "INR",
+        description: "Basecamp Payment",
+        order_id: paymentData.data.orderId,
+
+        handler: async function (response) {
+          console.log("Payment Success:", response);
+
+          // ✅ SEND TO BACKEND FOR VERIFY
+          const verifyRes = await fetch(apiUrl + "/verify-payment", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(response),
           });
 
-          // 3️⃣ Optional: redirect / show success message
-          console.log("Lead submitted & conversion tracked");
+          const data = await verifyRes.json();
 
-          const { encRequest, access_code, ccavenueUrl } = paymentData;
-
-          if (encRequest && access_code) {
-            const existingForm = document.getElementById(
-              "ccavenue-payment-form"
-            );
-            if (existingForm) existingForm.remove();
-
-            const form = document.createElement("form");
-            form.method = "POST";
-            form.action = ccavenueUrl;
-            form.id = "ccavenue-payment-form";
-
-            const accessInput = document.createElement("input");
-            accessInput.type = "hidden";
-            accessInput.name = "access_code";
-            accessInput.value = access_code;
-            form.appendChild(accessInput);
-
-            const encInput = document.createElement("input");
-            encInput.type = "hidden";
-            encInput.name = "encRequest";
-            encInput.value = encRequest;
-            form.appendChild(encInput);
-
-            document.body.appendChild(form);
-            form.submit();
+          if (data.success) {
+            Toast.success("Payment verified successfully! Your registration is confirmed.");
+            reset();
+            handleClose();
           } else {
-            alert("Payment failed: Missing required data.");
+            Toast.error("Payment verification failed.");
           }
-        } catch (error) {
-          alert("Payment failed: Invalid URL");
-          console.error(error);
-        }
-      } else {
-        alert("Payment failed: Server error");
-        console.error(paymentData);
-      }
+        },
+
+        prefill: {
+          name: name,
+          email: email,
+          contact: phone,
+        },
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
     } catch (error) {
       console.error("Payment fetch error:", error);
-      alert(
+      Toast.error(
         `Payment failed: ${
           error.message ||
           "Network error. Please check your connection and try again."
@@ -1200,7 +1191,7 @@ const handleShow = () => {
               </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group className="mb-3">
+            {/* <Form.Group className="mb-3">
               <Form.Label>Your Designation</Form.Label>
               <Form.Control
                 type="text"
@@ -1217,28 +1208,28 @@ const handleShow = () => {
               <Form.Control.Feedback type="invalid">
                 {errors.yourDesignation?.message}
               </Form.Control.Feedback>
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group className="mb-3">
-              <Form.Label>First Name</Form.Label>
+              <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter first name"
-                {...register("firstName", {
-                  required: "First name is required",
+                placeholder="Enter name"
+                {...register("name", {
+                  required: "Name is required",
                   minLength: {
                     value: 2,
-                    message: "First name must be at least 2 characters",
+                    message: "Name must be at least 2 characters",
                   },
                 })}
-                isInvalid={!!errors.firstName}
+                isInvalid={!!errors.name}
               />
               <Form.Control.Feedback type="invalid">
-                {errors.firstName?.message}
+                {errors.name?.message}
               </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group className="mb-3">
+            {/* <Form.Group className="mb-3">
               <Form.Label>Last Name</Form.Label>
               <Form.Control
                 type="text"
@@ -1255,7 +1246,7 @@ const handleShow = () => {
               <Form.Control.Feedback type="invalid">
                 {errors.lastName?.message}
               </Form.Control.Feedback>
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group className="mb-3">
               <Form.Label>Email address</Form.Label>
