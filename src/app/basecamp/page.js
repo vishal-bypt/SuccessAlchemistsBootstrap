@@ -176,7 +176,7 @@ const handleShow = () => {
     location: "IIT Delhi Campus",
     date: "15th April’26",
     image: delhi,
-    earlyBird: "Early bird offer end 5th April' 26",
+    earlyBird: "Early bird offer end 10th April' 26",
     price1: "Rs 9999",
     price2: "Rs 7999",
     button: "REGISTER NOW"
