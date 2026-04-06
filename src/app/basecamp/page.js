@@ -447,21 +447,26 @@ const handleShow = () => {
           console.log("Payment Success:", response);
 
           // ✅ SEND TO BACKEND FOR VERIFY
-          const verifyRes = await fetch(apiUrl + "/verify-payment", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(response),
-          });
+          // const verifyRes = await fetch(apiUrl + "/verify-payment", {
+          //   method: "POST",
+          //   headers: { "Content-Type": "application/json" },
+          //   body: JSON.stringify(response),
+          // });
 
-          const data = await verifyRes.json();
+          // const data = await verifyRes.json();
 
-          if (data.success) {
-            Toast.success("Payment verified successfully! Your registration is confirmed.");
-            reset();
-            handleClose();
-          } else {
-            Toast.error("Payment verification failed.");
-          }
+          // if (data.success) {
+          //   Toast.success("Payment verified successfully! Your registration is confirmed.");
+          //   reset();
+          //   handleClose();
+          // } else {
+          //   Toast.error("Payment verification failed.");
+          // }
+          handleClose();
+          Toast.success("Payment received! Confirmation may take a few seconds.");
+
+          reset();
+          
         },
 
         prefill: {
