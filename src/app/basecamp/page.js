@@ -474,6 +474,38 @@ const handleShow = () => {
           email: email,
           contact: phone,
         },
+        modal: {
+          ondismiss: async () => {
+            try {
+              const dismissResponse = await fetch(
+                apiUrl + "/razorpay-dismissed",
+                {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    orderId: paymentData.data.orderId,
+                  }),
+                }
+              );
+
+              const dismissData = await dismissResponse.json();
+
+              if (!dismissResponse.ok) {
+                console.error(
+                  "Failed to update dismissed payment:",
+                  dismissData
+                );
+              }
+            } catch (dismissError) {
+              console.error(
+                "Error while marking dismissed payment as failed:",
+                dismissError
+              );
+            }
+
+            Toast.error("Payment was not completed.");
+          },
+        },
       };
 
       const rzp = new window.Razorpay(options);
