@@ -184,7 +184,7 @@ const handleShow = () => {
   {
     id: 2,
     name: "Bangalore",
-    date: "28th May’26",
+    date: "11th June’26",
     image: bangalore,
     price1: "Rs 9999",
     price2: "Rs 7999",
@@ -604,7 +604,7 @@ const handleShow = () => {
           label: "Early Bird - For 3 Team members - ₹17999 + GST",
         },
       ];
-    } else if (basecampLocation === "Bangalore - 28th May’26") {
+    } else if (basecampLocation === "Bangalore - 11th June’26") {
       return [
         { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
         {
@@ -1340,8 +1340,8 @@ const handleShow = () => {
                 <option value="Delhi-NCR - 15th April’26">
                   Delhi-NCR - 15th April’26
                 </option>
-                <option value="Bangalore - 28th May’26">
-                  Bangalore - 28th May’26
+                <option value="Bangalore - 11th June’26">
+                  Bangalore - 11th June’26
                 </option>
               </Form.Select>
               <Form.Control.Feedback type="invalid">
