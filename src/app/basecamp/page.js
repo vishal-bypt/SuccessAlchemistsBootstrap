@@ -170,17 +170,17 @@ const handleShow = () => {
   ];
 
   const cityList = [
-  {
-    id: 1,
-    name: "Delhi-NCR",
-    location: "IIT Delhi Campus",
-    date: "15th April’26",
-    image: delhi,
-    earlyBird: "Early bird offer end 10th April' 26",
-    price1: "Rs 9999",
-    price2: "Rs 7999",
-    button: "REGISTER NOW"
-  },
+  // {
+  //   id: 1,
+  //   name: "Delhi-NCR",
+  //   location: "IIT Delhi Campus",
+  //   date: "15th April’26",
+  //   image: delhi,
+  //   earlyBird: "Early bird offer end 10th April' 26",
+  //   price1: "Rs 9999",
+  //   price2: "Rs 7999",
+  //   button: "REGISTER NOW"
+  // },
   {
     id: 2,
     name: "Bangalore",
@@ -647,7 +647,7 @@ const handleShow = () => {
       <div className="floating-register-div">
         <div className="floating-register-left">
           <p className="floating-register-text">
-            Early Bird Offer for Delhi-NCR & Bangalore Basecamp Expires Soon
+            Early Bird Offer for Bangalore Basecamp Expires Soon
           </p>
           <p className="floating-register-subtext"></p>
         </div>
@@ -834,9 +834,9 @@ const handleShow = () => {
 
       <div className="basecamp-slider-container">
 
-        <button className="arrow left d-block d-md-none" onClick={scrollLeft}>
-  &#8249;
-</button>
+        {/* <button className="arrow left d-block d-md-none" onClick={scrollLeft}> */}
+  {/* &#8249;
+</button> */}
 
 
         <div className="city-slider" ref={sliderRef}>
@@ -905,9 +905,9 @@ const handleShow = () => {
 
         </div>
 
-        <button className="arrow right d-block d-md-none" onClick={scrollRight}>
-  &#8250;
-</button>
+        {/* <button className="arrow right d-block d-md-none" onClick={scrollRight}> */}
+  {/* &#8250;
+</button> */}
 
       </div>
 
@@ -1337,9 +1337,9 @@ const handleShow = () => {
                 <option value="Mumbai - 26th Feb'26">
                   Mumbai - 26th Feb'26
                 </option> */}
-                <option value="Delhi-NCR - 15th April’26">
+                {/* <option value="Delhi-NCR - 15th April’26">
                   Delhi-NCR - 15th April’26
-                </option>
+                </option> */}
                 <option value="Bangalore - 11th June’26">
                   Bangalore - 11th June’26
                 </option>
