@@ -186,8 +186,8 @@ const handleShow = () => {
     name: "Bangalore",
     date: "11th June’26",
     image: bangalore,
-    price1: "Rs 9999",
-    price2: "Rs 7999",
+    price1: "Rs 11999",
+    price2: "Rs 9999",
     earlyBird: "Early bird offer",
     // status: "Registrations Yet To Start",
     button: "REGISTER NOW"
@@ -606,10 +606,10 @@ const handleShow = () => {
       ];
     } else if (basecampLocation === "Bangalore - 11th June’26") {
       return [
-        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        { value: "9999", label: "Early Bird - For Individuals - ₹9999 + GST" },
         {
-          value: "17999",
-          label: "Early Bird - For 3 Team members - ₹17999 + GST",
+          value: "24999",
+          label: "Early Bird - For 3 Team members - ₹24999 + GST",
         },
       ];
     }
