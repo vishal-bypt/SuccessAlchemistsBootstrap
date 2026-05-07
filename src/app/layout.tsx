@@ -63,6 +63,9 @@ export const metadata: Metadata = {
     index: true, // Allows search engines to index
     follow: true, // Allows crawling of links
   },
+  verification: {
+    google: "q3UAAdqxYe-dPQPOYSE49iMzaCw1stampy8h8V9U-s4",
+  },
 };
 
 
