@@ -1,0 +1,288 @@
+.story-main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HERO ================= */
+.story-hero {
+  background: #0f2437;
+  color: #fff;
+  padding: 25px 64px;
+}
+
+.story-hero-title {
+  font-size: clamp(40px, 6vw, 84px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  margin: 0 0 28px;
+  color: #fff;
+}
+
+.story-hero-list {
+  list-style: none;
+  padding: 0;
+}
+
+.story-hero-list li {
+  font-size: clamp(16px, 1.4vw, 20px);
+  color: #fff;
+  line-height: 1.8;
+}
+
+/* STATS — typography copied from about.css, colors adjusted for dark hero */
+.story-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-start;
+}
+
+.story-stat {
+    flex: 1 1 220px;
+    min-width: 220px;
+    text-align: center;
+}
+
+.story-stat-value {
+    font-size: clamp(35px, 5vw, 70px);
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 20px;
+    letter-spacing: clamp(-1px, -0.3vw, -3px);
+}
+
+.story-stat-label {
+    font-size: clamp(12px, 1vw, 15px);
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+/* ================= CASE STUDIES ================= */
+.story-cases {
+  background: #000;
+  padding: 25px 64px;
+}
+
+.section-title-white {
+  font-size:48px;
+  font-weight:600;
+  color: #fff;  
+}
+
+.story-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.story-card {
+  background: #fdae07;
+  color: #0f2437;
+  border-radius: 20px;
+  padding: 40px 45px;
+}
+
+.story-card-title {
+  font-size: clamp(24px, 2.4vw, 34px);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #0f2437;
+  margin: 0 0 28px;
+}
+
+.story-card-section {
+  margin-bottom: 22px;
+}
+
+.story-card-section h4 {
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 600;
+  color: #0f2437;
+}
+
+.story-card-section p {
+  font-size: clamp(15px, 1.2vw, 17px);
+  color: #ffffff;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.story-card-outcomes {
+  margin: 0;
+  padding-left: 22px;
+  color: #ffffff;
+}
+
+.story-card-outcomes li {
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+.story-card-quote {
+  font-size: clamp(15px, 1.2vw, 17px);
+  color: #ffffff;
+  margin: 0;
+}
+
+.story-card-quote-name {
+  font-size: clamp(15px, 1.2vw, 17px);
+  color: #ffffff;
+  margin: 4px 0 0;
+}
+
+.story-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.story-readmore {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 0;
+  text-decoration: none;
+}
+
+.story-readmore:hover {
+  text-decoration: underline;
+}
+
+/* ================= CTA — ARE YOU READY TO SCALE UP ================= */
+.story-hero-section-footer-webinar {
+  background: linear-gradient(rgba(15, 36, 55, 0.85), rgba(15, 36, 55, 0.85)),
+    url(../about/images/1000312751.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-hero-content-footer-webinar {
+  position: relative;
+  z-index: 999;
+  width: 100%;
+}
+
+.story-hero-content-footer-webinar h3 {
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  font-size: clamp(50px, 5vw, 70px);
+}
+
+.story-hero-content-footer-webinar h3 span {
+  color: #fdae07;
+}
+
+.story-btn-cta-footer-webinar {
+  background-color: #fff;
+  color: #000000;
+  border: none;
+  padding: 18px 40px;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 10px;
+  margin-top: 25px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.story-btn-cta-footer-webinar:hover {
+  background-color: #efeeee;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+  color: #000;
+}
+
+.story-btn-cta-top {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  color: #0f2437;
+  text-transform: uppercase;
+}
+
+.story-webinar-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1199px) {
+  .story-btn-cta-footer-webinar {
+    width: 100% !important;
+    max-width: 100%;
+    padding: 16px 20px !important;
+    font-size: 14px !important;
+  }
+
+  .story-cases,
+  .story-hero {
+      padding: 25px 60px;
+  }
+}
+
+@media (max-width: 991px) {
+
+  .story-card,
+  .story-hero,
+  .story-cases {
+    padding: 30px 28px;
+  }
+}
+
+/* 📱 Mobile (576px - 767px) */
+@media (max-width: 767px) {
+
+  .section-title-white  {
+        font-size: 36px;
+  }
+}
+
+@media (max-width: 575px) {
+  .story-hero-title {
+    font-size: 40px;
+  }
+
+  .section-title-white  {
+      font-size: 26px;
+  }
+
+  .story-cases,
+  .story-hero {
+    padding: 25px;
+  }
+  
+  .story-card-title {
+    font-size: 22px;
+  }
+
+  .story-btn-cta-footer-webinar {
+    width: 100% !important;
+    max-width: 100%;
+    padding: 14px 15px !important;
+    font-size: 14px !important;
+  }
+}
