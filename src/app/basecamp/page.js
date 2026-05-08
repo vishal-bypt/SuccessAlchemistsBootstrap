@@ -624,6 +624,13 @@ const handleShow = () => {
     setPromoApplied(false);
   }, [basecampLocation, setValue]);
 
+  // Reset promo code when plan changes
+  useEffect(() => {
+    setValue("promoCode", "");
+    setDiscount(0);
+    setPromoApplied(false);
+  }, [plan, setValue]);
+
 
   const sliderRef = useRef(null);
 
