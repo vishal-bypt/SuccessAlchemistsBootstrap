@@ -6,6 +6,8 @@ import Image from "next/image";
 import basecamplogo2 from "./Artboard.png";
 import delhi from "./delhi.png";
 import bangalore from "./bangaluru.jpg";
+import pune from "./pune.jpeg";
+import mumbai from "./mumbai.jpg";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -192,7 +194,37 @@ const handleShow = () => {
     // status: "Registrations Yet To Start",
     button: "REGISTER NOW"
   },
-  
+  {
+    id: 3,
+    name: "Pune",
+    date: "9th July’26",
+    image: pune,
+    price1: "Rs 9999",
+    price2: "Rs 7999",
+    earlyBird: "Early bird offer",
+    button: "REGISTER NOW"
+  },
+  {
+    id: 4,
+    name: "Mumbai",
+    date: "20th August’26",
+    image: mumbai,
+    price1: "Rs 9999",
+    price2: "Rs 7999",
+    earlyBird: "Early bird offer",
+    button: "REGISTER NOW"
+  },
+  {
+    id: 5,
+    name: "Bangalore",
+    date: "24th September’26",
+    image: bangalore,
+    price1: "Rs 9999",
+    price2: "Rs 7999",
+    earlyBird: "Early bird offer",
+    button: "REGISTER NOW"
+  },
+
 ];
 
 
@@ -612,6 +644,30 @@ const handleShow = () => {
           label: "Early Bird - For 3 Team members - ₹17999 + GST",
         },
       ];
+    } else if (basecampLocation === "Pune - 9th July’26") {
+      return [
+        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        {
+          value: "17999",
+          label: "Early Bird - For 3 Team members - ₹17999 + GST",
+        },
+      ];
+    } else if (basecampLocation === "Mumbai - 20th August’26") {
+      return [
+        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        {
+          value: "17999",
+          label: "Early Bird - For 3 Team members - ₹17999 + GST",
+        },
+      ];
+    } else if (basecampLocation === "Bangalore - 24th September’26") {
+      return [
+        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        {
+          value: "17999",
+          label: "Early Bird - For 3 Team members - ₹17999 + GST",
+        },
+      ];
     }
 
     return [];
@@ -634,16 +690,26 @@ const handleShow = () => {
 
   const sliderRef = useRef(null);
 
+  const getScrollStep = () => {
+    const slider = sliderRef.current;
+    if (!slider) return 0;
+    const card = slider.querySelector(".city-card");
+    if (!card) return 0;
+    const styles = getComputedStyle(slider);
+    const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+    return card.getBoundingClientRect().width + gap;
+  };
+
   const scrollLeft = () => {
-    sliderRef.current.scrollBy({
-      left: -550,
+    sliderRef.current?.scrollBy({
+      left: -getScrollStep(),
       behavior: "smooth"
     });
   };
 
   const scrollRight = () => {
-    sliderRef.current.scrollBy({
-      left: 550,
+    sliderRef.current?.scrollBy({
+      left: getScrollStep(),
       behavior: "smooth"
     });
   };
@@ -841,9 +907,9 @@ const handleShow = () => {
 
       <div className="basecamp-slider-container">
 
-        {/* <button className="arrow left d-block d-md-none" onClick={scrollLeft}> */}
-  {/* &#8249;
-</button> */}
+        <button className="arrow left" onClick={scrollLeft}>
+  &#8249;
+</button>
 
 
         <div className="city-slider" ref={sliderRef}>
@@ -912,9 +978,9 @@ const handleShow = () => {
 
         </div>
 
-        {/* <button className="arrow right d-block d-md-none" onClick={scrollRight}> */}
-  {/* &#8250;
-</button> */}
+        <button className="arrow right " onClick={scrollRight}> 
+  &#8250;
+</button>
 
       </div>
 
@@ -1349,6 +1415,15 @@ const handleShow = () => {
                 </option> */}
                 <option value="Bangalore - 11th June’26">
                   Bangalore - 11th June’26
+                </option>
+                <option value="Pune - 9th July’26">
+                  Pune - 9th July’26
+                </option>
+                <option value="Mumbai - 20th August’26">
+                  Mumbai - 20th August’26
+                </option>
+                <option value="Bangalore - 24th September’26">
+                  Bangalore - 24th September’26
                 </option>
               </Form.Select>
               <Form.Control.Feedback type="invalid">
