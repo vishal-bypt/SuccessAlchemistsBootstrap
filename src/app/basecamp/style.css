@@ -2216,7 +2216,7 @@ img {
   scrollbar-width:none;
    scroll-snap-type: x mandatory; 
   /* REMOVE THIS FOR MORE SLIDES NEED TO SCROLL */
-/* justify-content: center; */
+justify-content: center;
 }
 
 .city-slider::-webkit-scrollbar{
