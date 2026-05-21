@@ -35,6 +35,7 @@
 .story-hero-inner {
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .story-hero-title {
@@ -45,49 +46,47 @@
   color: #fff;
 }
 
-.story-hero-list {
-  list-style: none;
-  padding: 0;
-}
-
-.story-hero-list li {
-  font-size: 22px;
+.story-hero-text {
+  font-size: 20px;
   font-weight: 400;
   color: #fff;
   line-height: 1.5;
+  max-width: 750px;
+  margin: 0;
 }
 
 /* STATS — typography copied from about.css, colors adjusted for dark hero */
 .story-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: flex-start;
-    margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 150px;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .story-stat {
-    flex: 1 1 220px;
-    min-width: 220px;
-    text-align: center;
+  flex: 0 1 auto;
+  min-width: 220px;
+  text-align: center;
 }
 
+
 .story-stat-value {
-    font-size: clamp(30px, 4vw, 55px);
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1;
-    margin-bottom: 20px;
-    letter-spacing: clamp(-1px, -0.2vw, -2px);
-    white-space: nowrap;
+  font-size: clamp(30px, 4vw, 55px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 20px;
+  letter-spacing: clamp(-1px, -0.2vw, -2px);
+  white-space: nowrap;
 }
 
 .story-stat-label {
-    font-size: clamp(12px, 1vw, 15px);
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 700;
+  font-size: clamp(12px, 1vw, 15px);
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
 }
 
 /* ================= CASE STUDIES ================= */
@@ -97,9 +96,9 @@
 }
 
 .section-title-white {
-  font-size:48px;
-  font-weight:600;
-  color: #fff;  
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
 }
 
 .story-cases .section-title-white {
@@ -279,13 +278,15 @@
 
   .story-cases,
   .story-hero {
-      padding: 25px 60px;
+    padding: 25px 60px;
   }
+
   .story-hero-title {
     font-size: 56px;
   }
-  .story-hero-list li {
-    font-size: 20px;
+
+  .story-hero-text {
+    font-size: 18px;
   }
 }
 
@@ -303,25 +304,29 @@
   .story-cases {
     padding: 30px 28px;
   }
+
   .story-hero-title {
     font-size: 46px;
   }
-  .story-hero-list li {
-    font-size: 18px;
+
+  .story-hero-text {
+    font-size: 16px;
   }
 }
 
 /* 📱 Mobile (576px - 767px) */
 @media (max-width: 767px) {
 
-  .section-title-white  {
-        font-size: 36px;
+  .section-title-white {
+    font-size: 36px;
   }
+
   .story-hero-title {
     font-size: 36px;
   }
-  .story-hero-list li {
-    font-size: 16px;
+
+  .story-hero-text {
+    font-size: 15px;
   }
 }
 
@@ -330,15 +335,15 @@
     font-size: 30px;
   }
 
-  .section-title-white  {
-      font-size: 26px;
+  .section-title-white {
+    font-size: 26px;
   }
 
   .story-cases,
   .story-hero {
     padding: 25px;
   }
-  
+
   .story-card-title {
     font-size: 22px;
   }

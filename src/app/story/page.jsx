@@ -26,18 +26,19 @@ const caseStudies = [
   },
   {
     title:
-      "A _____ company's revenue grew from Rs 50 Cr to Rs 175 Cr within 3 years",
+      "A manufacturing company's profit margin improved from 8% to 22% within 2 years",
     startingSituation:
-      "The company revenue had plateaued around 50 crores for the previous 5 years",
+      "The company was generating stable revenue, but profit margins remained very low due to operational inefficiencies and increasing project costs.",
     coreIssues:
-      "Missing Leadership alignment & Execution discipline",
+      "Lack of process standardization, poor accountability, and ineffective project tracking.",
     coachingIntervention:
-      "We implemented tools and processes like the OPSP, PACe, KPIs",
+      "We introduced structured review systems, KPI dashboards, accountability frameworks, and leadership alignment workshops.",
     outcomes: [
-      "The company moved away from bidding for very small projects",
-      "Better internal coordination, thereby delivering projects on time with minimal cost overruns",
-      "Improvement in internal processes leading to cost savings",
-      "The company revenue grew to 175 crores within 3 years",
+      "Improved operational efficiency across departments",
+      "Better cost control and resource management",
+      "Faster project delivery timelines",
+      "Significant reduction in wastage and overhead expenses",
+      "Profit margin improved from 8% to 22% within 2 years",
     ],
     clientQuote: {
       text: "“2 sentences”",
@@ -46,18 +47,19 @@ const caseStudies = [
   },
   {
     title:
-      "A _____ company's revenue grew from Rs 50 Cr to Rs 175 Cr within 3 years",
+      "An IT services company's employee retention improved from 60% to 90% within 18 months",
     startingSituation:
-      "The company revenue had plateaued around 50 crores for the previous 5 years",
+      "The company faced high employee attrition, inconsistent team performance, and challenges in scaling operations.",
     coreIssues:
-      "Missing Leadership alignment & Execution discipline",
+      "Weak organizational culture, lack of leadership communication, and unclear employee growth paths.",
     coachingIntervention:
-      "We implemented tools and processes like the OPSP, PACe, KPIs",
+      "We implemented leadership coaching, team accountability systems, employee engagement initiatives, and structured performance management processes.",
     outcomes: [
-      "The company moved away from bidding for very small projects",
-      "Better internal coordination, thereby delivering projects on time with minimal cost overruns",
-      "Improvement in internal processes leading to cost savings",
-      "The company revenue grew to 175 crores within 3 years",
+      "Stronger leadership communication and team collaboration",
+      "Improved employee engagement and workplace culture",
+      "Clear performance tracking and career development plans",
+      "Higher client satisfaction due to stable delivery teams",
+      "Employee retention improved from 60% to 90% within 18 months",
     ],
     clientQuote: {
       text: "“2 sentences”",
@@ -67,12 +69,9 @@ const caseStudies = [
 ];
 
 const Story = memo(() => {
-  const [expanded, setExpanded] = useState(
-    Array(caseStudies.length).fill(false)
-  );
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  const toggle = (i) =>
-    setExpanded((prev) => prev.map((v, idx) => (idx === i ? !v : v)));
+  const toggle = () => setIsExpanded((prev) => !prev);
 
   return (
     <div className="story-main">
@@ -88,11 +87,9 @@ const Story = memo(() => {
             <br />
             REAL IMPACT
           </h1>
-          <ul className="story-hero-list">
-            <li>Lorem Ipsum</li>
-            <li>Lorem Ipsum</li>
-            <li>Lorem Ipsum</li>
-          </ul>
+          <p className="story-hero-text">
+            We deliver Accelerated growth, Augmented value and Simplified business across geographies, sectors and domains to our clients.
+          </p>
 
           <div className="story-stats">
             <div className="story-stat">
@@ -135,7 +132,7 @@ const Story = memo(() => {
                   <p>{cs.coreIssues}</p>
                 </div>
 
-                {expanded[i] && (
+                {isExpanded && (
                   <>
                     <div className="story-card-section">
                       <h4>Coaching Intervention</h4>
@@ -165,9 +162,9 @@ const Story = memo(() => {
                   <button
                     type="button"
                     className="story-readmore"
-                    onClick={() => toggle(i)}
+                    onClick={toggle}
                   >
-                    {expanded[i] ? "Read Less" : "Read More"}
+                    {isExpanded ? "Read Less" : "Read More"}
                   </button>
                 </div>
               </article>
