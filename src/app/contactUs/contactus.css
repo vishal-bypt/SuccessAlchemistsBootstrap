@@ -7,6 +7,12 @@
 .first_div_layout.contactUs {
     background: url(./images/main_layout_image.jpeg) no-repeat center;
     background-size: cover;
+    border-radius: 0 !important;
+}
+
+.main_first_div_body {
+    border-radius: 0 !important;
+    background: linear-gradient(90deg, #0f2437, transparent) !important;
 }
 
 .heading {
@@ -56,16 +62,28 @@
 .btnstyle {
     padding: 16px 32px;
     background-color: rgba(251, 168, 25, 1);
-    color: #fff;
+    color: #000;
     font-size: 20px;
     font-weight: 500;
     border-radius: 12px;
     width: fit-content;
+    border: none;
 }
 
 .btnstyle:hover {
-    background-color: rgba(251, 168, 25, 1);
-    color: #fff;
+    background-color: #fba819;
+    color: #000;
+}
+
+.second_div_layout {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 25px 64px !important;
+}
+
+.third_div_layout.contact-div {
+    background: #0f2437 !important;
+    border-radius: 24px !important;
 }
 
 

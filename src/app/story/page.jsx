@@ -78,6 +78,10 @@ const Story = memo(() => {
     <div className="story-main">
       {/* HERO */}
       <section className="story-hero">
+        <video className="story-hero-video" autoPlay loop muted playsInline preload="metadata">
+          <source src="/Home-page-video.mp4" type="video/mp4" />
+        </video>
+        <div className="story-hero-gradient-overlay"></div>
         <div className="story-hero-inner">
           <h1 className="story-hero-title">
             REAL BUSINESSES,
@@ -131,13 +135,13 @@ const Story = memo(() => {
                   <p>{cs.coreIssues}</p>
                 </div>
 
-                <div className="story-card-section">
-                  <h4>Coaching Intervention</h4>
-                  <p>{cs.coachingIntervention}</p>
-                </div>
-
                 {expanded[i] && (
                   <>
+                    <div className="story-card-section">
+                      <h4>Coaching Intervention</h4>
+                      <p>{cs.coachingIntervention}</p>
+                    </div>
+
                     <div className="story-card-section">
                       <h4>AFTER: Outcomes &amp; Results</h4>
                       <ol type="a" className="story-card-outcomes">
@@ -147,13 +151,13 @@ const Story = memo(() => {
                       </ol>
                     </div>
 
-                    <div className="story-card-section">
+                    {/* <div className="story-card-section">
                       <h4>Client Quote</h4>
                       <p className="story-card-quote">{cs.clientQuote.text}</p>
                       <p className="story-card-quote-name">
                         {cs.clientQuote.name}
                       </p>
-                    </div>
+                    </div> */}
                   </>
                 )}
 

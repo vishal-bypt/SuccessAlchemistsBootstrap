@@ -94,21 +94,21 @@ const NavbarMenu = () => {
           </Nav.Link> */}
           <Nav.Link
             as={Link}
-              href="/success"
+              href="/success-story"
               className={`${
-                pathname === "/success"
+                pathname === "/success-story"
                   ? "active-link font-semibold"
                   : "inactive-link font-normal"
               } text-sm xl:text-xl font-barlow link-underline link-underline-opacity-0`}
             >
               <div
                 className={`${
-                  pathname === "/success"
+                  pathname === "/success-story"
                     ? "active-link font-semibold"
                     : "inactive-link font-normal"
                 } nav_text_div`}
               >
-                Our success
+                Success Story
               </div>
           </Nav.Link>
           <Nav.Link
@@ -135,7 +135,7 @@ const NavbarMenu = () => {
               as={Link}
               href="/resources"
               className={`${
-                pathname === "/resources" || "/toolDetail"
+                pathname === "/resources" || pathname === "/toolDetail"
                   ? "active-link font-semibold"
                   : "inactive-link font-normal"
               } text-sm xl:text-xl font-barlow link-underline link-underline-opacity-0`}
@@ -198,7 +198,7 @@ const NavbarMenu = () => {
                 Basecamp Workshop
               </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item>
+              {/* <NavDropdown.Item>
                <Link
                 href="/webinar"
                 className={`${
@@ -209,7 +209,7 @@ const NavbarMenu = () => {
               >
                 Masterclass
               </Link>
-            </NavDropdown.Item>
+            </NavDropdown.Item> */}
             {/* <NavDropdown.Item>
               <Link
                 href="/events/podcast"
