@@ -1,15 +1,15 @@
 "use client";
 import { useRef, useState } from "react";
 import "./success.css";
-import Case1 from "../../app/success/images/case-study.svg";
-import Case2 from "../../app/success/images/Case-study2.png";
-import Case3 from "../../app/success/images/Case-study3.png";
+import Case1 from "./images/case-study.svg";
+import Case2 from "./images/Case-study2.png";
+import Case3 from "./images/Case-study3.png";
 
 import Curve_shape from "../home/images/Curve-shape.png";
 import right_arrow_btn from "../home/images/right-arrow-btn.png";
 import left_arrow_btn from "../home/images/left-arrow-btn.png";
 import Image from "next/image";
-import success from "../../app/success/images/Artboard 2.1@4x.png";
+import success from "./images/Artboard 2.1@4x.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 

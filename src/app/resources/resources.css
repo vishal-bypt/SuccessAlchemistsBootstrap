@@ -7,6 +7,12 @@
 .first_div_layout.resource {
     background: url(./images/resources.jpg) no-repeat center;
     background-size: cover;
+    border-radius: 0 !important;
+}
+
+.main_first_div_body {
+    border-radius: 0 !important;
+    background: linear-gradient(90deg, #0f2437, transparent) !important;
 }
 
 .curve {

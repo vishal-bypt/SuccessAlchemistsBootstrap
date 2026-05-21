@@ -21,7 +21,7 @@ const arr = [
   "/home",
   "/about",
   "/who",
-  "/success",
+  "/success-story",
   "/assessment",
   "/resources",
 ];
@@ -131,13 +131,13 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className={`${pathName === "/success"
+                  className={`${pathName === "/success-story"
                     ? "active-link font-semibold"
                     : "inactive-link font-normal"
                     } link-underline link-underline-opacity-0`}
-                  href={"/success"}
+                  href={"/success-story"}
                 >
-                  Our success
+                  Success Story
                 </Link>
               </li>
               <li>
@@ -303,7 +303,7 @@ const Footer = () => {
                         marginBottom: "10px",
                         letterSpacing: "0.5px",
                         backgroundColor: "#FBA819",
-                        color: "#FFFFFF",
+                        color: "#000000",
                         height: 38
                       }}
                     >
