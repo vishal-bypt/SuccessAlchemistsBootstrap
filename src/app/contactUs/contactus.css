@@ -194,6 +194,15 @@
         justify-content: center;
         margin-bottom: 16px;
     }
+    
+    .submit-btn-div .btnstyle {
+        height: 58px;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .curve-contact {
         left: 5px;
         top: 50px;
