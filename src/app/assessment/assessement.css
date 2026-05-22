@@ -162,11 +162,30 @@
     .paymentbtn {
         margin-bottom: 0;
         width: 100%;
+        padding-left: 8px;
+        padding-right: 8px;
     }
 
-    /* FIX: Button ko exact 54px height dekar inputs ke barabar physical scale par laya */
-    .btnstyle {
-        width: 100%;
+    .second_text_div > .submit-btn-div {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    /* Mobile only: Payment button matches input field width */
+    .innerdiv .paymentbtn .btn-submit {
+        width: 100% !important;
+        height: 54px !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center;
+        border-radius: 16px !important;
+    }
+
+    /* Mobile only: Discovery Call button matches input field width */
+    .second_text_div > .submit-btn-div .btn-submit {
+        width: 100% !important;
         height: 54px !important;
         padding: 0 !important;
         display: flex !important;
