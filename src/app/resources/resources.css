@@ -282,9 +282,14 @@
 }
 
 /* Custom Swiper Buttons styling */
+.slider-container .swiper {
+  padding-bottom: 40px !important;
+}
+
 .slider-container .swiper-button-prev,
 .slider-container .swiper-button-next {
   color: #fa9f3c !important;
+  top: calc(50% - 20px) !important;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -297,6 +302,25 @@
 .slider-container .swiper-button-prev:hover,
 .slider-container .swiper-button-next:hover {
   transform: scale(1.15);
+}
+
+/* Custom Swiper Pagination styling to prevent overlap with images */
+.slider-container .swiper-pagination {
+  bottom: 0px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: auto !important;
+  text-align: center !important;
+}
+
+.slider-container .swiper-pagination-bullet {
+  background: #ddd !important;
+  opacity: 1 !important;
+  margin: 0 6px !important;
+}
+
+.slider-container .swiper-pagination-bullet-active {
+  background-color: #e99300 !important;
 }
 
 
@@ -357,6 +381,27 @@
 
 .box_size{
   width: 100%;
+}
+
+.seventh_components_card_box {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.seventh_components_card_box .video-card {
+  border: none;
+  background: transparent;
+}
+
+.seventh_components_card_box .video-thumbnail iframe {
+  border-radius: 12px;
+  display: block;
+}
+
+.seventh_components_card_box .card-body {
+  display: none !important;
 }
 
 @media only screen and (max-width:767px) {
@@ -422,6 +467,15 @@
     width: 28px !important;
     height: 28px !important;
   }
+
+  .res-row {
+    row-gap: 12px !important;
+  }
+  .seventh_components_card_box {
+    padding: 10px !important;
+    border-radius: 12px !important;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05) !important;
+  }
 }
 @media (max-width: 576px) {
   .custom-col-5 {
@@ -463,6 +517,11 @@
   .slider-container .swiper-button-next {
     width: 20px !important;
     height: 20px !important;
+  }
+
+  .seventh_components_card_box {
+    padding: 8px !important;
+    border-radius: 10px !important;
   }
 }
 
