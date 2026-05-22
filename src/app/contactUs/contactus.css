@@ -65,7 +65,7 @@
     color: #000;
     font-size: 20px;
     font-weight: 500;
-    border-radius: 12px;
+    border-radius: 16px;
     width: fit-content;
     border: none;
 }
@@ -84,6 +84,18 @@
 .third_div_layout.contact-div {
     background: #0f2437 !important;
     border-radius: 24px !important;
+    padding: 48px 48px 64px 48px !important;
+    box-sizing: border-box;
+}
+
+.contact-div .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.contact-div .col-md-4, .contact-div .col-md-12 {
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 
@@ -117,9 +129,13 @@
 
 .form-control.contact-textarea {
     height: 130px;
-    border-radius: 12px;
+    border-radius: 16px;
     font-size: 18px;
     color: #222020;
+}
+
+.contact-div .form-control {
+    border-radius: 16px;
 }
 
 .submit-btn-div {
@@ -134,7 +150,7 @@
 }
 
 .curve-contact {
-    top: 40px;
+    top: 50px;
     left: 40px;
     position: absolute;
     color: transparent;
@@ -160,5 +176,27 @@
     .btn {
         font-size: 1.2rem;
         /* padding: 12px 24px; */
+    }
+}
+
+@media (max-width: 576px) {
+    .second_div_layout {
+        padding: 25px 15px !important;
+        position: relative;
+    }
+    .third_div_layout.contact-div {
+        padding: 24px 24px 40px 24px !important;
+        width: 95%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .submit-btn-div {
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+    .curve-contact {
+        left: 5px;
+        top: 50px;
+        z-index: 1;
     }
 }

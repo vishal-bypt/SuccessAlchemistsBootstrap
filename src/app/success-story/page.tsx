@@ -26,7 +26,7 @@ const items = [
     title: "Success story of #1 - Ador powerton",
     description:
       "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
-    src: " https://www.youtube.com/embed/mN0qCIfEr-8?si=cQHPlh9-GkF85pIe",
+    src: "https://www.youtube.com/embed/mN0qCIfEr-8?si=cQHPlh9-GkF85pIe",
   },
   {
     id: 2,
@@ -143,16 +143,7 @@ const page = () => {
       </div>
 
       <div className="client-review-section box-shadow ">
-        <div
-          className="img-fluid"
-          style={{
-            position: "absolute",
-            top: "0px",
-            right: "0px",
-            zIndex: "1",
-            overflow: "hidden",
-          }}
-        >
+        <div className="client-review-curve">
           <Image
             src={Curve_shape}
             className="img-fluid"
@@ -183,10 +174,11 @@ const page = () => {
                   <div className="video col-md-4">
                     <div className="ratio ratio-16x9">
                       <iframe
-                        src={d.src}
+                        src={d.src.trim()}
                         className="home-video"
                         title="YouTube video player"
                         allowFullScreen={true}
+                        scrolling="no"
                       ></iframe>
                     </div>
                   </div>
@@ -199,16 +191,7 @@ const page = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div
-            className="img-fluid navigation-buttons"
-            style={{
-              position: "absolute",
-              top: "0px",
-              right: "0px",
-              zIndex: "1",
-              display: "flex",
-            }}
-          >
+          <div className="img-fluid navigation-buttons">
             <div onClick={backward}>
               <Image
                 src={left_arrow_btn}
