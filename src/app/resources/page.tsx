@@ -223,7 +223,7 @@ const page = () => {
           <p className="subhead mb-0">What are you looking for today?</p>
         </div>
 
-        <div className="row g-4">
+        <div className="row g-3 g-md-4">
           {[
             { title: "Scaling up Toolkits", img: Image1, slug: "scaling_up_toolkit" },
             { title: "Pathfinders Podcasts", img: Image2, slug: "pathfinder_podcast" },
@@ -249,77 +249,75 @@ const page = () => {
           ))}
         </div>
       </div>
-      <div className="second_div_layout">
-        <div className="third_div" id="scaling_up_toolkit">
-          <div className="d-flex flex-row justify-content-between">
-            <p className="subhead">Scaling Up Toolkits</p>
-          </div>
-          <div className="mt-4">
-            <div className="row g-4">
-              <div className="col-xxl-6 col-lg-6 col-md-6 col-sm-12">
-                <div>
-                  <div className="dropdown">
-                    <div className="d-flex flex-row align-items-center">
-                      <p><i className="arrow right"></i></p>
-                      <p className="dropbtn">People</p>
-                    </div>
-                    <div className="dropdown-content">
-                      <ul className="dropdown_text">
-                        <li><Link href={`/toolDetail/function-accountability-chart`} className="dropdown_text">FACe - Function Accountability Chart</Link></li>
-                        <li><Link href={`/toolDetail/one-page-personal-plan`} className="dropdown_text">OPPP - One Page Personal Plan</Link></li>
-                        <li><Link href={`/toolDetail/process-accountability-chart`} className="dropdown_text">PACe - Process Accountablity Chart</Link></li>
-                        <li><Link href={`/toolDetail/talent-assessment-chart`} className="dropdown_text">Talent - Talent Assessment Chart</Link></li>
-                      </ul>
-                    </div>
+      <div className="second_div_layout" id="scaling_up_toolkit">
+        <div className="d-flex flex-row justify-content-between">
+          <p className="subhead">Scaling Up Toolkits</p>
+        </div>
+        <div className="mt-4">
+          <div className="row g-3 g-md-4">
+            <div className="col-xxl-6 col-lg-6 col-md-6 col-sm-12">
+              <div>
+                <div className="dropdown">
+                  <div className="d-flex flex-row align-items-center">
+                    <span><i className="arrow right"></i></span>
+                    <span className="dropbtn">People</span>
                   </div>
-                  <div className="dropdown">
-                    <div className="d-flex flex-row align-items-center">
-                      <p><i className="arrow right"></i></p>
-                      <p className="dropbtn">Strategy</p>
-                    </div>
-                    <div className="dropdown-content">
-                      <ul className="dropdown_text">
-                        <li><Link href={`/toolDetail/7-strata`} className="dropdown_text">Strategy 7 strata</Link></li>
-                        <li><Link href={`/toolDetail/vision-summary`} className="dropdown_text">Strategy Vision summary</Link></li>
-                        <li><Link href={`/toolDetail/one-page-strategic-plan`} className="dropdown_text">OPSP - One page Strategic Plan</Link></li>
-                        <li><Link href={`/toolDetail/strengths-weaknesses-trends`} className="dropdown_text">SWT - Strengths Weaknesses Trends</Link></li>
-                      </ul>
-                    </div>
+                  <div className="dropdown-content">
+                    <ul className="dropdown_text">
+                      <li><Link href={`/toolDetail/function-accountability-chart`} className="dropdown_text">FACe - Function Accountability Chart</Link></li>
+                      <li><Link href={`/toolDetail/one-page-personal-plan`} className="dropdown_text">OPPP - One Page Personal Plan</Link></li>
+                      <li><Link href={`/toolDetail/process-accountability-chart`} className="dropdown_text">PACe - Process Accountablity Chart</Link></li>
+                      <li><Link href={`/toolDetail/talent-assessment-chart`} className="dropdown_text">Talent - Talent Assessment Chart</Link></li>
+                    </ul>
                   </div>
-                  <div className="dropdown">
-                    <div className="d-flex flex-row align-items-center">
-                      <p><i className="arrow right"></i></p>
-                      <p className="dropbtn">Execution</p>
-                    </div>
-                    <div className="dropdown-content">
-                      <ul className="dropdown_text">
-                        <li><Link href={`/toolDetail/who-what-when`} className="dropdown_text">WWW - Who What When</Link></li>
-                        <li><Link href={`/toolDetail/rockefeller-habits-checklist`} className="dropdown_text">Execution - Rockefeller Habits Checklist</Link></li>
-                      </ul>
-                    </div>
+                </div>
+                <div className="dropdown">
+                  <div className="d-flex flex-row align-items-center">
+                    <span><i className="arrow right"></i></span>
+                    <span className="dropbtn">Strategy</span>
                   </div>
-                  <div className="dropdown">
-                    <div className="d-flex flex-row align-items-center">
-                      <p><i className="arrow right"></i></p>
-                      <p className="dropbtn">Cash</p>
-                    </div>
-                    <div className="dropdown-content">
-                      <ul className="dropdown_text">
-                        <li><Link href={`/toolDetail/cash-acceleration-strategies`} className="dropdown_text">CASH - Cash Acceleration Strategies</Link></li>
-                        <li><Link href={`/toolDetail/the-power-of-one`} className="dropdown_text">POO - The Power of One</Link></li>
-                      </ul>
-                    </div>
+                  <div className="dropdown-content">
+                    <ul className="dropdown_text">
+                      <li><Link href={`/toolDetail/7-strata`} className="dropdown_text">Strategy 7 strata</Link></li>
+                      <li><Link href={`/toolDetail/vision-summary`} className="dropdown_text">Strategy Vision summary</Link></li>
+                      <li><Link href={`/toolDetail/one-page-strategic-plan`} className="dropdown_text">OPSP - One page Strategic Plan</Link></li>
+                      <li><Link href={`/toolDetail/strengths-weaknesses-trends`} className="dropdown_text">SWT - Strengths Weaknesses Trends</Link></li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="dropdown">
+                  <div className="d-flex flex-row align-items-center">
+                    <span><i className="arrow right"></i></span>
+                    <span className="dropbtn">Execution</span>
+                  </div>
+                  <div className="dropdown-content">
+                    <ul className="dropdown_text">
+                      <li><Link href={`/toolDetail/who-what-when`} className="dropdown_text">WWW - Who What When</Link></li>
+                      <li><Link href={`/toolDetail/rockefeller-habits-checklist`} className="dropdown_text">Execution - Rockefeller Habits Checklist</Link></li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="dropdown">
+                  <div className="d-flex flex-row align-items-center">
+                    <span><i className="arrow right"></i></span>
+                    <span className="dropbtn">Cash</span>
+                  </div>
+                  <div className="dropdown-content">
+                    <ul className="dropdown_text">
+                      <li><Link href={`/toolDetail/cash-acceleration-strategies`} className="dropdown_text">CASH - Cash Acceleration Strategies</Link></li>
+                      <li><Link href={`/toolDetail/the-power-of-one`} className="dropdown_text">POO - The Power of One</Link></li>
+                    </ul>
                   </div>
                 </div>
               </div>
-              <div className="col-xxl-6 col-lg-6 col-md-6 col-sm-12 image-div">
-                <div className="scalingup_div">
-                  <Image
-                    src={Image5}
-                    alt="case1"
-                    className="scallup_img img-fluid"
-                  />
-                </div>
+            </div>
+            <div className="col-xxl-6 col-lg-6 col-md-6 col-sm-12 image-div scalingup-image-div">
+              <div className="scalingup_div">
+                <Image
+                  src={Image5}
+                  alt="case1"
+                  className="scallup_img img-fluid"
+                />
               </div>
             </div>
           </div>
@@ -331,7 +329,7 @@ const page = () => {
                 <div className="video_div_title">
                   <p className="subhead">Pathfinders Podcasts</p>
                   <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
-                    <div>View all</div>
+                    View all
                   </a>
                 </div>
                 <div className="col-md-4">
@@ -401,7 +399,7 @@ const page = () => {
                 <div className="video_div_title">
                   <p className="subhead">Conversations with Masterminds</p>
                   <a href="https://youtube.com/@success_alchemists?si=NK_yKhQ4WOY9Wzo5" target="_blank" className="video_div_text">
-                    <div>View all</div>
+                    View all
                   </a>
                 </div>
                 <div className="col-md-4">
@@ -630,12 +628,7 @@ const page = () => {
                 <Image
                   src={Book0}
                   alt="Book 0"
-                  className="card-img-top img-fluid"
-                  style={{
-                    height: "400px",
-                    width: "100%",
-                    objectFit: "contain",
-                  }}
+                  className="card-img-top img-fluid book-img"
                 />
               </div>
             </a>
@@ -653,12 +646,7 @@ const page = () => {
                 <Image
                   src={Book1}
                   alt="Book 1"
-                  className="card-img-top img-fluid"
-                  style={{
-                    height: "400px",
-                    width: "100%",
-                    objectFit: "contain",
-                  }}
+                  className="card-img-top img-fluid book-img"
                 />
               </div>
             </a>
@@ -676,12 +664,7 @@ const page = () => {
                 <Image
                   src={Book2}
                   alt="Book 2"
-                  className="card-img-top img-fluid"
-                  style={{
-                    height: "400px",
-                    width: "100%",
-                    objectFit: "contain",
-                  }}
+                  className="card-img-top img-fluid book-img"
                 />
               </div>
             </a>
@@ -699,12 +682,7 @@ const page = () => {
                 <Image
                   src={Book3}
                   alt="Book 3"
-                  className="card-img-top img-fluid"
-                  style={{
-                    height: "400px",
-                    width: "100%",
-                    objectFit: "contain",
-                  }}
+                  className="card-img-top img-fluid book-img"
                 />
               </div>
             </a>
@@ -722,12 +700,7 @@ const page = () => {
                 <Image
                   src={Book4}
                   alt="Book 4"
-                  className="card-img-top img-fluid"
-                  style={{
-                    height: "400px",
-                    width: "100%",
-                    objectFit: "contain",
-                  }}
+                  className="card-img-top img-fluid book-img"
                 />
               </div>
             </a>

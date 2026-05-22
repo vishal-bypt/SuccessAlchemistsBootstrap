@@ -155,6 +155,9 @@
         flex-direction: column !important;
         height: auto !important;
     } 
+    .image-div {
+        height: auto !important;
+    }
     .toolkit-img {
         max-width: 60%;
     } 
