@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import Toast from "../../components/Toast";
 import { useRouter } from 'next/navigation';
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import curveShape2 from "../../../public/assets/images/Curve-shape2.svg";
 
 const ContactUs = memo(() => {
   const {
@@ -98,11 +97,6 @@ const ContactUs = memo(() => {
       </div>
 
       <div className="second_div_layout">
-        <Image
-          src={curveShape2}
-          alt="curve1"
-          className="curve-contact img-fluid"
-        />
         <div className="third_div_layout contact-div shadow-lg">
           {/* <Image src={curve1} alt="curve1" className="image3 img-fluid" /> */}
 
