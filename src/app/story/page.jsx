@@ -6,7 +6,7 @@ import "./story.css";
 const caseStudies = [
   {
     title:
-      "A _____ company's revenue grew from Rs 50 Cr to Rs 175 Cr within 3 years",
+      "A Process Plants Manufacturing company's revenue grew from Rs 50 Cr to Rs 175 Cr within 3 years",
     startingSituation:
       "The company revenue had plateaued around 50 crores for the previous 5 years",
     coreIssues:
@@ -68,11 +68,58 @@ const caseStudies = [
   },
 ];
 
-const Story = memo(() => {
+const CaseStudyCard = memo(({ cs }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
   const toggle = () => setIsExpanded((prev) => !prev);
 
+  return (
+    <article className="story-card">
+      <h3 className="story-card-title">{cs.title}</h3>
+
+      <div className="story-card-section mt-4">
+        <h4>The Starting Situation</h4>
+        <p>{cs.startingSituation}</p>
+      </div>
+
+      <div className="story-card-section">
+        <h4>Core Issues Identified</h4>
+        <p>{cs.coreIssues}</p>
+      </div>
+
+      {isExpanded && (
+        <>
+          <div className="story-card-section">
+            <h4>Coaching Intervention</h4>
+            <p>{cs.coachingIntervention}</p>
+          </div>
+
+          <div className="story-card-section">
+            <h4>AFTER: Outcomes &amp; Results</h4>
+            <ol type="a" className="story-card-outcomes">
+              {cs.outcomes.map((o, idx) => (
+                <li key={idx}>{o}</li>
+              ))}
+            </ol>
+          </div>
+        </>
+      )}
+
+      <div className="story-card-actions">
+        <button
+          type="button"
+          className="story-readmore"
+          onClick={toggle}
+        >
+          {isExpanded ? "Read Less" : "Read More"}
+        </button>
+      </div>
+    </article>
+  );
+});
+
+CaseStudyCard.displayName = "CaseStudyCard";
+
+const Story = memo(() => {
   return (
     <div className="story-main">
       {/* HERO */}
@@ -119,55 +166,7 @@ const Story = memo(() => {
 
           <div className="story-cards">
             {caseStudies.map((cs, i) => (
-              <article key={i} className="story-card">
-                <h3 className="story-card-title">{cs.title}</h3>
-
-                <div className="story-card-section mt-4">
-                  <h4>The Starting Situation</h4>
-                  <p>{cs.startingSituation}</p>
-                </div>
-
-                <div className="story-card-section">
-                  <h4>Core Issues Identified</h4>
-                  <p>{cs.coreIssues}</p>
-                </div>
-
-                {isExpanded && (
-                  <>
-                    <div className="story-card-section">
-                      <h4>Coaching Intervention</h4>
-                      <p>{cs.coachingIntervention}</p>
-                    </div>
-
-                    <div className="story-card-section">
-                      <h4>AFTER: Outcomes &amp; Results</h4>
-                      <ol type="a" className="story-card-outcomes">
-                        {cs.outcomes.map((o, idx) => (
-                          <li key={idx}>{o}</li>
-                        ))}
-                      </ol>
-                    </div>
-
-                    {/* <div className="story-card-section">
-                      <h4>Client Quote</h4>
-                      <p className="story-card-quote">{cs.clientQuote.text}</p>
-                      <p className="story-card-quote-name">
-                        {cs.clientQuote.name}
-                      </p>
-                    </div> */}
-                  </>
-                )}
-
-                <div className="story-card-actions">
-                  <button
-                    type="button"
-                    className="story-readmore"
-                    onClick={toggle}
-                  >
-                    {isExpanded ? "Read Less" : "Read More"}
-                  </button>
-                </div>
-              </article>
+              <CaseStudyCard key={i} cs={cs} />
             ))}
           </div>
         </div>

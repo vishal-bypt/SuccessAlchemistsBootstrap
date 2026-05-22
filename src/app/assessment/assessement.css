@@ -35,8 +35,9 @@
 
 .submit-btn-div {
     display: flex;
-    padding-top: 32px;
+    padding-top: 20px;
 }
+
 .paymentbtn{
     justify-content: flex-end;
 }
@@ -47,7 +48,7 @@
     color: #000;
     font-size: 20px;
     font-weight: 500;
-    border-radius: 12px;
+    border-radius: 16px;
     width: fit-content;
     border: none;
 }
@@ -59,8 +60,20 @@
 
 .innerdiv{
     background: #0f2437;
-    padding: 48px;
+    padding: 48px 48px 64px 48px; 
     border-radius: 24px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.innerdiv .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.innerdiv .input_div {
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .innerdiv p{
@@ -74,27 +87,63 @@
 
 .form-control.contact-textarea {
     height: 130px;
-    border-radius: 12px;
+    border-radius: 16px;
     font-size: 18px;
     color: #222020;
 }
 
+.innerdiv .form-control {
+    border-radius: 16px;
+}
 
-/* Media Query */
 @media (max-width: 768px) {
-    .input_div{
-        margin-bottom: 16px !important;
+    .innerdiv .input_div {
+        margin-bottom: 20px !important;
+        margin-top: 0 !important;
+    }
+    
+    .innerdiv .row {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
     }
 }
 
 @media (max-width: 576px) {
-    
+    .second_div_layout {
+        padding: 25px 15px !important;
+    }
+
     .second_text_div{
         padding: 0;
     }
 
     .innerdiv{
-        padding: 24px;
+        padding: 32px 24px 32px 24px; 
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    /* FIX: Paragraph aur input field ke beech 24px ka clean gap */
+    .innerdiv p {
+        margin-bottom: 24px !important;
+    }
+
+    /* FIX: Mobile par har input container ke gap ko 20px lock kiya */
+    .innerdiv .input_div {
+        margin-bottom: 20px !important;
+        margin-top: 0 !important;
+    }
+
+    /* FIX: Input fields ki mobile height aur size ko button se symmetry di */
+    .innerdiv .form-control {
+        height: 54px !important;
+        border-radius: 16px !important;
+    }
+
+    /* FIX: Form floating placeholder texts ko new height ke sath perfectly align kiya */
+    .form-floating>label {
+        padding: 15px 16px !important;
     }
 
     .subhead{
@@ -103,5 +152,27 @@
 
     .text{
         font-size: 18px;
+    }
+
+    .submit-btn-div {
+        padding-top: 8px; 
+        width: 100%;
+    }
+
+    .paymentbtn {
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    /* FIX: Button ko exact 54px height dekar inputs ke barabar physical scale par laya */
+    .btnstyle {
+        width: 100%;
+        height: 54px !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center;
+        border-radius: 16px !important;
     }
 }
