@@ -31,7 +31,6 @@ import Execution1 from "../toolDetail/images/Execution-WWW.jpg"
 import Execution2 from "../toolDetail/images/Execution- Rockefeller.jpg"
 import Cash1 from "../toolDetail/images/Cash-CASh.jpg"
 import Cash2 from "../toolDetail/images/Cash-POO.jpg"
-import "../toolDetail/toolDetail.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -234,7 +233,7 @@ const page = () => {
               key={i}
               className="col-xxl-6 col-lg-6 col-md-6 col-sm-12"
             >
-              <a href={`#${item.slug}`}>
+              <a href={`#${item.slug}`} className="text-decoration-none text-white" style={{ color: "white" }}>
               <div className="card-item position-relative overflow-hidden">
                 <Image
                   src={item.img}
@@ -242,7 +241,7 @@ const page = () => {
                   className="card-img img-fluid"
                 />
                 <div className="card-overlay d-flex align-items-end">
-                  <h5 className="card-title">{item.title}</h5>
+                  <h5 className="card-title text-white" style={{ color: "white" }}>{item.title}</h5>
                 </div>
               </div></a>
             </div>
