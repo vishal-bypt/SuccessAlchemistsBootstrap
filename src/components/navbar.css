@@ -76,11 +76,11 @@
 }
 
 .active-link {
-    color: #418EF8;
+    color: #418EF8 !important;
 }
 
 .inactive-link {
-    color: #222020;
+    color: #222020 !important;
 }
 
 .nav-link {
@@ -91,25 +91,165 @@
     align-items: center;
 }
 
+/* ----------------------------------------------------
+   DESKTOP SCREEN BREAKPOINT (>= 992px)
+   ---------------------------------------------------- */
+@media (min-width: 992px) {
+    /* Ensure the dropdown container itself aligns perfectly in the flex container on desktop */
+    .navbar-nav .dropdown {
+        display: inline-flex !important;
+        align-items: center !important;
+        height: 45px !important;
+    }
 
-/*media query start here*/
+    /* Ensure all navbar links (including dropdowns and caret arrow) align perfectly */
+    .navbar-nav .nav-link:not(.contact_div),
+    .navbar-nav .dropdown-toggle {
+        font-size: 18px !important;
+        font-weight: 500 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        height: 45px !important;
+        line-height: 45px !important;
+    }
 
-@media only screen and (max-width:1399px) {
-    .nav_text_div {
-        font-size: 16px;
+    /* Align dropdown toggle caret vertically using bulletproof absolute positioning */
+    .navbar-nav .dropdown-toggle {
+        position: relative !important;
+        padding-right: 32px !important; /* Space for the caret inside the link */
     }
-    .navbar-expand-lg .navbar-nav .contact_div.nav-link {
-        font-size: 16px;
-        padding-left: 16px;
+
+    .navbar-nav .dropdown-toggle::after {
+        position: absolute !important;
+        right: 12px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        margin: 0 !important;
+        border-top-color: #222020 !important; /* Default inactive color */
+        transition: border-color 0.2s ease !important;
     }
-    .main_logo {
-        height: 36px;
+
+    /* Active states for dropdown and caret to ensure perfect color and text matching */
+    .navbar-nav .active-dropdown .dropdown-toggle::after {
+        border-top-color: #418EF8 !important; /* Active link color */
     }
-    .navbar-expand-lg .navbar-nav .nav-link {
-        padding-left: 0px;
-        padding-right: 18px;
+
+    .navbar-nav .active-dropdown .dropdown-toggle {
+        color: #418EF8 !important;
     }
+}
+
+/* ----------------------------------------------------
+   MOBILE/TABLET COLLAPSED BREAKPOINT (< 992px)
+   ---------------------------------------------------- */
+@media (max-width: 991.98px) {
+    /* Premium Glassmorphic Mobile Menu container */
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.96) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border-radius: 16px !important;
+        padding: 20px !important;
+        margin-top: 15px !important;
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    }
+
+    .navbar-nav {
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    .navbar-nav .nav-link {
+        padding-right: 0 !important; /* Remove desktop right padding */
+        padding-left: 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* Dropdown container allowed to grow vertically without height constraints on mobile */
+    .navbar-nav .dropdown {
+        height: auto !important; 
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .navbar-nav .dropdown-toggle {
+        height: auto !important;
+        line-height: normal !important;
+        padding: 10px 0 !important;
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        font-size: 16px !important;
+    }
+
+    /* Caret floats naturally next to the word on mobile and changes color dynamically */
+    .navbar-nav .dropdown-toggle::after {
+        position: static !important;
+        transform: none !important;
+        margin-left: 8px !important;
+        margin-top: 2px !important;
+        vertical-align: middle !important;
+        display: inline-block !important;
+        border-top-color: #222020 !important;
+    }
+
+    .navbar-nav .active-dropdown .dropdown-toggle::after {
+        border-top-color: #418EF8 !important;
+    }
+
+    .navbar-nav .active-dropdown .dropdown-toggle {
+        color: #418EF8 !important;
+    }
+
     .contact_div {
-        border-radius: 10px;
+        margin-top: 5px !important;
+        width: 100% !important;
+        justify-content: center !important;
+        border-radius: 8px !important;
+        padding: 10px 16px !important;
+    }
+}
+
+/* ----------------------------------------------------
+   INTERMEDIATE LAPTOP VIEW BREAKPOINTS
+   ---------------------------------------------------- */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 12px !important;
+    }
+    .navbar-nav .nav-link:not(.contact_div),
+    .navbar-nav .dropdown-toggle {
+        font-size: 15px !important;
+        height: 34px !important;
+        line-height: 34px !important;
+    }
+    .navbar-nav .dropdown {
+        height: 34px !important;
+    }
+    .nav_text_div {
+        font-size: 15px !important;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 18px !important;
+    }
+    .navbar-nav .nav-link:not(.contact_div),
+    .navbar-nav .dropdown-toggle {
+        font-size: 16px !important;
+        height: 36px !important;
+        line-height: 36px !important;
+    }
+    .navbar-nav .dropdown {
+        height: 36px !important;
+    }
+    .nav_text_div {
+        font-size: 16px !important;
     }
 }

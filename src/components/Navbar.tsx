@@ -172,6 +172,17 @@ const NavbarMenu = () => {
               </span>
             }
             id="basic-nav-dropdown"
+            className={`${
+              [
+                "/events/podcast",
+                "/events/webinar",
+                "/events/basecamp",
+                "/events/webinarDetail",
+                "/events/eventDetail"
+              ].includes(pathname)
+                ? "active-dropdown"
+                : "inactive-dropdown"
+            }`}
           >
           
             {/* <NavDropdown.Item>
