@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /home
+Allow: /about
+Allow: /success-story
+Allow: /assessment
+Allow: /resources
+Allow: /basecamp
+Allow: /contactUs
+
+Disallow: /_next/
+Disallow: /api/
+Disallow: /404
+Disallow: /500
+
+Sitemap: https://www.success-alchemists.com/sitemap.xml
