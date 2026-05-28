@@ -452,6 +452,152 @@ img {
     font-weight: 700;
 }
 
+/* Scale Stuck Section */
+.scale-stuck-section {
+    background-color: #000000;
+    padding: 60px 20px 30px 20px;
+    color: var(--text-white);
+}
+
+.scale-stuck-eyebrow {
+    color: #fdae07;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.scale-stuck-title {
+    color: var(--text-white);
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.scale-stuck-desc {
+    color: var(--text-white);
+    font-size: 22px;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 18px auto !important;
+    font-weight: 400;
+    opacity: 0.95;
+}
+
+.scale-stuck-grid {
+    margin-top: 36px;
+    row-gap: 24px;
+    justify-content: center;
+}
+
+.scale-stuck-card {
+    border: none;
+    border-radius: 16px;
+    padding: 32px 24px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #ffffff;
+    height: 100%;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.scale-stuck-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scale-stuck-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.scale-stuck-card-title {
+    color: #000000;
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0;
+    padding-bottom: 8px;
+}
+
+.scale-stuck-card-text {
+    color: #000000;
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 400;
+    margin: 0 !important;
+    opacity: 0.85;
+}
+
+@media (max-width: 992px) {
+    .scale-stuck-section {
+        padding: 45px 18px 25px 18px;
+    }
+    .scale-stuck-eyebrow {
+        font-size: 17px;
+    }
+    .scale-stuck-title {
+        font-size: 36px;
+    }
+    .scale-stuck-desc {
+        font-size: 17px;
+    }
+    .scale-stuck-card {
+        padding: 26px 20px;
+        min-height: 170px;
+    }
+    .scale-stuck-card-title {
+        font-size: 20px;
+    }
+    .scale-stuck-card-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .scale-stuck-section {
+        padding: 35px 15px 20px 15px;
+    }
+    .scale-stuck-eyebrow {
+        font-size: 16px;
+    }
+    .scale-stuck-title {
+        font-size: 26px;
+    }
+    .scale-stuck-desc {
+        font-size: 16px;
+    }
+    .scale-stuck-grid {
+        margin-top: 26px;
+        row-gap: 18px;
+    }
+    .scale-stuck-card {
+        padding: 22px 18px;
+        min-height: 140px;
+    }
+    .scale-stuck-card-title {
+        font-size: 18px;
+    }
+    .scale-stuck-card-text {
+        font-size: 15px;
+    }
+    .scale-stuck-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
 /* Walk Away Section */
 .walkaway-section {
     background-color: var(--primary-dark);

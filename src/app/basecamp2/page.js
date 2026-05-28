@@ -994,6 +994,69 @@ const handleShow = () => {
       </div>
     </section>
 
+      {/* SCALE STUCK SECTION */}
+      <section className="scale-stuck-section">
+        <div className="container">
+          <div className="scale-stuck-eyebrow">Where Scale Gets Stuck</div>
+          <div className="scale-stuck-title">
+            Growth should not create
+            <br className="d-none d-md-block" /> more founder dependency
+          </div>
+          <p className="scale-stuck-desc">
+            As businesses grow, execution often becomes harder to control.
+            Founders remain involved in too many decisions. Teams are busy, but
+            ownership is unclear. Meetings happen, but priorities still slip.
+            Revenue grows, but cash flow and profit come under pressure.
+          </p>
+          <p className="scale-stuck-desc">
+            Basecamp is designed to help founders and leadership teams to
+            identify where scale is getting stuck — and fix it across People,
+            Strategy, Execution &amp; Cash.
+          </p>
+
+          <div className="row scale-stuck-grid">
+            <div className="col-md-6 col-12">
+              <div className="scale-stuck-card">
+                <div className="scale-stuck-icon">
+                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="24" cy="16" r="7" fill="#F5A623" />
+                    <path d="M10 40 C10 30 18 26 24 26 C30 26 38 30 38 40 Z" fill="#F5A623" />
+                  </svg>
+                </div>
+                <h3 className="scale-stuck-card-title">Founder Dependency</h3>
+                <p className="scale-stuck-card-text">
+                  Founders remain involved in all business decisions
+                </p>
+              </div>
+            </div>
+            <div className="col-md-6 col-12">
+              <div className="scale-stuck-card">
+                <h3 className="scale-stuck-card-title">Placeholder Title</h3>
+                <p className="scale-stuck-card-text">
+                  Short description goes here
+                </p>
+              </div>
+            </div>
+            <div className="col-md-6 col-12">
+              <div className="scale-stuck-card">
+                <h3 className="scale-stuck-card-title">Placeholder Title</h3>
+                <p className="scale-stuck-card-text">
+                  Short description goes here
+                </p>
+              </div>
+            </div>
+            <div className="col-md-6 col-12">
+              <div className="scale-stuck-card">
+                <h3 className="scale-stuck-card-title">Placeholder Title</h3>
+                <p className="scale-stuck-card-text">
+                  Short description goes here
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* WALK AWAY SECTION */}
       <section className="walkaway-section">
         <div className="container">
