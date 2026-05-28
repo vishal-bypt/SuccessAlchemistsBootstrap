@@ -15,7 +15,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Toast from "../../components/Toast";
-import backgroundImage from "./../../../public/DSC03514.jpg";
 import "./style.css";
 // Import Swiper styles
 import "swiper/css";
@@ -115,13 +114,6 @@ const handleShow = () => {
     "DMS20",
     "365CIRCLE",
     "STARTLABS"
-  ];
-
-  const [sentenceIndex, setSentenceIndex] = useState(0);
-  const sentences = [
-    "A workshop that can help you build a winning strategy for accelerated growth.",
-    "A workshop that can bring a culture of accountability & excellence in your teams.",
-    "A workshop that can help you identify roadblocks & gaps in your exponential growth journey.",
   ];
 
   const items = [
@@ -283,12 +275,6 @@ const handleShow = () => {
     }
   }, [executeRecaptcha]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSentenceIndex((prev) => (prev + 1) % sentences.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   const forward = () => {
     if (currentIndex === items.length) return;
@@ -851,101 +837,6 @@ const handleShow = () => {
           </div>
         </div>
       </section>
-
-      {/* FIRST BASECAMP SECTION FOR MOBILE*/}
-      <section className="d-block d-md-none">
-        <div className="hero">
-             <div className="hero-left">
-       <Image
-                    // className="logo-image"
-                    src={basecamplogo2}
-                    alt="img2"
-                  />
-      <p className="flag-subtitle">Our Flagship Scaling Up Workshop</p>
-      <p className="hero-small">
-        Exclusively crafted for Founders <br />
-        & Top Executives
-      </p>
-    </div>
-
-     <Image
-                    // className="logo-image"
-                    src={backgroundImage}
-                    alt="img2"
-                    className="back-image"
-                  />
-
-                  <div className="hero-center">
-    
-                  <p className="sentence-text">
-                    {sentences[sentenceIndex]}{" "}
-                    <br className="d-none d-md-block" />
-                  </p>
-                  <div className="sentence-dots">
-                    {sentences.map((_, i) => (
-                      <span
-                        key={i}
-                        className={`dot ${i === sentenceIndex ? "active" : ""}`}
-                        onClick={() => setSentenceIndex(i)}
-                      ></span>
-                    ))}
-                  </div>
-                
-              
-          
-
-      <button className=" btn-cta text-center"
-                    onClick={handleShow}>REGISTER NOW</button>
-    </div>
-        </div>
-
-      </section>
-
-      {/* FIRST BASECAMP SECTION */}
-      <div className="d-none d-md-block">
-<section className="basecamp-hero ">
-  <div className="hero-container">
-
-    <div className="hero-left">
-       <Image
-                    // className="logo-image"
-                    src={basecamplogo2}
-                    alt="img2"
-                  />
-      <p className="flag-subtitle">Our Flagship Scaling Up Workshop</p>
-      <p className="hero-small">
-        Exclusively crafted for Founders <br />
-        & Top Executives
-      </p>
-    </div>
-
-    <div className="hero-center">
-    
-                  <p className="sentence-text">
-                    {sentences[sentenceIndex]}{" "}
-                    <br className="d-none d-md-block" />
-                  </p>
-                  <div className="sentence-dots">
-                    {sentences.map((_, i) => (
-                      <span
-                        key={i}
-                        className={`dot ${i === sentenceIndex ? "active" : ""}`}
-                        onClick={() => setSentenceIndex(i)}
-                      ></span>
-                    ))}
-                  </div>
-                
-              
-          
-
-      <button className=" btn-cta text-center"
-                    onClick={handleShow}>REGISTER NOW</button>
-    </div>
-
-  </div>
-</section>
-      </div>
-      
 
       {/* SCALE STUCK SECTION */}
       <section className="scale-stuck-section">
