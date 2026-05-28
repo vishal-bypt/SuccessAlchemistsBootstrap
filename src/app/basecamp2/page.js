@@ -825,175 +825,6 @@ const handleShow = () => {
       </div>
       
 
-      {/* UNLOCK SECTION */}
-      <section className="unlock-section">
-        <div className="container">
-          <div className="unlock-title ">Unlock The Power Of Scaling Up</div>
-          <div className="row">
-            <div className="col-md-3 d-none d-md-block">&nbsp;</div>
-            <div className="col-md-6">
-              <p className="section-subtitle text-center">
-                Success Alchemists leverage the Scaling Up framework{" "}
-                <br className="d-none d-md-block" />- which is a globally proven
-                framework - to grow <br className="d-none d-md-block" />
-                businesses exponentially & sustainably.
-              </p>
-            </div>
-            <div className="row spacer"></div>
-          </div>
-
-          <div className="row">
-            <div className="col-md-3">&nbsp;</div>
-            <div className="col-md-6">
-              <p className="section-subtitle text-center">
-                In the Basecamp 1-day workshop, we deep dive into the{" "}
-                <br className="d-none d-md-block" />4 pillars of a business –
-                <strong> People, Strategy, Execution & </strong>
-                <br className="d-none d-md-block" />
-                <strong>Cash</strong> – and teach you how to use Scaling Up to
-                drive <br className="d-none d-md-block" />
-                your next big decision(s) to scale your business.
-              </p>
-            </div>
-          </div>
-
-          <div className="row metrics-container">
-            <div className="col-md-4 col-12">
-              <div className="metric-box">
-                <div className="metric-value">100K +</div>
-                <div className="metric-label">Companies Worldwide</div>
-              </div>
-            </div>
-            <div className="col-md-4 col-12">
-              <div className="metric-box">
-                <div className="metric-value">10X</div>
-                <div className="metric-label">Valuations Multiplied</div>
-              </div>
-            </div>
-            <div className="col-md-4 col-12">
-              <div className="metric-box">
-                <div className="metric-value">3X</div>
-                <div className="metric-label">Profitability Increased</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* REGISTRATION */}
-       <section className="city-section">
-
-      <h2 className="city-title mb-5">We’re coming to your city</h2>
-
-      <div className="basecamp-slider-container">
-
-        <button className="arrow left" onClick={scrollLeft}>
-  &#8249;
-</button>
-
-
-        <div className="city-slider" ref={sliderRef}>
-
-          {cityList.map((city) => (
-            <div className="city-card" key={city.id}>
-
-              <Image src={city.image} alt={city.name} className="city-img"/>
-
-              <h3 className="city-name">
-                   
-  {/* Location Icon */}
-  <span className="icon">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="25"
-      height="25"
-      viewBox="0 0 24 24"
-      fill="white"
-    >
-      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
-      9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 
-      1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-    </svg>
-  </span>{city.name}
-              </h3>
-            <div className="city-location ">{city.location}</div>
-              <p className="city-date">
-                 <span className="icon">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="25"
-      height="25"
-      viewBox="0 0 24 24"
-      fill="white"
-    >
-      <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 
-      0-2 .9-2 2v14c0 1.1.9 2 2 
-      2h14c1.1 0 2-.9 
-      2-2V6c0-1.1-.9-2-2-2zm0 
-      16H5V9h14v11z"/>
-    </svg>
-  </span>{city.date}
-              </p>
-
-              {city.earlyBird && (
-                <>
-                  <p className="early-bird">{city.earlyBird}</p>
-
-                  <div className="price-row">
-                    <span className="price-old">{city.price1}</span>
-                    <span>{city.price2}</span>
-                  </div>
-                </>
-              )}
-
-              {city.status && (
-                <p className="coming">{city.status}</p>
-              )}
-
-              <button className="city-btn" onClick={city.earlyBird ? handleShow :  handleShow2}>
-                {city.button}
-              </button>
-            </div>
-          ))}
-
-        </div>
-
-        <button className="arrow right " onClick={scrollRight}> 
-  &#8250;
-</button>
-
-      </div>
-
-    </section>             
-
-      {/* MONEY BACK SECTION */}
-       <section className="money-back-section">
-      <div className="money-back-container">
-        <div className="money-back-icon">
-          <svg viewBox="0 0 64 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path
-              d="M32 2 L60 12 V34 C60 50 48 62 32 70 C16 62 4 50 4 34 V12 Z"
-              fill="none"
-              stroke="#F5A623"
-              strokeWidth="4"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M20 36 L29 45 L46 26"
-              fill="none"
-              stroke="#F5A623"
-              strokeWidth="5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-        <div className="money-back-text">
-          <h2>MONEY-BACK GUARANTEE</h2>
-          <p>No questions asked if you don’t find the workshop valuable.</p>
-        </div>
-      </div>
-    </section>
-
       {/* SCALE STUCK SECTION */}
       <section className="scale-stuck-section">
         <div className="container">
@@ -1110,6 +941,61 @@ const handleShow = () => {
         </div>
       </section>
 
+      {/* UNLOCK SECTION */}
+      <section className="unlock-section">
+        <div className="container">
+          <div className="unlock-title ">Unlock The Power Of Scaling Up</div>
+          <div className="row">
+            <div className="col-md-3 d-none d-md-block">&nbsp;</div>
+            <div className="col-md-6">
+              <p className="section-subtitle text-center">
+                Success Alchemists leverage the Scaling Up framework{" "}
+                <br className="d-none d-md-block" />- which is a globally proven
+                framework - to grow <br className="d-none d-md-block" />
+                businesses exponentially & sustainably.
+              </p>
+            </div>
+            <div className="row spacer"></div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-3">&nbsp;</div>
+            <div className="col-md-6">
+              <p className="section-subtitle text-center">
+                In the Basecamp 1-day workshop, we deep dive into the{" "}
+                <br className="d-none d-md-block" />4 pillars of a business –
+                <strong> People, Strategy, Execution & </strong>
+                <br className="d-none d-md-block" />
+                <strong>Cash</strong> – and teach you how to use Scaling Up to
+                drive <br className="d-none d-md-block" />
+                your next big decision(s) to scale your business.
+              </p>
+            </div>
+          </div>
+
+          <div className="row metrics-container">
+            <div className="col-md-4 col-12">
+              <div className="metric-box">
+                <div className="metric-value">100K +</div>
+                <div className="metric-label">Companies Worldwide</div>
+              </div>
+            </div>
+            <div className="col-md-4 col-12">
+              <div className="metric-box">
+                <div className="metric-value">10X</div>
+                <div className="metric-label">Valuations Multiplied</div>
+              </div>
+            </div>
+            <div className="col-md-4 col-12">
+              <div className="metric-box">
+                <div className="metric-value">3X</div>
+                <div className="metric-label">Profitability Increased</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* REGISTRATION */}
       {/* INFO CARDS SECTION */}
       <section className="info-cards-section">
         <div className="container">
@@ -1151,6 +1037,120 @@ const handleShow = () => {
           </div>
         </div>
       </section>
+
+      {/* MONEY BACK SECTION */}
+       <section className="money-back-section">
+      <div className="money-back-container">
+        <div className="money-back-icon">
+          <svg viewBox="0 0 64 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              d="M32 2 L60 12 V34 C60 50 48 62 32 70 C16 62 4 50 4 34 V12 Z"
+              fill="none"
+              stroke="#F5A623"
+              strokeWidth="4"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M20 36 L29 45 L46 26"
+              fill="none"
+              stroke="#F5A623"
+              strokeWidth="5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+        <div className="money-back-text">
+          <h2>MONEY-BACK GUARANTEE</h2>
+          <p>No questions asked if you don’t find the workshop valuable.</p>
+        </div>
+      </div>
+    </section>
+
+       <section className="city-section">
+
+      <h2 className="city-title mb-5">We’re coming to your city</h2>
+
+      <div className="basecamp-slider-container">
+
+        <button className="arrow left" onClick={scrollLeft}>
+  &#8249;
+</button>
+
+
+        <div className="city-slider" ref={sliderRef}>
+
+          {cityList.map((city) => (
+            <div className="city-card" key={city.id}>
+
+              <Image src={city.image} alt={city.name} className="city-img"/>
+
+              <h3 className="city-name">
+                   
+  {/* Location Icon */}
+  <span className="icon">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="25"
+      height="25"
+      viewBox="0 0 24 24"
+      fill="white"
+    >
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
+      9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 
+      1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+    </svg>
+  </span>{city.name}
+              </h3>
+            <div className="city-location ">{city.location}</div>
+              <p className="city-date">
+                 <span className="icon">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="25"
+      height="25"
+      viewBox="0 0 24 24"
+      fill="white"
+    >
+      <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 
+      0-2 .9-2 2v14c0 1.1.9 2 2 
+      2h14c1.1 0 2-.9 
+      2-2V6c0-1.1-.9-2-2-2zm0 
+      16H5V9h14v11z"/>
+    </svg>
+  </span>{city.date}
+              </p>
+
+              {city.earlyBird && (
+                <>
+                  <p className="early-bird">{city.earlyBird}</p>
+
+                  <div className="price-row">
+                    <span className="price-old">{city.price1}</span>
+                    <span>{city.price2}</span>
+                  </div>
+                </>
+              )}
+
+              {city.status && (
+                <p className="coming">{city.status}</p>
+              )}
+
+              <button className="city-btn" onClick={city.earlyBird ? handleShow :  handleShow2}>
+                {city.button}
+              </button>
+            </div>
+          ))}
+
+        </div>
+
+        <button className="arrow right " onClick={scrollRight}> 
+  &#8250;
+</button>
+
+      </div>
+
+    </section>             
 
       <div className="row">&nbsp;</div>
       <div style={{ position: "relative" }}>
