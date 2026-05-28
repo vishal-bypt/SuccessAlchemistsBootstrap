@@ -869,31 +869,57 @@ const handleShow = () => {
                 </div>
                 <h3 className="scale-stuck-card-title">Founder Dependency</h3>
                 <p className="scale-stuck-card-text">
-                  Founders remain involved in all business decisions
+                  Founders remain involved in too many decisions.
                 </p>
               </div>
             </div>
             <div className="col-md-6 col-12">
               <div className="scale-stuck-card">
-                <h3 className="scale-stuck-card-title">Placeholder Title</h3>
+                <div className="scale-stuck-icon">
+                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="20" y="6" width="8" height="8" rx="1.5" fill="#F5A623" />
+                    <rect x="6" y="30" width="8" height="8" rx="1.5" fill="#F5A623" />
+                    <rect x="20" y="30" width="8" height="8" rx="1.5" fill="#F5A623" />
+                    <rect x="34" y="30" width="8" height="8" rx="1.5" fill="#F5A623" />
+                    <path d="M24 14 V22 M10 30 V22 H38 V30" stroke="#F5A623" strokeWidth="2" fill="none" />
+                  </svg>
+                </div>
+                <h3 className="scale-stuck-card-title">Unclear Ownership</h3>
                 <p className="scale-stuck-card-text">
-                  Short description goes here
+                  Teams are busy, but ownership is unclear.
                 </p>
               </div>
             </div>
             <div className="col-md-6 col-12">
               <div className="scale-stuck-card">
-                <h3 className="scale-stuck-card-title">Placeholder Title</h3>
+                <div className="scale-stuck-icon">
+                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="12" y="8" width="24" height="32" rx="2" fill="none" stroke="#F5A623" strokeWidth="2.5" />
+                    <rect x="18" y="4" width="12" height="6" rx="1" fill="#F5A623" />
+                    <line x1="17" y1="18" x2="31" y2="18" stroke="#F5A623" strokeWidth="2" />
+                    <line x1="17" y1="24" x2="27" y2="24" stroke="#F5A623" strokeWidth="2" />
+                    <line x1="17" y1="30" x2="29" y2="30" stroke="#F5A623" strokeWidth="2" />
+                  </svg>
+                </div>
+                <h3 className="scale-stuck-card-title">Priority Slippage</h3>
                 <p className="scale-stuck-card-text">
-                  Short description goes here
+                  Meetings happen, but priorities still slip.
                 </p>
               </div>
             </div>
             <div className="col-md-6 col-12">
               <div className="scale-stuck-card">
-                <h3 className="scale-stuck-card-title">Placeholder Title</h3>
+                <div className="scale-stuck-icon">
+                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 40 H42" stroke="#F5A623" strokeWidth="2.5" strokeLinecap="round" />
+                    <path d="M6 40 V10" stroke="#F5A623" strokeWidth="2.5" strokeLinecap="round" />
+                    <path d="M10 18 L20 26 L28 20 L40 32" stroke="#F5A623" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M40 32 L34 32 L40 26 Z" fill="#F5A623" />
+                  </svg>
+                </div>
+                <h3 className="scale-stuck-card-title">Margin Pressure</h3>
                 <p className="scale-stuck-card-text">
-                  Short description goes here
+                  Revenue grows, but margins and cash flow come under pressure.
                 </p>
               </div>
             </div>
