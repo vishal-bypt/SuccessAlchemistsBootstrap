@@ -730,6 +730,128 @@ const handleShow = () => {
           </button>
         </div>
       </div>
+      {/* HERO FORM SECTION */}
+      <section className="hero-form-section">
+        <div className="container">
+          <div className="row hero-form-row">
+            <div className="col-lg-7 col-12 hero-form-left">
+              <Image
+                src={basecamplogo2}
+                alt="BASECAMP"
+                className="hero-form-brand"
+                priority
+              />
+              <h1 className="hero-form-title">
+                <span className="hero-form-title-accent">Scale</span> Without
+                <br />
+                Founder Dependency
+              </h1>
+              <p className="hero-form-desc">
+                A 1-day Scaling Up workshop for founders and leadership teams
+                to fix execution gaps across{" "}
+                <span className="hero-form-desc-accent">
+                  People, Strategy, Execution &amp; Cash.
+                </span>
+              </p>
+
+              <ul className="hero-form-info">
+                <li>
+                  <i className="fa-solid fa-location-dot"></i>
+                  <span>Bengaluru</span>
+                  <i className="fa-regular fa-calendar ms-3"></i>
+                  <span>
+                    11<sup>th</sup> June
+                  </span>
+                </li>
+                <li>
+                  <i className="fa-regular fa-clock"></i>
+                  <span>7 hour Offline Workshop</span>
+                </li>
+                <li>
+                  <i className="fa-solid fa-ticket"></i>
+                  <span>
+                    Early Bird Rs <s>9,999</s> 7,999
+                  </span>
+                </li>
+              </ul>
+
+              <button className="btn-cta hero-form-cta" onClick={handleShow}>
+                RESERVE YOUR SPOT — SEE YOU IN BENGALURU
+              </button>
+            </div>
+
+            <div className="col-lg-5 col-12 hero-form-right">
+              <div className="hero-form-card">
+                <div className="hero-form-card-header">
+                  <div className="hero-form-card-icon">
+                    <i className="fa-solid fa-user-group"></i>
+                  </div>
+                  <h3 className="hero-form-card-title">Reserve Your Spot</h3>
+                </div>
+
+                <div className="hero-form-field">
+                  <label htmlFor="hf-name">Name</label>
+                  <input
+                    id="hf-name"
+                    type="text"
+                    placeholder="Full name"
+                    autoComplete="name"
+                  />
+                </div>
+                <div className="hero-form-field">
+                  <label htmlFor="hf-email">Email</label>
+                  <input
+                    id="hf-email"
+                    type="email"
+                    placeholder="Work email"
+                    autoComplete="email"
+                  />
+                </div>
+                <div className="hero-form-field">
+                  <label htmlFor="hf-phone">Phone</label>
+                  <input
+                    id="hf-phone"
+                    type="tel"
+                    placeholder="10-digit mobile number"
+                    autoComplete="tel"
+                  />
+                </div>
+                <div className="hero-form-field">
+                  <label htmlFor="hf-company">Company Name</label>
+                  <input
+                    id="hf-company"
+                    type="text"
+                    placeholder="Company name"
+                    autoComplete="organization"
+                  />
+                </div>
+                <div className="hero-form-field">
+                  <label htmlFor="hf-designation">Designation</label>
+                  <input
+                    id="hf-designation"
+                    type="text"
+                    placeholder="Your designation"
+                    autoComplete="organization-title"
+                  />
+                </div>
+
+                <button
+                  className="btn-cta hero-form-card-cta"
+                  onClick={handleShow}
+                >
+                  Reserve Your Spot — See You in Bangalore
+                </button>
+
+                <p className="hero-form-card-note">
+                  <i className="fa-solid fa-lock"></i> Limited seats | Offline
+                  workshop
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FIRST BASECAMP SECTION FOR MOBILE*/}
       <section className="d-block d-md-none">
         <div className="hero">
