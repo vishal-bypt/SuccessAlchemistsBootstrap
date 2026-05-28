@@ -825,27 +825,6 @@ const handleShow = () => {
       </div>
       
 
-      <div class="page-wrapper">
-        {/* <!-- TOP SECTION --> */}
-        <section class="hero">
-          <div className="company-title">
-            Your company is growing but your growth is unpredictable
-          </div>
-
-          <p class="description">
-            Business owners often come to a point where what was working earlier
-            for them stops working altogether. The team doesn’t feel equipped to
-            handle the new scale that is envisioned, and the overall pressure
-            across the company is building up.
-          </p>
-          <br />
-          <p class="description">
-            Basecamp workshop provides a proven playbook to business owners to
-            scale with absolute clarity and freedom.
-          </p>
-        </section>
-
-      </div>
       {/* UNLOCK SECTION */}
       <section className="unlock-section">
         <div className="container">
