@@ -455,7 +455,7 @@ img {
 /* Scale Stuck Section */
 .scale-stuck-section {
     background-color: #000000;
-    padding: 60px 20px 30px 20px;
+    padding: 30px 20px;
     color: var(--text-white);
 }
 
@@ -540,9 +540,6 @@ img {
 }
 
 @media (max-width: 992px) {
-    .scale-stuck-section {
-        padding: 45px 18px 25px 18px;
-    }
     .scale-stuck-eyebrow {
         font-size: 17px;
     }
@@ -565,9 +562,6 @@ img {
 }
 
 @media (max-width: 600px) {
-    .scale-stuck-section {
-        padding: 35px 15px 20px 15px;
-    }
     .scale-stuck-eyebrow {
         font-size: 16px;
     }
@@ -601,7 +595,7 @@ img {
 /* Walk Away Section */
 .walkaway-section {
     background-color: var(--primary-dark);
-    padding: 60px 20px;
+    padding: 30px 20px;
 }
 
 .walkaway-title {
@@ -662,9 +656,6 @@ img {
 }
 
 @media (max-width: 992px) {
-    .walkaway-section {
-        padding: 45px 18px;
-    }
     .walkaway-title {
         font-size: 36px;
     }
@@ -687,9 +678,6 @@ img {
 }
 
 @media (max-width: 600px) {
-    .walkaway-section {
-        padding: 35px 15px;
-    }
     .walkaway-title {
         font-size: 26px;
     }
@@ -719,7 +707,7 @@ img {
 /* Info Cards Section */
 .info-cards-section {
     background-color: #ffffff;
-    padding: 50px 20px 70px 20px;
+    padding: 30px 20px;
 }
 
 .info-cards-row {
@@ -763,9 +751,6 @@ img {
 }
 
 @media (max-width: 992px) {
-    .info-cards-section {
-        padding: 40px 18px 55px 18px;
-    }
     .info-card {
         padding: 28px 26px;
         border-radius: 18px;
@@ -781,9 +766,6 @@ img {
 }
 
 @media (max-width: 600px) {
-    .info-cards-section {
-        padding: 32px 15px 40px 15px;
-    }
     .info-cards-row {
         row-gap: 20px;
     }
@@ -2105,7 +2087,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 30px 20px;
 }
 
 .money-back-container {
@@ -2171,10 +2153,6 @@ img {
 
 /* Mobile */
 @media (max-width: 600px) {
-  .money-back-section {
-    padding: 28px 15px;
-  }
-
   .money-back-container {
     flex-direction: column;
     text-align: center;
