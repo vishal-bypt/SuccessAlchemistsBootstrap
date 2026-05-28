@@ -1153,41 +1153,6 @@ const handleShow = () => {
         </div>
        
       </div>
-      <section className="section excite-section">
-        <div className="container">
-          <div className="unlock-title">
-            This Should Excite You If…{" "}
-          </div>
-          <div className="row">
-            {/* <div className="col-md-1 d-none d-md-block">&nbsp;</div> */}
-            <div className="col-md-11 col-12 excite-section-list">
-              <i className="fa-solid fa-arrow-trend-up me-2"></i> You are
-              running a company with turnover of 50 CR+
-            </div>
-          </div>
-          {/* <div className="row spacer"></div> */}
-          <div className="row">
-            {/* <div className="col-md-1 d-none d-md-block">&nbsp;</div> */}
-            <div className="col-md-11 col-12 excite-section-list">
-              <i className="fa-solid fa-arrow-trend-up me-2"></i> You are
-              serious about scaling up your business{" "}
-              {/* <br className="d-none d-md-block" /> */}
-              exponentially in the next 10 years
-            </div>
-          </div>
-          {/* <div className="row spacer"></div> */}
-          <div className="row">
-            {/* <div className="col-md-1 d-none d-md-block">&nbsp;</div> */}
-            <div className="col-md-11 col-12 excite-section-list">
-              <i className="fa-solid fa-arrow-trend-up me-2"></i> You know what
-              got you here, won’t take you to the next{" "}
-              {/* <br className="d-none d-md-block" /> */}
-              level
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="faq-section">
         <div className="container">
           <h2 className="unlock-title">Have Questions About BASECAMP?</h2>
