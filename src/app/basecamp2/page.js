@@ -1015,79 +1015,54 @@ const handleShow = () => {
       </div>
     </section>
 
-      {/* EXPERIENCE SECTION */}
-      <section className="experience-section">
+      {/* WALK AWAY SECTION */}
+      <section className="walkaway-section">
         <div className="container">
-          <div className="experience-section-title">
-            What You'll Experience At{" "} BASECAMP?
+          <div className="walkaway-title">What You Will Walk Away With</div>
+          <div className="walkaway-subtitle">
+            By the end of the Basecamp, participants will have
           </div>
 
-          <div className="row experience-grid ">
+          <div className="row walkaway-grid">
             <div className="col-md-6 col-12">
-              <div className="experience-item">
-                <div className="experience-icon">
-                  <img src="arrow.png" width="150" alt="arrow" />
+              <div className="walkaway-item">
+                <div className="walkaway-icon">
+                  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="18" cy="40" r="13" fill="#F5A623" />
+                    <circle cx="46" cy="40" r="13" fill="#F5A623" />
+                    <circle cx="18" cy="40" r="5" fill="#1d2945" />
+                    <circle cx="46" cy="40" r="5" fill="#1d2945" />
+                    <rect x="14" y="16" width="10" height="14" rx="2" fill="#F5A623" />
+                    <rect x="40" y="16" width="10" height="14" rx="2" fill="#F5A623" />
+                    <rect x="22" y="22" width="20" height="6" fill="#F5A623" />
+                  </svg>
                 </div>
-                <div className="experience-text">
-                  Discover how other players in your industry are scaling their
-                  businesses
+                <div className="walkaway-text">
+                  A clearer view of what is blocking scale in their business
                 </div>
               </div>
             </div>
             <div className="col-md-6 col-12">
-              <div className="experience-item">
-                <div className="experience-icon">
-                  <img src="arrow.png" width="150" alt="arrow" />
-                </div>
-                <div className="experience-text">
-                  Learn the nuances of business growth from scaling up certified
-                  coaches
+              <div className="walkaway-item">
+                <div className="walkaway-text">
+                  A practical understanding of the Scaling Up Framework
                 </div>
               </div>
             </div>
             <div className="col-md-6 col-12">
-              <div className="experience-item">
-                <div className="experience-icon">
-                  <img src="arrow.png" width="150" alt="arrow" />
-                </div>
-                <div className="experience-text">
-                  Identify the gaps in your current business that's hindering
-                  your next big leap
+              <div className="walkaway-item">
+                <div className="walkaway-text">
+                  Better clarity on People, Strategy, Execution & Cash gaps
                 </div>
               </div>
             </div>
             <div className="col-md-6 col-12">
-              <div className="experience-item">
-                <div className="experience-icon">
-                  <img src="arrow.png" width="150" alt="arrow" />
-                </div>
-                <div className="experience-text">
-                  Network with other ambitious business owners & leaders
+              <div className="walkaway-item">
+                <div className="walkaway-text">
+                  A 90-day direction to improve accountability and business
+                  momentum
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="highlight-box">
-            <div className="highlight-icon">
-              <img src="./rocket_growth.png" width="240" />
-            </div>
-            {/* <div className="highlight-text">
-              In our past workshops, leaders{" "}
-              <br className="d-none d-md-block" />
-              have figured out a{" "}
-              <span className="highlight-yellow">
-                5-15% <br className="d-none d-md-block" />
-                Cashflow Growth Strategy{" "}
-              </span>
-              for <br className="d-none d-md-block" />
-              their respective businesses during{" "}
-              <br className="d-none d-md-block" />
-              the sessions.
-            </div> */}
-            <div className="highlight-text">
-              Tools & Frameworks that’ll enable you to navigate through the
-              chaos that comes when you’re trying to scale your business.
             </div>
           </div>
         </div>

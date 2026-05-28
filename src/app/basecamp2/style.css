@@ -142,27 +142,6 @@ font-size:26px;
 }
 }
 
-.experience-section-title{
-    color: var(--text-white);
-  font-size:48px;
-  font-weight:600;
-  text-align: center;
-}
-
-@media (max-width: 992px) {
-    .experience-section-title{
-font-size:36px;
-}
-}
-
-@media (max-width:600px) {
-.experience-section-title{
-font-size:26px;
-}
-}
-
-
-
 .nav-link-custom {
     color: var(--text-white) !important;
     font-weight: 500;
@@ -493,47 +472,121 @@ img {
     font-weight: 700;
 }
 
-/* Experience Section */
-.experience-section {
+/* Walk Away Section */
+.walkaway-section {
     background-color: var(--primary-dark);
-    padding: 30px 20px;
+    padding: 60px 20px;
 }
 
-.experience-section .section-title {
+.walkaway-title {
     color: var(--text-white);
-    font-size: 52px;
+    font-size: 48px;
     font-weight: 800;
+    text-align: center;
+    margin-bottom: 14px;
 }
 
-.experience-grid {
-    margin-top: 25px;
-}
-
-.experience-item {
-    background-color: transparent;
-    padding: 15px 0;
-    border-radius: 0;
-    margin-bottom: 25px;
-    display: flex;
-    align-items: flex-start;
-    gap: 25px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.experience-item:last-child {
-    border-bottom: none;
-}
-
-.experience-icon {
-    font-size: 36px;
+.walkaway-subtitle {
     color: var(--text-white);
-    flex-shrink: 0;
-    margin-top: 5px;
+    font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 40px;
+    opacity: 0.95;
 }
 
-.experience-icon img {
-    max-width: 100%;
-    height: auto;
+.walkaway-grid {
+    margin-top: 10px;
+    row-gap: 28px;
+}
+
+.walkaway-item {
+    border: 2px dashed rgba(255, 255, 255, 0.85);
+    border-radius: 6px;
+    padding: 36px 24px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+}
+
+.walkaway-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.walkaway-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.walkaway-text {
+    color: var(--text-white);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.45;
+    max-width: 360px;
+}
+
+@media (max-width: 992px) {
+    .walkaway-section {
+        padding: 45px 18px;
+    }
+    .walkaway-title {
+        font-size: 36px;
+    }
+    .walkaway-subtitle {
+        font-size: 18px;
+        margin-bottom: 28px;
+    }
+    .walkaway-item {
+        padding: 28px 18px;
+        min-height: 170px;
+    }
+    .walkaway-text {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+    .walkaway-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .walkaway-section {
+        padding: 35px 15px;
+    }
+    .walkaway-title {
+        font-size: 26px;
+    }
+    .walkaway-subtitle {
+        font-size: 15px;
+        margin-bottom: 22px;
+    }
+    .walkaway-grid {
+        row-gap: 18px;
+    }
+    .walkaway-item {
+        padding: 24px 16px;
+        min-height: 140px;
+    }
+    .walkaway-text {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .walkaway-icon {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 10px;
+    }
 }
 
 
@@ -606,66 +659,6 @@ img {
 
 .floating-register-button:active {
   transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-    .experience-icon img {
-        width: 150px !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .experience-icon img {
-        width: 120px !important;
-    }
-}
-
-.experience-text {
-    color: var(--text-white);
-    font-size: 22px;
-    /* text-transform: uppercase; */
-    /* line-height: 1.7; */
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    width: 300px;
-}
-
-.highlight-box {
-    background-color: transparent;
-    border: 2px dashed var(--text-white);
-    border-radius: 10px;
-    /* padding: 35px; */
-    /* margin-top: 20px; */
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
-.highlight-icon {
-    /* font-size: 102px; */
-    color: var(--accent-yellow);
-    flex-shrink: 0;
-    padding: 30px;
-}
-
-.highlight-icon img {
-    max-width: 80%;
-    height: auto;
-}
-
-.highlight-text {
-    color: #fdae07;
-    font-size: 22px;
-    line-height: 1.7;
-    font-weight: 400;
-    /* letter-spacing: 6px; */
-    padding: 40px;
-}
-
-.highlight-text .highlight-yellow {
-    color: var(--accent-yellow);
-    font-weight: bold;
 }
 
 /* Join Us Section */
@@ -910,27 +903,6 @@ img {
         font-size: 20px;
     }
 
-    .highlight-box {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-    }
-
-    .highlight-icon {
-        font-size: 72px;
-        padding: 30px;
-    }
-
-    .highlight-icon img {
-        width: 180px !important;
-    }
-
-    .highlight-text {
-        font-size: 22px;
-        padding: 20px;
-        letter-spacing: 3px;
-    }
-
     /* Join Section - Tablet */
     .join-left {
         padding: 60px 40px;
@@ -1092,55 +1064,6 @@ img {
 
     .metric-label {
         font-size: 13px;
-    }
-
-    .experience-item {
-        padding: 5px 0;
-        margin-bottom: 5px;
-        flex-direction: column;
-        gap: 5px;
-        align-items: center;
-        text-align: center;
-    }
-
-    .experience-icon {
-        font-size: 28px;
-        margin-top: 0;
-    }
-
-    .experience-icon img {
-        width: 140px !important;
-        max-width: 100%;
-    }
-
-    .experience-text {
-        font-size: 17px;
-        width: 100%;
-        line-height: 1.6;
-        text-align: center;
-    }
-
-    .highlight-box {
-        margin-top: 40px;
-        padding: 30px 20px;
-        gap: 25px;
-    }
-
-    .highlight-icon {
-        font-size: 64px;
-        padding: 25px;
-    }
-
-    .highlight-icon img {
-        width: 160px !important;
-        max-width: 100%;
-    }
-
-    .highlight-text {
-        font-size: 19px;
-        padding: 15px;
-        letter-spacing: 2px;
-        line-height: 1.7;
     }
 
     /* Join Section - Mobile */
@@ -1341,42 +1264,6 @@ img {
         font-size: 12px;
     }
 
-    .experience-item {
-        padding: 3px 0;
-        margin-bottom: 3px;
-    }
-
-    .experience-icon img {
-        width: 120px !important;
-    }
-
-    .experience-text {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    .highlight-box {
-        margin-top: 35px;
-        padding: 25px 15px;
-        gap: 20px;
-    }
-
-    .highlight-icon {
-        font-size: 56px;
-        padding: 20px;
-    }
-
-    .highlight-icon img {
-        width: 140px !important;
-    }
-
-    .highlight-text {
-        font-size: 17px;
-        padding: 12px;
-        letter-spacing: 1.5px;
-        line-height: 1.6;
-    }
-
     /* Join Section - Small Mobile */
     .join-left {
         padding: 40px 20px;
@@ -1464,11 +1351,6 @@ img {
 
     .join-left h1 {
         font-size: 32px;
-    }
-
-    .highlight-text {
-        font-size: 15px;
-        letter-spacing: 1px;
     }
 
     /* .hero-content-footer h3 {
