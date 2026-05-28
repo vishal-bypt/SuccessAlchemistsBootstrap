@@ -1047,6 +1047,48 @@ const handleShow = () => {
         </div>
       </section>
 
+      {/* INFO CARDS SECTION */}
+      <section className="info-cards-section">
+        <div className="container">
+          <div className="row info-cards-row">
+            <div className="col-lg-4 col-md-6 col-12">
+              <div className="info-card">
+                <h3 className="info-card-title">Who Should Attend?</h3>
+                <ul className="info-card-list">
+                  <li>Founders</li>
+                  <li>CXOs</li>
+                  <li>Leadership Teams</li>
+                  <li>L1 Leaders</li>
+                  <li>Board Members</li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6 col-12">
+              <div className="info-card">
+                <h3 className="info-card-title">What’s Included?</h3>
+                <ul className="info-card-list">
+                  <li>People, Strategy, Cash &amp; Execution sessions</li>
+                  <li>Tools, Frameworks &amp; practical insights</li>
+                  <li>Actionable takeaways for your business</li>
+                  <li>Lunch &amp; hi-tea</li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6 col-12">
+              <div className="info-card">
+                <h3 className="info-card-title">Why It’s Different?</h3>
+                <ul className="info-card-list">
+                  <li>No generic business gyaan</li>
+                  <li>Led by Scaling Up Certified coaches</li>
+                  <li>Built around real business challenges</li>
+                  <li>Focussed on practical implementaion</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div className="row">&nbsp;</div>
       <div style={{ position: "relative" }}>
         <Swiper
