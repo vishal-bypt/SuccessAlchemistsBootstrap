@@ -1303,17 +1303,17 @@ const handleShow = () => {
           <div className="hero-content-footer text-center">
             <h3
               className="d-none d-md-block"
-              
+
             >
-              Are You <br />{" "}
-              <span style={{ color: "#fdae07" }}>Ready To Scale?</span>
+              <span style={{ color: "#fdae07" }}>Ready to Scale</span> <br />{" "}
+              with More Clarity?
             </h3>
             <h3
               className="d-block d-md-none"
-             
+
             >
-              Are You{" "}
-              <span style={{ color: "#fdae07" }}>Ready To Scale?</span>
+              <span style={{ color: "#fdae07" }}>Ready to Scale</span>{" "}
+              with More Clarity?
             </h3>
             <p className="hero-subtitle">
               <button
@@ -1322,10 +1322,10 @@ const handleShow = () => {
                 onClick={handleShow}
                 //  disabled
               >
-                Limited spots Available
+                LIMITED SPOTS AVAILABLE
                 <br />
                 <span className="btn-text">
-                  <strong>ReGISTER NOW for basecamp</strong>
+                  <strong>RESERVE YOUR SPOT FOR BENGALURU NOW</strong>
                 </span>{" "}
               </button>
             </p>
