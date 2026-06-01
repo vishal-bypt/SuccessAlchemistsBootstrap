@@ -8,6 +8,15 @@ import delhi from "./delhi.png";
 import bangalore from "./bangaluru.jpg";
 import pune from "./pune.jpeg";
 import mumbai from "./mumbai.jpg";
+import founderDependencyIcon from "../../../public/assets/images/founder-dependency.svg";
+import unclearOwnershipIcon from "../../../public/assets/images/unclear-ownership.svg";
+import prioritySlippageIcon from "../../../public/assets/images/priority-slippage.svg";
+import marginPressureIcon from "../../../public/assets/images/margin-pressure.svg";
+import blockingScaleIcon from "../../../public/assets/images/blocking-scale.svg";
+import scalingUpFrameworkIcon from "../../../public/assets/images/scaling-up-framework.svg";
+import peopleStrategyIcon from "../../../public/assets/images/people-strategy.svg";
+import ninetyDaysIcon from "../../../public/assets/images/90-days.svg";
+import moneyBackIcon from "../../../public/assets/images/money-back.svg";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -862,10 +871,7 @@ const handleShow = () => {
             <div className="col-md-6 col-12">
               <div className="scale-stuck-card">
                 <div className="scale-stuck-icon">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="24" cy="16" r="7" fill="#F5A623" />
-                    <path d="M10 40 C10 30 18 26 24 26 C30 26 38 30 38 40 Z" fill="#F5A623" />
-                  </svg>
+                  <Image src={founderDependencyIcon} alt="Founder Dependency" />
                 </div>
                 <h3 className="scale-stuck-card-title">Founder Dependency</h3>
                 <p className="scale-stuck-card-text">
@@ -876,13 +882,7 @@ const handleShow = () => {
             <div className="col-md-6 col-12">
               <div className="scale-stuck-card">
                 <div className="scale-stuck-icon">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <rect x="20" y="6" width="8" height="8" rx="1.5" fill="#F5A623" />
-                    <rect x="6" y="30" width="8" height="8" rx="1.5" fill="#F5A623" />
-                    <rect x="20" y="30" width="8" height="8" rx="1.5" fill="#F5A623" />
-                    <rect x="34" y="30" width="8" height="8" rx="1.5" fill="#F5A623" />
-                    <path d="M24 14 V22 M10 30 V22 H38 V30" stroke="#F5A623" strokeWidth="2" fill="none" />
-                  </svg>
+                  <Image src={unclearOwnershipIcon} alt="Unclear Ownership" />
                 </div>
                 <h3 className="scale-stuck-card-title">Unclear Ownership</h3>
                 <p className="scale-stuck-card-text">
@@ -893,13 +893,7 @@ const handleShow = () => {
             <div className="col-md-6 col-12">
               <div className="scale-stuck-card">
                 <div className="scale-stuck-icon">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <rect x="12" y="8" width="24" height="32" rx="2" fill="none" stroke="#F5A623" strokeWidth="2.5" />
-                    <rect x="18" y="4" width="12" height="6" rx="1" fill="#F5A623" />
-                    <line x1="17" y1="18" x2="31" y2="18" stroke="#F5A623" strokeWidth="2" />
-                    <line x1="17" y1="24" x2="27" y2="24" stroke="#F5A623" strokeWidth="2" />
-                    <line x1="17" y1="30" x2="29" y2="30" stroke="#F5A623" strokeWidth="2" />
-                  </svg>
+                  <Image src={prioritySlippageIcon} alt="Priority Slippage" />
                 </div>
                 <h3 className="scale-stuck-card-title">Priority Slippage</h3>
                 <p className="scale-stuck-card-text">
@@ -910,12 +904,7 @@ const handleShow = () => {
             <div className="col-md-6 col-12">
               <div className="scale-stuck-card">
                 <div className="scale-stuck-icon">
-                  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M6 40 H42" stroke="#F5A623" strokeWidth="2.5" strokeLinecap="round" />
-                    <path d="M6 40 V10" stroke="#F5A623" strokeWidth="2.5" strokeLinecap="round" />
-                    <path d="M10 18 L20 26 L28 20 L40 32" stroke="#F5A623" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M40 32 L34 32 L40 26 Z" fill="#F5A623" />
-                  </svg>
+                  <Image src={marginPressureIcon} alt="Margin Pressure" />
                 </div>
                 <h3 className="scale-stuck-card-title">Margin Pressure</h3>
                 <p className="scale-stuck-card-text">
@@ -939,15 +928,7 @@ const handleShow = () => {
             <div className="col-md-6 col-12">
               <div className="walkaway-item">
                 <div className="walkaway-icon">
-                  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="18" cy="40" r="13" fill="#F5A623" />
-                    <circle cx="46" cy="40" r="13" fill="#F5A623" />
-                    <circle cx="18" cy="40" r="5" fill="#1d2945" />
-                    <circle cx="46" cy="40" r="5" fill="#1d2945" />
-                    <rect x="14" y="16" width="10" height="14" rx="2" fill="#F5A623" />
-                    <rect x="40" y="16" width="10" height="14" rx="2" fill="#F5A623" />
-                    <rect x="22" y="22" width="20" height="6" fill="#F5A623" />
-                  </svg>
+                  <Image src={blockingScaleIcon} alt="Blocking scale" />
                 </div>
                 <div className="walkaway-text">
                   A clearer view of what is blocking scale in their business
@@ -956,6 +937,9 @@ const handleShow = () => {
             </div>
             <div className="col-md-6 col-12">
               <div className="walkaway-item">
+                <div className="walkaway-icon">
+                  <Image src={scalingUpFrameworkIcon} alt="Scaling Up Framework" />
+                </div>
                 <div className="walkaway-text">
                   A practical understanding of the Scaling Up Framework
                 </div>
@@ -963,6 +947,9 @@ const handleShow = () => {
             </div>
             <div className="col-md-6 col-12">
               <div className="walkaway-item">
+                <div className="walkaway-icon">
+                  <Image src={peopleStrategyIcon} alt="People, Strategy, Execution & Cash" />
+                </div>
                 <div className="walkaway-text">
                   Better clarity on People, Strategy, Execution & Cash gaps
                 </div>
@@ -970,6 +957,9 @@ const handleShow = () => {
             </div>
             <div className="col-md-6 col-12">
               <div className="walkaway-item">
+                <div className="walkaway-icon">
+                  <Image src={ninetyDaysIcon} alt="90-day direction" />
+                </div>
                 <div className="walkaway-text">
                   A 90-day direction to improve accountability and business
                   momentum
@@ -1081,23 +1071,7 @@ const handleShow = () => {
        <section className="money-back-section">
       <div className="money-back-container">
         <div className="money-back-icon">
-          <svg viewBox="0 0 64 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path
-              d="M32 2 L60 12 V34 C60 50 48 62 32 70 C16 62 4 50 4 34 V12 Z"
-              fill="none"
-              stroke="#F5A623"
-              strokeWidth="4"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M20 36 L29 45 L46 26"
-              fill="none"
-              stroke="#F5A623"
-              strokeWidth="5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <Image src={moneyBackIcon} alt="Money-back guarantee" />
         </div>
         <div className="money-back-text">
           <h2>MONEY-BACK GUARANTEE</h2>

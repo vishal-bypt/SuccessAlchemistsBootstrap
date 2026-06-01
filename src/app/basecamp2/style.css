@@ -775,9 +775,11 @@ img {
     justify-content: center;
 }
 
-.scale-stuck-icon svg {
+.scale-stuck-icon svg,
+.scale-stuck-icon img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
 }
 
 .scale-stuck-card-title {
@@ -882,7 +884,8 @@ img {
     border: 2px dashed rgba(255, 255, 255, 0.85);
     border-radius: 6px;
     padding: 36px 24px;
-    min-height: 200px;
+    min-height: 240px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -892,17 +895,19 @@ img {
 }
 
 .walkaway-icon {
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
     margin-bottom: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.walkaway-icon svg {
+.walkaway-icon svg,
+.walkaway-icon img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
 }
 
 .walkaway-text {
@@ -923,15 +928,15 @@ img {
     }
     .walkaway-item {
         padding: 28px 18px;
-        min-height: 170px;
+        min-height: 200px;
     }
     .walkaway-text {
         font-size: 17px;
         line-height: 1.6;
     }
     .walkaway-icon {
-        width: 50px;
-        height: 50px;
+        width: 42px;
+        height: 42px;
     }
 }
 
@@ -948,15 +953,15 @@ img {
     }
     .walkaway-item {
         padding: 24px 16px;
-        min-height: 140px;
+        min-height: 170px;
     }
     .walkaway-text {
         font-size: 16px;
         line-height: 1.5;
     }
     .walkaway-icon {
-        width: 44px;
-        height: 44px;
+        width: 38px;
+        height: 38px;
         margin-bottom: 10px;
     }
 }
@@ -2329,9 +2334,11 @@ img {
   justify-content: center;
 }
 
-.money-back-icon svg {
+.money-back-icon svg,
+.money-back-icon img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 
 .money-back-text {
