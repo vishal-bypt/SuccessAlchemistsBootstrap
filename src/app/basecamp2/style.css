@@ -258,6 +258,17 @@ body {
     border-color: #fdae07;
 }
 
+.hero-form-field input.hf-invalid {
+    border-color: #dc3545;
+}
+
+.hero-form-error {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: #dc3545;
+}
+
 .hero-form-card-cta {
     width: 100%;
     text-align: center !important;

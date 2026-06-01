@@ -36,7 +36,19 @@ export default function BasecampPage() {
     const [show2, setShow2] = useState(false);
 
   const swiperRef = useRef(null);
-  const handleClose = () => setShow(false);
+  // Holds the hero (outer) form data when the dialog is opened from it, so the
+  // lead can be stored even if the user closes the dialog without submitting.
+  const pendingHeroLeadRef = useRef(null);
+  const handleClose = () => {
+    setShow(false);
+    if (pendingHeroLeadRef.current) {
+      const lead = pendingHeroLeadRef.current;
+      pendingHeroLeadRef.current = null;
+      saveHeroLead(lead);
+    }
+    // Clear the hero (outer) form when returning to the page after the popup.
+    resetHero();
+  };
 const handleShow = () => {
   reset();   // ✅ reset here
   setShow(true);
@@ -89,6 +101,23 @@ const handleShow = () => {
         promoCode: "",
       },
     });
+
+  // Hero (outer) "Reserve Your Spot" form
+  const {
+    register: registerHero,
+    handleSubmit: heroHandleSubmit,
+    formState: { errors: errorsHero },
+    reset: resetHero,
+  } = useForm({
+    mode: "onChange",
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      companyName: "",
+      designation: "",
+    },
+  });
 
   const [order_id] = useState(`ORD${Date.now()}`);
   const [discount, setDiscount] = useState(0);
@@ -296,7 +325,50 @@ const handleShow = () => {
     setCurrentIndex(currentIndex - 1);
   };
 
+  // Hero form submit: prefill the "Book Your Seat" dialog and open it.
+  const onHeroSubmit = (data) => {
+    setValue("name", data.name, { shouldValidate: true });
+    setValue("email", data.email, { shouldValidate: true });
+    setValue("phone", data.phone, { shouldValidate: true });
+    setValue("companyName", data.companyName, { shouldValidate: true });
+    setValue("basecampLocation", "Bangalore - 11th June’26", {
+      shouldValidate: true,
+    });
+    // Remember the lead so it is still stored if the dialog is closed unsubmitted.
+    pendingHeroLeadRef.current = data;
+    setShow(true);
+  };
+
+  // Persist a hero-form lead (abandoned dialog) via the same backend that the
+  // dialog form uses; it writes to MongoDB and is synced to Google Sheets.
+  const saveHeroLead = async (data) => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    if (!apiUrl || !executeRecaptcha) return;
+    try {
+      const recaptchaToken = await executeRecaptcha("basecamp_lead");
+      await fetch(apiUrl + "/register-interest", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          billing_name: data.name,
+          billing_email: data.email,
+          billing_tel: data.phone,
+          company: data.companyName,
+          designation: data.designation,
+          basecampLocation: "Bangalore",
+          type: "basecamp-lead",
+          recaptchaToken,
+        }),
+      });
+    } catch (error) {
+      // Best-effort background capture — never block or alert the user on failure.
+      console.warn("Lead capture failed:", error);
+    }
+  };
+
   const handleSubmit = async (data) => {
+    // Full registration takes over; do not also store the hero lead.
+    pendingHeroLeadRef.current = null;
     if (data.website) {
       //return res.status(400).json({ error: 'Spam detected' });
       console.error("Error:", "Spam detected");
@@ -784,58 +856,122 @@ const handleShow = () => {
                   <h3 className="hero-form-card-title">Reserve Your Spot</h3>
                 </div>
 
-                <div className="hero-form-field">
-                  <label htmlFor="hf-name">Name</label>
-                  <input
-                    id="hf-name"
-                    type="text"
-                    placeholder="Full name"
-                    autoComplete="name"
-                  />
-                </div>
-                <div className="hero-form-field">
-                  <label htmlFor="hf-email">Email</label>
-                  <input
-                    id="hf-email"
-                    type="email"
-                    placeholder="Work email"
-                    autoComplete="email"
-                  />
-                </div>
-                <div className="hero-form-field">
-                  <label htmlFor="hf-phone">Phone</label>
-                  <input
-                    id="hf-phone"
-                    type="tel"
-                    placeholder="10-digit mobile number"
-                    autoComplete="tel"
-                  />
-                </div>
-                <div className="hero-form-field">
-                  <label htmlFor="hf-company">Company Name</label>
-                  <input
-                    id="hf-company"
-                    type="text"
-                    placeholder="Company name"
-                    autoComplete="organization"
-                  />
-                </div>
-                <div className="hero-form-field">
-                  <label htmlFor="hf-designation">Designation</label>
-                  <input
-                    id="hf-designation"
-                    type="text"
-                    placeholder="Your designation"
-                    autoComplete="organization-title"
-                  />
-                </div>
+                <form onSubmit={heroHandleSubmit(onHeroSubmit)} noValidate>
+                  <div className="hero-form-field">
+                    <label htmlFor="hf-name">Name</label>
+                    <input
+                      id="hf-name"
+                      type="text"
+                      placeholder="Full name"
+                      autoComplete="name"
+                      className={errorsHero.name ? "hf-invalid" : ""}
+                      {...registerHero("name", {
+                        required: "Name is required",
+                        minLength: {
+                          value: 2,
+                          message: "Name must be at least 2 characters",
+                        },
+                      })}
+                    />
+                    {errorsHero.name && (
+                      <span className="hero-form-error">
+                        {errorsHero.name.message}
+                      </span>
+                    )}
+                  </div>
+                  <div className="hero-form-field">
+                    <label htmlFor="hf-email">Email</label>
+                    <input
+                      id="hf-email"
+                      type="email"
+                      placeholder="Work email"
+                      autoComplete="email"
+                      className={errorsHero.email ? "hf-invalid" : ""}
+                      {...registerHero("email", {
+                        required: "Email is required",
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: "Invalid email address",
+                        },
+                      })}
+                    />
+                    {errorsHero.email && (
+                      <span className="hero-form-error">
+                        {errorsHero.email.message}
+                      </span>
+                    )}
+                  </div>
+                  <div className="hero-form-field">
+                    <label htmlFor="hf-phone">Phone</label>
+                    <input
+                      id="hf-phone"
+                      type="tel"
+                      placeholder="10-digit mobile number"
+                      autoComplete="tel"
+                      className={errorsHero.phone ? "hf-invalid" : ""}
+                      {...registerHero("phone", {
+                        required: "Phone number is required",
+                        pattern: {
+                          value: /^\d{10}$/,
+                          message: "Phone number must be 10 digits",
+                        },
+                      })}
+                    />
+                    {errorsHero.phone && (
+                      <span className="hero-form-error">
+                        {errorsHero.phone.message}
+                      </span>
+                    )}
+                  </div>
+                  <div className="hero-form-field">
+                    <label htmlFor="hf-company">Company Name</label>
+                    <input
+                      id="hf-company"
+                      type="text"
+                      placeholder="Company name"
+                      autoComplete="organization"
+                      className={errorsHero.companyName ? "hf-invalid" : ""}
+                      {...registerHero("companyName", {
+                        required: "Company name is required",
+                        minLength: {
+                          value: 2,
+                          message: "Company name must be at least 2 characters",
+                        },
+                      })}
+                    />
+                    {errorsHero.companyName && (
+                      <span className="hero-form-error">
+                        {errorsHero.companyName.message}
+                      </span>
+                    )}
+                  </div>
+                  <div className="hero-form-field">
+                    <label htmlFor="hf-designation">Designation</label>
+                    <input
+                      id="hf-designation"
+                      type="text"
+                      placeholder="Your designation"
+                      autoComplete="organization-title"
+                      className={errorsHero.designation ? "hf-invalid" : ""}
+                      {...registerHero("designation", {
+                        required: "Designation is required",
+                        minLength: {
+                          value: 2,
+                          message: "Designation must be at least 2 characters",
+                        },
+                      })}
+                    />
+                    {errorsHero.designation && (
+                      <span className="hero-form-error">
+                        {errorsHero.designation.message}
+                      </span>
+                    )}
+                  </div>
 
-                <button
-                  className="btn-cta hero-form-card-cta"
-                  onClick={handleShow}
-                >
-                  Reserve Your Spot — See You in Bangalore
-                </button>
+                  <button type="submit" className="btn-cta hero-form-card-cta">
+                    Reserve Your Spot — See You in Bangalore
+                  </button>
+                </form>
 
                 <p className="hero-form-card-note">
                   <i className="fa-solid fa-lock"></i> Limited seats | Offline
