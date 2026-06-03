@@ -8,6 +8,15 @@ import delhi from "./delhi.png";
 import bangalore from "./bangaluru.jpg";
 import pune from "./pune.jpeg";
 import mumbai from "./mumbai.jpg";
+import founderDependencyIcon from "../../../public/assets/images/founder-dependency.svg";
+import unclearOwnershipIcon from "../../../public/assets/images/unclear-ownership.svg";
+import prioritySlippageIcon from "../../../public/assets/images/priority-slippage.svg";
+import marginPressureIcon from "../../../public/assets/images/margin-pressure.svg";
+import blockingScaleIcon from "../../../public/assets/images/blocking-scale.svg";
+import scalingUpFrameworkIcon from "../../../public/assets/images/scaling-up-framework.svg";
+import peopleStrategyIcon from "../../../public/assets/images/people-strategy.svg";
+import ninetyDaysIcon from "../../../public/assets/images/90-days.svg";
+import moneyBackIcon from "../../../public/assets/images/money-back.svg";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -15,7 +24,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Toast from "../../components/Toast";
-import backgroundImage from "./../../../public/DSC03514.jpg";
 import "./style.css";
 // Import Swiper styles
 import "swiper/css";
@@ -28,7 +36,19 @@ export default function BasecampPage() {
     const [show2, setShow2] = useState(false);
 
   const swiperRef = useRef(null);
-  const handleClose = () => setShow(false);
+  // Holds the hero (outer) form data when the dialog is opened from it, so the
+  // lead can be stored even if the user closes the dialog without submitting.
+  const pendingHeroLeadRef = useRef(null);
+  const handleClose = () => {
+    setShow(false);
+    if (pendingHeroLeadRef.current) {
+      const lead = pendingHeroLeadRef.current;
+      pendingHeroLeadRef.current = null;
+      saveHeroLead(lead);
+    }
+    // Clear the hero (outer) form when returning to the page after the popup.
+    resetHero();
+  };
 const handleShow = () => {
   reset();   // ✅ reset here
   setShow(true);
@@ -82,6 +102,23 @@ const handleShow = () => {
       },
     });
 
+  // Hero (outer) "Reserve Your Spot" form
+  const {
+    register: registerHero,
+    handleSubmit: heroHandleSubmit,
+    formState: { errors: errorsHero },
+    reset: resetHero,
+  } = useForm({
+    mode: "onChange",
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      companyName: "",
+      designation: "",
+    },
+  });
+
   const [order_id] = useState(`ORD${Date.now()}`);
   const [discount, setDiscount] = useState(0);
   const [promoApplied, setPromoApplied] = useState(false);
@@ -115,13 +152,6 @@ const handleShow = () => {
     "DMS20",
     "365CIRCLE",
     "STARTLABS"
-  ];
-
-  const [sentenceIndex, setSentenceIndex] = useState(0);
-  const sentences = [
-    "A workshop that can help you build a winning strategy for accelerated growth.",
-    "A workshop that can bring a culture of accountability & excellence in your teams.",
-    "A workshop that can help you identify roadblocks & gaps in your exponential growth journey.",
   ];
 
   const items = [
@@ -283,12 +313,6 @@ const handleShow = () => {
     }
   }, [executeRecaptcha]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSentenceIndex((prev) => (prev + 1) % sentences.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   const forward = () => {
     if (currentIndex === items.length) return;
@@ -301,7 +325,50 @@ const handleShow = () => {
     setCurrentIndex(currentIndex - 1);
   };
 
+  // Hero form submit: prefill the "Book Your Seat" dialog and open it.
+  const onHeroSubmit = (data) => {
+    setValue("name", data.name, { shouldValidate: true });
+    setValue("email", data.email, { shouldValidate: true });
+    setValue("phone", data.phone, { shouldValidate: true });
+    setValue("companyName", data.companyName, { shouldValidate: true });
+    setValue("basecampLocation", "Bangalore - 11th June’26", {
+      shouldValidate: true,
+    });
+    // Remember the lead so it is still stored if the dialog is closed unsubmitted.
+    pendingHeroLeadRef.current = data;
+    setShow(true);
+  };
+
+  // Persist a hero-form lead (abandoned dialog) via the same backend that the
+  // dialog form uses; it writes to MongoDB and is synced to Google Sheets.
+  const saveHeroLead = async (data) => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    if (!apiUrl || !executeRecaptcha) return;
+    try {
+      const recaptchaToken = await executeRecaptcha("basecamp_lead");
+      await fetch(apiUrl + "/register-interest", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          billing_name: data.name,
+          billing_email: data.email,
+          billing_tel: data.phone,
+          company: data.companyName,
+          designation: data.designation,
+          basecampLocation: "Bangalore",
+          type: "basecamp-lead",
+          recaptchaToken,
+        }),
+      });
+    } catch (error) {
+      // Best-effort background capture — never block or alert the user on failure.
+      console.warn("Lead capture failed:", error);
+    }
+  };
+
   const handleSubmit = async (data) => {
+    // Full registration takes over; do not also store the hero lead.
+    pendingHeroLeadRef.current = null;
     if (data.website) {
       //return res.status(400).json({ error: 'Spam detected' });
       console.error("Error:", "Spam detected");
@@ -730,122 +797,315 @@ const handleShow = () => {
           </button>
         </div>
       </div>
-      {/* FIRST BASECAMP SECTION FOR MOBILE*/}
-      <section className="d-block d-md-none">
-        <div className="hero">
-             <div className="hero-left">
-       <Image
-                    // className="logo-image"
-                    src={basecamplogo2}
-                    alt="img2"
-                  />
-      <p className="flag-subtitle">Our Flagship Scaling Up Workshop</p>
-      <p className="hero-small">
-        Exclusively crafted for Founders <br />
-        & Top Executives
-      </p>
-    </div>
+      {/* HERO FORM SECTION */}
+      <section className="hero-form-section">
+        <div className="container">
+          <div className="row hero-form-row">
+            <div className="col-lg-7 col-12 hero-form-left">
+              <Image
+                src={basecamplogo2}
+                alt="BASECAMP"
+                className="hero-form-brand"
+                priority
+              />
+              <h1 className="hero-form-title">
+                <span className="hero-form-title-accent">Scale</span> Without
+                <br />
+                Founder Dependency
+              </h1>
+              <p className="hero-form-desc">
+                A 1-day Scaling Up workshop for founders and leadership teams
+                to fix execution gaps across{" "}
+                <span className="hero-form-desc-accent">
+                  People, Strategy, Execution &amp; Cash.
+                </span>
+              </p>
 
-     <Image
-                    // className="logo-image"
-                    src={backgroundImage}
-                    alt="img2"
-                    className="back-image"
-                  />
+              <ul className="hero-form-info">
+                <li>
+                  <i className="fa-solid fa-location-dot"></i>
+                  <span>Bengaluru</span>
+                  <i className="fa-regular fa-calendar ms-3"></i>
+                  <span>
+                    11<sup>th</sup> June
+                  </span>
+                </li>
+                <li>
+                  <i className="fa-regular fa-clock"></i>
+                  <span>7 hour Offline Workshop</span>
+                </li>
+                <li>
+                  <i className="fa-solid fa-ticket"></i>
+                  <span>
+                    Early Bird Rs <s>9,999</s> 7,999
+                  </span>
+                </li>
+              </ul>
 
-                  <div className="hero-center">
-    
-                  <p className="sentence-text">
-                    {sentences[sentenceIndex]}{" "}
-                    <br className="d-none d-md-block" />
-                  </p>
-                  <div className="sentence-dots">
-                    {sentences.map((_, i) => (
-                      <span
-                        key={i}
-                        className={`dot ${i === sentenceIndex ? "active" : ""}`}
-                        onClick={() => setSentenceIndex(i)}
-                      ></span>
-                    ))}
+              <button className="btn-cta hero-form-cta" onClick={handleShow}>
+                RESERVE YOUR SPOT — SEE YOU IN BENGALURU
+              </button>
+            </div>
+
+            <div className="col-lg-5 col-12 hero-form-right">
+              <div className="hero-form-card">
+                <div className="hero-form-card-header">
+                  <div className="hero-form-card-icon">
+                    <i className="fa-solid fa-user-group"></i>
                   </div>
-                
-              
-          
+                  <h3 className="hero-form-card-title">Reserve Your Spot</h3>
+                </div>
 
-      <button className=" btn-cta text-center"
-                    onClick={handleShow}>REGISTER NOW</button>
-    </div>
+                <form onSubmit={heroHandleSubmit(onHeroSubmit)} noValidate>
+                  <div className="hero-form-field">
+                    <label htmlFor="hf-name">Name</label>
+                    <input
+                      id="hf-name"
+                      type="text"
+                      placeholder="Full name"
+                      autoComplete="name"
+                      className={errorsHero.name ? "hf-invalid" : ""}
+                      {...registerHero("name", {
+                        required: "Name is required",
+                        minLength: {
+                          value: 2,
+                          message: "Name must be at least 2 characters",
+                        },
+                      })}
+                    />
+                    {errorsHero.name && (
+                      <span className="hero-form-error">
+                        {errorsHero.name.message}
+                      </span>
+                    )}
+                  </div>
+                  <div className="hero-form-field">
+                    <label htmlFor="hf-email">Email</label>
+                    <input
+                      id="hf-email"
+                      type="email"
+                      placeholder="Work email"
+                      autoComplete="email"
+                      className={errorsHero.email ? "hf-invalid" : ""}
+                      {...registerHero("email", {
+                        required: "Email is required",
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                          message: "Invalid email address",
+                        },
+                      })}
+                    />
+                    {errorsHero.email && (
+                      <span className="hero-form-error">
+                        {errorsHero.email.message}
+                      </span>
+                    )}
+                  </div>
+                  <div className="hero-form-field">
+                    <label htmlFor="hf-phone">Phone</label>
+                    <input
+                      id="hf-phone"
+                      type="tel"
+                      placeholder="10-digit mobile number"
+                      autoComplete="tel"
+                      className={errorsHero.phone ? "hf-invalid" : ""}
+                      {...registerHero("phone", {
+                        required: "Phone number is required",
+                        pattern: {
+                          value: /^\d{10}$/,
+                          message: "Phone number must be 10 digits",
+                        },
+                      })}
+                    />
+                    {errorsHero.phone && (
+                      <span className="hero-form-error">
+                        {errorsHero.phone.message}
+                      </span>
+                    )}
+                  </div>
+                  <div className="hero-form-field">
+                    <label htmlFor="hf-company">Company Name</label>
+                    <input
+                      id="hf-company"
+                      type="text"
+                      placeholder="Company name"
+                      autoComplete="organization"
+                      className={errorsHero.companyName ? "hf-invalid" : ""}
+                      {...registerHero("companyName", {
+                        required: "Company name is required",
+                        minLength: {
+                          value: 2,
+                          message: "Company name must be at least 2 characters",
+                        },
+                      })}
+                    />
+                    {errorsHero.companyName && (
+                      <span className="hero-form-error">
+                        {errorsHero.companyName.message}
+                      </span>
+                    )}
+                  </div>
+                  <div className="hero-form-field">
+                    <label htmlFor="hf-designation">Designation</label>
+                    <input
+                      id="hf-designation"
+                      type="text"
+                      placeholder="Your designation"
+                      autoComplete="organization-title"
+                      className={errorsHero.designation ? "hf-invalid" : ""}
+                      {...registerHero("designation", {
+                        required: "Designation is required",
+                        minLength: {
+                          value: 2,
+                          message: "Designation must be at least 2 characters",
+                        },
+                      })}
+                    />
+                    {errorsHero.designation && (
+                      <span className="hero-form-error">
+                        {errorsHero.designation.message}
+                      </span>
+                    )}
+                  </div>
+
+                  <button type="submit" className="btn-cta hero-form-card-cta">
+                    Reserve Your Spot — See You in Bangalore
+                  </button>
+                </form>
+
+                <p className="hero-form-card-note">
+                  <i className="fa-solid fa-lock"></i> Limited seats | Offline
+                  workshop
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-
       </section>
 
-      {/* FIRST BASECAMP SECTION */}
-      <div className="d-none d-md-block">
-<section className="basecamp-hero ">
-  <div className="hero-container">
+      {/* SCALE STUCK SECTION */}
+      <section className="scale-stuck-section">
+        <div className="container">
+          <div className="scale-stuck-eyebrow">Where Scale Gets Stuck</div>
+          <div className="scale-stuck-title">
+            Growth should not create
+            <br className="d-none d-md-block" /> more founder dependency
+          </div>
+          <p className="scale-stuck-desc">
+            As businesses grow, execution often becomes harder to control.
+            Founders remain involved in too many decisions. Teams are busy, but
+            ownership is unclear. Meetings happen, but priorities still slip.
+            Revenue grows, but cash flow and profit come under pressure.
+          </p>
+          <p className="scale-stuck-desc">
+            Basecamp is designed to help founders and leadership teams to
+            identify where scale is getting stuck — and fix it across People,
+            Strategy, Execution &amp; Cash.
+          </p>
 
-    <div className="hero-left">
-       <Image
-                    // className="logo-image"
-                    src={basecamplogo2}
-                    alt="img2"
-                  />
-      <p className="flag-subtitle">Our Flagship Scaling Up Workshop</p>
-      <p className="hero-small">
-        Exclusively crafted for Founders <br />
-        & Top Executives
-      </p>
-    </div>
+          <div className="row scale-stuck-grid">
+            <div className="col-md-6 col-12">
+              <div className="scale-stuck-card">
+                <div className="scale-stuck-icon">
+                  <Image src={founderDependencyIcon} alt="Founder Dependency" />
+                </div>
+                <h3 className="scale-stuck-card-title">Founder Dependency</h3>
+                <p className="scale-stuck-card-text">
+                  Founders remain involved in too many decisions.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-6 col-12">
+              <div className="scale-stuck-card">
+                <div className="scale-stuck-icon">
+                  <Image src={unclearOwnershipIcon} alt="Unclear Ownership" />
+                </div>
+                <h3 className="scale-stuck-card-title">Unclear Ownership</h3>
+                <p className="scale-stuck-card-text">
+                  Teams are busy, but ownership is unclear.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-6 col-12">
+              <div className="scale-stuck-card">
+                <div className="scale-stuck-icon">
+                  <Image src={prioritySlippageIcon} alt="Priority Slippage" />
+                </div>
+                <h3 className="scale-stuck-card-title">Priority Slippage</h3>
+                <p className="scale-stuck-card-text">
+                  Meetings happen, but priorities still slip.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-6 col-12">
+              <div className="scale-stuck-card">
+                <div className="scale-stuck-icon">
+                  <Image src={marginPressureIcon} alt="Margin Pressure" />
+                </div>
+                <h3 className="scale-stuck-card-title">Margin Pressure</h3>
+                <p className="scale-stuck-card-text">
+                  Revenue grows, but margins and cash flow come under pressure.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <div className="hero-center">
-    
-                  <p className="sentence-text">
-                    {sentences[sentenceIndex]}{" "}
-                    <br className="d-none d-md-block" />
-                  </p>
-                  <div className="sentence-dots">
-                    {sentences.map((_, i) => (
-                      <span
-                        key={i}
-                        className={`dot ${i === sentenceIndex ? "active" : ""}`}
-                        onClick={() => setSentenceIndex(i)}
-                      ></span>
-                    ))}
-                  </div>
-                
-              
-          
-
-      <button className=" btn-cta text-center"
-                    onClick={handleShow}>REGISTER NOW</button>
-    </div>
-
-  </div>
-</section>
-      </div>
-      
-
-      <div class="page-wrapper">
-        {/* <!-- TOP SECTION --> */}
-        <section class="hero">
-          <div className="company-title">
-            Your company is growing but your growth is unpredictable
+      {/* WALK AWAY SECTION */}
+      <section className="walkaway-section">
+        <div className="container">
+          <div className="walkaway-title">What You Will Walk Away With</div>
+          <div className="walkaway-subtitle">
+            By the end of the Basecamp, participants will have
           </div>
 
-          <p class="description">
-            Business owners often come to a point where what was working earlier
-            for them stops working altogether. The team doesn’t feel equipped to
-            handle the new scale that is envisioned, and the overall pressure
-            across the company is building up.
-          </p>
-          <br />
-          <p class="description">
-            Basecamp workshop provides a proven playbook to business owners to
-            scale with absolute clarity and freedom.
-          </p>
-        </section>
+          <div className="row walkaway-grid">
+            <div className="col-md-6 col-12">
+              <div className="walkaway-item">
+                <div className="walkaway-icon">
+                  <Image src={blockingScaleIcon} alt="Blocking scale" />
+                </div>
+                <div className="walkaway-text">
+                  A clearer view of what is blocking scale in their business
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-12">
+              <div className="walkaway-item">
+                <div className="walkaway-icon">
+                  <Image src={scalingUpFrameworkIcon} alt="Scaling Up Framework" />
+                </div>
+                <div className="walkaway-text">
+                  A practical understanding of the Scaling Up Framework
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-12">
+              <div className="walkaway-item">
+                <div className="walkaway-icon">
+                  <Image src={peopleStrategyIcon} alt="People, Strategy, Execution & Cash" />
+                </div>
+                <div className="walkaway-text">
+                  Better clarity on People, Strategy, Execution & Cash gaps
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-12">
+              <div className="walkaway-item">
+                <div className="walkaway-icon">
+                  <Image src={ninetyDaysIcon} alt="90-day direction" />
+                </div>
+                <div className="walkaway-text">
+                  A 90-day direction to improve accountability and business
+                  momentum
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      </div>
       {/* UNLOCK SECTION */}
       <section className="unlock-section">
         <div className="container">
@@ -901,6 +1161,61 @@ const handleShow = () => {
         </div>
       </section>
       {/* REGISTRATION */}
+      {/* INFO CARDS SECTION */}
+      <section className="info-cards-section">
+        <div className="container">
+          <div className="row info-cards-row">
+            <div className="col-lg-4 col-md-6 col-12">
+              <div className="info-card">
+                <h3 className="info-card-title">Who Should Attend?</h3>
+                <ul className="info-card-list">
+                  <li>Founders</li>
+                  <li>CXOs</li>
+                  <li>Leadership Teams</li>
+                  <li>L1 Leaders</li>
+                  <li>Board Members</li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6 col-12">
+              <div className="info-card">
+                <h3 className="info-card-title">What’s Included?</h3>
+                <ul className="info-card-list">
+                  <li>People, Strategy, Cash &amp; Execution sessions</li>
+                  <li>Tools, Frameworks &amp; practical insights</li>
+                  <li>Actionable takeaways for your business</li>
+                  <li>Lunch &amp; hi-tea</li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6 col-12">
+              <div className="info-card">
+                <h3 className="info-card-title">Why It’s Different?</h3>
+                <ul className="info-card-list">
+                  <li>No generic business gyaan</li>
+                  <li>Led by Scaling Up Certified coaches</li>
+                  <li>Built around real business challenges</li>
+                  <li>Focussed on practical implementaion</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MONEY BACK SECTION */}
+       <section className="money-back-section">
+      <div className="money-back-container">
+        <div className="money-back-icon">
+          <Image src={moneyBackIcon} alt="Money-back guarantee" />
+        </div>
+        <div className="money-back-text">
+          <h2>MONEY-BACK GUARANTEE</h2>
+          <p>No questions asked if you don’t find the workshop valuable.</p>
+        </div>
+      </div>
+    </section>
+
        <section className="city-section">
 
       <h2 className="city-title mb-5">We’re coming to your city</h2>
@@ -986,92 +1301,6 @@ const handleShow = () => {
 
     </section>             
 
-      {/* MONEY BACK SECTION */}
-       <section className="money-back-section">
-      <div className="money-back-container">
-        <h2>MONEY-BACK GUARANTEE</h2>
-        <p>No questions asked if you don’t find the workshop valuable.</p>
-      </div>
-    </section>
-
-      {/* EXPERIENCE SECTION */}
-      <section className="experience-section">
-        <div className="container">
-          <div className="experience-section-title">
-            What You'll Experience At{" "} BASECAMP?
-          </div>
-
-          <div className="row experience-grid ">
-            <div className="col-md-6 col-12">
-              <div className="experience-item">
-                <div className="experience-icon">
-                  <img src="arrow.png" width="150" alt="arrow" />
-                </div>
-                <div className="experience-text">
-                  Discover how other players in your industry are scaling their
-                  businesses
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-12">
-              <div className="experience-item">
-                <div className="experience-icon">
-                  <img src="arrow.png" width="150" alt="arrow" />
-                </div>
-                <div className="experience-text">
-                  Learn the nuances of business growth from scaling up certified
-                  coaches
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-12">
-              <div className="experience-item">
-                <div className="experience-icon">
-                  <img src="arrow.png" width="150" alt="arrow" />
-                </div>
-                <div className="experience-text">
-                  Identify the gaps in your current business that's hindering
-                  your next big leap
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-12">
-              <div className="experience-item">
-                <div className="experience-icon">
-                  <img src="arrow.png" width="150" alt="arrow" />
-                </div>
-                <div className="experience-text">
-                  Network with other ambitious business owners & leaders
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="highlight-box">
-            <div className="highlight-icon">
-              <img src="./rocket_growth.png" width="240" />
-            </div>
-            {/* <div className="highlight-text">
-              In our past workshops, leaders{" "}
-              <br className="d-none d-md-block" />
-              have figured out a{" "}
-              <span className="highlight-yellow">
-                5-15% <br className="d-none d-md-block" />
-                Cashflow Growth Strategy{" "}
-              </span>
-              for <br className="d-none d-md-block" />
-              their respective businesses during{" "}
-              <br className="d-none d-md-block" />
-              the sessions.
-            </div> */}
-            <div className="highlight-text">
-              Tools & Frameworks that’ll enable you to navigate through the
-              chaos that comes when you’re trying to scale your business.
-            </div>
-          </div>
-        </div>
-      </section>
-
       <div className="row">&nbsp;</div>
       <div style={{ position: "relative" }}>
         <Swiper
@@ -1132,41 +1361,6 @@ const handleShow = () => {
         </div>
        
       </div>
-      <section className="section excite-section">
-        <div className="container">
-          <div className="unlock-title">
-            This Should Excite You If…{" "}
-          </div>
-          <div className="row">
-            {/* <div className="col-md-1 d-none d-md-block">&nbsp;</div> */}
-            <div className="col-md-11 col-12 excite-section-list">
-              <i className="fa-solid fa-arrow-trend-up me-2"></i> You are
-              running a company with turnover of 50 CR+
-            </div>
-          </div>
-          {/* <div className="row spacer"></div> */}
-          <div className="row">
-            {/* <div className="col-md-1 d-none d-md-block">&nbsp;</div> */}
-            <div className="col-md-11 col-12 excite-section-list">
-              <i className="fa-solid fa-arrow-trend-up me-2"></i> You are
-              serious about scaling up your business{" "}
-              {/* <br className="d-none d-md-block" /> */}
-              exponentially in the next 10 years
-            </div>
-          </div>
-          {/* <div className="row spacer"></div> */}
-          <div className="row">
-            {/* <div className="col-md-1 d-none d-md-block">&nbsp;</div> */}
-            <div className="col-md-11 col-12 excite-section-list">
-              <i className="fa-solid fa-arrow-trend-up me-2"></i> You know what
-              got you here, won’t take you to the next{" "}
-              {/* <br className="d-none d-md-block" /> */}
-              level
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="faq-section">
         <div className="container">
           <h2 className="unlock-title">Have Questions About BASECAMP?</h2>
@@ -1245,17 +1439,17 @@ const handleShow = () => {
           <div className="hero-content-footer text-center">
             <h3
               className="d-none d-md-block"
-              
+
             >
-              Are You <br />{" "}
-              <span style={{ color: "#fdae07" }}>Ready To Scale?</span>
+              <span style={{ color: "#fdae07" }}>Ready to Scale</span> <br />{" "}
+              with More Clarity?
             </h3>
             <h3
               className="d-block d-md-none"
-             
+
             >
-              Are You{" "}
-              <span style={{ color: "#fdae07" }}>Ready To Scale?</span>
+              <span style={{ color: "#fdae07" }}>Ready to Scale</span>{" "}
+              with More Clarity?
             </h3>
             <p className="hero-subtitle">
               <button
@@ -1264,10 +1458,10 @@ const handleShow = () => {
                 onClick={handleShow}
                 //  disabled
               >
-                Limited spots Available
+                LIMITED SPOTS AVAILABLE
                 <br />
                 <span className="btn-text">
-                  <strong>ReGISTER NOW for basecamp</strong>
+                  <strong>RESERVE YOUR SPOT FOR BENGALURU NOW</strong>
                 </span>{" "}
               </button>
             </p>
