@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { memo } from "react";
 import "./story.css";
 
@@ -68,10 +68,7 @@ const caseStudies = [
   },
 ];
 
-const CaseStudyCard = memo(({ cs }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const toggle = () => setIsExpanded((prev) => !prev);
-
+const CaseStudyCard = memo(({ cs, expanded, onToggle }) => {
   return (
     <article className="story-card">
       <h3 className="story-card-title">{cs.title}</h3>
@@ -86,7 +83,7 @@ const CaseStudyCard = memo(({ cs }) => {
         <p>{cs.coreIssues}</p>
       </div>
 
-      {isExpanded && (
+      {expanded && (
         <>
           <div className="story-card-section">
             <h4>Coaching Intervention</h4>
@@ -108,9 +105,9 @@ const CaseStudyCard = memo(({ cs }) => {
         <button
           type="button"
           className="story-readmore"
-          onClick={toggle}
+          onClick={onToggle}
         >
-          {isExpanded ? "Read Less" : "Read More"}
+          {expanded ? "Read Less" : "Read More"}
         </button>
       </div>
     </article>
@@ -120,6 +117,29 @@ const CaseStudyCard = memo(({ cs }) => {
 CaseStudyCard.displayName = "CaseStudyCard";
 
 const Story = memo(() => {
+  // Desktop (>= 992px, where cards sit in a row): all cards expand/collapse together.
+  // Mobile (stacked): each card expands/collapses on its own.
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [allExpanded, setAllExpanded] = useState(false);
+  const [expandedMap, setExpandedMap] = useState({});
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 992px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  const isCardExpanded = (i) => (isDesktop ? allExpanded : !!expandedMap[i]);
+  const toggleCard = (i) => {
+    if (isDesktop) {
+      setAllExpanded((prev) => !prev);
+    } else {
+      setExpandedMap((prev) => ({ ...prev, [i]: !prev[i] }));
+    }
+  };
+
   return (
     <div className="story-main">
       {/* HERO */}
@@ -166,7 +186,12 @@ const Story = memo(() => {
 
           <div className="story-cards">
             {caseStudies.map((cs, i) => (
-              <CaseStudyCard key={i} cs={cs} />
+              <CaseStudyCard
+                key={i}
+                cs={cs}
+                expanded={isCardExpanded(i)}
+                onToggle={() => toggleCard(i)}
+              />
             ))}
           </div>
         </div>
