@@ -128,7 +128,7 @@ const NavbarMenu = () => {
                     : "inactive-link font-normal"
                 } nav_text_div`}
               >
-                Quick assessment
+                Quick Assessment
               </div>
           </Nav.Link>
           <Nav.Link
