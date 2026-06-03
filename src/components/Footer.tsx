@@ -150,7 +150,7 @@ const Footer = () => {
                     "/assessment"
                   }
                 >
-                  Quick assessment
+                  Quick Assessment
                 </Link>
               </li>
               <li>
