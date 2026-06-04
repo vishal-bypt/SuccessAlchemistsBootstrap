@@ -153,6 +153,16 @@ const NavbarMenu = () => {
                 Resources
               </div>
           </Nav.Link>
+          <Nav.Link
+              href="http://blog.success-alchemists.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inactive-link font-normal text-sm xl:text-xl font-barlow link-underline link-underline-opacity-0"
+            >
+              <div className="inactive-link font-normal nav_text_div">
+                Blogs
+              </div>
+          </Nav.Link>
           <NavDropdown
             title={
               <span
