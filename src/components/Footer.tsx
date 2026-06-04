@@ -165,6 +165,16 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <a
+                  className="inactive-link font-normal link-underline link-underline-opacity-0"
+                  href="http://blog.success-alchemists.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Blogs
+                </a>
+              </li>
+              <li>
                 <Link
                   className={`${[
                     "/basecamp",
