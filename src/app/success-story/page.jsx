@@ -215,10 +215,7 @@ const Story = memo(() => {
                     className="story-btn-cta-footer-webinar text-center"
                     onClick={() => (window.location.href = "/basecamp")}
                   >
-                    <span className="story-btn-cta-top">
-                      LIMITED SPOTS AVAILABLE
-                    </span>
-                    <strong>REGISTER NOW FOR BASECAMP</strong>
+                    REQUEST A CALLBACK
                   </button>
                 </p>
               </div>
