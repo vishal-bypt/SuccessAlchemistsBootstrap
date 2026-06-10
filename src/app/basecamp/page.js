@@ -96,7 +96,7 @@ const handleShow = () => {
         lastName: "",
         email: "",
         phone: "",
-        basecampLocation: "Bangalore",
+        basecampLocation: "Pune",
         plan: "",
         promoCode: "",
       },
@@ -218,11 +218,9 @@ const handleShow = () => {
     name: "Bangalore",
     date: "11th June’26",
     image: bangalore,
-    price1: "Rs 9999",
-    price2: "Rs 7999",
-    earlyBird: "Early bird offer",
-    // status: "Registrations Yet To Start",
-    button: "REGISTER NOW"
+    status: "Sold Out",
+    soldOut: true,
+    button: "SOLD OUT"
   },
   {
     id: 3,
@@ -331,7 +329,7 @@ const handleShow = () => {
     setValue("email", data.email, { shouldValidate: true });
     setValue("phone", data.phone, { shouldValidate: true });
     setValue("companyName", data.companyName, { shouldValidate: true });
-    setValue("basecampLocation", "Bangalore - 11th June’26", {
+    setValue("basecampLocation", "Pune - 9th July’26", {
       shouldValidate: true,
     });
     // Remember the lead so it is still stored if the dialog is closed unsubmitted.
@@ -355,7 +353,7 @@ const handleShow = () => {
           billing_tel: data.phone,
           company: data.companyName,
           designation: data.designation,
-          basecampLocation: "Bangalore",
+          basecampLocation: "Pune",
           type: "basecamp-lead",
           recaptchaToken,
         }),
@@ -703,14 +701,6 @@ const handleShow = () => {
           label: "Early Bird - For 3 Team members - ₹17999 + GST",
         },
       ];
-    } else if (basecampLocation === "Bangalore - 11th June’26") {
-      return [
-        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
-        {
-          value: "17999",
-          label: "Early Bird - For 3 Team members - ₹17999 + GST",
-        },
-      ];
     } else if (basecampLocation === "Pune - 9th July’26") {
       return [
         { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
@@ -787,7 +777,7 @@ const handleShow = () => {
       <div className="floating-register-div">
         <div className="floating-register-left">
           <p className="floating-register-text">
-            Early Bird Offer for Bangalore Basecamp Expires Soon
+            Early Bird Offer for Pune Basecamp Expires Soon
           </p>
           <p className="floating-register-subtext"></p>
         </div>
@@ -824,10 +814,10 @@ const handleShow = () => {
               <ul className="hero-form-info">
                 <li>
                   <i className="fa-solid fa-location-dot"></i>
-                  <span>Bengaluru</span>
+                  <span>Pune</span>
                   <i className="fa-regular fa-calendar ms-3"></i>
                   <span>
-                    11<sup>th</sup> June
+                    9<sup>th</sup> July
                   </span>
                 </li>
                 <li>
@@ -843,7 +833,7 @@ const handleShow = () => {
               </ul>
 
               <button className="btn-cta hero-form-cta" onClick={handleShow}>
-                RESERVE YOUR SPOT — SEE YOU IN BENGALURU
+                RESERVE YOUR SPOT — SEE YOU IN PUNE
               </button>
             </div>
 
@@ -969,7 +959,7 @@ const handleShow = () => {
                   </div>
 
                   <button type="submit" className="btn-cta hero-form-card-cta">
-                    Reserve Your Spot — See You in Bangalore
+                    Reserve Your Spot — See You in Pune
                   </button>
                 </form>
 
@@ -1285,7 +1275,11 @@ const handleShow = () => {
                 <p className="coming">{city.status}</p>
               )}
 
-              <button className="city-btn" onClick={city.earlyBird ? handleShow :  handleShow2}>
+              <button
+                className={`city-btn${city.soldOut ? " sold-out" : ""}`}
+                onClick={city.earlyBird ? handleShow : handleShow2}
+                disabled={city.soldOut}
+              >
                 {city.button}
               </button>
             </div>
@@ -1461,7 +1455,7 @@ const handleShow = () => {
                 LIMITED SPOTS AVAILABLE
                 <br />
                 <span className="btn-text">
-                  <strong>RESERVE YOUR SPOT FOR BENGALURU NOW</strong>
+                  <strong>RESERVE YOUR SPOT FOR PUNE NOW</strong>
                 </span>{" "}
               </button>
             </p>
@@ -1607,9 +1601,6 @@ const handleShow = () => {
                 {/* <option value="Delhi-NCR - 15th April’26">
                   Delhi-NCR - 15th April’26
                 </option> */}
-                <option value="Bangalore - 11th June’26">
-                  Bangalore - 11th June’26
-                </option>
                 <option value="Pune - 9th July’26">
                   Pune - 9th July’26
                 </option>
@@ -1844,9 +1835,9 @@ const handleShow = () => {
         >
           <option value="">- Select Basecamp Location -</option>
           {/* <option value="Delhi-NCR">Delhi-NCR</option> */}
-          <option value="Bangalore">Bangalore</option>
-          {/* <option value="Dubai">Dubai</option>
           <option value="Pune">Pune</option>
+          {/* <option value="Dubai">Dubai</option>
+          <option value="Bangalore">Bangalore</option>
           <option value="Mumbai">Mumbai</option> */}
         </Form.Select>
 
