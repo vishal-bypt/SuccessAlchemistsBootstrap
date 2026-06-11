@@ -2556,6 +2556,20 @@ img {
     color: #000;
 }
 
+.city-btn.sold-out{
+  background-color: #6c757d;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+.city-btn.sold-out:hover{
+  background-color: #6c757d;
+  transform: none;
+  box-shadow: none;
+  color: #fff;
+}
+
 /* ARROWS */
 
 .arrow{
