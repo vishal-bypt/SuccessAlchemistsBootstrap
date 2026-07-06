@@ -783,7 +783,7 @@ export default function BasecampPage() {
       <div className="floating-register-div">
         <div className="floating-register-left">
           <p className="floating-register-text">
-            Early Bird Offer for Pune Basecamp Expires Soon
+            Early Bird Offer for Pune Basecamp Expired.
           </p>
           <p className="floating-register-subtext"></p>
         </div>
