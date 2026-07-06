@@ -33,7 +33,7 @@ import "swiper/css/pagination";
 
 export default function BasecampPage() {
   const [show, setShow] = useState(false);
-    const [show2, setShow2] = useState(false);
+  const [show2, setShow2] = useState(false);
 
   const swiperRef = useRef(null);
   // Holds the hero (outer) form data when the dialog is opened from it, so the
@@ -49,15 +49,15 @@ export default function BasecampPage() {
     // Clear the hero (outer) form when returning to the page after the popup.
     resetHero();
   };
-const handleShow = () => {
-  reset();   // ✅ reset here
-  setShow(true);
-};
+  const handleShow = () => {
+    reset();   // ✅ reset here
+    setShow(true);
+  };
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => {
-  reset2();   // ✅ reset here
-  setShow2(true);
-};
+    reset2();   // ✅ reset here
+    setShow2(true);
+  };
   const {
     register,
     handleSubmit: rhfHandleSubmit,
@@ -80,27 +80,27 @@ const handleShow = () => {
     },
   });
 
-    const {
-      register: register2,
-  handleSubmit: form2Submit,
-  formState: { errors: errors2, isValid: isValid2, isSubmitting: isSubmitting2 },
-  watch: watch2,
-  setValue: setValue2,
-  reset: reset2,
-    } = useForm({
-      mode: "onChange",
-      defaultValues: {
-        companyName: "",
-        yourDesignation: "",
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        basecampLocation: "Pune",
-        plan: "",
-        promoCode: "",
-      },
-    });
+  const {
+    register: register2,
+    handleSubmit: form2Submit,
+    formState: { errors: errors2, isValid: isValid2, isSubmitting: isSubmitting2 },
+    watch: watch2,
+    setValue: setValue2,
+    reset: reset2,
+  } = useForm({
+    mode: "onChange",
+    defaultValues: {
+      companyName: "",
+      yourDesignation: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      basecampLocation: "Pune",
+      plan: "",
+      promoCode: "",
+    },
+  });
 
   // Hero (outer) "Reserve Your Spot" form
   const {
@@ -202,58 +202,57 @@ const handleShow = () => {
   ];
 
   const cityList = [
-  // {
-  //   id: 1,
-  //   name: "Delhi-NCR",
-  //   location: "IIT Delhi Campus",
-  //   date: "15th April’26",
-  //   image: delhi,
-  //   earlyBird: "Early bird offer end 10th April' 26",
-  //   price1: "Rs 9999",
-  //   price2: "Rs 7999",
-  //   button: "REGISTER NOW"
-  // },
-  {
-    id: 2,
-    name: "Bangalore",
-    date: "11th June’26",
-    image: bangalore,
-    status: "Sold Out",
-    soldOut: true,
-    button: "SOLD OUT"
-  },
-  {
-    id: 3,
-    name: "Pune",
-    date: "9th July’26",
-    image: pune,
-    price1: "Rs 9999",
-    price2: "Rs 7999",
-    earlyBird: "Early bird offer",
-    button: "REGISTER NOW"
-  },
-  {
-    id: 4,
-    name: "Mumbai",
-    date: "20th August’26",
-    image: mumbai,
-    price1: "Rs 9999",
-    price2: "Rs 7999",
-    earlyBird: "Early bird offer",
-    button: "REGISTER NOW"
-  },
-  {
-    id: 5,
-    name: "Bangalore",
-    date: "24th September’26",
-    image: bangalore,
-    price1: "Rs 9999",
-    price2: "Rs 7999",
-    earlyBird: "Early bird offer",
-    button: "REGISTER NOW"
-  },
-
-];
+    // {
+    //   id: 1,
+    //   name: "Delhi-NCR",
+    //   location: "IIT Delhi Campus",
+    //   date: "15th April’26",
+    //   image: delhi,
+    //   earlyBird: "Early bird offer end 10th April' 26",
+    //   price1: "Rs 9999",
+    //   price2: "Rs 7999",
+    //   button: "REGISTER NOW"
+    // },
+    // {
+    //   id: 2,
+    //   name: "Bangalore",
+    //   date: "11th June’26",
+    //   image: bangalore,
+    //   status: "Sold Out",
+    //   soldOut: true,
+    //   button: "SOLD OUT"
+    // },
+    {
+      id: 3,
+      name: "Pune",
+      date: "9th July’26",
+      image: pune,
+      price1: "Rs 9999",
+      // price2: "Rs 7999",
+      // earlyBird: "Early bird offer",
+      button: "REGISTER NOW"
+    },
+    {
+      id: 4,
+      name: "Mumbai",
+      date: "20th August’26",
+      image: mumbai,
+      price1: "Rs 9999",
+      price2: "Rs 7999",
+      earlyBird: "Early bird offer",
+      button: "REGISTER NOW"
+    },
+    {
+      id: 5,
+      name: "Bangalore",
+      date: "24th September’26",
+      image: bangalore,
+      price1: "Rs 9999",
+      price2: "Rs 7999",
+      earlyBird: "Early bird offer",
+      button: "REGISTER NOW"
+    },
+  ];
 
 
   const videos = [
@@ -285,11 +284,11 @@ const handleShow = () => {
     },
   ];
 
-    function getEmbedUrl(url) {
-  const regExp = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/;
-  const match = url.match(regExp);
-  return match ? `https://www.youtube.com/embed/${match[1]}?enablejsapi=1` : url;
-}
+  function getEmbedUrl(url) {
+    const regExp = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/;
+    const match = url.match(regExp);
+    return match ? `https://www.youtube.com/embed/${match[1]}?enablejsapi=1` : url;
+  }
 
   const [index, setIndex] = useState(0);
   const [isPlaying, setPlaying] = useState(false);
@@ -329,9 +328,9 @@ const handleShow = () => {
     setValue("email", data.email, { shouldValidate: true });
     setValue("phone", data.phone, { shouldValidate: true });
     setValue("companyName", data.companyName, { shouldValidate: true });
-    setValue("basecampLocation", "Pune - 9th July’26", {
-      shouldValidate: true,
-    });
+    // setValue("basecampLocation", "Pune - 9th July’26", {
+    //   shouldValidate: true,
+    // });
     // Remember the lead so it is still stored if the dialog is closed unsubmitted.
     pendingHeroLeadRef.current = data;
     setShow(true);
@@ -380,7 +379,7 @@ const handleShow = () => {
     handleClose();
   };
 
-    const handleSubmitForm2 = async (data) => {
+  const handleSubmitForm2 = async (data) => {
     if (data.website) {
       //return res.status(400).json({ error: 'Spam detected' });
       console.error("Error:", "Spam detected");
@@ -394,80 +393,79 @@ const handleShow = () => {
     handleClose2();
   };
 
-    const handlePayment2 = async (data) => {
-      const {
-        firstName,
-        lastName,
-        email,
-        phone,
-        plan,
-        companyName,
-        yourDesignation,
-        basecampLocation,
-      } = data;
-  
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-      const payload = {
-        billing_name: `${firstName} ${lastName}`,
-        billing_email: email,
-        billing_tel: phone,
-        company: companyName,
-        designation: yourDesignation,
-        basecampLocation: basecampLocation,
-        type: "basecamp-basic",
-      };
-  
-      //console.log("Records is:::::", payload);
-  
-      if (!executeRecaptcha) {
-        Toast.error("reCAPTCHA not ready");
-        return false;
-      }
-  
-      // Check if API URL is defined
-      if (!apiUrl) {
-        alert(
-          "Payment failed: API URL is not configured. Please check your environment variables."
-        );
-        console.error("NEXT_PUBLIC_API_URL is not defined");
-        return false;
-      }
-  
-      try {
-        const recaptchaToken = await executeRecaptcha("basecamp_form");
-        const response = await fetch(apiUrl + "/register-interest", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...payload, recaptchaToken }),
-        });
-  
-        // Check if response is ok
-        const paymentData = await response.json();
-  
-        if (!response.ok || !paymentData.success) {
-          Toast.error(paymentData?.message || "Failed to submit the form.");
-          return false;
-        }
-  
-        if (!paymentData.success) {
-          Toast.error(
-            paymentData?.message || "Registration failed. Please try again later."
-          );
-          return false;
-        }
-        reset2();
-        Toast.success("Registration submitted successfully!");
-            handleClose2();
-      } catch (error) {
-        console.error("Basecamp form error:", error);
-        alert(
-          `Basecamp registration failed: ${
-            error.message ||
-            "Network error. Please check your connection and try again."
-          }`
-        );
-      }
+  const handlePayment2 = async (data) => {
+    const {
+      firstName,
+      lastName,
+      email,
+      phone,
+      plan,
+      companyName,
+      yourDesignation,
+      basecampLocation,
+    } = data;
+
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const payload = {
+      billing_name: `${firstName} ${lastName}`,
+      billing_email: email,
+      billing_tel: phone,
+      company: companyName,
+      designation: yourDesignation,
+      basecampLocation: basecampLocation,
+      type: "basecamp-basic",
     };
+
+    //console.log("Records is:::::", payload);
+
+    if (!executeRecaptcha) {
+      Toast.error("reCAPTCHA not ready");
+      return false;
+    }
+
+    // Check if API URL is defined
+    if (!apiUrl) {
+      alert(
+        "Payment failed: API URL is not configured. Please check your environment variables."
+      );
+      console.error("NEXT_PUBLIC_API_URL is not defined");
+      return false;
+    }
+
+    try {
+      const recaptchaToken = await executeRecaptcha("basecamp_form");
+      const response = await fetch(apiUrl + "/register-interest", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...payload, recaptchaToken }),
+      });
+
+      // Check if response is ok
+      const paymentData = await response.json();
+
+      if (!response.ok || !paymentData.success) {
+        Toast.error(paymentData?.message || "Failed to submit the form.");
+        return false;
+      }
+
+      if (!paymentData.success) {
+        Toast.error(
+          paymentData?.message || "Registration failed. Please try again later."
+        );
+        return false;
+      }
+      reset2();
+      Toast.success("Registration submitted successfully!");
+      handleClose2();
+    } catch (error) {
+      console.error("Basecamp form error:", error);
+      alert(
+        `Basecamp registration failed: ${error.message ||
+        "Network error. Please check your connection and try again."
+        }`
+      );
+    }
+  };
 
   const handlePayment = async (data) => {
     const {
@@ -497,10 +495,10 @@ const handleShow = () => {
 
     console.log("Records is:::::", payload);
 
-     if (!executeRecaptcha) {
-        Toast.error("reCAPTCHA not ready");
-        return;
-      }
+    if (!executeRecaptcha) {
+      Toast.error("reCAPTCHA not ready");
+      return;
+    }
 
     // Check if API URL is defined
     if (!apiUrl) {
@@ -517,7 +515,7 @@ const handleShow = () => {
       const response = await fetch(apiUrl + "/initiate-payment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({...payload, recaptchaToken}),
+        body: JSON.stringify({ ...payload, recaptchaToken }),
       });
 
       // Check if response is ok
@@ -526,7 +524,7 @@ const handleShow = () => {
       }
 
       const paymentData = await response.json();
-      if(!paymentData.success)  {
+      if (!paymentData.success) {
         Toast.error(paymentData.message || "An error occurred while initiating payment.");
         return false;
       }
@@ -563,7 +561,7 @@ const handleShow = () => {
           Toast.success("Payment received! Confirmation may take a few seconds.");
 
           reset();
-          
+
         },
 
         prefill: {
@@ -610,9 +608,8 @@ const handleShow = () => {
     } catch (error) {
       console.error("Payment fetch error:", error);
       Toast.error(
-        `Payment failed: ${
-          error.message ||
-          "Network error. Please check your connection and try again."
+        `Payment failed: ${error.message ||
+        "Network error. Please check your connection and try again."
         }`
       );
     }
@@ -703,10 +700,10 @@ const handleShow = () => {
       ];
     } else if (basecampLocation === "Pune - 9th July’26") {
       return [
-        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        { value: "9999", label: "For Individuals - ₹9999 + GST" },
         {
-          value: "17999",
-          label: "Early Bird - For 3 Team members - ₹17999 + GST",
+          value: "22499",
+          label: "For Team of 3 members - ₹22499 + GST",
         },
       ];
     } else if (basecampLocation === "Mumbai - 20th August’26") {
@@ -777,7 +774,7 @@ const handleShow = () => {
       <div className="floating-register-div">
         <div className="floating-register-left">
           <p className="floating-register-text">
-            Early Bird Offer for Pune Basecamp Expires Soon
+            Only 5 spots remain for Pune Basecamp.
           </p>
           <p className="floating-register-subtext"></p>
         </div>
@@ -811,6 +808,11 @@ const handleShow = () => {
                 </span>
               </p>
 
+              <div className="workshop-type">
+                <i className="fa-regular fa-clock"></i>
+                <span>In-person Full Day Workshop</span>
+              </div>
+
               <ul className="hero-form-info">
                 <li>
                   <i className="fa-solid fa-location-dot"></i>
@@ -820,20 +822,32 @@ const handleShow = () => {
                     9<sup>th</sup> July
                   </span>
                 </li>
+              </ul>
+
+              <ul className="hero-form-info">
                 <li>
-                  <i className="fa-regular fa-clock"></i>
-                  <span>7 hour Offline Workshop</span>
-                </li>
-                <li>
-                  <i className="fa-solid fa-ticket"></i>
+                  <i className="fa-solid fa-location-dot"></i>
+                  <span>Mumbai</span>
+                  <i className="fa-regular fa-calendar ms-3"></i>
                   <span>
-                    Early Bird Rs <s>9,999</s> 7,999
+                    20<sup>th</sup> Aug
+                  </span>
+                </li>
+              </ul>
+
+              <ul className="hero-form-info">
+                <li>
+                  <i className="fa-solid fa-location-dot"></i>
+                  <span>Bangalore</span>
+                  <i className="fa-regular fa-calendar ms-3"></i>
+                  <span>
+                    24<sup>th</sup> Sep
                   </span>
                 </li>
               </ul>
 
               <button className="btn-cta hero-form-cta" onClick={handleShow}>
-                RESERVE YOUR SPOT — SEE YOU IN PUNE
+                RESERVE YOUR SPOT
               </button>
             </div>
 
@@ -959,7 +973,7 @@ const handleShow = () => {
                   </div>
 
                   <button type="submit" className="btn-cta hero-form-card-cta">
-                    Reserve Your Spot — See You in Pune
+                    Reserve Your Spot
                   </button>
                 </form>
 
@@ -1194,106 +1208,107 @@ const handleShow = () => {
       </section>
 
       {/* MONEY BACK SECTION */}
-       <section className="money-back-section">
-      <div className="money-back-container">
-        <div className="money-back-icon">
-          <Image src={moneyBackIcon} alt="Money-back guarantee" />
+      <section className="money-back-section">
+        <div className="money-back-container">
+          <div className="money-back-icon">
+            <Image src={moneyBackIcon} alt="Money-back guarantee" />
+          </div>
+          <div className="money-back-text">
+            <h2>MONEY-BACK GUARANTEE</h2>
+            <p>No questions asked if you don’t find the workshop valuable.</p>
+          </div>
         </div>
-        <div className="money-back-text">
-          <h2>MONEY-BACK GUARANTEE</h2>
-          <p>No questions asked if you don’t find the workshop valuable.</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-       <section className="city-section">
+      <section className="city-section">
 
-      <h2 className="city-title mb-5">We’re coming to your city</h2>
+        <h2 className="city-title mb-5">We’re coming to your city</h2>
 
-      <div className="basecamp-slider-container">
+        <div className="basecamp-slider-container">
 
-        <button className="arrow left" onClick={scrollLeft}>
-  &#8249;
-</button>
+          <button className="arrow left mobile-only" onClick={scrollLeft}>
+            &#8249;
+          </button>
 
 
-        <div className="city-slider" ref={sliderRef}>
+          <div className="city-slider" ref={sliderRef}>
 
-          {cityList.map((city) => (
-            <div className="city-card" key={city.id}>
+            {cityList.map((city) => (
+              <div className="city-card" key={city.id}>
 
-              <Image src={city.image} alt={city.name} className="city-img"/>
+                <Image src={city.image} alt={city.name} className="city-img" />
 
-              <h3 className="city-name">
-                   
-  {/* Location Icon */}
-  <span className="icon">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="25"
-      height="25"
-      viewBox="0 0 24 24"
-      fill="white"
-    >
-      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
+                <h3 className="city-name">
+
+                  {/* Location Icon */}
+                  <span className="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 24 24"
+                      fill="white"
+                    >
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
       9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 
       1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-    </svg>
-  </span>{city.name}
-              </h3>
-            <div className="city-location ">{city.location}</div>
-              <p className="city-date">
-                 <span className="icon">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="25"
-      height="25"
-      viewBox="0 0 24 24"
-      fill="white"
-    >
-      <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 
+                    </svg>
+                  </span>{city.name}
+                </h3>
+                <div className="city-location ">{city.location}</div>
+                <p className="city-date">
+                  <span className="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 24 24"
+                      fill="white"
+                    >
+                      <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 
       0-2 .9-2 2v14c0 1.1.9 2 2 
       2h14c1.1 0 2-.9 
       2-2V6c0-1.1-.9-2-2-2zm0 
       16H5V9h14v11z"/>
-    </svg>
-  </span>{city.date}
-              </p>
+                    </svg>
+                  </span>{city.date}
+                </p>
 
-              {city.earlyBird && (
-                <>
-                  <p className="early-bird">{city.earlyBird}</p>
+                {city.earlyBird && (
+                  <>
+                    <p className="early-bird">{city.earlyBird}</p>
+                  </>
+                )}
 
-                  <div className="price-row">
-                    <span className="price-old">{city.price1}</span>
-                    <span>{city.price2}</span>
-                  </div>
-                </>
-              )}
+                <div className="price-row">
+                  <span className={!city.earlyBird ? "" : "price-old"}>{city.price1}</span>
+                  <span>{city.price2}</span>
+                </div>
 
-              {city.status && (
-                <p className="coming">{city.status}</p>
-              )}
+                {city.status && (
+                  <p className="coming">{city.status}</p>
+                )}
 
-              <button
-                className={`city-btn${city.soldOut ? " sold-out" : ""}`}
-                onClick={city.earlyBird ? handleShow : handleShow2}
-                disabled={city.soldOut}
-              >
-                {city.button}
-              </button>
-            </div>
-          ))}
+                <button
+                  className={`city-btn${city.soldOut ? " sold-out" : ""}`}
+                  // onClick={city.earlyBird ? handleShow : handleShow2}
+                  onClick={handleShow}
+                  disabled={city.soldOut}
+                >
+                  {city.button}
+                </button>
+              </div>
+            ))}
 
-        </div>
+          </div>
 
-        <button className="arrow right " onClick={scrollRight}> 
-  &#8250;
-</button>
+          <button className="arrow right mobile-only" onClick={scrollRight}>
+            &#8250;
+          </button>
 
-      </div>
+        </div >
 
-    </section>             
+      </section >
 
       <div className="row">&nbsp;</div>
       <div style={{ position: "relative" }}>
@@ -1317,7 +1332,7 @@ const handleShow = () => {
                   <div className="ratio ratio-16x9">
                     <iframe
                       key={i}
-                        src={getEmbedUrl(d.src)}
+                      src={getEmbedUrl(d.src)}
                       className="home-video"
                       title="YouTube video player"
                       allow="autoplay; encrypted-media"
@@ -1353,7 +1368,7 @@ const handleShow = () => {
         <div className="leader-title ">
           Leaders who attended the Basecamp workshops in the past said this
         </div>
-       
+
       </div>
       <section className="faq-section">
         <div className="container">
@@ -1427,43 +1442,43 @@ const handleShow = () => {
       </section>
 
       <section className="hero-section-footer">
-    <div className="container">
-      <div className="row align-items-center justify-content-center">
-        <div className="col-lg-8 col-md-12 col-12 order-lg-1 order-1">
-          <div className="hero-content-footer text-center">
-            <h3
-              className="d-none d-md-block"
+        <div className="container">
+          <div className="row align-items-center justify-content-center">
+            <div className="col-lg-8 col-md-12 col-12 order-lg-1 order-1">
+              <div className="hero-content-footer text-center">
+                <h3
+                  className="d-none d-md-block"
 
-            >
-              <span style={{ color: "#fdae07" }}>Ready to Scale</span> <br />{" "}
-              with More Clarity?
-            </h3>
-            <h3
-              className="d-block d-md-none"
+                >
+                  <span style={{ color: "#fdae07" }}>Ready to Scale</span> <br />{" "}
+                  with More Clarity?
+                </h3>
+                <h3
+                  className="d-block d-md-none"
 
-            >
-              <span style={{ color: "#fdae07" }}>Ready to Scale</span>{" "}
-              with More Clarity?
-            </h3>
-            <p className="hero-subtitle">
-              <button
-                className=" btn-cta-footer text-center"
-                style={{ width: "60%", color: "#000000"}}
-                onClick={handleShow}
-                //  disabled
-              >
-                LIMITED SPOTS AVAILABLE
-                <br />
-                <span className="btn-text">
-                  <strong>RESERVE YOUR SPOT FOR PUNE NOW</strong>
-                </span>{" "}
-              </button>
-            </p>
+                >
+                  <span style={{ color: "#fdae07" }}>Ready to Scale</span>{" "}
+                  with More Clarity?
+                </h3>
+                <p className="hero-subtitle">
+                  <button
+                    className=" btn-cta-footer text-center"
+                    style={{ width: "60%", color: "#000000" }}
+                    onClick={handleShow}
+                  //  disabled
+                  >
+                    LIMITED SPOTS AVAILABLE
+                    <br />
+                    <span className="btn-text">
+                      <strong>RESERVE YOUR SPOT FOR PUNE NOW</strong>
+                    </span>{" "}
+                  </button>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
       <Modal show={show} onHide={handleClose}>
         <Form onSubmit={rhfHandleSubmit(handleSubmit)} name="basecamp_form" id="basecamp_form">
@@ -1673,7 +1688,7 @@ const handleShow = () => {
                 </small>
               )}
             </Form.Group>
-              <input
+            <input
               type="text"
               {...register("website")}
               style={{ display: "none" }}
@@ -1687,197 +1702,197 @@ const handleShow = () => {
               Close
             </Button>
             <Button type="submit" variant="primary" disabled={!recaptchaReady || isSubmitting || !isValid}>
-               {isSubmitting ? "Submitting..." : recaptchaReady ? "Submit" : "Loading..."}
+              {isSubmitting ? "Submitting..." : recaptchaReady ? "Submit" : "Loading..."}
             </Button>
           </Modal.Footer>
         </Form>
       </Modal>
 
       <Modal show={show2} onHide={handleClose2}>
-  <Form
-    onSubmit={form2Submit(handleSubmitForm2)}
-    name="basecamp_form"
-    id="basecamp_form"
-  >
-    <Modal.Header closeButton>
-      <Modal.Title>Register Your Interest</Modal.Title>
-    </Modal.Header>
-
-    <Modal.Body>
-
-      <Form.Group className="mb-3">
-        <Form.Label>Company Name</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter company name"
-          {...register2("companyName", {
-            required: "Company name is required",
-            minLength: {
-              value: 2,
-              message: "Company name must be at least 2 characters",
-            },
-          })}
-          isInvalid={!!errors2.companyName}
-        />
-        <Form.Control.Feedback type="invalid">
-          {errors2.companyName?.message}
-        </Form.Control.Feedback>
-      </Form.Group>
-
-
-      <Form.Group className="mb-3">
-        <Form.Label>Your Designation</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter your designation"
-          {...register2("yourDesignation", {
-            required: "Designation is required",
-            minLength: {
-              value: 2,
-              message: "Designation must be at least 2 characters",
-            },
-          })}
-          isInvalid={!!errors2.yourDesignation}
-        />
-        <Form.Control.Feedback type="invalid">
-          {errors2.yourDesignation?.message}
-        </Form.Control.Feedback>
-      </Form.Group>
-
-
-      <Form.Group className="mb-3">
-        <Form.Label>First Name</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="For Example : John"
-          {...register2("firstName", {
-            required: "First name is required",
-            minLength: {
-              value: 2,
-              message: "First name must be at least 2 characters",
-            },
-          })}
-          isInvalid={!!errors2.firstName}
-        />
-        <Form.Control.Feedback type="invalid">
-          {errors2.firstName?.message}
-        </Form.Control.Feedback>
-      </Form.Group>
-
-
-      <Form.Group className="mb-3">
-        <Form.Label>Last Name</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="For Example : Smith"
-          {...register2("lastName", {
-            required: "Last name is required",
-            minLength: {
-              value: 2,
-              message: "Last name must be at least 2 characters",
-            },
-          })}
-          isInvalid={!!errors2.lastName}
-        />
-        <Form.Control.Feedback type="invalid">
-          {errors2.lastName?.message}
-        </Form.Control.Feedback>
-      </Form.Group>
-
-
-      <Form.Group className="mb-3">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control
-          type="email"
-          placeholder="name@example.com"
-          {...register2("email", {
-            required: "Email is required",
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: "Invalid email address",
-            },
-          })}
-          isInvalid={!!errors2.email}
-        />
-        <Form.Control.Feedback type="invalid">
-          {errors2.email?.message}
-        </Form.Control.Feedback>
-      </Form.Group>
-
-
-      <Form.Group className="mb-3">
-        <Form.Label>Phone Number</Form.Label>
-        <Form.Control
-          type="tel"
-          placeholder="10-digit phone number"
-          {...register2("phone", {
-            required: "Phone number is required",
-            pattern: {
-              value: /^\d{10}$/,
-              message: "Phone number must be 10 digits",
-            },
-          })}
-          isInvalid={!!errors2.phone}
-        />
-        <Form.Control.Feedback type="invalid">
-          {errors2.phone?.message}
-        </Form.Control.Feedback>
-      </Form.Group>
-
-
-      <Form.Group className="mb-3">
-        <Form.Label>Upcoming Basecamp Locations</Form.Label>
-        <Form.Select disabled
-          {...register2("basecampLocation", {
-            required: "Please select a basecamp location",
-          })}
-          isInvalid={!!errors2.basecampLocation}
+        <Form
+          onSubmit={form2Submit(handleSubmitForm2)}
+          name="basecamp_form"
+          id="basecamp_form"
         >
-          <option value="">- Select Basecamp Location -</option>
-          {/* <option value="Delhi-NCR">Delhi-NCR</option> */}
-          <option value="Pune">Pune</option>
-          {/* <option value="Dubai">Dubai</option>
+          <Modal.Header closeButton>
+            <Modal.Title>Register Your Interest</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Company Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter company name"
+                {...register2("companyName", {
+                  required: "Company name is required",
+                  minLength: {
+                    value: 2,
+                    message: "Company name must be at least 2 characters",
+                  },
+                })}
+                isInvalid={!!errors2.companyName}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors2.companyName?.message}
+              </Form.Control.Feedback>
+            </Form.Group>
+
+
+            <Form.Group className="mb-3">
+              <Form.Label>Your Designation</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter your designation"
+                {...register2("yourDesignation", {
+                  required: "Designation is required",
+                  minLength: {
+                    value: 2,
+                    message: "Designation must be at least 2 characters",
+                  },
+                })}
+                isInvalid={!!errors2.yourDesignation}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors2.yourDesignation?.message}
+              </Form.Control.Feedback>
+            </Form.Group>
+
+
+            <Form.Group className="mb-3">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="For Example : John"
+                {...register2("firstName", {
+                  required: "First name is required",
+                  minLength: {
+                    value: 2,
+                    message: "First name must be at least 2 characters",
+                  },
+                })}
+                isInvalid={!!errors2.firstName}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors2.firstName?.message}
+              </Form.Control.Feedback>
+            </Form.Group>
+
+
+            <Form.Group className="mb-3">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="For Example : Smith"
+                {...register2("lastName", {
+                  required: "Last name is required",
+                  minLength: {
+                    value: 2,
+                    message: "Last name must be at least 2 characters",
+                  },
+                })}
+                isInvalid={!!errors2.lastName}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors2.lastName?.message}
+              </Form.Control.Feedback>
+            </Form.Group>
+
+
+            <Form.Group className="mb-3">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                {...register2("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Invalid email address",
+                  },
+                })}
+                isInvalid={!!errors2.email}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors2.email?.message}
+              </Form.Control.Feedback>
+            </Form.Group>
+
+
+            <Form.Group className="mb-3">
+              <Form.Label>Phone Number</Form.Label>
+              <Form.Control
+                type="tel"
+                placeholder="10-digit phone number"
+                {...register2("phone", {
+                  required: "Phone number is required",
+                  pattern: {
+                    value: /^\d{10}$/,
+                    message: "Phone number must be 10 digits",
+                  },
+                })}
+                isInvalid={!!errors2.phone}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors2.phone?.message}
+              </Form.Control.Feedback>
+            </Form.Group>
+
+
+            <Form.Group className="mb-3">
+              <Form.Label>Upcoming Basecamp Locations</Form.Label>
+              <Form.Select disabled
+                {...register2("basecampLocation", {
+                  required: "Please select a basecamp location",
+                })}
+                isInvalid={!!errors2.basecampLocation}
+              >
+                <option value="">- Select Basecamp Location -</option>
+                {/* <option value="Delhi-NCR">Delhi-NCR</option> */}
+                <option value="Pune">Pune</option>
+                {/* <option value="Dubai">Dubai</option>
           <option value="Bangalore">Bangalore</option>
           <option value="Mumbai">Mumbai</option> */}
-        </Form.Select>
+              </Form.Select>
 
-        <Form.Control.Feedback type="invalid">
-          {errors2.basecampLocation?.message}
-        </Form.Control.Feedback>
-      </Form.Group>
+              <Form.Control.Feedback type="invalid">
+                {errors2.basecampLocation?.message}
+              </Form.Control.Feedback>
+            </Form.Group>
 
 
-      <input
-        type="text"
-        {...register2("website")}
-        style={{ display: "none" }}
-        tabIndex={-1}
-        autoComplete="off"
-      />
+            <input
+              type="text"
+              {...register2("website")}
+              style={{ display: "none" }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
 
-    </Modal.Body>
+          </Modal.Body>
 
-    <Modal.Footer>
-      <Button variant="secondary" onClick={handleClose2}>
-        Close
-      </Button>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose2}>
+              Close
+            </Button>
 
-      <Button
-        type="submit"
-        variant="primary"
-        disabled={!recaptchaReady || isSubmitting2 || !isValid2}
-      >
-        {isSubmitting2
-          ? "Submitting..."
-          : recaptchaReady
-          ? "Submit"
-          : "Loading..."}
-      </Button>
+            <Button
+              type="submit"
+              variant="primary"
+              disabled={!recaptchaReady || isSubmitting2 || !isValid2}
+            >
+              {isSubmitting2
+                ? "Submitting..."
+                : recaptchaReady
+                  ? "Submit"
+                  : "Loading..."}
+            </Button>
 
-    </Modal.Footer>
+          </Modal.Footer>
 
-  </Form>
-</Modal>
-    </div>
+        </Form>
+      </Modal>
+    </div >
   );
 }
