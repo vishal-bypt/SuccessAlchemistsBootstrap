@@ -228,8 +228,8 @@ export default function BasecampPage() {
       date: "9th July’26",
       image: pune,
       price1: "Rs 9999",
-      price2: "Rs 7999",
-      earlyBird: "Early bird offer",
+      // price2: "Rs 7999",
+      // earlyBird: "Early bird offer",
       button: "REGISTER NOW"
     },
     {
@@ -709,10 +709,10 @@ export default function BasecampPage() {
       ];
     } else if (basecampLocation === "Pune - 9th July’26") {
       return [
-        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        { value: "9999", label: "For Individuals - ₹9999 + GST" },
         {
-          value: "17999",
-          label: "Early Bird - For 3 Team members - ₹17999 + GST",
+          value: "22499",
+          label: "For Team of 3 members - ₹22499 + GST",
         },
       ];
     } else if (basecampLocation === "Mumbai - 20th August’26") {
@@ -832,8 +832,11 @@ export default function BasecampPage() {
                 </li>
                 <li>
                   <i className="fa-solid fa-ticket"></i>
-                  <span>
+                  {/* <span>
                     Early Bird Rs <s>9,999</s> 7,999
+                  </span> */}
+                  <span>
+                    Rs 9,999
                   </span>
                 </li>
               </ul>
@@ -1269,13 +1272,13 @@ export default function BasecampPage() {
                 {city.earlyBird && (
                   <>
                     <p className="early-bird">{city.earlyBird}</p>
-
-                    <div className="price-row">
-                      <span className="price-old">{city.price1}</span>
-                      <span>{city.price2}</span>
-                    </div>
                   </>
                 )}
+
+                <div className="price-row">
+                  <span className={!city.earlyBird ? "" : "price-old"}>{city.price1}</span>
+                  <span>{city.price2}</span>
+                </div>
 
                 {city.status && (
                   <p className="coming">{city.status}</p>
@@ -1283,7 +1286,8 @@ export default function BasecampPage() {
 
                 <button
                   className={`city-btn${city.soldOut ? " sold-out" : ""}`}
-                  onClick={city.earlyBird ? handleShow : handleShow2}
+                  // onClick={city.earlyBird ? handleShow : handleShow2}
+                  onClick={handleShow}
                   disabled={city.soldOut}
                 >
                   {city.button}
@@ -1297,9 +1301,9 @@ export default function BasecampPage() {
             &#8250;
           </button>
 
-        </div>
+        </div >
 
-      </section>
+      </section >
 
       <div className="row">&nbsp;</div>
       <div style={{ position: "relative" }}>
@@ -1884,6 +1888,6 @@ export default function BasecampPage() {
 
         </Form>
       </Modal>
-    </div>
+    </div >
   );
 }
