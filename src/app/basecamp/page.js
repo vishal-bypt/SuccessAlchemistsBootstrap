@@ -1222,7 +1222,7 @@ export default function BasecampPage() {
 
       <section className="city-section">
 
-        <h2 className="city-title mb-5">We’re coming to your city</h2>
+        <h2 className="city-title mb-5">Basecamp In Your City</h2>
 
         <div className="basecamp-slider-container">
 
