@@ -252,15 +252,6 @@ export default function BasecampPage() {
       earlyBird: "Early bird offer",
       button: "REGISTER NOW"
     },
-    {
-      id: 2,
-      name: "Bangalore",
-      date: "11th June’26",
-      image: bangalore,
-      status: "Sold Out",
-      soldOut: true,
-      button: "SOLD OUT"
-    },
   ];
 
 
@@ -1221,7 +1212,7 @@ export default function BasecampPage() {
 
         <div className="basecamp-slider-container">
 
-          <button className="arrow left" onClick={scrollLeft}>
+          <button className="arrow left mobile-only" onClick={scrollLeft}>
             &#8249;
           </button>
 
@@ -1297,7 +1288,7 @@ export default function BasecampPage() {
 
           </div>
 
-          <button className="arrow right " onClick={scrollRight}>
+          <button className="arrow right mobile-only" onClick={scrollRight}>
             &#8250;
           </button>
 
