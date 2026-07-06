@@ -328,9 +328,9 @@ export default function BasecampPage() {
     setValue("email", data.email, { shouldValidate: true });
     setValue("phone", data.phone, { shouldValidate: true });
     setValue("companyName", data.companyName, { shouldValidate: true });
-    setValue("basecampLocation", "Pune - 9th July’26", {
-      shouldValidate: true,
-    });
+    // setValue("basecampLocation", "Pune - 9th July’26", {
+    //   shouldValidate: true,
+    // });
     // Remember the lead so it is still stored if the dialog is closed unsubmitted.
     pendingHeroLeadRef.current = data;
     setShow(true);
@@ -774,7 +774,7 @@ export default function BasecampPage() {
       <div className="floating-register-div">
         <div className="floating-register-left">
           <p className="floating-register-text">
-            Early Bird Offer for Pune Basecamp Expired.
+            Only 5 spots remain for Pune Basecamp.
           </p>
           <p className="floating-register-subtext"></p>
         </div>
@@ -808,6 +808,11 @@ export default function BasecampPage() {
                 </span>
               </p>
 
+              <div className="workshop-type">
+                <i className="fa-regular fa-clock"></i>
+                <span>In-person Full Day Workshop</span>
+              </div>
+
               <ul className="hero-form-info">
                 <li>
                   <i className="fa-solid fa-location-dot"></i>
@@ -817,17 +822,26 @@ export default function BasecampPage() {
                     9<sup>th</sup> July
                   </span>
                 </li>
+              </ul>
+
+              <ul className="hero-form-info">
                 <li>
-                  <i className="fa-regular fa-clock"></i>
-                  <span>7 hour Offline Workshop</span>
-                </li>
-                <li>
-                  <i className="fa-solid fa-ticket"></i>
-                  {/* <span>
-                    Early Bird Rs <s>9,999</s> 7,999
-                  </span> */}
+                  <i className="fa-solid fa-location-dot"></i>
+                  <span>Mumbai</span>
+                  <i className="fa-regular fa-calendar ms-3"></i>
                   <span>
-                    Rs 9,999
+                    20<sup>th</sup> Aug
+                  </span>
+                </li>
+              </ul>
+
+              <ul className="hero-form-info">
+                <li>
+                  <i className="fa-solid fa-location-dot"></i>
+                  <span>Bangalore</span>
+                  <i className="fa-regular fa-calendar ms-3"></i>
+                  <span>
+                    24<sup>th</sup> Sep
                   </span>
                 </li>
               </ul>

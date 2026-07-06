@@ -10,6 +10,15 @@
     white-space: nowrap;
 }
 
+.workshop-type {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
 
 body {
     font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
@@ -303,6 +312,10 @@ body {
     .hero-form-info li {
         font-size: 17px;
     }
+
+    .workshop-type {
+        font-size: 17px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -352,6 +365,11 @@ body {
     .hero-form-info li {
         font-size: 16px;
         margin-bottom: 6px;
+    }
+
+    .workshop-type {
+        font-size: 16px;
+        margin-bottom: 10px;
     }
 
     .hero-form-cta {
