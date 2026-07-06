@@ -178,7 +178,7 @@ const About = memo(() => {
     },
     {
       name: "Kavita Lakshman",
-      role: "Accountability Partner",
+      role: "Accountability Partner Team Lead",
       description: "Kavita holds a Bachelor of Arts degree from Mumbai University and has completed a Postgraduate Diploma in Travel and Tourism from the esteemed Garware Institute at Mumbai University. With over 16 years of experience in multinational companies, Kavita brings a wealth of expertise and a proven track record of success in the industry.",
       image: kavita,
     },
