@@ -213,15 +213,15 @@ export default function BasecampPage() {
     //   price2: "Rs 7999",
     //   button: "REGISTER NOW"
     // },
-    {
-      id: 2,
-      name: "Bangalore",
-      date: "11th June’26",
-      image: bangalore,
-      status: "Sold Out",
-      soldOut: true,
-      button: "SOLD OUT"
-    },
+    // {
+    //   id: 2,
+    //   name: "Bangalore",
+    //   date: "11th June’26",
+    //   image: bangalore,
+    //   status: "Sold Out",
+    //   soldOut: true,
+    //   button: "SOLD OUT"
+    // },
     {
       id: 3,
       name: "Pune",
@@ -252,7 +252,15 @@ export default function BasecampPage() {
       earlyBird: "Early bird offer",
       button: "REGISTER NOW"
     },
-
+    {
+      id: 2,
+      name: "Bangalore",
+      date: "11th June’26",
+      image: bangalore,
+      status: "Sold Out",
+      soldOut: true,
+      button: "SOLD OUT"
+    },
   ];
 
 
