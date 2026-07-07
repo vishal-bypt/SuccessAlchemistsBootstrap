@@ -225,11 +225,11 @@ export default function BasecampPage() {
     {
       id: 3,
       name: "Pune",
-      date: "9th July’26",
+      date: "30th July’26",
       image: pune,
       price1: "Rs 9999",
-      // price2: "Rs 7999",
-      // earlyBird: "Early bird offer",
+      price2: "Rs 7999",
+      earlyBird: "Early bird offer",
       button: "REGISTER NOW"
     },
     {
@@ -698,12 +698,12 @@ export default function BasecampPage() {
           label: "Early Bird - For 3 Team members - ₹17999 + GST",
         },
       ];
-    } else if (basecampLocation === "Pune - 9th July’26") {
+    } else if (basecampLocation === "Pune - 30th July’26") {
       return [
-        { value: "9999", label: "For Individuals - ₹9999 + GST" },
+        { value: "7999", label: "For Individuals - ₹7999 + GST" },
         {
-          value: "22499",
-          label: "For Team of 3 members - ₹22499 + GST",
+          value: "17999",
+          label: "Early Bird - For 3 Team members - ₹17999 + GST",
         },
       ];
     } else if (basecampLocation === "Mumbai - 20th August’26") {
@@ -819,7 +819,7 @@ export default function BasecampPage() {
                   <span>Pune</span>
                   <i className="fa-regular fa-calendar ms-3"></i>
                   <span>
-                    9<sup>th</sup> July
+                    30<sup>th</sup> July
                   </span>
                 </li>
               </ul>
@@ -1616,8 +1616,8 @@ export default function BasecampPage() {
                 {/* <option value="Delhi-NCR - 15th April’26">
                   Delhi-NCR - 15th April’26
                 </option> */}
-                <option value="Pune - 9th July’26">
-                  Pune - 9th July’26
+                <option value="Pune - 30th July’26">
+                  Pune - 30th July’26
                 </option>
                 <option value="Mumbai - 20th August’26">
                   Mumbai - 20th August’26
