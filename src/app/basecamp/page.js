@@ -157,34 +157,38 @@ export default function BasecampPage() {
   const items = [
     {
       id: 1,
+      src: " https://youtu.be/nlLClO0F3JE",
+    },
+    {
+      id: 2,
       title: "Success story of #1 - Ador powerton",
       description:
         "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
       src: " https://youtu.be/GyCb1FzL8f0",
     },
     {
-      id: 2,
+      id: 3,
       title: "Success Story #2 - Aliens Tattoo",
       description:
         "In this video, Sunny Bhanushali the Founder & CEO of Aliens Tattoo talks about experiencing challenges of rapid growth, the biggest benefit of implementing a structured framework & the value added by their coach.",
       src: "https://youtu.be/yZYbwIRNFGo",
     },
     {
-      id: 3,
+      id: 4,
       title: "Success Story #3 - Grauer & Weil (Engineering Division)",
       description:
         "Rohit More, the Director talks about the biggest benefits of implementing the Scaling Up framework. Besides ensuring alignment at every level within the organization, they clearly articulated their B-HAG (Big Hairy Audacious Goal) & have been systematically seeing growth YoY for the past 3 years. At the end, there is a reference to the Coach and the support provided in this growth journey.",
       src: "https://youtu.be/tVbpVpNADlw",
     },
     {
-      id: 4,
+      id: 5,
       title: "Success Story #4 - Clarion Technologies",
       description:
         "In this video, their CEO, Siddharth Motiwale talks about the 'secret sauce' which has helped Clarion grow systematically over the past few years. He also talks about the value added by Ajay as their coach.",
       src: "https://youtu.be/WO1A4s2Zjy8",
     },
     {
-      id: 5,
+      id: 6,
       title: "Success Story #5 - InfraCloud Technologies",
       description:
         "In this video, Girish Shilamkar, the Founder & CEO, shares some key aspects of the Scaling Up framework, which helped him build a great culture within his company. These foundations ultimately helped ensure a successful exit in 2025.",
@@ -192,7 +196,7 @@ export default function BasecampPage() {
         "https://youtu.be/kVqcCXjmE4w",
     },
     {
-      id: 6,
+      id: 7,
       title: "Success Story #6 - Uplers & Mavlers",
       description:
         "In this video, Jaymin (CEO) & Nital (COO) talk about the benefits of implementing the Scaling Up framework. They ensured alignment at all levels within their business & experienced the resultant growth.",
@@ -225,11 +229,11 @@ export default function BasecampPage() {
     {
       id: 3,
       name: "Pune",
-      date: "9th July’26",
+      date: "30th July’26",
       image: pune,
       price1: "Rs 9999",
-      // price2: "Rs 7999",
-      // earlyBird: "Early bird offer",
+      price2: "Rs 7999",
+      earlyBird: "Early bird offer",
       button: "REGISTER NOW"
     },
     {
@@ -698,12 +702,12 @@ export default function BasecampPage() {
           label: "Early Bird - For 3 Team members - ₹17999 + GST",
         },
       ];
-    } else if (basecampLocation === "Pune - 9th July’26") {
+    } else if (basecampLocation === "Pune - 30th July’26") {
       return [
-        { value: "9999", label: "For Individuals - ₹9999 + GST" },
+        { value: "7999", label: "For Individuals - ₹7999 + GST" },
         {
-          value: "22499",
-          label: "For Team of 3 members - ₹22499 + GST",
+          value: "17999",
+          label: "Early Bird - For 3 Team members - ₹17999 + GST",
         },
       ];
     } else if (basecampLocation === "Mumbai - 20th August’26") {
@@ -819,7 +823,7 @@ export default function BasecampPage() {
                   <span>Pune</span>
                   <i className="fa-regular fa-calendar ms-3"></i>
                   <span>
-                    9<sup>th</sup> July
+                    30<sup>th</sup> July
                   </span>
                 </li>
               </ul>
@@ -1616,8 +1620,8 @@ export default function BasecampPage() {
                 {/* <option value="Delhi-NCR - 15th April’26">
                   Delhi-NCR - 15th April’26
                 </option> */}
-                <option value="Pune - 9th July’26">
-                  Pune - 9th July’26
+                <option value="Pune - 30th July’26">
+                  Pune - 30th July’26
                 </option>
                 <option value="Mumbai - 20th August’26">
                   Mumbai - 20th August’26
