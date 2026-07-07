@@ -850,6 +850,11 @@ export default function BasecampPage() {
                 </li>
               </ul>
 
+              <div className="workshop-type">
+                <i className="fa-solid fa-ticket"></i>
+                <span>Early Bird Rs <s>9,999</s> 7,999</span>
+              </div>
+
               <button className="btn-cta hero-form-cta" onClick={handleShow}>
                 RESERVE YOUR SPOT
               </button>
