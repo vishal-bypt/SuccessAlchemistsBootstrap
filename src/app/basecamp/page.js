@@ -247,6 +247,16 @@ export default function BasecampPage() {
       button: "REGISTER NOW"
     },
     {
+      id: 4,
+      name: "Delhi",
+      date: "17th September’26",
+      image: delhi,
+      price1: "Rs 9999",
+      price2: "Rs 7999",
+      earlyBird: "Early bird offer",
+      button: "REGISTER NOW"
+    },
+    {
       id: 5,
       name: "Bangalore",
       date: "24th September’26",
@@ -686,22 +696,6 @@ export default function BasecampPage() {
         { value: "9999", label: "For Individuals - ₹9999 + GST" },
         { value: "22499", label: "For Team of 3 members - ₹22499 + GST" },
       ];
-    } else if (basecampLocation === "Mumbai - 26th Feb'26") {
-      return [
-        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
-        {
-          value: "17999",
-          label: "Early Bird - For 3 Team members - ₹17999 + GST",
-        },
-      ];
-    } else if (basecampLocation === "Delhi-NCR - 15th April’26") {
-      return [
-        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
-        {
-          value: "17999",
-          label: "Early Bird - For 3 Team members - ₹17999 + GST",
-        },
-      ];
     } else if (basecampLocation === "Pune - 30th July’26") {
       return [
         { value: "7999", label: "For Individuals - ₹7999 + GST" },
@@ -719,6 +713,14 @@ export default function BasecampPage() {
         },
       ];
     } else if (basecampLocation === "Bangalore - 24th September’26") {
+      return [
+        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        {
+          value: "17999",
+          label: "Early Bird - For 3 Team members - ₹17999 + GST",
+        },
+      ];
+    } else if (basecampLocation === "Delhi - 17th September’26") {
       return [
         { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
         {
@@ -835,6 +837,17 @@ export default function BasecampPage() {
                   <i className="fa-regular fa-calendar ms-3"></i>
                   <span>
                     20<sup>th</sup> Aug
+                  </span>
+                </li>
+              </ul>
+
+              <ul className="hero-form-info">
+                <li>
+                  <i className="fa-solid fa-location-dot"></i>
+                  <span>Delhi</span>
+                  <i className="fa-regular fa-calendar ms-3"></i>
+                  <span>
+                    17<sup>th</sup> Sep
                   </span>
                 </li>
               </ul>
@@ -1235,7 +1248,8 @@ export default function BasecampPage() {
 
         <div className="basecamp-slider-container">
 
-          <button className="arrow left mobile-only" onClick={scrollLeft}>
+          {/* <button className="arrow left mobile-only" onClick={scrollLeft}> */}
+          <button className="arrow left" onClick={scrollLeft}>
             &#8249;
           </button>
 
@@ -1311,7 +1325,8 @@ export default function BasecampPage() {
 
           </div>
 
-          <button className="arrow right mobile-only" onClick={scrollRight}>
+          {/* <button className="arrow right mobile-only" onClick={scrollRight}> */}
+          <button className="arrow right" onClick={scrollRight}>
             &#8250;
           </button>
 
@@ -1630,6 +1645,9 @@ export default function BasecampPage() {
                 </option>
                 <option value="Mumbai - 20th August’26">
                   Mumbai - 20th August’26
+                </option>
+                <option value="Delhi - 17th September’26">
+                  Delhi - 17th September’26
                 </option>
                 <option value="Bangalore - 24th September’26">
                   Bangalore - 24th September’26
