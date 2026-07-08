@@ -780,7 +780,7 @@ export default function BasecampPage() {
       <div className="floating-register-div">
         <div className="floating-register-left">
           <p className="floating-register-text">
-            Only 5 spots remain for Pune Basecamp.
+            Seats are Limited.
           </p>
           <p className="floating-register-subtext"></p>
         </div>

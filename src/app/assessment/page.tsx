@@ -179,8 +179,9 @@ const page = () => {
           </p>
           <div className="submit-btn-div">
             <button
-              type="submit"
+              type="button"
               className="btnstyle btn-submit"
+              onClick={() => window.location.href = "/contactUs"}
             >
               Book a Discovery Call
             </button>
