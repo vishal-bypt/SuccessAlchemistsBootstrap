@@ -6,7 +6,11 @@ export const metadata: Metadata = {
     "Scale your business with expert CEO coaching, strategy, and growth consulting. Success Alchemists help founders and companies achieve sustainable growth.",
   keywords:
     "CEO Coaching Services, business coaching, business growth, CEO coaching, business strategy, growth consulting, founders, scaling business, leadership, scaling business consulting",
+  alternates: {
+    canonical: "https://www.success-alchemists.com/home",
+  },
   openGraph: {
+    url: "https://www.success-alchemists.com/home",
     title: "Business Growth & CEO Coaching Services | Success Alchemists",
     description:
       "Scale your business with expert CEO coaching, strategy, and growth consulting. Success Alchemists help founders and companies achieve sustainable growth.",

@@ -6,7 +6,11 @@ export const metadata: Metadata = {
     "Evaluate your business performance and growth potential with our assessment designed for CEOs and scaling companies.",
   keywords:
     "business assessment, growth potential, CEO tools, scaling business, performance evaluation",
+  alternates: {
+    canonical: "https://www.success-alchemists.com/assessment",
+  },
   openGraph: {
+    url: "https://www.success-alchemists.com/assessment",
     title: "Business Growth Assessment for CEOs & Founders",
     description:
       "Evaluate your business performance and growth potential with our assessment designed for CEOs and scaling companies.",
