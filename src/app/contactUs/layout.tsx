@@ -6,7 +6,11 @@ export const metadata: Metadata = {
     "Connect with our experts for CEO coaching, business strategy, and growth consulting. Let's scale your company with proven frameworks.",
   keywords:
     "contact business coach, CEO coaching, business consulting, growth experts, strategy consulting, Success Alchemists",
+  alternates: {
+    canonical: "https://www.success-alchemists.com/contactUs",
+  },
   openGraph: {
+    url: "https://www.success-alchemists.com/contactUs",
     title: "Contact Business Growth Experts | Success Alchemists",
     description:
       "Connect with our experts for CEO coaching, business strategy, and growth consulting. Let's scale your company with proven frameworks.",

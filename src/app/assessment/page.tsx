@@ -45,10 +45,17 @@ const page = () => {
       }
       const recaptchaToken = await executeRecaptcha("assessment_form");
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      if (!apiUrl) {
+        Toast.error("Payment failed: API URL is not configured.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      const billingName = `${firstName} ${lastName}`;
       const response = await fetch(apiUrl + "/initiate-payment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ order_id, amount: '29500', billing_name: `${firstName} ${lastName}`, billing_email: email, billing_tel: phone, company: "NOT APPLICABLE", designation, recaptchaToken })
+        body: JSON.stringify({ order_id, amount: '25000', billing_name: billingName, billing_email: email, billing_tel: phone, company: "NOT APPLICABLE", designation, type: "assessment", recaptchaToken })
       });
 
       const data = await response.json();
@@ -58,52 +65,67 @@ const page = () => {
         return;
       }
       console.log("Response from /initiate-payment:", data);
-      if (data.paymentUrl) {
-        try {
 
-          const encRequest = data.encRequest;
-          const access_code = data.access_code;
-
-          if (encRequest && access_code) {
-
-            const existingForm = document.getElementById("ccavenue-payment-form");
-            if (existingForm) existingForm.remove();
-
-            const form = document.createElement("form");
-            form.method = "POST";
-            form.action = data.ccavenueUrl;
-            form.id = "ccavenue-payment-form";
-
-            const accessInput = document.createElement("input");
-            accessInput.type = "hidden";
-            accessInput.name = "access_code";
-            accessInput.value = access_code;
-            form.appendChild(accessInput);
-
-            const encInput = document.createElement("input");
-            encInput.type = "hidden";
-            encInput.name = "encRequest";
-            encInput.value = encRequest;
-            form.appendChild(encInput);
-
-            document.body.appendChild(form);
-            form.submit();
-            return; // navigation started, no need to reset isSubmitting
-          } else {
-            console.error("Missing access_code or encRequest in payment URL");
-            alert("Payment failed: Missing required data.");
-            setIsSubmitting(false);
+      // ✅ Open Razorpay checkout
+      const options = {
+        key: data.data.key,
+        amount: data.data.amount * 100,
+        currency: "INR",
+        name: "Success Alchemists",
+        description: "Scaling Up Assessment Payment",
+        order_id: data.data.orderId,
+        handler: async function (razorpayResponse: any) {
+          try {
+            await fetch(apiUrl + "/razorpay-success", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                orderId: data.data.orderId,
+                razorpay_payment_id: razorpayResponse.razorpay_payment_id,
+                razorpay_order_id: razorpayResponse.razorpay_order_id,
+                razorpay_signature: razorpayResponse.razorpay_signature,
+              }),
+            });
+          } catch (successError) {
+            console.error("Error while confirming successful payment:", successError);
           }
-        } catch (error) {
-          console.error("Invalid paymentUrl format", error);
-          alert("Payment failed: Invalid URL");
+          Toast.success("Payment received! Confirmation may take a few seconds.");
+          setFirstName('');
+          setLastName('');
+          setPhone('');
+          setDesignation('');
+          setEmail('');
           setIsSubmitting(false);
-        }
-      } else {
-        console.error("Invalid response from API:", data);
-        alert("Payment failed: Server error");
-        setIsSubmitting(false);
-      }
+        },
+        prefill: {
+          name: billingName,
+          email: email,
+          contact: phone,
+        },
+        modal: {
+          ondismiss: async () => {
+            try {
+              await fetch(apiUrl + "/razorpay-dismissed", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ orderId: data.data.orderId }),
+              });
+            } catch (dismissError) {
+              console.error("Error while marking dismissed payment as failed:", dismissError);
+            }
+            Toast.error("Payment was not completed.");
+            setFirstName('');
+            setLastName('');
+            setPhone('');
+            setDesignation('');
+            setEmail('');
+            setIsSubmitting(false);
+          },
+        },
+      };
+
+      const rzp = new (window as any).Razorpay(options);
+      rzp.open();
     } catch (err) {
       console.error(err);
       setIsSubmitting(false);
@@ -179,8 +201,9 @@ const page = () => {
           </p>
           <div className="submit-btn-div">
             <button
-              type="submit"
+              type="button"
               className="btnstyle btn-submit"
+              onClick={() => window.location.href = "/contactUs"}
             >
               Book a Discovery Call
             </button>

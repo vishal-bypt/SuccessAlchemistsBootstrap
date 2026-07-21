@@ -6,7 +6,11 @@ export const metadata: Metadata = {
     "Join our growth programs designed for CEOs and founders to scale businesses, improve execution, and achieve long-term success.",
   keywords:
     "business growth programs, CEO programs, founder coaching, leadership growth, business execution, scaling companies",
+  alternates: {
+    canonical: "https://www.success-alchemists.com/basecamp",
+  },
   openGraph: {
+    url: "https://www.success-alchemists.com/basecamp",
     title: "Business Growth Programs for CEOs | Success Alchemists",
     description:
       "Join our growth programs designed for CEOs and founders to scale businesses, improve execution, and achieve long-term success.",

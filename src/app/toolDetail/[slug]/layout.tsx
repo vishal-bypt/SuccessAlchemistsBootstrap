@@ -101,6 +101,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const meta = toolMetaMap[slug];
+  const canonicalUrl = `https://www.success-alchemists.com/toolDetail/${slug}`;
 
   if (!meta) {
     // Fall back to a sensible default for unmapped tool slugs.
@@ -108,6 +109,9 @@ export async function generateMetadata({
       title: "Business Growth Toolkit | Success Alchemists",
       description:
         "Explore practical tools and frameworks to help CEOs and founders scale their businesses with Success Alchemists.",
+      alternates: {
+        canonical: canonicalUrl,
+      },
     };
   }
 
@@ -115,9 +119,13 @@ export async function generateMetadata({
     title: meta.title,
     description: meta.description,
     keywords: meta.keywords,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: meta.title,
       description: meta.description,
+      url: canonicalUrl,
     },
   };
 }
