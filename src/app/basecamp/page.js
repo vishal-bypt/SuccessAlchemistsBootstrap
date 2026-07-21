@@ -555,22 +555,26 @@ export default function BasecampPage() {
         handler: async function (response) {
           console.log("Payment Success:", response);
 
-          // ✅ SEND TO BACKEND FOR VERIFY
-          // const verifyRes = await fetch(apiUrl + "/verify-payment", {
-          //   method: "POST",
-          //   headers: { "Content-Type": "application/json" },
-          //   body: JSON.stringify(response),
-          // });
+          // ✅ Confirm success with backend so the payment is marked PAID
+          // and the success email is triggered.
+          try {
+            await fetch(apiUrl + "/razorpay-success", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                orderId: paymentData.data.orderId,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_signature: response.razorpay_signature,
+              }),
+            });
+          } catch (successError) {
+            console.error(
+              "Error while confirming successful payment:",
+              successError
+            );
+          }
 
-          // const data = await verifyRes.json();
-
-          // if (data.success) {
-          //   Toast.success("Payment verified successfully! Your registration is confirmed.");
-          //   reset();
-          //   handleClose();
-          // } else {
-          //   Toast.error("Payment verification failed.");
-          // }
           handleClose();
           Toast.success("Payment received! Confirmation may take a few seconds.");
 
