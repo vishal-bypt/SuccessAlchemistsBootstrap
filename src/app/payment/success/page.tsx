@@ -15,9 +15,19 @@ export default function PaymentSuccess() {
 
   useEffect(() => {
     const stored = sessionStorage.getItem('paymentResponse');
-    if (stored) {
-      setData(JSON.parse(stored));
+
+    // Only treat this as a genuine successful payment when we have the
+    // response that the payment flow stored. A direct visit / refresh with no
+    // stored data must NOT fire a conversion or show stale order details.
+    if (!stored) {
+      return;
     }
+
+    setData(JSON.parse(stored));
+
+    // Clear it immediately so a later refresh or direct visit doesn't show
+    // stale order details or re-fire the conversion.
+    sessionStorage.removeItem('paymentResponse');
 
     // Event snippet for Submit lead form conversion page
     if (window.gtag) {
