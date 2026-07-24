@@ -8,6 +8,8 @@ type PaymentResponse = {
   order_id: string;
   tracking_id: string;
   order_status: string;
+  amount?: number;
+  currency?: string;
 };
 
 export default function PaymentSuccess() {
@@ -23,16 +25,25 @@ export default function PaymentSuccess() {
       return;
     }
 
-    setData(JSON.parse(stored));
+    const payment: PaymentResponse = JSON.parse(stored);
+    setData(payment);
 
     // Clear it immediately so a later refresh or direct visit doesn't show
-    // stale order details or re-fire the conversion.
+    // stale order details or re-fire the conversions.
     sessionStorage.removeItem('paymentResponse');
 
     // Event snippet for Submit lead form conversion page
     if (window.gtag) {
       window.gtag('event', 'conversion', {
         'send_to': 'AW-17882487402/Jbp8CM7T7OcbEOq0hM9C'
+      });
+    }
+
+    // Meta Pixel Purchase conversion (fired once per real payment)
+    if (window.fbq) {
+      window.fbq('track', 'Purchase', {
+        value: payment.amount ?? 0,
+        currency: payment.currency ?? 'INR',
       });
     }
 

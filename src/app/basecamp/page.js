@@ -577,13 +577,16 @@ export default function BasecampPage() {
             );
           }
 
-          // Store the Razorpay response so the success page can display order info.
+          // Store the Razorpay response so the success page can display order
+          // info and fire the Meta Pixel Purchase event with the paid amount.
           sessionStorage.setItem(
             "paymentResponse",
             JSON.stringify({
               order_id: response.razorpay_order_id,
               tracking_id: response.razorpay_payment_id,
               order_status: "Success",
+              amount: paymentData.data.amount,
+              currency: "INR",
             })
           );
 
