@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import basecamplogo2 from "./Artboard.png";
 import delhi from "./delhi.png";
@@ -32,6 +33,7 @@ import "swiper/css/pagination";
 
 
 export default function BasecampPage() {
+  const router = useRouter();
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
 
@@ -575,11 +577,21 @@ export default function BasecampPage() {
             );
           }
 
-          handleClose();
-          Toast.success("Payment received! Confirmation may take a few seconds.");
+          // Store the Razorpay response so the success page can display order info.
+          sessionStorage.setItem(
+            "paymentResponse",
+            JSON.stringify({
+              order_id: response.razorpay_order_id,
+              tracking_id: response.razorpay_payment_id,
+              order_status: "Success",
+            })
+          );
 
+          handleClose();
           reset();
 
+          // Redirect to the payment success page.
+          router.push("/payment/success");
         },
 
         prefill: {
@@ -616,12 +628,21 @@ export default function BasecampPage() {
               );
             }
 
-            Toast.error("Payment was not completed.");
+            // Redirect to the payment fail page.
+            router.push("/payment/fail");
           },
         },
       };
 
       const rzp = new window.Razorpay(options);
+
+      // Redirect to the fail page when a payment attempt actually fails
+      // (e.g. card declined), as opposed to the user dismissing the modal.
+      rzp.on("payment.failed", function (response) {
+        console.error("Payment failed:", response.error);
+        router.push("/payment/fail");
+      });
+
       rzp.open();
     } catch (error) {
       console.error("Payment fetch error:", error);
