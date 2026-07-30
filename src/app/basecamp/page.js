@@ -1276,8 +1276,8 @@ export default function BasecampPage() {
 
         <div className="basecamp-slider-container">
 
-          {/* <button className="arrow left mobile-only" onClick={scrollLeft}> */}
-          <button className="arrow left" onClick={scrollLeft}>
+          <button className="arrow left mobile-only" onClick={scrollLeft}>
+          {/* <button className="arrow left" onClick={scrollLeft}> */}
             &#8249;
           </button>
 
@@ -1353,8 +1353,8 @@ export default function BasecampPage() {
 
           </div>
 
-          {/* <button className="arrow right mobile-only" onClick={scrollRight}> */}
-          <button className="arrow right" onClick={scrollRight}>
+          <button className="arrow right mobile-only" onClick={scrollRight}>
+          {/* <button className="arrow right" onClick={scrollRight}> */}
             &#8250;
           </button>
 
