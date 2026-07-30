@@ -228,16 +228,16 @@ export default function BasecampPage() {
     //   soldOut: true,
     //   button: "SOLD OUT"
     // },
-    {
-      id: 3,
-      name: "Pune",
-      date: "30th July’26",
-      image: pune,
-      price1: "Rs 9999",
-      price2: "Rs 7999",
-      earlyBird: "Early bird offer",
-      button: "REGISTER NOW"
-    },
+    // {
+    //   id: 3,
+    //   name: "Pune",
+    //   date: "30th July’26",
+    //   image: pune,
+    //   price1: "Rs 9999",
+    //   price2: "Rs 7999",
+    //   earlyBird: "Early bird offer",
+    //   button: "REGISTER NOW"
+    // },
     {
       id: 4,
       name: "Mumbai",
@@ -847,7 +847,7 @@ export default function BasecampPage() {
                 <span>In-person Full Day Workshop</span>
               </div>
 
-              <ul className="hero-form-info">
+              {/* <ul className="hero-form-info">
                 <li>
                   <i className="fa-solid fa-location-dot"></i>
                   <span>Pune</span>
@@ -856,7 +856,7 @@ export default function BasecampPage() {
                     30<sup>th</sup> July
                   </span>
                 </li>
-              </ul>
+              </ul> */}
 
               <ul className="hero-form-info">
                 <li>
@@ -1522,7 +1522,7 @@ export default function BasecampPage() {
                     LIMITED SPOTS AVAILABLE
                     <br />
                     <span className="btn-text">
-                      <strong>RESERVE YOUR SPOT FOR PUNE NOW</strong>
+                      <strong>RESERVE YOUR SPOT FOR MUMBAI NOW</strong>
                     </span>{" "}
                   </button>
                 </p>
@@ -1668,9 +1668,9 @@ export default function BasecampPage() {
                 {/* <option value="Delhi-NCR - 15th April’26">
                   Delhi-NCR - 15th April’26
                 </option> */}
-                <option value="Pune - 30th July’26">
+                {/* <option value="Pune - 30th July’26">
                   Pune - 30th July’26
-                </option>
+                </option> */}
                 <option value="Mumbai - 20th August’26">
                   Mumbai - 20th August’26
                 </option>
