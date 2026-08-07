@@ -156,6 +156,8 @@ export default function BasecampPage() {
     "STARTLABS"
   ];
 
+  const tenPercentArray = ["Special10"];
+
   const items = [
     {
       id: 1,
@@ -708,8 +710,14 @@ export default function BasecampPage() {
   const calculateDiscount = (planAmount, code) => {
     if (!planAmount || !code) return 0;
 
-    if (exclusiveArray.includes(code.toUpperCase())) {
+    const upperCode = code.toUpperCase();
+
+    if (exclusiveArray.includes(upperCode)) {
       return Math.round(Number(planAmount) * 0.2);
+    }
+
+    if (tenPercentArray.includes(upperCode)) {
+      return Math.round(Number(planAmount) * 0.1);
     }
 
     return 0;
