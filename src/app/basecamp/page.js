@@ -710,13 +710,11 @@ export default function BasecampPage() {
   const calculateDiscount = (planAmount, code) => {
     if (!planAmount || !code) return 0;
 
-    const upperCode = code.toUpperCase();
-
-    if (exclusiveArray.includes(upperCode)) {
+    if (exclusiveArray.includes(code.toUpperCase())) {
       return Math.round(Number(planAmount) * 0.2);
     }
 
-    if (tenPercentArray.includes(upperCode)) {
+    if (tenPercentArray.includes(code)) {
       return Math.round(Number(planAmount) * 0.1);
     }
 
