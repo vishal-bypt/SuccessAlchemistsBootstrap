@@ -247,7 +247,7 @@ export default function BasecampPage() {
       image: mumbai,
       price1: "Rs 9999",
       price2: "Rs 7999",
-      earlyBird: "Early bird offer",
+      earlyBird: "Early bird offer ends 15th August",
       button: "REGISTER NOW"
     },
     {
@@ -814,7 +814,7 @@ export default function BasecampPage() {
       <div className="floating-register-div">
         <div className="floating-register-left">
           <p className="floating-register-text">
-            Seats are Limited.
+            Mumbai Early Bird Ends 15th August.
           </p>
           <p className="floating-register-subtext"></p>
         </div>
