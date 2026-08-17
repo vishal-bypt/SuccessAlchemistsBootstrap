@@ -814,7 +814,7 @@ export default function BasecampPage() {
       <div className="floating-register-div">
         <div className="floating-register-left">
           <p className="floating-register-text">
-            Mumbai Early Bird Ends 15th August.
+            Limited Seats - 20 founder only
           </p>
           <p className="floating-register-subtext"></p>
         </div>
