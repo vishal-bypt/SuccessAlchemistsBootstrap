@@ -246,8 +246,8 @@ export default function BasecampPage() {
       date: "20th August’26",
       image: mumbai,
       price1: "Rs 9999",
-      price2: "Rs 7999",
-      earlyBird: "Early bird offer ends 15th August",
+      // price2: "Rs 7999",
+      // earlyBird: "Early bird offer ends 15th August",
       button: "REGISTER NOW"
     },
     {
@@ -740,10 +740,10 @@ export default function BasecampPage() {
       ];
     } else if (basecampLocation === "Mumbai - 20th August’26") {
       return [
-        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        { value: "9999", label: "Early Bird - For Individuals - ₹9999 + GST" },
         {
-          value: "17999",
-          label: "Early Bird - For 3 Team members - ₹17999 + GST",
+          value: "22499",
+          label: "Early Bird - For 3 Team members - ₹22499 + GST",
         },
       ];
     } else if (basecampLocation === "Bangalore - 24th September’26") {
@@ -814,7 +814,7 @@ export default function BasecampPage() {
       <div className="floating-register-div">
         <div className="floating-register-left">
           <p className="floating-register-text">
-            Mumbai Early Bird Ends 15th August.
+            Limited Seats - 20 founder only
           </p>
           <p className="floating-register-subtext"></p>
         </div>
