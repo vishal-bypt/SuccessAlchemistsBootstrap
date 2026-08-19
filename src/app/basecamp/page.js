@@ -156,7 +156,7 @@ export default function BasecampPage() {
     "STARTLABS"
   ];
 
-  const tenPercentArray = ["Special10"];
+  const tenPercentArray = ["Special10", "CXO365"];
 
   const items = [
     {
