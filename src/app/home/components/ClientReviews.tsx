@@ -12,6 +12,26 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const items = [
   {
     id: 1,
+    title: "Nakul Toshiwal",
+    designation: "Managing Director, Toshvin Analytical Pvt. Ltd.",
+    description:
+      "Nakul shares how the Scaling Up framework transformed execution across his 500-person, 35-location organization — turning strategy into disciplined, company-wide action.",
+    // description:
+    //   "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
+    src: "https://www.youtube.com/embed/7gGuyD1QJ7o",
+  },
+  {
+    id: 2,
+    title: "Salil Sansare",
+    designation: "Director & CEO, LabGuard India",
+    description:
+      "Sahil talks about breaking free of silos and firefighting — and how tools like the OPSP and weekly WWW meetings gave his leadership team one shared \"true north.\"",
+    // description:
+    //   "Ravin Mirchandani, the Executive Chairperson talks about a remarkable success story about the impact of the Scaling Up performance system & the amazing business turnaround experienced within Ador Powertron. In the last section, Ravin talks about the things to keep in mind while selecting a good coach & the value added by the current coach.",
+    src: "https://www.youtube.com/embed/szakdcX8Q9g",
+  },
+  {
+    id: 3,
     title: "Ravin Mirchandani",
     designation: "Executive Chairperson, Ador Powertron",
     description:
@@ -21,7 +41,7 @@ const items = [
     src: " https://www.youtube.com/embed/mN0qCIfEr-8?si=cQHPlh9-GkF85pIe",
   },
   {
-    id: 2,
+    id: 4,
     title: "Sunny Bhanushali",
     designation: "Founder & CEO, Aliens Tattoo",
     description:
@@ -29,7 +49,7 @@ const items = [
     src: "https://www.youtube.com/embed/K1-7-5N2lzY?si=UFol7OgXkzBg_ImI",
   },
   {
-    id: 3,
+    id: 5,
     title: "Rohit More",
     designation: "Director, Grauer & Weil",
     description:
@@ -39,7 +59,7 @@ const items = [
     src: "https://www.youtube.com/embed/UrIxZUvzovo?si=nrjwyoMuQsnzgUsz",
   },
   {
-    id: 4,
+    id: 6,
     title: "Siddharth Motiwale",
     designation: "CEO, Clarion Technologies",
     description:
@@ -47,7 +67,7 @@ const items = [
     src: "https://www.youtube.com/embed/jokpun-w7v8?si=8jz8BsXy1Ig62ULG",
   },
   {
-    id: 5,
+    id: 7,
     title: "Girish Shilamkar",
     designation: "Founder & CEO, InfraCloud Technologies",
     description:
@@ -55,7 +75,7 @@ const items = [
     src: "https://www.youtube.com/embed/N4PUd0g_vDs?si=gP3asGFHOusha3bX",
   },
   {
-    id: 6,
+    id: 8,
     title: "Jaymin Bhuptani",
     designation: "CEO, Uplers & Mavlers",
     description:
@@ -63,7 +83,7 @@ const items = [
     src: "https://www.youtube.com/embed/8_HT9N82rh4?si=49oIAZ5JZzhLG0B5",
   },
   {
-    id: 7,
+    id: 9,
     title: "Suvrajit Ghosh",
     designation: "CEO, Mount Meru Millers Uganda",
     description:
@@ -73,7 +93,7 @@ const items = [
     src: "https://www.youtube.com/embed/o-OwjN6PqBU",
   },
   {
-    id: 8,
+    id: 10,
     title: "Chirag Savla",
     designation: "CEO, C1 Agri Cluster, Mount Meru Group",
     description:
