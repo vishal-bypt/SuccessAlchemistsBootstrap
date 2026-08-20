@@ -92,16 +92,16 @@ const items = [
     //   "In this inspiring testimonial, Suvrajit Ghosh, CEO of Mount Meru Millers Uganda, shares how the Scaling Up framework has transformed their business growth and operations. He reveals the practical benefits and strategic advantages that helped Mount Meru Millers streamline processes, strengthen leadership, and accelerate success. Suvrajit highlights how weekly KPI reviews have aligned his team to the organization's key priorities, and how meeting rhythms have created clarity and accountability across the company. He also shares how these practices have saved him over 18 hours a week translating into thousands of dollars in value.",
     src: "https://www.youtube.com/embed/o-OwjN6PqBU",
   },
-  {
-    id: 10,
-    title: "Chirag Savla",
-    designation: "CEO, C1 Agri Cluster, Mount Meru Group",
-    description:
-      "Chirag Savla, CEO of C1 Agri Cluster, Mount Meru Group, shares the impactful journey his organisation had with the Scaling Up framework and the remarkable benefit it has had on their business.",
-    // description:
-    //   "Chirag Savla, CEO of C1 Agri Cluster, Mount Meru Group, shares the impactful journey his organisation had with the Scaling Up framework and the remarkable benefit it has had on their business. He highlights how the Power of One tool can drive significant improvements in the bottom line when applied effectively. Chirag also offers valuable insights for organizations new to Scaling Up, especially, what they should expect, and the key aspirations to keep in mind as they embark on this growth journey.",
-    src: "https://www.youtube.com/embed/XDx0wO5wkzs",
-  },
+  // {
+  //   id: 10,
+  //   title: "Chirag Savla",
+  //   designation: "CEO, C1 Agri Cluster, Mount Meru Group",
+  //   description:
+  //     "Chirag Savla, CEO of C1 Agri Cluster, Mount Meru Group, shares the impactful journey his organisation had with the Scaling Up framework and the remarkable benefit it has had on their business.",
+  //   // description:
+  //   //   "Chirag Savla, CEO of C1 Agri Cluster, Mount Meru Group, shares the impactful journey his organisation had with the Scaling Up framework and the remarkable benefit it has had on their business. He highlights how the Power of One tool can drive significant improvements in the bottom line when applied effectively. Chirag also offers valuable insights for organizations new to Scaling Up, especially, what they should expect, and the key aspirations to keep in mind as they embark on this growth journey.",
+  //   src: "https://www.youtube.com/embed/XDx0wO5wkzs",
+  // },
 ];
 
 interface LazyYouTubeIframeProps {
