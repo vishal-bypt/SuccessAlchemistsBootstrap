@@ -241,17 +241,7 @@ export default function BasecampPage() {
     //   button: "REGISTER NOW"
     // },
     {
-      id: 4,
-      name: "Mumbai",
-      date: "20th August’26",
-      image: mumbai,
-      price1: "Rs 9999",
-      // price2: "Rs 7999",
-      // earlyBird: "Early bird offer ends 15th August",
-      button: "REGISTER NOW"
-    },
-    {
-      id: 4,
+      id: 1,
       name: "Delhi",
       date: "17th September’26",
       image: delhi,
@@ -261,7 +251,7 @@ export default function BasecampPage() {
       button: "REGISTER NOW"
     },
     {
-      id: 5,
+      id: 2,
       name: "Bangalore",
       date: "24th September’26",
       image: bangalore,
@@ -269,6 +259,18 @@ export default function BasecampPage() {
       price2: "Rs 7999",
       earlyBird: "Early bird offer",
       button: "REGISTER NOW"
+    },
+    {
+      id: 3,
+      name: "Mumbai",
+      date: "20th August’26",
+      image: mumbai,
+      // price1: "Rs 9999",
+      // price2: "Rs 7999",
+      // earlyBird: "Early bird offer ends 15th August",
+       button: "SOLD OUT",
+       status: "Completed",
+      soldOut: true,
     },
   ];
 
@@ -864,7 +866,7 @@ export default function BasecampPage() {
                 </li>
               </ul> */}
 
-              <ul className="hero-form-info">
+              {/* <ul className="hero-form-info">
                 <li>
                   <i className="fa-solid fa-location-dot"></i>
                   <span>Mumbai</span>
@@ -873,7 +875,7 @@ export default function BasecampPage() {
                     20<sup>th</sup> Aug
                   </span>
                 </li>
-              </ul>
+              </ul> */}
 
               <ul className="hero-form-info">
                 <li>
