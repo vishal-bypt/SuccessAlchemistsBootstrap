@@ -209,37 +209,7 @@ export default function BasecampPage() {
     },
   ];
 
-  const cityList = [
-    // {
-    //   id: 1,
-    //   name: "Delhi-NCR",
-    //   location: "IIT Delhi Campus",
-    //   date: "15th April’26",
-    //   image: delhi,
-    //   earlyBird: "Early bird offer end 10th April' 26",
-    //   price1: "Rs 9999",
-    //   price2: "Rs 7999",
-    //   button: "REGISTER NOW"
-    // },
-    // {
-    //   id: 2,
-    //   name: "Bangalore",
-    //   date: "11th June’26",
-    //   image: bangalore,
-    //   status: "Sold Out",
-    //   soldOut: true,
-    //   button: "SOLD OUT"
-    // },
-    // {
-    //   id: 3,
-    //   name: "Pune",
-    //   date: "30th July’26",
-    //   image: pune,
-    //   price1: "Rs 9999",
-    //   price2: "Rs 7999",
-    //   earlyBird: "Early bird offer",
-    //   button: "REGISTER NOW"
-    // },
+  const cityList = [ 
     {
       id: 1,
       name: "Delhi",
@@ -270,7 +240,28 @@ export default function BasecampPage() {
       // earlyBird: "Early bird offer ends 15th August",
        button: "SOLD OUT",
        status: "Completed",
+       soldOut: true,
+    },
+      {
+      id: 4,
+      name: "Pune",
+      date: "30th July’26",
+      image: pune,
+      // price1: "Rs 9999",
+      // price2: "Rs 7999",
+      // earlyBird: "Early bird offer",
+      button: "SOLD OUT",
+       status: "Completed",
+       soldOut: true,
+    },
+     {
+      id: 5,
+      name: "Bangalore",
+      date: "11th June’26",
+      image: bangalore,
+      status: "Sold Out",
       soldOut: true,
+      button: "SOLD OUT"
     },
   ];
 
@@ -1284,8 +1275,8 @@ export default function BasecampPage() {
 
         <div className="basecamp-slider-container">
 
-          <button className="arrow left mobile-only" onClick={scrollLeft}>
-          {/* <button className="arrow left" onClick={scrollLeft}> */}
+          {/* <button className="arrow left mobile-only" onClick={scrollLeft}> */}
+          <button className="arrow left" onClick={scrollLeft}>
             &#8249;
           </button>
 
@@ -1361,8 +1352,8 @@ export default function BasecampPage() {
 
           </div>
 
-          <button className="arrow right mobile-only" onClick={scrollRight}>
-          {/* <button className="arrow right" onClick={scrollRight}> */}
+          {/* <button className="arrow right mobile-only" onClick={scrollRight}> */}
+          <button className="arrow right" onClick={scrollRight}>
             &#8250;
           </button>
 
