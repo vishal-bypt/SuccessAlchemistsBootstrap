@@ -1670,9 +1670,9 @@ export default function BasecampPage() {
                 {/* <option value="Pune - 30th July’26">
                   Pune - 30th July’26
                 </option> */}
-                <option value="Mumbai - 20th August’26">
+                {/* <option value="Mumbai - 20th August’26">
                   Mumbai - 20th August’26
-                </option>
+                </option> */}
                 <option value="Delhi - 17th September’26">
                   Delhi - 17th September’26
                 </option>
