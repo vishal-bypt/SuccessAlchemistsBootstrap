@@ -265,7 +265,8 @@ const About = memo(() => {
         </div>
       </section>
 
-      <section className="about2-second-layout"><div className="row metrics-container">
+      <section>
+        <div className="row metrics-container">
         <div className="col-md-4 col-12">
           <div className="metric-box">
             <div className="metric-value">$2 Bn</div>
@@ -285,9 +286,9 @@ const About = memo(() => {
           </div>
         </div>
       </div>
-        <div className="section-title-black">Client Across</div>
-        <div className="country-section">
-          {countries.map((item) => (
+        <div className="section-title-black">Client Across India, Africa and GCC</div>
+        {/* <div className="country-section"> */}
+          {/* {countries.map((item) => (
             <div className="country-card" key={item.id}>
               <Image
                 src={item.image}
@@ -298,8 +299,8 @@ const About = memo(() => {
               />
               <p className="country-name">{item.name}</p>
             </div>
-          ))}
-        </div>
+          ))} */}
+        {/* </div> */}
       </section>
 
 
