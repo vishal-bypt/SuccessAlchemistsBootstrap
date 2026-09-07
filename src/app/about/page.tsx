@@ -11,6 +11,7 @@ import ashima from "./images/Ashima.png";
 // import ashutosh from "./images/Ashutosh.png";
 import augustine from "./images/Augustine.png";
 import bobby from "./images/Bobby.png";
+import chirag from "./images/chirag.png";
 import india from "./images/india.jpg";
 import jyoti from "./images/Jyoti.png";
 import kavita from "./images/Kavita.png";
@@ -40,6 +41,7 @@ const About = memo(() => {
   const [vikramExpanded, setVikramExpanded] = useState(false);
   const [ashutoshExpanded, setAshutoshExpanded] = useState(false);
   const [bobbyExpanded, setBobbyExpanded] = useState(false);
+  const [chiragExpanded, setChiragExpanded] = useState(false);
 
 
   useEffect(() => {
@@ -531,6 +533,54 @@ const About = memo(() => {
                 alt="Ashutosh"
                 className="img-fluid custom-img"
               />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-lg-5 d-flex justify-content-start">
+              <Image
+                src={chirag}
+                alt="Chirag"
+                className="img-fluid custom-img"
+              />
+            </div>
+            <div className="col-lg-7 leadership-content">
+              <div className="leadership-content-title-logo mt-2">
+                <div className="leader-name">
+                  Chirag Savla
+                </div>
+                <a href="https://www.linkedin.com/in/chiragsavla" target="_blank" rel="noopener noreferrer">
+                  <div className="linkedin-white-bg">
+                    <svg
+                      viewBox="0 0 25 25"
+                      fill="#0f2437"
+                    >
+                      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.54v6.2zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                    </svg>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <div className={`about2_text_container ${chiragExpanded ? "expanded" : ""}`}>
+                  <p className="white-subtitle-text mb-3">
+                    Chirag is a seasoned business operator with 20+ years of P&L leadership across Africa, the Middle East, and India — including an 11-year tenure at Godrej Consumer Products as CEO for East Africa and Regional Head for the Rest of Africa and Middle East.
+                  </p>
+                  <p className="white-subtitle-text mb-3">
+                    He has led multi-country operations spanning brand building, manufacturing, exports, and financial strategy at scale.
+                  </p>
+                  <p className="white-subtitle-text">
+                    As a Certified Scaling Up Coach, he now works with founders and leadership teams to move businesses from entrepreneurial hustle to structured, predictable growth. His coaching is grounded in operating reality, not theory — built on two decades of running businesses where the stakes were real.
+                  </p>
+                </div>
+
+                <button
+                  className="read-more-btn-leadership"
+                  onClick={() => setChiragExpanded(!chiragExpanded)}
+                >
+                  {chiragExpanded ? "Read Less" : "Read More"}
+                </button>
+              </div>
+
             </div>
           </div>
         </div>
