@@ -333,6 +333,8 @@ const Footer = () => {
       >
         <p className="mb-0">
           © Copyright 2026 Success Alchemists Business Coaching Pvt. Ltd. All rights reserved.
+          {" | "}
+          <Link href="/privacy-policy">Privacy Policy</Link>
         </p>
       </div>
     </div>
