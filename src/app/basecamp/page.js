@@ -153,7 +153,8 @@ export default function BasecampPage() {
     "SPECIAL20",
     "DMS20",
     "365CIRCLE",
-    "STARTLABS"
+    "STARTLABS",
+    "ASCENT20"
   ];
 
   const tenPercentArray = ["Special10", "CXO365"];
