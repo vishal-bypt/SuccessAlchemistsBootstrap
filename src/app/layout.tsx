@@ -9,6 +9,7 @@ import TawkChat from '../components/TawkChat';
 import { ToastContainer } from "react-toastify";
 import Script from 'next/script';
 import RecaptchaProvider from "@/components/RecaptchaProvider";
+import LeadPopup from "@/components/LeadPopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -175,6 +176,7 @@ export default function RootLayout({
         <ToastContainer />
         <RecaptchaProvider>
           {children}
+          <LeadPopup />
         </RecaptchaProvider>
        
         {/* <TawkChat /> */}
