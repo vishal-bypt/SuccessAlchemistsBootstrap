@@ -213,16 +213,6 @@ export default function BasecampPage() {
   const cityList = [ 
     {
       id: 1,
-      name: "Delhi",
-      date: "17th September’26",
-      image: delhi,
-      price1: "Rs 9999",
-      price2: "Rs 7999",
-      earlyBird: "Early bird offer",
-      button: "REGISTER NOW"
-    },
-    {
-      id: 2,
       name: "Bangalore",
       date: "24th September’26",
       image: bangalore,
@@ -232,7 +222,7 @@ export default function BasecampPage() {
       button: "REGISTER NOW"
     },
     {
-      id: 3,
+      id: 2,
       name: "Mumbai",
       date: "20th August’26",
       image: mumbai,
@@ -244,7 +234,7 @@ export default function BasecampPage() {
        soldOut: true,
     },
       {
-      id: 4,
+      id: 3,
       name: "Pune",
       date: "30th July’26",
       image: pune,
@@ -256,10 +246,19 @@ export default function BasecampPage() {
        soldOut: true,
     },
      {
-      id: 5,
+      id: 4,
       name: "Bangalore",
       date: "11th June’26",
       image: bangalore,
+      status: "Sold Out",
+      soldOut: true,
+      button: "SOLD OUT"
+    },
+     {
+      id: 5,
+      name: "Delhi",
+      date: "17th September’26",
+      image: delhi,
       status: "Sold Out",
       soldOut: true,
       button: "SOLD OUT"
@@ -869,7 +868,7 @@ export default function BasecampPage() {
                 </li>
               </ul> */}
 
-              <ul className="hero-form-info">
+              {/* <ul className="hero-form-info">
                 <li>
                   <i className="fa-solid fa-location-dot"></i>
                   <span>Delhi</span>
@@ -878,7 +877,7 @@ export default function BasecampPage() {
                     17<sup>th</sup> Sep
                   </span>
                 </li>
-              </ul>
+              </ul> */}
 
               <ul className="hero-form-info">
                 <li>
