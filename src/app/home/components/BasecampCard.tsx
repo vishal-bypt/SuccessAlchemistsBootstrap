@@ -10,9 +10,19 @@ const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 interface BasecampCardProps {
   whatsNewAnimation: any;
+  logoSrc?: string; // when set, shows this image instead of the Basecamp logo
+  background?: string;
+  subtitle?: string;
+  href?: string;
 }
 
-const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
+const BasecampCard = memo(({
+  whatsNewAnimation,
+  logoSrc,
+  background = "#fdae07",
+  subtitle = "Unlock the frameworks to scale up your business.",
+  href = "/basecamp",
+}: BasecampCardProps) => {
   const [blink, setBlink] = useState(true);
   const [mounted, setMounted] = useState(false);
 
@@ -31,7 +41,7 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
     <div
       className="position-relative w-100 d-flex flex-column flex-md-row justify-content-between align-items-center p-4 text-white"
       style={{
-        background: "linear-gradient(45deg, #fdae07, #fdae07, #fdae07)",
+        background: background,
         // borderRadius: "24px",
         overflow: "hidden",
       }}
@@ -68,22 +78,27 @@ const BasecampCard = memo(({ whatsNewAnimation }: BasecampCardProps) => {
     marginTop: isMobile ? "20px" : "0px",
   }}
       >
-        <div className="home2-hero-icon-img">
-          <Image
-            className="logo-image"
-            src={basecamplogo2}
-            alt="img2"
+        {logoSrc ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={logoSrc}
+            alt="Valuation Multiplier"
+            style={{ height: "110px", width: "auto", borderRadius: "16px" }}
           />
-        </div>
+        ) : (
+          <div className="home2-hero-icon-img">
+            <Image className="logo-image" src={basecamplogo2} alt="img2" />
+          </div>
+        )}
         {/* <h2 className="home2-inner-first-div mb-2">Basecamp</h2> */}
-        <p className="white-subtitle-text mb-0">
-          Unlock the frameworks to scale up your business.
-        </p>
+        {subtitle && (
+          <p className="white-subtitle-text mb-0">{subtitle}</p>
+        )}
       </div>
 
       {/* Right Button */}
       <a
-        href="/basecamp"
+        href={href}
         className="text-decoration-none"
         style={{ textDecoration: "none" }}
       >

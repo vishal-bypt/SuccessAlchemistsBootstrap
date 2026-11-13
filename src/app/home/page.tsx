@@ -67,6 +67,13 @@ const Home = () => {
         
       )} */}
       
+      <BasecampCard
+        whatsNewAnimation={whatsNewData}
+        logoSrc="/assets/images/valuation.jpg"
+        background="#2b2420"
+        subtitle="" // tagline is already in the logo
+        href="https://blog.success-alchemists.com/valuation/"
+      />
       <BasecampCard whatsNewAnimation={whatsNewData} />
 
       {/* Hero Section */}
