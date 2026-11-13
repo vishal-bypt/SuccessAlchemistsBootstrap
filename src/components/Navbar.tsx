@@ -219,16 +219,14 @@ const NavbarMenu = () => {
                 Basecamp Workshop
               </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item>
-                <a
-                  href="https://blog.success-alchemists.com/valuation/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inactive-link font-normal nav_text_div link-underline link-underline-opacity-0"
-                >
-                  Valuation Workshop
-                </a>
-              </NavDropdown.Item>
+              <NavDropdown.Item
+              href="https://blog.success-alchemists.com/valuation/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inactive-link font-normal nav_text_div"
+            >
+              Valuation Workshop
+            </NavDropdown.Item>
               {/* <NavDropdown.Item>
                <Link
                 href="/webinar"
