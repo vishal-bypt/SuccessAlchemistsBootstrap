@@ -212,14 +212,33 @@ export default function BasecampPage() {
 
   const cityList = [ 
     {
-      id: 1,
+      id: 6,
+      name: "New Delhi",
+      date: "22nd January’27",
+      image: delhi,
+      price1: "Rs 9999",
+      price2: "Rs 7999",
+      earlyBird: "Early bird offer",
+      button: "REGISTER NOW"
+    },
+    {
+      id: 7,
       name: "Bangalore",
-      date: "24th September’26",
+      date: "28th January’27",
       image: bangalore,
       price1: "Rs 9999",
       price2: "Rs 7999",
       earlyBird: "Early bird offer",
       button: "REGISTER NOW"
+    },
+    {
+      id: 1,
+      name: "Bangalore",
+      date: "24th September’26",
+      image: bangalore,
+      status: "Completed",
+      soldOut: true,
+      button: "SOLD OUT"
     },
     {
       id: 2,
@@ -250,7 +269,7 @@ export default function BasecampPage() {
       name: "Bangalore",
       date: "11th June’26",
       image: bangalore,
-      status: "Sold Out",
+      status: "Completed",
       soldOut: true,
       button: "SOLD OUT"
     },
@@ -259,7 +278,7 @@ export default function BasecampPage() {
       name: "Delhi",
       date: "17th September’26",
       image: delhi,
-      status: "Sold Out",
+      status: "Completed",
       soldOut: true,
       button: "SOLD OUT"
     },
@@ -718,6 +737,16 @@ export default function BasecampPage() {
   const getPlanOptions = () => {
     if (!basecampLocation) return [];
 
+    if (basecampLocation === "New Delhi - 22nd January’27" || basecampLocation === "Bangalore - 28th January’27") {
+      return [
+        { value: "7999", label: "Early Bird - For Individuals - ₹7999 + GST" },
+        {
+          value: "17999",
+          label: "Early Bird - For 3 Team members - ₹17999 + GST",
+        },
+      ];
+    }
+
     if (basecampLocation === "Pune - 12th Feb'26") {
       return [
         { value: "9999", label: "For Individuals - ₹9999 + GST" },
@@ -882,10 +911,18 @@ export default function BasecampPage() {
               <ul className="hero-form-info">
                 <li>
                   <i className="fa-solid fa-location-dot"></i>
+                  <span>New Delhi</span>
+                  <i className="fa-regular fa-calendar ms-3"></i>
+                  <span>
+                    22<sup>nd</sup> Jan
+                  </span>
+                </li>
+                <li>
+                  <i className="fa-solid fa-location-dot"></i>
                   <span>Bangalore</span>
                   <i className="fa-regular fa-calendar ms-3"></i>
                   <span>
-                    24<sup>th</sup> Sep
+                    28<sup>th</sup> Jan
                   </span>
                 </li>
               </ul>
@@ -1521,7 +1558,7 @@ export default function BasecampPage() {
                     LIMITED SPOTS AVAILABLE
                     <br />
                     <span className="btn-text">
-                      <strong>RESERVE YOUR SPOT FOR MUMBAI NOW</strong>
+                      <strong>RESERVE YOUR SPOT NOW</strong>
                     </span>{" "}
                   </button>
                 </p>
@@ -1676,8 +1713,11 @@ export default function BasecampPage() {
                 {/* <option value="Delhi - 17th September’26">
                   Delhi - 17th September’26
                 </option> */}
-                <option value="Bangalore - 24th September’26">
-                  Bangalore - 24th September’26
+                <option value="New Delhi - 22nd January’27">
+                  New Delhi - 22nd January’27
+                </option>
+                <option value="Bangalore - 28th January’27">
+                  Bangalore - 28th January’27
                 </option>
               </Form.Select>
               <Form.Control.Feedback type="invalid">
