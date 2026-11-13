@@ -83,7 +83,7 @@ const BasecampCard = memo(({
           <img
             src={logoSrc}
             alt="Valuation Multiplier"
-            style={{ height: "110px", width: "auto", borderRadius: "16px" }}
+            className="banner-logo"
           />
         ) : (
           <div className="home2-hero-icon-img">

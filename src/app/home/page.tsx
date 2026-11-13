@@ -1,6 +1,7 @@
 "use client";
 import { useState, Suspense, useEffect } from "react";
 import dynamic from "next/dynamic";
+import Carousel from "react-bootstrap/Carousel";
 import "./home.css";
 
 // Import Swiper styles
@@ -50,6 +51,14 @@ const loadWhatsNewAnimation = async () => {
 
 const Home = () => {
   const [visible, setVisible] = useState(true);
+  const [bannerIndex, setBannerIndex] = useState(0);
+
+  // Auto-advance banners; resets the timer whenever a dot is clicked.
+  useEffect(() => {
+    const t = setTimeout(() => setBannerIndex((i) => (i + 1) % 2), 4000);
+    return () => clearTimeout(t);
+  }, [bannerIndex]);
+
   const [whatsNewData, setWhatsNewData] = useState<any>(null);
 
   // Load animation data on mount
@@ -67,14 +76,27 @@ const Home = () => {
         
       )} */}
       
-      <BasecampCard
-        whatsNewAnimation={whatsNewData}
-        logoSrc="/assets/images/valuation.jpg"
-        background="#2b2420"
-        subtitle="" // tagline is already in the logo
-        href="https://blog.success-alchemists.com/valuation/"
-      />
-      <BasecampCard whatsNewAnimation={whatsNewData} />
+      <Carousel
+        className="banner-carousel"
+        controls={false}
+        indicators
+        interval={null}
+        activeIndex={bannerIndex}
+        onSelect={setBannerIndex}
+      >
+        <Carousel.Item>
+          <BasecampCard
+            whatsNewAnimation={whatsNewData}
+            logoSrc="/assets/images/valuation.jpg"
+            background="#2b2420"
+            subtitle="" // tagline is already in the logo
+            href="https://blog.success-alchemists.com/valuation/"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <BasecampCard whatsNewAnimation={whatsNewData} />
+        </Carousel.Item>
+      </Carousel>
 
       {/* Hero Section */}
       {/* <Suspense fallback={<div style={{ minHeight: "600px" }}>Loading...</div>}>
