@@ -1,5 +1,5 @@
 "use client";
-import { memo, useEffect, useState } from "react";
+import { memo, useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Double_arrow from "../images/Double_arrow.png";
@@ -32,6 +32,13 @@ const BasecampCard = memo(({
     return () => clearInterval(interval);
   }, []);
 
+  // lottie-web mutates its animation data, so each card needs its own copy
+  // (two cards sharing one object froze the page).
+  const animationData = useMemo(
+    () => (whatsNewAnimation ? JSON.parse(JSON.stringify(whatsNewAnimation)) : null),
+    [whatsNewAnimation]
+  );
+
   if (!mounted) return null;
 
   const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
@@ -61,7 +68,7 @@ const BasecampCard = memo(({
       >
         <a target="_blank" rel="noopener noreferrer">
           <Lottie
-            animationData={whatsNewAnimation}
+            animationData={animationData}
             loop={true}
             autoplay={true}
             
