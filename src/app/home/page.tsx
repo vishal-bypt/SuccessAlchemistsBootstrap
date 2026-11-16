@@ -1,7 +1,6 @@
 "use client";
 import { useState, Suspense, useEffect } from "react";
 import dynamic from "next/dynamic";
-import Carousel from "react-bootstrap/Carousel";
 import "./home.css";
 
 // Import Swiper styles
@@ -76,27 +75,38 @@ const Home = () => {
         
       )} */}
       
-      <Carousel
-        className="banner-carousel"
-        controls={false}
-        indicators
-        interval={null}
-        activeIndex={bannerIndex}
-        onSelect={setBannerIndex}
-      >
-        <Carousel.Item>
+      <div className="banner-carousel">
+        {[
           <BasecampCard
+            key="valuation"
             whatsNewAnimation={whatsNewData}
             logoSrc="/assets/images/valuation.jpg"
             background="#2b2420"
             subtitle="" // tagline is already in the logo
             href="https://blog.success-alchemists.com/valuation/"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <BasecampCard whatsNewAnimation={whatsNewData} />
-        </Carousel.Item>
-      </Carousel>
+          />,
+          <BasecampCard key="basecamp" whatsNewAnimation={whatsNewData} />,
+        ].map((card, i) => (
+          <div
+            key={i}
+            className={`banner-slide${i === bannerIndex ? " active" : ""}`}
+            style={{ transform: `translateX(${(i - bannerIndex) * 100}%)` }}
+          >
+            {card}
+          </div>
+        ))}
+        <div className="banner-dots">
+          {[0, 1].map((i) => (
+            <button
+              key={i}
+              type="button"
+              aria-label={`Show banner ${i + 1}`}
+              className={i === bannerIndex ? "active" : ""}
+              onClick={() => setBannerIndex(i)}
+            />
+          ))}
+        </div>
+      </div>
 
       {/* Hero Section */}
       {/* <Suspense fallback={<div style={{ minHeight: "600px" }}>Loading...</div>}>
