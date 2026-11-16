@@ -741,7 +741,16 @@
 }
 .banner-dots button.active { opacity: 1; }
 
-.banner-logo { height: 84px; width: auto; max-width: 100%; border-radius: 16px; }
+.banner-logo { height: 72px; width: auto; max-width: 100%; border-radius: 16px; }
 @media (max-width: 768px) {
-  .banner-logo { height: 84px; border-radius: 12px; }
+  .banner-logo { height: 76px; border-radius: 12px; }
+}
+
+/* Tighter banner height (overrides the card's p-4 / inline margins) */
+.banner-slide > div { padding-top: 14px !important; padding-bottom: 30px !important; }
+@media (max-width: 768px) {
+  .banner-slide > div { padding: 8px 16px 30px !important; }
+  .banner-slide .text-center { margin-top: 14px !important; margin-bottom: 8px !important; }
+  .banner-slide .home2-hero-icon-img .logo-image { width: 200px; }
+  .banner-slide .white-subtitle-text { max-width: 250px; margin: 0 auto; } /* wraps to two lines */
 }
