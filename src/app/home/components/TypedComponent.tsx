@@ -9,7 +9,7 @@ const TypedComponent = () => {
     if (!typedRef.current) return;
 
     const typed = new Typed(typedRef.current, {
-      strings: ["freedom", "enjoyments", "growth"],
+      strings: ["freedom", "enjoyment", "growth"],
       typeSpeed: 50,
       backSpeed: 30,
       backDelay: 1000,
