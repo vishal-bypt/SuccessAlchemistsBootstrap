@@ -227,6 +227,14 @@ const NavbarMenu = () => {
             >
               Valuation Workshop
             </NavDropdown.Item>
+            <NavDropdown.Item
+              href="https://blog.success-alchemists.com/the-growth-playbook/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inactive-link font-normal nav_text_div"
+            >
+              The Growth Playbook
+            </NavDropdown.Item>
               {/* <NavDropdown.Item>
                <Link
                 href="/webinar"
